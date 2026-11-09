@@ -1,0 +1,161 @@
+{
+  "_comment": "국내 리서치 수집 대상 등록부. 수집 작업(prompts/RESEARCH_GUIDE.md)이 읽는다. 앱은 이 파일이 아니라 index.json 을 읽는다. 해외 기관(Glassnode, Coin Metrics, a16z, Messari, Galaxy 등)은 등록하지 않는다.",
+  "sources": [
+    {
+      "id": "tiger",
+      "name": "타이거리서치",
+      "home": "https://reports.tiger-research.com/s/korean/archive",
+      "group": "crypto_research",
+      "collect": {
+        "try": ["https://reports.tiger-research.com/s/korean/feed", "https://reports.tiger-research.com/s/korean/archive?sort=new"],
+        "itemUrl": "https://reports.tiger-research.com/p/<slug>",
+        "language": "한국어 섹션(/s/korean)만. 같은 보고서의 영문판(/s/english 또는 영문 slug)은 넣지 않는다",
+        "summaryFrom": "RSS description 또는 글의 부제(subtitle)"
+      }
+    },
+    {
+      "id": "xangle",
+      "name": "쟁글 리서치",
+      "home": "https://xangle.io/research",
+      "group": "crypto_research",
+      "collect": {
+        "try": ["https://xangle.io/research", "https://xangle.io/sitemap.xml"],
+        "itemUrl": "https://xangle.io/research/detail/<숫자 id>  (영문판은 /en/research/detail/<다른 id> — 영문판은 제외)",
+        "language": "한국어 목록(/research, /en 아님)만",
+        "dedupe": "제목이 다른 국내 기관(디스프레드·포필러스·타이거 등) 보고서와 같거나 본문에 '출처/제공: <기관>'이 있으면 원 발행기관 쪽만 남기고 쟁글 항목은 버린다",
+        "summaryFrom": "목록의 요약문 또는 글 첫 문단"
+      }
+    },
+    {
+      "id": "despread",
+      "name": "디스프레드 리서치",
+      "home": "https://research.despread.io/ko/",
+      "group": "crypto_research",
+      "collect": {
+        "try": ["https://research.despread.io/ko/rss/", "https://research.despread.io/rss/", "https://research.despread.io/ko/"],
+        "itemUrl": "https://research.despread.io/ko/<slug>/",
+        "language": "/ko/ 경로만. /en/ 또는 경로 없는 영문판은 제외",
+        "summaryFrom": "RSS description(excerpt) 또는 글 상단 요약"
+      }
+    },
+    {
+      "id": "fourpillars",
+      "name": "포필러스",
+      "home": "https://research.4pillars.io/ko/research",
+      "group": "crypto_research",
+      "collect": {
+        "try": ["https://research.4pillars.io/ko/research", "https://research.4pillars.io/sitemap.xml"],
+        "itemUrl": "https://research.4pillars.io/ko/research/<slug>",
+        "language": "/ko/ 경로만. 제목이 영어여도 /ko/ 아래 글은 한국어 본문이므로 포함",
+        "summaryFrom": "목록 카드의 요약 또는 글 상단 요약 문단"
+      }
+    },
+    {
+      "id": "digitalx",
+      "name": "디지털엑스 리서치",
+      "aliases": ["코빗 리서치센터", "Korbit Research"],
+      "home": "https://digitalx.miraeasset.com/market/research",
+      "group": "exchange",
+      "collect": {
+        "try": ["https://digitalx.miraeasset.com/market/research"],
+        "itemUrl": "목록에서 연결되는 개별 보고서 페이지 또는 PDF",
+        "language": "한국어",
+        "note": "코빗이 2026년 8~9월 디지털엑스로 사명·서비스명을 바꿨다. 옛 korbit.co.kr/research 와 같은 조직이므로 디지털엑스 한 곳으로만 등록한다. 옛 코빗 리서치 PDF가 이 목록에 그대로 있으면 같은 보고서를 두 번 넣지 않는다",
+        "summaryFrom": "목록의 요약 또는 보고서 첫 문단"
+      }
+    },
+    {
+      "id": "hor",
+      "name": "해시드오픈리서치",
+      "home": "https://hashedopenresearch.com/research",
+      "group": "crypto_research",
+      "collect": {
+        "try": ["https://hashedopenresearch.com/research", "https://hashedopenresearch.com/sitemap.xml"],
+        "itemUrl": "https://hashedopenresearch.com/research/<uuid>",
+        "language": "한국어 제목 또는 한국어 본문만. 영문 전용 보고서(예: 'The Future of Digital Assets and Capital Markets…')는 한국어판이 따로 없으면 제외",
+        "summaryFrom": "목록의 요약 또는 보고서 요약(Executive Summary) 첫 문장"
+      }
+    },
+    {
+      "id": "upbitcare",
+      "name": "업비트 투자자보호센터",
+      "home": "https://upbitcare.com/academy/research",
+      "group": "exchange",
+      "collect": {
+        "try": ["https://upbitcare.com/academy/research", "https://m.upbitcare.com/academy/research"],
+        "itemUrl": "https://upbitcare.com/academy/research/<숫자 id>",
+        "language": "한국어",
+        "filter": "조사·연구 보고서만. 교육 콘텐츠(/academy/education)·공지는 제외",
+        "summaryFrom": "글 상단 요약"
+      }
+    },
+    {
+      "id": "kcmi",
+      "name": "자본시장연구원",
+      "home": "https://www.kcmi.re.kr/report/report_list",
+      "group": "institute",
+      "collect": {
+        "try": ["https://www.kcmi.re.kr/report/report_list", "https://www.kcmi.re.kr/publications/pub_list?zcd=002001016"],
+        "itemUrl": "https://www.kcmi.re.kr/report/report_view?report_no=<n>  또는 https://www.kcmi.re.kr/publications/pub_detail_view?...",
+        "language": "한국어",
+        "filter": "제목·요약에 디지털자산·가상자산·암호화 자산·스테이블코인·토큰(화)·블록체인·CBDC·STO·비트코인 중 하나가 있는 보고서만 (종합 연구기관이므로 그 외는 제외)",
+        "summaryFrom": "보고서 요약"
+      }
+    },
+    {
+      "id": "kif",
+      "name": "한국금융연구원",
+      "home": "https://www.kif.re.kr/kif4/publication/pub_list?mid=20",
+      "group": "institute",
+      "collect": {
+        "try": ["https://www.kif.re.kr/kif4/publication/pub_list?mid=20"],
+        "itemUrl": "https://www.kif.re.kr/kif4/publication/pub_detail?...",
+        "language": "한국어",
+        "filter": "kcmi 와 같은 디지털자산 키워드 필터",
+        "summaryFrom": "보고서 요약"
+      }
+    },
+    {
+      "id": "bok",
+      "name": "한국은행",
+      "home": "https://www.bok.or.kr/portal/bbs/B0000232/list.do?menuNo=200706",
+      "group": "institute",
+      "collect": {
+        "try": [
+          "https://www.bok.or.kr/portal/bbs/B0000232/list.do?menuNo=200706",
+          "https://www.bok.or.kr/portal/bbs/B0000168/list.do?menuNo=200058"
+        ],
+        "itemUrl": "https://www.bok.or.kr/portal/bbs/<게시판>/view.do?nttId=<n>&menuNo=<n>",
+        "language": "한국어",
+        "filter": "지급결제조사자료·BOK이슈해설 중 스테이블코인·CBDC·디지털자산·토큰화·가상자산 관련만",
+        "summaryFrom": "게시글 요약 또는 첫 문단"
+      }
+    },
+    {
+      "id": "brokers",
+      "name": "증권사 리서치",
+      "home": "https://consensus.hankyung.com/analysis/list?search_text=%EA%B0%80%EC%83%81%EC%9E%90%EC%82%B0",
+      "group": "broker",
+      "collect": {
+        "try": [
+          "https://consensus.hankyung.com/analysis/list?search_text=%EA%B0%80%EC%83%81%EC%9E%90%EC%82%B0",
+          "https://consensus.hankyung.com/analysis/list?search_text=%EB%94%94%EC%A7%80%ED%84%B8%EC%9E%90%EC%82%B0",
+          "https://consensus.hankyung.com/analysis/list?search_text=%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8"
+        ],
+        "itemUrl": "한경컨센서스의 PDF 링크(원문) — 가능하면 증권사 자체 사이트의 보고서 주소",
+        "language": "한국어",
+        "filter": "증권사 리서치센터 발행물 중 가상자산·디지털자산·비트코인·스테이블코인·블록체인·토큰증권 관련만. 요약에는 '<증권사명> · ' 를 앞에 붙인다",
+        "summaryFrom": "컨센서스 목록의 요약 또는 PDF 첫 페이지 요약",
+        "note": "한화투자증권(hanwhawm.com 리서치 게시판)·KB증권·NH투자증권·신한투자증권 등은 개별 사이트가 로그인/동적 페이지라 컨센서스 경유가 현실적"
+      }
+    }
+  ],
+  "candidates_to_evaluate": [
+    { "name": "빗썸 리서치", "note": "보고서 목록 페이지가 확인되면 exchange 그룹으로 추가" },
+    { "name": "코인원 리서치", "note": "상동" },
+    { "name": "KODA(한국디지털에셋)", "note": "한국어 보고서 발행 시 추가" },
+    { "name": "삼정KPMG·삼일PwC·딜로이트안진 디지털자산 보고서", "note": "국내 회계법인 발간물. 목록 페이지에서 가상자산 보고서만 골라낼 수 있으면 institute 그룹으로 추가" },
+    { "name": "DSRV·Presto Research", "note": "국내 팀이지만 영문 위주. 한국어판이 있을 때만" }
+  ],
+  "excluded_foreign": ["Glassnode", "Coin Metrics", "a16z", "Messari", "Galaxy Research", "Delphi", "Kaiko", "CryptoQuant(영문)", "Binance Research", "Grayscale Research"]
+}

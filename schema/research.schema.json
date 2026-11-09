@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KoreanResearchIndex",
+  "description": "국내 기관이 직접 발행한 한국어 가상자산·블록체인 보고서 피드. 기관 홈페이지가 아니라 개별 보고서 단위. 해외·영문 전용 리서치는 넣지 않는다. 발행일·요약을 확인할 수 없으면 그 항목을 생략한다 (임의 생성 금지).",
+  "type": "object",
+  "required": ["updatedAt", "sources", "items"],
+  "properties": {
+    "updatedAt": { "type": "string", "description": "수집 작업이 끝난 시각, ISO 8601 (KST 오프셋 포함)" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "home", "method", "status"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "name": { "type": "string", "description": "화면에 보이는 기관명 (예: 타이거리서치, 디지털엑스 리서치)" },
+          "home": { "type": "string", "format": "uri", "description": "기관의 공식 보고서 목록 페이지" },
+          "method": { "type": "string", "enum": ["rss", "api", "page", "pdf", "link"], "description": "실제로 쓴 수집 방법. link = 바로가기만" },
+          "status": {
+            "type": "string",
+            "enum": ["ok", "stale", "blocked", "link_only"],
+            "description": "ok=이번 수집 성공 / stale=이번엔 실패했지만 이전 수집분 보존 / blocked=접근 차단·로그인 필요 등으로 수집 불가 / link_only=보고서 단위 수집을 아직 설계하지 않음"
+          },
+          "lastOk": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "마지막으로 정상 수집한 날짜" },
+          "note": { "type": "string", "description": "사람이 읽는 한 줄 상태 (예: 목록 페이지가 JS 렌더링이라 RSS 없음, 사이트맵으로 수집)" },
+          "count": { "type": "integer", "minimum": 0, "description": "현재 items 에 들어 있는 이 기관의 보고서 수" }
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source", "title", "url"],
+        "properties": {
+          "id": { "type": "string", "description": "<source>:<url 의 고유 부분>. 한 번 정해지면 바꾸지 않는다" },
+          "source": { "type": "string", "description": "sources[].id" },
+          "title": { "type": "string", "minLength": 2 },
+          "url": { "type": "string", "format": "uri", "description": "보고서 원문. 글이면 글 주소, PDF 발간물이면 PDF 주소. 기관 홈·목록 페이지 금지" },
+          "publishedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "기관이 표시한 실제 발행일. 확인 불가면 키 자체를 생략" },
+          "summary": { "type": "string", "maxLength": 300, "description": "기관이 제공한 요약·부제·첫 문단을 그대로 (의역·생성 금지). 없으면 생략" },
+          "collectedAt": { "type": "string", "description": "처음 수집한 시각 ISO 8601" },
+          "pdf": { "type": "boolean" },
+          "lang": { "type": "string", "enum": ["ko"], "description": "한국어 본문 또는 공식 한국어판만 수집하므로 항상 ko" },
+          "tags": { "type": "array", "items": { "type": "string" }, "description": "선택. 예: 스테이블코인, RWA, 규제, 시장" }
+        }
+      }
+    }
+  }
+}
