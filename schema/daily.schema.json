@@ -3,37 +3,110 @@
   "title": "DailyMarketBrief",
   "description": "매일 09:00 KST. 폰으로 열어 10초 안에 '시장이 어땠고, 어떤 움직임이 중요했고, 다음에 뭘 볼지' 파악하는 브리핑. 모든 숫자 옆에 기간을, 미집계는 '미집계'로.",
   "type": "object",
-  "required": ["id", "date", "asOf", "window", "title", "regime", "tldr", "keyMetrics", "movers", "sources"],
+  "required": [
+    "id",
+    "date",
+    "asOf",
+    "window",
+    "title",
+    "regime",
+    "tldr",
+    "keyMetrics",
+    "movers",
+    "sources"
+  ],
   "properties": {
-    "id": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
-    "date": { "type": "string", "format": "date" },
-    "asOf": { "type": "string", "description": "데이터 조회 시각 (KST, 예: 2026-11-10 08:31)" },
-    "window": { "type": "string", "description": "분석 기간 표시용. 예: '최근 24시간' / '최근 72시간 (11/6 09:00 → 11/9 09:00 KST)'" },
+    "id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "asOf": {
+      "type": "string",
+      "description": "데이터 조회 시각 (KST, 예: 2026-11-10 08:31)"
+    },
+    "window": {
+      "type": "string",
+      "description": "분석 기간 표시용. 예: '최근 24시간' / '최근 72시간 (11/6 09:00 → 11/9 09:00 KST)'"
+    },
     "title": {
       "type": "string",
       "maxLength": 48,
       "description": "그날의 차이가 드러나는 제목. 예: '최근 72시간, 이더리움이 비트코인보다 더 크게 하락했다'. 날짜·장세 표시는 넣지 않는다."
     },
-    "regime": { "type": "string", "enum": ["상승장", "하락장", "횡보장", "혼조"] },
+    "regime": {
+      "type": "string",
+      "enum": [
+        "상승장",
+        "하락장",
+        "횡보장",
+        "혼조"
+      ]
+    },
     "tldr": {
-      "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "string" },
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      },
       "description": "① 시장에서 일어난 일 ② 그 판단을 뒷받침하는 수치(기간 포함) ③ 다음에 확인할 변화. 제목에 쓴 말은 반복하지 않는다."
     },
     "keyMetrics": {
-      "type": "array", "minItems": 1, "maxItems": 3,
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
       "description": "오늘의 판단에 쓰인 지표 최대 3개. 카드 하나 = 대표 숫자 하나.",
       "items": {
         "type": "object",
-        "required": ["label", "value", "basis"],
+        "required": [
+          "label",
+          "value",
+          "basis"
+        ],
         "properties": {
-          "label": { "type": "string", "description": "예: 미국 BTC 현물 ETF" },
-          "value": { "type": "string", "description": "대표 숫자 하나. 예: '4.12억 달러 순유출' / '미집계'" },
-          "basis": { "type": "string", "description": "작게 표시. 기간·출처. 예: '11월 6일 거래일 기준 · Farside'" },
-          "tone": { "type": "string", "enum": ["up", "down", "neutral"], "description": "숫자 색. 생략 시 중립" },
+          "label": {
+            "type": "string",
+            "description": "예: 미국 BTC 현물 ETF"
+          },
+          "value": {
+            "type": "string",
+            "description": "대표 숫자 하나. 예: '4.12억 달러 순유출' / '미집계'"
+          },
+          "basis": {
+            "type": "string",
+            "description": "작게 표시. 기간·출처. 예: '11월 6일 거래일 기준 · Farside'"
+          },
+          "tone": {
+            "type": "string",
+            "enum": [
+              "up",
+              "down",
+              "neutral"
+            ],
+            "description": "숫자 색. 생략 시 중립"
+          },
           "details": {
             "type": "array",
             "description": "펼쳐보기: 이전 거래일, 종목별 내역 등",
-            "items": { "type": "object", "required": ["label", "value"], "properties": { "label": { "type": "string" }, "value": { "type": "string" } } }
+            "items": {
+              "type": "object",
+              "required": [
+                "label",
+                "value"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
@@ -41,54 +114,209 @@
     "market": {
       "type": "array",
       "description": "시장 전체 표 (펼쳐보기용). BTC·ETH·전체 시총·도미넌스·청산·공포탐욕 등. 각 value에 기간을 붙인다.",
-      "items": { "type": "object", "required": ["label", "value"], "properties": { "label": { "type": "string" }, "value": { "type": "string" }, "note": { "type": "string" } } }
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "value"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
     },
     "movers": {
       "type": "array",
       "description": "유의미한 움직임 (상승 3~5 + 하락 2~3). 본문 순서: 무슨 일이 있었나 → 시장이 어떻게 반응했나 → 다음에 무엇을 보면 되나",
       "items": {
         "type": "object",
-        "required": ["project", "ticker", "direction", "change", "changePeriod", "excessVsBtc", "causeType", "headline", "happened", "reaction", "watch", "confidence"],
+        "required": [
+          "project",
+          "ticker",
+          "direction",
+          "change",
+          "changePeriod",
+          "excessVsBtc",
+          "causeType",
+          "headline",
+          "happened",
+          "reaction",
+          "watch",
+          "confidence"
+        ],
         "properties": {
-          "project": { "type": "string" },
-          "ticker": { "type": "string" },
-          "direction": { "type": "string", "enum": ["up", "down"] },
-          "change": { "type": "string", "description": "예: +12.4%" },
-          "changePeriod": { "type": "string", "description": "예: 72시간 / 24시간" },
-          "excessVsBtc": { "type": "string", "description": "예: +14.1%p" },
-          "marketCap": { "type": "string" },
-          "volume24h": { "type": "string" },
+          "project": {
+            "type": "string"
+          },
+          "ticker": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "up",
+              "down"
+            ]
+          },
+          "change": {
+            "type": "string",
+            "description": "예: +12.4%"
+          },
+          "changePeriod": {
+            "type": "string",
+            "description": "예: 72시간 / 24시간"
+          },
+          "excessVsBtc": {
+            "type": "string",
+            "description": "예: +14.1%p"
+          },
+          "marketCap": {
+            "type": "string"
+          },
+          "volume24h": {
+            "type": "string"
+          },
           "causeType": {
             "type": "string",
-            "enum": ["확인된 원인", "가능한 배경", "수급 주도", "시장 베타", "원인 불명"],
+            "enum": [
+              "확인된 원인",
+              "가능한 배경",
+              "수급 주도",
+              "시장 베타",
+              "원인 불명"
+            ],
             "description": "확인된 원인=사건 시각이 가격 반응보다 앞서고 반응 수치도 확인 / 가능한 배경=같은 날 움직인 것만 확인 / 수급 주도=OI·청산·펀딩이 설명 / 시장 베타=시장 전체 움직임 범위 / 원인 불명"
           },
-          "headline": { "type": "string", "description": "결론 한 줄" },
-          "happened": { "type": "array", "items": { "type": "string" }, "description": "무슨 일이 있었나 — 날짜·시각 포함 1~3줄" },
-          "reaction": { "type": "array", "items": { "type": "string" }, "description": "시장이 어떻게 반응했나 — 가격·거래량·OI·청산 숫자와 기간 1~3줄" },
-          "watch": { "type": "string", "description": "다음에 무엇을 보면 되나 — 1줄" },
-          "caveat": { "type": "string", "description": "반대 근거·한계" },
+          "headline": {
+            "type": "string",
+            "description": "결론 한 줄"
+          },
+          "happened": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "무슨 일이 있었나 — 날짜·시각 포함 1~3줄"
+          },
+          "reaction": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "시장이 어떻게 반응했나 — 가격·거래량·OI·청산 숫자와 기간 1~3줄"
+          },
+          "watch": {
+            "type": "string",
+            "description": "다음에 무엇을 보면 되나 — 1줄"
+          },
+          "caveat": {
+            "type": "string",
+            "description": "반대 근거·한계"
+          },
           "flows": {
             "type": "object",
             "properties": {
-              "openInterest": { "type": "string" }, "oiToMcap": { "type": "string" }, "fundingRate": { "type": "string" },
-              "liquidations": { "type": "string" }, "perpToSpotVolume": { "type": "string" }, "exchangeNetflow": { "type": "string" }
+              "openInterest": {
+                "type": "string"
+              },
+              "oiToMcap": {
+                "type": "string"
+              },
+              "fundingRate": {
+                "type": "string"
+              },
+              "liquidations": {
+                "type": "string"
+              },
+              "perpToSpotVolume": {
+                "type": "string"
+              },
+              "exchangeNetflow": {
+                "type": "string"
+              }
             }
           },
-          "confidence": { "type": "string", "enum": ["A", "B", "C"] }
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
         }
       }
     },
     "excluded": {
       "type": "array",
-      "items": { "type": "object", "properties": { "ticker": { "type": "string" }, "reason": { "type": "string" } } }
+      "items": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
     },
     "watchNext": {
-      "type": "array", "maxItems": 4,
+      "type": "array",
+      "maxItems": 4,
       "description": "다음에 볼 것 — 시각·이벤트·지표. 예: '11/10 22:30 KST 미국 10월 CPI'",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
-    "highlight": { "type": "string", "description": "오늘 가장 배울 점 3~4문장" },
-    "sources": { "type": "array", "items": { "type": "object", "required": ["title", "url"], "properties": { "title": { "type": "string" }, "url": { "type": "string" } } } }
+    "highlight": {
+      "type": "string",
+      "description": "오늘 가장 배울 점 3~4문장"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "url"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "terms": {
+      "type": "array",
+      "description": "본문에 나온 전문용어 풀이. 본문에는 괄호 풀이를 쓰지 않고 여기로 모은다 (앱에서 접힘 상자로 표시)",
+      "items": {
+        "type": "object",
+        "required": [
+          "term",
+          "meaning"
+        ],
+        "properties": {
+          "term": {
+            "type": "string"
+          },
+          "meaning": {
+            "type": "string"
+          }
+        }
+      }
+    }
   }
 }

@@ -3,110 +3,337 @@
   "title": "CoinDeepDiveReport",
   "description": "주 3회 코인 심층 리포트. 목적은 공부: 읽고 나면 '누가 왜 쓰는지, 돈이 어떻게 움직이는지, 그게 토큰 보유자와 무슨 관계인지'를 내 말로 설명할 수 있어야 한다. 기승전결 4개 질문으로 구성.",
   "type": "object",
-  "required": ["id", "date", "slot", "project", "ticker", "question", "oneLiner", "meta", "tldr", "who", "money", "usage", "risks", "watchlist", "sources"],
+  "required": [
+    "id",
+    "date",
+    "slot",
+    "project",
+    "ticker",
+    "question",
+    "oneLiner",
+    "meta",
+    "tldr",
+    "who",
+    "money",
+    "usage",
+    "risks",
+    "watchlist",
+    "sources"
+  ],
   "properties": {
-    "id": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}-[a-z0-9]+$" },
-    "date": { "type": "string", "format": "date" },
-    "slot": { "type": "string", "enum": ["new_listing", "outside_top100", "top100"] },
-    "project": { "type": "string" },
-    "ticker": { "type": "string" },
+    "id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}-[a-z0-9]+$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "slot": {
+      "type": "string",
+      "enum": [
+        "new_listing",
+        "outside_top100",
+        "top100"
+      ]
+    },
+    "project": {
+      "type": "string"
+    },
+    "ticker": {
+      "type": "string"
+    },
     "question": {
       "type": "string",
       "description": "이 글이 답할 질문. 예: 'USDe는 어떻게 1달러를 따라가고, 그 과정에서 생긴 수익은 누구에게 돌아갈까?'"
     },
-    "oneLiner": { "type": "string", "description": "'쉽게 말하면 ~' 한 문장" },
+    "oneLiner": {
+      "type": "string",
+      "description": "'쉽게 말하면 ~' 한 문장"
+    },
     "meta": {
       "type": "object",
       "description": "제목 아래 작은 정보 줄",
       "properties": {
-        "sector": { "type": "string" },
-        "krwMarkets": { "type": "array", "items": { "type": "string" }, "description": "예: ['빗썸 2025-02-25', '업비트 2025-07-11']" },
-        "rank": { "type": "string", "description": "예: CoinGecko #45 (2026-11-09)" },
-        "launched": { "type": "string" }
+        "sector": {
+          "type": "string"
+        },
+        "krwMarkets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "예: ['빗썸 2025-02-25', '업비트 2025-07-11']"
+        },
+        "rank": {
+          "type": "string",
+          "description": "예: CoinGecko #45 (2026-11-09)"
+        },
+        "launched": {
+          "type": "string"
+        }
       }
     },
     "tldr": {
-      "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "string" },
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      },
       "description": "본문을 다 쓴 뒤 뽑는다. ① 무엇을 하는 프로젝트인지 ② 작동 원리의 핵심 ③ 지금 가장 중요한 관찰점. 수치에는 기준일과 출처."
     },
     "who": {
       "type": "object",
       "description": "기 · 누가 왜 쓰나?",
-      "required": ["lead", "body"],
+      "required": [
+        "lead",
+        "body"
+      ],
       "properties": {
-        "lead": { "type": "string", "description": "이 섹션의 결론 한 문장" },
+        "lead": {
+          "type": "string",
+          "description": "이 섹션의 결론 한 문장"
+        },
         "glossary": {
           "type": "array",
           "description": "뒷부분을 읽기 위해 먼저 구분해야 할 자산/토큰 2~4개. 예: USDe=달러 가치를 추종하는 자산",
-          "items": { "type": "object", "required": ["term", "meaning"], "properties": { "term": { "type": "string" }, "meaning": { "type": "string" } } }
+          "items": {
+            "type": "object",
+            "required": [
+              "term",
+              "meaning"
+            ],
+            "properties": {
+              "term": {
+                "type": "string"
+              },
+              "meaning": {
+                "type": "string"
+              }
+            }
+          }
         },
-        "body": { "type": "array", "items": { "type": "string" }, "description": "2~3문장 문단들. 실제 사용자가 어떤 문제를 풀려고 쓰는지" }
+        "body": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "2~3문장 문단들. 실제 사용자가 어떤 문제를 풀려고 쓰는지"
+        }
       }
     },
     "money": {
       "type": "object",
       "description": "승 · 내 돈은 어디로 가나? — 가장 많은 분량",
-      "required": ["lead", "overview", "userFlow", "issuerFlow", "body"],
+      "required": [
+        "lead",
+        "overview",
+        "userFlow",
+        "issuerFlow",
+        "body"
+      ],
       "properties": {
-        "lead": { "type": "string" },
-        "overview": { "type": "array", "items": { "type": "string" }, "description": "전체 구도 먼저. 온체인/오프체인, 누가 무엇을 보관·운용하는지 2~3문단" },
+        "lead": {
+          "type": "string"
+        },
+        "overview": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "전체 구도 먼저. 온체인/오프체인, 누가 무엇을 보관·운용하는지 2~3문단"
+        },
         "userFlow": {
           "type": "object",
           "description": "일반 사용자가 하는 과정",
-          "required": ["title", "steps"],
+          "required": [
+            "title",
+            "steps"
+          ],
           "properties": {
-            "title": { "type": "string" },
-            "steps": { "type": "array", "items": { "$ref": "#/$defs/step" } }
+            "title": {
+              "type": "string"
+            },
+            "steps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/step"
+              }
+            }
           }
         },
         "issuerFlow": {
           "type": "object",
           "description": "발행/운영 기관이 담보를 맡기고 운용하는 과정",
-          "required": ["title", "steps"],
+          "required": [
+            "title",
+            "steps"
+          ],
           "properties": {
-            "title": { "type": "string" },
-            "steps": { "type": "array", "items": { "$ref": "#/$defs/step" } }
+            "title": {
+              "type": "string"
+            },
+            "steps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/step"
+              }
+            }
           }
         },
-        "example": { "type": "array", "items": { "type": "string" }, "description": "가격 변동을 어떻게 줄이는지(또는 핵심 메커니즘) 쉬운 숫자 예시 1~2문단" },
+        "example": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "가격 변동을 어떻게 줄이는지(또는 핵심 메커니즘) 쉬운 숫자 예시 1~2문단"
+        },
         "mix": {
           "type": "object",
           "description": "현재 운용 방식/담보 구성 등 기준일이 있는 표",
           "properties": {
-            "asOf": { "type": "string" },
-            "source": { "type": "string" },
-            "headers": { "type": "array", "items": { "type": "string" } },
-            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            "asOf": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "headers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
         },
-        "trust": { "type": "array", "items": { "type": "string" }, "description": "믿어야 하는 것 — 운영자·오라클·브리지·외부 프로토콜·위원회" },
-        "security": { "type": "array", "items": { "type": "string" }, "description": "감사(날짜)·증명·과거 사고" },
-        "body": { "type": "array", "items": { "type": "string" }, "description": "경쟁 구조와의 메커니즘 차이 등 보충 문단" }
+        "trust": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "믿어야 하는 것 — 운영자·오라클·브리지·외부 프로토콜·위원회"
+        },
+        "security": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "감사(날짜)·증명·과거 사고"
+        },
+        "body": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "경쟁 구조와의 메커니즘 차이 등 보충 문단"
+        }
       }
     },
     "usage": {
       "type": "object",
       "description": "전 · 실제로 얼마나 쓰이고, 누가 돈을 버나?",
-      "required": ["lead", "usageMetrics", "revenueMetrics", "valueQuestion", "valueAnswer", "tokenomics"],
+      "required": [
+        "lead",
+        "usageMetrics",
+        "revenueMetrics",
+        "valueQuestion",
+        "valueAnswer",
+        "tokenomics"
+      ],
       "properties": {
-        "lead": { "type": "string" },
-        "usageMetrics": { "type": "array", "items": { "$ref": "#/$defs/metric" }, "description": "사용 규모 지표 2~4개, 각각 의미 설명" },
-        "revenueMetrics": { "type": "array", "items": { "$ref": "#/$defs/metric" }, "description": "수익 지표 2~4개" },
-        "valueQuestion": { "type": "string", "description": "예: 'USDe 사용이 늘면 ENA 보유자에게도 수익이 돌아가나?'" },
-        "valueAnswer": { "type": "array", "items": { "type": "string" }, "description": "예치자 보상 / 프로토콜에 남는 금액 / 토큰에 혜택이 오는 조건을 구분해 답" },
+        "lead": {
+          "type": "string"
+        },
+        "usageMetrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric"
+          },
+          "description": "사용 규모 지표 2~4개, 각각 의미 설명"
+        },
+        "revenueMetrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric"
+          },
+          "description": "수익 지표 2~4개"
+        },
+        "valueQuestion": {
+          "type": "string",
+          "description": "예: 'USDe 사용이 늘면 ENA 보유자에게도 수익이 돌아가나?'"
+        },
+        "valueAnswer": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "예치자 보상 / 프로토콜에 남는 금액 / 토큰에 혜택이 오는 조건을 구분해 답"
+        },
         "policies": {
           "type": "array",
           "description": "승인된 정책과 실제 집행 여부",
-          "items": { "type": "object", "required": ["name", "approved", "executed"], "properties": { "name": { "type": "string" }, "approved": { "type": "string" }, "executed": { "type": "string" }, "note": { "type": "string" } } }
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "approved",
+              "executed"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "approved": {
+                "type": "string"
+              },
+              "executed": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
         },
         "tokenomics": {
           "type": "object",
-          "required": ["circulating", "nextUnlock", "valuePath"],
+          "required": [
+            "circulating",
+            "nextUnlock",
+            "valuePath"
+          ],
           "properties": {
-            "circulating": { "type": "string", "description": "유통률 한 줄" },
-            "nextUnlock": { "type": "string", "description": "다음 언락 한 줄 ('12개월 내 없음' 가능)" },
-            "valuePath": { "type": "string", "description": "토큰 가치에 연결되는 경로 한 줄" },
-            "valueCapture": { "type": "string", "enum": ["direct", "indirect", "none", "unclear"] }
+            "circulating": {
+              "type": "string",
+              "description": "유통률 한 줄"
+            },
+            "nextUnlock": {
+              "type": "string",
+              "description": "다음 언락 한 줄 ('12개월 내 없음' 가능)"
+            },
+            "valuePath": {
+              "type": "string",
+              "description": "토큰 가치에 연결되는 경로 한 줄"
+            },
+            "valueCapture": {
+              "type": "string",
+              "enum": [
+                "direct",
+                "indirect",
+                "none",
+                "unclear"
+              ]
+            }
           }
         }
       }
@@ -114,39 +341,148 @@
     "risks": {
       "type": "object",
       "description": "결 · 무엇이 흔들리면 판단이 달라지나?",
-      "required": ["lead", "items"],
+      "required": [
+        "lead",
+        "items"
+      ],
       "properties": {
-        "lead": { "type": "string" },
+        "lead": {
+          "type": "string"
+        },
         "items": {
           "type": "array",
-          "items": { "type": "object", "required": ["risk", "why", "indicator"], "properties": { "risk": { "type": "string" }, "why": { "type": "string" }, "indicator": { "type": "string", "description": "독자가 확인할 수 있는 지표" } } }
+          "items": {
+            "type": "object",
+            "required": [
+              "risk",
+              "why",
+              "indicator"
+            ],
+            "properties": {
+              "risk": {
+                "type": "string"
+              },
+              "why": {
+                "type": "string"
+              },
+              "indicator": {
+                "type": "string",
+                "description": "독자가 확인할 수 있는 지표"
+              }
+            }
+          }
         }
       }
     },
     "watchlist": {
-      "type": "array", "minItems": 3, "maxItems": 5,
-      "items": { "type": "object", "required": ["indicator", "why", "signal"], "properties": { "indicator": { "type": "string" }, "why": { "type": "string" }, "signal": { "type": "string", "description": "어떤 변화에 주목할지" } } }
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "indicator",
+          "why",
+          "signal"
+        ],
+        "properties": {
+          "indicator": {
+            "type": "string"
+          },
+          "why": {
+            "type": "string"
+          },
+          "signal": {
+            "type": "string",
+            "description": "어떤 변화에 주목할지"
+          }
+        }
+      }
     },
-    "verdict": { "type": "string", "description": "3문장: 평가 / 가장 큰 변수 / 확인 지표" },
-    "sources": { "type": "array", "items": { "type": "object", "required": ["title", "url"], "properties": { "title": { "type": "string" }, "url": { "type": "string" }, "accessed": { "type": "string" } } } }
+    "verdict": {
+      "type": "string",
+      "description": "3문장: 평가 / 가장 큰 변수 / 확인 지표"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "url"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "accessed": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "terms": {
+      "type": "array",
+      "description": "본문에 나온 전문용어 풀이. 본문에는 괄호 풀이를 쓰지 않고 여기로 모은다 (앱에서 접힘 상자로 표시)",
+      "items": {
+        "type": "object",
+        "required": [
+          "term",
+          "meaning"
+        ],
+        "properties": {
+          "term": {
+            "type": "string"
+          },
+          "meaning": {
+            "type": "string"
+          }
+        }
+      }
+    }
   },
   "$defs": {
     "step": {
       "type": "object",
-      "required": ["text"],
+      "required": [
+        "text"
+      ],
       "properties": {
-        "text": { "type": "string", "description": "쉬운 말로 한 줄" },
-        "detail": { "type": "string", "description": "펼쳐보기: 계약명·함수명·권한 등 기술 상세" }
+        "text": {
+          "type": "string",
+          "description": "쉬운 말로 한 줄"
+        },
+        "detail": {
+          "type": "string",
+          "description": "펼쳐보기: 계약명·함수명·권한 등 기술 상세"
+        }
       }
     },
     "metric": {
       "type": "object",
-      "required": ["label", "value", "meaning"],
+      "required": [
+        "label",
+        "value",
+        "meaning"
+      ],
       "properties": {
-        "label": { "type": "string" },
-        "value": { "type": "string", "description": "기준일 포함. 예: '53.6억 달러 (2026-11-09)'" },
-        "source": { "type": "string" },
-        "meaning": { "type": "string", "description": "이 숫자가 뜻하는 것 1~2문장" }
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "description": "기준일 포함. 예: '53.6억 달러 (2026-11-09)'"
+        },
+        "source": {
+          "type": "string"
+        },
+        "meaning": {
+          "type": "string",
+          "description": "이 숫자가 뜻하는 것 1~2문장"
+        }
       }
     }
   }
