@@ -113,7 +113,7 @@
     },
     "market": {
       "type": "array",
-      "description": "시장 전체 표 (펼쳐보기용). BTC·ETH·전체 시총·도미넌스·청산·공포탐욕 등. 각 value에 기간을 붙인다.",
+      "description": "시장 전체 (펼쳐보기). BTC·ETH·전체 시총·도미넌스·ETF·청산·공포탐욕·원화 환산 등 8~10줄. value는 한 줄(40자 이내)로 결론 숫자만, note는 두 줄 이내 보충. 시·분 나열 금지, 날짜만.",
       "items": {
         "type": "object",
         "required": [
@@ -125,10 +125,12 @@
             "type": "string"
           },
           "value": {
-            "type": "string"
+            "type": "string",
+            "description": "40자 이내 한 줄. 예: 72시간 -1.7%, 1억 216만원 → 1억 45만원"
           },
           "note": {
-            "type": "string"
+            "type": "string",
+            "description": "보충 한두 문장. 세부 시각·종목별 내역은 여기에도 나열하지 않는다"
           }
         }
       }
@@ -150,7 +152,8 @@
           "happened",
           "reaction",
           "watch",
-          "confidence"
+          "confidence",
+          "rank"
         ],
         "properties": {
           "project": {
@@ -179,7 +182,13 @@
             "description": "예: +14.1%p"
           },
           "marketCap": {
-            "type": "string"
+            "type": "string",
+            "description": "억 달러 단위, 괄호 없이. 예: 1.39억 달러 / 693억 달러"
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "CoinGecko 시총 순위 (asOf 시점). 100 이하이면 앱이 '주목' 구역 맨 위에 고정한다"
           },
           "volume24h": {
             "type": "string"
