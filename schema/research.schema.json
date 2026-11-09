@@ -37,7 +37,7 @@
           "source": { "type": "string", "description": "sources[].id" },
           "title": { "type": "string", "minLength": 2 },
           "url": { "type": "string", "format": "uri", "description": "보고서 원문. 글이면 글 주소, PDF 발간물이면 PDF 주소. 기관 홈·목록 페이지 금지" },
-          "publishedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "기관이 표시한 실제 발행일. 확인 불가면 키 자체를 생략" },
+          "publishedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$", "description": "기관이 표시한 실제 발행일. 기관이 월까지만 표시하면 YYYY-MM. 확인 불가면 키 자체를 생략" },
           "summary": { "type": "string", "maxLength": 300, "description": "기관이 제공한 요약·부제·첫 문단을 그대로 (의역·생성 금지). 없으면 생략" },
           "collectedAt": { "type": "string", "description": "처음 수집한 시각 ISO 8601" },
           "pdf": { "type": "boolean" },

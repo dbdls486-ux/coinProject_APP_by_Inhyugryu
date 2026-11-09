@@ -7,10 +7,14 @@
       "home": "https://reports.tiger-research.com/s/korean/archive",
       "group": "crypto_research",
       "collect": {
-        "try": ["https://reports.tiger-research.com/s/korean/feed", "https://reports.tiger-research.com/s/korean/archive?sort=new"],
+        "try": [
+          "https://reports.tiger-research.com/s/korean/feed",
+          "https://reports.tiger-research.com/s/korean/archive?sort=new"
+        ],
         "itemUrl": "https://reports.tiger-research.com/p/<slug>",
         "language": "한국어 섹션(/s/korean)만. 같은 보고서의 영문판(/s/english 또는 영문 slug)은 넣지 않는다",
-        "summaryFrom": "RSS description 또는 글의 부제(subtitle)"
+        "summaryFrom": "RSS description 또는 글의 부제(subtitle)",
+        "survey_2026_11_10": "2026-11-10 확인: /s/korean/archive 는 무한 스크롤(정적 12건 노출), 포스트 URL 은 -kor/-krw 로 끝남. 대부분 부제가 없어 첫 문단을 요약으로 사용."
       }
     },
     {
@@ -19,11 +23,15 @@
       "home": "https://xangle.io/research",
       "group": "crypto_research",
       "collect": {
-        "try": ["https://xangle.io/research", "https://xangle.io/sitemap.xml"],
+        "try": [
+          "https://xangle.io/research",
+          "https://xangle.io/sitemap.xml"
+        ],
         "itemUrl": "https://xangle.io/research/detail/<숫자 id>  (영문판은 /en/research/detail/<다른 id> — 영문판은 제외)",
         "language": "한국어 목록(/research, /en 아님)만",
         "dedupe": "제목이 다른 국내 기관(디스프레드·포필러스·타이거 등) 보고서와 같거나 본문에 '출처/제공: <기관>'이 있으면 원 발행기관 쪽만 남기고 쟁글 항목은 버린다",
-        "summaryFrom": "목록의 요약문 또는 글 첫 문단"
+        "summaryFrom": "목록의 요약문 또는 글 첫 문단",
+        "survey_2026_11_10": "2026-11-10 확인: /research 목록은 수집 환경에서 열리지 않음(차단). 상세 페이지의 \"관련 리서치\" 링크와 검색으로 수집. 영문판은 /en/… 별도 id. 해시드오픈리서치 재게시(저자 페이지 /research/author/186)는 제외."
       }
     },
     {
@@ -32,10 +40,15 @@
       "home": "https://research.despread.io/ko/",
       "group": "crypto_research",
       "collect": {
-        "try": ["https://research.despread.io/ko/rss/", "https://research.despread.io/rss/", "https://research.despread.io/ko/"],
+        "try": [
+          "https://research.despread.io/ko/rss/",
+          "https://research.despread.io/rss/",
+          "https://research.despread.io/ko/"
+        ],
         "itemUrl": "https://research.despread.io/ko/<slug>/",
         "language": "/ko/ 경로만. /en/ 또는 경로 없는 영문판은 제외",
-        "summaryFrom": "RSS description(excerpt) 또는 글 상단 요약"
+        "summaryFrom": "RSS description(excerpt) 또는 글 상단 요약",
+        "survey_2026_11_10": "2026-11-10 확인: Ghost 정적 HTML. /ko/insight/·/ko/report/ 만 수집(블로그·가이드 제외). /ko/rss/ 는 전문 포함 156k자라 목록용으로 부적합."
       }
     },
     {
@@ -44,24 +57,34 @@
       "home": "https://research.4pillars.io/ko/research",
       "group": "crypto_research",
       "collect": {
-        "try": ["https://research.4pillars.io/ko/research", "https://research.4pillars.io/sitemap.xml"],
+        "try": [
+          "https://research.4pillars.io/ko/research",
+          "https://research.4pillars.io/sitemap.xml"
+        ],
         "itemUrl": "https://research.4pillars.io/ko/research/<slug>",
         "language": "/ko/ 경로만. 제목이 영어여도 /ko/ 아래 글은 한국어 본문이므로 포함",
-        "summaryFrom": "목록 카드의 요약 또는 글 상단 요약 문단"
+        "summaryFrom": "목록 카드의 요약 또는 글 상단 요약 문단",
+        "survey_2026_11_10": "2026-11-10 확인: 정적 목록, 12건/페이지, ?page=N, 요약 없음 → 글 페이지 상단 리드 사용. 한꺼번에 열면 rate limit."
       }
     },
     {
       "id": "digitalx",
       "name": "디지털엑스 리서치",
-      "aliases": ["코빗 리서치센터", "Korbit Research"],
+      "aliases": [
+        "코빗 리서치센터",
+        "Korbit Research"
+      ],
       "home": "https://digitalx.miraeasset.com/market/research",
       "group": "exchange",
       "collect": {
-        "try": ["https://digitalx.miraeasset.com/market/research"],
+        "try": [
+          "https://digitalx.miraeasset.com/market/research"
+        ],
         "itemUrl": "목록에서 연결되는 개별 보고서 페이지 또는 PDF",
         "language": "한국어",
         "note": "코빗이 2026년 8~9월 디지털엑스로 사명·서비스명을 바꿨다. 옛 korbit.co.kr/research 와 같은 조직이므로 디지털엑스 한 곳으로만 등록한다. 옛 코빗 리서치 PDF가 이 목록에 그대로 있으면 같은 보고서를 두 번 넣지 않는다",
-        "summaryFrom": "목록의 요약 또는 보고서 첫 문단"
+        "summaryFrom": "목록의 요약 또는 보고서 첫 문단",
+        "survey_2026_11_10": "2026-11-10 확인: digitalx.miraeasset.com 전체가 봇 차단(client_error). 실제 브라우저 필요. 옛 코빗 CDN(portal-cdn.korbit.co.kr/…/korbit_Research_YYYY-MM-DD.pdf) 은 2026-04-24까지 살아 있음."
       }
     },
     {
@@ -70,10 +93,14 @@
       "home": "https://hashedopenresearch.com/research",
       "group": "crypto_research",
       "collect": {
-        "try": ["https://hashedopenresearch.com/research", "https://hashedopenresearch.com/sitemap.xml"],
+        "try": [
+          "https://hashedopenresearch.com/research",
+          "https://hashedopenresearch.com/sitemap.xml"
+        ],
         "itemUrl": "https://hashedopenresearch.com/research/<uuid>",
         "language": "한국어 제목 또는 한국어 본문만. 영문 전용 보고서(예: 'The Future of Digital Assets and Capital Markets…')는 한국어판이 따로 없으면 제외",
-        "summaryFrom": "목록의 요약 또는 보고서 요약(Executive Summary) 첫 문장"
+        "summaryFrom": "목록의 요약 또는 보고서 요약(Executive Summary) 첫 문장",
+        "survey_2026_11_10": "2026-11-10 확인: /research 정적 목록 67건(한·영·일 혼재, 날짜 없음). 상세 페이지는 월 단위 날짜만 표시 → publishedAt YYYY-MM. PDF 는 /api/download/<uuid>?type=pdf."
       }
     },
     {
@@ -82,11 +109,15 @@
       "home": "https://upbitcare.com/academy/research",
       "group": "exchange",
       "collect": {
-        "try": ["https://upbitcare.com/academy/research", "https://m.upbitcare.com/academy/research"],
+        "try": [
+          "https://upbitcare.com/academy/research",
+          "https://m.upbitcare.com/academy/research"
+        ],
         "itemUrl": "https://upbitcare.com/academy/research/<숫자 id>",
         "language": "한국어",
         "filter": "조사·연구 보고서만. 교육 콘텐츠(/academy/education)·공지는 제외",
-        "summaryFrom": "글 상단 요약"
+        "summaryFrom": "글 상단 요약",
+        "survey_2026_11_10": "2026-11-10 확인: 조사·연구 목록은 클라이언트 렌더링(빈 페이지). 글의 이전/다음 링크 체인으로 수집. 같은 id 가 /academy/education/… 으로도 열리므로 \"~란 무엇인가\" 교육 글은 제외."
       }
     },
     {
@@ -95,11 +126,15 @@
       "home": "https://www.kcmi.re.kr/report/report_list",
       "group": "institute",
       "collect": {
-        "try": ["https://www.kcmi.re.kr/report/report_list", "https://www.kcmi.re.kr/publications/pub_list?zcd=002001016"],
+        "try": [
+          "https://www.kcmi.re.kr/report/report_list",
+          "https://www.kcmi.re.kr/publications/pub_list?zcd=002001016"
+        ],
         "itemUrl": "https://www.kcmi.re.kr/report/report_view?report_no=<n>  또는 https://www.kcmi.re.kr/publications/pub_detail_view?...",
         "language": "한국어",
         "filter": "제목·요약에 디지털자산·가상자산·암호화 자산·스테이블코인·토큰(화)·블록체인·CBDC·STO·비트코인 중 하나가 있는 보고서만 (종합 연구기관이므로 그 외는 제외)",
-        "summaryFrom": "보고서 요약"
+        "summaryFrom": "보고서 요약",
+        "survey_2026_11_10": "2026-11-10 확인: 목록은 정적 4건 + 더보기 동적. 보고서 페이지의 관련 보고서 링크와 검색으로 확장. report_view?report_no=만 쓰면 다른 보고서가 뜨는 경우가 있어 전체 쿼리 유지."
       }
     },
     {
@@ -108,11 +143,14 @@
       "home": "https://www.kif.re.kr/kif4/publication/pub_list?mid=20",
       "group": "institute",
       "collect": {
-        "try": ["https://www.kif.re.kr/kif4/publication/pub_list?mid=20"],
+        "try": [
+          "https://www.kif.re.kr/kif4/publication/pub_list?mid=20"
+        ],
         "itemUrl": "https://www.kif.re.kr/kif4/publication/pub_detail?...",
         "language": "한국어",
         "filter": "kcmi 와 같은 디지털자산 키워드 필터",
-        "summaryFrom": "보고서 요약"
+        "summaryFrom": "보고서 요약",
+        "survey_2026_11_10": "2026-11-10 확인: kif4 상세 페이지 본문이 JS 렌더링(제목·날짜·요약 없음), kif3/kif2 는 robots 차단. 실제 브라우저 또는 내부 API 필요."
       }
     },
     {
@@ -128,7 +166,8 @@
         "itemUrl": "https://www.bok.or.kr/portal/bbs/<게시판>/view.do?nttId=<n>&menuNo=<n>",
         "language": "한국어",
         "filter": "지급결제조사자료·BOK이슈해설 중 스테이블코인·CBDC·디지털자산·토큰화·가상자산 관련만",
-        "summaryFrom": "게시글 요약 또는 첫 문단"
+        "summaryFrom": "게시글 요약 또는 첫 문단",
+        "survey_2026_11_10": "2026-11-10 확인: list.do 는 수집 환경에서 승인 필요. 검색 + 게시글의 관련 자료 링크로 수집. 이슈해설(영상)·연간 지급결제보고서는 제외."
       }
     },
     {
@@ -146,16 +185,75 @@
         "language": "한국어",
         "filter": "증권사 리서치센터 발행물 중 가상자산·디지털자산·비트코인·스테이블코인·블록체인·토큰증권 관련만. 요약에는 '<증권사명> · ' 를 앞에 붙인다",
         "summaryFrom": "컨센서스 목록의 요약 또는 PDF 첫 페이지 요약",
-        "note": "한화투자증권(hanwhawm.com 리서치 게시판)·KB증권·NH투자증권·신한투자증권 등은 개별 사이트가 로그인/동적 페이지라 컨센서스 경유가 현실적"
+        "note": "한화투자증권(hanwhawm.com 리서치 게시판)·KB증권·NH투자증권·신한투자증권 등은 개별 사이트가 로그인/동적 페이지라 컨센서스 경유가 현실적",
+        "survey_2026_11_10": "2026-11-10 확인: 키움(bbn.kiwoom.com/rfBC####, HTML 변환 PDF)·삼성(디지털 자산 Weekly PDF)·신한(shinhangroup.com 인사이트 재게시)·iM증권(PDF) 수집. 한화·메리츠·한경컨센서스 robots 차단. 공개 목록: https://www.imfnsec.com/mobile/research/rs01.jsp?bid=R_E03&isSmartHi=null"
       }
     }
   ],
   "candidates_to_evaluate": [
-    { "name": "빗썸 리서치", "note": "보고서 목록 페이지가 확인되면 exchange 그룹으로 추가" },
-    { "name": "코인원 리서치", "note": "상동" },
-    { "name": "KODA(한국디지털에셋)", "note": "한국어 보고서 발행 시 추가" },
-    { "name": "삼정KPMG·삼일PwC·딜로이트안진 디지털자산 보고서", "note": "국내 회계법인 발간물. 목록 페이지에서 가상자산 보고서만 골라낼 수 있으면 institute 그룹으로 추가" },
-    { "name": "DSRV·Presto Research", "note": "국내 팀이지만 영문 위주. 한국어판이 있을 때만" }
+    {
+      "name": "빗썸 리서치",
+      "verdict": "제외",
+      "note": "리서치센터 2023-06-02 폐쇄"
+    },
+    {
+      "name": "코인원 리서치",
+      "verdict": "제외",
+      "note": "coinone.co.kr/insight 는 시세 테이블, 보고서 없음"
+    },
+    {
+      "name": "KODA(한국디지털에셋)",
+      "verdict": "제외",
+      "note": "리서치 메뉴 없음, 영문 뉴스만"
+    },
+    {
+      "name": "삼일PwC Issue Brief",
+      "verdict": "추가 후보",
+      "home": "https://www.pwc.com/kr/ko/insights/issue-brief.html",
+      "note": "공개 PDF, 가상자산 키워드 필터로 수집 가능"
+    },
+    {
+      "name": "삼정KPMG 인사이트",
+      "verdict": "보류",
+      "home": "https://kpmg.com/kr/ko/insights.html",
+      "note": "전용 시리즈 없음, 비정기"
+    },
+    {
+      "name": "딜로이트안진 디지털자산센터",
+      "verdict": "보류",
+      "note": "4건 정적, 날짜 미표기"
+    },
+    {
+      "name": "DSRV(Medium)",
+      "verdict": "보류",
+      "note": "한·영 혼재, 기술 중심"
+    },
+    {
+      "name": "Presto Research",
+      "verdict": "제외",
+      "note": "영문 전용"
+    },
+    {
+      "name": "블록미디어 리서치",
+      "verdict": "제외",
+      "note": "절반이 타이거리서치 재게시 — 별도 소스로 두지 않음"
+    },
+    {
+      "name": "미래에셋증권 디지털자산 Bi-weekly",
+      "verdict": "brokers 에 포함",
+      "note": "PDF 확인됨(2026-04-22 등)"
+    }
   ],
-  "excluded_foreign": ["Glassnode", "Coin Metrics", "a16z", "Messari", "Galaxy Research", "Delphi", "Kaiko", "CryptoQuant(영문)", "Binance Research", "Grayscale Research"]
+  "excluded_foreign": [
+    "Glassnode",
+    "Coin Metrics",
+    "a16z",
+    "Messari",
+    "Galaxy Research",
+    "Delphi",
+    "Kaiko",
+    "CryptoQuant(영문)",
+    "Binance Research",
+    "Grayscale Research"
+  ]
 }
