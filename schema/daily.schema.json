@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DailyMarketBrief",
+  "description": "매일 오전 9시(KST) 발행. 핵심은 '왜 움직였는가'의 인과관계. 확인되지 않으면 '원인 불명'으로 적는다.",
+  "type": "object",
+  "required": ["id", "date", "asOf", "regime", "overview", "movers", "sources"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "date": { "type": "string", "format": "date", "description": "발행일 (KST)" },
+    "asOf": { "type": "string", "description": "데이터 조회 시각 ISO8601 (KST)" },
+    "window": { "type": "string", "description": "분석 구간. 기본 24시간, 월요일은 주말 포함 72시간" },
+    "regime": {
+      "type": "object",
+      "required": ["label", "summary"],
+      "properties": {
+        "label": { "type": "string", "enum": ["상승장", "하락장", "횡보장", "혼조"] },
+        "summary": { "type": "string", "description": "2~3문장. BTC·ETH·전체 시총 변동과 그 배경(거시 이벤트가 있으면 날짜와 함께)" }
+      }
+    },
+    "overview": {
+      "type": "array",
+      "description": "시장 한눈에 보기 표 (6~10행)",
+      "items": {
+        "type": "object",
+        "required": ["label", "value"],
+        "properties": { "label": { "type": "string" }, "value": { "type": "string" }, "note": { "type": "string" } }
+      }
+    },
+    "movers": {
+      "type": "array",
+      "description": "유의미한 상승·하락 (상승 3~5 + 하락 2~3). 시총·거래량 최소 기준을 넘는 종목만",
+      "items": {
+        "type": "object",
+        "required": ["project", "ticker", "direction", "change", "excessVsBtc", "cause", "confidence", "nature"],
+        "properties": {
+          "project": { "type": "string" },
+          "ticker": { "type": "string" },
+          "direction": { "type": "string", "enum": ["up", "down"] },
+          "change": { "type": "string", "description": "예: +12.4%" },
+          "excessVsBtc": { "type": "string", "description": "BTC 대비 초과수익, 예: +14.1%p" },
+          "marketCap": { "type": "string" },
+          "volume24h": { "type": "string" },
+          "cause": {
+            "type": "object",
+            "required": ["headline", "chain", "verified"],
+            "properties": {
+              "headline": { "type": "string", "description": "원인 한 줄. 확인 안 되면 '원인 불명 — 개별 촉매 미확인'" },
+              "chain": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "인과 사슬을 단계로. 예: ['10/16 14:00 Eden 발표', '발표 후 2시간 내 24h 거래량 3배', '가격 +9%']. 각 단계는 날짜/시각 또는 수치가 있어야 함"
+              },
+              "verified": { "type": "boolean", "description": "사건 시각과 가격 반응 시각의 선후가 확인됐는가" },
+              "caveat": { "type": "string", "description": "반대 근거나 한계 (예: '발표 5시간 전에 이미 상승 시작')" }
+            }
+          },
+          "flows": {
+            "type": "object",
+            "description": "수급 지표 (있으면). 수급이 주도한 움직임이면 여기 숫자가 원인의 근거",
+            "properties": {
+              "openInterest": { "type": "string" },
+              "oiToMcap": { "type": "string" },
+              "fundingRate": { "type": "string" },
+              "liquidations": { "type": "string" },
+              "perpToSpotVolume": { "type": "string" },
+              "exchangeNetflow": { "type": "string" }
+            }
+          },
+          "confidence": { "type": "string", "enum": ["A", "B", "C"], "description": "A=사건·시각·반응이 모두 확인 / B=사건은 확인, 반응 연결은 정황 / C=추정 수준" },
+          "nature": { "type": "array", "items": { "type": "string" }, "description": "예: ['이벤트성 호재', '파생 수급', '토큰 공급 변화', '시장 베타', '원인 불명']" }
+        }
+      }
+    },
+    "excluded": {
+      "type": "array",
+      "description": "상승률은 높지만 유동성 부족 등으로 제외한 종목과 이유",
+      "items": { "type": "object", "properties": { "ticker": { "type": "string" }, "reason": { "type": "string" } } }
+    },
+    "highlight": { "type": "string", "description": "오늘 가장 주목할 움직임 1개와 왜 (3~4문장)" },
+    "sources": {
+      "type": "array",
+      "items": { "type": "object", "required": ["title", "url"], "properties": { "title": { "type": "string" }, "url": { "type": "string" } } }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "id": "2026-11-09-ena",
+  "date": "2026-11-09",
+  "slot": "top100",
+  "project": "Ethena",
+  "ticker": "ENA",
+  "sector": "Synthetic Dollar · Delta-Neutral Stablecoin",
+  "oneLiner": "쉽게 말하면, 코인·스테이블코인을 담보로 받고 거래소에서 같은 금액만큼 공매도를 걸어 달러 가치를 고정시킨 '합성 달러(USDe)'를 발행하는 프로토콜이며, ENA는 그 운영 재단의 거버넌스 토큰이다.",
+  "krwMarkets": ["빗썸 (2025-02-25 KRW 상장)", "업비트 (2025-07-11 KRW·BTC·USDT 상장)"],
+  "sections": {
+    "what": {
+      "title": "① 뭐하는 프로젝트인가",
+      "body": [
+        "Ethena는 은행 예금이나 국채 대신 **델타 중립 포지션**으로 달러 가치를 만드는 합성 달러 USDe와, 이를 예치하면 수익이 붙는 sUSDe를 발행한다. 담보(stETH·BTC·스테이블코인 등)를 받아 보관하고, 같은 명목금액만큼 무기한 선물 공매도를 걸어 가격 변동을 상쇄한다. 공매도 측이 받는 펀딩비와 스테이킹·대출 수익이 sUSDe 이자의 원천이다.",
+        "만들어진 이유는 두 가지다. 첫째, USDT·USDC는 은행 계좌와 국채에 묶여 있어 발행사의 법정화폐 접근권에 의존한다. Ethena는 암호자산 시장 내부의 수익(펀딩비)만으로 달러를 만들어 그 의존을 줄이려 했다. 둘째, 기존 스테이블코인은 보유자에게 이자를 주지 않는데, sUSDe는 수익을 보유자에게 돌린다.",
+        "이번 리포트의 계기는 2026년 8~10월의 **구조 변화**다. 8월 27일 Ethena Foundation이 (1) 시드 투자자 락업 물량 장외 매입, (2) 투자자 월별 언락 폐지·10월 5일 일괄 해제, (3) 프로토콜 IP·경제적 권리를 Ethena Labs 주주가 아닌 Foundation에 귀속시키는 Master Framework Agreement, (4) 매출→ENA 바이백 Fee Switch를 발표했고, Fee Switch는 9월 2일 거버넌스에서 가결됐다. 또 2026년 4월 이후 USDe 담보의 절반 이상이 '선물 헤지'에서 '대출'로 옮겨가 발행 구조 자체가 바뀌었다."
+      ]
+    },
+    "tech": {
+      "title": "② 기술 구조 — 자금 흐름, 신뢰 가정, 보안 경계",
+      "body": [
+        "**전체 구도.** USDe는 온체인 토큰이지만 담보의 가치 고정은 오프체인에서 일어난다. 온체인에는 발행·상환 계약(EthenaMinting), 스테이킹 금고(StakedUSDeV2, ERC-4626), 쿨다운 보관소(USDeSilo)가 있고, 오프체인에는 Ethena가 운영하는 '헤징 시스템'(가격 산정·주문 라우팅·리스크 한도 모니터링 서비스 묶음)과 Copper ClearLoop·Ceffu·Fireblocks 같은 **Off-Exchange Settlement(OES)** 커스터디, 그리고 실제 공매도가 체결되는 중앙화 거래소가 있다. 즉 USDe 1개의 가치는 '스마트컨트랙트가 보증'하는 것이 아니라 'Ethena가 OES에 보관한 담보 + 거래소 선물 포지션의 합산 가치'가 1달러에 머무르도록 Ethena가 운영한다는 사실에 달려 있다.",
+        "**발행 측 권한 구조.** EthenaMinting v2 기준으로 발행·상환은 화이트리스트된 '벤팩터(benefactor)'만 가능하고, 일반 사용자는 Curve·Uniswap 등 2차 시장에서 USDe를 산다. 주문은 EIP-712 서명(스마트컨트랙트 지갑은 EIP-1271)으로 Ethena API가 가격을 제시하고 온체인에서 검증한다. 블록당 발행·상환 한도가 자산별·자산군별·전체 상한으로 걸려 있으며, 이 한도는 Ethena Dev 멀티시그가 조정한다. 역할은 Owner 멀티시그(담보자산·커스터디 주소 추가/삭제), Admin 멀티시그(Minter·Redeemer·Gatekeeper 역할 부여/회수), Minter·Redeemer 각 20개 EOA(Ethena 운영, mint()·redeem()·transferToCustody 호출), Gatekeeper 3개 이상 EOA(Ethena + 외부 기관, 발행·상환 즉시 중단 및 Minter·Redeemer 역할 박탈 가능)로 나뉜다. 공식 문서는 멀티시그 서명 임계치(n-of-m)와 타임락 기간을 적시하지 않는다 → **확인 불가**.",
+        "**담보 구성의 변화 (2026).** 원래 USDe는 'stETH/BTC 현물 + 거래소 무기한 선물 공매도'가 거의 전부였다. 2026년 4월 Risk Committee 검토를 거쳐 기관 대출(Anchorage 계열 A1 Ltd.·Maple·Coinbase Asset Management·FalconX·Kraken), RWA(토큰화 국채·CLO·단기 크레딧), 비(非)암호자산 베이시스(주식·원자재 선물), 프라임 렌딩이 담보 카테고리로 추가됐다. LlamaRisk의 2026-10-12 집계 기준 구성은 DeFi 대출(Aave·Morpho·Jupiter Lend·Kamino) 36.9%, 기관 대출 14.3%, 유동 스테이블코인 24.9%, 암호자산 베이시스 17.6%, RWA 6.0%다. 즉 **'선물 헤지 합성 달러'라는 마케팅 설명과 달리 지금 실제 구조는 '대출·스테이블코인 중심 담보 포트폴리오에 베이시스 트레이드가 일부 섞인 것'**이다. 신뢰 대상도 거래소 중심에서 대출 상대방·DeFi 프로토콜 중심으로 이동했다.",
+        "**보안 경계.** 스마트컨트랙트 감사는 v1(2023-10 Quantstamp·Spearbit/Cantina, 2023-10-22 Pashov, 2023-11-13 Code4rena 공개감사, Zellic), v2(2024-05-23 Pashov), sENA(2024-09-02 Pashov), USDtb(2024-10 Quantstamp·Cyfrin·Pashov)까지 공식 문서에 기록돼 있으며 '치명·고위험 미발견'으로 보고됐다. 단 2026년 신규 담보 카테고리(기관 대출·RWA)와 동적 쿨다운 관련 추가 감사는 문서에 없다 → 확인 불가. Immunefi 버그바운티는 '예정'으로만 표기돼 있다. 담보 검증은 (a) 월간 커스터디안 증명(2026-10-10 발행된 9월분이 22번째, '담보가 거래소에 직접 존재하지 않음' 확인), (b) 주간 Proof of Reserves 게시, (c) LlamaRisk 등 Risk Committee 구성원의 외부 평가(2026-10-12 기준 준비금 비율 101.43%, Reserve Fund 약 6,257만 달러)로 이뤄진다. 다만 Risk Committee 멤버 LlamaRisk가 동시에 PoR 독립 검증자이자 Aave DAO의 자금 지원을 받는 점은 본인들이 이해상충으로 공시하고 있다. 과거 사고는 2025-10-10: 바이낸스에서 USDe가 일시 0.65달러까지 하락했으나 온체인 가격은 1달러 근처를 유지했고, 24시간 내 약 20억 달러 상환이 정상 처리됐다. 원인은 바이낸스 내부 가격 참조(오라클)와 얇은 오더북이었고 담보 손상은 없었다. 그러나 이후 USDe 공급은 148억 달러(2025-10-10)→약 64억 달러(2025-12)로 줄었다. 프로토콜 자체 담보 손실 사고는 공개 기록상 없다.",
+        "**경쟁 구조와의 기술적 차이.** 법정화폐 스테이블코인(USDC)은 은행 예금·국채를 발행사가 보유하고 상환은 발행사 계좌에서 나오므로 신뢰 대상이 '발행사+은행+규제 당국'이다. Ethena는 담보를 OES 커스터디에 두고 거래소에는 마진 사용권만 위임해 **거래소 파산 시 원금은 커스터디에 남지만, 거래소에 쌓인 미실현 PnL은 4시간 롤링 정산 전까지 거래소 위험에 노출**되는 구조다. 같은 델타 중립 계열인 Resolv(USR)는 손실을 먼저 흡수하는 별도 후순위 토큰(RLP)을 두는 반면, Ethena는 sUSDe 수익률을 0으로 낮추고 Reserve Fund(약 6,257만 달러, 공급 대비 약 1.3%)로 음(-)의 펀딩 구간을 메우는 방식이라 **손실 흡수층이 얇고 외부 토큰 없이 재단 자금에 의존**한다는 점이 다르다. 2026년 담보 다변화로 이 차이는 더 커졌다: 대출형 담보는 펀딩비 역전 위험 대신 차주 신용·프로토콜 리스크를 들여온다."
+      ],
+      "flow": [
+        "① 화이트리스트 벤팩터(마켓메이커·기관)가 Ethereum에서 USDT·USDC·USDtb 등 담보를 EthenaMinting 컨트랙트에 넘기며 EIP-712 서명 주문을 제출한다. 가격은 Ethena 오프체인 헤징 시스템이 Pyth·Redstone 오라클과 거래소 호가를 참조해 산정·검증한다.",
+        "② Ethena Minter EOA(20개 중 하나)가 mint()를 실행해 USDe를 벤팩터의 수익자 주소로 발행하고, 동시에 transferToCustody로 담보를 Owner 멀티시그가 등록한 OES 커스터디 주소(Copper ClearLoop·Ceffu·Fireblocks)로 보낸다. 블록당 한도·stablesDeltaLimit(USDT/USDC 대비 괴리 bp)를 넘으면 실패한다.",
+        "③ OES 커스터디에 들어간 담보는 Ethena 명의로 온체인에 남고, 커스터디가 거래소(바이낸스·바이빗·OKX 등, 공식 문서는 거래소명을 적시하지 않음)에 '마진 사용권'만 미러링해 준다. 담보 자체는 거래소로 이동하지 않는다.",
+        "④ 헤징 시스템이 수수료·유동성·기존 포지션·펀딩 조건을 보고 어느 거래소에 얼마만큼 공매도를 낼지 라우팅해 무기한 선물 숏을 체결한다(2026-10-12 기준 이 베이시스 담보는 전체의 17.6%). 나머지 담보는 Risk Committee가 정한 한도 안에서 Aave·Morpho 등 DeFi 대출, Maple·A1 Ltd. 등 기관 대출, 토큰화 국채·크레딧(RWA), 유동 스테이블코인 버퍼로 배분된다.",
+        "⑤ 거래소에서 발생한 선물 PnL은 4시간 롤링 사이클로 OES 커스터디와 정산된다. 정산 전까지의 미실현 PnL과 거래소가 커스터디에 미리 예치한 담보가 거래소 신용위험의 노출 범위다.",
+        "⑥ 펀딩비·대출 이자·RWA 수익이 모이면 Ethena가 8시간마다 USDe로 StakedUSDeV2(sUSDe, ERC-4626) 컨트랙트에 송금하고, 8시간에 걸쳐 선형 베스팅되어 sUSDe의 USDe 환산가치가 올라간다. 수익이 음(-)이면 Reserve Fund(별도 지갑)가 메우고 sUSDe 보상은 0이 된다. Reserve Fund로의 매출 배분율은 현재 거버넌스 결정으로 0%다.",
+        "⑦ sUSDe 보유자가 언스테이킹하면 cooldownShares()가 호출되어 USDe가 USDeSilo 컨트랙트로 옮겨지고, Risk Committee가 정하는 동적 쿨다운(2026-08-25 기준 1일, 2026-03까지는 고정 7일) 뒤 인출된다. 쿨다운 길이는 담보 유동성·커버리지·대기열 압력에 따라 재단 측이 늘릴 수 있다.",
+        "⑧ USDe 상환은 벤팩터가 Redeemer EOA를 통해 redeem()을 호출해 USDe를 소각하고 PYUSD·USDC·USDG·USDT·USDm·USDtb(DAI는 소액 한도) 중 하나로 돌려받는다. 이때 헤징 시스템이 대응되는 숏을 청산하고 커스터디에서 담보를 회수한다. 2차 시장 가격이 1달러에서 벗어나면 벤팩터가 이 발행·상환 창구를 이용해 차익거래로 페그를 되돌리는 것이 페그 유지 메커니즘이다.",
+        "⑨ Gatekeeper EOA(Ethena + 외부 기관)는 잘못된 가격에 체결되는 발행·상환을 감지하면 즉시 mint/redeem을 비활성화하고 Minter·Redeemer 역할을 제거할 수 있다. 이것이 온체인 측의 유일한 긴급 중단 장치다."
+      ],
+      "trustAssumptions": [
+        "**Ethena Labs 운영팀**: 헤징 시스템(가격 산정·주문 라우팅·정산)은 오프체인 사설 소프트웨어이며 자동화되어 있지만 '즉시 수동 개입'이 설계에 포함돼 있다. 담보가 실제로 델타 중립인지, 어느 거래소에 얼마나 노출돼 있는지는 Ethena가 제공하는 대시보드와 월간 증명에 의존해야 한다.",
+        "**Owner·Admin 멀티시그 + Minter/Redeemer EOA 20개 + Gatekeeper**: 멀티시그 임계치와 타임락은 문서에 없다(확인 불가). Minter 키 20개가 탈취되면 블록당 한도 안에서 담보 없는 USDe 발행이 가능하며, 이를 막는 것은 Gatekeeper의 사후 중단뿐이다.",
+        "**OES 커스터디안(Copper ClearLoop·Ceffu·Fireblocks)**: 담보의 법적 소유는 Ethena에 남는다고 문서는 밝히지만, 거래소 파산 시 PnL 회수는 '커스터디 제공자의 협조와 법적 행위'에 달려 있다고 스스로 적시한다. 파산 격리(bankruptcy remoteness)에 대한 법적 의견서는 공개 문서에 없다(확인 불가).",
+        "**중앙화 거래소(선물 체결 상대)**: 4시간 정산 주기 사이의 미실현 PnL은 거래소 신용위험. 2025-10-10 사례처럼 거래소 내부 가격 참조가 흔들리면 온체인 페그와 무관하게 거래소 내 USDe 담보가 청산될 수 있다.",
+        "**대출 상대방·DeFi 프로토콜(2026년 이후 담보의 51.2%)**: Aave·Morpho·Jupiter Lend·Kamino의 스마트컨트랙트 및 청산 메커니즘, Maple·A1 Ltd.(Cayman)·FalconX·Kraken·CBAM 등 기관 차주의 상환 능력. 초과담보라 하더라도 상환 시 유동성은 대출 만기·프로토콜 인출 가능 잔고에 구속된다.",
+        "**오라클(Pyth·Redstone) 및 거래소 호가**: 발행·상환 가격 산정에 쓰인다. 오라클 오류 시 방어선은 stablesDeltaLimit와 Gatekeeper.",
+        "**Risk Committee(Blockworks Advisory·LlamaRisk·Kairos Research, 6개월 임기) + Ethena Foundation**: 담보 카테고리 한도, 동적 쿨다운 길이, Reserve Fund 배분율(현재 0%)을 결정한다. 사실상 사용자의 인출 속도를 재단 측이 조절할 수 있는 구조다. LlamaRisk는 PoR 검증자·Aave DAO 피지원 기관을 겸한다(본인 공시).",
+        "**Reserve Fund(약 6,257만 달러, 2026-10-12)**: 음의 펀딩·담보 손실의 1차 완충. 공급 대비 약 1.3% 수준이며 신규 매출 유입은 0%이므로 규모는 거버넌스가 바꾸기 전까지 정체된다.",
+        "현재 구조 vs 장기 목표: 문서는 '외부 기관이 Gatekeeper로 참여'와 'Immunefi 버그바운티'를 계획으로 적고 있으며, 커스터디안 증명도 ISAE·SOC 기준의 회계감사 의견이 아니라 커스터디안 잔고 확인서 성격이다."
+      ]
+    },
+    "usage": {
+      "title": "③ 실제 사용량과 매출",
+      "body": [
+        "**규모.** DefiLlama 기준 Ethena 계열 TVL은 53.6억 달러(2026-11-09, api.llama.fi/tvl/ethena), 그중 USDe는 49.2억 달러(2026-11-07, Ethereum)다. LlamaRisk 집계 USDe 유통량은 47.6억 달러(2026-10-12), 분기 말 기준 약 49.4억 달러(2026-09-30). 2025-10-10 고점 148억 달러 대비 약 1/3 수준으로, 10·10 사태 이후 7월 저점까지 줄다가 3분기에 소폭 회복한 궤적이다. 체인은 DefiLlama 집계상 Ethereum 단일이며, 다른 체인의 USDe는 LayerZero OFT 브리지 토큰이라 별도 TVL로 잡히지 않는다.",
+        "**수수료·매출.** DefiLlama 2026-11-09 기준 30일 Fees(스테이킹 보상+수익 분배+발행 수수료 합계)는 1,731만 달러, 1년 2.35억 달러, 누적 10.79억 달러다. 반면 DefiLlama가 'Revenue'로 정의하는 Reserve Fund 유입분은 30일 9.0만 달러, 1년 201만 달러에 그친다(누적 3.33억 달러). 이는 Reserve Fund 배분율을 0%로 두고 매출 전액을 sUSDe 보상·인센티브로 돌리고 있기 때문이며, 프로토콜(재단)에 남는 돈이 거의 없다는 뜻이다. sUSDe 7일 평균 APY는 3분기 초 3.8%→분기 말 5.0%(TronWeekly 인용, 공개정보 기반).",
+        "**스테이킹·페그·통합.** LlamaRisk 2026-08-25 집계에서 USDe 2차 시장가는 $0.9998, 최근 9개월 변동 범위는 +0.03%~-0.22%로 10·10 사태(바이낸스 외 온체인 최저 약 $0.97) 이후 안정적이다. 반면 sUSDe 공급은 2025-11 말 36.0억 개 이후 감소세이고 USDe 중 스테이킹 비중은 2026-07~08 한 달간 15.1% 줄었다. 즉 수익 추구 자금보다 담보·결제용 보유가 늘고 있다는 신호다. 주요 수요처는 Aave V3/V4(USDe·sUSDe·Pendle PT 담보 온보딩이 2026년에도 월 단위로 진행), Morpho, Pendle이며, 이들 DeFi 통합이 USDe 수요와 동시에 Ethena 담보의 36.9%(DeFi 대출)를 구성하는 순환 구조라는 점은 기록해 둘 만하다.",
+        "**TVL 대비 매출 평가.** 연 Fees 2.35억 달러 / TVL 53.6억 달러 ≈ 4.4%로, 담보 포트폴리오의 운용수익률과 거의 같다. 즉 Ethena는 '수수료 사업'이 아니라 '운용수익을 예치자에게 거의 전부 넘기는 펀드 구조'이며, 프로토콜 몫(Revenue/TVL)은 사실상 0%에 가깝다. 활성 주소 수는 1차 출처에서 확인하지 못했다(확인 불가)."
+      ]
+    },
+    "tokenomics": {
+      "title": "④ 토크노믹스",
+      "body": [
+        "총·최대공급 150억 ENA, 유통 135억(90.0%, CoinGecko·Tokenomist 2026-11-09). 단 Tokenomist의 '베스팅 기준 언락분'은 71.9%(약 107.9억)로 유통량과 불일치하며, 10월 5일 투자자 물량 일괄 해제분이 '유통'으로 잡혔으나 StablecoinX(약 20%)가 별도 락업 계약 하에 있는 데서 오는 차이로 보인다(공개정보 기반 추정).",
+        "배분: 핵심 기여자 30% · 생태계 28% · 투자자 25% · 재단 15% · Binance Launchpool 2%. 투자자 월별 언락은 2026-10-05 일괄 해제로 종료. 남은 베스팅은 팀 9,375만 ENA/월(매월 5일, 2028-03까지)과 재단 4,062.5만 ENA/월(매월 2일, 2028-04까지), 합계 약 1.34억 ENA/월(총공급 0.9%).",
+        "가치귀속: **indirect**. Fee Switch(USDe 14일 평균 공급 75억 달러 도달 시 매출의 5%→100억 10%→150억 15%→200억 20%를 ENA 매입, 순액의 95% 바이백·5% 성장 재원)는 2026-09-02 가결됐지만 현재 USDe 공급(약 49억 달러)이 1단계의 65% 수준이라 **아직 1달러도 집행되지 않았다**. 바이백 토큰 소각 여부도 미정. 현재 ENA 보유 가치는 거버넌스와 sENA 스테이킹 생태계 보상뿐이다."
+      ],
+      "valueCapture": "indirect",
+      "nextUnlock": "2026-12-02 · 4,062.5만 ENA 재단분 (총공급 0.27%) / 2026-12-05 · 9,375만 ENA 팀분 (0.625%)"
+    },
+    "risks": {
+      "title": "⑤ 리스크",
+      "body": [
+        "**기술 1 — 담보 구성 전환에 따른 상환 유동성.** 담보의 51.2%가 DeFi·기관 대출로 바뀌어 대규모 상환 시 즉시 회수 가능한 자산은 유동 스테이블코인 24.9%와 베이시스 포지션 청산분뿐이다. 동적 쿨다운으로 재단이 인출 속도를 늦출 수 있다는 점이 완충이자 동시에 '인출 제한' 위험이다.",
+        "**기술 2 — 오프체인 운영·키 관리.** 헤징 시스템은 비공개 소프트웨어이고 Minter/Redeemer EOA 20개와 멀티시그 임계치·타임락이 미공개다. 2026년 신규 담보 카테고리에 대한 외부 감사도 확인되지 않는다.",
+        "**사업 — 매출이 프로토콜에 남지 않는 구조.** Reserve Fund 유입 0%, Fee Switch 미발동으로 재단 수입은 사실상 없다. USDe 공급이 75억 달러까지 회복되지 못하면 ENA 가치귀속은 계속 약속 단계에 머문다. 10·10 사태 이후 공급이 2/3 줄어든 신뢰 회복 문제도 미해결이다.",
+        "**공급 — 잔여 베스팅과 재단 보유 물량.** 매월 약 1.34억 ENA(0.9%)가 2028년 초까지 풀리고, 재단이 장외 매입한 시드 투자자 물량(수량·가격 비공개)과 StablecoinX 보유분(약 20%)의 처분 조건이 공개되지 않았다."
+      ]
+    }
+  },
+  "numbers": [
+    { "label": "시총 순위 / 시가총액", "value": "#45 / 약 20.5억 달러", "note": "CoinGecko 2026-11-09" },
+    { "label": "가격 / FDV", "value": "$0.1517 / 약 22.7억 달러", "note": "CoinGecko 2026-11-09, ATH $1.52 대비 -90%" },
+    { "label": "유통 / 총공급", "value": "135억 / 150억 ENA (90.0%)", "note": "CoinGecko·Tokenomist 2026-11-09; 베스팅 기준 언락 71.9%" },
+    { "label": "Ethena TVL / USDe TVL", "value": "53.6억 / 49.2억 달러", "note": "DefiLlama 2026-11-09 / 2026-11-07" },
+    { "label": "USDe 공급 고점 대비", "value": "148억(2025-10-10) → 47.6억 달러(2026-10-12)", "note": "21shares·LlamaRisk" },
+    { "label": "30일 Fees / Reserve Fund 유입", "value": "1,731만 / 9.0만 달러", "note": "DefiLlama 2026-11-09" },
+    { "label": "1년 Fees / 누적 Fees", "value": "2.35억 / 10.79억 달러", "note": "DefiLlama 2026-11-09" },
+    { "label": "담보 구성", "value": "DeFi대출 36.9% · 스테이블 24.9% · 베이시스 17.6% · 기관대출 14.3% · RWA 6.0%", "note": "LlamaRisk 2026-10-12" },
+    { "label": "준비금 비율 / Reserve Fund", "value": "101.43% / 약 6,257만 달러", "note": "2026-10-12" },
+    { "label": "sUSDe 쿨다운", "value": "1일 (동적, 2026-03 이전 고정 7일)", "note": "LlamaRisk 2026-08-25" },
+    { "label": "Fee Switch 1단계 기준", "value": "USDe 14일 평균 75억 달러 (현재의 약 1.5배)", "note": "2026-09-02 가결, 찬성 1,779만 ENA" },
+    { "label": "다음 언락", "value": "12-02 재단 4,062.5만 · 12-05 팀 9,375만 ENA", "note": "Tokenomist 2026-11-09, 합계 총공급 0.9%" }
+  ],
+  "watchlist": [
+    "USDe 14일 평균 공급이 75억 달러에 근접하는지 (Fee Switch 발동 조건)",
+    "담보 구성에서 유동 스테이블코인 비중과 대출 비중의 변화, 기관 대출 상대방 추가·교체 (LlamaRisk 월간 평가·Transparency 대시보드)",
+    "Risk Committee의 동적 쿨다운 조정 이력 — 늘어나면 유동성 스트레스 신호",
+    "Reserve Fund 규모와 매출 배분율 0% 유지 여부",
+    "Master Framework Agreement 전문 공개 여부와 바이백 토큰 처리(소각/보유) 결정",
+    "커스터디안 월간 증명에 ISAE 3000 등 제3자 보증 의견이 붙는지"
+  ],
+  "verdict": "Ethena는 '거래소 선물 헤지 합성 달러'에서 2026년 들어 '대출·스테이블코인 중심 담보 포트폴리오 + 재단이 유동성(쿨다운)을 조절하는 구조'로 바뀌었고, 신뢰 대상도 거래소에서 대출 상대방·DeFi 프로토콜·Risk Committee로 이동했다. 온체인 계약 감사와 월간 커스터디안 증명은 갖춰져 있지만, 핵심인 헤징·배분 운영은 오프체인이고 멀티시그 임계치·타임락·파산격리 법률 의견은 공개돼 있지 않다. ENA는 Fee Switch 가결로 가치귀속 '경로'는 생겼으나 발동 조건(USDe 75억 달러)까지 거리가 있어, 현재 시점의 ENA 가치는 재단 거버넌스에 대한 청구권에 가깝다.",
+  "sources": [
+    { "title": "Ethena Docs – How USDe works", "url": "https://docs.ethena.fi/overview/how-usde-works.md", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – Hedging System", "url": "https://docs.ethena.fi/technical-design/hedging-system.md", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – Mint and Redeem Contract V2", "url": "https://docs.ethena.fi/technical-design/minting-usde/mint-and-redeem-contract-v2.md", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – Matrix of Multisig and Timelocks (Key Trust Assumptions)", "url": "https://docs.ethena.fi/technical-design/key-trust-assumptions/matrix-of-multisig-and-timelocks.md", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – Off-Exchange Settlement in Detail", "url": "https://docs.ethena.fi/backing-custody-and-security/overview/off-exchange-settlement-in-detail.md", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – Backing Assets Overview", "url": "https://docs.ethena.fi/backing-assets/overview.md", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – Reserve Fund", "url": "https://docs.ethena.fi/protocol-overview/reserve-fund.md", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – Staking USDe", "url": "https://docs.ethena.fi/technical-design/staking-usde.md", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – Risk Committee", "url": "https://docs.ethena.fi/protocol-overview/governance/risk-committee.md", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – Audits", "url": "https://docs.ethena.fi/resources/audits", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – Custodian Attestations", "url": "https://docs.ethena.fi/resources/custodian-attestations.md", "accessed": "2026-11-09" },
+    { "title": "Ethena Blog – Custodian Attestations of Assets Backing USDe: September (22nd report, 2026-10-10)", "url": "https://ethena.fi/blog/custodian-attestations-of-assets-backing-usde-september-3", "accessed": "2026-11-09" },
+    { "title": "Ethena Docs – ENA Tokenomics", "url": "https://docs.ethena.fi/overview/ena/tokenomics.md", "accessed": "2026-11-09" },
+    { "title": "The Block – Ethena Foundation proposes fee switch for ENA token buybacks among other updates (2026-08-27)", "url": "https://theblock.co/news/ecosystems/2026-08-27-ethena-foundation-proposes-fee-switch-ena-token-buybacks-other-updates-412951", "accessed": "2026-11-09" },
+    { "title": "Tokenomist Research – Ethena bought out its sellers and deleted the investor unlock calendar (2026-09-02)", "url": "https://tokenomist.ai/research/ethena-bought-out-its-sellers-and-deleted-the-investor-unlock-calendar-the-buyback-replacing-it-arms-at-7-5b-usde", "accessed": "2026-11-09" },
+    { "title": "Tokenomist – Ethena (ENA) unlock schedule", "url": "https://tokenomist.ai/ethena", "accessed": "2026-11-09" },
+    { "title": "KuCoin Blog – Ethena Overhauls ENA Tokenomics (2026-08-31)", "url": "https://www.kucoin.com/blog/ethena-ena-tokenomics-buyback-vc-unlocks", "accessed": "2026-11-09" },
+    { "title": "CoinGecko – Ethena (ENA)", "url": "https://www.coingecko.com/en/coins/ethena", "accessed": "2026-11-09" },
+    { "title": "DefiLlama API – Ethena fees (dailyFees)", "url": "https://api.llama.fi/summary/fees/ethena?dataType=dailyFees", "accessed": "2026-11-09" },
+    { "title": "DefiLlama API – Ethena revenue (dailyRevenue)", "url": "https://api.llama.fi/summary/fees/ethena?dataType=dailyRevenue", "accessed": "2026-11-09" },
+    { "title": "DefiLlama API – Ethena TVL", "url": "https://api.llama.fi/tvl/ethena", "accessed": "2026-11-09" },
+    { "title": "DefiLlama API – Ethena USDe protocol", "url": "https://api.llama.fi/protocol/ethena-usde", "accessed": "2026-11-09" },
+    { "title": "CryptoSlate – Ethena's USDe has 51.2% of backing in lending (LlamaRisk 2026-10-12 데이터 인용, 2026-10-13)", "url": "https://cryptoslate.com/ethenas-usde-has-51-2-of-backing-in-lending-making-redemption-liquidity-the-key-test/", "accessed": "2026-11-09" },
+    { "title": "Aave Governance – LlamaRisk assessment in 'Onboard PT-sUSDe-26NOV2026 to Aave V4 Plus Hub' (2026-08-25 데이터)", "url": "https://governance.aave.com/t/direct-to-aip-onboard-pt-susde-26nov2026-to-aave-v4-plus-hub/25497/2", "accessed": "2026-11-09" },
+    { "title": "Aave Governance – LlamaRisk Insights: Ethena sUSDe Dynamic Cooldown (2026-03-16)", "url": "https://governance.aave.com/t/llamarisk-insights-ethena-susde-dynamic-cooldown/24305", "accessed": "2026-11-09" },
+    { "title": "Unchained – Ethena overhauls USDe reserves with institutional lending and real-world assets (2026-04-07)", "url": "https://unchainedcrypto.com/ethena-overhauls-usde-reserves-with-institutional-lending-and-real-world-assets/", "accessed": "2026-11-09" },
+    { "title": "TronWeekly – Ethena Q3: $4.94B USDe, 101.43% reserve (2026-10-19)", "url": "https://www.tronweekly.com/ethena-q3-bullish-4-94b-usde-101-43/", "accessed": "2026-11-09" },
+    { "title": "21Shares – Why did Ethena's stablecoin remain stable onchain but depegged on Binance? (2025-10-10 사태)", "url": "https://www.21shares.com//research/why-did-ethenas-stablecoin-remain-stable-onchain-but-depegged-on-binance", "accessed": "2026-11-09" },
+    { "title": "Cointelegraph – Ethena USDe market cap drops after October crash (2025-12-23)", "url": "https://cointelegraph.com/news/ethena-usde-market-cap-drops-october-crash-deleveraging", "accessed": "2026-11-09" },
+    { "title": "CoinMarketCap Academy – Ethena (ENA) now available on Bithumb's KRW market (2025-02-25)", "url": "https://coinmarketcap.com/academy/article/ethena-ena-now-available-on-bithumbs-krw-market-alongside-airdrop-promotion", "accessed": "2026-11-09" },
+    { "title": "Coinspeaker – Upbit announces Ethena (ENA) listing (2025-07-11)", "url": "https://www.coinspeaker.com/kr/upbit-announces-ethena-ena-listing-token-explodes-20/", "accessed": "2026-11-09" }
+  ]
+}
