@@ -6,9 +6,9 @@
   "title": "최근 72시간, 이더리움이 비트코인보다 더 크게 하락했다",
   "regime": "하락장",
   "tldr": [
-    "미 증시발 위험회피가 구간을 지배했다. 11/5 나스닥 -5.5%, 11/6 10월 고용 +16.5만(예상 +6.5만), 11/8 엔비디아 CEO 조사 보도(CNBC)가 이어졌다. 알트코인이 메이저보다 약했다.",
-    "11/8~9 24시간 청산 11.6억 달러(롱 87~91%), 11/6 거래일 미 BTC 현물 ETF -4.12억 달러, 주간(11/2~6) -12.8억 달러. 공포·탐욕 지수 27(11/9).",
-    "11/10 22:30 KST 미 10월 CPI, 11/9 거래일 BTC ETF 순유출입(미집계, Farside), 11/10 JCT 약 11.8억 개 언락(유통의 약 10%)을 확인한다."
+    "미 증시 급락(11/5 나스닥 -5.5%)과 고용 서프라이즈가 위험회피를 키웠고, 알트코인이 메이저보다 더 밀렸다.",
+    "청산 11.6억 달러(11/8~9 24시간), BTC ETF -4.12억 달러(11/6 거래일), 공포·탐욕 27이 하락장을 뒷받침한다.",
+    "11/10 22:30 KST 미 CPI, 11/9 거래일 ETF 흐름(미집계), 11/10 JCT 언락(유통의 약 10%)을 확인한다."
   ],
   "keyMetrics": [
     {
@@ -17,11 +17,26 @@
       "basis": "11월 6일 거래일 기준 · Farside",
       "tone": "down",
       "details": [
-        { "label": "11/6 거래일 종목별", "value": "IBIT -$403.0M · FBTC +$42.8M · BITB -$20.6M · ARKB -$20.1M (합계 -$411.9M)" },
-        { "label": "11/5 거래일", "value": "-$430.2M (4.30억 달러 순유출)" },
-        { "label": "주간 (11/2~6)", "value": "-$1,281.7M (12.8억 달러 순유출, 6월 이후 최악)" },
-        { "label": "2026 연초 이후 누적", "value": "-$914.1M (9.14억 달러, 순유출 전환)" },
-        { "label": "11/9 거래일", "value": "미집계 (Farside)" }
+        {
+          "label": "11/6 거래일 종목별",
+          "value": "IBIT -$403.0M · FBTC +$42.8M · BITB -$20.6M · ARKB -$20.1M (합계 -$411.9M)"
+        },
+        {
+          "label": "11/5 거래일",
+          "value": "-$430.2M (4.30억 달러 순유출)"
+        },
+        {
+          "label": "주간 (11/2~6)",
+          "value": "-$1,281.7M (12.8억 달러 순유출, 6월 이후 최악)"
+        },
+        {
+          "label": "2026 연초 이후 누적",
+          "value": "-$914.1M (9.14억 달러, 순유출 전환)"
+        },
+        {
+          "label": "11/9 거래일",
+          "value": "미집계 (Farside)"
+        }
       ]
     },
     {
@@ -30,12 +45,30 @@
       "basis": "11/8~9 24시간 기준 · Coinglass",
       "tone": "down",
       "details": [
-        { "label": "방향", "value": "롱 87~91% (11/5~6 · 11/6 · 11/8~9 세 집계 모두 롱 우위)" },
-        { "label": "종목별 (11/9 24시간)", "value": "ETH 4.48억 달러 · BTC 2.72억 달러" },
-        { "label": "집중 구간", "value": "11/9 06:50 KST 전후 10~15분에 약 10억 달러" },
-        { "label": "11/6 24시간", "value": "10.5억 달러" },
-        { "label": "11/5~6 24시간", "value": "10.9억 달러" },
-        { "label": "전체 OI(미결제약정: 아직 청산되지 않은 선물 계약 총액)", "value": "3,387.6억 달러 (11/9 17:35 KST, +1.7%)" }
+        {
+          "label": "방향",
+          "value": "롱 87~91% (11/5~6 · 11/6 · 11/8~9 세 집계 모두 롱 우위)"
+        },
+        {
+          "label": "종목별 (11/9 24시간)",
+          "value": "ETH 4.48억 달러 · BTC 2.72억 달러"
+        },
+        {
+          "label": "집중 구간",
+          "value": "11/9 06:50 KST 전후 10~15분에 약 10억 달러"
+        },
+        {
+          "label": "11/6 24시간",
+          "value": "10.5억 달러"
+        },
+        {
+          "label": "11/5~6 24시간",
+          "value": "10.9억 달러"
+        },
+        {
+          "label": "전체 OI(미결제약정: 아직 청산되지 않은 선물 계약 총액)",
+          "value": "3,387.6억 달러 (11/9 17:35 KST, +1.7%)"
+        }
       ]
     },
     {
@@ -44,26 +77,85 @@
       "basis": "11/6 09:00 → 11/9 09:00 KST · CoinGecko",
       "tone": "down",
       "details": [
-        { "label": "ETH", "value": "$2,236 → $2,124 (72시간 -5.0%)" },
-        { "label": "BTC", "value": "$76,006 → $74,740 (72시간 -1.7%)" },
-        { "label": "전체 시총", "value": "$2.55T → $2.47T (72시간 약 -3%)" },
-        { "label": "BTC 도미넌스", "value": "59.8% (11/6~7, CMC) → 58.95% (11/9, CoinGecko)" },
-        { "label": "11/9 급락 (5~10분)", "value": "ETH 06:50~06:55 KST $2,213 → $2,060 (-6.9%) · BTC 06:55 KST 10분간 $75,607 → $73,510" }
+        {
+          "label": "ETH",
+          "value": "$2,236 → $2,124 (72시간 -5.0%)"
+        },
+        {
+          "label": "BTC",
+          "value": "$76,006 → $74,740 (72시간 -1.7%)"
+        },
+        {
+          "label": "전체 시총",
+          "value": "$2.55T → $2.47T (72시간 약 -3%)"
+        },
+        {
+          "label": "BTC 도미넌스",
+          "value": "59.8% (11/6~7, CMC) → 58.95% (11/9, CoinGecko)"
+        },
+        {
+          "label": "11/9 급락 (5~10분)",
+          "value": "ETH 06:50~06:55 KST $2,213 → $2,060 (-6.9%) · BTC 06:55 KST 10분간 $75,607 → $73,510"
+        }
       ]
     }
   ],
   "market": [
-    { "label": "BTC", "value": "72시간 $76,006 → $74,740 (-1.7%)", "note": "11/9 06:55 KST 10분간 $75,607 → $73,510 급락, 8/21 이후 최저. 20:50 KST 현재 $74,537. 주봉 시가 $78,354 → 종가 $74,851, 5주 연속 하락." },
-    { "label": "ETH", "value": "72시간 $2,236 → $2,124 (-5.0%)", "note": "11/9 06:50~06:55 KST 5분간 $2,213 → $2,060(-6.9%). 20:50 KST 현재 $2,119. 11/9 24시간 청산 ETH 4.48억 달러 > BTC 2.72억 달러." },
-    { "label": "전체 시총", "value": "72시간 $2.55T → $2.47T (약 -3%)", "note": "11/6 05:58 KST $2.55T(24시간 -4.92%) → 11/9 17:35 KST $2.47T(24시간 -2.56%), CoinMarketCap. CoinGecko 11/9 저녁 $2.53T." },
-    { "label": "BTC 도미넌스", "value": "59.8% (11/6~7) → 58.95% (11/9)", "note": "11/6~7 CMC, 11/9 CoinGecko (출처 상이, 참고용)." },
-    { "label": "BTC 현물 ETF 순유출입(미국)", "value": "11/5 거래일 -$430.2M · 11/6 거래일 -$411.9M", "note": "11/6: IBIT -$403.0M, FBTC +$42.8M, BITB -$20.6M, ARKB -$20.1M. 주간(11/2~6) -$1,281.7M, 6월 이후 최악. 2026 누적 -$914.1M(순유출 전환). 11/9 거래일 미집계(Farside)." },
-    { "label": "ETH 현물 ETF 순유출입(미국)", "value": "11/5 거래일 약 -$100M · 11/6 거래일 -$93.2M", "note": "11/6: ETHA -$90.8M, ETHB(스테이킹) +$1.2M. 이틀 연속 순유출." },
-    { "label": "전체 청산(24시간, Coinglass)", "value": "11/5~6 10.9억 달러 → 11/6 10.5억 달러 → 11/8~9 11.6억 달러", "note": "모두 롱 87~91%. 11/9 06:50 KST 전후 10~15분에 약 10억 달러(ETH 4.48억 달러, BTC 2.72억 달러). 11/9 17:35 KST 전체 OI 3,387.6억 달러(+1.7%)." },
-    { "label": "공포·탐욕 지수(Alternative.me)", "value": "32 (11/6) → 31 (11/7) → 27 (11/9)", "note": "중간선거 전(10월 말) 중립권 → 공포. 알트코인 시즌 지수 38 (11/9 조회)." },
-    { "label": "위험회피 경로", "value": "11/3 중간선거 → 11/5 나스닥 -5.5% → 11/6 고용 호조 → 11/8 엔비디아 보도", "note": "11/3 미 중간선거(민주당 상·하원 석권) → 11/5 나스닥 -5.5%·SOX -12% → 11/6 10월 고용 +16.5만(예상 +6.5만)으로 12월 인상 확률 77% → 11/8 20:12 UTC 엔비디아 CEO 조사 보도(CNBC)." },
-    { "label": "거시 일정", "value": "11/6 NFP +165K (예상 +65K), 실업률 4.1%", "note": "12월 FOMC 인상 확률 77%(11/6 23:30 KST 보도). 미 10월 CPI 11/10 22:30 KST 발표. 11/8(일) 루비오 '이란 요구 터무니없다' 발언 병행." },
-    { "label": "집계 기준", "value": "구간 가격은 CoinGecko 일별 스냅샷 (00:00 UTC = 09:00 KST)", "note": "목표 기준 08:30 KST와 30분 차이. 'asOf 현재가'는 11/9 20:50 KST 조회값." }
+    {
+      "label": "BTC",
+      "value": "72시간 $76,006 → $74,740 (-1.7%)",
+      "note": "11/9 06:55 KST 10분간 $75,607 → $73,510 급락, 8/21 이후 최저. 20:50 KST 현재 $74,537. 주봉 시가 $78,354 → 종가 $74,851, 5주 연속 하락."
+    },
+    {
+      "label": "ETH",
+      "value": "72시간 $2,236 → $2,124 (-5.0%)",
+      "note": "11/9 06:50~06:55 KST 5분간 $2,213 → $2,060(-6.9%). 20:50 KST 현재 $2,119. 11/9 24시간 청산 ETH 4.48억 달러 > BTC 2.72억 달러."
+    },
+    {
+      "label": "전체 시총",
+      "value": "72시간 $2.55T → $2.47T (약 -3%)",
+      "note": "11/6 05:58 KST $2.55T(24시간 -4.92%) → 11/9 17:35 KST $2.47T(24시간 -2.56%), CoinMarketCap. CoinGecko 11/9 저녁 $2.53T."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "59.8% (11/6~7) → 58.95% (11/9)",
+      "note": "11/6~7 CMC, 11/9 CoinGecko (출처 상이, 참고용)."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/5 거래일 -$430.2M · 11/6 거래일 -$411.9M",
+      "note": "11/6: IBIT -$403.0M, FBTC +$42.8M, BITB -$20.6M, ARKB -$20.1M. 주간(11/2~6) -$1,281.7M, 6월 이후 최악. 2026 누적 -$914.1M(순유출 전환). 11/9 거래일 미집계(Farside)."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/5 거래일 약 -$100M · 11/6 거래일 -$93.2M",
+      "note": "11/6: ETHA -$90.8M, ETHB(스테이킹) +$1.2M. 이틀 연속 순유출."
+    },
+    {
+      "label": "전체 청산(24시간, Coinglass)",
+      "value": "11/5~6 10.9억 달러 → 11/6 10.5억 달러 → 11/8~9 11.6억 달러",
+      "note": "모두 롱 87~91%. 11/9 06:50 KST 전후 10~15분에 약 10억 달러(ETH 4.48억 달러, BTC 2.72억 달러). 11/9 17:35 KST 전체 OI 3,387.6억 달러(+1.7%)."
+    },
+    {
+      "label": "공포·탐욕 지수(Alternative.me)",
+      "value": "32 (11/6) → 31 (11/7) → 27 (11/9)",
+      "note": "중간선거 전(10월 말) 중립권 → 공포. 알트코인 시즌 지수 38 (11/9 조회)."
+    },
+    {
+      "label": "위험회피 경로",
+      "value": "11/3 중간선거 → 11/5 나스닥 -5.5% → 11/6 고용 호조 → 11/8 엔비디아 보도",
+      "note": "11/3 미 중간선거(민주당 상·하원 석권) → 11/5 나스닥 -5.5%·SOX -12% → 11/6 10월 고용 +16.5만(예상 +6.5만)으로 12월 인상 확률 77% → 11/8 20:12 UTC 엔비디아 CEO 조사 보도(CNBC)."
+    },
+    {
+      "label": "거시 일정",
+      "value": "11/6 NFP +165K (예상 +65K), 실업률 4.1%",
+      "note": "12월 FOMC 인상 확률 77%(11/6 23:30 KST 보도). 미 10월 CPI 11/10 22:30 KST 발표. 11/8(일) 루비오 '이란 요구 터무니없다' 발언 병행."
+    },
+    {
+      "label": "집계 기준",
+      "value": "구간 가격은 CoinGecko 일별 스냅샷 (00:00 UTC = 09:00 KST)",
+      "note": "목표 기준 08:30 KST와 30분 차이. 'asOf 현재가'는 11/9 20:50 KST 조회값."
+    }
   ],
   "movers": [
     {
@@ -290,17 +382,50 @@
     }
   ],
   "excluded": [
-    { "ticker": "RAIN", "reason": "7d -24.2%, 24h -16.1%이나 24h 거래량 $16.3M / 시총 $3.31B = 0.5% (기준 2% 미달)" },
-    { "ticker": "PIEVERSE", "reason": "7d -40.1%이나 거래량 $5.7M / 시총 $406M = 1.4% 미달" },
-    { "ticker": "BTW", "reason": "7d -22.1%이나 거래량 $5.3M / 시총 $1.64B = 0.3% 미달" },
-    { "ticker": "FLUID", "reason": "7d -20.3%이나 거래량 $2.1M / 시총 $180M = 1.2% 미달" },
-    { "ticker": "PI", "reason": "24h -11.6%이나 거래량 $12.1M / 시총 $732M = 1.6% 미달" },
-    { "ticker": "H", "reason": "24h -14.0%이나 거래량 $1.5M / 시총 $97.7M = 1.5% 미달" },
-    { "ticker": "PEARL", "reason": "24h -10.3%이나 거래량 $10.9M / 시총 $597M = 1.8% 미달(경계)" },
-    { "ticker": "HOT", "reason": "24h 한때 +31.7% 후 -9.9%로 반전, 시총 순위 #295~#319 경계. 72h 순변동 미확인" },
-    { "ticker": "SNDKB", "reason": "7d -31.4%이나 토큰화 주식(SanDisk bStock) — 암호자산 수급 분석 대상 아님" },
-    { "ticker": "TRUMP", "reason": "7d -29.9%이나 72h 구간 변동은 $1.18 → $1.13(-4.2%). 낙폭 대부분이 11/4~5($1.59 → $1.18, 11/3 중간선거 후)로 구간 밖" },
-    { "ticker": "XPL", "reason": "72h -9.7%(ATL $0.0503 경신, 선물 OI $146M ≈ 시총 60%)이나 하락 종목 3개 제한으로 제외. 11/25 2.28억 XPL(유통 4.8%) 언락 예정" }
+    {
+      "ticker": "RAIN",
+      "reason": "7d -24.2%, 24h -16.1%이나 24h 거래량 $16.3M / 시총 $3.31B = 0.5% (기준 2% 미달)"
+    },
+    {
+      "ticker": "PIEVERSE",
+      "reason": "7d -40.1%이나 거래량 $5.7M / 시총 $406M = 1.4% 미달"
+    },
+    {
+      "ticker": "BTW",
+      "reason": "7d -22.1%이나 거래량 $5.3M / 시총 $1.64B = 0.3% 미달"
+    },
+    {
+      "ticker": "FLUID",
+      "reason": "7d -20.3%이나 거래량 $2.1M / 시총 $180M = 1.2% 미달"
+    },
+    {
+      "ticker": "PI",
+      "reason": "24h -11.6%이나 거래량 $12.1M / 시총 $732M = 1.6% 미달"
+    },
+    {
+      "ticker": "H",
+      "reason": "24h -14.0%이나 거래량 $1.5M / 시총 $97.7M = 1.5% 미달"
+    },
+    {
+      "ticker": "PEARL",
+      "reason": "24h -10.3%이나 거래량 $10.9M / 시총 $597M = 1.8% 미달(경계)"
+    },
+    {
+      "ticker": "HOT",
+      "reason": "24h 한때 +31.7% 후 -9.9%로 반전, 시총 순위 #295~#319 경계. 72h 순변동 미확인"
+    },
+    {
+      "ticker": "SNDKB",
+      "reason": "7d -31.4%이나 토큰화 주식(SanDisk bStock) — 암호자산 수급 분석 대상 아님"
+    },
+    {
+      "ticker": "TRUMP",
+      "reason": "7d -29.9%이나 72h 구간 변동은 $1.18 → $1.13(-4.2%). 낙폭 대부분이 11/4~5($1.59 → $1.18, 11/3 중간선거 후)로 구간 밖"
+    },
+    {
+      "ticker": "XPL",
+      "reason": "72h -9.7%(ATL $0.0503 경신, 선물 OI $146M ≈ 시총 60%)이나 하락 종목 3개 제한으로 제외. 11/25 2.28억 XPL(유통 4.8%) 언락 예정"
+    }
   ],
   "watchNext": [
     "11/10 22:30 KST 미국 10월 CPI",
@@ -310,65 +435,245 @@
   ],
   "highlight": "오늘 배울 점은 '사건이 있는 움직임'과 '수급만 있는 움직임'의 차이다. KNTQ는 10/19 예고된 Elysium 메인넷(11/9)을 앞두고 11/6~8 $0.3948 → $0.5168(+31%) 오른 뒤 출시 당일 $0.3900까지 -25% 되돌려 72시간 순변동 +1.9%로 끝났고, 사건 시각과 가격 반응의 선후가 확인되는 드문 사례다(다만 같은 날 ETH -5.7% 하락이 겹쳐 출시 효과만 따로 떼어낼 수는 없다). 반대편 JCT(+277%)는 선물 OI $125M이 시총 $139M의 90%에 달하고 하루 거래량이 시총의 2배인데 확인된 사건이 없다. 전자는 시간표가 있는 '사건 → 가격'이고 후자는 사건 없는 '레버리지 → 가격'이라, 같은 급등락이라도 읽는 법이 다르다.",
   "sources": [
-    { "title": "CoinGecko — Bitcoin historical data (daily, UTC)", "url": "https://www.coingecko.com/en/coins/bitcoin/historical_data" },
-    { "title": "CoinGecko — Ethereum historical data", "url": "https://www.coingecko.com/en/coins/ethereum/historical_data" },
-    { "title": "CoinGecko — 시장 개요(시총·도미넌스·공포탐욕)", "url": "https://www.coingecko.com/" },
-    { "title": "CoinGecko — Global charts", "url": "https://www.coingecko.com/en/global-charts" },
-    { "title": "CoinGecko — 24h gainers/losers", "url": "https://www.coingecko.com/en/crypto-gainers-losers" },
-    { "title": "CoinGecko — Janction (JCT)", "url": "https://www.coingecko.com/en/coins/janction" },
-    { "title": "CoinGecko — Janction historical data", "url": "https://www.coingecko.com/en/coins/janction/historical_data" },
-    { "title": "loris.tools — JCT perpetual open interest", "url": "https://loris.tools/oi/coin/jct" },
-    { "title": "Surf(asksurf.ai) — JCT 레버리지 급등 분석 (2026-10-24)", "url": "https://asksurf.ai/pulse/kr/jct-leverage-surge-no-token-demand" },
-    { "title": "CMC AI — Janction latest updates", "url": "https://coinmarketcap.com/cmc-ai/janction/latest-updates/" },
-    { "title": "Bloomingbit — 바이낸스 JCT 무기한 선물 상장 (2025-11-07)", "url": "https://en.bloomingbit.io/feed/news/100399" },
-    { "title": "CoinGecko — Akedo (AKE)", "url": "https://www.coingecko.com/en/coins/akedo" },
-    { "title": "CoinGecko — Akedo historical data", "url": "https://www.coingecko.com/en/coins/akedo/historical_data" },
-    { "title": "CMC AI — Akedo latest updates (TokenPost 11/6 13:41 UTC 인용)", "url": "https://coinmarketcap.com/cmc-ai/akedo/latest-updates/" },
-    { "title": "loris.tools — AKE perpetual open interest", "url": "https://loris.tools/oi/coin/ake" },
-    { "title": "CoinGecko — Ritual (RITUAL)", "url": "https://www.coingecko.com/en/coins/ritual" },
-    { "title": "CoinGecko — Ritual historical data", "url": "https://www.coingecko.com/en/coins/ritual/historical_data" },
-    { "title": "CMC AI — Ritual latest updates (10/26 메인넷·코인베이스 상장)", "url": "https://coinmarketcap.com/cmc-ai/ritual/latest-updates/" },
-    { "title": "CoinGecko — OKZOO (AIOT)", "url": "https://www.coingecko.com/en/coins/okzoo" },
-    { "title": "CoinGecko — OKZOO historical data", "url": "https://www.coingecko.com/en/coins/okzoo/historical_data" },
-    { "title": "CMC AI — OKZOO latest updates", "url": "https://coinmarketcap.com/cmc-ai/okzoo/latest-updates/" },
-    { "title": "loris.tools — AIOT perpetual open interest", "url": "https://loris.tools/oi/coin/aiot" },
-    { "title": "CoinGecko — Impossible Cloud Network Token (ICNT)", "url": "https://www.coingecko.com/en/coins/impossible-cloud-network-token" },
-    { "title": "CoinGecko — ICNT historical data", "url": "https://www.coingecko.com/en/coins/impossible-cloud-network-token/historical_data" },
-    { "title": "CMC AI — Impossible Cloud Network latest updates", "url": "https://coinmarketcap.com/cmc-ai/impossible-cloud-network/latest-updates/" },
-    { "title": "loris.tools — ICNT perpetual open interest", "url": "https://loris.tools/oi/coin/icnt" },
-    { "title": "CoinGecko — Kinetiq (KNTQ)", "url": "https://www.coingecko.com/en/coins/kinetiq" },
-    { "title": "CoinGecko — Kinetiq historical data", "url": "https://www.coingecko.com/en/coins/kinetiq/historical_data" },
-    { "title": "Bankless — Kinetiq's Elysium L2 sets Nov 9 mainnet launch (2026-10-19)", "url": "https://www.bankless.com/read/news/kinetiqs-elysium-l2-sets-nov-9-mainnet-launch" },
-    { "title": "KuCoin News — Kinetiq ends kPoints, KNTQ -33% (2026-10-02)", "url": "https://www.kucoin.com/news/flash/kinetiq-ends-kpoints-program-switches-to-paid-kntq-claims-token-dips-over-30" },
-    { "title": "CoinGecko — Pons (PONS)", "url": "https://www.coingecko.com/en/coins/pons" },
-    { "title": "CoinGecko — Pons historical data", "url": "https://www.coingecko.com/en/coins/pons/historical_data" },
-    { "title": "CMC AI — Pons price analysis (2026-11-08)", "url": "https://coinmarketcap.com/cmc-ai/pons/price-analysis/" },
-    { "title": "AMBCrypto — PONS 수수료 $11.24M → $2.37M (2026-09-24)", "url": "https://ambcrypto.com/pons-down-10-as-whales-sells-3-6m-can-its-price-bounce-from-0-55" },
-    { "title": "CoinGecko — XRP", "url": "https://www.coingecko.com/en/coins/xrp" },
-    { "title": "CoinGecko — XRP historical data", "url": "https://www.coingecko.com/en/coins/xrp/historical_data" },
-    { "title": "CoinGecko — Official Trump historical data", "url": "https://www.coingecko.com/en/coins/official-trump/historical_data" },
-    { "title": "CoinGecko — Plasma (XPL)", "url": "https://www.coingecko.com/en/coins/plasma" },
-    { "title": "CoinGecko — Plasma historical data", "url": "https://www.coingecko.com/en/coins/plasma/historical_data" },
-    { "title": "CoinGecko — Holo (HOT)", "url": "https://www.coingecko.com/en/coins/holotoken" },
-    { "title": "CoinGecko — 시총 1~100위", "url": "https://www.coingecko.com/?page=1" },
-    { "title": "CoinGecko — 시총 101~200위", "url": "https://www.coingecko.com/?page=2" },
-    { "title": "CoinGecko — 시총 201~300위", "url": "https://www.coingecko.com/?page=3" },
-    { "title": "CoinMarketCap — gainers/losers (top 100, 24h)", "url": "https://coinmarketcap.com/gainers-losers/" },
-    { "title": "블록미디어 — [코인시황] 비트코인, 美 증시 급락 여파에 7만5000달러대로 (2026-11-06 08:17 KST)", "url": "https://www.blockmedia.co.kr/archives/1162163" },
-    { "title": "블록미디어 — [뉴욕 코인시황/마감] 미 기술주 하락…비트코인 7만5000달러선 후퇴 (2026-11-06 05:58 KST)", "url": "https://www.blockmedia.co.kr/archives/1162107" },
-    { "title": "블록미디어 — '가짜 반등'에 물렸다…11억달러 강제 청산 (2026-11-06 05:39 KST)", "url": "https://www.blockmedia.co.kr/archives/1162099" },
-    { "title": "블록미디어 — [코인시황] 중간선거 끝나자 반등…8만달러선 회복 (2026-11-05 08:26 KST)", "url": "https://www.blockmedia.co.kr/archives/1161541" },
-    { "title": "블록미디어 — [뉴욕 코인시황/마감] 비트코인 한때 7.5만달러 하회…AI 둔화·고용 호조 (2026-11-07 06:04 KST)", "url": "https://www.blockmedia.co.kr/archives/1162652" },
-    { "title": "블록미디어 — [퇴근길시황] 비트코인 7.4만달러·ETF 5억달러 순유출 (2026-11-09 18:16 KST)", "url": "https://www.blockmedia.co.kr/archives/1163141" },
-    { "title": "뉴스핌 — [코인 시황] 비트코인, 7만4000달러 붕괴 후 반등…하루 새 10억달러 강제 청산 (2026-11-09 18:16 KST)", "url": "https://www.newspim.com/news/view/20261109001289" },
-    { "title": "Coinspeaker — Did an Affair Cause Yesterday's Bitcoin Dump? (2026-11-09, 분 단위 타임라인)", "url": "https://www.coinspeaker.com/bitcoin-news-nvidia-weekend-dump/" },
-    { "title": "Bitcoin.com News — Bitcoin price drops below $74,000 as liquidations top $1B (2026-11-09)", "url": "https://news.bitcoin.com/market-updates/bitcoin-price-flash-drop-73477-liquidations/" },
-    { "title": "Decrypt — Crypto liquidations top $1B as Bitcoin tests 11-week low (2026-11-06)", "url": "https://decrypt.co/382717/bitcoin-price-11-week-low-crypto-liquidations-ai-stock" },
-    { "title": "The Block — Crypto ETFs see over half a billion in outflows amid post-midterm slide (2026-11-06)", "url": "https://www.theblock.co/news/markets/2026-11-06-crypto-etfs-see-over-half-a-billion-dollars-in-outflows-amid-post-midterm-market-slide-435873" },
-    { "title": "KuCoin News(The Coin Republic) — Bitcoin ETFs lose $412M, Ethereum ETFs $93M outflows (2026-11-08)", "url": "https://www.kucoin.com/news/flash/bitcoin-etfs-lose-412m-as-ethereum-etfs-see-93m-in-outflows" },
-    { "title": "TS2 — Bitcoin ETF outflows outside IBIT shrink 97% on Friday (2026-11-08, Farside 인용)", "url": "https://ts2.tech/en/bitcoin-etf-outflows-outside-ibit-shrink-97-on-friday/" },
-    { "title": "Fortune — Price of bitcoin 2026-11-05", "url": "https://fortune.com/article/price-of-bitcoin-11-05-2026/" },
-    { "title": "Fortune — Price of bitcoin 2026-11-06", "url": "https://fortune.com/article/price-of-bitcoin-11-06-2026/" },
-    { "title": "investingLive — US October non-farm payrolls +165K vs +65K expected (2026-11-06)", "url": "https://investinglive.com/news/us-october-non-farm-payrolls-165k-vs-65k-expected/" }
+    {
+      "title": "CoinGecko — Bitcoin historical data (daily, UTC)",
+      "url": "https://www.coingecko.com/en/coins/bitcoin/historical_data"
+    },
+    {
+      "title": "CoinGecko — Ethereum historical data",
+      "url": "https://www.coingecko.com/en/coins/ethereum/historical_data"
+    },
+    {
+      "title": "CoinGecko — 시장 개요(시총·도미넌스·공포탐욕)",
+      "url": "https://www.coingecko.com/"
+    },
+    {
+      "title": "CoinGecko — Global charts",
+      "url": "https://www.coingecko.com/en/global-charts"
+    },
+    {
+      "title": "CoinGecko — 24h gainers/losers",
+      "url": "https://www.coingecko.com/en/crypto-gainers-losers"
+    },
+    {
+      "title": "CoinGecko — Janction (JCT)",
+      "url": "https://www.coingecko.com/en/coins/janction"
+    },
+    {
+      "title": "CoinGecko — Janction historical data",
+      "url": "https://www.coingecko.com/en/coins/janction/historical_data"
+    },
+    {
+      "title": "loris.tools — JCT perpetual open interest",
+      "url": "https://loris.tools/oi/coin/jct"
+    },
+    {
+      "title": "Surf(asksurf.ai) — JCT 레버리지 급등 분석 (2026-10-24)",
+      "url": "https://asksurf.ai/pulse/kr/jct-leverage-surge-no-token-demand"
+    },
+    {
+      "title": "CMC AI — Janction latest updates",
+      "url": "https://coinmarketcap.com/cmc-ai/janction/latest-updates/"
+    },
+    {
+      "title": "Bloomingbit — 바이낸스 JCT 무기한 선물 상장 (2025-11-07)",
+      "url": "https://en.bloomingbit.io/feed/news/100399"
+    },
+    {
+      "title": "CoinGecko — Akedo (AKE)",
+      "url": "https://www.coingecko.com/en/coins/akedo"
+    },
+    {
+      "title": "CoinGecko — Akedo historical data",
+      "url": "https://www.coingecko.com/en/coins/akedo/historical_data"
+    },
+    {
+      "title": "CMC AI — Akedo latest updates (TokenPost 11/6 13:41 UTC 인용)",
+      "url": "https://coinmarketcap.com/cmc-ai/akedo/latest-updates/"
+    },
+    {
+      "title": "loris.tools — AKE perpetual open interest",
+      "url": "https://loris.tools/oi/coin/ake"
+    },
+    {
+      "title": "CoinGecko — Ritual (RITUAL)",
+      "url": "https://www.coingecko.com/en/coins/ritual"
+    },
+    {
+      "title": "CoinGecko — Ritual historical data",
+      "url": "https://www.coingecko.com/en/coins/ritual/historical_data"
+    },
+    {
+      "title": "CMC AI — Ritual latest updates (10/26 메인넷·코인베이스 상장)",
+      "url": "https://coinmarketcap.com/cmc-ai/ritual/latest-updates/"
+    },
+    {
+      "title": "CoinGecko — OKZOO (AIOT)",
+      "url": "https://www.coingecko.com/en/coins/okzoo"
+    },
+    {
+      "title": "CoinGecko — OKZOO historical data",
+      "url": "https://www.coingecko.com/en/coins/okzoo/historical_data"
+    },
+    {
+      "title": "CMC AI — OKZOO latest updates",
+      "url": "https://coinmarketcap.com/cmc-ai/okzoo/latest-updates/"
+    },
+    {
+      "title": "loris.tools — AIOT perpetual open interest",
+      "url": "https://loris.tools/oi/coin/aiot"
+    },
+    {
+      "title": "CoinGecko — Impossible Cloud Network Token (ICNT)",
+      "url": "https://www.coingecko.com/en/coins/impossible-cloud-network-token"
+    },
+    {
+      "title": "CoinGecko — ICNT historical data",
+      "url": "https://www.coingecko.com/en/coins/impossible-cloud-network-token/historical_data"
+    },
+    {
+      "title": "CMC AI — Impossible Cloud Network latest updates",
+      "url": "https://coinmarketcap.com/cmc-ai/impossible-cloud-network/latest-updates/"
+    },
+    {
+      "title": "loris.tools — ICNT perpetual open interest",
+      "url": "https://loris.tools/oi/coin/icnt"
+    },
+    {
+      "title": "CoinGecko — Kinetiq (KNTQ)",
+      "url": "https://www.coingecko.com/en/coins/kinetiq"
+    },
+    {
+      "title": "CoinGecko — Kinetiq historical data",
+      "url": "https://www.coingecko.com/en/coins/kinetiq/historical_data"
+    },
+    {
+      "title": "Bankless — Kinetiq's Elysium L2 sets Nov 9 mainnet launch (2026-10-19)",
+      "url": "https://www.bankless.com/read/news/kinetiqs-elysium-l2-sets-nov-9-mainnet-launch"
+    },
+    {
+      "title": "KuCoin News — Kinetiq ends kPoints, KNTQ -33% (2026-10-02)",
+      "url": "https://www.kucoin.com/news/flash/kinetiq-ends-kpoints-program-switches-to-paid-kntq-claims-token-dips-over-30"
+    },
+    {
+      "title": "CoinGecko — Pons (PONS)",
+      "url": "https://www.coingecko.com/en/coins/pons"
+    },
+    {
+      "title": "CoinGecko — Pons historical data",
+      "url": "https://www.coingecko.com/en/coins/pons/historical_data"
+    },
+    {
+      "title": "CMC AI — Pons price analysis (2026-11-08)",
+      "url": "https://coinmarketcap.com/cmc-ai/pons/price-analysis/"
+    },
+    {
+      "title": "AMBCrypto — PONS 수수료 $11.24M → $2.37M (2026-09-24)",
+      "url": "https://ambcrypto.com/pons-down-10-as-whales-sells-3-6m-can-its-price-bounce-from-0-55"
+    },
+    {
+      "title": "CoinGecko — XRP",
+      "url": "https://www.coingecko.com/en/coins/xrp"
+    },
+    {
+      "title": "CoinGecko — XRP historical data",
+      "url": "https://www.coingecko.com/en/coins/xrp/historical_data"
+    },
+    {
+      "title": "CoinGecko — Official Trump historical data",
+      "url": "https://www.coingecko.com/en/coins/official-trump/historical_data"
+    },
+    {
+      "title": "CoinGecko — Plasma (XPL)",
+      "url": "https://www.coingecko.com/en/coins/plasma"
+    },
+    {
+      "title": "CoinGecko — Plasma historical data",
+      "url": "https://www.coingecko.com/en/coins/plasma/historical_data"
+    },
+    {
+      "title": "CoinGecko — Holo (HOT)",
+      "url": "https://www.coingecko.com/en/coins/holotoken"
+    },
+    {
+      "title": "CoinGecko — 시총 1~100위",
+      "url": "https://www.coingecko.com/?page=1"
+    },
+    {
+      "title": "CoinGecko — 시총 101~200위",
+      "url": "https://www.coingecko.com/?page=2"
+    },
+    {
+      "title": "CoinGecko — 시총 201~300위",
+      "url": "https://www.coingecko.com/?page=3"
+    },
+    {
+      "title": "CoinMarketCap — gainers/losers (top 100, 24h)",
+      "url": "https://coinmarketcap.com/gainers-losers/"
+    },
+    {
+      "title": "블록미디어 — [코인시황] 비트코인, 美 증시 급락 여파에 7만5000달러대로 (2026-11-06 08:17 KST)",
+      "url": "https://www.blockmedia.co.kr/archives/1162163"
+    },
+    {
+      "title": "블록미디어 — [뉴욕 코인시황/마감] 미 기술주 하락…비트코인 7만5000달러선 후퇴 (2026-11-06 05:58 KST)",
+      "url": "https://www.blockmedia.co.kr/archives/1162107"
+    },
+    {
+      "title": "블록미디어 — '가짜 반등'에 물렸다…11억달러 강제 청산 (2026-11-06 05:39 KST)",
+      "url": "https://www.blockmedia.co.kr/archives/1162099"
+    },
+    {
+      "title": "블록미디어 — [코인시황] 중간선거 끝나자 반등…8만달러선 회복 (2026-11-05 08:26 KST)",
+      "url": "https://www.blockmedia.co.kr/archives/1161541"
+    },
+    {
+      "title": "블록미디어 — [뉴욕 코인시황/마감] 비트코인 한때 7.5만달러 하회…AI 둔화·고용 호조 (2026-11-07 06:04 KST)",
+      "url": "https://www.blockmedia.co.kr/archives/1162652"
+    },
+    {
+      "title": "블록미디어 — [퇴근길시황] 비트코인 7.4만달러·ETF 5억달러 순유출 (2026-11-09 18:16 KST)",
+      "url": "https://www.blockmedia.co.kr/archives/1163141"
+    },
+    {
+      "title": "뉴스핌 — [코인 시황] 비트코인, 7만4000달러 붕괴 후 반등…하루 새 10억달러 강제 청산 (2026-11-09 18:16 KST)",
+      "url": "https://www.newspim.com/news/view/20261109001289"
+    },
+    {
+      "title": "Coinspeaker — Did an Affair Cause Yesterday's Bitcoin Dump? (2026-11-09, 분 단위 타임라인)",
+      "url": "https://www.coinspeaker.com/bitcoin-news-nvidia-weekend-dump/"
+    },
+    {
+      "title": "Bitcoin.com News — Bitcoin price drops below $74,000 as liquidations top $1B (2026-11-09)",
+      "url": "https://news.bitcoin.com/market-updates/bitcoin-price-flash-drop-73477-liquidations/"
+    },
+    {
+      "title": "Decrypt — Crypto liquidations top $1B as Bitcoin tests 11-week low (2026-11-06)",
+      "url": "https://decrypt.co/382717/bitcoin-price-11-week-low-crypto-liquidations-ai-stock"
+    },
+    {
+      "title": "The Block — Crypto ETFs see over half a billion in outflows amid post-midterm slide (2026-11-06)",
+      "url": "https://www.theblock.co/news/markets/2026-11-06-crypto-etfs-see-over-half-a-billion-dollars-in-outflows-amid-post-midterm-market-slide-435873"
+    },
+    {
+      "title": "KuCoin News(The Coin Republic) — Bitcoin ETFs lose $412M, Ethereum ETFs $93M outflows (2026-11-08)",
+      "url": "https://www.kucoin.com/news/flash/bitcoin-etfs-lose-412m-as-ethereum-etfs-see-93m-in-outflows"
+    },
+    {
+      "title": "TS2 — Bitcoin ETF outflows outside IBIT shrink 97% on Friday (2026-11-08, Farside 인용)",
+      "url": "https://ts2.tech/en/bitcoin-etf-outflows-outside-ibit-shrink-97-on-friday/"
+    },
+    {
+      "title": "Fortune — Price of bitcoin 2026-11-05",
+      "url": "https://fortune.com/article/price-of-bitcoin-11-05-2026/"
+    },
+    {
+      "title": "Fortune — Price of bitcoin 2026-11-06",
+      "url": "https://fortune.com/article/price-of-bitcoin-11-06-2026/"
+    },
+    {
+      "title": "investingLive — US October non-farm payrolls +165K vs +65K expected (2026-11-06)",
+      "url": "https://investinglive.com/news/us-october-non-farm-payrolls-165k-vs-65k-expected/"
+    }
   ]
 }
