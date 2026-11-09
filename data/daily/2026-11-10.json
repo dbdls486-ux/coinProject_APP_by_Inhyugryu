@@ -1,0 +1,742 @@
+{
+  "id": "2026-11-10",
+  "date": "2026-11-10",
+  "asOf": "2026-11-10 08:25 KST",
+  "window": "최근 24시간 (11/9 08:30 → 11/10 08:30 KST)",
+  "title": "급락 하루 만에 알트코인은 반등, 이더리움은 제자리",
+  "regime": "혼조",
+  "tldr": [
+    "9일 아침 급락 저점 이후 24시간 동안 시총 100위 안 알트코인 대부분이 3~11% 올랐다.",
+    "전체 시총 24시간 +1.7%, 청산 12.4억 달러 중 롱 10.8억 달러, 공포·탐욕 29로 공포 구간이다.",
+    "오늘 밤 미국 10월 CPI, 9일 거래일 ETF 흐름 집계, AVAX 뉴욕증권거래소 건 후속 공시를 확인한다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "AVAX vs BTC (24시간)",
+      "value": "+10.0% vs +1.7%",
+      "basis": "11/10 08:25 기준 24시간 · CoinGecko",
+      "tone": "up",
+      "details": [
+        {
+          "label": "AVAX",
+          "value": "10,615원 → 11,678원, 장중 한때 9달러 위"
+        },
+        {
+          "label": "BTC",
+          "value": "24시간 +1.7%, 11/9 09시 74,740달러 → 75,196달러"
+        },
+        {
+          "label": "ETH",
+          "value": "24시간 +0.6%, 2,124달러 → 2,132달러"
+        },
+        {
+          "label": "시총 100위 안 24시간 상승 상위",
+          "value": "PIEVERSE +41% · JUP +11.7% · ETHFI +11.2% · AVAX +10.0% · VVV +9.2% · ONDO +9.1% · ARB +8.4%"
+        },
+        {
+          "label": "시총 100위 안 24시간 하락 상위",
+          "value": "BTW -11.8% · RAIN -10.4% · PEARL -5.9%. 나머지는 3% 미만"
+        }
+      ]
+    },
+    {
+      "label": "24시간 청산",
+      "value": "12.4억 달러",
+      "basis": "11/10 06시 기준 24시간 · Coinglass, 블록미디어 인용",
+      "tone": "down",
+      "details": [
+        {
+          "label": "방향",
+          "value": "롱 10.8억 달러, 약 87%"
+        },
+        {
+          "label": "종목별",
+          "value": "ETH 5.07억 달러 이상 · BTC 3.24억 달러 이상 (11/9 18시 기준 24시간, Coinglass)"
+        },
+        {
+          "label": "집중 구간",
+          "value": "11/9 06:55 전후 BTC 73,761달러 급락 뒤 6시간에 대부분 발생"
+        },
+        {
+          "label": "전일 비교",
+          "value": "11/8~9 24시간 11.6억 달러 → 11/9~10 12.4억 달러"
+        }
+      ]
+    },
+    {
+      "label": "미국 BTC 현물 ETF",
+      "value": "미집계",
+      "basis": "11/9 거래일 · Farside 미공개",
+      "tone": "neutral",
+      "details": [
+        {
+          "label": "지난주 (11/2~6)",
+          "value": "-12.82억 달러 순유출, 6월 넷째 주 이후 최대 (SoSoValue)"
+        },
+        {
+          "label": "11/6 거래일",
+          "value": "-4.12억 달러 순유출"
+        },
+        {
+          "label": "2026 연초 이후 누적",
+          "value": "-9.14억 달러, 9월 22일 플러스 전환 뒤 다시 순유출"
+        },
+        {
+          "label": "조회 결과",
+          "value": "Farside BTC 페이지 접속 실패, ETH 페이지는 10월 23일까지만 표시. 11/9 거래일 수치는 미집계로 둔다"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "24시간 +1.7%, 1억 67만원 → 1억 129만원",
+      "note": "9일 아침 73,761달러 저점 뒤 75,400달러까지 반등했다가 7.5만달러 회복에는 실패. 뉴욕 기준 하루 -1.4%."
+    },
+    {
+      "label": "ETH",
+      "value": "24시간 +0.6%, 286만원 → 287만원",
+      "note": "뉴욕 기준 하루 -4.5%로 메이저 중 가장 약했다. 24시간 청산 5.07억 달러로 BTC보다 많다."
+    },
+    {
+      "label": "전체 시총",
+      "value": "24시간 +1.7%, 2.59조 달러",
+      "note": "CoinGecko 8시 25분 기준. 뉴욕 마감 기준 CoinMarketCap은 2.51조 달러, -1.7%."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "58.3%",
+      "note": "CoinGecko. 전일 58.95%에서 소폭 하락, 알트 반등 반영. ETH 도미넌스 10.0%."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/9 거래일 미집계",
+      "note": "지난주 12.82억 달러 순유출로 6월 이후 최대. 연초 이후 누적 -9.14억 달러."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/9 거래일 미집계",
+      "note": "11/6 거래일 0.93억 달러 순유출, 이틀 연속. Farside ETH 페이지는 10월 23일까지만 갱신돼 있었다."
+    },
+    {
+      "label": "전체 청산(24시간)",
+      "value": "12.4억 달러, 롱 10.8억 달러",
+      "note": "9일 아침 급락 뒤 6시간에 집중. 3일 연속 10억 달러 이상 청산."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "29, 공포",
+      "note": "alternative.me. 전일 28, 일주일 전 37, 한 달 전 64."
+    },
+    {
+      "label": "거시·증시",
+      "value": "9일 나스닥 +2.7%, 코인은 디커플링",
+      "note": "엔비디아 CEO 조사와 미·이란 협상 결렬 보도가 주말 급락 배경. 10일 밤 미국 10월 CPI. 미 10년물 4.85%."
+    },
+    {
+      "label": "집계 기준",
+      "value": "CoinGecko 24시간, 11/10 08:25 조회",
+      "note": "기간 시작점이 9일 아침 급락 직후라 24시간 등락이 실제보다 좋게 보인다. 뉴욕 하루 기준은 BTC -1.4%, ETH -4.5%."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,347원",
+      "note": "11/9 서울 외환시장 마감가 1,347.1원 일괄 적용. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "Avalanche",
+      "ticker": "AVAX",
+      "direction": "up",
+      "change": "+10.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+8.3%p",
+      "marketCap": "38.7억 달러",
+      "rank": 26,
+      "volume24h": "5.25억 달러 (시총의 14%)",
+      "causeType": "확인된 원인",
+      "headline": "뉴욕증권거래소 토큰증권 결제 원장으로 선정, 발표 뒤 급등.",
+      "happened": [
+        "9일 밤 뉴욕증권거래소 계열 토큰증권 거래소의 청산·결제 원장으로 아발란체 선정 발표.",
+        "뉴욕증권거래소는 아발란체 기술로 자체 체인을 운영, 24시간 거래는 규제 승인 대기."
+      ],
+      "reaction": [
+        "발표 뒤 장중 9달러 돌파, 하루 고점 +11%. 24시간 +10.0%, 10,615원 → 11,678원.",
+        "하루 거래량 5.25억 달러로 시총의 14%. 아발란체 TVL 6.33억 달러로 24시간 +4%."
+      ],
+      "watch": "규제 승인 일정과 전용 체인 출시 시점, 거래량이 유지되는지.",
+      "caveat": "발표 시각 대비 분 단위 가격 반응은 미확인. 선물 OI·펀딩 수치 미확보. 같은 날 알트 전반 +3~6% 반등과 겹친다.",
+      "flows": {
+        "perpToSpotVolume": "미확보"
+      },
+      "confidence": "A"
+    },
+    {
+      "project": "Pieverse",
+      "ticker": "PIEVERSE",
+      "direction": "up",
+      "change": "+41.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+39.4%p",
+      "marketCap": "5.56억 달러",
+      "rank": 99,
+      "volume24h": "0.69억~1.07억 달러 (시총의 12~19%)",
+      "causeType": "수급 주도",
+      "headline": "언락 닷새 전 급등. 개별 재료 없이 선물 수급이 끌었다.",
+      "happened": [
+        "7일~10일 사이 상장·제품·바이백 공시 없음.",
+        "11월 14일 팀·투자자 물량 언락 예정, 유통의 약 30%."
+      ],
+      "reaction": [
+        "24시간 +41%, 1,926원 → 2,721원. 10월 30일 1달러에서 2배.",
+        "선물 OI 3,749만 달러, 펀딩비 양수. RSI 82."
+      ],
+      "watch": "14일 언락 전후 거래량과 OI 유지 여부.",
+      "caveat": "언락 규모가 출처별로 3,340만 개와 8,638만 개로 갈린다. 투자자 진입가 0.0667달러로 현재가의 3%. 선물 CVD는 음수여서 숏 스퀴즈 가능성.",
+      "flows": {
+        "openInterest": "3,749만 달러 (EdaFace, 11/9)",
+        "oiToMcap": "약 7%",
+        "fundingRate": "+0.0198%"
+      },
+      "confidence": "B"
+    },
+    {
+      "project": "Jupiter",
+      "ticker": "JUP",
+      "direction": "up",
+      "change": "+11.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+10.0%p",
+      "marketCap": "8.43억 달러",
+      "rank": 78,
+      "volume24h": "0.63억 달러 (시총의 7.5%)",
+      "causeType": "원인 불명",
+      "headline": "알트 반등 중 가장 컸지만 확인된 사건 없음.",
+      "happened": [
+        "9일 확인된 개별 사건 없음. 10월 12일 스테이킹 보상 청구 개시가 마지막 공시."
+      ],
+      "reaction": [
+        "24시간 +11.7%, 306원 → 342원. 거래량은 시총의 7.5%."
+      ],
+      "watch": "알트 반등이 꺾일 때 초과 상승분이 남는지.",
+      "caveat": "9일 저녁 기준 +4.7%였다가 밤사이 확대. 솔라나 생태계 전반 수급 자료 미확보.",
+      "confidence": "C"
+    },
+    {
+      "project": "Ether.fi",
+      "ticker": "ETHFI",
+      "direction": "up",
+      "change": "+11.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+9.5%p",
+      "marketCap": "6.27억 달러",
+      "rank": 91,
+      "volume24h": "0.43억 달러 (시총의 6.9%)",
+      "causeType": "원인 불명",
+      "headline": "ETH는 제자리인데 ETHFI만 11% 상승. 사건 미확인.",
+      "happened": [
+        "9일 공시·상장 없음. 7월 Nexus Mutual 제휴 뒤 새 발표 미확인."
+      ],
+      "reaction": [
+        "24시간 +11.2%, 761원 → 846원. 같은 기간 ETH +0.6%."
+      ],
+      "watch": "ETH 대비 초과 상승이 하루 더 이어지는지.",
+      "caveat": "9월부터 진행 중인 프로그램 바이백 영향은 수치 미확보. OI·펀딩 미확보.",
+      "confidence": "C"
+    },
+    {
+      "project": "Venice Token",
+      "ticker": "VVV",
+      "direction": "up",
+      "change": "+9.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.5%p",
+      "marketCap": "10.6억 달러",
+      "rank": 72,
+      "volume24h": "0.26억 달러 (시총의 2.4%)",
+      "causeType": "원인 불명",
+      "headline": "거래량 얇은 상승. 공시 없음.",
+      "happened": [
+        "확인된 개별 사건 없음."
+      ],
+      "reaction": [
+        "24시간 +9.2%, 26,765원 → 29,230원. 거래량은 시총의 2.4%로 기준 턱걸이."
+      ],
+      "watch": "거래량 없이 오른 상승이 되돌려지는지.",
+      "caveat": "하루 거래량 2,572만 달러로 호가가 얇아 소액에도 가격이 크게 움직인다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Ondo",
+      "ticker": "ONDO",
+      "direction": "up",
+      "change": "+9.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.4%p",
+      "marketCap": "18.2억 달러",
+      "rank": 50,
+      "volume24h": "1.67억 달러 (시총의 9.2%)",
+      "causeType": "원인 불명",
+      "headline": "토큰증권 테마와 같은 날 움직였지만 자체 사건 없음.",
+      "happened": [
+        "9일 온도 자체 공시 없음. 같은 날 뉴욕증권거래소·아발란체 토큰증권 발표."
+      ],
+      "reaction": [
+        "24시간 +9.1%, 461원 → 503원. 거래량은 시총의 9.2%."
+      ],
+      "watch": "AVAX 뉴스가 식은 뒤에도 상승분이 남는지.",
+      "caveat": "섹터 뉴스는 개별 원인으로 쓰지 않는다. 9일 저녁 +3.8%에서 밤사이 확대된 점만 확인.",
+      "confidence": "C"
+    },
+    {
+      "project": "Arbitrum",
+      "ticker": "ARB",
+      "direction": "up",
+      "change": "+8.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+6.7%p",
+      "marketCap": "12.1억 달러",
+      "rank": 67,
+      "volume24h": "2.47억 달러 (시총의 20%)",
+      "causeType": "원인 불명",
+      "headline": "거래량 동반 상승이지만 공시 없음.",
+      "happened": [
+        "9일 자체 공시 없음. Elysium L2 파트너로 이름만 등장."
+      ],
+      "reaction": [
+        "24시간 +8.4%, 218원 → 236원. 거래량 2.47억 달러로 시총의 20%.",
+        "7일 기준 +11.5%로 주간 상승 지속."
+      ],
+      "watch": "거래량이 시총의 20% 수준을 유지하는지.",
+      "caveat": "Elysium 파트너 언급은 KNTQ 하락과 같은 날이라 ARB 원인으로 쓰지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Lighter",
+      "ticker": "LIT",
+      "direction": "up",
+      "change": "+7.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.4%p",
+      "marketCap": "8.08억 달러",
+      "rank": 82,
+      "volume24h": "0.82억 달러 (시총의 10%)",
+      "causeType": "시장 베타",
+      "headline": "전날 -7.7% 하락을 되돌린 알트 반등 범위 안.",
+      "happened": [
+        "확인된 개별 사건 없음. 8일 뉴욕 기준 -7.65% 하락 뒤 반등."
+      ],
+      "reaction": [
+        "24시간 +7.1%, 4,062원 → 4,351원. 시총 100위 안 알트 다수가 +3~6%."
+      ],
+      "watch": "급락 전 가격 회복 여부.",
+      "caveat": "상승폭이 알트 평균보다 크지만 전일 낙폭도 컸다. OI 미확보.",
+      "confidence": "C"
+    },
+    {
+      "project": "Render",
+      "ticker": "RENDER",
+      "direction": "up",
+      "change": "+7.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.3%p",
+      "marketCap": "8.44억 달러",
+      "rank": 77,
+      "volume24h": "0.41억 달러 (시총의 4.8%)",
+      "causeType": "시장 베타",
+      "headline": "하락장에서도 올랐던 종목, 알트 반등에 동참.",
+      "happened": [
+        "확인된 개별 사건 없음. 9일 뉴욕 기준에도 +3.8%로 메이저 중 드문 상승."
+      ],
+      "reaction": [
+        "24시간 +7.0%, 1,989원 → 2,128원. 거래량은 시총의 4.8%."
+      ],
+      "watch": "AI 테마 외 자체 공시가 나오는지.",
+      "caveat": "AI 섹터 내러티브는 개별 원인으로 쓰지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Cosmos Hub",
+      "ticker": "ATOM",
+      "direction": "up",
+      "change": "+6.3%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+4.6%p",
+      "marketCap": "7.38억 달러",
+      "rank": 84,
+      "volume24h": "0.36억 달러 (시총의 4.9%)",
+      "causeType": "시장 베타",
+      "headline": "알트 반등 범위 안. 공시 없음.",
+      "happened": [
+        "확인된 개별 사건 없음."
+      ],
+      "reaction": [
+        "24시간 +6.3%, 1,723원 → 1,832원."
+      ],
+      "watch": "알트 전반 반등과 같이 꺾이는지.",
+      "caveat": "AAVE +6.2%, UNI +5.4%, ENA +5.4%와 같은 범위라 개별 요인 없이 설명된다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Bitway",
+      "ticker": "BTW",
+      "direction": "down",
+      "change": "-11.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-13.5%p",
+      "marketCap": "15.3억 달러",
+      "rank": 56,
+      "volume24h": "0.054억 달러 (시총의 0.35%)",
+      "causeType": "원인 불명",
+      "headline": "거래량 시총의 0.35%. 얇은 호가에서 반복되는 급락.",
+      "happened": [
+        "9일 공시 없음. 11월 2일 1.016억 개 언락 뒤 다음 언락은 12월 2일."
+      ],
+      "reaction": [
+        "24시간 -11.8%, 1,543원 → 1,360원. 10월 14일 고점 2.75달러 대비 -63%.",
+        "하루 거래량 537만 달러로 시총의 0.35%."
+      ],
+      "watch": "거래량이 늘지 않은 채 하락이 이어지는지.",
+      "caveat": "유통 27%에 거래량이 극히 적어 소수 매도에도 가격이 크게 움직인다. 거래량 기준 2% 미달이지만 시총 100위 안 하락 상위라 포함.",
+      "confidence": "C"
+    },
+    {
+      "project": "Rain",
+      "ticker": "RAIN",
+      "direction": "down",
+      "change": "-10.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-12.1%p",
+      "marketCap": "32.6억 달러",
+      "rank": 31,
+      "volume24h": "0.18억 달러 (시총의 0.55%)",
+      "causeType": "원인 불명",
+      "headline": "이틀 연속 10%대 하락. 사건 없음, 거래량 얇음.",
+      "happened": [
+        "9일 공시 없음. 8일 뉴욕 기준 -13.4%로 90개 종목 중 최대 낙폭."
+      ],
+      "reaction": [
+        "24시간 -10.4%, 6.9원 → 6.2원. 7일 기준 -30%.",
+        "거래량 1,791만 달러로 시총의 0.55%."
+      ],
+      "watch": "4,316억 개 미유통 물량 관련 공시.",
+      "caveat": "거래량 기준 2% 미달이지만 시총 100위 안 하락 1~2위라 포함. 거래소별 넷플로우 미확보.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pearl",
+      "ticker": "PEARL",
+      "direction": "down",
+      "change": "-5.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-7.6%p",
+      "marketCap": "6.08억 달러",
+      "rank": 92,
+      "volume24h": "0.14억 달러 (시총의 2.3%)",
+      "causeType": "원인 불명",
+      "headline": "9일 밤 -12%에서 낙폭 축소. 사건 없음.",
+      "happened": [
+        "확인된 개별 사건 없음."
+      ],
+      "reaction": [
+        "24시간 -5.9%, 2,319원 → 2,182원. 9일 밤에는 -12.4%까지 밀렸다."
+      ],
+      "watch": "알트 반등에서 소외가 이어지는지.",
+      "caveat": "시총 100위 안 하락 3위이나 낙폭이 줄고 있다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Kinetiq",
+      "ticker": "KNTQ",
+      "direction": "down",
+      "change": "-23.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-25.3%p",
+      "marketCap": "1.17억 달러",
+      "rank": 255,
+      "volume24h": "0.50억 달러 (시총의 43%)",
+      "causeType": "확인된 원인",
+      "headline": "메인넷 출시 당일 재료 소멸, 이틀째 하락.",
+      "happened": [
+        "9일 밤 Elysium 메인넷 공식 출시 보도자료. 시퀀서 수익 50%를 KNTQ 바이백에 배정.",
+        "출시일은 10월 19일 예고. 출시 직전 6일 → 8일 +31% 선반영."
+      ],
+      "reaction": [
+        "24시간 -23.6%, 588원 → 449원. 8일 고점 695원 대비 -35%.",
+        "거래량 5,000만 달러로 시총의 43%."
+      ],
+      "watch": "바이백 첫 집행 공시와 Elysium TVL.",
+      "caveat": "출시 당일 OI·펀딩·청산 수치 미확보. 8일 Aero DEX 상장은 하락과 무관해 보이나 수치 없음.",
+      "confidence": "B"
+    },
+    {
+      "project": "Janction",
+      "ticker": "JCT",
+      "direction": "down",
+      "change": "-15.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-16.8%p",
+      "marketCap": "약 1.3억 달러",
+      "rank": 216,
+      "volume24h": "1.51억 달러 (시총의 115%)",
+      "causeType": "수급 주도",
+      "headline": "7배 급등의 되돌림. 언락은 하락 시작 뒤에 왔다.",
+      "happened": [
+        "10일 01시 약 12.3억 JCT 언락, 606만 달러 규모.",
+        "8일 하루 7배 급등 때 확인된 사건 없음, OI가 시총의 90%."
+      ],
+      "reaction": [
+        "24시간 -15.1%, 18.2원 → 15.4원. 8일 고점 25원 대비 -38%.",
+        "거래량 1.51억 달러로 여전히 시총보다 많다."
+      ],
+      "watch": "OI가 시총 대비 줄어드는지, 거래량 감소 속도.",
+      "caveat": "언락 전인 9일 저녁 이미 16원까지 내려 언락은 원인이 아니라 배경. 언락 수량은 RootData 기준 1,229만 개 표기이나 금액과 맞추면 12.3억 개.",
+      "flows": {
+        "oiToMcap": "약 90% (11/9 저녁, loris.tools)"
+      },
+      "confidence": "B"
+    },
+    {
+      "project": "Ritual",
+      "ticker": "RITUAL",
+      "direction": "up",
+      "change": "+36.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+34.5%p",
+      "marketCap": "9,100만 달러",
+      "rank": 282,
+      "volume24h": "0.093억 달러 (시총의 10%)",
+      "causeType": "원인 불명",
+      "headline": "저유통 종목의 사흘째 급등. 공시 없음.",
+      "happened": [
+        "10월 26일 상장 뒤 새 공시 없음. 유통 약 16%."
+      ],
+      "reaction": [
+        "24시간 +36%, 51원 → 69원. 6일 26원에서 2.7배.",
+        "7일 기준 +172%. 거래량은 시총의 10%."
+      ],
+      "watch": "거래량 없이 이어지는 상승의 되돌림 시점.",
+      "caveat": "9일 저녁 24시간 고점 대비 -27% 되돌렸다가 재상승. FDV 6.17억 달러 대비 시총 0.91억 달러.",
+      "confidence": "C"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "INIT",
+      "reason": "24h +55.4%이나 시총 순위 488위로 300위 밖"
+    },
+    {
+      "ticker": "HASH",
+      "reason": "24h +22.3%(113위)이나 거래량 11.6만 달러 / 시총 4.5억 달러 = 0.03% 미달"
+    },
+    {
+      "ticker": "EDGE",
+      "reason": "24h +23.3%(208위)이나 시총·거래량 비율 미확인으로 보류"
+    },
+    {
+      "ticker": "Q",
+      "reason": "24h -12.7%(227위), 거래량 791만 달러. 하락 종목 수 제한으로 제외, 사건 미조사"
+    },
+    {
+      "ticker": "ICNT",
+      "reason": "24h -8.2%(296위). 전일 +55% 뒤 되돌림, 하락 종목 수 제한으로 제외"
+    },
+    {
+      "ticker": "PI",
+      "reason": "9일 밤 -7.6%였으나 10일 아침 CoinGecko 24h 변동 3% 미만"
+    },
+    {
+      "ticker": "ZEC",
+      "reason": "9일 뉴욕 기준 -6.9%였으나 10일 아침 24h 변동 3% 미만"
+    },
+    {
+      "ticker": "PYTH",
+      "reason": "Coinranking 기준 +8.5%이나 CoinGecko 100위 안 표(94~100위) 미확인으로 보류"
+    }
+  ],
+  "watchNext": [
+    "11/10 22:30 KST 미국 10월 CPI",
+    "11/9 거래일 미 BTC·ETH 현물 ETF 순유출입 — 미집계 (Farside, 11/10 오전 집계)",
+    "11/14 PIEVERSE 언락 (유통의 약 30%), 11/10 JCT 언락 뒤 OI 변화",
+    "BTC 73,761달러 (11/9 급락 저점) 지지와 76,000달러 회복 여부"
+  ],
+  "highlight": "오늘 배울 점은 같은 '시총 100위 안 급등'이라도 AVAX와 PIEVERSE는 전혀 다른 움직임이라는 것이다. AVAX는 9일 밤 뉴욕증권거래소 계열 거래소의 결제 원장 선정 발표가 먼저 있었고, 그 뒤 장중 9달러 돌파와 시총의 14%에 달하는 거래량이 따라와 사건 → 가격 순서가 확인된다. PIEVERSE는 공시 없이 선물 OI와 양수 펀딩비가 가격을 끌었고, 닷새 뒤 유통의 30%가 풀리는 언락이 기다린다. 하락 쪽 KNTQ는 10월 19일 예고된 메인넷이 9일 실제로 나오자 이틀 연속 빠진 전형적 재료 소멸이고, JCT는 언락보다 먼저 시작된 레버리지 되돌림이라 언락을 원인으로 쓰지 않았다.",
+  "sources": [
+    {
+      "title": "CoinGecko — Bitcoin historical data (daily, UTC)",
+      "url": "https://www.coingecko.com/en/coins/bitcoin/historical_data"
+    },
+    {
+      "title": "CoinGecko — Bitcoin",
+      "url": "https://www.coingecko.com/en/coins/bitcoin"
+    },
+    {
+      "title": "CoinGecko — Ethereum historical data",
+      "url": "https://www.coingecko.com/en/coins/ethereum/historical_data"
+    },
+    {
+      "title": "CoinGecko — 시총 1~100위, 시장 개요",
+      "url": "https://www.coingecko.com/"
+    },
+    {
+      "title": "CoinGecko — 시총 101~200위",
+      "url": "https://www.coingecko.com/?page=2"
+    },
+    {
+      "title": "CoinGecko — 시총 201~300위",
+      "url": "https://www.coingecko.com/?page=3"
+    },
+    {
+      "title": "CoinGecko — 24h gainers/losers (Top 1000)",
+      "url": "https://www.coingecko.com/en/crypto-gainers-losers"
+    },
+    {
+      "title": "Coinranking — Top 100 gainers 24h (부호 확인용)",
+      "url": "https://coinranking.com/coins/gainers?top=100"
+    },
+    {
+      "title": "Coinranking — losers 24h",
+      "url": "https://coinranking.com/coins/losers"
+    },
+    {
+      "title": "CoinMarketCap — gainers/losers (top 100, 24h)",
+      "url": "https://coinmarketcap.com/gainers-losers/"
+    },
+    {
+      "title": "CoinMarketCap — Today's top 100",
+      "url": "https://coinmarketcap.com/coins/"
+    },
+    {
+      "title": "alternative.me — Crypto Fear & Greed Index",
+      "url": "https://alternative.me/crypto/fear-and-greed-index/"
+    },
+    {
+      "title": "Farside — Ethereum ETF Flow (10/23까지만 갱신)",
+      "url": "https://farside.co.uk/eth/"
+    },
+    {
+      "title": "Farside — Bitcoin ETF Flow (접속 실패)",
+      "url": "https://farside.co.uk/btc/"
+    },
+    {
+      "title": "블록미디어 — [뉴욕 코인시황/마감] 나스닥 상승에도 디커플링…비트코인, 7.5만달러 회복 실패 (2026-11-10 06:00 KST)",
+      "url": "https://www.blockmedia.co.kr/archives/1163444"
+    },
+    {
+      "title": "CoinDesk — Bitcoin drops then pops as Nvidia scandal and failed Iran talks trigger volatility (2026-11-09)",
+      "url": "https://www.coindesk.com/markets/2026/11/09/bitcoin-drops-then-pops-as-nvidia-cheating-scandal-and-failed-iran-talks-trigger-volatility"
+    },
+    {
+      "title": "CoinDesk Daybook — Bitcoin bulls can't rely on ETF flows (2026-11-09, SoSoValue 인용)",
+      "url": "https://www.coindesk.com/daybook-us/2026/11/09/bitcoin-bulls-can-t-rely-on-etf-flows"
+    },
+    {
+      "title": "KuCoin News — Over $1.2 billion in crypto market liquidations on November 10 (Coinglass 인용)",
+      "url": "https://www.kucoin.com/news/flash/over-1-2-billion-in-crypto-market-liquidations-on-november-10"
+    },
+    {
+      "title": "KuCoin News — Top 100 crypto gainers and losers on November 9, 2026",
+      "url": "https://www.kucoin.com/news/flash/top-100-crypto-gainers-and-losers-on-november-9-2026"
+    },
+    {
+      "title": "Fortune — Price of bitcoin 2026-11-09",
+      "url": "https://fortune.com/article/price-of-bitcoin-11-09-2026/"
+    },
+    {
+      "title": "CoinDesk — NYSE picks Avalanche to settle tokenized stocks (2026-11-09 13:40 UTC)",
+      "url": "https://www.coindesk.com/business/2026/11/09/nyse-picks-avalanche-to-settle-tokenized-stocks-amid-wall-street-s-blockchain-race"
+    },
+    {
+      "title": "Cointelegraph — AVAX leads crypto gains as NYSE selects Avalanche (2026-11-09 17:41 UTC)",
+      "url": "https://cointelegraph.com/news/avalanche-avax-crypto-nyse-tokenization-deal"
+    },
+    {
+      "title": "TokenPost — Avalanche briefly tops $9 as gain widens to 11% (2026-11-09 16:01 UTC)",
+      "url": "https://www.tokenpost.com/news/investing/52407"
+    },
+    {
+      "title": "CryptoTicker — Pieverse unlock November 14 (2026-11-04)",
+      "url": "https://cryptoticker.io/en/pieverse-unlock-november-14-vesting-cliff/"
+    },
+    {
+      "title": "EdaFace — PIEVERSE rally faces a test as token unlock approaches (2026-11-09 17:43 UTC, OI·펀딩)",
+      "url": "https://news.edaface.com/2026/11/09/pieverse-rally-faces-a-test-as-token-unlock-approaches-can-the-price-break-above-1-70-and-reach-2/"
+    },
+    {
+      "title": "CMC AI — Pieverse latest updates",
+      "url": "https://coinmarketcap.com/cmc-ai/pieverse/latest-updates/"
+    },
+    {
+      "title": "TheCCPress — Why is Jupiter price surging today (2026-11-04, 스테이킹 보상 청구)",
+      "url": "https://theccpress.com/why-is-jupiter-price-surging-today"
+    },
+    {
+      "title": "TokenPost — Rain falls 13.37% leading listed crypto decliners (2026-11-09 21:10 UTC)",
+      "url": "https://www.tokenpost.com/news/investing/52557"
+    },
+    {
+      "title": "Live Bitcoin News — Bitway token unlock frees 101.6M BTW (2026-11-03)",
+      "url": "https://www.livebitcoinnews.com/bitway-unlocks-101-6m-btw-110m/"
+    },
+    {
+      "title": "CryptoTicker — Bitway daily turnover and token release (2026-10-11)",
+      "url": "https://cryptoticker.io/en/bitway-daily-turnover-token-release/"
+    },
+    {
+      "title": "GlobeNewswire(Manila Times) — Kinetiq launches Elysium public mainnet (2026-11-09 13:56 UTC)",
+      "url": "https://www.manilatimes.net/2026/11/09/tmt-newswire/globenewswire/kinetiq-launches-elysium-public-mainnet-a-high-performance-layer-2-built-for-hyperliquid/2465340"
+    },
+    {
+      "title": "CMC AI — Kinetiq latest updates",
+      "url": "https://coinmarketcap.com/cmc-ai/kinetiq/latest-updates/"
+    },
+    {
+      "title": "ChainCatcher(RootData) — JCT unlock worth about $6.06M (2026-11-03)",
+      "url": "https://www.chaincatcher.com/en/article/2301309"
+    },
+    {
+      "title": "KuCoin Square — Janction JCT price dives 12.81% amid volatility",
+      "url": "https://www.kucoin.com/square/post/content_6ad964f24bae8c0007c19486"
+    },
+    {
+      "title": "CBC뉴스 — [환율 마감] 1,360원대 출발해 낙폭 키운 환율 (2026-11-10 00:15 KST)",
+      "url": "https://www.cbci.co.kr/news/articleView.html?idxno=624945"
+    }
+  ],
+  "terms": [
+    {
+      "term": "미결제약정(OI)",
+      "meaning": "아직 청산되지 않은 선물 계약의 총액. 시총 대비 비율이 높을수록 빌린 돈으로 움직이는 시장"
+    },
+    {
+      "term": "펀딩비",
+      "meaning": "무기한 선물에서 롱과 숏이 주고받는 수수료. 양수면 롱이 많다"
+    },
+    {
+      "term": "CVD",
+      "meaning": "누적 거래량 델타. 시장가 매수와 매도의 차이를 누적한 값으로, 양수면 매수 우위"
+    },
+    {
+      "term": "재료 소멸",
+      "meaning": "예고된 호재가 실현되는 날 기대가 빠지며 가격이 내리는 것"
+    },
+    {
+      "term": "언락",
+      "meaning": "잠겨 있던 토큰이 일정에 따라 시장에 풀리는 것. 매도 가능 물량이 늘어난다"
+    },
+    {
+      "term": "TVL",
+      "meaning": "체인이나 프로토콜에 예치된 자산 총액"
+    },
+    {
+      "term": "디커플링",
+      "meaning": "증시 같은 다른 자산과 같은 방향으로 움직이지 않는 것"
+    },
+    {
+      "term": "RSI",
+      "meaning": "최근 상승·하락 강도를 0~100으로 나타낸 지표. 70 위면 과매수로 본다"
+    }
+  ]
+}
