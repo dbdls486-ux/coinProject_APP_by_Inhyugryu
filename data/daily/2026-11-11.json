@@ -1,0 +1,738 @@
+{
+  "id": "2026-11-11",
+  "date": "2026-11-11",
+  "asOf": "2026-11-11 08:20 KST",
+  "window": "최근 24시간 (11/10 08:30 → 11/11 08:30 KST)",
+  "title": "CPI 충격에 비트코인은 3개월 최저, 알트는 그보다 더 밀렸다",
+  "regime": "하락장",
+  "tldr": [
+    "10일 밤 미국 10월 CPI가 예상을 웃돌자 전 종목이 밀렸고 알트가 비트코인보다 더 빠졌다.",
+    "비트코인 24시간 -1.8%, 전체 시총 -2.0%, 청산 7.18억 달러 중 롱이 86%다.",
+    "11/10 거래일 ETF 집계, 12월 금리 인상 확률 85%의 변화, 지캐시 1,000달러 지지를 본다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "BTC vs ETH (24시간)",
+      "value": "-1.8% vs -3.8%",
+      "basis": "11/11 08:20 기준 24시간 · CoinGecko",
+      "tone": "down",
+      "details": [
+        {
+          "label": "BTC",
+          "value": "업비트 1억 225만원 → 1억 2만원, 10일 저점 72,695달러로 3개월 최저"
+        },
+        {
+          "label": "ETH",
+          "value": "24시간 -3.8%, 285만원 → 274만원. 장중 2,000달러 터치"
+        },
+        {
+          "label": "메이저",
+          "value": "SOL -4.1% · HYPE -4.2% · XRP -3.4% · DOGE -3.1% · BNB -1.8%"
+        },
+        {
+          "label": "시총 100위 안 24시간 상승 상위",
+          "value": "BTW +12.7% · GRAM +10.5% · LIT +6.5% · PI +4.8% · NIGHT +4.4% · PEPE +3.4% · XDC +2.2%. 그 외는 2% 미만"
+        },
+        {
+          "label": "시총 100위 안 24시간 하락 상위",
+          "value": "RAIN -14.8% · ZEC -11.7% · VVV -11.4% · DASH -9.5% · PEARL -8.5% · ARB -7.6% · QNT -7.0% · AAVE -6.0% · UNI -6.0% · XMR -5.6% · MNT -5.6%"
+        }
+      ]
+    },
+    {
+      "label": "미국 10월 CPI",
+      "value": "전월 대비 +0.4%, 예상 0.3%",
+      "basis": "11월 10일 발표 · 미 노동통계국, 블록미디어 인용",
+      "tone": "down",
+      "details": [
+        {
+          "label": "근원 CPI",
+          "value": "전월 대비 +0.3%, 예상 0.2%. 3개월 연속 0.3%"
+        },
+        {
+          "label": "금리 반응",
+          "value": "미 2년물 +17bp 4.73%로 19개월 만에 최대 폭 상승. 10년물 장중 5%"
+        },
+        {
+          "label": "12월 FOMC",
+          "value": "25bp 인상 확률 77% → 85%. 월러 이사는 50bp도 검토 가능 발언"
+        },
+        {
+          "label": "증시",
+          "value": "10일 미 증시 약세, 엔비디아 -5%. 전날 9일은 나스닥 +2.7%였다"
+        }
+      ]
+    },
+    {
+      "label": "24시간 청산",
+      "value": "7.18억 달러",
+      "basis": "11/11 08시 기준 24시간 · Coinglass, 블록미디어 인용",
+      "tone": "down",
+      "details": [
+        {
+          "label": "BTC",
+          "value": "2.05억 달러, 이 중 롱 1.77억 달러로 86.7%"
+        },
+        {
+          "label": "06시 기준",
+          "value": "6.55억 달러 중 롱 5.35억 달러 (CoinMarketCap 기준)"
+        },
+        {
+          "label": "CPI 직후",
+          "value": "10일 23시경 24시간 6.32억 달러, 롱 5.11억 달러 (Coinglass, Odaily 인용)"
+        },
+        {
+          "label": "전일 비교",
+          "value": "11/9~10 24시간 12.4억 달러 → 11/10~11 7.18억 달러. 4일 연속 6억 달러 이상"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "24시간 -1.8%, 1억 225만원 → 1억 2만원",
+      "note": "업비트 기준, 바이낸스는 73,590달러로 -2.0%. 10일 저점 72,695달러는 8월 이후 최저, 연초 대비 -17%. 200일선 73,200달러 부근."
+    },
+    {
+      "label": "ETH",
+      "value": "24시간 -3.8%, 285만원 → 274만원",
+      "note": "CPI 발표 뒤 장중 2,000달러까지 밀렸다가 2,050달러로 복귀. 7일 기준 -10.7%로 BTC -5.4%의 두 배."
+    },
+    {
+      "label": "전체 시총",
+      "value": "24시간 -2.0%, 2.549조 달러",
+      "note": "CoinGecko 8시 20분 기준. 24시간 거래량 792억 달러. 뉴욕 마감 기준 CoinMarketCap은 2.44조 달러, -2.2%."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "58.1%",
+      "note": "CoinGecko. 전일 58.3%에서 소폭 하락. ETH 도미넌스 9.83%로 10% 아래."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/10 거래일 미집계",
+      "note": "11/9 거래일 -2.01억 달러로 3일 연속 순유출, IBIT만 -2.13억 달러로 7거래일 연속 환매. 11/2 이후 누적 약 -15억 달러."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/10 거래일 미집계",
+      "note": "11/9 거래일 -1.85억 달러, ETHA -1.19억 달러. 11/6 -0.93억 달러에 이어 유출 확대."
+    },
+    {
+      "label": "전체 청산(24시간)",
+      "value": "7.18억 달러, 롱 86%",
+      "note": "CPI 발표 뒤 10일 밤~11일 새벽에 집중. BTC 2.05억 달러, ZEC 0.33억 달러."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "37, 공포",
+      "note": "CoinGecko 자체 지수. CoinMarketCap 지수는 25~27로 더 낮다. alternative.me는 조회 실패."
+    },
+    {
+      "label": "거시·증시",
+      "value": "10월 CPI +0.4%, 2년물 4.73%",
+      "note": "예상 0.3%를 웃돈 물가에 12월 인상 확률 85%. 10일 미 증시 약세, 엔비디아 -5%. 중동 긴장 완화로 달러-원은 9.6원 하락."
+    },
+    {
+      "label": "집계 기준",
+      "value": "CoinGecko 24시간, 11/11 08:20 조회",
+      "note": "기간 시작점이 9일 급락 뒤 반등 구간이라 24시간 하락폭이 10일 밤 CPI 급락분을 그대로 반영한다. 100위 안 등락 부호는 Coinranking·CoinMarketCap으로 교차 확인."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,337.5원",
+      "note": "11/10 서울 외환시장 마감가 일괄 적용. 전일 1,347.1원에서 9.6원 하락. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "Zcash",
+      "ticker": "ZEC",
+      "direction": "down",
+      "change": "-11.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-9.9%p",
+      "marketCap": "178억 달러",
+      "rank": 10,
+      "volume24h": "12.2억 달러 (시총의 6.9%)",
+      "causeType": "수급 주도",
+      "headline": "CPI 뒤 2시간 만에 -16%, OI 20% 증발한 롱 청산.",
+      "happened": [
+        "CPI 발표 뒤 10일 23:42 KST 30분간 -7.9%, 11일 새벽 2시간에 -16%.",
+        "같은 날 그레이스케일이 생태계 100만 달러 지원을 발표했으나 하락 중 나왔다."
+      ],
+      "reaction": [
+        "24시간 -11.7%, 158.3만원 → 139.8만원. 1,197달러 → 1,003달러, 저점 992달러.",
+        "OKX OI 1.62억 → 1.30억 달러로 -20%, 24시간 청산 0.33억 달러 중 롱 90%."
+      ],
+      "watch": "1,000달러 지지와 OI가 더 줄어드는지, ZCSH ETF 주간 흐름.",
+      "caveat": "토큰포스트·크립토티커 모두 지캐시 자체 악재는 미확인. 11/8~9 블록시간 단축 NU7.1 제안은 가격과 무관. 전체 OI는 22.7억 달러로 -11.5%.",
+      "flows": {
+        "openInterest": "22.7억 달러, 24시간 -11.5% (Coinglass, ETHNews 인용)",
+        "fundingRate": "OKX 0.01% → 0.0034% (11일 02시 정산)",
+        "liquidations": "24시간 0.33억 달러, 롱 약 90%"
+      },
+      "confidence": "B"
+    },
+    {
+      "project": "Gram (prev. Toncoin)",
+      "ticker": "GRAM",
+      "direction": "up",
+      "change": "+10.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+12.3%p",
+      "marketCap": "32.7억 달러",
+      "rank": 29,
+      "volume24h": "1.31억 달러 (시총의 4.0%)",
+      "causeType": "가능한 배경",
+      "headline": "텔레그램 자체 지갑 출시, 48시간 71만 개 개설 소식에 상승.",
+      "happened": [
+        "9일 두로프가 48시간 자가수탁 지갑 714,844개 개설, 9일 하루 329,952개 공개.",
+        "10일 TON Strategy 3분기 실적, 스테이킹 수익 1,310만 달러·순손실 2,400만 달러."
+      ],
+      "reaction": [
+        "24시간 +10.5%, 1,392원 → 1,538원. 10일 15시 이미 +8.9%로 200위 안 1위.",
+        "거래량은 시총의 4.0%로 7일 -3.6%를 하루에 되돌렸다."
+      ],
+      "watch": "지갑 개설 속도가 유지되는지, 11/22 3,658만 개 언락.",
+      "caveat": "지갑 수치 공개 시각과 분 단위 가격 반응은 미확인. 선물 OI·펀딩 미확보. TON Strategy 실적은 상승 시작 뒤에 나왔다.",
+      "confidence": "B"
+    },
+    {
+      "project": "Rain",
+      "ticker": "RAIN",
+      "direction": "down",
+      "change": "-14.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-13.0%p",
+      "marketCap": "27.6억 달러",
+      "rank": 33,
+      "volume24h": "0.052억 달러 (시총의 0.19%)",
+      "causeType": "원인 불명",
+      "headline": "사흘 연속 두 자릿수 하락. 사건 없음, 거래량 시총의 0.2%.",
+      "happened": [
+        "10일 공시 없음. CoinMarketCap도 확인된 개별 요인 없음으로 기록."
+      ],
+      "reaction": [
+        "24시간 -14.8%, 6.1원 → 5.2원. 7일 기준 -39.6%.",
+        "하루 거래량 523만 달러로 시총의 0.19%."
+      ],
+      "watch": "거래량이 늘지 않은 채 하락이 멈추는지.",
+      "caveat": "거래량 기준 2% 미달이지만 시총 100위 안 하락 1위라 포함. 유통 대비 미유통 물량이 커 호가가 얇다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Bitway",
+      "ticker": "BTW",
+      "direction": "up",
+      "change": "+12.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+14.5%p",
+      "marketCap": "17.4억 달러",
+      "rank": 52,
+      "volume24h": "0.11억 달러 (시총의 0.66%)",
+      "causeType": "원인 불명",
+      "headline": "전날 -12%를 하루 만에 되돌림. 공시 없음.",
+      "happened": [
+        "10일 공시 없음. 11/2 1.016억 개 언락 뒤 다음 언락은 12/2."
+      ],
+      "reaction": [
+        "24시간 +12.7%, 1,377원 → 1,552원. 9일 -12%, 10일 +13%로 이틀 왕복.",
+        "거래량 1,145만 달러로 시총의 0.66%."
+      ],
+      "watch": "얇은 거래량에서 이틀 연속 10%대 변동이 반복되는지.",
+      "caveat": "거래량 기준 2% 미달이지만 시총 100위 안 상승 1위라 포함. 시장 전체 하락일에 혼자 오른 이유는 미확인.",
+      "confidence": "C"
+    },
+    {
+      "project": "Venice Token",
+      "ticker": "VVV",
+      "direction": "down",
+      "change": "-11.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-9.6%p",
+      "marketCap": "9.47억 달러",
+      "rank": 73,
+      "volume24h": "0.55억 달러 (시총의 5.9%)",
+      "causeType": "원인 불명",
+      "headline": "전날 +9%를 전부 반납. 자체 악재 미확인.",
+      "happened": [
+        "10일 공시 없음. 9일 역대 최대 바이백 소각은 유통량의 0.04%에 그쳤다."
+      ],
+      "reaction": [
+        "24시간 -11.4%, 29,224원 → 25,894원. 거래량은 전일 대비 +80%.",
+        "9일 +9.2% 상승분을 하루 만에 되돌렸다."
+      ],
+      "watch": "거래량 증가가 매도 쪽인지, 26,000원 아래 머무는지.",
+      "caveat": "CoinMarketCap은 확인된 개별 악재 없음으로 기록. OI·펀딩 미확보.",
+      "confidence": "C"
+    },
+    {
+      "project": "Dash",
+      "ticker": "DASH",
+      "direction": "down",
+      "change": "-9.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-7.7%p",
+      "marketCap": "5.49억 달러",
+      "rank": 98,
+      "volume24h": "0.49억 달러 (시총의 9.0%)",
+      "causeType": "원인 불명",
+      "headline": "프라이버시 코인 동반 약세, 자체 사건은 미확인.",
+      "happened": [
+        "10일 공시 없음. 같은 날 ZEC -11.7%, XMR -5.6%."
+      ],
+      "reaction": [
+        "24시간 -9.5%, 62,983원 → 57,004원. 거래량은 시총의 9.0%."
+      ],
+      "watch": "ZEC 반등 시 같이 돌아서는지.",
+      "caveat": "최신 뉴스 페이지 조회 실패로 개별 사건 부재를 완전히 확인하지 못했다. 섹터 동반 하락은 개별 원인으로 쓰지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pearl",
+      "ticker": "PEARL",
+      "direction": "down",
+      "change": "-8.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-6.7%p",
+      "marketCap": "5.64억 달러",
+      "rank": 97,
+      "volume24h": "0.14억 달러 (시총의 2.5%)",
+      "causeType": "원인 불명",
+      "headline": "이틀 연속 하락, 사건 없음.",
+      "happened": [
+        "확인된 개별 사건 없음. 9일 -5.9%에 이어 이틀째."
+      ],
+      "reaction": [
+        "24시간 -8.5%, 2,192원 → 2,006원. 이틀 누적 약 -14%."
+      ],
+      "watch": "2,000원 아래로 내려가는지.",
+      "caveat": "뉴스 페이지 조회 실패. 시총 100위 안 하락 5위라 포함.",
+      "confidence": "C"
+    },
+    {
+      "project": "Arbitrum",
+      "ticker": "ARB",
+      "direction": "down",
+      "change": "-7.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.8%p",
+      "marketCap": "11.1억 달러",
+      "rank": 69,
+      "volume24h": "1.83억 달러 (시총의 16%)",
+      "causeType": "시장 베타",
+      "headline": "전날 +8.4% 반등분을 알트 전반 하락과 함께 반납.",
+      "happened": [
+        "확인된 개별 사건 없음. 9일 상승도 사건 없이 거래량만 동반했었다."
+      ],
+      "reaction": [
+        "24시간 -7.6%, 234원 → 216원. 거래량은 시총의 16%로 여전히 많다.",
+        "같은 기간 AAVE -6.0%, UNI -6.0%로 디파이·L2 토큰이 같은 범위."
+      ],
+      "watch": "거래량이 줄면서 하락이 멈추는지.",
+      "caveat": "BTC 대비 초과 하락 5.8%p는 작지 않으나 알트 전반 -4~8% 범위 안. OI·펀딩 미확보.",
+      "confidence": "C"
+    },
+    {
+      "project": "Quant",
+      "ticker": "QNT",
+      "direction": "down",
+      "change": "-7.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.2%p",
+      "marketCap": "26.4억 달러",
+      "rank": 37,
+      "volume24h": "0.68억 달러 (시총의 2.6%)",
+      "causeType": "시장 베타",
+      "headline": "알트 하락 범위 안. 8일 출금 재개 뒤 새 사건 없음.",
+      "happened": [
+        "8일 보안 문제로 중단됐던 출금 재개 공지 뒤 10일 새 공시 없음."
+      ],
+      "reaction": [
+        "24시간 -7.0%, 260,358원 → 242,128원. 9일 저녁 -1.5%에서 CPI 뒤 확대."
+      ],
+      "watch": "출금 재개 뒤 거래소 순유입이 이어지는지.",
+      "caveat": "CoinMarketCap은 9일 밤 기준 개별 요인 없음으로 기록. 거래소별 넷플로우 미확보.",
+      "confidence": "C"
+    },
+    {
+      "project": "Aave",
+      "ticker": "AAVE",
+      "direction": "down",
+      "change": "-6.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.2%p",
+      "marketCap": "19.1억 달러",
+      "rank": 47,
+      "volume24h": "2.33억 달러 (시총의 12%)",
+      "causeType": "시장 베타",
+      "headline": "전날 +6.2% 상승을 하루 만에 되돌림.",
+      "happened": [
+        "확인된 개별 사건 없음."
+      ],
+      "reaction": [
+        "24시간 -6.0%, 176,028원 → 165,462원. 거래량은 시총의 12%."
+      ],
+      "watch": "ETH 대비 초과 하락이 이어지는지.",
+      "caveat": "뉴스 페이지 조회 실패. UNI·ARB와 같은 범위라 개별 요인 없이 설명된다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Uniswap",
+      "ticker": "UNI",
+      "direction": "down",
+      "change": "-6.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.2%p",
+      "marketCap": "40.5억 달러",
+      "rank": 24,
+      "volume24h": "4.50억 달러 (시총의 11%)",
+      "causeType": "시장 베타",
+      "headline": "디파이 토큰 동반 하락 범위 안.",
+      "happened": [
+        "확인된 개별 사건 없음. 9일 +5.4% 뒤 되돌림."
+      ],
+      "reaction": [
+        "24시간 -6.0%, 9,476원 → 8,908원. 거래량은 시총의 11%."
+      ],
+      "watch": "ETH 2,000달러가 깨질 때 낙폭이 더 커지는지.",
+      "caveat": "뉴스 페이지 조회 실패. AAVE와 등락률이 같다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Lighter",
+      "ticker": "LIT",
+      "direction": "up",
+      "change": "+6.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+8.3%p",
+      "marketCap": "8.64억 달러",
+      "rank": 77,
+      "volume24h": "0.91억 달러 (시총의 10.5%)",
+      "causeType": "원인 불명",
+      "headline": "하락장에서 이틀 연속 상승, 공시 없음.",
+      "happened": [
+        "확인된 개별 사건 없음. 9일 +7.1%에 이어 이틀째."
+      ],
+      "reaction": [
+        "24시간 +6.5%, 4,345원 → 4,628원. 이틀 누적 약 +14%.",
+        "거래량은 시총의 10.5%."
+      ],
+      "watch": "8일 급락 전 가격 회복 여부.",
+      "caveat": "최근 48시간 공시·상장 검색 결과 없음. 거래소 수익·바이백 수치 미확보.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pi Network",
+      "ticker": "PI",
+      "direction": "up",
+      "change": "+4.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+6.6%p",
+      "marketCap": "8.0억 달러",
+      "rank": 82,
+      "volume24h": "0.084억 달러 (시총의 1.1%)",
+      "causeType": "원인 불명",
+      "headline": "17일 생태계 서밋 앞두고 얇은 거래량 상승.",
+      "happened": [
+        "10일 새 공시 없음. 11/17~19 Pi 생태계 서밋은 10월 16일 예고."
+      ],
+      "reaction": [
+        "24시간 +4.8%, 89.8원 → 94.1원. 거래량은 시총의 1.1%."
+      ],
+      "watch": "서밋 전까지 상승이 유지되는지, 거래량 변화.",
+      "caveat": "거래량 기준 2% 미달이지만 시총 100위 안 상승 4위라 포함. 언락 압력 언급 기사는 미확인.",
+      "confidence": "C"
+    },
+    {
+      "project": "Midnight",
+      "ticker": "NIGHT",
+      "direction": "up",
+      "change": "+4.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+6.2%p",
+      "marketCap": "6.92억 달러",
+      "rank": 87,
+      "volume24h": "0.21억 달러 (시총의 3.0%)",
+      "causeType": "원인 불명",
+      "headline": "10일 낮 +8.8%에서 밤사이 축소. 새 사건 없음.",
+      "happened": [
+        "10일 새 공시 없음. Ledger 9 업그레이드는 7일 이전 반영."
+      ],
+      "reaction": [
+        "24시간 +4.4%, 53.4원 → 55.8원. 10일 15시 기준 +8.8%였다가 CPI 뒤 축소."
+      ],
+      "watch": "프라이버시 테마 ZEC·DASH 약세와 반대로 가는 이유가 나오는지.",
+      "caveat": "Morpho 예치 21억 달러 등은 7일 기사 수치. OI 미확보.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pepe",
+      "ticker": "PEPE",
+      "direction": "up",
+      "change": "+3.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.2%p",
+      "marketCap": "22.3억 달러",
+      "rank": 42,
+      "volume24h": "6.47억 달러 (시총의 29%)",
+      "causeType": "원인 불명",
+      "headline": "밈코인 중 혼자 상승, 거래량 시총의 29%.",
+      "happened": [
+        "확인된 개별 사건 없음. 같은 날 DOGE -3.1%, SHIB +0.1%."
+      ],
+      "reaction": [
+        "24시간 +3.4%, 거래량 6.47억 달러로 시총의 29%."
+      ],
+      "watch": "거래량이 줄 때 상승분이 남는지.",
+      "caveat": "가격이 소수점 다섯째 자리라 원화 환산 생략. 선물 수급 미확보.",
+      "confidence": "C"
+    },
+    {
+      "project": "XDC Network",
+      "ticker": "XDC",
+      "direction": "up",
+      "change": "+2.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+4.0%p",
+      "marketCap": "5.96억 달러",
+      "rank": 92,
+      "volume24h": "0.14억 달러 (시총의 2.3%)",
+      "causeType": "원인 불명",
+      "headline": "하락장에서 소폭 상승, 사건 없음.",
+      "happened": [
+        "확인된 개별 사건 없음."
+      ],
+      "reaction": [
+        "24시간 +2.2%, 39.1원 → 40.0원."
+      ],
+      "watch": "상승이 하루 더 이어지는지.",
+      "caveat": "시총 100위 안 상승 7위라 포함. 부호는 CoinMarketCap 상위 100 상승 목록으로 확인.",
+      "confidence": "C"
+    },
+    {
+      "project": "Janction",
+      "ticker": "JCT",
+      "direction": "down",
+      "change": "-51.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-49.7%p",
+      "marketCap": "0.60억 달러",
+      "rank": 377,
+      "volume24h": "0.90억 달러 (시총의 150%)",
+      "causeType": "수급 주도",
+      "headline": "7배 급등의 되돌림, OI가 시총의 2배인 채로 반토막.",
+      "happened": [
+        "10일 새벽 1,040만 달러 규모 언락 뒤 이틀째 급락. 새 공시 없음.",
+        "8일 하루 7배 급등 때도 확인된 사건 없었다."
+      ],
+      "reaction": [
+        "24시간 -51.5%, 14.4원 → 7.0원. 8일 고점 25원 대비 -72%.",
+        "선물 OI 1.31억 달러로 시총의 219%, 8시간 펀딩 +0.12%."
+      ],
+      "watch": "OI가 시총 아래로 줄어드는 시점, 5원 지지.",
+      "caveat": "급락으로 순위가 216위에서 377위로 밀려 300위 기준 미달이나 전일 종목이라 포함. CoinMarketCap은 -43.6%로 집계 시각 차이.",
+      "flows": {
+        "openInterest": "1.31억 달러 (CoinGecko, 11/11 08시)",
+        "oiToMcap": "약 219%",
+        "fundingRate": "+0.1178% / 8시간"
+      },
+      "confidence": "B"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "ICP",
+      "reason": "CoinGecko 24h 5.9%이나 부호가 출처마다 달라 미확인. CoinMarketCap 상위 100 상승 목록에는 +0.2%"
+    },
+    {
+      "ticker": "XMR",
+      "reason": "24h -5.6%(13위), 하락 11위로 종목 수 제한 제외. DASH 항목에 동반 하락으로 언급"
+    },
+    {
+      "ticker": "MNT",
+      "reason": "24h -5.6%(63위), 하락 12위로 종목 수 제한 제외"
+    },
+    {
+      "ticker": "YELLOW",
+      "reason": "24h -15.8%(281위), 거래량 396만 달러. 사건 미조사로 보류"
+    },
+    {
+      "ticker": "INIT",
+      "reason": "24h +32.0%이나 시총 순위 394위로 300위 밖"
+    },
+    {
+      "ticker": "RITUAL",
+      "reason": "24h -30.5%이나 시총 순위 364위로 300위 밖. 전일 +36% 되돌림"
+    },
+    {
+      "ticker": "AKE",
+      "reason": "24h -39.9%이나 시총 순위 352위로 300위 밖"
+    },
+    {
+      "ticker": "PIEVERSE",
+      "reason": "Coinranking -8.6%, CoinMarketCap -13.2%이나 CoinGecko 100위 표(86~100위)에 없어 순위 미확인"
+    }
+  ],
+  "watchNext": [
+    "11/10 거래일 미 BTC·ETH 현물 ETF 순유출입 — 미집계 (Farside, 11/11 오전 집계)",
+    "12월 FOMC 25bp 인상 확률 85%의 변화, 미 2년물 4.73% 위 유지 여부",
+    "BTC 72,695달러 저점과 200일선 73,200달러 지지, 75,000달러 회복 여부",
+    "ZEC 1,000달러 지지와 OI 감소 지속, 11/22 GRAM 3,658만 개 언락"
+  ],
+  "highlight": "오늘 배울 점은 같은 두 자릿수 등락이라도 ZEC와 RAIN은 설명 가능한 정도가 다르다는 것이다. ZEC는 CPI 발표 뒤 30분간 -7.9%, 이어 2시간 만에 -16%가 나오는 동안 OKX OI가 20% 줄고 청산의 90%가 롱이어서 레버리지 해소라는 수급 설명이 숫자로 남는다. RAIN은 사흘 연속 두 자릿수 하락인데 거래량이 시총의 0.2%뿐이라 원인을 붙일 근거 자체가 없다. 상승 쪽 GRAM은 9일 두로프의 지갑 71만 개 공개가 먼저 있었고 10일 낮 이미 +8.9%였으므로 사건과 가격의 선후는 맞지만 거래량 반응이 약해 가능한 배경에 머문다. JCT는 OI가 시총의 2배를 넘는 상태에서 반토막이 났으니 언락보다 레버리지가 주인공이다.",
+  "sources": [
+    {
+      "title": "CoinGecko — 시총 1~100위, 시장 개요 (11/11 08:20 KST 조회)",
+      "url": "https://www.coingecko.com/en?page=1"
+    },
+    {
+      "title": "CoinGecko — Bitcoin",
+      "url": "https://www.coingecko.com/en/coins/bitcoin"
+    },
+    {
+      "title": "CoinGecko — 24h gainers/losers (Top 1000)",
+      "url": "https://www.coingecko.com/en/crypto-gainers-losers"
+    },
+    {
+      "title": "CoinGecko — Janction (OI·펀딩·언락 뉴스)",
+      "url": "https://www.coingecko.com/en/coins/janction"
+    },
+    {
+      "title": "Coinranking — Top 100 gainers/losers 24h (부호 확인용)",
+      "url": "https://coinranking.com/coins/losers?top=100"
+    },
+    {
+      "title": "CoinMarketCap — gainers/losers (top 100, 24h)",
+      "url": "https://coinmarketcap.com/gainers-losers/"
+    },
+    {
+      "title": "블록미디어 — [뉴욕 코인시황/마감] 미 CPI 충격에 BTC 7.3만달러대 후퇴…알트코인 동반 약세 (2026-11-11 06:00 KST)",
+      "url": "https://www.blockmedia.co.kr/archives/1164141"
+    },
+    {
+      "title": "블록미디어 — [코인시황] 비트코인, 美 물가 충격에 7만3000달러대로 하락…3개월 만에 최저치 (2026-11-11 08:14 KST)",
+      "url": "https://www.blockmedia.co.kr/archives/1164211"
+    },
+    {
+      "title": "블록미디어 — [뉴욕 금·채권·달러] 미 10년물 국채금리 장중 5% …물가 쇼크에 달러·금리 동반 상승",
+      "url": "https://www.blockmedia.co.kr/archives/1164169"
+    },
+    {
+      "title": "블록미디어 — [뉴욕증시 마감] 예상보다 높은 10월 CPI, 증시 약세…엔비디아 5% 하락",
+      "url": "https://www.blockmedia.co.kr/archives/1164156"
+    },
+    {
+      "title": "KuCoin News — U.S. October CPI rises 0.4% MoM, Bitcoin drops below $74,000 (BLS 세부 항목)",
+      "url": "https://www.kucoin.com/news/flash/u-s-october-cpi-rises-0-4-mom-bitcoin-drops-below-74-000-ethereum-falls-to-2-000"
+    },
+    {
+      "title": "KuCoin News — Bitcoin dips to $72,787 after CPI release, $632M liquidations (Coinglass 인용)",
+      "url": "https://www.kucoin.com/news/flash/bitcoin-dips-to-72-787-after-cpi-release-632m-in-crypto-liquidations-in-24-hours"
+    },
+    {
+      "title": "KuCoin News — US Bitcoin and Ethereum spot ETFs net outflows $201M / $184.6M on Nov 9 (Farside 인용)",
+      "url": "https://www.kucoin.com/news/flash/us-bitcoin-and-ethereum-spot-etfs-recorded-net-outflows-of-201m-and-184-6m-on-nov-9"
+    },
+    {
+      "title": "CoinDesk Daybook — Bitcoin breaks with stocks as ETF outflows mount, MARA sells (2026-11-10 12:15 UTC)",
+      "url": "https://www.coindesk.com/daybook-us/2026/11/10/bitcoin-breaks-with-stocks-declines-as-etf-outflows-mount-mara-sells-holdings"
+    },
+    {
+      "title": "TokenPost — Zcash price falls 7.89% in 30 minutes, reaching $1,092.19 (2026-11-10 15:42 UTC)",
+      "url": "https://www.tokenpost.com/news/investing/53233"
+    },
+    {
+      "title": "CryptoTicker — Zcash price falls 16% to $1,003 (OKX OI·펀딩·청산)",
+      "url": "https://cryptoticker.io/en/zcash-price-falls-16-percent-to-1003-dollars/"
+    },
+    {
+      "title": "Bitcoin.com — Grayscale pledges $1M to Zcash ecosystem as ZEC plunges below $1,000 (2026-11-10 19:58 UTC)",
+      "url": "https://news.bitcoin.com/market-updates/grayscale-pledges-1m-zcash-ecosystem-zec-plunges-below-1000/"
+    },
+    {
+      "title": "ETHNews — Zcash's CPI selloff (Coinglass OI·청산)",
+      "url": "https://ethnews.com/zcashs-cpi-selloff-reveals-a-deeper-problem-for-zec/"
+    },
+    {
+      "title": "The Block — TON Strategy earns $13.1M from GRAM staking in Q3 as Telegram rolls out native wallet (2026-11-10 17:23 UTC)",
+      "url": "https://www.theblock.co/news/markets/2026-11-10-ton-strategy-tonx-q3-2026-earnings-gram-staking-437278"
+    },
+    {
+      "title": "CMC AI — Gram latest updates (두로프 지갑 714,844개)",
+      "url": "https://coinmarketcap.com/cmc-ai/gram/latest-updates/"
+    },
+    {
+      "title": "CoinCodex — Daily market update for Nov 10, 2026 (06:00 UTC, GRAM·NIGHT 상승 1·2위)",
+      "url": "https://coincodex.com/article/95134/daily-market-update-for-november-10-2026"
+    },
+    {
+      "title": "CMC AI — Rain price analysis (2026-11-10 15:10 UTC)",
+      "url": "https://coinmarketcap.com/cmc-ai/rain/price-analysis/"
+    },
+    {
+      "title": "CMC AI — Venice Token price analysis (2026-11-10 15:37 UTC)",
+      "url": "https://coinmarketcap.com/cmc-ai/venice-token/price-analysis"
+    },
+    {
+      "title": "CMC AI — Bitway price analysis (2026-11-10 15:39 UTC)",
+      "url": "https://coinmarketcap.com/cmc-ai/bitway-btw/price-analysis/"
+    },
+    {
+      "title": "CMC AI — Quant price analysis (11/8 출금 재개)",
+      "url": "https://coinmarketcap.com/ja/cmc-ai/quant/price-analysis/"
+    },
+    {
+      "title": "CMC AI — Janction price analysis (2026-11-10 15:08 UTC)",
+      "url": "https://coinmarketcap.com/cmc-ai/janction/price-analysis"
+    },
+    {
+      "title": "KuCoin News — Pi Network announces ecosystem summit Nov 17-19 (2026-10-16)",
+      "url": "https://www.kucoin.com/news/flash/pi-network-announces-developer-summit-pi-token-rises-4"
+    },
+    {
+      "title": "CoinMarketCap — Midnight (NIGHT) Ledger 9 업그레이드 (2026-11-07)",
+      "url": "https://coinmarketcap.com/top-stories/6aeedb8f186e1f6fb5cc3892/"
+    },
+    {
+      "title": "뉴스1 — 중동 긴장 완화에 달러·원 9.6원↓…1337.5원 마감 (2026-11-10)",
+      "url": "https://www.news1.kr/finance/market-exr/6349414"
+    }
+  ],
+  "terms": [
+    {
+      "term": "미결제약정(OI)",
+      "meaning": "아직 청산되지 않은 선물 계약의 총액. 시총 대비 비율이 높을수록 빌린 돈으로 움직이는 시장"
+    },
+    {
+      "term": "펀딩비",
+      "meaning": "무기한 선물에서 롱과 숏이 주고받는 수수료. 양수면 롱이 많다"
+    },
+    {
+      "term": "CPI",
+      "meaning": "미국 소비자물가지수. 예상보다 높으면 금리 인하 기대가 줄어 위험자산에 불리하다"
+    },
+    {
+      "term": "bp",
+      "meaning": "베이시스포인트. 0.01%포인트"
+    },
+    {
+      "term": "200일선",
+      "meaning": "최근 200일 종가 평균선. 장기 추세의 지지·저항으로 본다"
+    },
+    {
+      "term": "언락",
+      "meaning": "잠겨 있던 토큰이 일정에 따라 시장에 풀리는 것. 매도 가능 물량이 늘어난다"
+    },
+    {
+      "term": "도미넌스",
+      "meaning": "전체 암호화폐 시총에서 한 코인이 차지하는 비율"
+    },
+    {
+      "term": "레버리지 해소",
+      "meaning": "빌린 돈으로 잡은 포지션이 청산되거나 줄어들며 OI가 감소하는 것"
+    }
+  ]
+}
