@@ -340,6 +340,39 @@ def verdict(st):
 
 
 # ----------------------------------------------------------------------------------------
+# E. 시장 전체 신호 — "어느 종목"이 아니라 "언제"를 가리는 신호인지 확인
+# ----------------------------------------------------------------------------------------
+def market_signals(df):
+    x = pd.DataFrame(dict(
+        t=df.t.to_numpy(), fwd=df.fwd.to_numpy(), fwd28=df.fwd28.to_numpy(),
+        brk=((df.brk60.to_numpy() > 0.5) & (df.vr.to_numpy() >= 2)).astype(float),
+        base=((df.range60_prev.to_numpy() < 0.6) & (df.brk60.to_numpy() > 0.5) & (df.vr.to_numpy() >= 2)).astype(float),
+        low=(df.newlow20.to_numpy() > 0.5).astype(float), test=df.is_test.to_numpy().astype(float), btc=df.btc_d_sma50.to_numpy(),
+    ))
+    day = x.groupby("t").agg(fwd=("fwd", "mean"), fwd28=("fwd28", "mean"), brk=("brk", "mean"), base=("base", "mean"), low=("low", "mean"), test=("test", "first"), btc=("btc", "first"), n=("fwd", "size")).reset_index()
+    low5 = day.low.rolling(5).max().shift(1)
+    sigs = [
+        ("거래량 2배 동반 60일 고점 돌파 종목이 전체의 5% 이상", day.brk >= 0.05), ("같은 조건 10% 이상", day.brk >= 0.10), ("같은 조건 5% 이상 + BTC 50일선 위", (day.brk >= 0.05) & (day.btc > 0)),
+        ("횡보(60일 범위 60% 미만) 뒤 돌파 종목이 전체의 2% 이상", day.base >= 0.02), ("같은 조건 2% 이상 + BTC 50일선 위", (day.base >= 0.02) & (day.btc > 0)),
+        ("돌파 종목이 하나도 없는 날", day.brk == 0),
+        ("20일 신저가 종목이 전체의 30% 이상 (동반 투매)", day.low >= 0.30), ("동반 투매(최근 5일 안에 30% 이상) 뒤 신저가 종목이 5% 미만으로 줄어든 날", (low5 >= 0.30) & (day.low < 0.05)),
+        ("BTC 50일선 위", day.btc > 0), ("BTC 50일선 아래", day.btc <= 0),
+    ]
+    out = []
+    for label, m in sigs:
+        m = m.fillna(False).to_numpy()
+        r = dict(label=label)
+        for per, pm in (("train", day.test.to_numpy() == 0), ("test", day.test.to_numpy() == 1)):
+            k = m & pm
+            tt = day.t.to_numpy()[k]
+            eps = int(1 + (np.diff(tt) > 10).sum()) if len(tt) else 0  # 10일 넘게 떨어져 있으면 다른 묶음으로 센다
+            r[per] = dict(days=int(k.sum()), episodes=eps, share=float(k.sum() / max(pm.sum(), 1)), fwd=float(day.fwd[k].mean()) if k.sum() >= 5 else None, fwd28=float(day.fwd28[k].mean()) if k.sum() >= 5 else None,
+                          base=float(day.fwd[pm].mean()), base28=float(day.fwd28[pm].mean()), t=hac_t(day.fwd[k].to_numpy() - day.fwd[pm].mean()) if k.sum() >= 40 else None)
+        out.append(r)
+    return out
+
+
+# ----------------------------------------------------------------------------------------
 # B. 조건 조합 발굴
 # ----------------------------------------------------------------------------------------
 MKT_LABEL = {"btc_d_sma50": "BTC 50일선 대비 위치", "btc_roc7": "BTC 7일 등락률", "btc_roc28": "BTC 28일 등락률", "btc_rsi14": "BTC RSI", "breadth50": "50일선 위 코인 비율", "mkt_ret1": "시장 중앙값 1일 등락", "mkt_ret7": "시장 중앙값 7일 등락"}
@@ -633,6 +666,7 @@ def main():
             st = event_stats(df, m, raw[mkt], cfg["cost"])
             rows.append(dict(id=sid, group=group, label=label, verdict=verdict(st), **st))
         log(f"  A 시나리오 {len(rows)}개 채점 완료")
+        mkt_sig = market_signals(df)
         tree_cols = [c if c in BINARY else f"r_{c}" for c in feats] + model3
         fam = family_grids(df)
         log("  A2 가설 묶음 (기준값을 바꿔 가며) 채점 완료")
@@ -647,7 +681,7 @@ def main():
         if tagged is not None:
             nr = news_round(df, raw[mkt], cfg, tagged, tree_cols)
             log(f"  D 뉴스 × 차트 완료 (뉴스가 붙은 코인·날 {nr['eventDays']:,}개)")
-        result["markets"].append(dict(market=mkt, label=cfg["label"], rows=int(len(df)), coins=int(df.sym.nunique()), dates=[df.date.min(), df.date.max()], base=dict(train=float(df.pump[~df.is_test].mean()), test=float(df.pump[df.is_test].mean()), net_train=float(df.fwd[~df.is_test].mean()), net_test=float(df.fwd[df.is_test].mean()), net28_train=float(df.fwd28[~df.is_test].mean()), net28_test=float(df.fwd28[df.is_test].mean()), win_train=float((df.fwd[~df.is_test] > 0).mean()), win_test=float((df.fwd[df.is_test] > 0).mean())), setups=rows, families=fam, mines=mines, models=models, news=nr))
+        result["markets"].append(dict(market=mkt, label=cfg["label"], rows=int(len(df)), coins=int(df.sym.nunique()), dates=[df.date.min(), df.date.max()], base=dict(train=float(df.pump[~df.is_test].mean()), test=float(df.pump[df.is_test].mean()), net_train=float(df.fwd[~df.is_test].mean()), net_test=float(df.fwd[df.is_test].mean()), net28_train=float(df.fwd28[~df.is_test].mean()), net28_test=float(df.fwd28[df.is_test].mean()), win_train=float((df.fwd[~df.is_test] > 0).mean()), win_test=float((df.fwd[df.is_test] > 0).mean())), setups=rows, families=fam, marketSignals=mkt_sig, mines=mines, models=models, news=nr))
         del df
 
     def clean(o):
