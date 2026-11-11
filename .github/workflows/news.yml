@@ -1,0 +1,52 @@
+# 뉴스 제목 수집 (제목·시각만, 캐시에만 보관). lab/news 가 바뀔 때와 매주 월요일에 돈다. 끝나면 ml3 가 이어서 돈다.
+name: news
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 20 * * 0"
+  push:
+    branches: [main]
+    paths:
+      - "lab/news/**"
+      - ".github/workflows/news.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: news
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 뉴스 캐시 불러오기
+        uses: actions/cache/restore@v4
+        with:
+          path: lab/.news
+          key: lab-news-v1-${{ github.run_id }}
+          restore-keys: lab-news-v1-
+      - name: 수집
+        run: python lab/news/collect.py
+      - name: 뉴스 캐시 저장
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: lab/.news
+          key: lab-news-v1-${{ github.run_id }}
+      - name: 월별 건수 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lab/results/news-meta.json
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "news: 수집 현황 $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1

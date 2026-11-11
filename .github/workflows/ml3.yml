@@ -1,0 +1,68 @@
+# 3차 검증: 단계형 시나리오 · 주봉 결합 · 조건 조합 발굴 · 뉴스 결합.
+# lab/ml3 가 바뀔 때, 뉴스 수집이 끝났을 때, 매주 월요일에 돈다.
+name: ml3
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "47 23 * * 0"
+  workflow_run:
+    workflows: ["news"]
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - "lab/ml3/**"
+      - ".github/workflows/ml3.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ml3
+  cancel-in-progress: false
+
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 오늘 날짜
+        id: day
+        run: echo "d=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+      - name: 시세 캐시
+        uses: actions/cache@v4
+        with:
+          path: lab/.data
+          key: lab-data-v3-${{ steps.day.outputs.d }}
+          restore-keys: lab-data-v3-
+      - name: 시세가 없으면 수집
+        run: if [ ! -d lab/.data/bithumb ]; then node lab/collect.mjs; fi
+      - name: 뉴스 캐시 (있으면)
+        uses: actions/cache/restore@v4
+        with:
+          path: lab/.news
+          key: lab-news-v1-none
+          restore-keys: lab-news-v1-
+      - name: 파이썬 패키지
+        run: pip install --quiet "numpy>=2" "pandas>=2.2" "scikit-learn>=1.5"
+      - name: 3차 검증
+        run: python lab/ml3/study3.py
+      - name: 결과 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lab/results/setups.json lab/results/SETUPS.md
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "ml3: 단계형 시나리오 검증 결과 $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1
