@@ -143,6 +143,11 @@ EVENTS = {
     "base": ("횡보 뒤 거래량 돌파 (60일 범위 60% 미만 + 60일 고점 돌파 + 거래량 2배)", lambda d, g: (d.range60_prev.to_numpy() < 0.6) & (g("brk60") == 1) & (d.vr.to_numpy() >= 2)),
     "stair": ("계단식 하락 뒤 거래량 돌파 (30일 −25% 이하 + 20일 고점 또는 직전 고점 돌파 + 거래량 2배)", lambda d, g: (d.drop30p.to_numpy() <= -0.25) & ((g("brk20") == 1) | (g("brk_piv") == 1)) & (d.vr.to_numpy() >= 2)),
     "any": ("거래량 2배 동반 20일 고점 돌파 전부", lambda d, g: (g("brk20") == 1) & (d.vr.to_numpy() >= 2)),
+    # 아래 셋은 위 분석에서 나온 '크게 오른 경우의 공통점'을 조건으로 붙인 것 (BTC RSI 70 은 고르는 기간의 나무가 찾은 기준 70.6 을 반올림)
+    "base_hot": ("횡보 뒤 거래량 돌파 + BTC RSI 70 초과 (BTC가 강하게 오르는 중)", lambda d, g: (d.range60_prev.to_numpy() < 0.6) & (g("brk60") == 1) & (d.vr.to_numpy() >= 2) & (d.btc_rsi14.to_numpy() > 70)),
+    "base_hot_mod": ("  + 당일 상승 15% 미만 + 최근 28일 BTC 대비 20%p 넘게 앞서지 않음", lambda d, g: (d.range60_prev.to_numpy() < 0.6) & (g("brk60") == 1) & (d.vr.to_numpy() >= 2) & (d.btc_rsi14.to_numpy() > 70) & (d.roc1.to_numpy() < 0.15) & (d.rs28.to_numpy() < 0.2)),
+    "base_cold": ("대조: 횡보 뒤 거래량 돌파 + BTC RSI 70 이하", lambda d, g: (d.range60_prev.to_numpy() < 0.6) & (g("brk60") == 1) & (d.vr.to_numpy() >= 2) & (d.btc_rsi14.to_numpy() <= 70)),
+    "any_hot": ("거래량 2배 동반 20일 고점 돌파 + BTC RSI 70 초과 + 변동성(ATR) 10% 이하", lambda d, g: (g("brk20") == 1) & (d.vr.to_numpy() >= 2) & (d.btc_rsi14.to_numpy() > 70) & (d.atr_pct.to_numpy() <= 0.10)),
 }
 
 
@@ -299,11 +304,15 @@ def render(R):
                 continue
             A(f"| {r['state']} | {r['regime']} | {a['n']} / {b['n']} | {pc(a['net28'])} / {pc(b['net28'])} | {pc(a['med28'])} / {pc(b['med28'])} | {pc(a['p90'])} / {pc(b['p90'])} | {sh(a['big'])} / {sh(b['big'])} | {sh(a['loss'])} / {sh(b['loss'])} | {pc(a['peak'])} / {pc(b['peak'])} |")
         A("")
+        if m.get("btcHot"):
+            h = m["btcHot"]
+            A(f"BTC RSI가 70을 넘은 날: 고르는 기간 {h['train']['days']}일 ({sh(h['train']['share'])}, 묶음 {h['train']['episodes']}개), 확인 기간 {h['test']['days']}일 ({sh(h['test']['share'])}, 묶음 {h['test']['episodes']}개). 묶음 = 10일 넘게 떨어지면 따로 센 것.")
+            A("")
         for key, (title, _) in EVENTS.items():
             P = m["profiles"].get(key)
             if not P:
                 continue
-            A(f"### D. 크게 오른 경우의 공통점 — {title}")
+            A(f"### D. 크게 오른 경우의 공통점 — {title.strip()}")
             d = P["dist"]
             if "net28" in d.get("train", {}) and "net28" in d.get("test", {}):
                 a, b = d["train"], d["test"]
@@ -383,9 +392,14 @@ def main():
         g = lambda k: np.nan_to_num(df[k].to_numpy())
         prof = {k: profile(df, T.dedup(df, np.nan_to_num(np.asarray(fn(df, g), float)).astype(bool)), raw[mkt], cfg["cost"]) for k, (_, fn) in EVENTS.items()}
         log("  D 크게 오른 경우의 공통점 완료")
+        dd = df.groupby("t").agg(r=("btc_rsi14", "first"), test=("is_test", "first")).reset_index()
+        hot = {}
+        for per, pm in (("train", ~dd.test.to_numpy()), ("test", dd.test.to_numpy())):
+            tt = dd.t.to_numpy()[pm & (dd.r.to_numpy() > 70)]
+            hot[per] = dict(days=int(len(tt)), episodes=int(1 + (np.diff(tt) > 10).sum()) if len(tt) else 0, share=float(len(tt) / max(pm.sum(), 1)))
         dbl = doubles(df)
         log("  E 2배 사례 완료")
-        result["markets"].append(dict(market=mkt, label=cfg["label"], rows=int(len(df)), coins=int(df.sym.nunique()), families=fam, profiles=prof, doubles=dbl))
+        result["markets"].append(dict(market=mkt, label=cfg["label"], rows=int(len(df)), coins=int(df.sym.nunique()), families=fam, profiles=prof, doubles=dbl, btcHot=hot))
         del df
 
     def clean(o):
