@@ -1,11 +1,13 @@
 {
- "generatedAt": "2026-11-11T06:08:01.458Z",
+ "generatedAt": "2026-11-11T06:15:37.955Z",
  "collectNote": {
   "upbit": "301/301",
   "binance": "709개 (시각까지 507개)",
   "perp": 475,
   "bithumb": 490,
-  "hacks": "32/1348"
+  "hacks": "32/1348",
+  "paths": "105/162",
+  "h4": 5
  },
  "markets": [
   {
@@ -3654,6 +3656,596 @@
       "tLog": -9.2965,
       "medExcess": -0.0919,
       "winVsPeers": 0.1574
+     }
+    }
+   ],
+   "scenRows": [
+    {
+     "id": "PUMP_BROAD",
+     "label": "급등 + 그날 시장 중앙값도 +3% 이상 (시장 동반 상승)",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 100,
+      "picks": 192,
+      "avgRet": 0.0628,
+      "excess": 0.0071,
+      "t": 0.1723,
+      "logExcess": -0.0159,
+      "tLog": -0.6115,
+      "medExcess": -0.0593,
+      "winVsPeers": 0.3906
+     },
+     "test": {
+      "days": 56,
+      "picks": 136,
+      "avgRet": 0.0588,
+      "excess": 0.0734,
+      "t": 1.7914,
+      "logExcess": 0.0312,
+      "tLog": 1.1774,
+      "medExcess": -0.055,
+      "winVsPeers": 0.3603
+     }
+    },
+    {
+     "id": "PUMP_BROAD",
+     "label": "급등 + 그날 시장 중앙값도 +3% 이상 (시장 동반 상승)",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 100,
+      "picks": 192,
+      "avgRet": 0.1012,
+      "excess": 0.0253,
+      "t": 0.4054,
+      "logExcess": -0.015,
+      "tLog": -0.4517,
+      "medExcess": -0.0512,
+      "winVsPeers": 0.3333
+     },
+     "test": {
+      "days": 56,
+      "picks": 136,
+      "avgRet": 0.0866,
+      "excess": 0.1204,
+      "t": 1.9661,
+      "logExcess": 0.0523,
+      "tLog": 1.611,
+      "medExcess": -0.0594,
+      "winVsPeers": 0.3529
+     }
+    },
+    {
+     "id": "PUMP_BROAD",
+     "label": "급등 + 그날 시장 중앙값도 +3% 이상 (시장 동반 상승)",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 98,
+      "picks": 188,
+      "avgRet": 0.1947,
+      "excess": 0.0239,
+      "t": 0.4903,
+      "logExcess": -0.009,
+      "tLog": -0.367,
+      "medExcess": -0.0155,
+      "winVsPeers": 0.3989
+     },
+     "test": {
+      "days": 56,
+      "picks": 136,
+      "avgRet": 0.0792,
+      "excess": 0.062,
+      "t": 1.2985,
+      "logExcess": 0.0176,
+      "tLog": 0.5717,
+      "medExcess": -0.0536,
+      "winVsPeers": 0.2647
+     }
+    },
+    {
+     "id": "PUMP_ALONE",
+     "label": "급등 + 그날 시장 중앙값 +1% 미만 (혼자 급등)",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 321,
+      "picks": 472,
+      "avgRet": -0.0684,
+      "excess": -0.0766,
+      "t": -5.6239,
+      "logExcess": -0.0824,
+      "tLog": -7.1907,
+      "medExcess": -0.0949,
+      "winVsPeers": 0.25
+     },
+     "test": {
+      "days": 537,
+      "picks": 1017,
+      "avgRet": -0.0903,
+      "excess": -0.0618,
+      "t": -7.626,
+      "logExcess": -0.0782,
+      "tLog": -10.7965,
+      "medExcess": -0.106,
+      "winVsPeers": 0.2026
+     }
+    },
+    {
+     "id": "PUMP_ALONE",
+     "label": "급등 + 그날 시장 중앙값 +1% 미만 (혼자 급등)",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 317,
+      "picks": 465,
+      "avgRet": -0.0589,
+      "excess": -0.0889,
+      "t": -4.9923,
+      "logExcess": -0.0875,
+      "tLog": -6.575,
+      "medExcess": -0.0793,
+      "winVsPeers": 0.2645
+     },
+     "test": {
+      "days": 536,
+      "picks": 1012,
+      "avgRet": -0.1126,
+      "excess": -0.0713,
+      "t": -6.2687,
+      "logExcess": -0.0853,
+      "tLog": -8.7878,
+      "medExcess": -0.0992,
+      "winVsPeers": 0.1858
+     }
+    },
+    {
+     "id": "PUMP_ALONE",
+     "label": "급등 + 그날 시장 중앙값 +1% 미만 (혼자 급등)",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 312,
+      "picks": 456,
+      "avgRet": 0.0131,
+      "excess": -0.0779,
+      "t": -3.5702,
+      "logExcess": -0.0802,
+      "tLog": -5.9764,
+      "medExcess": -0.0704,
+      "winVsPeers": 0.2346
+     },
+     "test": {
+      "days": 534,
+      "picks": 1001,
+      "avgRet": -0.1274,
+      "excess": -0.076,
+      "t": -5.6152,
+      "logExcess": -0.0823,
+      "tLog": -7.0581,
+      "medExcess": -0.0685,
+      "winVsPeers": 0.1928
+     }
+    },
+    {
+     "id": "PUMP_VOL20",
+     "label": "급등 + 거래대금 평소 20배 이상",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 156,
+      "picks": 175,
+      "avgRet": -0.1166,
+      "excess": -0.1052,
+      "t": -6.6528,
+      "logExcess": -0.1169,
+      "tLog": -8.2872,
+      "medExcess": -0.1124,
+      "winVsPeers": 0.1714
+     },
+     "test": {
+      "days": 403,
+      "picks": 564,
+      "avgRet": -0.0959,
+      "excess": -0.0679,
+      "t": -5.9158,
+      "logExcess": -0.0872,
+      "tLog": -9.3062,
+      "medExcess": -0.1118,
+      "winVsPeers": 0.1596
+     }
+    },
+    {
+     "id": "PUMP_VOL20",
+     "label": "급등 + 거래대금 평소 20배 이상",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 153,
+      "picks": 171,
+      "avgRet": -0.0979,
+      "excess": -0.103,
+      "t": -5.7789,
+      "logExcess": -0.1117,
+      "tLog": -6.9993,
+      "medExcess": -0.1018,
+      "winVsPeers": 0.1871
+     },
+     "test": {
+      "days": 403,
+      "picks": 564,
+      "avgRet": -0.1114,
+      "excess": -0.0738,
+      "t": -4.6928,
+      "logExcess": -0.0901,
+      "tLog": -7.2359,
+      "medExcess": -0.0988,
+      "winVsPeers": 0.1454
+     }
+    },
+    {
+     "id": "PUMP_VOL20",
+     "label": "급등 + 거래대금 평소 20배 이상",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 146,
+      "picks": 163,
+      "avgRet": -0.0608,
+      "excess": -0.102,
+      "t": -2.6815,
+      "logExcess": -0.0976,
+      "tLog": -3.8012,
+      "medExcess": -0.0961,
+      "winVsPeers": 0.1902
+     },
+     "test": {
+      "days": 403,
+      "picks": 562,
+      "avgRet": -0.124,
+      "excess": -0.0742,
+      "t": -4.4326,
+      "logExcess": -0.0794,
+      "tLog": -5.8241,
+      "medExcess": -0.0685,
+      "winVsPeers": 0.1708
+     }
+    },
+    {
+     "id": "PUMP_VOL5",
+     "label": "급등 + 거래대금 평소 5배 미만",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 237,
+      "picks": 313,
+      "avgRet": 0.0545,
+      "excess": 0.0205,
+      "t": 0.9409,
+      "logExcess": 0.0007,
+      "tLog": 0.0405,
+      "medExcess": -0.0418,
+      "winVsPeers": 0.3994
+     },
+     "test": {
+      "days": 252,
+      "picks": 322,
+      "avgRet": -0.0465,
+      "excess": -0.0183,
+      "t": -1.0983,
+      "logExcess": -0.0387,
+      "tLog": -2.9952,
+      "medExcess": -0.0722,
+      "winVsPeers": 0.3106
+     }
+    },
+    {
+     "id": "PUMP_VOL5",
+     "label": "급등 + 거래대금 평소 5배 미만",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 234,
+      "picks": 308,
+      "avgRet": 0.0769,
+      "excess": 0.0172,
+      "t": 0.6279,
+      "logExcess": -0.0061,
+      "tLog": -0.282,
+      "medExcess": -0.0419,
+      "winVsPeers": 0.3669
+     },
+     "test": {
+      "days": 250,
+      "picks": 318,
+      "avgRet": -0.0773,
+      "excess": -0.0218,
+      "t": -1.1803,
+      "logExcess": -0.0434,
+      "tLog": -3.0865,
+      "medExcess": -0.0713,
+      "winVsPeers": 0.2893
+     }
+    },
+    {
+     "id": "PUMP_VOL5",
+     "label": "급등 + 거래대금 평소 5배 미만",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 231,
+      "picks": 304,
+      "avgRet": 0.142,
+      "excess": 0.0171,
+      "t": 0.4544,
+      "logExcess": -0.0097,
+      "tLog": -0.3603,
+      "medExcess": -0.0282,
+      "winVsPeers": 0.3684
+     },
+     "test": {
+      "days": 248,
+      "picks": 315,
+      "avgRet": -0.1181,
+      "excess": -0.0401,
+      "t": -2.2914,
+      "logExcess": -0.0547,
+      "tLog": -3.7753,
+      "medExcess": -0.0568,
+      "winVsPeers": 0.2413
+     }
+    },
+    {
+     "id": "PUMP_TREND",
+     "label": "급등 + 급등 전 이미 50일선 위",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 412,
+      "picks": 633,
+      "avgRet": 0.011,
+      "excess": -0.035,
+      "t": -2.5005,
+      "logExcess": -0.0492,
+      "tLog": -4.5112,
+      "medExcess": -0.0776,
+      "winVsPeers": 0.3207
+     },
+     "test": {
+      "days": 495,
+      "picks": 880,
+      "avgRet": -0.0469,
+      "excess": -0.0362,
+      "t": -2.985,
+      "logExcess": -0.056,
+      "tLog": -5.9649,
+      "medExcess": -0.0914,
+      "winVsPeers": 0.2489
+     }
+    },
+    {
+     "id": "PUMP_TREND",
+     "label": "급등 + 급등 전 이미 50일선 위",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 405,
+      "picks": 620,
+      "avgRet": 0.0502,
+      "excess": -0.0372,
+      "t": -1.8869,
+      "logExcess": -0.0534,
+      "tLog": -3.8235,
+      "medExcess": -0.0683,
+      "winVsPeers": 0.3097
+     },
+     "test": {
+      "days": 494,
+      "picks": 877,
+      "avgRet": -0.0584,
+      "excess": -0.0371,
+      "t": -2.198,
+      "logExcess": -0.0586,
+      "tLog": -4.7449,
+      "medExcess": -0.088,
+      "winVsPeers": 0.2349
+     }
+    },
+    {
+     "id": "PUMP_TREND",
+     "label": "급등 + 급등 전 이미 50일선 위",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 394,
+      "picks": 600,
+      "avgRet": 0.1498,
+      "excess": -0.0307,
+      "t": -1.4181,
+      "logExcess": -0.0489,
+      "tLog": -3.5177,
+      "medExcess": -0.0519,
+      "winVsPeers": 0.2983
+     },
+     "test": {
+      "days": 492,
+      "picks": 871,
+      "avgRet": -0.0672,
+      "excess": -0.0368,
+      "t": -1.8248,
+      "logExcess": -0.0531,
+      "tLog": -3.2888,
+      "medExcess": -0.0579,
+      "winVsPeers": 0.217
+     }
+    },
+    {
+     "id": "PUMP_BASE",
+     "label": "급등 + 급등 전 50일선 아래 (바닥권)",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 144,
+      "picks": 173,
+      "avgRet": -0.1075,
+      "excess": -0.0644,
+      "t": -5.7305,
+      "logExcess": -0.0768,
+      "tLog": -6.8311,
+      "medExcess": -0.0785,
+      "winVsPeers": 0.2717
+     },
+     "test": {
+      "days": 376,
+      "picks": 517,
+      "avgRet": -0.1044,
+      "excess": -0.0669,
+      "t": -6.4038,
+      "logExcess": -0.0833,
+      "tLog": -10.3409,
+      "medExcess": -0.1054,
+      "winVsPeers": 0.2012
+     }
+    },
+    {
+     "id": "PUMP_BASE",
+     "label": "급등 + 급등 전 50일선 아래 (바닥권)",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 144,
+      "picks": 173,
+      "avgRet": -0.1198,
+      "excess": -0.06,
+      "t": -5.3278,
+      "logExcess": -0.073,
+      "tLog": -6.253,
+      "medExcess": -0.07,
+      "winVsPeers": 0.2428
+     },
+     "test": {
+      "days": 374,
+      "picks": 515,
+      "avgRet": -0.1264,
+      "excess": -0.0708,
+      "t": -5.1608,
+      "logExcess": -0.0838,
+      "tLog": -7.5598,
+      "medExcess": -0.0867,
+      "winVsPeers": 0.1825
+     }
+    },
+    {
+     "id": "PUMP_BASE",
+     "label": "급등 + 급등 전 50일선 아래 (바닥권)",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 143,
+      "picks": 172,
+      "avgRet": -0.1416,
+      "excess": -0.0529,
+      "t": -3.4901,
+      "logExcess": -0.0625,
+      "tLog": -4.7481,
+      "medExcess": -0.0335,
+      "winVsPeers": 0.2965
+     },
+     "test": {
+      "days": 371,
+      "picks": 510,
+      "avgRet": -0.1485,
+      "excess": -0.0855,
+      "t": -4.7997,
+      "logExcess": -0.0875,
+      "tLog": -6.8114,
+      "medExcess": -0.0693,
+      "winVsPeers": 0.1863
+     }
+    },
+    {
+     "id": "PUMP_PULLBACK",
+     "label": "급등 3~10일 뒤 눌림: 고점 대비 20% 넘게 식었지만 급등일 시가보다 5% 이상 위, 거래대금은 급등일의 절반 미만",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 1044,
+      "picks": 2415,
+      "avgRet": 0.0099,
+      "excess": 0.0023,
+      "t": 0.4129,
+      "logExcess": 0.0017,
+      "tLog": 0.3406,
+      "medExcess": -0.0181,
+      "winVsPeers": 0.4269
+     },
+     "test": {
+      "days": 966,
+      "picks": 4410,
+      "avgRet": -0.0377,
+      "excess": -0.009,
+      "t": -1.8442,
+      "logExcess": -0.0092,
+      "tLog": -2.12,
+      "medExcess": -0.0224,
+      "winVsPeers": 0.4027
+     }
+    },
+    {
+     "id": "PUMP_PULLBACK",
+     "label": "급등 3~10일 뒤 눌림: 고점 대비 20% 넘게 식었지만 급등일 시가보다 5% 이상 위, 거래대금은 급등일의 절반 미만",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 1037,
+      "picks": 2363,
+      "avgRet": 0.023,
+      "excess": -0.0095,
+      "t": -1.1906,
+      "logExcess": -0.0045,
+      "tLog": -0.6633,
+      "medExcess": -0.0262,
+      "winVsPeers": 0.4025
+     },
+     "test": {
+      "days": 962,
+      "picks": 4362,
+      "avgRet": -0.0635,
+      "excess": -0.0185,
+      "t": -2.7797,
+      "logExcess": -0.0147,
+      "tLog": -2.6102,
+      "medExcess": -0.0297,
+      "winVsPeers": 0.3952
+     }
+    },
+    {
+     "id": "PUMP_PULLBACK",
+     "label": "급등 3~10일 뒤 눌림: 고점 대비 20% 넘게 식었지만 급등일 시가보다 5% 이상 위, 거래대금은 급등일의 절반 미만",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 1027,
+      "picks": 2309,
+      "avgRet": 0.089,
+      "excess": -0.016,
+      "t": -1.2055,
+      "logExcess": -0.009,
+      "tLog": -0.9595,
+      "medExcess": -0.0285,
+      "winVsPeers": 0.3993
+     },
+     "test": {
+      "days": 960,
+      "picks": 4320,
+      "avgRet": -0.0889,
+      "excess": -0.0125,
+      "t": -1.2015,
+      "logExcess": -0.0095,
+      "tLog": -1.167,
+      "medExcess": -0.0353,
+      "winVsPeers": 0.3583
      }
     }
    ],
@@ -15545,6 +16137,596 @@
      }
     }
    ],
+   "scenRows": [
+    {
+     "id": "PUMP_BROAD",
+     "label": "급등 + 그날 시장 중앙값도 +3% 이상 (시장 동반 상승)",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 183,
+      "picks": 679,
+      "avgRet": 0.0135,
+      "excess": 0.0203,
+      "t": 0.8067,
+      "logExcess": -0.0038,
+      "tLog": -0.2124,
+      "medExcess": -0.0722,
+      "winVsPeers": 0.3196
+     },
+     "test": {
+      "days": 128,
+      "picks": 421,
+      "avgRet": -0.0291,
+      "excess": -0.0293,
+      "t": -2.1811,
+      "logExcess": -0.041,
+      "tLog": -3.5112,
+      "medExcess": -0.0678,
+      "winVsPeers": 0.3017
+     }
+    },
+    {
+     "id": "PUMP_BROAD",
+     "label": "급등 + 그날 시장 중앙값도 +3% 이상 (시장 동반 상승)",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 182,
+      "picks": 673,
+      "avgRet": 0.0347,
+      "excess": 0.0135,
+      "t": 0.4083,
+      "logExcess": -0.0124,
+      "tLog": -0.6232,
+      "medExcess": -0.0751,
+      "winVsPeers": 0.2868
+     },
+     "test": {
+      "days": 128,
+      "picks": 421,
+      "avgRet": -0.03,
+      "excess": -0.0339,
+      "t": -2.3648,
+      "logExcess": -0.0438,
+      "tLog": -3.6647,
+      "medExcess": -0.0666,
+      "winVsPeers": 0.2827
+     }
+    },
+    {
+     "id": "PUMP_BROAD",
+     "label": "급등 + 그날 시장 중앙값도 +3% 이상 (시장 동반 상승)",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 181,
+      "picks": 668,
+      "avgRet": 0.0662,
+      "excess": 0.0187,
+      "t": 0.4252,
+      "logExcess": -0.0115,
+      "tLog": -0.4441,
+      "medExcess": -0.0859,
+      "winVsPeers": 0.259
+     },
+     "test": {
+      "days": 128,
+      "picks": 421,
+      "avgRet": -0.0694,
+      "excess": -0.0515,
+      "t": -3.8495,
+      "logExcess": -0.0504,
+      "tLog": -4.9145,
+      "medExcess": -0.0436,
+      "winVsPeers": 0.247
+     }
+    },
+    {
+     "id": "PUMP_ALONE",
+     "label": "급등 + 그날 시장 중앙값 +1% 미만 (혼자 급등)",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 669,
+      "picks": 1795,
+      "avgRet": -0.0288,
+      "excess": -0.0541,
+      "t": -7.2015,
+      "logExcess": -0.0701,
+      "tLog": -10.8921,
+      "medExcess": -0.1112,
+      "winVsPeers": 0.2462
+     },
+     "test": {
+      "days": 569,
+      "picks": 1406,
+      "avgRet": -0.059,
+      "excess": -0.038,
+      "t": -3.012,
+      "logExcess": -0.0623,
+      "tLog": -6.723,
+      "medExcess": -0.1111,
+      "winVsPeers": 0.2248
+     }
+    },
+    {
+     "id": "PUMP_ALONE",
+     "label": "급등 + 그날 시장 중앙값 +1% 미만 (혼자 급등)",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 665,
+      "picks": 1777,
+      "avgRet": -0.0154,
+      "excess": -0.0699,
+      "t": -7.001,
+      "logExcess": -0.0853,
+      "tLog": -10.6942,
+      "medExcess": -0.1136,
+      "winVsPeers": 0.2223
+     },
+     "test": {
+      "days": 568,
+      "picks": 1403,
+      "avgRet": -0.0743,
+      "excess": -0.0491,
+      "t": -2.8593,
+      "logExcess": -0.0742,
+      "tLog": -6.5327,
+      "medExcess": -0.105,
+      "winVsPeers": 0.206
+     }
+    },
+    {
+     "id": "PUMP_ALONE",
+     "label": "급등 + 그날 시장 중앙값 +1% 미만 (혼자 급등)",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 658,
+      "picks": 1757,
+      "avgRet": 0.0045,
+      "excess": -0.0778,
+      "t": -5.5035,
+      "logExcess": -0.088,
+      "tLog": -8.4865,
+      "medExcess": -0.101,
+      "winVsPeers": 0.2168
+     },
+     "test": {
+      "days": 568,
+      "picks": 1401,
+      "avgRet": -0.112,
+      "excess": -0.073,
+      "t": -4.7528,
+      "logExcess": -0.085,
+      "tLog": -6.2325,
+      "medExcess": -0.0882,
+      "winVsPeers": 0.1756
+     }
+    },
+    {
+     "id": "PUMP_VOL20",
+     "label": "급등 + 거래대금 평소 20배 이상",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 418,
+      "picks": 575,
+      "avgRet": -0.1054,
+      "excess": -0.1065,
+      "t": -8.1992,
+      "logExcess": -0.122,
+      "tLog": -11.5148,
+      "medExcess": -0.1481,
+      "winVsPeers": 0.1374
+     },
+     "test": {
+      "days": 351,
+      "picks": 481,
+      "avgRet": -0.0894,
+      "excess": -0.0732,
+      "t": -4.8407,
+      "logExcess": -0.0926,
+      "tLog": -8.1891,
+      "medExcess": -0.1259,
+      "winVsPeers": 0.158
+     }
+    },
+    {
+     "id": "PUMP_VOL20",
+     "label": "급등 + 거래대금 평소 20배 이상",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 414,
+      "picks": 570,
+      "avgRet": -0.1095,
+      "excess": -0.1282,
+      "t": -7.179,
+      "logExcess": -0.1324,
+      "tLog": -8.8483,
+      "medExcess": -0.1363,
+      "winVsPeers": 0.1228
+     },
+     "test": {
+      "days": 351,
+      "picks": 481,
+      "avgRet": -0.1037,
+      "excess": -0.0907,
+      "t": -5.4384,
+      "logExcess": -0.1003,
+      "tLog": -7.5589,
+      "medExcess": -0.1154,
+      "winVsPeers": 0.1435
+     }
+    },
+    {
+     "id": "PUMP_VOL20",
+     "label": "급등 + 거래대금 평소 20배 이상",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 407,
+      "picks": 560,
+      "avgRet": -0.0938,
+      "excess": -0.1317,
+      "t": -4.1296,
+      "logExcess": -0.1309,
+      "tLog": -5.6692,
+      "medExcess": -0.101,
+      "winVsPeers": 0.1536
+     },
+     "test": {
+      "days": 351,
+      "picks": 481,
+      "avgRet": -0.1162,
+      "excess": -0.1001,
+      "t": -4.6585,
+      "logExcess": -0.0968,
+      "tLog": -5.501,
+      "medExcess": -0.0851,
+      "winVsPeers": 0.1227
+     }
+    },
+    {
+     "id": "PUMP_VOL5",
+     "label": "급등 + 거래대금 평소 5배 미만",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 673,
+      "picks": 1371,
+      "avgRet": 0.0101,
+      "excess": -0.0253,
+      "t": -2.6156,
+      "logExcess": -0.0375,
+      "tLog": -4.6109,
+      "medExcess": -0.0772,
+      "winVsPeers": 0.3144
+     },
+     "test": {
+      "days": 489,
+      "picks": 786,
+      "avgRet": -0.0308,
+      "excess": -0.0139,
+      "t": -0.9408,
+      "logExcess": -0.0394,
+      "tLog": -3.5475,
+      "medExcess": -0.0806,
+      "winVsPeers": 0.3168
+     }
+    },
+    {
+     "id": "PUMP_VOL5",
+     "label": "급등 + 거래대금 평소 5배 미만",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 667,
+      "picks": 1351,
+      "avgRet": 0.0295,
+      "excess": -0.0356,
+      "t": -2.1022,
+      "logExcess": -0.0507,
+      "tLog": -4.1856,
+      "medExcess": -0.098,
+      "winVsPeers": 0.282
+     },
+     "test": {
+      "days": 487,
+      "picks": 784,
+      "avgRet": -0.0434,
+      "excess": -0.0121,
+      "t": -0.6187,
+      "logExcess": -0.0461,
+      "tLog": -3.9169,
+      "medExcess": -0.0857,
+      "winVsPeers": 0.3099
+     }
+    },
+    {
+     "id": "PUMP_VOL5",
+     "label": "급등 + 거래대금 평소 5배 미만",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 660,
+      "picks": 1341,
+      "avgRet": 0.0739,
+      "excess": -0.0299,
+      "t": -1.0569,
+      "logExcess": -0.052,
+      "tLog": -3.4287,
+      "medExcess": -0.1021,
+      "winVsPeers": 0.2535
+     },
+     "test": {
+      "days": 486,
+      "picks": 782,
+      "avgRet": -0.1002,
+      "excess": -0.0419,
+      "t": -2.6813,
+      "logExcess": -0.0619,
+      "tLog": -5.1634,
+      "medExcess": -0.0771,
+      "winVsPeers": 0.2583
+     }
+    },
+    {
+     "id": "PUMP_TREND",
+     "label": "급등 + 급등 전 이미 50일선 위",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 794,
+      "picks": 2084,
+      "avgRet": 0.0164,
+      "excess": -0.0202,
+      "t": -2.0493,
+      "logExcess": -0.0415,
+      "tLog": -5.1706,
+      "medExcess": -0.0949,
+      "winVsPeers": 0.2855
+     },
+     "test": {
+      "days": 631,
+      "picks": 1400,
+      "avgRet": -0.0543,
+      "excess": -0.0415,
+      "t": -3.8667,
+      "logExcess": -0.0613,
+      "tLog": -7.013,
+      "medExcess": -0.0962,
+      "winVsPeers": 0.2364
+     }
+    },
+    {
+     "id": "PUMP_TREND",
+     "label": "급등 + 급등 전 이미 50일선 위",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 787,
+      "picks": 2052,
+      "avgRet": 0.0357,
+      "excess": -0.0438,
+      "t": -3.1816,
+      "logExcess": -0.0614,
+      "tLog": -5.748,
+      "medExcess": -0.1007,
+      "winVsPeers": 0.2519
+     },
+     "test": {
+      "days": 630,
+      "picks": 1398,
+      "avgRet": -0.0638,
+      "excess": -0.0474,
+      "t": -3.3136,
+      "logExcess": -0.0659,
+      "tLog": -6.1332,
+      "medExcess": -0.0904,
+      "winVsPeers": 0.226
+     }
+    },
+    {
+     "id": "PUMP_TREND",
+     "label": "급등 + 급등 전 이미 50일선 위",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 773,
+      "picks": 2006,
+      "avgRet": 0.0982,
+      "excess": -0.0341,
+      "t": -1.2792,
+      "logExcess": -0.0627,
+      "tLog": -4.002,
+      "medExcess": -0.1052,
+      "winVsPeers": 0.2228
+     },
+     "test": {
+      "days": 630,
+      "picks": 1397,
+      "avgRet": -0.096,
+      "excess": -0.069,
+      "t": -4.6545,
+      "logExcess": -0.0753,
+      "tLog": -5.5016,
+      "medExcess": -0.0717,
+      "winVsPeers": 0.1918
+     }
+    },
+    {
+     "id": "PUMP_BASE",
+     "label": "급등 + 급등 전 50일선 아래 (바닥권)",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 548,
+      "picks": 1060,
+      "avgRet": -0.0687,
+      "excess": -0.0561,
+      "t": -6.0759,
+      "logExcess": -0.0712,
+      "tLog": -9.3291,
+      "medExcess": -0.107,
+      "winVsPeers": 0.2226
+     },
+     "test": {
+      "days": 536,
+      "picks": 862,
+      "avgRet": -0.0511,
+      "excess": -0.0397,
+      "t": -2.8715,
+      "logExcess": -0.0651,
+      "tLog": -6.3413,
+      "medExcess": -0.0967,
+      "winVsPeers": 0.2657
+     }
+    },
+    {
+     "id": "PUMP_BASE",
+     "label": "급등 + 급등 전 50일선 아래 (바닥권)",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 547,
+      "picks": 1059,
+      "avgRet": -0.0731,
+      "excess": -0.0528,
+      "t": -4.0314,
+      "logExcess": -0.0711,
+      "tLog": -7.7163,
+      "medExcess": -0.1004,
+      "winVsPeers": 0.22
+     },
+     "test": {
+      "days": 535,
+      "picks": 861,
+      "avgRet": -0.0724,
+      "excess": -0.0437,
+      "t": -2.0951,
+      "logExcess": -0.0737,
+      "tLog": -6.0309,
+      "medExcess": -0.0919,
+      "winVsPeers": 0.2265
+     }
+    },
+    {
+     "id": "PUMP_BASE",
+     "label": "급등 + 급등 전 50일선 아래 (바닥권)",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 546,
+      "picks": 1058,
+      "avgRet": -0.109,
+      "excess": -0.0701,
+      "t": -4.8946,
+      "logExcess": -0.0758,
+      "tLog": -6.3342,
+      "medExcess": -0.0841,
+      "winVsPeers": 0.2306
+     },
+     "test": {
+      "days": 534,
+      "picks": 860,
+      "avgRet": -0.1131,
+      "excess": -0.068,
+      "t": -3.6605,
+      "logExcess": -0.0815,
+      "tLog": -5.3942,
+      "medExcess": -0.0761,
+      "winVsPeers": 0.2012
+     }
+    },
+    {
+     "id": "PUMP_PULLBACK",
+     "label": "급등 3~10일 뒤 눌림: 고점 대비 20% 넘게 식었지만 급등일 시가보다 5% 이상 위, 거래대금은 급등일의 절반 미만",
+     "exit": "H7",
+     "exitLabel": "7일 보유",
+     "train": {
+      "days": 1270,
+      "picks": 6511,
+      "avgRet": 0.0045,
+      "excess": -0.0054,
+      "t": -1.3954,
+      "logExcess": -0.0057,
+      "tLog": -1.6517,
+      "medExcess": -0.0297,
+      "winVsPeers": 0.374
+     },
+     "test": {
+      "days": 987,
+      "picks": 5046,
+      "avgRet": -0.0302,
+      "excess": -0.0105,
+      "t": -1.8755,
+      "logExcess": -0.0101,
+      "tLog": -1.9658,
+      "medExcess": -0.0259,
+      "winVsPeers": 0.3864
+     }
+    },
+    {
+     "id": "PUMP_PULLBACK",
+     "label": "급등 3~10일 뒤 눌림: 고점 대비 20% 넘게 식었지만 급등일 시가보다 5% 이상 위, 거래대금은 급등일의 절반 미만",
+     "exit": "H14",
+     "exitLabel": "14일 보유",
+     "train": {
+      "days": 1263,
+      "picks": 6448,
+      "avgRet": 0.0404,
+      "excess": -0.0012,
+      "t": -0.1598,
+      "logExcess": -0.0065,
+      "tLog": -1.3472,
+      "medExcess": -0.038,
+      "winVsPeers": 0.3696
+     },
+     "test": {
+      "days": 983,
+      "picks": 5031,
+      "avgRet": -0.0482,
+      "excess": -0.0158,
+      "t": -2.3309,
+      "logExcess": -0.0135,
+      "tLog": -2.3067,
+      "medExcess": -0.0355,
+      "winVsPeers": 0.3751
+     }
+    },
+    {
+     "id": "PUMP_PULLBACK",
+     "label": "급등 3~10일 뒤 눌림: 고점 대비 20% 넘게 식었지만 급등일 시가보다 5% 이상 위, 거래대금은 급등일의 절반 미만",
+     "exit": "H28",
+     "exitLabel": "28일 보유",
+     "train": {
+      "days": 1249,
+      "picks": 6341,
+      "avgRet": 0.0655,
+      "excess": -0.0031,
+      "t": -0.2292,
+      "logExcess": -0.0102,
+      "tLog": -1.3268,
+      "medExcess": -0.0489,
+      "winVsPeers": 0.3528
+     },
+     "test": {
+      "days": 983,
+      "picks": 5013,
+      "avgRet": -0.0836,
+      "excess": -0.0267,
+      "t": -2.6251,
+      "logExcess": -0.0197,
+      "tLog": -2.3766,
+      "medExcess": -0.0436,
+      "winVsPeers": 0.3385
+     }
+    }
+   ],
    "pumps": [
     {
      "date": "2026-07-01",
@@ -20057,6 +21239,1596 @@
      }
     }
    ]
+  }
+ ],
+ "upbitPath": {
+  "events": 105,
+  "cumulative": [
+   {
+    "hour": -24,
+    "mean": -0.0014,
+    "median": 0.0011,
+    "n": 105
+   },
+   {
+    "hour": -12,
+    "mean": 0.0071,
+    "median": -0.0047,
+    "n": 105
+   },
+   {
+    "hour": -6,
+    "mean": 0.0245,
+    "median": 0.0068,
+    "n": 105
+   },
+   {
+    "hour": -4,
+    "mean": 0.0656,
+    "median": 0.0156,
+    "n": 105
+   },
+   {
+    "hour": -3,
+    "mean": 0.1069,
+    "median": 0.0263,
+    "n": 105
+   },
+   {
+    "hour": -2,
+    "mean": 0.154,
+    "median": 0.064,
+    "n": 105
+   },
+   {
+    "hour": -1,
+    "mean": 0.2816,
+    "median": 0.1457,
+    "n": 105
+   },
+   {
+    "hour": 0,
+    "mean": 0.3534,
+    "median": 0.2093,
+    "n": 105
+   },
+   {
+    "hour": 1,
+    "mean": 0.319,
+    "median": 0.1855,
+    "n": 105
+   },
+   {
+    "hour": 2,
+    "mean": 0.306,
+    "median": 0.1571,
+    "n": 105
+   },
+   {
+    "hour": 4,
+    "mean": 0.3041,
+    "median": 0.1542,
+    "n": 105
+   },
+   {
+    "hour": 8,
+    "mean": 0.286,
+    "median": 0.1421,
+    "n": 105
+   },
+   {
+    "hour": 12,
+    "mean": 0.2801,
+    "median": 0.133,
+    "n": 105
+   },
+   {
+    "hour": 24,
+    "mean": 0.2411,
+    "median": 0.1057,
+    "n": 105
+   },
+   {
+    "hour": 48,
+    "mean": 0.2,
+    "median": 0.0736,
+    "n": 105
+   },
+   {
+    "hour": 72,
+    "mean": 0.1726,
+    "median": 0.0684,
+    "n": 105
+   }
+  ],
+  "buyAfter": [
+   {
+    "when": "h0",
+    "h24": {
+     "mean": -0.08,
+     "median": -0.0774,
+     "up": 0.2,
+     "n": 105
+    },
+    "h72": {
+     "mean": -0.1216,
+     "median": -0.1241,
+     "up": 0.1619,
+     "n": 105
+    }
+   },
+   {
+    "when": "h1",
+    "h24": {
+     "mean": -0.061,
+     "median": -0.0709,
+     "up": 0.1905,
+     "n": 105
+    },
+    "h72": {
+     "mean": -0.1056,
+     "median": -0.1042,
+     "up": 0.1905,
+     "n": 105
+    }
+   },
+   {
+    "when": "h4",
+    "h24": {
+     "mean": -0.0605,
+     "median": -0.0678,
+     "up": 0.1905,
+     "n": 105
+    },
+    "h72": {
+     "mean": -0.0967,
+     "median": -0.0837,
+     "up": 0.1905,
+     "n": 105
+    }
+   }
+  ]
+ },
+ "h4": [
+  {
+   "sym": "BTC",
+   "rule": "HOLD",
+   "label": "그냥 보유",
+   "stop": 0,
+   "train": {
+    "cagr": 0.6645,
+    "mdd": -0.7704,
+    "sharpe": 1.1005,
+    "exposure": 0.9999,
+    "trades": 1,
+    "winRate": 1,
+    "avgTrade": 11.1868
+   },
+   "test": {
+    "cagr": 0.214,
+    "mdd": -0.5345,
+    "sharpe": 0.6511,
+    "exposure": 0.9998,
+    "trades": 1,
+    "winRate": 1,
+    "avgTrade": 0.7408
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "TREND50",
+   "label": "50일선 위에서만 보유 (추세)",
+   "stop": 0,
+   "train": {
+    "cagr": 0.4079,
+    "mdd": -0.673,
+    "sharpe": 0.9717,
+    "exposure": 0.5356,
+    "trades": 359,
+    "winRate": 0.1978,
+    "avgTrade": 0.0073
+   },
+   "test": {
+    "cagr": -0.0201,
+    "mdd": -0.522,
+    "sharpe": 0.0904,
+    "exposure": 0.5143,
+    "trades": 218,
+    "winRate": 0.2294,
+    "avgTrade": 0.0005
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "DIP_RSI",
+   "label": "RSI 30 아래에서 매수 → 55 위 또는 20일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.0878,
+    "mdd": -0.6037,
+    "sharpe": -0.1031,
+    "exposure": 0.1448,
+    "trades": 89,
+    "winRate": 0.5393,
+    "avgTrade": -0.0022
+   },
+   "test": {
+    "cagr": 0.0021,
+    "mdd": -0.337,
+    "sharpe": 0.1218,
+    "exposure": 0.1532,
+    "trades": 54,
+    "winRate": 0.6111,
+    "avgTrade": 0.0014
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "DIP_RSI",
+   "label": "RSI 30 아래에서 매수 → 55 위 또는 20일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.1962,
+    "mdd": -0.7571,
+    "sharpe": -0.5198,
+    "exposure": 0.1479,
+    "trades": 148,
+    "winRate": 0.3919,
+    "avgTrade": -0.0055
+   },
+   "test": {
+    "cagr": -0.0834,
+    "mdd": -0.3601,
+    "sharpe": -0.2606,
+    "exposure": 0.1523,
+    "trades": 76,
+    "winRate": 0.5,
+    "avgTrade": -0.0022
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "DIP_BB",
+   "label": "볼린저 하단 아래에서 매수 → 20일선 회복 또는 20일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.1996,
+    "mdd": -0.8039,
+    "sharpe": -0.3822,
+    "exposure": 0.2457,
+    "trades": 196,
+    "winRate": 0.6531,
+    "avgTrade": -0.0039
+   },
+   "test": {
+    "cagr": 0.0042,
+    "mdd": -0.3856,
+    "sharpe": 0.1459,
+    "exposure": 0.2435,
+    "trades": 126,
+    "winRate": 0.6349,
+    "avgTrade": 0.0008
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "DIP_BB",
+   "label": "볼린저 하단 아래에서 매수 → 20일선 회복 또는 20일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.2836,
+    "mdd": -0.8822,
+    "sharpe": -0.7824,
+    "exposure": 0.228,
+    "trades": 272,
+    "winRate": 0.5331,
+    "avgTrade": -0.005
+   },
+   "test": {
+    "cagr": -0.0928,
+    "mdd": -0.4572,
+    "sharpe": -0.2554,
+    "exposure": 0.2462,
+    "trades": 155,
+    "winRate": 0.6,
+    "avgTrade": -0.0012
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "RANGE30",
+   "label": "30일 박스 하단 20%에서 매수 → 상단 20% 또는 30일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": 0.0279,
+    "mdd": -0.6094,
+    "sharpe": 0.2893,
+    "exposure": 0.398,
+    "trades": 181,
+    "winRate": 0.6133,
+    "avgTrade": 0.0037
+   },
+   "test": {
+    "cagr": -0.0129,
+    "mdd": -0.3668,
+    "sharpe": 0.1148,
+    "exposure": 0.4114,
+    "trades": 106,
+    "winRate": 0.5566,
+    "avgTrade": 0.001
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "RANGE30",
+   "label": "30일 박스 하단 20%에서 매수 → 상단 20% 또는 30일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": 0.0451,
+    "mdd": -0.616,
+    "sharpe": 0.3149,
+    "exposure": 0.3854,
+    "trades": 259,
+    "winRate": 0.4556,
+    "avgTrade": 0.0027
+   },
+   "test": {
+    "cagr": -0.0423,
+    "mdd": -0.4107,
+    "sharpe": 0.0202,
+    "exposure": 0.415,
+    "trades": 138,
+    "winRate": 0.5217,
+    "avgTrade": 0.0002
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "DIP_UPTREND",
+   "label": "200일선 위에서 RSI(2) 10 아래 눌림 매수 → 5일선 회복 또는 10일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.1219,
+    "mdd": -0.5709,
+    "sharpe": -0.5261,
+    "exposure": 0.0905,
+    "trades": 228,
+    "winRate": 0.6009,
+    "avgTrade": -0.0024
+   },
+   "test": {
+    "cagr": -0.102,
+    "mdd": -0.3318,
+    "sharpe": -0.7321,
+    "exposure": 0.0899,
+    "trades": 137,
+    "winRate": 0.5985,
+    "avgTrade": -0.0021
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "DIP_UPTREND",
+   "label": "200일선 위에서 RSI(2) 10 아래 눌림 매수 → 5일선 회복 또는 10일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.0986,
+    "mdd": -0.5025,
+    "sharpe": -0.4592,
+    "exposure": 0.0825,
+    "trades": 245,
+    "winRate": 0.5837,
+    "avgTrade": -0.0018
+   },
+   "test": {
+    "cagr": -0.1377,
+    "mdd": -0.3845,
+    "sharpe": -1.0063,
+    "exposure": 0.0845,
+    "trades": 141,
+    "winRate": 0.5957,
+    "avgTrade": -0.0028
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "DROP3D",
+   "label": "3일간 8% 넘게 빠지면 매수 → +5% 또는 10일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": 0.0375,
+    "mdd": -0.2831,
+    "sharpe": 0.2771,
+    "exposure": 0.032,
+    "trades": 40,
+    "winRate": 0.55,
+    "avgTrade": 0.006
+   },
+   "test": {
+    "cagr": 0.0375,
+    "mdd": -0.0483,
+    "sharpe": 0.7308,
+    "exposure": 0.0021,
+    "trades": 2,
+    "winRate": 1,
+    "avgTrade": 0.0542
+   }
+  },
+  {
+   "sym": "BTC",
+   "rule": "DROP3D",
+   "label": "3일간 8% 넘게 빠지면 매수 → +5% 또는 10일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.1594,
+    "mdd": -0.6017,
+    "sharpe": -0.8453,
+    "exposure": 0.0195,
+    "trades": 55,
+    "winRate": 0.3091,
+    "avgTrade": -0.014
+   },
+   "test": {
+    "cagr": -0.0177,
+    "mdd": -0.1011,
+    "sharpe": -0.3929,
+    "exposure": 0.0006,
+    "trades": 3,
+    "winRate": 0.3333,
+    "avgTrade": -0.0156
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "HOLD",
+   "label": "그냥 보유",
+   "stop": 0,
+   "train": {
+    "cagr": 0.8608,
+    "mdd": -0.8112,
+    "sharpe": 1.1657,
+    "exposure": 0.9999,
+    "trades": 1,
+    "winRate": 1,
+    "avgTrade": 20.0628
+   },
+   "test": {
+    "cagr": -0.033,
+    "mdd": -0.6803,
+    "sharpe": 0.2716,
+    "exposure": 0.9998,
+    "trades": 1,
+    "winRate": 0,
+    "avgTrade": -0.0927
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "TREND50",
+   "label": "50일선 위에서만 보유 (추세)",
+   "stop": 0,
+   "train": {
+    "cagr": 0.6705,
+    "mdd": -0.5206,
+    "sharpe": 1.1791,
+    "exposure": 0.5498,
+    "trades": 351,
+    "winRate": 0.2251,
+    "avgTrade": 0.0108
+   },
+   "test": {
+    "cagr": -0.0304,
+    "mdd": -0.5674,
+    "sharpe": 0.1311,
+    "exposure": 0.4855,
+    "trades": 239,
+    "winRate": 0.1464,
+    "avgTrade": 0.0012
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "DIP_RSI",
+   "label": "RSI 30 아래에서 매수 → 55 위 또는 20일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.1768,
+    "mdd": -0.7624,
+    "sharpe": -0.2705,
+    "exposure": 0.1405,
+    "trades": 85,
+    "winRate": 0.4941,
+    "avgTrade": -0.0065
+   },
+   "test": {
+    "cagr": -0.1657,
+    "mdd": -0.4371,
+    "sharpe": -0.3668,
+    "exposure": 0.1666,
+    "trades": 55,
+    "winRate": 0.5455,
+    "avgTrade": -0.0066
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "DIP_RSI",
+   "label": "RSI 30 아래에서 매수 → 55 위 또는 20일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.2659,
+    "mdd": -0.8535,
+    "sharpe": -0.6271,
+    "exposure": 0.1402,
+    "trades": 163,
+    "winRate": 0.3436,
+    "avgTrade": -0.007
+   },
+   "test": {
+    "cagr": -0.1599,
+    "mdd": -0.505,
+    "sharpe": -0.3485,
+    "exposure": 0.1701,
+    "trades": 97,
+    "winRate": 0.4433,
+    "avgTrade": -0.0035
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "DIP_BB",
+   "label": "볼린저 하단 아래에서 매수 → 20일선 회복 또는 20일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.1292,
+    "mdd": -0.7979,
+    "sharpe": -0.0609,
+    "exposure": 0.2356,
+    "trades": 204,
+    "winRate": 0.6716,
+    "avgTrade": -0.0008
+   },
+   "test": {
+    "cagr": -0.2606,
+    "mdd": -0.7049,
+    "sharpe": -0.6002,
+    "exposure": 0.2479,
+    "trades": 118,
+    "winRate": 0.5847,
+    "avgTrade": -0.006
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "DIP_BB",
+   "label": "볼린저 하단 아래에서 매수 → 20일선 회복 또는 20일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.3031,
+    "mdd": -0.9175,
+    "sharpe": -0.6771,
+    "exposure": 0.2084,
+    "trades": 310,
+    "winRate": 0.5,
+    "avgTrade": -0.0045
+   },
+   "test": {
+    "cagr": -0.275,
+    "mdd": -0.7288,
+    "sharpe": -0.7412,
+    "exposure": 0.2334,
+    "trades": 172,
+    "winRate": 0.5465,
+    "avgTrade": -0.0044
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "RANGE30",
+   "label": "30일 박스 하단 20%에서 매수 → 상단 20% 또는 30일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": 0.1314,
+    "mdd": -0.78,
+    "sharpe": 0.5035,
+    "exposure": 0.3893,
+    "trades": 182,
+    "winRate": 0.5989,
+    "avgTrade": 0.0076
+   },
+   "test": {
+    "cagr": -0.2392,
+    "mdd": -0.6423,
+    "sharpe": -0.3713,
+    "exposure": 0.4314,
+    "trades": 107,
+    "winRate": 0.5421,
+    "avgTrade": -0.0046
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "RANGE30",
+   "label": "30일 박스 하단 20%에서 매수 → 상단 20% 또는 30일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.0826,
+    "mdd": -0.8267,
+    "sharpe": 0.1007,
+    "exposure": 0.3735,
+    "trades": 315,
+    "winRate": 0.4063,
+    "avgTrade": 0.0009
+   },
+   "test": {
+    "cagr": -0.2688,
+    "mdd": -0.6406,
+    "sharpe": -0.462,
+    "exposure": 0.4346,
+    "trades": 185,
+    "winRate": 0.4162,
+    "avgTrade": -0.0032
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "DIP_UPTREND",
+   "label": "200일선 위에서 RSI(2) 10 아래 눌림 매수 → 5일선 회복 또는 10일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.0384,
+    "mdd": -0.4384,
+    "sharpe": 0.0219,
+    "exposure": 0.0944,
+    "trades": 259,
+    "winRate": 0.6602,
+    "avgTrade": 0
+   },
+   "test": {
+    "cagr": -0.1515,
+    "mdd": -0.3956,
+    "sharpe": -0.873,
+    "exposure": 0.091,
+    "trades": 134,
+    "winRate": 0.6343,
+    "avgTrade": -0.0032
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "DIP_UPTREND",
+   "label": "200일선 위에서 RSI(2) 10 아래 눌림 매수 → 5일선 회복 또는 10일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.1105,
+    "mdd": -0.5065,
+    "sharpe": -0.3334,
+    "exposure": 0.0818,
+    "trades": 302,
+    "winRate": 0.6291,
+    "avgTrade": -0.0014
+   },
+   "test": {
+    "cagr": -0.1563,
+    "mdd": -0.4115,
+    "sharpe": -0.9968,
+    "exposure": 0.0778,
+    "trades": 138,
+    "winRate": 0.6377,
+    "avgTrade": -0.0032
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "DROP3D",
+   "label": "3일간 8% 넘게 빠지면 매수 → +5% 또는 10일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.0853,
+    "mdd": -0.5051,
+    "sharpe": -0.0652,
+    "exposure": 0.0516,
+    "trades": 63,
+    "winRate": 0.5079,
+    "avgTrade": -0.0042
+   },
+   "test": {
+    "cagr": 0.1832,
+    "mdd": -0.1416,
+    "sharpe": 1.1881,
+    "exposure": 0.0196,
+    "trades": 17,
+    "winRate": 0.7059,
+    "avgTrade": 0.0295
+   }
+  },
+  {
+   "sym": "ETH",
+   "rule": "DROP3D",
+   "label": "3일간 8% 넘게 빠지면 매수 → +5% 또는 10일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.1909,
+    "mdd": -0.6871,
+    "sharpe": -0.643,
+    "exposure": 0.0277,
+    "trades": 111,
+    "winRate": 0.3604,
+    "avgTrade": -0.0077
+   },
+   "test": {
+    "cagr": 0.1374,
+    "mdd": -0.1123,
+    "sharpe": 0.9005,
+    "exposure": 0.0158,
+    "trades": 24,
+    "winRate": 0.625,
+    "avgTrade": 0.0168
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "HOLD",
+   "label": "그냥 보유",
+   "stop": 0,
+   "train": {
+    "cagr": 0.1524,
+    "mdd": -0.8447,
+    "sharpe": 0.6385,
+    "exposure": 0.9999,
+    "trades": 1,
+    "winRate": 1,
+    "avgTrade": 1.0045
+   },
+   "test": {
+    "cagr": 0.2108,
+    "mdd": -0.7251,
+    "sharpe": 0.6335,
+    "exposure": 0.9998,
+    "trades": 1,
+    "winRate": 1,
+    "avgTrade": 0.7278
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "TREND50",
+   "label": "50일선 위에서만 보유 (추세)",
+   "stop": 0,
+   "train": {
+    "cagr": 0.388,
+    "mdd": -0.8167,
+    "sharpe": 0.8074,
+    "exposure": 0.4771,
+    "trades": 376,
+    "winRate": 0.1676,
+    "avgTrade": 0.0102
+   },
+   "test": {
+    "cagr": 0.3198,
+    "mdd": -0.5122,
+    "sharpe": 0.7748,
+    "exposure": 0.4373,
+    "trades": 216,
+    "winRate": 0.1759,
+    "avgTrade": 0.0147
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "DIP_RSI",
+   "label": "RSI 30 아래에서 매수 → 55 위 또는 20일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.0587,
+    "mdd": -0.6446,
+    "sharpe": 0.1228,
+    "exposure": 0.1587,
+    "trades": 91,
+    "winRate": 0.5824,
+    "avgTrade": 0.0007
+   },
+   "test": {
+    "cagr": 0.1753,
+    "mdd": -0.3421,
+    "sharpe": 0.6175,
+    "exposure": 0.1669,
+    "trades": 59,
+    "winRate": 0.5763,
+    "avgTrade": 0.01
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "DIP_RSI",
+   "label": "RSI 30 아래에서 매수 → 55 위 또는 20일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.277,
+    "mdd": -0.8458,
+    "sharpe": -0.4736,
+    "exposure": 0.152,
+    "trades": 170,
+    "winRate": 0.3529,
+    "avgTrade": -0.0069
+   },
+   "test": {
+    "cagr": 0.0449,
+    "mdd": -0.4562,
+    "sharpe": 0.3003,
+    "exposure": 0.1687,
+    "trades": 101,
+    "winRate": 0.4653,
+    "avgTrade": 0.0034
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "DIP_BB",
+   "label": "볼린저 하단 아래에서 매수 → 20일선 회복 또는 20일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.2328,
+    "mdd": -0.9023,
+    "sharpe": -0.2393,
+    "exposure": 0.2627,
+    "trades": 221,
+    "winRate": 0.6244,
+    "avgTrade": -0.0027
+   },
+   "test": {
+    "cagr": -0.0142,
+    "mdd": -0.4331,
+    "sharpe": 0.1825,
+    "exposure": 0.2632,
+    "trades": 131,
+    "winRate": 0.6107,
+    "avgTrade": 0.0008
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "DIP_BB",
+   "label": "볼린저 하단 아래에서 매수 → 20일선 회복 또는 20일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.3608,
+    "mdd": -0.9598,
+    "sharpe": -0.7177,
+    "exposure": 0.2263,
+    "trades": 343,
+    "winRate": 0.4606,
+    "avgTrade": -0.0049
+   },
+   "test": {
+    "cagr": -0.2957,
+    "mdd": -0.6974,
+    "sharpe": -0.7123,
+    "exposure": 0.2427,
+    "trades": 193,
+    "winRate": 0.5026,
+    "avgTrade": -0.004
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "RANGE30",
+   "label": "30일 박스 하단 20%에서 매수 → 상단 20% 또는 30일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.1211,
+    "mdd": -0.7632,
+    "sharpe": 0.0936,
+    "exposure": 0.3936,
+    "trades": 167,
+    "winRate": 0.5689,
+    "avgTrade": 0.0018
+   },
+   "test": {
+    "cagr": -0.3791,
+    "mdd": -0.7968,
+    "sharpe": -0.7199,
+    "exposure": 0.4455,
+    "trades": 109,
+    "winRate": 0.4404,
+    "avgTrade": -0.0103
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "RANGE30",
+   "label": "30일 박스 하단 20%에서 매수 → 상단 20% 또는 30일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.3031,
+    "mdd": -0.8711,
+    "sharpe": -0.331,
+    "exposure": 0.3856,
+    "trades": 302,
+    "winRate": 0.3775,
+    "avgTrade": -0.0033
+   },
+   "test": {
+    "cagr": -0.4526,
+    "mdd": -0.8306,
+    "sharpe": -1.0709,
+    "exposure": 0.433,
+    "trades": 180,
+    "winRate": 0.3556,
+    "avgTrade": -0.0077
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "DIP_UPTREND",
+   "label": "200일선 위에서 RSI(2) 10 아래 눌림 매수 → 5일선 회복 또는 10일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.1108,
+    "mdd": -0.5786,
+    "sharpe": -0.2749,
+    "exposure": 0.0808,
+    "trades": 193,
+    "winRate": 0.5596,
+    "avgTrade": -0.0024
+   },
+   "test": {
+    "cagr": -0.0507,
+    "mdd": -0.3746,
+    "sharpe": -0.1278,
+    "exposure": 0.0717,
+    "trades": 101,
+    "winRate": 0.5347,
+    "avgTrade": -0.001
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "DIP_UPTREND",
+   "label": "200일선 위에서 RSI(2) 10 아래 눌림 매수 → 5일선 회복 또는 10일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.2192,
+    "mdd": -0.7463,
+    "sharpe": -0.8461,
+    "exposure": 0.0651,
+    "trades": 234,
+    "winRate": 0.5556,
+    "avgTrade": -0.0045
+   },
+   "test": {
+    "cagr": -0.1809,
+    "mdd": -0.5239,
+    "sharpe": -0.8493,
+    "exposure": 0.0643,
+    "trades": 118,
+    "winRate": 0.5169,
+    "avgTrade": -0.0043
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "DROP3D",
+   "label": "3일간 8% 넘게 빠지면 매수 → +5% 또는 10일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.0021,
+    "mdd": -0.7128,
+    "sharpe": 0.2268,
+    "exposure": 0.0603,
+    "trades": 81,
+    "winRate": 0.5926,
+    "avgTrade": 0.0048
+   },
+   "test": {
+    "cagr": 0.2647,
+    "mdd": -0.248,
+    "sharpe": 0.9433,
+    "exposure": 0.0327,
+    "trades": 28,
+    "winRate": 0.6429,
+    "avgTrade": 0.026
+   }
+  },
+  {
+   "sym": "XRP",
+   "rule": "DROP3D",
+   "label": "3일간 8% 넘게 빠지면 매수 → +5% 또는 10일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.0886,
+    "mdd": -0.6851,
+    "sharpe": -0.0709,
+    "exposure": 0.0366,
+    "trades": 143,
+    "winRate": 0.4056,
+    "avgTrade": -0.001
+   },
+   "test": {
+    "cagr": -0.0534,
+    "mdd": -0.2842,
+    "sharpe": -0.1074,
+    "exposure": 0.0206,
+    "trades": 44,
+    "winRate": 0.4318,
+    "avgTrade": -0.0018
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "HOLD",
+   "label": "그냥 보유",
+   "stop": 0,
+   "train": {
+    "cagr": 1.8849,
+    "mdd": -0.966,
+    "sharpe": 1.4522,
+    "exposure": 0.9999,
+    "trades": 1,
+    "winRate": 1,
+    "avgTrade": 31.961
+   },
+   "test": {
+    "cagr": -0.0726,
+    "mdd": -0.7847,
+    "sharpe": 0.3014,
+    "exposure": 0.9998,
+    "trades": 1,
+    "winRate": 0,
+    "avgTrade": -0.195
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "TREND50",
+   "label": "50일선 위에서만 보유 (추세)",
+   "stop": 0,
+   "train": {
+    "cagr": 2.0628,
+    "mdd": -0.7865,
+    "sharpe": 1.6051,
+    "exposure": 0.5042,
+    "trades": 236,
+    "winRate": 0.2076,
+    "avgTrade": 0.03
+   },
+   "test": {
+    "cagr": -0.1312,
+    "mdd": -0.6473,
+    "sharpe": -0.0046,
+    "exposure": 0.4745,
+    "trades": 228,
+    "winRate": 0.1842,
+    "avgTrade": -0.0001
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "DIP_RSI",
+   "label": "RSI 30 아래에서 매수 → 55 위 또는 20일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.0623,
+    "mdd": -0.7444,
+    "sharpe": 0.1873,
+    "exposure": 0.1528,
+    "trades": 60,
+    "winRate": 0.5,
+    "avgTrade": 0.0041
+   },
+   "test": {
+    "cagr": 0.0305,
+    "mdd": -0.3918,
+    "sharpe": 0.2654,
+    "exposure": 0.1511,
+    "trades": 54,
+    "winRate": 0.5926,
+    "avgTrade": 0.0052
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "DIP_RSI",
+   "label": "RSI 30 아래에서 매수 → 55 위 또는 20일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.2591,
+    "mdd": -0.8202,
+    "sharpe": -0.2616,
+    "exposure": 0.1523,
+    "trades": 140,
+    "winRate": 0.2857,
+    "avgTrade": -0.0034
+   },
+   "test": {
+    "cagr": -0.276,
+    "mdd": -0.7415,
+    "sharpe": -0.6843,
+    "exposure": 0.1486,
+    "trades": 102,
+    "winRate": 0.3627,
+    "avgTrade": -0.007
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "DIP_BB",
+   "label": "볼린저 하단 아래에서 매수 → 20일선 회복 또는 20일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.1207,
+    "mdd": -0.9159,
+    "sharpe": 0.1457,
+    "exposure": 0.2381,
+    "trades": 135,
+    "winRate": 0.637,
+    "avgTrade": 0.0037
+   },
+   "test": {
+    "cagr": 0.1493,
+    "mdd": -0.3841,
+    "sharpe": 0.5361,
+    "exposure": 0.2559,
+    "trades": 133,
+    "winRate": 0.6541,
+    "avgTrade": 0.0046
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "DIP_BB",
+   "label": "볼린저 하단 아래에서 매수 → 20일선 회복 또는 20일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.5807,
+    "mdd": -0.9661,
+    "sharpe": -1.3021,
+    "exposure": 0.1916,
+    "trades": 247,
+    "winRate": 0.3644,
+    "avgTrade": -0.0098
+   },
+   "test": {
+    "cagr": -0.313,
+    "mdd": -0.7947,
+    "sharpe": -0.7007,
+    "exposure": 0.2258,
+    "trades": 196,
+    "winRate": 0.4949,
+    "avgTrade": -0.0042
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "RANGE30",
+   "label": "30일 박스 하단 20%에서 매수 → 상단 20% 또는 30일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.245,
+    "mdd": -0.9458,
+    "sharpe": 0.0768,
+    "exposure": 0.4206,
+    "trades": 124,
+    "winRate": 0.5403,
+    "avgTrade": -0.0002
+   },
+   "test": {
+    "cagr": -0.1528,
+    "mdd": -0.7359,
+    "sharpe": -0.043,
+    "exposure": 0.4463,
+    "trades": 115,
+    "winRate": 0.5565,
+    "avgTrade": -0.0011
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "RANGE30",
+   "label": "30일 박스 하단 20%에서 매수 → 상단 20% 또는 30일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.413,
+    "mdd": -0.9553,
+    "sharpe": -0.2734,
+    "exposure": 0.4093,
+    "trades": 306,
+    "winRate": 0.2908,
+    "avgTrade": -0.0023
+   },
+   "test": {
+    "cagr": -0.2788,
+    "mdd": -0.7584,
+    "sharpe": -0.3523,
+    "exposure": 0.4295,
+    "trades": 200,
+    "winRate": 0.39,
+    "avgTrade": -0.0027
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "DIP_UPTREND",
+   "label": "200일선 위에서 RSI(2) 10 아래 눌림 매수 → 5일선 회복 또는 10일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": 0.2485,
+    "mdd": -0.405,
+    "sharpe": 0.7561,
+    "exposure": 0.0815,
+    "trades": 139,
+    "winRate": 0.6043,
+    "avgTrade": 0.0061
+   },
+   "test": {
+    "cagr": -0.1208,
+    "mdd": -0.3424,
+    "sharpe": -0.4838,
+    "exposure": 0.0976,
+    "trades": 138,
+    "winRate": 0.6232,
+    "avgTrade": -0.0023
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "DIP_UPTREND",
+   "label": "200일선 위에서 RSI(2) 10 아래 눌림 매수 → 5일선 회복 또는 10일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.1393,
+    "mdd": -0.632,
+    "sharpe": -0.281,
+    "exposure": 0.062,
+    "trades": 176,
+    "winRate": 0.5511,
+    "avgTrade": -0.0018
+   },
+   "test": {
+    "cagr": -0.1618,
+    "mdd": -0.413,
+    "sharpe": -0.7127,
+    "exposure": 0.0845,
+    "trades": 157,
+    "winRate": 0.6242,
+    "avgTrade": -0.0028
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "DROP3D",
+   "label": "3일간 8% 넘게 빠지면 매수 → +5% 또는 10일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": 0.3566,
+    "mdd": -0.7967,
+    "sharpe": 0.7878,
+    "exposure": 0.1056,
+    "trades": 106,
+    "winRate": 0.6604,
+    "avgTrade": 0.0141
+   },
+   "test": {
+    "cagr": 0.1518,
+    "mdd": -0.1791,
+    "sharpe": 0.6499,
+    "exposure": 0.0351,
+    "trades": 27,
+    "winRate": 0.6296,
+    "avgTrade": 0.0168
+   }
+  },
+  {
+   "sym": "SOL",
+   "rule": "DROP3D",
+   "label": "3일간 8% 넘게 빠지면 매수 → +5% 또는 10일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.312,
+    "mdd": -0.8165,
+    "sharpe": -0.5704,
+    "exposure": 0.0574,
+    "trades": 183,
+    "winRate": 0.388,
+    "avgTrade": -0.0049
+   },
+   "test": {
+    "cagr": -0.0617,
+    "mdd": -0.3243,
+    "sharpe": -0.1739,
+    "exposure": 0.0191,
+    "trades": 41,
+    "winRate": 0.3902,
+    "avgTrade": -0.0027
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "HOLD",
+   "label": "그냥 보유",
+   "stop": 0,
+   "train": {
+    "cagr": 1.1629,
+    "mdd": -0.9294,
+    "sharpe": 1.1698,
+    "exposure": 0.9999,
+    "trades": 1,
+    "winRate": 1,
+    "avgTrade": 28.8182
+   },
+   "test": {
+    "cagr": -0.09,
+    "mdd": -0.8563,
+    "sharpe": 0.3459,
+    "exposure": 0.9998,
+    "trades": 1,
+    "winRate": 0,
+    "avgTrade": -0.2373
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "TREND50",
+   "label": "50일선 위에서만 보유 (추세)",
+   "stop": 0,
+   "train": {
+    "cagr": 1.0552,
+    "mdd": -0.8982,
+    "sharpe": 1.1043,
+    "exposure": 0.4579,
+    "trades": 361,
+    "winRate": 0.1634,
+    "avgTrade": 0.0279
+   },
+   "test": {
+    "cagr": 0.0244,
+    "mdd": -0.7648,
+    "sharpe": 0.356,
+    "exposure": 0.4279,
+    "trades": 234,
+    "winRate": 0.1538,
+    "avgTrade": 0.0049
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "DIP_RSI",
+   "label": "RSI 30 아래에서 매수 → 55 위 또는 20일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.0316,
+    "mdd": -0.5791,
+    "sharpe": 0.1722,
+    "exposure": 0.1478,
+    "trades": 76,
+    "winRate": 0.5132,
+    "avgTrade": 0.0042
+   },
+   "test": {
+    "cagr": 0.092,
+    "mdd": -0.3457,
+    "sharpe": 0.4209,
+    "exposure": 0.1797,
+    "trades": 62,
+    "winRate": 0.5806,
+    "avgTrade": 0.0064
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "DIP_RSI",
+   "label": "RSI 30 아래에서 매수 → 55 위 또는 20일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.1203,
+    "mdd": -0.5745,
+    "sharpe": -0.0292,
+    "exposure": 0.1583,
+    "trades": 150,
+    "winRate": 0.3467,
+    "avgTrade": -0.0007
+   },
+   "test": {
+    "cagr": -0.0338,
+    "mdd": -0.5436,
+    "sharpe": 0.1186,
+    "exposure": 0.1757,
+    "trades": 113,
+    "winRate": 0.3982,
+    "avgTrade": 0.0015
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "DIP_BB",
+   "label": "볼린저 하단 아래에서 매수 → 20일선 회복 또는 20일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.0963,
+    "mdd": -0.7277,
+    "sharpe": 0.1387,
+    "exposure": 0.2574,
+    "trades": 184,
+    "winRate": 0.625,
+    "avgTrade": 0.0011
+   },
+   "test": {
+    "cagr": -0.2051,
+    "mdd": -0.6412,
+    "sharpe": -0.2261,
+    "exposure": 0.2659,
+    "trades": 131,
+    "winRate": 0.6336,
+    "avgTrade": -0.0036
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "DIP_BB",
+   "label": "볼린저 하단 아래에서 매수 → 20일선 회복 또는 20일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.4236,
+    "mdd": -0.9199,
+    "sharpe": -0.7607,
+    "exposure": 0.2344,
+    "trades": 299,
+    "winRate": 0.4381,
+    "avgTrade": -0.0063
+   },
+   "test": {
+    "cagr": -0.3682,
+    "mdd": -0.7856,
+    "sharpe": -0.8806,
+    "exposure": 0.2302,
+    "trades": 205,
+    "winRate": 0.4927,
+    "avgTrade": -0.005
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "RANGE30",
+   "label": "30일 박스 하단 20%에서 매수 → 상단 20% 또는 30일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": 0.1522,
+    "mdd": -0.7981,
+    "sharpe": 0.5542,
+    "exposure": 0.4386,
+    "trades": 163,
+    "winRate": 0.4847,
+    "avgTrade": 0.0227
+   },
+   "test": {
+    "cagr": -0.2777,
+    "mdd": -0.7771,
+    "sharpe": -0.2503,
+    "exposure": 0.4751,
+    "trades": 119,
+    "winRate": 0.5294,
+    "avgTrade": -0.0048
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "RANGE30",
+   "label": "30일 박스 하단 20%에서 매수 → 상단 20% 또는 30일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": 0.0215,
+    "mdd": -0.8046,
+    "sharpe": 0.3769,
+    "exposure": 0.4137,
+    "trades": 300,
+    "winRate": 0.33,
+    "avgTrade": 0.0115
+   },
+   "test": {
+    "cagr": -0.3738,
+    "mdd": -0.7782,
+    "sharpe": -0.5651,
+    "exposure": 0.4621,
+    "trades": 214,
+    "winRate": 0.3598,
+    "avgTrade": -0.004
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "DIP_UPTREND",
+   "label": "200일선 위에서 RSI(2) 10 아래 눌림 매수 → 5일선 회복 또는 10일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": 0.0492,
+    "mdd": -0.5263,
+    "sharpe": 0.3285,
+    "exposure": 0.0825,
+    "trades": 187,
+    "winRate": 0.631,
+    "avgTrade": 0.0028
+   },
+   "test": {
+    "cagr": 0.0763,
+    "mdd": -0.3158,
+    "sharpe": 0.4186,
+    "exposure": 0.0695,
+    "trades": 103,
+    "winRate": 0.6019,
+    "avgTrade": 0.0028
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "DIP_UPTREND",
+   "label": "200일선 위에서 RSI(2) 10 아래 눌림 매수 → 5일선 회복 또는 10일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.248,
+    "mdd": -0.7831,
+    "sharpe": -0.5296,
+    "exposure": 0.0644,
+    "trades": 246,
+    "winRate": 0.5366,
+    "avgTrade": -0.0039
+   },
+   "test": {
+    "cagr": -0.1118,
+    "mdd": -0.434,
+    "sharpe": -0.3898,
+    "exposure": 0.0606,
+    "trades": 122,
+    "winRate": 0.5656,
+    "avgTrade": -0.0022
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "DROP3D",
+   "label": "3일간 8% 넘게 빠지면 매수 → +5% 또는 10일 뒤 매도",
+   "stop": 0,
+   "train": {
+    "cagr": -0.0096,
+    "mdd": -0.5738,
+    "sharpe": 0.2583,
+    "exposure": 0.0717,
+    "trades": 92,
+    "winRate": 0.6304,
+    "avgTrade": 0.0047
+   },
+   "test": {
+    "cagr": 0.0844,
+    "mdd": -0.3558,
+    "sharpe": 0.407,
+    "exposure": 0.0556,
+    "trades": 40,
+    "winRate": 0.55,
+    "avgTrade": 0.0079
+   }
+  },
+  {
+   "sym": "DOGE",
+   "rule": "DROP3D",
+   "label": "3일간 8% 넘게 빠지면 매수 → +5% 또는 10일 뒤 매도",
+   "stop": 0.05,
+   "train": {
+    "cagr": -0.1181,
+    "mdd": -0.6404,
+    "sharpe": -0.0666,
+    "exposure": 0.0433,
+    "trades": 162,
+    "winRate": 0.3889,
+    "avgTrade": -0.0009
+   },
+   "test": {
+    "cagr": 0.0115,
+    "mdd": -0.3376,
+    "sharpe": 0.181,
+    "exposure": 0.0432,
+    "trades": 61,
+    "winRate": 0.4262,
+    "avgTrade": 0.0022
+   }
   }
  ]
 }
