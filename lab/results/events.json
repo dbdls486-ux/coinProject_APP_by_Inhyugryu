@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-11T09:56:50.050Z",
+ "generatedAt": "2026-11-11T10:17:34.924Z",
  "collectNote": {
   "upbit": "301/301",
   "binance": "709개 (시각까지 507개)",
@@ -21704,13 +21704,13 @@
     "avgTrade": 11.1868
    },
    "test": {
-    "cagr": 0.2133,
+    "cagr": 0.2134,
     "mdd": -0.5345,
-    "sharpe": 0.6498,
+    "sharpe": 0.65,
     "exposure": 0.9998,
     "trades": 1,
     "winRate": 1,
-    "avgTrade": 0.7381
+    "avgTrade": 0.7385
    }
   },
   {
@@ -21752,9 +21752,9 @@
     "avgTrade": -0.0022
    },
    "test": {
-    "cagr": 0.0016,
+    "cagr": 0.0017,
     "mdd": -0.337,
-    "sharpe": 0.1193,
+    "sharpe": 0.1198,
     "exposure": 0.1534,
     "trades": 54,
     "winRate": 0.6111,
@@ -21776,9 +21776,9 @@
     "avgTrade": -0.0055
    },
    "test": {
-    "cagr": -0.0839,
+    "cagr": -0.0838,
     "mdd": -0.3601,
-    "sharpe": -0.263,
+    "sharpe": -0.2626,
     "exposure": 0.1524,
     "trades": 76,
     "winRate": 0.5,
@@ -21800,9 +21800,9 @@
     "avgTrade": -0.0039
    },
    "test": {
-    "cagr": 0.0037,
+    "cagr": 0.0038,
     "mdd": -0.3856,
-    "sharpe": 0.1437,
+    "sharpe": 0.1441,
     "exposure": 0.2436,
     "trades": 126,
     "winRate": 0.6349,
@@ -21824,9 +21824,9 @@
     "avgTrade": -0.005
    },
    "test": {
-    "cagr": -0.0933,
+    "cagr": -0.0932,
     "mdd": -0.4572,
-    "sharpe": -0.2576,
+    "sharpe": -0.2572,
     "exposure": 0.2463,
     "trades": 155,
     "winRate": 0.6,
@@ -21992,13 +21992,13 @@
     "avgTrade": 20.0628
    },
    "test": {
-    "cagr": -0.0349,
+    "cagr": -0.035,
     "mdd": -0.6803,
-    "sharpe": 0.2687,
+    "sharpe": 0.2685,
     "exposure": 0.9998,
     "trades": 1,
     "winRate": 0,
-    "avgTrade": -0.0976
+    "avgTrade": -0.0978
    }
   },
   {
@@ -22040,9 +22040,9 @@
     "avgTrade": -0.0065
    },
    "test": {
-    "cagr": -0.1672,
+    "cagr": -0.1673,
     "mdd": -0.4371,
-    "sharpe": -0.3723,
+    "sharpe": -0.3726,
     "exposure": 0.1667,
     "trades": 55,
     "winRate": 0.5455,
@@ -22064,9 +22064,9 @@
     "avgTrade": -0.007
    },
    "test": {
-    "cagr": -0.1615,
+    "cagr": -0.1616,
     "mdd": -0.505,
-    "sharpe": -0.3541,
+    "sharpe": -0.3544,
     "exposure": 0.1703,
     "trades": 97,
     "winRate": 0.4433,
@@ -22090,7 +22090,7 @@
    "test": {
     "cagr": -0.262,
     "mdd": -0.7049,
-    "sharpe": -0.6051,
+    "sharpe": -0.6053,
     "exposure": 0.248,
     "trades": 118,
     "winRate": 0.5847,
@@ -22112,9 +22112,9 @@
     "avgTrade": -0.0045
    },
    "test": {
-    "cagr": -0.2763,
+    "cagr": -0.2764,
     "mdd": -0.7288,
-    "sharpe": -0.7465,
+    "sharpe": -0.7468,
     "exposure": 0.2335,
     "trades": 172,
     "winRate": 0.5465,
@@ -22136,9 +22136,9 @@
     "avgTrade": 0.0076
    },
    "test": {
-    "cagr": -0.2406,
+    "cagr": -0.2407,
     "mdd": -0.6423,
-    "sharpe": -0.3754,
+    "sharpe": -0.3756,
     "exposure": 0.4315,
     "trades": 107,
     "winRate": 0.5327,
@@ -22160,9 +22160,9 @@
     "avgTrade": 0.0009
    },
    "test": {
-    "cagr": -0.2702,
+    "cagr": -0.2703,
     "mdd": -0.6406,
-    "sharpe": -0.4661,
+    "sharpe": -0.4663,
     "exposure": 0.4347,
     "trades": 185,
     "winRate": 0.4162,
@@ -22280,13 +22280,13 @@
     "avgTrade": 1.0045
    },
    "test": {
-    "cagr": 0.2103,
+    "cagr": 0.2093,
     "mdd": -0.7251,
-    "sharpe": 0.633,
+    "sharpe": 0.6318,
     "exposure": 0.9998,
     "trades": 1,
     "winRate": 1,
-    "avgTrade": 0.726
+    "avgTrade": 0.7216
    }
   },
   {
@@ -22328,13 +22328,13 @@
     "avgTrade": 0.0007
    },
    "test": {
-    "cagr": 0.1748,
+    "cagr": 0.1738,
     "mdd": -0.3421,
-    "sharpe": 0.6164,
+    "sharpe": 0.6141,
     "exposure": 0.1671,
     "trades": 59,
     "winRate": 0.5763,
-    "avgTrade": 0.01
+    "avgTrade": 0.0099
    }
   },
   {
@@ -22352,13 +22352,13 @@
     "avgTrade": -0.0069
    },
    "test": {
-    "cagr": 0.0445,
+    "cagr": 0.0435,
     "mdd": -0.4562,
-    "sharpe": 0.2992,
+    "sharpe": 0.2967,
     "exposure": 0.1688,
     "trades": 101,
     "winRate": 0.4653,
-    "avgTrade": 0.0034
+    "avgTrade": 0.0033
    }
   },
   {
@@ -22376,9 +22376,9 @@
     "avgTrade": -0.0027
    },
    "test": {
-    "cagr": -0.0146,
+    "cagr": -0.0155,
     "mdd": -0.4331,
-    "sharpe": 0.1816,
+    "sharpe": 0.1796,
     "exposure": 0.2634,
     "trades": 131,
     "winRate": 0.6107,
@@ -22400,9 +22400,9 @@
     "avgTrade": -0.0049
    },
    "test": {
-    "cagr": -0.296,
+    "cagr": -0.2966,
     "mdd": -0.6974,
-    "sharpe": -0.7132,
+    "sharpe": -0.7155,
     "exposure": 0.2428,
     "trades": 193,
     "winRate": 0.5026,
@@ -22424,12 +22424,12 @@
     "avgTrade": 0.0018
    },
    "test": {
-    "cagr": -0.3793,
+    "cagr": -0.3798,
     "mdd": -0.7968,
-    "sharpe": -0.7206,
+    "sharpe": -0.7224,
     "exposure": 0.4456,
     "trades": 109,
-    "winRate": 0.4404,
+    "winRate": 0.4312,
     "avgTrade": -0.0103
    }
   },
@@ -22448,9 +22448,9 @@
     "avgTrade": -0.0033
    },
    "test": {
-    "cagr": -0.4527,
+    "cagr": -0.4532,
     "mdd": -0.8306,
-    "sharpe": -1.0716,
+    "sharpe": -1.0735,
     "exposure": 0.4331,
     "trades": 180,
     "winRate": 0.3556,
@@ -22568,13 +22568,13 @@
     "avgTrade": 31.961
    },
    "test": {
-    "cagr": -0.0708,
+    "cagr": -0.0714,
     "mdd": -0.7847,
-    "sharpe": 0.3038,
+    "sharpe": 0.303,
     "exposure": 0.9998,
     "trades": 1,
     "winRate": 0,
-    "avgTrade": -0.1905
+    "avgTrade": -0.1921
    }
   },
   {
@@ -22616,9 +22616,9 @@
     "avgTrade": 0.0041
    },
    "test": {
-    "cagr": 0.0325,
+    "cagr": 0.0318,
     "mdd": -0.3918,
-    "sharpe": 0.2706,
+    "sharpe": 0.2688,
     "exposure": 0.1513,
     "trades": 54,
     "winRate": 0.5926,
@@ -22640,9 +22640,9 @@
     "avgTrade": -0.0034
    },
    "test": {
-    "cagr": -0.2745,
+    "cagr": -0.275,
     "mdd": -0.7415,
-    "sharpe": -0.679,
+    "sharpe": -0.6808,
     "exposure": 0.1487,
     "trades": 102,
     "winRate": 0.3627,
@@ -22664,13 +22664,13 @@
     "avgTrade": 0.0037
    },
    "test": {
-    "cagr": 0.1515,
+    "cagr": 0.1508,
     "mdd": -0.3841,
-    "sharpe": 0.5405,
+    "sharpe": 0.539,
     "exposure": 0.256,
     "trades": 133,
     "winRate": 0.6541,
-    "avgTrade": 0.0047
+    "avgTrade": 0.0046
    }
   },
   {
@@ -22688,9 +22688,9 @@
     "avgTrade": -0.0098
    },
    "test": {
-    "cagr": -0.3116,
+    "cagr": -0.3121,
     "mdd": -0.7947,
-    "sharpe": -0.6959,
+    "sharpe": -0.6976,
     "exposure": 0.2259,
     "trades": 196,
     "winRate": 0.4949,
@@ -22712,12 +22712,12 @@
     "avgTrade": -0.0002
    },
    "test": {
-    "cagr": -0.1512,
+    "cagr": -0.1518,
     "mdd": -0.7359,
-    "sharpe": -0.0394,
+    "sharpe": -0.0406,
     "exposure": 0.4464,
     "trades": 115,
-    "winRate": 0.5652,
+    "winRate": 0.5565,
     "avgTrade": -0.0011
    }
   },
@@ -22736,9 +22736,9 @@
     "avgTrade": -0.0023
    },
    "test": {
-    "cagr": -0.2773,
+    "cagr": -0.2778,
     "mdd": -0.7584,
-    "sharpe": -0.3486,
+    "sharpe": -0.3499,
     "exposure": 0.4296,
     "trades": 200,
     "winRate": 0.39,
@@ -22856,13 +22856,13 @@
     "avgTrade": 28.8182
    },
    "test": {
-    "cagr": -0.0905,
+    "cagr": -0.0908,
     "mdd": -0.8563,
-    "sharpe": 0.3451,
+    "sharpe": 0.3448,
     "exposure": 0.9998,
     "trades": 1,
     "winRate": 0,
-    "avgTrade": -0.2388
+    "avgTrade": -0.2394
    }
   },
   {
@@ -22904,9 +22904,9 @@
     "avgTrade": 0.0042
    },
    "test": {
-    "cagr": 0.0913,
+    "cagr": 0.091,
     "mdd": -0.3457,
-    "sharpe": 0.4193,
+    "sharpe": 0.4187,
     "exposure": 0.1798,
     "trades": 62,
     "winRate": 0.5806,
@@ -22928,13 +22928,13 @@
     "avgTrade": -0.0007
    },
    "test": {
-    "cagr": -0.0344,
+    "cagr": -0.0346,
     "mdd": -0.5436,
-    "sharpe": 0.1169,
+    "sharpe": 0.1163,
     "exposure": 0.1758,
     "trades": 113,
     "winRate": 0.3982,
-    "avgTrade": 0.0015
+    "avgTrade": 0.0014
    }
   },
   {
@@ -22952,9 +22952,9 @@
     "avgTrade": 0.0011
    },
    "test": {
-    "cagr": -0.2056,
+    "cagr": -0.2058,
     "mdd": -0.6412,
-    "sharpe": -0.2275,
+    "sharpe": -0.228,
     "exposure": 0.2661,
     "trades": 131,
     "winRate": 0.6336,
@@ -22976,9 +22976,9 @@
     "avgTrade": -0.0063
    },
    "test": {
-    "cagr": -0.3685,
+    "cagr": -0.3687,
     "mdd": -0.7856,
-    "sharpe": -0.8821,
+    "sharpe": -0.8827,
     "exposure": 0.2304,
     "trades": 205,
     "winRate": 0.4927,
@@ -23024,9 +23024,9 @@
     "avgTrade": 0.0115
    },
    "test": {
-    "cagr": -0.3742,
+    "cagr": -0.3743,
     "mdd": -0.7782,
-    "sharpe": -0.5662,
+    "sharpe": -0.5667,
     "exposure": 0.4621,
     "trades": 214,
     "winRate": 0.3598,
