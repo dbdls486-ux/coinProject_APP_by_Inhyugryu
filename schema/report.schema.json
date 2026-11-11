@@ -442,6 +442,46 @@
           }
         }
       }
+    },
+    "openItems": {
+      "type": "array",
+      "description": "끝까지 확인하지 못한 항목 목록. 본문에 '확인 불가'를 흩어 쓰지 않고 여기로 모은다 (앱에서 '확인하지 못한 것 N' 접힘 상자로 표시). 조사 사다리를 다 오른 뒤에도 남은 것만 적는다.",
+      "items": {
+        "type": "object",
+        "required": [
+          "item",
+          "status",
+          "tried",
+          "howToVerify"
+        ],
+        "properties": {
+          "item": {
+            "type": "string",
+            "description": "무엇을 모르는가 — 한 줄 (예: 마진콜·청산 기준 수치)"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "미공시",
+              "접근 실패",
+              "온체인 확인 대기"
+            ],
+            "description": "미공시=공개될 만한 곳을 다 봤지만 프로젝트가 공개하지 않음 / 접근 실패=자료는 있으나 이번 실행에서 읽지 못함 / 온체인 확인 대기=블록체인에서 읽을 수 있으나 이번 실행 환경에서 읽지 못함"
+          },
+          "tried": {
+            "type": "string",
+            "description": "어디를 찾아봤는지 한 문장 (문서·깃허브·거버넌스·익스플로러·리스크 보고서 중 무엇)"
+          },
+          "howToVerify": {
+            "type": "string",
+            "description": "어디서 확인할 수 있는지 — 계약 주소와 함수명, 또는 요청해야 할 문서 이름"
+          },
+          "matters": {
+            "type": "string",
+            "description": "선택. 이 값이 판단에 왜 중요한지 한 문장"
+          }
+        }
+      }
     }
   },
   "$defs": {
