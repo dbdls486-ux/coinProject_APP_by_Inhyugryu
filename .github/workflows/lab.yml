@@ -23,7 +23,7 @@ concurrency:
 jobs:
   backtest:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,7 +32,7 @@ jobs:
       - name: 과거 시세 수집
         run: node lab/collect.mjs
       - name: 백테스트
-        run: node lab/run.mjs
+        run: node --max-old-space-size=8192 lab/run.mjs
       - name: 수집 기록 보관
         if: always()
         run: mkdir -p lab/results && cp lab/.data/meta.json lab/results/collect-meta.json || true

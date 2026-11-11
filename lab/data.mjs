@@ -12,7 +12,7 @@ export const MIN_AGE = 60; // 상장 후 최소 일수 (지표가 안정되기 �
 
 /**
  * @param {string} dir lab/.data
- * @param {{ exchange: string, minValue: number }} opts minValue: 최근 20일 평균 거래대금 하한 (그 거래소 호가 통화)
+ * @param {{ exchange: string, minValue: number, dropFrom?: string, topN?: number }} opts minValue: 최근 20일 평균 거래대금 하한 (그 거래소 호가 통화)
  */
 export async function loadUniverse(dir, opts) {
   const sub = `${dir}/${opts.exchange}`;
@@ -82,7 +82,7 @@ export async function loadUniverse(dir, opts) {
     const eligible = new Uint8Array(n);
     for (let i = 0; i < n; i++) eligible[i] = !stable && i >= MIN_AGE && f.val20[i] >= opts.minValue ? 1 : 0;
     // bucket: 그날 거래 가능한 종목 사이에서 변동성(ATR%) 5분위 (0~4). 무작위 비교를 같은 변동성끼리 하려고
-    return { sym: j.sym, name: j.name, n, o, h, l, c, v, idx, day, f, eligible, p: {}, bucket: new Int8Array(n).fill(-1) };
+    return { sym: j.sym, name: j.name, delisted: !!j.delisted, n, o, h, l, c, v, idx, day, f, eligible, p: {}, bucket: new Int8Array(n).fill(-1) };
   });
 
   const btc = coins.find((k) => k.sym === "BTC");
@@ -105,10 +105,16 @@ export async function loadUniverse(dir, opts) {
   for (const name of RANKED) for (const k of coins) k.p[name] = new Float64Array(k.n).fill(NaN);
   const universeSize = new Int32Array(T);
   for (let t = 0; t < T; t++) {
-    const live = [];
+    let live = [];
     for (const k of coins) {
       const i = k.idx[t];
       if (i >= 0 && k.eligible[i]) live.push([k, i]);
+    }
+    // 거래대금 상위 N 개로 좁히는 버전 (메이저 한정 실험). 순위는 그날까지의 20일 평균 거래대금
+    if (opts.topN && live.length > opts.topN) {
+      live.sort((a, b) => b[0].f.val20[b[1]] - a[0].f.val20[a[1]]);
+      for (const [k, i] of live.slice(opts.topN)) k.eligible[i] = 0;
+      live = live.slice(0, opts.topN);
     }
     universeSize[t] = live.length;
     if (live.length < 10) continue;

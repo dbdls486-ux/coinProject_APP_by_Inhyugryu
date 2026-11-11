@@ -72,7 +72,14 @@ export function simulate(U, strat, exit, o) {
       const q = pos[j];
       const k = q.k;
       const i = k.idx[t];
-      if (i < 0) continue; // 그날 봉이 없으면 다음 봉까지 그대로
+      if (i < 0) {
+        // 상장폐지 등으로 봉이 끝났으면 마지막 종가에 정리한다 (슬롯을 영원히 막지 않게)
+        if (k.day[k.n - 1] < t) {
+          sell(q, t, q.last, "상장폐지");
+          pos.splice(j, 1);
+        }
+        continue; // 그날만 봉이 없으면 다음 봉까지 그대로
+      }
       if (k.l[i] <= q.stop) {
         sell(q, t, Math.min(k.o[i], q.stop), "손절");
         pos.splice(j, 1);

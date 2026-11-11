@@ -16,6 +16,7 @@ import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { btcTiming } from "./bench.mjs";
 import { loadUniverse } from "./data.mjs";
 import { DEFAULTS, holdStats, periodStats, simulate, yearly } from "./engine.mjs";
+import { attachFunding, attachKimchi } from "./features.mjs";
 import { buildRegimes } from "./regimes.mjs";
 import { selectionStats, tradeTable } from "./selection.mjs";
 import { EXITS, STRATEGIES, randomStrategy } from "./strategies.mjs";
@@ -52,10 +53,10 @@ function placebo(seed) {
   return { id: `PLACEBO${seed}`, family: "위약", label: `무작위 선택 ${seed}`, entry: (k, i, t) => (r.entry() < 0.1 ? r.entry() : null) };
 }
 
-async function runMarket(M) {
-  const t0 = Date.now();
+async function prepare(M, topN) {
   const today = new Date(Date.now() + M.tzOffsetH * 3_600_000).toISOString().slice(0, 10);
-  const U = await loadUniverse(DATA, { exchange: M.id, minValue: M.minValue, dropFrom: today });
+  const U = await loadUniverse(DATA, { exchange: M.id, minValue: M.minValue, dropFrom: today, topN });
+  U.today = today;
   U.live = Array.from({ length: U.T }, (_, t) => {
     const out = [];
     for (const k of U.coins) {
@@ -64,6 +65,12 @@ async function runMarket(M) {
     }
     return out;
   });
+  return U;
+}
+
+async function runMarket(M, U, variant) {
+  const t0 = Date.now();
+  const today = U.today;
   const start = U.universeSize.findIndex((n) => n >= MIN_UNIVERSE);
   if (start < 0) throw new Error(`거래 가능한 종목이 ${MIN_UNIVERSE}개 넘는 날이 없음`);
   const end = U.T - 1;
@@ -152,7 +159,9 @@ async function runMarket(M) {
   console.log(`[${M.label}] ${Math.round((Date.now() - t0) / 1000)}초`);
   return {
     market: M.id,
-    label: M.label,
+    variant: variant.id,
+    label: `${M.label}${variant.suffix}`,
+    delisted: U.coins.filter((k) => k.delisted).length,
     settings: { ...DEFAULTS, ...M.sim, minValue: M.minValue, unit: M.unit, split: U.dates[split], tPass: T_PASS, placebos: PLACEBOS, droppedFrom: today },
     periods: { train: [U.dates[start], U.dates[split - 1]], test: [U.dates[split], U.dates[end]] },
     universe: {
@@ -181,18 +190,38 @@ async function main() {
   const t0 = Date.now();
   const markets = [];
   const skipped = [];
-  for (const M of MARKETS) {
-    try {
-      await access(`${DATA}/${M.id}`);
-      markets.push(await runMarket(M));
-    } catch (e) {
-      console.log(`${M.label} 건너뜀: ${e.message}`);
-      skipped.push({ market: M.id, label: M.label, reason: e.message });
+  const extras = {};
+  // 전 종목 / 거래대금 상위 20 두 가지로, 각각 빗썸·바이낸스를 함께 불러 김프·펀딩비를 붙인다
+  for (const variant of [
+    { id: "all", suffix: "", topN: undefined },
+    { id: "top20", suffix: " · 거래대금 상위 20", topN: 20 },
+  ]) {
+    const U = {};
+    for (const M of MARKETS) {
+      try {
+        await access(`${DATA}/${M.id}`);
+        U[M.id] = await prepare(M, variant.topN);
+      } catch (e) {
+        skipped.push({ market: M.id, label: `${M.label}${variant.suffix}`, reason: e.message });
+      }
+    }
+    if (U.bithumb && U.binance) extras.kimchi = attachKimchi(U.bithumb, U.binance);
+    if (U.binance) extras.fundingBinance = await attachFunding(U.binance, DATA, 0);
+    if (U.bithumb) extras.fundingBithumb = await attachFunding(U.bithumb, DATA, 1);
+    for (const M of MARKETS) {
+      if (!U[M.id]) continue;
+      try {
+        markets.push(await runMarket(M, U[M.id], variant));
+      } catch (e) {
+        console.log(`${M.label}${variant.suffix} 건너뜀: ${e.message}`);
+        skipped.push({ market: M.id, label: `${M.label}${variant.suffix}`, reason: e.message });
+      }
     }
   }
+  console.log("부가 지표:", JSON.stringify(extras));
   if (markets.length === 0) throw new Error("돌릴 수 있는 시장이 없습니다");
   const meta = await readFile(`${DATA}/meta.json`, "utf8").then(JSON.parse).catch(() => null);
-  const result = { generatedAt: new Date().toISOString(), design: 2, collect: meta ? { probes: meta.probes, toFormat: meta.toFormat, checks: meta.checks ?? null } : null, skipped, markets };
+  const result = { generatedAt: new Date().toISOString(), design: 3, extras, collect: meta ? { probes: meta.probes, toFormat: meta.toFormat, checks: meta.checks ?? null, binance: meta.binance ? { coins: meta.binance.coins, delisted: meta.binance.delisted, funding: meta.binance.funding, delistedError: meta.binance.delistedError, fundingError: meta.binance.fundingError } : null } : null, skipped, markets };
   await mkdir(OUT, { recursive: true });
   await writeFile(`${OUT}/latest.json`, JSON.stringify(result, roundReplacer, 1));
   await writeFile(`${OUT}/REPORT.md`, report(result));
@@ -220,7 +249,7 @@ function report(R) {
   const L = [];
   L.push("# 지표 검증 결과");
   L.push("");
-  L.push(`생성 ${R.generatedAt.slice(0, 16).replace("T", " ")} UTC · 2차 설계 (같은 날·같은 변동성 비교, 위약 규칙, 국면 필터 5종)`);
+  L.push(`생성 ${R.generatedAt.slice(0, 16).replace("T", " ")} UTC · 3차 (같은 날·같은 변동성 비교, 위약 규칙, 국면 필터 5종, 김치프리미엄·펀딩비, 메이저 한정, 바이낸스 상장폐지 포함)`);
   L.push("");
 
   // 결론
@@ -229,7 +258,7 @@ function report(R) {
     const pass = m.selection.filter((s) => s.pass);
     const cand = m.candidates.filter((c) => c.candidate);
     const bestRegime = [...m.regimeSummary].sort((a, b) => b.testCagr - a.testCagr)[0];
-    L.push(`- **${m.label}**: 종목 선택력 통과 ${pass.length}개 / 42개 (위약 ${m.placebo.passed}개 / ${m.placebo.count}개 통과) · 실전 후보 ${cand.length}개 · 국면 필터 중 확인 기간 성적이 가장 나은 것은 "${bestRegime.label}" (규칙 중앙값 연 ${pc(bestRegime.testCagr)}) · BTC 보유 연 ${pc(m.bench.hold.test.cagr)}, BTC 50일선 타이밍 연 ${pc(m.bench.timing.test.cagr)}`);
+    L.push(`- **${m.label}**: 종목 선택력 통과 ${pass.length}개 / ${m.selection.length}개 (위약 ${m.placebo.passed}개 / ${m.placebo.count}개 통과) · 실전 후보 ${cand.length}개 · 국면 필터 중 확인 기간 성적이 가장 나은 것은 "${bestRegime.label}" (규칙 중앙값 연 ${pc(bestRegime.testCagr)}) · BTC 보유 연 ${pc(m.bench.hold.test.cagr)}, BTC 50일선 타이밍 연 ${pc(m.bench.timing.test.cagr)}`);
   }
   for (const s of R.skipped) L.push(`- ${s.label}: 판정 안 함 — ${s.reason}`);
   L.push("");
@@ -237,12 +266,12 @@ function report(R) {
   for (const m of R.markets) {
     const s = m.settings;
     L.push(`## ${m.label}`);
-    L.push(`종목 ${m.universe.coins}개 (거래 가능 평균: 고르는 기간 ${m.universe.avgEligibleTrain}개, 확인 기간 ${m.universe.avgEligibleTest}개) · 액면 변경 의심으로 앞부분을 자른 종목 ${m.universe.truncated}개`);
+    L.push(`종목 ${m.universe.coins}개${m.delisted ? `, 그중 상장폐지 ${m.delisted}개` : ""} · 하루 평균 거래 가능 종목: 고르는 기간 ${m.universe.avgEligibleTrain}개, 확인 기간 ${m.universe.avgEligibleTest}개 · 액면 변경 의심으로 앞부분을 자른 종목 ${m.universe.truncated}개`);
     L.push(`고르는 기간 ${m.periods.train.join(" ~ ")} · 확인 기간 ${m.periods.test.join(" ~ ")} · ${s.droppedFrom} 미완성 봉 제외`);
     L.push(`비용: 수수료 한쪽 ${(s.fee * 100).toFixed(2)}% + 슬리피지 ${(s.slipLiquid * 100).toFixed(2)}~${(s.slipThin * 100).toFixed(2)}% (손절은 2배) · 20일 평균 거래대금 ${money(s.minValue, s.unit)} 이상만 · 동시 보유 ${s.slots}종목`);
     L.push("");
 
-    L.push("### 1. 시장 국면 필터 비교 (규칙 42개 조합의 중앙값)");
+    L.push(`### 1. 시장 국면 필터 비교 (규칙 ${m.selection.length}개 조합의 중앙값)`);
     L.push("| 필터 | 매수 허용 날 (고름/확인) | 고르는 기간 연수익 | 확인 기간 연수익 | 확인 기간 최대 낙폭 | 확인 기간 플러스 비율 | BTC 타이밍보다 나은 비율 |");
     L.push("|---|---|---|---|---|---|---|");
     for (const r of m.regimeSummary) L.push(`| ${r.label} | ${Math.round(r.onTrain * 100)}% / ${Math.round(r.onTest * 100)}% | ${pc(r.trainCagr)} | ${pc(r.testCagr)} | ${pc(r.testMdd)} | ${Math.round(r.testPositive * 100)}% | ${Math.round(r.beatTimingTest * 100)}% |`);

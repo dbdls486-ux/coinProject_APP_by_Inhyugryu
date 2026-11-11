@@ -9,6 +9,7 @@
  * 외부 패키지 없이 Node 22 내장 fetch 만 쓴다.
  */
 import { mkdir, writeFile } from "node:fs/promises";
+import { collectDelisted, collectFunding } from "./archive.mjs";
 
 const OUT = process.env.LAB_DATA ?? "lab/.data";
 const MAX_PAGES = Number(process.env.LAB_MAX_PAGES ?? 20); // 200일 × 20 = 약 11년
@@ -163,7 +164,23 @@ async function collectBinance() {
   const lens = done.map((d) => d.days).sort((a, b) => a - b);
   console.log(`바이낸스 완료: ${done.length}개, 실패 ${failed.length}개 · 봉 수 중앙값 ${lens[lens.length >> 1]}`);
   const gaps = done.filter((d) => d.missing > 0);
-  return { coins: done.length, failed, coinsWithMissingDays: gaps.length, maxMissing: Math.max(0, ...gaps.map((d) => d.missing)) };
+  const current = new Set(done.map((d) => d.sym));
+  // 상장폐지 종목과 선물 펀딩비 (자료실). 실패해도 나머지 검증은 돈다
+  let archive = {};
+  try {
+    archive = { ...(await collectDelisted(OUT, current, STABLE_BASE)) };
+  } catch (e) {
+    archive.delistedError = String(e?.message ?? e);
+    console.log(`상장폐지 종목 수집 실패: ${archive.delistedError}`);
+  }
+  try {
+    const bases = new Set([...current, ...(await import("node:fs/promises").then((fs) => fs.readdir(`${OUT}/binance`))).map((f) => f.replace(/\.json$/, ""))]);
+    Object.assign(archive, await collectFunding(OUT, bases));
+  } catch (e) {
+    archive.fundingError = String(e?.message ?? e);
+    console.log(`펀딩비 수집 실패: ${archive.fundingError}`);
+  }
+  return { coins: done.length, failed, coinsWithMissingDays: gaps.length, maxMissing: Math.max(0, ...gaps.map((d) => d.missing)), ...archive };
 }
 
 async function main() {

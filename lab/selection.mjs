@@ -33,6 +33,9 @@ export function tradeTable(U, exit, sim) {
           break;
         }
       }
+      // 매도 전에 봉이 끝났고 그 종목이 데이터 끝보다 먼저 사라졌다면(상장폐지) 마지막 종가로 정리.
+      // 아직 거래 중인데 최근 신호라 끝나지 않은 거래는 제외한다.
+      if (!Number.isFinite(px) && k.day[k.n - 1] < U.T - 1 - 3) px = k.c[k.n - 1] * (1 - 2 * slip);
       if (Number.isFinite(px)) ret[i] = ((1 - fee) * (1 - fee) * px) / entry - 1;
     }
     table.set(k, ret);

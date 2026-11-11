@@ -116,6 +116,37 @@ export const STRATEGIES = [
     label: "거래대금 평소 3배 이상 + 양봉",
     entry: (k, i) => (k.f.volRatio[i] >= 3 && k.c[i] > k.o[i] ? k.f.volRatio[i] : null),
   },
+  // ---------- 3차: 가격 밖 지표 ----------
+  {
+    id: "PREM_LOW",
+    family: "김프",
+    label: "김치프리미엄 하위 10% (상대적으로 싸게 거래)",
+    entry: (k, i) => (k.p.prem5?.[i] <= 0.1 ? 1 - k.p.prem5[i] : null),
+  },
+  {
+    id: "PREM_HIGH",
+    family: "김프",
+    label: "김치프리미엄 상위 10% (국내 과열)",
+    entry: (k, i) => (k.p.prem5?.[i] >= 0.9 ? k.p.prem5[i] : null),
+  },
+  {
+    id: "FUND_NEG",
+    family: "펀딩",
+    label: "7일 평균 펀딩비 하위 10% (숏 쏠림)",
+    entry: (k, i) => (k.p.fund7?.[i] <= 0.1 ? 1 - k.p.fund7[i] : null),
+  },
+  {
+    id: "FUND_POS",
+    family: "펀딩",
+    label: "7일 평균 펀딩비 상위 10% (롱 쏠림)",
+    entry: (k, i) => (k.p.fund7?.[i] >= 0.9 ? k.p.fund7[i] : null),
+  },
+  {
+    id: "TS_TREND",
+    family: "추세",
+    label: "자기 50일선 위 + 28일 상승 중",
+    entry: (k, i) => (k.c[i] > k.f.sma50[i] && k.f.ret28[i] > 0 ? k.f.ret28[i] : null),
+  },
 ];
 
 /** 매도 규칙: 매수가 - 2×ATR 손절 + 최대 보유일 */
