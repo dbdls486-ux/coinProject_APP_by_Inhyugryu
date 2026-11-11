@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-11T12:41Z",
+ "updatedAt": "2026-11-11T12:47Z",
  "today": "2026-11-11",
  "startedAt": "2026-11-11",
  "initialCash": 10000.0,
@@ -8,7 +8,7 @@
  "returnPct": 0.0,
  "mdd": 0.0,
  "exposure": 0.0,
- "btcReturnPct": 0.0,
+ "btcReturnPct": -0.0009205162126407762,
  "playbookAsof": "2026-11-10",
  "market": {
   "date": "2026-11-10",
@@ -32,10 +32,7 @@
   "realized": 0.0
  },
  "lastTrades": [],
- "failedSymbols": [
-  "币安人生",
-  "牛来"
- ],
+ "failedSymbols": [],
  "engine": {
   "startedAt": "2026-11-11",
   "initialCash": 10000.0,
