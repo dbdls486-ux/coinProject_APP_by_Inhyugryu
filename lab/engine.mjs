@@ -22,7 +22,7 @@ export const DEFAULTS = {
  * @param U loadUniverse() 결과 (+ U.live[t] = [[k,i],...] 거래 가능 종목 목록)
  * @param strat STRATEGIES 의 항목
  * @param exit EXITS 의 항목
- * @param o { from, to, regime(bool: BTC 50일선 위일 때만 매수), ...DEFAULTS }
+ * @param o { from, to, regimeOn(Uint8Array: 날짜별 매수 허용 여부, regimes.mjs), ...DEFAULTS }
  */
 export function simulate(U, strat, exit, o) {
   const opt = { ...DEFAULTS, ...o };
@@ -36,7 +36,8 @@ export function simulate(U, strat, exit, o) {
   const inv = new Float64Array(to - from + 1);
 
   const sell = (q, t, rawPx, reason) => {
-    const exitPx = rawPx * (1 - q.slip);
+    // 손절은 급락 중에 체결되므로 슬리피지를 두 배로 본다
+    const exitPx = rawPx * (1 - q.slip * (reason === "손절" ? 2 : 1));
     const proceeds = q.qty * exitPx * (1 - fee);
     cash += proceeds;
     trades.push({ sym: q.k.sym, signalT: q.signalT, entryT: q.entryT, exitT: t, ret: proceeds / q.alloc - 1, reason });
@@ -88,7 +89,7 @@ export function simulate(U, strat, exit, o) {
 
     // 4) 내일 시가에 살 후보
     if (t === to) break;
-    if (opt.regime && !U.btcUp[t]) continue;
+    if (opt.regimeOn && !opt.regimeOn[t]) continue; // 국면 필터가 꺼진 날은 새로 사지 않는다
     // maxPicks: 무작위 대조군이 원래 규칙과 같은 날 같은 개수만 사도록 (종목 선택력만 비교)
     const free = Math.min(slots - pos.filter((q) => !q.exitNext).length, opt.maxPicks ? opt.maxPicks[t] : Infinity);
     if (free <= 0) continue;

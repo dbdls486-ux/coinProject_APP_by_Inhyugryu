@@ -18,8 +18,23 @@ export async function loadUniverse(dir, opts) {
   const sub = `${dir}/${opts.exchange}`;
   const files = (await readdir(sub)).filter((f) => f.endsWith(".json"));
   const raw = [];
+  let truncated = 0;
   for (const f of files) {
     const j = JSON.parse(await readFile(`${sub}/${f}`, "utf8"));
+    // 아직 끝나지 않은 오늘 봉은 뺀다 (종가가 확정되지 않았다)
+    if (opts.dropFrom) j.rows = j.rows.filter((r) => r[0] < opts.dropFrom);
+    // 날짜 중복·역순 방지
+    for (let i = 1; i < j.rows.length; i++) if (!(j.rows[i][0] > j.rows[i - 1][0])) throw new Error(`${opts.exchange}/${j.sym}: 날짜가 정렬돼 있지 않거나 중복 (${j.rows[i][0]})`);
+    // 하루에 20배 넘게 뛰거나 95% 넘게 빠진 봉은 대부분 액면 변경·토큰 교체다. 그 이전 기록은 다른 코인으로 보고 버린다
+    let cut = 0;
+    for (let i = 1; i < j.rows.length; i++) {
+      const r = Number(j.rows[i][4]) / Number(j.rows[i - 1][4]);
+      if (r > 20 || r < 0.05) cut = i;
+    }
+    if (cut > 0) {
+      j.rows = j.rows.slice(cut);
+      truncated++;
+    }
     if (j.rows.length >= 30) raw.push(j);
   }
   // 날짜 축: 모든 종목 날짜의 합집합
@@ -62,10 +77,12 @@ export async function loadUniverse(dir, opts) {
       max30: maxDailyRet(c, 30),
       bbLow: Float64Array.from(s20, (m, i) => m - 2 * sd20[i]),
     };
+    f.atrPct = Float64Array.from(f.atr14, (a, i) => a / c[i]);
     const stable = STABLE.has(j.sym);
     const eligible = new Uint8Array(n);
     for (let i = 0; i < n; i++) eligible[i] = !stable && i >= MIN_AGE && f.val20[i] >= opts.minValue ? 1 : 0;
-    return { sym: j.sym, name: j.name, n, o, h, l, c, v, idx, day, f, eligible, p: {} };
+    // bucket: 그날 거래 가능한 종목 사이에서 변동성(ATR%) 5분위 (0~4). 무작위 비교를 같은 변동성끼리 하려고
+    return { sym: j.sym, name: j.name, n, o, h, l, c, v, idx, day, f, eligible, p: {}, bucket: new Int8Array(n).fill(-1) };
   });
 
   const btc = coins.find((k) => k.sym === "BTC");
@@ -95,6 +112,8 @@ export async function loadUniverse(dir, opts) {
     }
     universeSize[t] = live.length;
     if (live.length < 10) continue;
+    const byVol = live.filter(([k, i]) => Number.isFinite(k.f.atrPct[i])).sort((a, b) => a[0].f.atrPct[a[1]] - b[0].f.atrPct[b[1]]);
+    byVol.forEach(([k, i], r) => (k.bucket[i] = Math.min(4, Math.floor((r * 5) / byVol.length))));
     for (const name of RANKED) {
       const vals = live.filter(([k, i]) => Number.isFinite(k.f[name][i])).sort((a, b) => a[0].f[name][a[1]] - b[0].f[name][b[1]]);
       const m = vals.length;
@@ -102,5 +121,5 @@ export async function loadUniverse(dir, opts) {
     }
   }
 
-  return { dates, T, coins, btc, btcUp, universeSize };
+  return { dates, T, coins, btc, btcUp, universeSize, truncated };
 }

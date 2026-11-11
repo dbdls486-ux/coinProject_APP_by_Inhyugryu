@@ -59,10 +59,19 @@ const TO_FORMATS = {
   "utc-iso": (k) => k.candle_date_time_utc,
 };
 let toFormat = null;
+const candleTimes = new Set(); // 일봉 시작 시각(한국 시각) — 한 가지여야 정상
+
+/** 첫날~마지막 날 사이에 빠진 날 수 (페이지가 제대로 이어졌는지 확인) */
+function missingDays(rows) {
+  if (rows.length < 2) return 0;
+  const span = Math.round((Date.parse(rows.at(-1)[0]) - Date.parse(rows[0][0])) / 86_400_000) + 1;
+  return span - rows.length;
+}
 
 async function pickToFormat() {
   const first = await getJson("https://api.bithumb.com/v1/candles/days?market=KRW-BTC&count=200");
   const oldest = first.at(-1);
+  let fallback = null;
   for (const [name, fmt] of Object.entries(TO_FORMATS)) {
     try {
       const q = new URLSearchParams({ market: "KRW-BTC", count: "200", to: fmt(oldest) });
@@ -70,12 +79,17 @@ async function pickToFormat() {
       await sleep(PAUSE_MS);
       const newest = list?.[0]?.candle_date_time_utc;
       console.log(`  to 형식 ${name}: ${list?.length ?? 0}개, 최신 ${newest ?? "-"} (기준 ${oldest.candle_date_time_utc})`);
-      if (newest && newest < oldest.candle_date_time_utc) return name;
+      const joined = newest && Date.parse(oldest.candle_date_time_utc + "Z") - Date.parse(newest + "Z") === 86_400_000;
+      if (joined) return name;
+      if (newest && newest < oldest.candle_date_time_utc) {
+        console.log(`    → 과거로 넘어가긴 하지만 하루 차이로 이어지지 않음`);
+        fallback ??= name;
+      }
     } catch (e) {
       console.log(`  to 형식 ${name}: 실패 ${String(e?.message ?? e).slice(0, 120)}`);
     }
   }
-  return null;
+  return fallback; // 이어지지 않는 형식이라도 쓰되, 종목별 빠진 날 수(meta)로 확인한다
 }
 
 /** 한 종목의 일봉을 최신 → 과거로 페이지를 넘기며 받는다. 반환은 오래된 순 */
@@ -90,6 +104,7 @@ async function bithumbDaily(market) {
     if (!Array.isArray(list) || list.length === 0) break;
     const before = rows.size;
     for (const k of list) {
+      if (k.candle_date_time_kst) candleTimes.add(String(k.candle_date_time_kst).slice(11, 19));
       const d = String(k.candle_date_time_kst ?? k.candle_date_time_utc).slice(0, 10);
       // [날짜, 시가, 고가, 저가, 종가, 거래대금(원)]
       rows.set(d, [d, k.opening_price, k.high_price, k.low_price, k.trade_price, k.candle_acc_trade_price ?? 0]);
@@ -125,7 +140,7 @@ async function collectBinance() {
   await mkdir(`${OUT}/binance`, { recursive: true });
   const info = await getJson(`${BN}/api/v3/exchangeInfo?permissions=SPOT`);
   const syms = info.symbols.filter(
-    (s) => s.quoteAsset === "USDT" && s.status === "TRADING" && !STABLE_BASE.test(s.baseAsset) && !/(UP|DOWN|BULL|BEAR)$/.test(s.baseAsset),
+    (s) => s.quoteAsset === "USDT" && s.status === "TRADING" && !STABLE_BASE.test(s.baseAsset),
   );
   console.log(`바이낸스 USDT 마켓 ${syms.length}개`);
   const queue = [...syms];
@@ -138,7 +153,7 @@ async function collectBinance() {
           const rows = await binanceDaily(s.symbol);
           if (rows.length === 0) continue;
           await writeFile(`${OUT}/binance/${s.baseAsset}.json`, JSON.stringify({ sym: s.baseAsset, name: s.baseAsset, rows }));
-          done.push({ sym: s.baseAsset, days: rows.length, first: rows[0][0], last: rows.at(-1)[0] });
+          done.push({ sym: s.baseAsset, days: rows.length, first: rows[0][0], last: rows.at(-1)[0], missing: missingDays(rows) });
         } catch (e) {
           failed.push({ market: s.symbol, error: String(e?.message ?? e) });
         }
@@ -147,7 +162,8 @@ async function collectBinance() {
   );
   const lens = done.map((d) => d.days).sort((a, b) => a - b);
   console.log(`바이낸스 완료: ${done.length}개, 실패 ${failed.length}개 · 봉 수 중앙값 ${lens[lens.length >> 1]}`);
-  return { coins: done.length, failed };
+  const gaps = done.filter((d) => d.missing > 0);
+  return { coins: done.length, failed, coinsWithMissingDays: gaps.length, maxMissing: Math.max(0, ...gaps.map((d) => d.missing)) };
 }
 
 async function main() {
@@ -184,7 +200,7 @@ async function main() {
             `${OUT}/bithumb/${sym}.json`,
             JSON.stringify({ sym, name: m.korean_name, en: m.english_name, warning: m.market_warning ?? "NONE", rows }),
           );
-          done.push({ sym, days: rows.length, first: rows[0]?.[0], last: rows.at(-1)?.[0] });
+          done.push({ sym, days: rows.length, first: rows[0]?.[0], last: rows.at(-1)?.[0], missing: missingDays(rows) });
           if (done.length % 50 === 0) console.log(`  ${done.length}/${markets.length}`);
         } catch (e) {
           failed.push({ market: m.market, error: String(e?.message ?? e) });
@@ -201,7 +217,15 @@ async function main() {
     binance = { coins: 0, error: String(e?.message ?? e) };
   }
 
-  const meta = { started, finished: new Date().toISOString(), probes, toFormat, coins: done.length, failed, binance, list: done.sort((a, b) => a.sym.localeCompare(b.sym)) };
+  const gaps = done.filter((d) => d.missing > 0);
+  const checks = {
+    bithumbCandleTimesKst: [...candleTimes],
+    bithumbCoinsWithMissingDays: gaps.length,
+    bithumbMaxMissing: Math.max(0, ...gaps.map((d) => d.missing)),
+    binanceCoinsWithMissingDays: binance?.coinsWithMissingDays ?? null,
+  };
+  console.log("점검:", JSON.stringify(checks));
+  const meta = { started, finished: new Date().toISOString(), probes, toFormat, checks, coins: done.length, failed, binance, list: done.sort((a, b) => a.sym.localeCompare(b.sym)) };
   await writeFile(`${OUT}/meta.json`, JSON.stringify(meta, null, 1));
   const lens = done.map((d) => d.days).sort((a, b) => a - b);
   const btc = done.find((d) => d.sym === "BTC");
