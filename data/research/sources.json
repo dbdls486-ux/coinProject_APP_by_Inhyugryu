@@ -74,17 +74,18 @@
         "코빗 리서치센터",
         "Korbit Research"
       ],
-      "home": "https://digitalx.miraeasset.com/market/research",
+      "home": "https://insights.digitalx.miraeasset.com/market/research",
       "group": "exchange",
       "collect": {
-        "try": [
-          "https://digitalx.miraeasset.com/market/research"
-        ],
-        "itemUrl": "목록에서 연결되는 개별 보고서 페이지 또는 PDF",
+        "try": [],
+        "itemUrl": "https://insights.digitalx.miraeasset.com/market/research/<번호>",
         "language": "한국어",
         "note": "코빗이 2026년 8~9월 디지털엑스로 사명·서비스명을 바꿨다. 옛 korbit.co.kr/research 와 같은 조직이므로 디지털엑스 한 곳으로만 등록한다. 옛 코빗 리서치 PDF가 이 목록에 그대로 있으면 같은 보고서를 두 번 넣지 않는다",
         "summaryFrom": "목록의 요약 또는 보고서 첫 문단",
-        "survey_2026_11_10": "2026-11-10 확인: digitalx.miraeasset.com 전체가 봇 차단(client_error). 실제 브라우저 필요. 옛 코빗 CDN(portal-cdn.korbit.co.kr/…/korbit_Research_YYYY-MM-DD.pdf) 은 2026-04-24까지 살아 있음."
+        "survey_2026_11_10": "2026-11-10 확인: digitalx.miraeasset.com 전체가 봇 차단(client_error). 실제 브라우저 필요. 옛 코빗 CDN(portal-cdn.korbit.co.kr/…/korbit_Research_YYYY-MM-DD.pdf) 은 2026-04-24까지 살아 있음.",
+        "manual": true,
+        "survey_2026_11_11": "자동 수집 도구는 봇 차단(client_error)이지만 실제 브라우저에서는 열린다. 목록 한 페이지에 전체 147건(제목·날짜·요약)이 있고 옛 코빗 리서치센터 보고서가 번호 그대로 이어진다(겹침 = 같은 목록). 메사리 보고서 번역·요약본 38건은 해외 리서치로 보아 제외. 2026-11-11 노트북 브라우저로 109건 수집.",
+        "rule": "예약 수집 작업은 이 기관을 시도하지 않는다. 기존 항목을 그대로 두고 status 는 \"stale\", note 는 \"노트북 브라우저로만 갱신 가능\" 으로 둔다. lastOk 는 바꾸지 않는다."
       }
     },
     {
@@ -143,14 +144,15 @@
       "home": "https://www.kif.re.kr/kif4/publication/pub_list?mid=20",
       "group": "institute",
       "collect": {
-        "try": [
-          "https://www.kif.re.kr/kif4/publication/pub_list?mid=20"
-        ],
+        "try": [],
         "itemUrl": "https://www.kif.re.kr/kif4/publication/pub_detail?...",
         "language": "한국어",
         "filter": "kcmi 와 같은 디지털자산 키워드 필터",
         "summaryFrom": "보고서 요약",
-        "survey_2026_11_10": "2026-11-10 확인: kif4 상세 페이지 본문이 JS 렌더링(제목·날짜·요약 없음), kif3/kif2 는 robots 차단. 실제 브라우저 또는 내부 API 필요."
+        "survey_2026_11_10": "2026-11-10 확인: kif4 상세 페이지 본문이 JS 렌더링(제목·날짜·요약 없음), kif3/kif2 는 robots 차단. 실제 브라우저 또는 내부 API 필요.",
+        "manual": true,
+        "survey_2026_11_11": "상세 페이지는 JS 렌더링이고 내부 검색 API(kif4/biz/async_proc?ac=dataSearch)는 robots 로 자동 수집이 막혀 있다. 실제 브라우저에서는 열린다. 2026-11-11 노트북 브라우저로 금융브리프·이슈리포트·금융연구 중 디지털자산 관련 58건(2023년 이후) 수집. 외부기관 자료 게시판(국내자료·해외자료, mid=13)과 세미나는 제외.",
+        "rule": "예약 수집 작업은 이 기관을 시도하지 않는다. 기존 항목을 그대로 두고 status 는 \"stale\", note 는 \"노트북 브라우저로만 갱신 가능\" 으로 둔다. lastOk 는 바꾸지 않는다."
       }
     },
     {
