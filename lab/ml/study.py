@@ -47,7 +47,8 @@ MARKETS = {
 }
 # 달러·유로 등에 값이 묶인 자산과 BTC·ETH·SOL 을 그대로 따라가는 포장 토큰 — 알트 종목 고르기에서 뺀다.
 # (하락장에서는 '안 움직이는 자산'이 또래보다 잘한 것으로 잡혀 조용한 코인·초과수익 모델 성적이 부풀려진다)
-PEGGED = set("AUD GBP JPY TRY BRL SUSD UST USTC BFUSD USDSB PAX BKRW BVND VAI USDD FRAX LUSD USDJ USDN CUSD WBTC WBETH BETH BNSOL STETH WSTETH CBBTC WBNB BTCB".split())
+# FRAX 는 넣지 않는다: 거래소의 FRAX 는 옛 FXS(프랙스 셰어)가 이름을 바꾼 일반 코인이다. 진짜 고정 가격 자산은 아래 변동폭 기준으로 걸러진다.
+PEGGED = set("AUD GBP JPY TRY BRL SUSD UST USTC BFUSD USDSB PAX BKRW BVND VAI USDD LUSD USDJ USDN CUSD WBTC WBETH BETH BNSOL STETH WSTETH CBBTC WBNB BTCB".split())
 MIN_ATR = 0.007  # 하루 변동폭이 0.7% 도 안 되는 날은 사실상 고정 가격 자산으로 보고 뺀다
 RULE_COLS = ["d_sma20", "d_sma50", "d_sma200", "ma_align", "macd_hist", "ichi_cloud", "brk20", "brk60", "newlow20", "rsi14", "bb_pctb", "fib_zone"]
 PLACEBO = [f"noise{i}" for i in range(1, 6)]
