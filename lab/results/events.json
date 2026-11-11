@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-11T06:21:10.317Z",
+ "generatedAt": "2026-11-11T06:26:33.041Z",
  "collectNote": {
   "upbit": "301/301",
   "binance": "709개 (시각까지 507개)",
@@ -8766,6 +8766,144 @@
       "trades": 77,
       "winRate": 0.3506,
       "avgTrade": -0.0101
+     }
+    }
+   ],
+   "baskets": [
+    {
+     "basket": "BTC",
+     "label": "BTC",
+     "rule": "HOLD",
+     "train": {
+      "coins": 1,
+      "cagr": 0.6449,
+      "mdd": -0.746,
+      "sharpe": 1.1411
+     },
+     "test": {
+      "coins": 1,
+      "cagr": 0.2183,
+      "mdd": -0.502,
+      "sharpe": 0.6997
+     }
+    },
+    {
+     "basket": "BTC",
+     "label": "BTC",
+     "rule": "TREND50",
+     "train": {
+      "coins": 1,
+      "cagr": 0.9752,
+      "mdd": -0.5185,
+      "sharpe": 1.8099
+     },
+     "test": {
+      "coins": 1,
+      "cagr": 0.3607,
+      "mdd": -0.2062,
+      "sharpe": 1.2314
+     }
+    },
+    {
+     "basket": "BTC_ETH",
+     "label": "BTC·ETH",
+     "rule": "HOLD",
+     "train": {
+      "coins": 2,
+      "cagr": 0.7829,
+      "mdd": -0.7373,
+      "sharpe": 1.2449
+     },
+     "test": {
+      "coins": 2,
+      "cagr": 0.1049,
+      "mdd": -0.5709,
+      "sharpe": 0.446
+     }
+    },
+    {
+     "basket": "BTC_ETH",
+     "label": "BTC·ETH",
+     "rule": "TREND50",
+     "train": {
+      "coins": 2,
+      "cagr": 1.1591,
+      "mdd": -0.4495,
+      "sharpe": 1.9789
+     },
+     "test": {
+      "coins": 2,
+      "cagr": 0.3963,
+      "mdd": -0.2921,
+      "sharpe": 1.2738
+     }
+    },
+    {
+     "basket": "MAJOR5",
+     "label": "BTC·ETH·XRP·SOL·DOGE",
+     "rule": "HOLD",
+     "train": {
+      "coins": 5,
+      "cagr": 0.6577,
+      "mdd": -0.7993,
+      "sharpe": 1.089
+     },
+     "test": {
+      "coins": 5,
+      "cagr": 0.1166,
+      "mdd": -0.652,
+      "sharpe": 0.4739
+     }
+    },
+    {
+     "basket": "MAJOR5",
+     "label": "BTC·ETH·XRP·SOL·DOGE",
+     "rule": "TREND50",
+     "train": {
+      "coins": 5,
+      "cagr": 1.1507,
+      "mdd": -0.334,
+      "sharpe": 1.9577
+     },
+     "test": {
+      "coins": 5,
+      "cagr": 0.4042,
+      "mdd": -0.3438,
+      "sharpe": 1.1377
+     }
+    },
+    {
+     "basket": "MAJOR10",
+     "label": "메이저 10종 (＋BNB·ADA·TRX·LINK·AVAX)",
+     "rule": "HOLD",
+     "train": {
+      "coins": 10,
+      "cagr": 0.8012,
+      "mdd": -0.7927,
+      "sharpe": 1.2043
+     },
+     "test": {
+      "coins": 10,
+      "cagr": 0.0685,
+      "mdd": -0.6265,
+      "sharpe": 0.386
+     }
+    },
+    {
+     "basket": "MAJOR10",
+     "label": "메이저 10종 (＋BNB·ADA·TRX·LINK·AVAX)",
+     "rule": "TREND50",
+     "train": {
+      "coins": 10,
+      "cagr": 1.235,
+      "mdd": -0.3554,
+      "sharpe": 1.996
+     },
+     "test": {
+      "coins": 10,
+      "cagr": 0.2205,
+      "mdd": -0.367,
+      "sharpe": 0.7723
      }
     }
    ]
@@ -21238,6 +21376,144 @@
       "avgTrade": -0.0063
      }
     }
+   ],
+   "baskets": [
+    {
+     "basket": "BTC",
+     "label": "BTC",
+     "rule": "HOLD",
+     "train": {
+      "coins": 1,
+      "cagr": 0.6293,
+      "mdd": -0.7663,
+      "sharpe": 1.0605
+     },
+     "test": {
+      "coins": 1,
+      "cagr": 0.1958,
+      "mdd": -0.5297,
+      "sharpe": 0.6152
+     }
+    },
+    {
+     "basket": "BTC",
+     "label": "BTC",
+     "rule": "TREND50",
+     "train": {
+      "coins": 1,
+      "cagr": 0.8886,
+      "mdd": -0.5797,
+      "sharpe": 1.5479
+     },
+     "test": {
+      "coins": 1,
+      "cagr": 0.2817,
+      "mdd": -0.2646,
+      "sharpe": 0.9201
+     }
+    },
+    {
+     "basket": "BTC_ETH",
+     "label": "BTC·ETH",
+     "rule": "HOLD",
+     "train": {
+      "coins": 2,
+      "cagr": 0.762,
+      "mdd": -0.7625,
+      "sharpe": 1.1441
+     },
+     "test": {
+      "coins": 2,
+      "cagr": 0.0879,
+      "mdd": -0.5993,
+      "sharpe": 0.4254
+     }
+    },
+    {
+     "basket": "BTC_ETH",
+     "label": "BTC·ETH",
+     "rule": "TREND50",
+     "train": {
+      "coins": 2,
+      "cagr": 0.9014,
+      "mdd": -0.5566,
+      "sharpe": 1.5175
+     },
+     "test": {
+      "coins": 2,
+      "cagr": 0.3756,
+      "mdd": -0.3062,
+      "sharpe": 1.0881
+     }
+    },
+    {
+     "basket": "MAJOR5",
+     "label": "BTC·ETH·XRP·SOL·DOGE",
+     "rule": "HOLD",
+     "train": {
+      "coins": 5,
+      "cagr": 1.2983,
+      "mdd": -0.8032,
+      "sharpe": 1.3553
+     },
+     "test": {
+      "coins": 5,
+      "cagr": 0.0918,
+      "mdd": -0.6577,
+      "sharpe": 0.4546
+     }
+    },
+    {
+     "basket": "MAJOR5",
+     "label": "BTC·ETH·XRP·SOL·DOGE",
+     "rule": "TREND50",
+     "train": {
+      "coins": 5,
+      "cagr": 1.5886,
+      "mdd": -0.4917,
+      "sharpe": 1.7496
+     },
+     "test": {
+      "coins": 5,
+      "cagr": 0.2934,
+      "mdd": -0.3922,
+      "sharpe": 0.857
+     }
+    },
+    {
+     "basket": "MAJOR10",
+     "label": "메이저 10종 (＋BNB·ADA·TRX·LINK·AVAX)",
+     "rule": "HOLD",
+     "train": {
+      "coins": 10,
+      "cagr": 1.2383,
+      "mdd": -0.7804,
+      "sharpe": 1.3877
+     },
+     "test": {
+      "coins": 10,
+      "cagr": 0.0592,
+      "mdd": -0.6506,
+      "sharpe": 0.3964
+     }
+    },
+    {
+     "basket": "MAJOR10",
+     "label": "메이저 10종 (＋BNB·ADA·TRX·LINK·AVAX)",
+     "rule": "TREND50",
+     "train": {
+      "coins": 10,
+      "cagr": 1.5146,
+      "mdd": -0.5079,
+      "sharpe": 1.9538
+     },
+     "test": {
+      "coins": 10,
+      "cagr": 0.2022,
+      "mdd": -0.3931,
+      "sharpe": 0.6953
+     }
+    }
    ]
   }
  ],
@@ -21428,13 +21704,13 @@
     "avgTrade": 11.1868
    },
    "test": {
-    "cagr": 0.2141,
+    "cagr": 0.214,
     "mdd": -0.5345,
     "sharpe": 0.6511,
     "exposure": 0.9998,
     "trades": 1,
     "winRate": 1,
-    "avgTrade": 0.7411
+    "avgTrade": 0.741
    }
   },
   {
@@ -21502,7 +21778,7 @@
    "test": {
     "cagr": -0.0834,
     "mdd": -0.3601,
-    "sharpe": -0.2604,
+    "sharpe": -0.2605,
     "exposure": 0.1523,
     "trades": 76,
     "winRate": 0.5,
@@ -21526,7 +21802,7 @@
    "test": {
     "cagr": 0.0043,
     "mdd": -0.3856,
-    "sharpe": 0.1461,
+    "sharpe": 0.146,
     "exposure": 0.2435,
     "trades": 126,
     "winRate": 0.6349,
@@ -21716,13 +21992,13 @@
     "avgTrade": 20.0628
    },
    "test": {
-    "cagr": -0.0332,
+    "cagr": -0.0333,
     "mdd": -0.6803,
-    "sharpe": 0.2714,
+    "sharpe": 0.2713,
     "exposure": 0.9998,
     "trades": 1,
     "winRate": 0,
-    "avgTrade": -0.093
+    "avgTrade": -0.0933
    }
   },
   {
@@ -21764,9 +22040,9 @@
     "avgTrade": -0.0065
    },
    "test": {
-    "cagr": -0.1658,
+    "cagr": -0.1659,
     "mdd": -0.4371,
-    "sharpe": -0.3672,
+    "sharpe": -0.3675,
     "exposure": 0.1666,
     "trades": 55,
     "winRate": 0.5455,
@@ -21790,7 +22066,7 @@
    "test": {
     "cagr": -0.1601,
     "mdd": -0.505,
-    "sharpe": -0.3489,
+    "sharpe": -0.3492,
     "exposure": 0.1701,
     "trades": 97,
     "winRate": 0.4433,
@@ -21812,9 +22088,9 @@
     "avgTrade": -0.0008
    },
    "test": {
-    "cagr": -0.2607,
+    "cagr": -0.2608,
     "mdd": -0.7049,
-    "sharpe": -0.6005,
+    "sharpe": -0.6008,
     "exposure": 0.2479,
     "trades": 118,
     "winRate": 0.5847,
@@ -21836,9 +22112,9 @@
     "avgTrade": -0.0045
    },
    "test": {
-    "cagr": -0.2751,
+    "cagr": -0.2752,
     "mdd": -0.7288,
-    "sharpe": -0.7416,
+    "sharpe": -0.7419,
     "exposure": 0.2334,
     "trades": 172,
     "winRate": 0.5465,
@@ -21860,9 +22136,9 @@
     "avgTrade": 0.0076
    },
    "test": {
-    "cagr": -0.2393,
+    "cagr": -0.2394,
     "mdd": -0.6423,
-    "sharpe": -0.3716,
+    "sharpe": -0.3718,
     "exposure": 0.4314,
     "trades": 107,
     "winRate": 0.5421,
@@ -21884,9 +22160,9 @@
     "avgTrade": 0.0009
    },
    "test": {
-    "cagr": -0.2689,
+    "cagr": -0.269,
     "mdd": -0.6406,
-    "sharpe": -0.4623,
+    "sharpe": -0.4625,
     "exposure": 0.4346,
     "trades": 185,
     "winRate": 0.4162,
@@ -22004,13 +22280,13 @@
     "avgTrade": 1.0045
    },
    "test": {
-    "cagr": 0.2103,
+    "cagr": 0.2104,
     "mdd": -0.7251,
     "sharpe": 0.633,
     "exposure": 0.9998,
     "trades": 1,
     "winRate": 1,
-    "avgTrade": 0.7259
+    "avgTrade": 0.726
    }
   },
   {
@@ -22054,7 +22330,7 @@
    "test": {
     "cagr": 0.1748,
     "mdd": -0.3421,
-    "sharpe": 0.6164,
+    "sharpe": 0.6165,
     "exposure": 0.1669,
     "trades": 59,
     "winRate": 0.5763,
@@ -22082,7 +22358,7 @@
     "exposure": 0.1687,
     "trades": 101,
     "winRate": 0.4653,
-    "avgTrade": 0.0033
+    "avgTrade": 0.0034
    }
   },
   {
@@ -22126,7 +22402,7 @@
    "test": {
     "cagr": -0.296,
     "mdd": -0.6974,
-    "sharpe": -0.7133,
+    "sharpe": -0.7132,
     "exposure": 0.2427,
     "trades": 193,
     "winRate": 0.5026,
@@ -22148,9 +22424,9 @@
     "avgTrade": 0.0018
    },
    "test": {
-    "cagr": -0.3794,
+    "cagr": -0.3793,
     "mdd": -0.7968,
-    "sharpe": -0.7207,
+    "sharpe": -0.7206,
     "exposure": 0.4455,
     "trades": 109,
     "winRate": 0.4404,
@@ -22172,9 +22448,9 @@
     "avgTrade": -0.0033
    },
    "test": {
-    "cagr": -0.4528,
+    "cagr": -0.4527,
     "mdd": -0.8306,
-    "sharpe": -1.0718,
+    "sharpe": -1.0717,
     "exposure": 0.433,
     "trades": 180,
     "winRate": 0.3556,
@@ -22292,13 +22568,13 @@
     "avgTrade": 31.961
    },
    "test": {
-    "cagr": -0.0726,
+    "cagr": -0.0727,
     "mdd": -0.7847,
-    "sharpe": 0.3014,
+    "sharpe": 0.3013,
     "exposure": 0.9998,
     "trades": 1,
     "winRate": 0,
-    "avgTrade": -0.1951
+    "avgTrade": -0.1952
    }
   },
   {
@@ -22342,7 +22618,7 @@
    "test": {
     "cagr": 0.0304,
     "mdd": -0.3918,
-    "sharpe": 0.2653,
+    "sharpe": 0.2652,
     "exposure": 0.1511,
     "trades": 54,
     "winRate": 0.5926,
@@ -22366,7 +22642,7 @@
    "test": {
     "cagr": -0.276,
     "mdd": -0.7415,
-    "sharpe": -0.6844,
+    "sharpe": -0.6845,
     "exposure": 0.1486,
     "trades": 102,
     "winRate": 0.3627,
@@ -22388,9 +22664,9 @@
     "avgTrade": 0.0037
    },
    "test": {
-    "cagr": 0.1493,
+    "cagr": 0.1492,
     "mdd": -0.3841,
-    "sharpe": 0.5361,
+    "sharpe": 0.536,
     "exposure": 0.2559,
     "trades": 133,
     "winRate": 0.6541,
@@ -22412,9 +22688,9 @@
     "avgTrade": -0.0098
    },
    "test": {
-    "cagr": -0.313,
+    "cagr": -0.3131,
     "mdd": -0.7947,
-    "sharpe": -0.7008,
+    "sharpe": -0.7009,
     "exposure": 0.2258,
     "trades": 196,
     "winRate": 0.4949,
@@ -22438,7 +22714,7 @@
    "test": {
     "cagr": -0.1529,
     "mdd": -0.7359,
-    "sharpe": -0.043,
+    "sharpe": -0.0431,
     "exposure": 0.4463,
     "trades": 115,
     "winRate": 0.5565,
@@ -22462,7 +22738,7 @@
    "test": {
     "cagr": -0.2788,
     "mdd": -0.7584,
-    "sharpe": -0.3524,
+    "sharpe": -0.3525,
     "exposure": 0.4295,
     "trades": 200,
     "winRate": 0.39,
@@ -22580,13 +22856,13 @@
     "avgTrade": 28.8182
    },
    "test": {
-    "cagr": -0.0903,
+    "cagr": -0.0904,
     "mdd": -0.8563,
     "sharpe": 0.3454,
     "exposure": 0.9998,
     "trades": 1,
     "winRate": 0,
-    "avgTrade": -0.2382
+    "avgTrade": -0.2384
    }
   },
   {
@@ -22628,9 +22904,9 @@
     "avgTrade": 0.0042
    },
    "test": {
-    "cagr": 0.0916,
+    "cagr": 0.0915,
     "mdd": -0.3457,
-    "sharpe": 0.4199,
+    "sharpe": 0.4198,
     "exposure": 0.1797,
     "trades": 62,
     "winRate": 0.5806,
@@ -22654,7 +22930,7 @@
    "test": {
     "cagr": -0.0342,
     "mdd": -0.5436,
-    "sharpe": 0.1176,
+    "sharpe": 0.1174,
     "exposure": 0.1757,
     "trades": 113,
     "winRate": 0.3982,
@@ -22678,7 +22954,7 @@
    "test": {
     "cagr": -0.2055,
     "mdd": -0.6412,
-    "sharpe": -0.227,
+    "sharpe": -0.2271,
     "exposure": 0.2659,
     "trades": 131,
     "winRate": 0.6336,
@@ -22702,7 +22978,7 @@
    "test": {
     "cagr": -0.3684,
     "mdd": -0.7856,
-    "sharpe": -0.8815,
+    "sharpe": -0.8816,
     "exposure": 0.2302,
     "trades": 205,
     "winRate": 0.4927,
@@ -22748,9 +23024,9 @@
     "avgTrade": 0.0115
    },
    "test": {
-    "cagr": -0.374,
+    "cagr": -0.3741,
     "mdd": -0.7782,
-    "sharpe": -0.5658,
+    "sharpe": -0.5659,
     "exposure": 0.4621,
     "trades": 214,
     "winRate": 0.3598,
