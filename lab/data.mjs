@@ -12,13 +12,14 @@ export const MIN_AGE = 60; // 상장 후 최소 일수 (지표가 안정되기 �
 
 /**
  * @param {string} dir lab/.data
- * @param {{ minValue: number }} opts minValue: 최근 20일 평균 거래대금 하한 (원)
+ * @param {{ exchange: string, minValue: number }} opts minValue: 최근 20일 평균 거래대금 하한 (그 거래소 호가 통화)
  */
 export async function loadUniverse(dir, opts) {
-  const files = (await readdir(`${dir}/bithumb`)).filter((f) => f.endsWith(".json"));
+  const sub = `${dir}/${opts.exchange}`;
+  const files = (await readdir(sub)).filter((f) => f.endsWith(".json"));
   const raw = [];
   for (const f of files) {
-    const j = JSON.parse(await readFile(`${dir}/bithumb/${f}`, "utf8"));
+    const j = JSON.parse(await readFile(`${sub}/${f}`, "utf8"));
     if (j.rows.length >= 30) raw.push(j);
   }
   // 날짜 축: 모든 종목 날짜의 합집합

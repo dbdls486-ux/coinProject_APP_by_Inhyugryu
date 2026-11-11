@@ -47,28 +47,107 @@ async function probe(url) {
   }
 }
 
+/**
+ * 과거 페이지를 부를 때 쓰는 to 형식. 빗썸 문서와 실제 동작이 다를 수 있어
+ * BTC 로 여러 형식을 시험해 실제로 더 과거 봉이 나오는 형식을 고른다.
+ */
+const TO_FORMATS = {
+  "utc-space": (k) => k.candle_date_time_utc.replace("T", " "),
+  "kst-space": (k) => k.candle_date_time_kst.replace("T", " "),
+  "utc-Z": (k) => `${k.candle_date_time_utc}Z`,
+  "kst-offset": (k) => `${k.candle_date_time_kst}+09:00`,
+  "utc-iso": (k) => k.candle_date_time_utc,
+};
+let toFormat = null;
+
+async function pickToFormat() {
+  const first = await getJson("https://api.bithumb.com/v1/candles/days?market=KRW-BTC&count=200");
+  const oldest = first.at(-1);
+  for (const [name, fmt] of Object.entries(TO_FORMATS)) {
+    try {
+      const q = new URLSearchParams({ market: "KRW-BTC", count: "200", to: fmt(oldest) });
+      const list = await getJson(`https://api.bithumb.com/v1/candles/days?${q}`, 2);
+      await sleep(PAUSE_MS);
+      const newest = list?.[0]?.candle_date_time_utc;
+      console.log(`  to 형식 ${name}: ${list?.length ?? 0}개, 최신 ${newest ?? "-"} (기준 ${oldest.candle_date_time_utc})`);
+      if (newest && newest < oldest.candle_date_time_utc) return name;
+    } catch (e) {
+      console.log(`  to 형식 ${name}: 실패 ${String(e?.message ?? e).slice(0, 120)}`);
+    }
+  }
+  return null;
+}
+
 /** 한 종목의 일봉을 최신 → 과거로 페이지를 넘기며 받는다. 반환은 오래된 순 */
 async function bithumbDaily(market) {
   const rows = new Map();
   let to = "";
-  for (let page = 0; page < MAX_PAGES; page++) {
+  for (let page = 0; page < (toFormat ? MAX_PAGES : 1); page++) {
     const q = new URLSearchParams({ market, count: "200" });
     if (to) q.set("to", to);
     const list = await getJson(`https://api.bithumb.com/v1/candles/days?${q}`);
     await sleep(PAUSE_MS);
     if (!Array.isArray(list) || list.length === 0) break;
+    const before = rows.size;
     for (const k of list) {
       const d = String(k.candle_date_time_kst ?? k.candle_date_time_utc).slice(0, 10);
       // [날짜, 시가, 고가, 저가, 종가, 거래대금(원)]
       rows.set(d, [d, k.opening_price, k.high_price, k.low_price, k.trade_price, k.candle_acc_trade_price ?? 0]);
     }
-    const oldest = list[list.length - 1].candle_date_time_utc;
-    const next = `${oldest}Z`;
-    if (!oldest || next === to) break;
-    to = next;
-    if (list.length < 200) break;
+    if (rows.size === before || list.length < 200) break; // 더 과거가 없거나 같은 페이지가 반복
+    to = TO_FORMATS[toFormat](list.at(-1));
   }
   return [...rows.values()].sort((a, b) => (a[0] < b[0] ? -1 : 1));
+}
+
+/* ---------- 바이낸스 (data-api.binance.vision: 시세 전용 공개 주소, 미국 서버에서도 열림) ---------- */
+const BN = "https://data-api.binance.vision";
+const BN_START = Date.UTC(2017, 6, 1);
+const STABLE_BASE = /^(USDC|FDUSD|TUSD|BUSD|DAI|USDP|USDE|USD1|PYUSD|EUR|EURI|AEUR|GBP|TRY|BRL|ARS|ZAR|UAH|RUB|NGN|IDRT|BIDR|PAXG|XUSD|RLUSD|USDS)$/;
+
+async function binanceDaily(symbol) {
+  const rows = [];
+  let start = BN_START;
+  for (let page = 0; page < 10; page++) {
+    const q = new URLSearchParams({ symbol, interval: "1d", limit: "1000", startTime: String(start) });
+    const list = await getJson(`${BN}/api/v3/klines?${q}`);
+    await sleep(PAUSE_MS);
+    if (!Array.isArray(list) || list.length === 0) break;
+    // [날짜(UTC), 시가, 고가, 저가, 종가, 거래대금(USDT)]
+    for (const k of list) rows.push([new Date(k[0]).toISOString().slice(0, 10), +k[1], +k[2], +k[3], +k[4], +k[7]]);
+    if (list.length < 1000) break;
+    start = list.at(-1)[0] + 86_400_000;
+  }
+  return rows;
+}
+
+async function collectBinance() {
+  await mkdir(`${OUT}/binance`, { recursive: true });
+  const info = await getJson(`${BN}/api/v3/exchangeInfo?permissions=SPOT`);
+  const syms = info.symbols.filter(
+    (s) => s.quoteAsset === "USDT" && s.status === "TRADING" && !STABLE_BASE.test(s.baseAsset) && !/(UP|DOWN|BULL|BEAR)$/.test(s.baseAsset),
+  );
+  console.log(`바이낸스 USDT 마켓 ${syms.length}개`);
+  const queue = [...syms];
+  const done = [];
+  const failed = [];
+  await Promise.all(
+    Array.from({ length: WORKERS }, async () => {
+      for (let s = queue.shift(); s; s = queue.shift()) {
+        try {
+          const rows = await binanceDaily(s.symbol);
+          if (rows.length === 0) continue;
+          await writeFile(`${OUT}/binance/${s.baseAsset}.json`, JSON.stringify({ sym: s.baseAsset, name: s.baseAsset, rows }));
+          done.push({ sym: s.baseAsset, days: rows.length, first: rows[0][0], last: rows.at(-1)[0] });
+        } catch (e) {
+          failed.push({ market: s.symbol, error: String(e?.message ?? e) });
+        }
+      }
+    }),
+  );
+  const lens = done.map((d) => d.days).sort((a, b) => a - b);
+  console.log(`바이낸스 완료: ${done.length}개, 실패 ${failed.length}개 · 봉 수 중앙값 ${lens[lens.length >> 1]}`);
+  return { coins: done.length, failed };
 }
 
 async function main() {
@@ -89,6 +168,8 @@ async function main() {
 
   const markets = (await getJson("https://api.bithumb.com/v1/market/all?isDetails=true")).filter((m) => m.market.startsWith("KRW-"));
   console.log(`빗썸 원화 마켓 ${markets.length}개`);
+  toFormat = await pickToFormat();
+  console.log(toFormat ? `과거 페이지 형식: ${toFormat}` : "과거 페이지를 넘길 방법을 찾지 못해 최근 200일만 받는다");
 
   const queue = [...markets];
   const done = [];
@@ -112,9 +193,19 @@ async function main() {
     }),
   );
 
-  const meta = { started, finished: new Date().toISOString(), probes, coins: done.length, failed, list: done.sort((a, b) => a.sym.localeCompare(b.sym)) };
+  let binance = null;
+  try {
+    binance = await collectBinance();
+  } catch (e) {
+    console.log(`바이낸스 수집 실패: ${String(e?.message ?? e).slice(0, 200)}`);
+    binance = { coins: 0, error: String(e?.message ?? e) };
+  }
+
+  const meta = { started, finished: new Date().toISOString(), probes, toFormat, coins: done.length, failed, binance, list: done.sort((a, b) => a.sym.localeCompare(b.sym)) };
   await writeFile(`${OUT}/meta.json`, JSON.stringify(meta, null, 1));
-  console.log(`완료: ${done.length}개, 실패 ${failed.length}개`);
+  const lens = done.map((d) => d.days).sort((a, b) => a - b);
+  const btc = done.find((d) => d.sym === "BTC");
+  console.log(`완료: ${done.length}개, 실패 ${failed.length}개 · 봉 수 중앙값 ${lens[lens.length >> 1]} · BTC ${btc?.first} ~ ${btc?.last}`);
   if (done.length === 0) process.exit(1);
 }
 
