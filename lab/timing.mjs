@@ -52,7 +52,7 @@ export const TIMING_RULES = [
 ];
 
 /** @param stopPct 주어지면 매수가 대비 그만큼 빠질 때 손절 */
-export function ruleTiming(U, k, a, b, fee, rule, stopPct = 0, barsPerDay = 1) {
+export function ruleTiming(U, k, a, b, fee, rule, stopPct = 0, barsPerDay = 1, series = false) {
   const x = context(k);
   let cash = 1;
   let qty = 0;
@@ -66,6 +66,7 @@ export function ruleTiming(U, k, a, b, fee, rule, stopPct = 0, barsPerDay = 1) {
   let prev = 1;
   let inDays = 0;
   const rs = [];
+  const byDay = series ? new Map() : null;
   const tr = [];
   const close = (px) => {
     cash = qty * px * (1 - fee);
@@ -89,6 +90,7 @@ export function ruleTiming(U, k, a, b, fee, rule, stopPct = 0, barsPerDay = 1) {
     peak = Math.max(peak, eq);
     mdd = Math.min(mdd, eq / peak - 1);
     rs.push(eq / prev - 1);
+    if (byDay) byDay.set(t, eq / prev - 1);
     prev = eq;
     if (qty > 0) sell = !!rule.exit(x, i, i - entryI, entryPx);
     else buy = !!rule.enter(x, i);
@@ -107,7 +109,60 @@ export function ruleTiming(U, k, a, b, fee, rule, stopPct = 0, barsPerDay = 1) {
     trades: tr.length,
     winRate: tr.length ? tr.filter((v) => v > 0).length / tr.length : 0,
     avgTrade: tr.length ? tr.reduce((s, v) => s + v, 0) / tr.length : 0,
+    ...(byDay ? { byDay } : {}),
   };
+}
+
+/**
+ * 메이저 바구니: 각 코인을 자기 규칙(그냥 보유 / 50일선 추세)으로 굴리고 매일 같은 비중으로 합친다.
+ * 50일선 아래인 코인 몫은 현금으로 둔다.
+ */
+export function basketTiming(U, syms, a, b, fee, ruleId) {
+  const rule = TIMING_RULES.find((r) => r.id === ruleId);
+  const parts = [];
+  for (const sym of syms) {
+    const k = U.coins.find((c) => c.sym === sym);
+    if (!k) continue;
+    const r = ruleTiming(U, k, a, b, fee, rule, 0, 1, true);
+    if (r) parts.push(r.byDay);
+  }
+  if (!parts.length) return null;
+  let eq = 1;
+  let peak = 1;
+  let mdd = 0;
+  const rs = [];
+  for (let t = a; t <= b; t++) {
+    let sum = 0;
+    let n = 0;
+    for (const m of parts) {
+      if (m.has(t)) {
+        sum += m.get(t);
+        n++;
+      }
+    }
+    const r = n ? sum / n : 0;
+    eq *= 1 + r;
+    peak = Math.max(peak, eq);
+    mdd = Math.min(mdd, eq / peak - 1);
+    rs.push(r);
+  }
+  const days = b - a + 1;
+  const mean = rs.reduce((s2, v) => s2 + v, 0) / rs.length;
+  const sd = Math.sqrt(rs.reduce((s2, v) => s2 + (v - mean) ** 2, 0) / Math.max(1, rs.length - 1));
+  return { coins: parts.length, cagr: eq > 0 ? eq ** (365 / days) - 1 : -1, mdd, sharpe: sd > 0 ? (mean / sd) * Math.sqrt(365) : 0 };
+}
+
+export const BASKETS = [
+  { id: "BTC", label: "BTC", syms: ["BTC"] },
+  { id: "BTC_ETH", label: "BTC·ETH", syms: ["BTC", "ETH"] },
+  { id: "MAJOR5", label: "BTC·ETH·XRP·SOL·DOGE", syms: ["BTC", "ETH", "XRP", "SOL", "DOGE"] },
+  { id: "MAJOR10", label: "메이저 10종 (＋BNB·ADA·TRX·LINK·AVAX)", syms: ["BTC", "ETH", "XRP", "SOL", "DOGE", "BNB", "ADA", "TRX", "LINK", "AVAX"] },
+];
+
+export function basketGrid(U, P, fee) {
+  const out = [];
+  for (const B of BASKETS) for (const ruleId of ["HOLD", "TREND50"]) out.push({ basket: B.id, label: B.label, rule: ruleId, train: basketTiming(U, B.syms, ...P.train, fee, ruleId), test: basketTiming(U, B.syms, ...P.test, fee, ruleId) });
+  return out;
 }
 
 export const MAJORS = ["BTC", "ETH", "XRP", "SOL", "DOGE"];

@@ -13,7 +13,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { DATA, MARKETS, OUT, SPLIT, periods, prepareAll } from "./common.mjs";
 import { selectionStats, tradeTable } from "./selection.mjs";
 import { EXITS, STRATEGIES } from "./strategies.mjs";
-import { MAJORS, TIMING_RULES, h4Timing, majorsTiming } from "./timing.mjs";
+import { MAJORS, TIMING_RULES, basketGrid, h4Timing, majorsTiming } from "./timing.mjs";
 
 const DAY = 86_400_000;
 const EVENT_TYPES = [
@@ -287,8 +287,9 @@ async function main() {
     }));
     // 6. 메이저 타이밍
     const majors = majorsTiming(U, P, M.sim.fee);
+    const baskets = basketGrid(U, P, M.sim.fee);
 
-    result.markets.push({ market: M.id, label: M.label, periods: { train: [U.dates[P.start], U.dates[P.split - 1]], test: [U.dates[P.split], U.dates[P.end]] }, eventRows, eventList, reactions, listing, pumpRows, scenRows, pumps, regimeRows, majors });
+    result.markets.push({ market: M.id, label: M.label, periods: { train: [U.dates[P.start], U.dates[P.split - 1]], test: [U.dates[P.split], U.dates[P.end]] }, eventRows, eventList, reactions, listing, pumpRows, scenRows, pumps, regimeRows, majors, baskets });
     console.log(`[${M.label}] 사건 실험 완료`);
   }
 
@@ -429,6 +430,14 @@ function report(R) {
     L.push("| 규칙 | BTC 50일선 위 | BTC 50일선 아래 |");
     L.push("|---|---|---|");
     for (const r of m.regimeRows) L.push(`| ${r.label} | ${cell(r.btcUp)} | ${cell(r.btcDown)} |`);
+    L.push("");
+    L.push("### 6-0. 메이저 바구니 (같은 비중, 매일 재조정) — 그냥 보유 vs 각자 50일선 위일 때만 보유");
+    L.push("| 바구니 | 방식 | 고르는 기간 연수익 / 최대 낙폭 / 샤프 | 확인 기간 연수익 / 최대 낙폭 / 샤프 |");
+    L.push("|---|---|---|---|");
+    for (const r of m.baskets) {
+      const f = (x) => (x ? `${pc(x.cagr)} / ${pc(x.mdd)} / ${x.sharpe.toFixed(2)}` : "-");
+      L.push(`| ${r.label} | ${r.rule === "HOLD" ? "그냥 보유" : "50일선 추세"} | ${f(r.train)} | ${f(r.test)} |`);
+    }
     L.push("");
     L.push("### 6. 메이저 코인 타이밍 규칙 (연수익 / 최대 낙폭 · 거래 수 · 승률)");
     for (const period of ["train", "test"]) {
