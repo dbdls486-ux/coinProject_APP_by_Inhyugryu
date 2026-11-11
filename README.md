@@ -10,6 +10,7 @@ schema/                  JSON 스키마
 prompts/REPORT_GUIDE.md  리포트 작성 지침
 prompts/DAILY_GUIDE.md   데일리 작성 지침 (인과관계 규칙)
 prompts/RESEARCH_GUIDE.md 국내 리서치 수집 지침 (국내 기관·한국어만, 보고서 단위)
+lab/                     매매 신호 검증 실험실 (GitHub Actions 가 백테스트 → lab/results)
 ```
 
 앱은 `https://raw.githubusercontent.com/<owner>/<repo>/main/data/...` 에서 읽는다.

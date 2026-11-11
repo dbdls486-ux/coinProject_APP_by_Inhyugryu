@@ -1,0 +1,47 @@
+# 지표 검증 실험실: 빗썸 일봉을 받아 매수 규칙 후보를 백테스트하고 결과를 lab/results 에 커밋한다.
+# lab/ 코드가 바뀌면 자동으로, 그 외에는 매주 월요일 06:13 KST 에 최신 데이터로 다시 돌린다.
+name: lab
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "13 21 * * 0" # 일요일 21:13 UTC = 월요일 06:13 KST
+  push:
+    branches: [main]
+    paths:
+      - "lab/**"
+      - "!lab/results/**"
+      - ".github/workflows/lab.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lab
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 과거 시세 수집
+        run: node lab/collect.mjs
+      - name: 백테스트
+        run: node lab/run.mjs
+      - name: 수집 기록 보관
+        if: always()
+        run: mkdir -p lab/results && cp lab/.data/meta.json lab/results/collect-meta.json || true
+      - name: 결과 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lab/results
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "lab: 검증 결과 $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1
