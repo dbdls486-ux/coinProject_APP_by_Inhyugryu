@@ -230,42 +230,63 @@ def features(o, h, l, c, v, btc_c, extra=None):
     return out
 
 
-def targets(o, h, l, c, cost, horizon=7):
-    """그날 종가에 신호를 보고 다음 날 시가에 샀을 때의 결과 (왕복 비용 반영)."""
+def path_outcomes(o, h, l, c, cost, horizon, combos):
+    """
+    신호일마다 (익절폭, 손절폭) 조합별 실수익. 0 은 '없음'.
+    그날 종가에 신호 → 다음 날 시가 매수 → 장중에 익절가·손절가에 닿으면 그 가격(갭이면 시가)에 체결,
+    안 닿으면 horizon 일째 종가에 매도. 같은 날 둘 다 닿으면 손절이 먼저라고 본다 (보수적).
+    반환: (봉 개수 × 조합 개수) 배열, 계산할 수 없는 날은 NaN
+    """
     n = len(c)
-    out = {k: np.full(n, np.nan) for k in ("entry", "fwd", "mx", "mn", "tp30sl10", "tp50sl15", "sl10", "tp20sl7")}
+    out = np.full((n, len(combos)), np.nan)
     if n <= horizon + 1:
-        return pd.DataFrame(out)
+        return out
     m = n - horizon - 1  # 신호일 0..m 까지 계산 가능
     entry = o[1 : m + 2]
     Wh = swv(h[1:], horizon)[: m + 1]
     Wl = swv(l[1:], horizon)[: m + 1]
     Wo = swv(o[1:], horizon)[: m + 1]
     last_c = c[horizon : horizon + m + 1]
-    out["entry"][: m + 1] = entry
-    out["fwd"][: m + 1] = last_c / entry * (1 - cost) / (1 + cost) - 1
-    out["mx"][: m + 1] = Wh.max(axis=1) / entry - 1
-    out["mn"][: m + 1] = Wl.min(axis=1) / entry - 1
-
-    def path(tp, sl):
+    rows = np.arange(m + 1)
+    for j, (tp, sl) in enumerate(combos):
         tgt = entry * (1 + tp) if tp else np.full(m + 1, np.inf)
         stop = entry * (1 - sl) if sl else np.zeros(m + 1)
         hit_s = Wl <= stop[:, None]
         hit_t = Wh >= tgt[:, None]
         fs = np.where(hit_s.any(axis=1), hit_s.argmax(axis=1), 99)
         ft = np.where(hit_t.any(axis=1), hit_t.argmax(axis=1), 99)
-        rows = np.arange(m + 1)
         px = last_c.copy()
-        s_first = (fs <= ft) & (fs < 99)  # 같은 날 둘 다 닿으면 손절이 먼저라고 본다 (보수적)
+        s_first = (fs <= ft) & (fs < 99)
         t_first = (ft < fs) & (ft < 99)
         px[s_first] = np.minimum(Wo[rows[s_first], fs[s_first]], stop[s_first])
         px[t_first] = np.maximum(Wo[rows[t_first], ft[t_first]], tgt[t_first])
-        return px / entry * (1 - cost) / (1 + cost) - 1
+        out[: m + 1, j] = px / entry * (1 - cost) / (1 + cost) - 1
+    return out
 
-    out["tp30sl10"][: m + 1] = path(0.30, 0.10)
-    out["tp50sl15"][: m + 1] = path(0.50, 0.15)
-    out["sl10"][: m + 1] = path(0, 0.10)
-    out["tp20sl7"][: m + 1] = path(0.20, 0.07)
+
+EXITS = {"tp30sl10": (0.30, 0.10), "tp50sl15": (0.50, 0.15), "sl10": (0, 0.10), "tp20sl7": (0.20, 0.07)}
+
+
+def targets(o, h, l, c, cost, horizon=7, long=28):
+    """그날 종가에 신호를 보고 다음 날 시가에 샀을 때의 결과 (왕복 비용 반영)."""
+    n = len(c)
+    out = {k: np.full(n, np.nan) for k in ("entry", "fwd", "mx", "mn", *EXITS, "fwd28", "mx28")}
+    if n <= horizon + 1:
+        return pd.DataFrame(out)
+    m = n - horizon - 1  # 신호일 0..m 까지 계산 가능
+    entry = o[1 : m + 2]
+    out["entry"][: m + 1] = entry
+    out["fwd"][: m + 1] = c[horizon : horizon + m + 1] / entry * (1 - cost) / (1 + cost) - 1
+    out["mx"][: m + 1] = swv(h[1:], horizon)[: m + 1].max(axis=1) / entry - 1
+    out["mn"][: m + 1] = swv(l[1:], horizon)[: m + 1].min(axis=1) / entry - 1
+    P = path_outcomes(o, h, l, c, cost, horizon, list(EXITS.values()))
+    for j, k in enumerate(EXITS):
+        out[k] = P[:, j]
+    if n > long + 1:  # 4주 보유 버전
+        mL = n - long - 1
+        eL = o[1 : mL + 2]
+        out["fwd28"][: mL + 1] = c[long : long + mL + 1] / eL * (1 - cost) / (1 + cost) - 1
+        out["mx28"][: mL + 1] = swv(h[1:], long)[: mL + 1].max(axis=1) / eL - 1
     return pd.DataFrame(out)
 
 

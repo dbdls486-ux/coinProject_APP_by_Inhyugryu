@@ -166,6 +166,11 @@ def build(mkt, cfg, raw):
     g = df.groupby(["t", "bucket"]).fwd
     df["yrank"] = (g.rank(method="average") - 0.5) / g.transform("count")
     df["win5"] = (df.yrank >= 0.8).astype(float)
+    # 4주 보유 버전: 28일 안에 +50% / 28일 초과수익 상위 20% (최근 28일은 결과가 아직 없어 NaN)
+    g28 = df.groupby(["t", "bucket"]).fwd28
+    df["pump28"] = np.where(df.mx28.notna(), (df.mx28 >= 0.50).astype(float), np.nan)
+    df["ex28"] = df.fwd28 - g28.transform("mean")
+    df["win28"] = np.where(df.fwd28.notna(), ((g28.rank(method="average") - 0.5) / g28.transform("count") >= 0.8).astype(float), np.nan)
     df["is_test"] = df.date >= SPLIT
     return df.reset_index(drop=True), feats, all_dates
 
@@ -308,8 +313,8 @@ def composite(df, scan):
     return s / len(chosen), [dict(feature=r["feature"], label=r["label"], sign=int(np.sign(r["train"]["ic"])), t=r["train"]["ic_t"]) for r in chosen]
 
 
-def walk_forward(df, feats, target):
-    """매년 1월 1일 이전 자료로만 학습해 그 해를 예측. 학습 자료의 마지막 8일은 목표값이 그 해와 겹치므로 버린다."""
+def walk_forward(df, feats, target, embargo=H + 2, importance=True):
+    """매년 1월 1일 이전 자료로만 학습해 그 해를 예측. 학습 자료의 마지막 며칠(보유 기간+2일)은 목표값이 그 해와 겹치므로 버린다."""
     X_cols = [f"r_{c}" for c in feats] + MARKET_FEATS
     X = df[X_cols].to_numpy(dtype="float32")
     y = df[target].to_numpy()
@@ -321,7 +326,7 @@ def walk_forward(df, feats, target):
         te = years == yr
         if not te.any():
             continue
-        tr = (years < yr) & (t <= t[te].min() - (H + 2))
+        tr = (years < yr) & (t <= t[te].min() - embargo) & np.isfinite(y)
         if tr.sum() < 30000:
             continue
         # 학습 구간에 값이 거의 없는 지표(예: 그 시기에 없던 펀딩비)는 뺀다
@@ -332,7 +337,7 @@ def walk_forward(df, feats, target):
         last_model = (m, te, use)
         log(f"    {target} {yr}: 학습 {int(tr.sum()):,}행 → 예측 {int(te.sum()):,}행")
     imp = []
-    if last_model is not None:
+    if importance and last_model is not None:
         # 마지막 해에서 지표를 하나씩 섞어 봤을 때 급등 적중이 얼마나 떨어지는가
         m, te, use = last_model
         idx = np.flatnonzero(te)
@@ -375,14 +380,14 @@ class Ladder:
         self.Rcc[~np.isfinite(C)] = 0.0
         self.ci, self.cost, self.T = ci, cost, T
 
-    def run(self, picks):
+    def run(self, picks, hold=H):
         port = np.zeros(self.T)
         for s, syms in picks.items():
             cols = [self.ci[x] for x in syms]
-            for d in range(s + 1, min(s + H, self.T - 1) + 1):
+            for d in range(s + 1, min(s + hold, self.T - 1) + 1):
                 r = np.nan_to_num(self.Roc[d, cols] if d == s + 1 else self.Rcc[d, cols])
-                adj = (-self.cost if d == s + 1 else 0.0) + (-self.cost if d == s + H else 0.0)
-                port[d] += (r + adj).mean() / H
+                adj = (-self.cost if d == s + 1 else 0.0) + (-self.cost if d == s + hold else 0.0)
+                port[d] += (r + adj).mean() / hold
         return port
 
     def stats(self, port, a, b):
@@ -501,6 +506,13 @@ def main():
             both = pd.Series(ml_pump).rank(pct=True).to_numpy() + pd.Series(ml_ret).rank(pct=True).to_numpy()
             cands.append(("s_ml_both", "기계학습: 두 모델 평균", both))
         has_ml = np.isfinite(ml_pump)
+        # 반대쪽: 조용한 코인, 고점 근처 코인
+        calm = (df.bucket <= 2).to_numpy()
+        cands.append(("s_quiet", "변동성(ATR%) 가장 작은 5종목", -df.r_atr_pct.to_numpy()))
+        cands.append(("s_ml_pump_low", "기계학습: 급등 확률이 가장 낮은 5종목", -ml_pump))
+        cands.append(("s_ml_ret_calm", "기계학습 초과수익 모델, 변동성 하위 60% 안에서만", np.where(calm, ml_ret, np.nan)))
+        cands.append(("s_near_high", "250일 고점에 가장 가까운 5종목", df.r_d_high250.to_numpy()))
+        cands.append(("s_ml_ret_high", "기계학습 초과수익 모델, 250일 고점 10% 이내에서만", np.where((df.d_high250 > -0.1).to_numpy(), ml_ret, np.nan)))
         for sid, label, sc in cands:
             r = eval_score(df, sc, lad, sid, label)
             if r:
@@ -510,6 +522,10 @@ def main():
             if r2:
                 scores.append(r2)
         log("  섞은 점수 평가 완료")
+        from round2 import round2
+
+        r2 = round2(df, feats, raw[mkt], lad, cfg, dict(cands=cands, ml_pump=ml_pump, ml_ret=ml_ret, has_ml=has_ml), walk_forward, hac_t, log, SPLIT)
+        log("  2차 실험 완료")
         # BTC 그냥 보유 (같은 구간)
         btc = raw[mkt]["BTC"]
         bs = pd.Series(btc["c"], index=btc["dates"])
@@ -521,7 +537,7 @@ def main():
         result["markets"].append(dict(
             market=mkt, label=cfg["label"], rows=int(len(df)), coins=int(df.sym.nunique()), cost=cfg["cost"], dates=[df.date.min(), df.date.max()], base=base,
             scan=scan, signals=singles, pairCount=len(pairs), pairs=trim_pairs(pairs), composite=comp_feats, importance=dict(pump=imp_pump, ret=imp_ret), scores=scores, btcHold=hold,
-            single={s: single_coin(raw[mkt], s, cfg) for s in ("BTC", "ETH")},
+            single={s: single_coin(raw[mkt], s, cfg) for s in ("BTC", "ETH")}, round2=r2,
         ))
         del df
     os.makedirs(OUT, exist_ok=True)
