@@ -19,6 +19,7 @@ import os
 import re
 import sys
 import time
+import urllib.parse
 import urllib.request
 
 import numpy as np
@@ -111,7 +112,7 @@ def fetch_live(limit=1000, workers=8):
     def one(bs):
         base, symbol = bs
         try:
-            ks = _get(f"{BN}/api/v3/klines?symbol={symbol}&interval=1d&limit={limit}")
+            ks = _get(f"{BN}/api/v3/klines?symbol={urllib.parse.quote(symbol)}&interval=1d&limit={limit}")  # 한자 이름 종목도 있다
             return base, [[pd.Timestamp(k[0], unit="ms").strftime("%Y-%m-%d"), float(k[1]), float(k[2]), float(k[3]), float(k[4]), float(k[7])] for k in ks]
         except Exception as e:
             return base, e
