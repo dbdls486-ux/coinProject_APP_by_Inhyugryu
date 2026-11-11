@@ -1,0 +1,66 @@
+{
+ "updatedAt": "2026-11-11T12:41Z",
+ "today": "2026-11-11",
+ "startedAt": "2026-11-11",
+ "initialCash": 10000.0,
+ "equity": 10000.0,
+ "cash": 10000.0,
+ "returnPct": 0.0,
+ "mdd": 0.0,
+ "exposure": 0.0,
+ "btcReturnPct": 0.0,
+ "playbookAsof": "2026-11-10",
+ "market": {
+  "date": "2026-11-10",
+  "state": "DOWN",
+  "btc_rsi": 34.0,
+  "btc_d50": -0.094,
+  "mkt_brk": 0.006,
+  "names": 166,
+  "stateLabel": "BTC 50일선 아래",
+  "note": "BTC 종가가 50일선 아래"
+ },
+ "positions": [],
+ "majors": [],
+ "pending": [],
+ "decisions": [],
+ "stats": {
+  "trades": 0,
+  "altTrades": 0,
+  "altWin": null,
+  "altAvgR": null,
+  "realized": 0.0
+ },
+ "lastTrades": [],
+ "failedSymbols": [
+  "币安人生",
+  "牛来"
+ ],
+ "engine": {
+  "startedAt": "2026-11-11",
+  "initialCash": 10000.0,
+  "cash": 10000.0,
+  "positions": [],
+  "majors": {},
+  "pending": [],
+  "openDone": "2026-11-11",
+  "closeDone": "2026-11-10",
+  "equity": [],
+  "trades": [],
+  "seq": 0,
+  "lastEquity": 10000.0,
+  "peak": 10000.0,
+  "decisions": [],
+  "market": {
+   "date": "2026-11-10",
+   "state": "DOWN",
+   "btc_rsi": 34.0,
+   "btc_d50": -0.094,
+   "mkt_brk": 0.006,
+   "names": 166
+  },
+  "bench": {
+   "btc0": 74078.0
+  }
+ }
+}
