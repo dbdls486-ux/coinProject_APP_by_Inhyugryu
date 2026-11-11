@@ -59,17 +59,23 @@ try {
   const markets = (await getJson("https://api.upbit.com/v1/market/all?is_details=false")).filter((m) => m.market.startsWith("KRW-"));
   for (const m of markets) names.set(m.market.slice(4), m.english_name);
   let n = 0;
-  await pool(markets, 3, 140, async (m) => {
+  const iso = (ms) => new Date(ms).toISOString().slice(0, 19) + "Z";
+  await pool(markets, 3, 120, async (m) => {
+    // 1) 월봉으로 첫 달을 찾고 2) 그 달의 일봉으로 첫 거래일을 찾고 3) 그날의 1시간봉으로 첫 거래 시각을 찾는다.
+    //    (월봉의 날짜는 그 달 1일이라 그대로 쓰면 실제 상장보다 앞선 날짜가 된다)
     const months = await getJson(`https://api.upbit.com/v1/candles/months?market=${m.market}&count=200`);
-    const first = months.at(-1)?.first_day_of_period ?? months.at(-1)?.candle_date_time_utc?.slice(0, 10);
-    if (!first) return;
-    // 첫 거래 시각: 첫날부터 이틀 뒤까지의 1시간봉 중 가장 이른 것
-    const to = new Date(Date.parse(first + "T00:00:00Z") + 3 * DAY).toISOString().slice(0, 19) + "Z";
-    await sleep(140);
-    const hours = await getJson(`https://api.upbit.com/v1/candles/minutes/60?market=${m.market}&to=${encodeURIComponent(to)}&count=200`);
-    const oldest = hours.at(-1)?.candle_date_time_utc;
-    const ts = oldest ? Date.parse(oldest + "Z") + 3_600_000 : Date.parse(first + "T00:00:00Z") + DAY;
-    events.push({ type: "LIST_UPBIT", sym: m.market.slice(4), ts });
+    const firstMonth = months.at(-1)?.candle_date_time_utc;
+    if (!firstMonth) return;
+    await sleep(120);
+    const days = await getJson(`https://api.upbit.com/v1/candles/days?market=${m.market}&to=${encodeURIComponent(iso(Date.parse(firstMonth + "Z") + 33 * DAY))}&count=40`);
+    const firstDay = days.at(-1)?.candle_date_time_utc;
+    if (!firstDay) return;
+    const dayStart = Date.parse(firstDay + "Z");
+    await sleep(120);
+    const hours = await getJson(`https://api.upbit.com/v1/candles/minutes/60?market=${m.market}&to=${encodeURIComponent(iso(dayStart + DAY))}&count=30`);
+    const firstHour = hours.map((h) => Date.parse(h.candle_date_time_utc + "Z")).filter((t) => t >= dayStart && t < dayStart + DAY).sort((a, b) => a - b)[0];
+    // 시각을 못 찾으면 그날이 끝난 뒤에 알려진 것으로 본다 (보수적으로)
+    events.push({ type: "LIST_UPBIT", sym: m.market.slice(4), ts: firstHour !== undefined ? firstHour + 3_600_000 : dayStart + DAY, exact: firstHour !== undefined });
     n++;
   });
   note.upbit = `${n}/${markets.length}`;
@@ -157,4 +163,14 @@ try {
 await writeFile(`${OUT}/events.json`, JSON.stringify({ collectedAt: new Date().toISOString(), note, events }));
 const count = {};
 for (const e of events) count[e.type] = (count[e.type] ?? 0) + 1;
+// 점검: 날짜가 매달 1~2일에 몰려 있으면 실제 날짜가 아니라 달의 시작으로 잡힌 것이다
+for (const type of Object.keys(count)) {
+  const list = events.filter((e) => e.type === type);
+  const early = list.filter((e) => new Date(e.ts).getUTCDate() <= 2).length;
+  note[`${type}_1~2일비율`] = Math.round((early / list.length) * 100) + "%";
+}
+for (const sym of ["LPT", "PEPE", "WLD", "ENA"]) {
+  const u = events.find((e) => e.type === "LIST_UPBIT" && e.sym === sym);
+  if (u) note[`upbit_${sym}`] = new Date(u.ts).toISOString().slice(0, 16);
+}
 console.log("사건 수집:", JSON.stringify(count), JSON.stringify(note));
