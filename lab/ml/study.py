@@ -45,6 +45,11 @@ MARKETS = {
     "bithumb": dict(label="빗썸 원화마켓", min_value=1e9, cost=0.0025 + 0.003, tz=9),
     "binance": dict(label="바이낸스 USDT마켓", min_value=1e6, cost=0.001 + 0.0015, tz=0),
 }
+# 달러·유로 등에 값이 묶인 자산과 BTC·ETH·SOL 을 그대로 따라가는 포장 토큰 — 알트 종목 고르기에서 뺀다.
+# (하락장에서는 '안 움직이는 자산'이 또래보다 잘한 것으로 잡혀 조용한 코인·초과수익 모델 성적이 부풀려진다)
+PEGGED = set("AUD GBP JPY TRY BRL SUSD UST USTC BFUSD USDSB PAX BKRW BVND VAI USDD FRAX LUSD USDJ USDN CUSD WBTC WBETH BETH BNSOL STETH WSTETH CBBTC WBNB BTCB".split())
+MIN_ATR = 0.007  # 하루 변동폭이 0.7% 도 안 되는 날은 사실상 고정 가격 자산으로 보고 뺀다
+RULE_COLS = ["d_sma20", "d_sma50", "d_sma200", "ma_align", "macd_hist", "ichi_cloud", "brk20", "brk60", "newlow20", "rsi14", "bb_pctb", "fib_zone"]
 PLACEBO = [f"noise{i}" for i in range(1, 6)]
 MARKET_FEATS = ["btc_d_sma50", "btc_roc7", "btc_roc28", "btc_rsi14", "breadth50", "mkt_ret1", "mkt_ret7"]
 
@@ -122,6 +127,7 @@ def build(mkt, cfg, raw):
                 fr = pd.Series(dict(json.load(f)["rows"]))
             extra["fund"] = fr.reindex(prev_dates(dates) if mkt == "bithumb" else dates).to_numpy()
         F = features(c["o"], c["h"], c["l"], c["c"], c["v"], btc.reindex(dates).ffill().to_numpy(), extra)
+        c["F"] = F[RULE_COLS].astype("float32")  # 규칙 실험(2차 F·H)에서 다시 쓴다
         Tg = targets(c["o"], c["h"], c["l"], c["c"], cfg["cost"], H)
         F["sym"] = sym
         F["date"] = dates
@@ -147,7 +153,10 @@ def build(mkt, cfg, raw):
         df[p] = RNG.standard_normal(len(df)).astype("float32")
 
     # 거래 가능 종목만 남긴다
-    ok = live & ~df.sym.isin(STABLE) & (df.sym != "BTC") & df.fwd.notna()
+    named = df.sym.isin(STABLE | PEGGED)
+    flat = live & ~named & (df.sym != "BTC") & df.fwd.notna() & ~(df.atr_pct >= MIN_ATR)
+    excluded = dict(byName=sorted(set(df.sym[named & live])), byFlatPrice={k: int(v) for k, v in df.sym[flat].value_counts().head(30).items()})
+    ok = live & ~named & (df.sym != "BTC") & df.fwd.notna() & (df.atr_pct >= MIN_ATR)
     df = df[ok].copy()
     n_day = df.groupby("t").sym.transform("count")
     df = df[n_day >= MIN_NAMES].copy()
@@ -172,7 +181,7 @@ def build(mkt, cfg, raw):
     df["ex28"] = df.fwd28 - g28.transform("mean")
     df["win28"] = np.where(df.fwd28.notna(), ((g28.rank(method="average") - 0.5) / g28.transform("count") >= 0.8).astype(float), np.nan)
     df["is_test"] = df.date >= SPLIT
-    return df.reset_index(drop=True), feats, all_dates
+    return df.reset_index(drop=True), feats, all_dates, excluded
 
 
 # ----------------------------------------------------------------------------------------
@@ -417,7 +426,7 @@ def eval_score(df, score, lad, name, label, need=None):
     picks = sub[rank <= K]
     if len(picks) < 200:
         return None
-    out = dict(id=name, label=label, periods={})
+    out = dict(id=name, label=label, periods={}, topPicks={key: {k: int(v) for k, v in picks.sym[m].value_counts().head(12).items()} for key, m in (("train", ~picks.is_test), ("test", picks.is_test))})
     port = lad.run({int(t): list(g) for t, g in picks.groupby("t").sym})
     tmin, tmax = int(sub.t.min()), int(sub.t.max()) + H
     split_t = int(sub.t[sub.is_test].min()) if sub.is_test.any() else tmax + 1
@@ -479,7 +488,8 @@ def main():
         other = "binance" if mkt == "bithumb" else "bithumb"
         raw.setdefault(other, {})
         log(f"[{cfg['label']}] 지표 계산 ({len(raw[mkt])}종목)")
-        df, feats, all_dates = build(mkt, cfg, raw)
+        df, feats, all_dates, excluded = build(mkt, cfg, raw)
+        log(f"  이름으로 제외: {', '.join(excluded['byName']) or '없음'} / 가격이 거의 안 움직여 제외된 날이 있는 종목: {excluded['byFlatPrice']}")
         log(f"  표 {len(df):,}행 × 지표 {len(feats)}개 · {df.date.min()} ~ {df.date.max()}")
         scan, base = scan_features(df, feats)
         log("  개별 지표 채점 완료")
@@ -524,7 +534,8 @@ def main():
         log("  섞은 점수 평가 완료")
         from round2 import round2
 
-        r2 = round2(df, feats, raw[mkt], lad, cfg, dict(cands=cands, ml_pump=ml_pump, ml_ret=ml_ret, has_ml=has_ml), walk_forward, hac_t, log, SPLIT)
+        r2 = round2(df, feats, raw[mkt], lad, cfg, dict(cands=cands, ml_pump=ml_pump, ml_ret=ml_ret, has_ml=has_ml, skip=STABLE | PEGGED), walk_forward, hac_t, log, SPLIT)
+        oos_first = df.date[has_ml].min()[:4] if has_ml.any() else None
         log("  2차 실험 완료")
         # BTC 그냥 보유 (같은 구간)
         btc = raw[mkt]["BTC"]
@@ -537,7 +548,8 @@ def main():
         result["markets"].append(dict(
             market=mkt, label=cfg["label"], rows=int(len(df)), coins=int(df.sym.nunique()), cost=cfg["cost"], dates=[df.date.min(), df.date.max()], base=base,
             scan=scan, signals=singles, pairCount=len(pairs), pairs=trim_pairs(pairs), composite=comp_feats, importance=dict(pump=imp_pump, ret=imp_ret), scores=scores, btcHold=hold,
-            single={s: single_coin(raw[mkt], s, cfg) for s in ("BTC", "ETH")}, round2=r2,
+            single={s: single_coin(raw[mkt], s, cfg) for s in ("BTC", "ETH")}, round2=r2, excluded=excluded,
+            oosTrain=None if oos_first is None else (oos_first if oos_first == str(int(SPLIT[:4]) - 1) else f"{oos_first}~{int(SPLIT[:4]) - 1}"),
         ))
         del df
     os.makedirs(OUT, exist_ok=True)

@@ -43,17 +43,22 @@ def render(R):
         A("")
 
     for m in R["markets"]:
+        TR = m.get("oosTrain") or "2021~2023"
         A(f"## {m['label']}")
         A("")
+        ex = m.get("excluded")
+        if ex:
+            A(f"종목 고르기에서 뺀 자산 — 달러 등에 값이 묶였거나 BTC·ETH·SOL 을 그대로 따라가는 토큰: {', '.join(ex['byName']) or '없음'}" + (f" / 하루 변동폭 0.7% 미만이라 빠진 날이 있는 종목: {', '.join(f'{k} {v}일' for k, v in ex['byFlatPrice'].items())}" if ex["byFlatPrice"] else ""))
+            A("")
         A("### 1. 섞은 점수로 매일 상위 5종목을 샀다면")
-        A("기계학습 모델은 매년 1월 1일 이전 자료로만 학습해 그 해에 적용했다. 아래 표는 모델 예측이 있는 구간(2021년~)에서 모든 방식을 같은 날짜로 비교한 것이다.")
+        A(f"기계학습 모델은 매년 1월 1일 이전 자료로만 학습해 그 해에 적용했다. 아래 표는 모델 예측이 있는 구간({TR[:4]}년~)에서 모든 방식을 같은 날짜로 비교한 것이다.")
         A("")
         A("| 방식 | 기간 | 거래 | 급등 적중 (기준) | 거래당 실수익 | 중앙값 | 이긴 비율 | 초과 (t) | 계좌 연수익 | 최대 낙폭 |")
         A("|---|---|---|---|---|---|---|---|---|---|")
         for s in m["scores"]:
             if not s["id"].endswith("@oos"):
                 continue
-            for key, name in (("train", "2021~2023"), ("test", "2024~")):
+            for key, name in (("train", TR), ("test", "2024~")):
                 p = s["periods"].get(key)
                 if p:
                     A(f"| {s['label']} | {name} | {p['trades']} | {pc(p['pump'])} ({pc(p['base'])}) | {pc(p['net'])} | {pc(p['median'])} | {round(p['win'] * 100)}% | {pp(p['ex'])} ({num(p['t'])}) | {pc(p['cagr'])} | {pc(p['mdd'])} |")
@@ -78,6 +83,13 @@ def render(R):
             e = p["exits"]
             cell = lambda x: f"{pc(x['mean'])} / {pc(x['median'])} / {round(x['win'] * 100)}%"
             A(f"| {s['label']} | {pc(p['net'])} / {pc(p['median'])} / {round(p['win'] * 100)}% | {cell(e['tp30sl10'])} | {cell(e['tp50sl15'])} | {cell(e['tp20sl7'])} | {cell(e['sl10'])} |")
+        A("")
+        A("**2024년~ 가장 자주 뽑힌 종목** (횟수)")
+        A("")
+        for s in m["scores"]:
+            tp = (s.get("topPicks") or {}).get("test")
+            if s["id"].endswith("@oos") and tp and s["id"] != "s_rand@oos":
+                A(f"- {s['label']}: " + ", ".join(f"{k} {v}" for k, v in tp.items()))
         A("")
         if m["composite"]:
             A("**합성 점수에 들어간 지표** (고르는 기간 기준): " + ", ".join(f"{c['label']}({'높을수록' if c['sign'] > 0 else '낮을수록'})" for c in m["composite"]))
@@ -143,7 +155,7 @@ def render(R):
             A("")
 
         if m.get("round2"):
-            render_round2(A, m["round2"])
+            render_round2(A, m["round2"], TR)
 
     A("## 읽을 때 주의")
     A("- 2차 실험(6번)은 조건을 여러 개 바꿔 본 것이라, 그중 하나가 좋아 보여도 고르는 기간과 확인 기간이 같이 좋은지를 봐야 한다.")
@@ -171,7 +183,7 @@ def _acct(a):
     return "-" if not a else f"{pc(a['cagr'], 0)} / {pc(a['mdd'], 0)}"
 
 
-def render_round2(A, r2):
+def render_round2(A, r2, TR="2021~2023"):
     A("### 6. 2차 실험 — 조건을 바꿔 가며 다시 확인")
     A("")
     if r2.get("regimes"):
@@ -179,9 +191,9 @@ def render_round2(A, r2):
         A("칸 안의 숫자는 거래당 실수익 평균 / 중앙값 / 초과 (t). 계좌는 조건이 켜진 날에만 새로 사고 나머지는 현금으로 둔 경우의 연수익 / 최대 낙폭.")
         A("")
         for g in r2["regimes"]:
-            A(f"**{g['label']}** — 켜진 날 비율: 2021~2023년 {round(g['share']['train'] * 100)}%, 2024년~ {round(g['share']['test'] * 100)}%")
+            A(f"**{g['label']}** — 켜진 날 비율: {TR}년 {round(g['share']['train'] * 100)}%, 2024년~ {round(g['share']['test'] * 100)}%")
             A("")
-            A("| 방식 | 2024~ 켜진 날 급등 적중 (기준) | 2024~ 켜진 날 | 2024~ 꺼진 날 | 2021~2023 켜진 날 | 2021~2023 꺼진 날 | 켜진 날만 산 계좌 2024~ | 2021~2023 |")
+            A(f"| 방식 | 2024~ 켜진 날 급등 적중 (기준) | 2024~ 켜진 날 | 2024~ 꺼진 날 | {TR} 켜진 날 | {TR} 꺼진 날 | 켜진 날만 산 계좌 2024~ | {TR} |")
             A("|---|---|---|---|---|---|---|---|")
             for r in g["rows"]:
                 c = r["cells"]
@@ -203,12 +215,12 @@ def render_round2(A, r2):
             for r in cal[key]:
                 if r["n"] < 30:
                     continue
-                A(f"| {round(r['lo'] * 100)}~{min(100, round(r['hi'] * 100))}% | {'2021~2023' if r['period'] == 'train' else '2024~'} | {r['n']} ({r['days']}) | {pc(r['hit'])} | {pc(r['net'])} | {pc(r['median'])} | {round(r['win'] * 100)}% | {pp(r['ex'])} ({num(r['t'])}) | {pc(r['tpsl'])} |")
+                A(f"| {round(r['lo'] * 100)}~{min(100, round(r['hi'] * 100))}% | { TR if r['period'] == 'train' else '2024~'} | {r['n']} ({r['days']}) | {pc(r['hit'])} | {pc(r['net'])} | {pc(r['median'])} | {round(r['win'] * 100)}% | {pp(r['ex'])} ({num(r['t'])}) | {pc(r['tpsl'])} |")
             A("")
 
     if r2.get("ksweep"):
         A("#### 6-C. 하루에 고르는 종목 수를 바꾸면")
-        A("| 방식 | 하루 종목 수 | 2024~ 급등 적중 | 실수익 평균 | 중앙값 | 초과 (t) | 2021~2023 실수익 평균 | 초과 (t) |")
+        A(f"| 방식 | 하루 종목 수 | 2024~ 급등 적중 | 실수익 평균 | 중앙값 | 초과 (t) | {TR} 실수익 평균 | 초과 (t) |")
         A("|---|---|---|---|---|---|---|---|")
         for r in r2["ksweep"]:
             a, b = r["train"], r["test"]
@@ -225,7 +237,7 @@ def render_round2(A, r2):
         A("| 방식 | 기간 | 거래 | 급등 적중 (기준) | 실수익 평균 | 중앙값 | 이긴 비율 | 초과 (t) | 계좌 연수익 / 최대 낙폭 |")
         A("|---|---|---|---|---|---|---|---|---|")
         for r in lq["rows"]:
-            for key, nm in (("train", "2021~2023"), ("test", "2024~")):
+            for key, nm in (("train", TR), ("test", "2024~")):
                 p = r.get(key) or {}
                 if "net" not in p:
                     continue
@@ -234,7 +246,7 @@ def render_round2(A, r2):
 
     if r2.get("exits"):
         A("#### 6-D. 익절·손절·보유 기간 조합 (3·7·14일 × 익절 5가지 × 손절 5가지)")
-        A("| 방식 | 평균이 플러스인 조합 수: 2021~2023 / 2024~ / 둘 다 | 2021~2023에 가장 좋았던 조합 | 그 조합의 2021~2023 평균 | 같은 조합의 2024~ 평균 (중앙값, 이긴 비율) |")
+        A(f"| 방식 | 평균이 플러스인 조합 수: {TR} / 2024~ / 둘 다 | {TR}에 가장 좋았던 조합 | 그 조합의 {TR} 평균 | 같은 조합의 2024~ 평균 (중앙값, 이긴 비율) |")
         A("|---|---|---|---|---|")
         name = lambda c: f"{c['hz']}일 보유 · 익절 {('+' + str(round(c['tp'] * 100)) + '%') if c['tp'] else '없음'} · 손절 {('−' + str(round(c['sl'] * 100)) + '%') if c['sl'] else '없음'}"
         for e in r2["exits"]:
@@ -263,12 +275,12 @@ def render_round2(A, r2):
     lg = r2.get("long")
     if lg:
         A("#### 6-E. 4주(28일) 보유로 길게 보면")
-        A(f"급등 = 28일 안에 +50% 이상. 아무 코인이나 샀을 때 급등 확률: 2021~2023년 {pc(lg['base']['train'])}, 2024년~ {pc(lg['base']['test'])}. 모델은 이 목표로 따로 학습했다.")
+        A(f"급등 = 28일 안에 +50% 이상. 아무 코인이나 샀을 때 급등 확률: {TR}년 {pc(lg['base']['train'])}, 2024년~ {pc(lg['base']['test'])}. 모델은 이 목표로 따로 학습했다.")
         A("")
         A("| 방식 | 기간 | 거래 | 급등 적중 | 실수익 평균 | 중앙값 | 이긴 비율 | 초과 (t) | 계좌 연수익 / 최대 낙폭 |")
         A("|---|---|---|---|---|---|---|---|---|")
         for r in lg["rows"]:
-            for key, nm in (("train", "2021~2023"), ("test", "2024~")):
+            for key, nm in (("train", TR), ("test", "2024~")):
                 p = r.get(key) or {}
                 if "net" not in p:
                     continue
@@ -289,4 +301,21 @@ def render_round2(A, r2):
                 cells += [_acct(d.get("train")), _acct(d.get("test"))]
             expo = (r["coins"].get("BTC", {}).get("test") or {}).get("exposure")
             A(f"| {r['label']} | {r['kind']} | {_acct(r['basket'].get('train'))} | {_acct(r['basket'].get('test'))} | " + " | ".join(cells) + f" | {'-' if expo is None else str(round(expo * 100)) + '%'} |")
+        A("")
+
+    tr = r2.get("tiers")
+    if tr:
+        A("#### 6-H. 같은 규칙을 거래대금 순위 구간별 바구니에 적용하면")
+        A("코인마다 규칙대로 굴린 계좌를 만들고, 날마다 전날 기준 20일 평균 거래대금 순위로 구간을 나눠 같은 비중으로 묶었다. 칸 안은 연수익 / 최대 낙폭. 구간이 바뀔 때의 재조정 비용은 넣지 않았다.")
+        A("")
+        A("구간별 하루 종목 수(중앙값): " + ", ".join(f"{t['label']} — ~2023 {round(t['names'].get('train', 0))}개, 2024~ {round(t['names'].get('test', 0))}개" for t in tr["tiers"]))
+        A("")
+        A("| 규칙 | 종류 | " + " | ".join(f"{t['label']} ~2023 | {t['label']} 2024~" for t in tr["tiers"]) + " |")
+        A("|---|---|" + "|".join("---|---" for _ in tr["tiers"]) + "|")
+        for r in tr["rules"]:
+            cells = []
+            for t in tr["tiers"]:
+                d = r["tiers"].get(t["id"], {})
+                cells += [_acct(d.get("train")), _acct(d.get("test"))]
+            A(f"| {r['label']} | {r['kind']} | " + " | ".join(cells) + " |")
         A("")

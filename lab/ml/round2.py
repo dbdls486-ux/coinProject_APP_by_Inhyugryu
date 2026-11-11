@@ -8,6 +8,7 @@
   E. 4주 보유로 길게 보면?          (28일 안에 +50% 를 맞히는 모델을 따로 학습)
   F. 같은 지표를 메이저 코인에 추세 규칙으로 쓰면?
   G. 거래대금 상위 30% 종목 안에서만 고르면?
+  H. 추세·역추세 규칙을 거래대금 순위 구간별(1~5위 / 6~30위 / 31~100위 / 그 아래) 바구니에 적용하면?
 """
 import numpy as np
 import pandas as pd
@@ -203,7 +204,7 @@ def long_horizon(df, feats, lad, walk_forward, hac_t, log):
     rows = []
     for mid, mlabel, sc in methods:
         picks = picks_of(df, sc, need)
-        r = dict(id=mid, label=mlabel, account=account(lad, picks, win, LONG))
+        r = dict(id=mid, label=mlabel, account=account(lad, picks, win, LONG), topPicks={k: int(v) for k, v in picks.sym[picks.is_test].value_counts().head(12).items()})
         for per, pm, um in (("train", ~picks.is_test, ~uni.is_test), ("test", picks.is_test, uni.is_test)):
             r[per] = trade_stats(picks[pm], uni[um], hac_t, "fwd28", "ex28", "pump28", LONG)
         rows.append(r)
@@ -234,6 +235,13 @@ def _rules(F, C):
         ("BB_DIP", "볼린저 하단 아래에서 사서 20일선 회복하면 팔기", "역추세", f("bb_pctb") < 0, f("d_sma20") > 0, 0),
         ("FIB", "피보나치 0.382~0.618 눌림에서 사서 20일 고점 돌파 또는 28일 뒤 팔기", "역추세", f("fib_zone") > 0.5, f("brk20") > 0.5, 28),
     ]
+
+
+def _feat(coins, c):
+    if "F" in c:
+        return c["F"]
+    btc = pd.Series(coins["BTC"]["c"], index=coins["BTC"]["dates"]).reindex(c["dates"]).ffill().to_numpy()
+    return features(c["o"], c["h"], c["l"], c["c"], c["v"], btc)
 
 
 def _run_rule(o, c, ent, ext, cost, a, b, max_hold):
@@ -272,8 +280,7 @@ def majors_rules(coins, cost, split):
         if c is None or len(c["dates"]) < 700:
             continue
         dates = np.array(c["dates"])
-        btc = pd.Series(coins["BTC"]["c"], index=coins["BTC"]["dates"]).reindex(c["dates"]).ffill().to_numpy()
-        F = features(c["o"], c["h"], c["l"], c["c"], c["v"], btc)
+        F = _feat(coins, c)
         C = pd.Series(c["c"])
         start = max(250, int(np.searchsorted(dates, "2018-01-01")))
         sp = int(np.searchsorted(dates, split))
@@ -296,6 +303,75 @@ def majors_rules(coins, cost, split):
                 basket[per] = dict(**_curve_stats(np.cumprod(1 + r.to_numpy())), coins=len(parts))
         R["basket"] = basket
         out.append(R)
+    return out
+
+
+# ----------------------------------------------------------------------------------------
+# H. 같은 규칙을 거래대금 순위 구간별 바구니에 적용
+# ----------------------------------------------------------------------------------------
+TIERS = [("t1", "거래대금 1~5위", 1, 5), ("t2", "6~30위", 6, 30), ("t3", "31~100위", 31, 100), ("t4", "101위 이하", 101, 10**6)]
+TIER_RULES = ("HOLD", "MA50", "MA200", "GC50_200", "MA_ALIGN", "MACD", "ICHI", "DON20", "DON60", "RSI_MOM", "BB_UP", "RSI_DIP", "BB_DIP", "FIB")
+WARM = 250
+
+
+def tier_rules(coins, cost, split, min_value, skip):
+    """
+    코인마다 규칙대로 굴린 계좌를 만들고, 날마다 전날 기준 20일 평균 거래대금 순위로 구간을 나눠 같은 비중으로 묶는다.
+    구간이 바뀔 때의 재조정 비용은 넣지 않았다 (그냥 보유 바구니도 똑같이 뺐으므로 서로 비교는 공정하다).
+    'BTC 50일선 위일 때만' 은 규칙의 매수를 BTC 가 50일선 위인 날로 제한하고, BTC 가 50일선 아래로 내려가면 판다.
+    """
+    all_dates = sorted({d for c in coins.values() for d in c["dates"]})
+    tix = {d: i for i, d in enumerate(all_dates)}
+    T = len(all_dates)
+    syms = [s for s, c in coins.items() if s not in skip and len(c["dates"]) >= WARM + 80]
+    N = len(syms)
+    V = np.full((T, N), np.nan)
+    btcF = _feat(coins, coins["BTC"])
+    btc_up = pd.Series((btcF["d_sma50"].to_numpy() > 0), index=coins["BTC"]["dates"])
+    ids = list(TIER_RULES) + [f"{r}+BTC" for r in ("MA50", "DON20", "BB_UP")]
+    RR = {rid: np.full((T, N), np.nan, dtype="float32") for rid in ids}
+    meta = {}
+    for j, s in enumerate(syms):
+        c = coins[s]
+        rows = np.array([tix[d] for d in c["dates"]])
+        v20 = pd.Series(c["v"]).rolling(20).mean().shift(1).to_numpy()
+        V[rows[WARM:], j] = v20[WARM:]
+        F = _feat(coins, c)
+        up = btc_up.reindex(c["dates"]).fillna(False).to_numpy(dtype=bool)
+        n = len(rows)
+        for rid, label, kind, ent, ext, mh in _rules(F, pd.Series(c["c"])):
+            if rid not in RR:
+                continue
+            meta[rid] = (label, kind)
+            ent, ext = np.nan_to_num(ent.astype(float)) > 0.5, np.nan_to_num(ext.astype(float)) > 0.5
+            variants = [(rid, ent, ext)]
+            if f"{rid}+BTC" in RR:
+                meta[f"{rid}+BTC"] = (label + " (BTC 50일선 위일 때만)", kind)
+                variants.append((f"{rid}+BTC", ent & up, ext | ~up))
+            for vid, e1, x1 in variants:
+                eq, _, _ = _run_rule(c["o"], c["c"], e1, x1, cost, WARM, n - 1, mh)
+                RR[vid][rows[WARM:], j] = np.diff(np.r_[1.0, eq]) / np.r_[1.0, eq[:-1]]
+    ok = np.isfinite(V) & (V >= min_value)
+    rank = np.where(ok, (-np.where(ok, V, -np.inf)).argsort(axis=1).argsort(axis=1) + 1, 0)
+    dates = np.array(all_dates)
+    first = int(np.argmax(ok.sum(axis=1) >= 20)) if (ok.sum(axis=1) >= 20).any() else 0
+    sp = int(np.searchsorted(dates, split))
+    spans = dict(train=(first, sp - 1), test=(sp, T - 1))
+    out = dict(tiers=[], rules=[])
+    masks = {}
+    for tid, tlabel, lo, hi in TIERS:
+        m = ok & (rank >= lo) & (rank <= hi)
+        masks[tid] = m
+        out["tiers"].append(dict(id=tid, label=tlabel, names={per: float(np.median(m[a : b + 1].sum(axis=1))) for per, (a, b) in spans.items() if b - a > 200}))
+    for rid in ids:
+        label, kind = meta[rid]
+        row = dict(id=rid, label=label, kind=kind, tiers={})
+        for tid, m in masks.items():
+            X = np.where(m & np.isfinite(RR[rid]), RR[rid], np.nan)
+            cnt = np.isfinite(X).sum(axis=1)
+            r = np.where(cnt > 0, np.nansum(X, axis=1) / np.maximum(cnt, 1), 0.0)
+            row["tiers"][tid] = {per: _curve_stats(np.cumprod(1 + r[a : b + 1])) for per, (a, b) in spans.items() if b - a > 200}
+        out["rules"].append(row)
     return out
 
 
@@ -324,4 +400,6 @@ def round2(df, feats, coins, lad, cfg, S, walk_forward, hac_t, log, split):
     log("    E 4주 보유 완료")
     out["majors"] = majors_rules(coins, cfg["cost"], split)
     log("    F 메이저 규칙 완료")
+    out["tiers"] = tier_rules(coins, cfg["cost"], split, cfg["min_value"], S["skip"])
+    log("    H 거래대금 구간별 규칙 완료")
     return out
