@@ -58,7 +58,7 @@
       "steps": [
         {
           "text": "앱에서 USDC를 예치한다. 미국·호주 등 제한 지역 거주자는 이용할 수 없다.",
-          "detail": "예치는 SyrupRouter를 거쳐 풀의 ERC-4626 deposit 함수로 들어간다. 예치 주소는 PoolPermissionManager에서 권한을 받아야 한다. 처음에는 USDC approve 거래가 한 번 필요하다. 다른 체인에서는 Chainlink CCIP 메시지를 받는 MapleCCIPReceiver가 이더리움 풀에 대신 예치·상환한다. 최소 예치액과 개인 KYC 요건은 공식 문서에 없음 → 확인 불가."
+          "detail": "예치는 SyrupRouter를 거쳐 풀의 ERC-4626 deposit 함수로 들어간다. 예치 주소는 PoolPermissionManager에서 권한을 받아야 한다. 처음에는 USDC approve 거래가 한 번 필요하다. 다른 체인에서는 Chainlink CCIP 메시지를 받는 MapleCCIPReceiver가 이더리움 풀에 대신 예치·상환한다. 첫 예치 때는 Maple 측 permissionAdmin의 서명으로 주소 인가를 받는다. 최소 예치액은 문서에 없고 RWA.xyz는 0으로 표시한다. 이용약관은 미국·호주 등 34개 지역 거주자를 제외하고, 이용자가 미국 기준 적격투자자라고 진술하게 한다."
         },
         {
           "text": "예치하면 지분 토큰 syrupUSDC를 받는다. 이자는 수량이 아니라 교환비율이 오르는 방식으로 쌓인다.",
@@ -83,19 +83,19 @@
       "steps": [
         {
           "text": "Maple이 차입 기관을 심사해 승인 명단에 올리고 기본대출계약을 맺는다.",
-          "detail": "KYC/AML과 재무·경영진·운영 역량 심사를 거친다. 승인된 차입 주소는 MapleGlobals에 등록되며 등록 권한은 Governor 또는 Operational Admin에게 있다. 법적 근거는 Master Lending Agreement다. 차입 기관 명단은 공개 문서에 없음 → 확인 불가. Jupiter Lend 평가서는 2026년 2월 기준 기관 차입자를 27곳으로 적었다."
+          "detail": "KYC/AML과 재무·경영진·운영 역량 심사를 거친다. 승인된 차입 주소는 MapleGlobals에 등록되며 등록 권한은 Governor 또는 Operational Admin에게 있다. 법적 근거는 Master Lending Agreement다. 차입 기관 명단은 공개하지 않는다. LlamaRisk 자료에 따르면 2026년 7월 17일 기준 대출 38건, 차입자 18곳이고 최대 차입자 비중은 26%다. Jupiter Lend 평가서는 2026년 2월 기준 기관 차입자를 27곳으로 적었다."
         },
         {
           "text": "차입 기관이 BTC 같은 담보를 수탁사 지갑에 넣는다. 담보는 온체인 대출 계약에 들어가지 않는다.",
-          "detail": "오픈텀 대출 계약 MapleLoan의 초기화 변수에는 담보 항목이 없다. Jupiter Lend 평가서는 담보가 Anchorage Digital과 BitGo의 분리 지갑에 있다고 적는다. 2026년 9월 14일 발표된 Zodia Custody Interchange 연동은 담보를 차입자 명의 분리 지갑에 둔 채 Maple이 부도 시 담보권만 행사하는 구조다. syrupUSDC 투명성 페이지는 담보 지갑 36개를 표시한다. 수탁 계약 조건과 키 통제권은 공개 문서에 없음 → 확인 불가."
+          "detail": "오픈텀 대출 계약 MapleLoan의 초기화 변수에는 담보 항목이 없다. Jupiter Lend 평가서는 담보가 Anchorage Digital과 BitGo의 분리 지갑에 있다고 적는다. 2026년 9월 14일 발표된 Zodia Custody Interchange 연동은 담보를 차입자 명의 분리 지갑에 둔 채 Maple이 부도 시 담보권만 행사하는 구조다. syrupUSDC 투명성 페이지는 담보 지갑 36개를 표시한다. 수탁 계약 조건과 키 통제권은 공개하지 않는다."
         },
         {
           "text": "대출 조건을 담은 계약을 만들고, 차입 기관이 수락하면 풀 운용자가 풀의 돈을 내보낸다.",
-          "detail": "차입자가 acceptLoanTerms를 호출해야 fund가 가능하다. 자금은 Pool Delegate가 OpenTermLoanManager를 통해 집행한다. 계약에는 principalRequested, interestRate, paymentInterval, noticePeriod, gracePeriod, lateFeeRate, delegateServiceFeeRate가 고정된다. 2026년 11월 릴리스 문서는 고정만기 대출 관리 계약을 제거 대상으로 적는다. 투명성 페이지에는 '고정만기'로 표시된 대출이 남아 있어 배포 완료 여부는 확인 불가."
+          "detail": "차입자가 acceptLoanTerms를 호출해야 fund가 가능하다. 자금은 Pool Delegate가 OpenTermLoanManager를 통해 집행한다. 계약에는 principalRequested, interestRate, paymentInterval, noticePeriod, gracePeriod, lateFeeRate, delegateServiceFeeRate가 고정된다. 2026년 11월 릴리스 문서는 고정만기 대출 관리 계약을 제거 대상으로 적는다. 온체인 Upgraded 이벤트로 보면 syrupUSDC PoolManager는 2026년 10월 27일 버전 500으로 업그레이드됐다. 다만 투명성 페이지에는 '고정만기'로 표시된 대출이 남아 있다."
         },
         {
           "text": "차입 기관이 주기마다 이자를 내면 Maple 몫 수수료를 떼고 나머지가 풀에 쌓인다.",
-          "detail": "makePayment 시 platformServiceFee는 MapleTreasury로, delegateServiceFee는 Pool Delegate로 간다. 두 수수료는 원금 × 요율 × 경과기간으로 계산한다. 이와 별도로 총이자 × managementFeeRate가 관리 수수료로 빠진다. 전략 수익에는 strategyProtocolFeeRate와 strategyDelegateFeeRate가 붙는다. 요율은 1e6을 100%로 표기한다. 실제 적용 요율은 공식 문서에 없음 → 확인 불가."
+          "detail": "makePayment 시 platformServiceFee는 MapleTreasury로, delegateServiceFee는 Pool Delegate로 간다. 두 수수료는 원금 × 요율 × 경과기간으로 계산한다. 이와 별도로 총이자 × managementFeeRate가 관리 수수료로 빠진다. 전략 수익에는 strategyProtocolFeeRate와 strategyDelegateFeeRate가 붙는다. 요율은 1e6을 100%로 표기한다. MapleGlobals와 PoolManager의 설정 이벤트로 확인한 현재 관리 수수료는 syrupUSDC 15%, syrupUSDT 12.5%다. 2026년 8월 1일 플랫폼 몫이 5%에서 이 수준으로 올랐고, 같은 날 운용자 몫 3.33%는 0이 됐다. 플랫폼 서비스 수수료는 두 풀 모두 연 0.25%다."
         },
         {
           "text": "대출에 나가지 않은 현금은 Aave·Sky 같은 외부 프로토콜이나 Maple 관리 지갑으로 보내 굴린다.",
@@ -103,7 +103,7 @@
         },
         {
           "text": "담보 가치를 24시간 감시하다가 기준 아래로 내려가면 추가 담보를 요구한다. 기한은 24시간이다.",
-          "detail": "Maple 운영팀이 가격 피드 3개로 상시 감시한다. Margin Call Level에 닿으면 차입자는 24시간 안에 Initial Collateral Level까지 채워야 한다. Liquidation Level에 닿으면 마진콜 진행 중이어도 즉시 청산할 권리가 생긴다. 청산은 OTC 데스크를 우선하고 필요하면 중앙화·탈중앙 거래소로 옮겨 판다. 세 기준의 구체 수치는 공개 문서에 없음 → 확인 불가."
+          "detail": "Maple 운영팀이 가격 피드 3개로 상시 감시한다. Margin Call Level에 닿으면 차입자는 24시간 안에 Initial Collateral Level까지 채워야 한다. Liquidation Level에 닿으면 마진콜 진행 중이어도 즉시 청산할 권리가 생긴다. 청산은 OTC 데스크를 우선하고 필요하면 중앙화·탈중앙 거래소로 옮겨 판다. 기준은 대출마다 따로 정하고 공통 표는 공개하지 않는다. LlamaRisk가 공개한 대출별 예시는 마진콜·청산 LTV 기준 BTC 82%·90%, ETH 77%·85%, XRP 75%·83%, HYPE 65%·75%다."
         },
         {
           "text": "상환이 위태로우면 대출 가치를 먼저 깎고, 끝내 못 받으면 담보를 팔아 풀에 넣는다. 모자란 금액은 예치자가 나눠 진다.",
@@ -188,10 +188,10 @@
     "trust": [
       "Maple 운용 조직 — 풀 운용자로서 대출 실행, 회수 요구, 손상·부도 선언을 결정한다. 공식 문서는 손실 인식을 '재량적 판단'이라 부르며 증빙이나 대기 기간이 필요 없다고 적는다.",
       "출금 처리 권한자 — 대기열 처리는 Maple 측 주소만 할 수 있고, 계약은 처리를 강제하지 않는다. 문서는 이들이 출금을 막지 않는다는 것을 신뢰 가정으로 명시한다.",
-      "수탁사와 법적 담보권 — 담보는 Anchorage Digital·BitGo·Zodia Custody 같은 수탁사 지갑에 있고, 회수는 기본대출계약과 법적 집행에 달려 있다. 수탁 계약 조건과 키 통제 구조는 공개 문서에 없음 → 확인 불가.",
+      "수탁사와 법적 담보권 — 담보는 Anchorage Digital·BitGo·Zodia Custody 같은 수탁사 지갑에 있고, 회수는 기본대출계약과 법적 집행에 달려 있다. 수탁 계약 조건과 키 통제 구조는 공개하지 않는다.",
       "가격 피드와 청산 상대방 — 마진콜은 가격 피드 3개에, 청산 체결가는 OTC 데스크에 의존한다. 급락장에서 체결이 늦거나 불리하면 손실이 풀로 넘어온다.",
-      "Maple 관리 지갑 — 배분 전략으로 나간 자금은 온체인에서 반환을 강제할 장치가 없다. 방어선은 지갑별 한도와 1시간 쿨다운, 관리자의 손실 처리뿐이다. 지갑이 개인키 지갑인지 수탁 계정인지는 문서에 없음 → 확인 불가.",
-      "관리 권한 — 최고 권한은 최소 1일 지연이 걸린 타임락 계약을 거치고, 제안은 Maple이 관리하는 멀티시그가 낸다. 일상 관리용 멀티시그는 타임락 없이 움직이며, 풀 관리 계약의 업그레이드만 사전 예약과 대기 기간을 거친다. 서명자 수와 임계치는 공개 문서에 없음 → 확인 불가.",
+      "Maple 관리 지갑 — 배분 전략으로 나간 자금은 온체인에서 반환을 강제할 장치가 없다. 방어선은 지갑별 한도와 1시간 쿨다운, 관리자의 손실 처리뿐이다. 지갑이 개인키 지갑인지 수탁 계정인지는 공개하지 않는다.",
+      "관리 권한 — 최고 권한은 타임락 계약을 거친다. 문서상 최소 지연은 1일이지만, 2026년 11월 5일 예약된 안건 21건은 온체인 기록상 3일 뒤에야 실행됐다. 안건은 서명자 7명 중 4명이 승인하는 Maple DAO 멀티시그가 내고, 이 멀티시그의 서명자 2명은 2026년 8월 5일 교체됐다. 일상 관리용 멀티시그는 5명 중 3명이 서명하며 타임락이 없다. 풀 관리 계약의 업그레이드만 사전 예약과 대기 기간을 거친다. 서명자 실명은 공개하지 않는다.",
       "외부 프로토콜과 브리지 — Aave V3와 Sky에 둔 자금은 해당 프로토콜의 장부를 그대로 믿고 별도 가격 오라클을 쓰지 않는다. 이더리움 밖 체인의 예치·상환은 Chainlink CCIP 메시지 전달에 의존한다.",
       "법적 구조 — 각 상품은 분리 포트폴리오 회사 Maple International Operations SPC의 별도 포트폴리오다. 예치자 청구권은 그 포트폴리오 자산에 한정되고 예금자 보호나 정부 보증은 없다.",
       "현재 구현 vs 로드맵 — 지금 돈을 버는 자산은 디지털자산 초과담보 대출이다. 등급 증권 담보 대출, 핀테크 채권 유동화, 베이시스 거래는 syrupUSDT에서 5% 상한으로 막 시작했고 그 밖의 확장은 계획 단계다."
@@ -200,12 +200,12 @@
       "감사 — 2022년 12월 V2 출시분은 Trail of Bits·Spearbit·Three Sigma가, 2023~2024년 네 차례 릴리스는 Three Sigma·0xMacro·Cantina가 맡았다.",
       "최근 감사 — 2025년 9월 거버너 타임락은 Sherlock·0xMacro, 2025년 11월 출금 대기열 개편은 Spearbit·Sherlock, 2026년 1월 크로스체인 수신 계약은 Dedaub·Sigma Prime이 검토했다.",
       "2026년 11월 공유 전략 릴리스 — Sherlock 보고서는 2026년 9월, Cantina 보고서는 2026년 10월자다. 감사 대상은 계약 코드이고, 관리 지갑이 계약 밖에서 하는 운용은 범위 밖으로 보인다는 점은 공개정보 기반 추정이다.",
-      "버그바운티·감시 — Immunefi에 프로그램이 있고 최대 보상액은 문서에 없음 → 확인 불가. 풀·대출 불변식을 블록마다 점검해 이상이 생기면 운영팀에 경보를 보낸다.",
-      "긴급 정지 — 거버너 또는 보안 관리자가 프로토콜 전체나 개별 계약을 멈출 수 있다. 정지 권한자의 서명 구조는 문서에 없음 → 확인 불가.",
-      "준비금 증명 — The Network Firm이 담보 총액을 검증하며 syrupUSDC 페이지의 최종 검증 시각은 2026년 11월 3일이다. 검증 방법론과 보증 수준은 공개 자료에서 확인 불가.",
+      "버그바운티·감시 — Immunefi에 프로그램이 있고 최대 보상은 50만 달러다. 풀·대출 불변식을 블록마다 점검해 이상이 생기면 운영팀에 경보를 보낸다.",
+      "긴급 정지 — 거버너 또는 보안 관리자가 프로토콜 전체나 개별 계약을 멈출 수 있다. 보안 관리자 멀티시그는 6명 중 3명 서명으로 움직이며 타임락 없이 정지를 걸 수 있다.",
+      "준비금 증명 — The Network Firm이 담보 총액을 검증하며 syrupUSDC 페이지의 최종 검증 시각은 2026년 11월 3일이다. 2026년 5월 7일 시작했고 결과는 LedgerLens 대시보드로 공개된다. 보증 수준은 아래 '확인하지 못한 것'에 적었다.",
       "준비금 규모 — TokenPost의 2026년 10월 30일 보도에 따르면 최근 갱신분은 담보 20.5억 달러, 대출 잔액 12.3억 달러다.",
       "과거 사고 — 2022년 12월 5일 무담보 대출 시절 Orthogonal Trading이 3,600만 달러를 부도냈고 해당 USDC 풀 예치자는 약 80% 손실이 예상됐다. 이후 Maple은 초과담보 대출 중심으로 바뀌었다.",
-      "분쟁 — Core Foundation이 비트코인 수익 상품을 두고 중재를 걸어 케이맨 법원이 경쟁 상품 출시 금지 가처분을 내렸다. 양측은 2026년 5월 22일 조건 비공개로 합의했고, 당시 예치 비트코인에 선언된 손상의 최종 처리는 확인 불가.",
+      "분쟁 — Core Foundation이 비트코인 수익 상품을 두고 중재를 걸어 케이맨 법원이 경쟁 상품 출시 금지 가처분을 내렸다. 양측은 2026년 5월 22일 합의했으나 조건과 당시 예치 비트코인에 선언된 손상의 최종 처리는 공개하지 않았다.",
       "스트레스 기록 — Jupiter Lend 평가서에 따르면 2025년 2월 2일 급락 때 대출의 35%가 마진콜을 받았고 전부 추가 담보를 냈다. 초과담보 모델에서 대출 원금 손실은 공개 자료에서 확인되지 않는다."
     ],
     "body": [
@@ -264,13 +264,13 @@
         "label": "DAO 재무 잔고",
         "value": "1,165만 달러 (2026-10-31)",
         "source": "DefiLlama Treasury",
-        "meaning": "거의 전부 스테이블코인이다. 매입한 SYRUP을 쌓아 두는 SSF의 잔고와 구성은 Maple 자료에 수치가 없어 확인 불가."
+        "meaning": "거의 전부 스테이블코인이다. Maple 투명성 페이지는 재무 전체를 2,899만 달러로 적고, 매입한 SYRUP을 쌓아 두는 SSF가 SYRUP 8,063만 개와 유동자산 412만 달러를 보유한다고 밝힌다. SSF 지갑 주소는 공개하지 않는다."
       }
     ],
     "valueQuestion": "Maple 대출이 늘면 SYRUP 보유자에게도 수익이 돌아가나?",
     "valueAnswer": [
       "예치자가 가장 많이 가져간다. 차입 기관이 낸 이자에서 Maple 수수료를 뺀 나머지가 풀에 쌓여 지분 토큰 가치가 오른다. DefiLlama 최근 30일 수치로는 Fees 1,041만 달러 가운데 약 85%가 예치자 몫이다.",
-      "프로토콜에 남는 돈은 약 15%다. 이 매출은 운영 자회사를 거쳐 케이맨의 Maple DAO Foundation으로 올라가 운영비와 준비금에 쓰인다. 현재 운영비 규모는 공개 자료에서 확인 불가.",
+      "프로토콜에 남는 돈은 약 15%다. 이 매출은 운영 자회사를 거쳐 케이맨의 Maple DAO Foundation으로 올라가 운영비와 준비금에 쓰인다. 운영비 규모는 공시하지 않으며, 2025년 4월 Modular Capital은 연 약 800만 달러로 추정했다.",
       "SYRUP 보유자에게 직접 오는 현금은 없고 스테이킹 보상도 2025년 11월에 끝났다. 남은 경로는 재단 산하 기금 SSF가 월 매출 일부로 SYRUP을 시장에서 사들이는 것 하나다. 비율은 월 매출 150만 달러 미만 10%, 200만 달러까지 20%, 그 위는 30%다.",
       "규모는 작다. 2026년 3분기 매입량은 290만 SYRUP으로 유통량의 약 0.25%이고, 매입분은 소각하지 않고 SSF가 보유한다. **이 규칙은 6개월 한시라, 만료 뒤에는 다시 재단 재량으로 돌아갈 수 있다.**"
     ],
@@ -285,17 +285,17 @@
         "name": "MIP-020 — 2026년 상반기 SSF 배분 연장",
         "approved": "2026-01-21 투표 개시, 4일간 · 가결은 후속 커뮤니티 제안 본문으로만 확인",
         "executed": "매출 25% 배분은 이어졌으나 매입은 제한적 — 2026년 들어 7월 8일까지 누적 250만 SYRUP",
-        "note": "재단 의장은 준비금 강화를 우선했다고 설명했다. 커뮤니티 제안 MIP023은 이 안건이 10개 주소의 8,200만 표로 4일 만에 통과됐다고 주장하나 수치는 확인 불가."
+        "note": "재단 의장은 준비금 강화를 우선했다고 설명했다. 커뮤니티 제안 MIP023은 이 안건이 10개 주소의 8,200만 표로 통과됐다고 주장하지만 근거를 붙이지 않았다."
       },
       {
         "name": "MIP-021 — 월 매출 구간에 연동한 규칙형 바이백",
         "approved": "2026-07-13~07-17 투표 · 찬성 99.97% 가결",
-        "executed": "집행 중 — 7월분 852,840 SYRUP을 136,768 USDT에 매입, 8월분 676,294 SYRUP, 9월분 약 137만 SYRUP에 20% 구간 적용. 10월분 수치는 확인 불가",
+        "executed": "집행 중 — 7월분 852,841 SYRUP을 136,768 달러, 8월분 676,294 SYRUP을 147,098 달러, 9월분 1,371,166 SYRUP을 314,116 달러에 매입했다. 9월분에는 20% 구간이 적용됐다. 10월분은 아직 게시되지 않았다",
         "note": "6개월 한시이고 매입분은 소각하지 않고 SSF가 보유한다. 매출이 총액인지 순액인지는 제안서에 없다. 공식 토큰 페이지는 아직 '매출의 25%가 바이백 재원'이라고 적어 현행 규칙과 다르다."
       }
     ],
     "tokenomics": {
-      "circulating": "유통 11.67억 / 총공급 12.68억 SYRUP, 유통률 약 92%, CoinGecko 2026-11-11 기준 · 가격 $0.1376으로 약 183원, 시총 약 1.6억 달러, FDV 약 1.75억 달러, ATH $0.6532 대비 약 -79%. 미유통 약 1.0억 개의 보유 주체는 확인 불가.",
+      "circulating": "유통 11.67억 / 총공급 12.68억 SYRUP, 유통률 약 92%, CoinGecko 2026-11-11 기준 · 가격 $0.1376으로 약 183원, 시총 약 1.6억 달러, FDV 약 1.75억 달러, ATH $0.6532 대비 약 -79%. Maple은 1억 2,575만 개를 DAO와 SSF가 보유한다고 밝히며, 온체인 기준 DAO 멀티시그 잔고는 4,229만 개다.",
       "nextUnlock": "예정된 언락 없음 — Maple Docs 발행 모듈 일정상 연 5% 재무 발행이 2026-10-01 종료됐고 Tokenomist도 2026-11-11 기준 '전량 언락'으로 표시. 최대 공급량 상한은 없어 거버넌스가 새 발행을 의결할 수는 있다.",
       "valuePath": "월 매출의 10~30%로 SSF가 SYRUP을 시장 매입해 보유하는 경로 하나. 배당·스테이킹 보상·소각은 없다.",
       "valueCapture": "indirect"
@@ -771,6 +771,148 @@
       "title": "블록미디어 – 업비트, 메이플(SYRUP)·후마(HUMA) 25일 동시 상장 (2025-07-25)",
       "url": "https://www.blockmedia.co.kr/archives/951325",
       "accessed": "2026-11-11"
+    },
+    {
+      "title": "Blockscout – MapleGlobals 수수료 설정 이벤트",
+      "url": "https://eth.blockscout.com/address/0x804a6F5F667170F545Bf14e5DDB48C70B788390C",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Blockscout – syrupUSDC PoolManager 이벤트",
+      "url": "https://eth.blockscout.com/address/0x7aD5fFa5fdF509E30186F4609c2f6269f4B6158F",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Blockscout – Maple DAO Safe",
+      "url": "https://eth.blockscout.com/address/0xd6d4Bcde6c816F17889f1Dd3000aF0261B03a196",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Blockscout – GovernorTimelock",
+      "url": "https://eth.blockscout.com/address/0x2eFFf88747EB5a3FF00d4d8d0f0800E306C0426b",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Blockscout – SYRUP 보유자",
+      "url": "https://eth.blockscout.com/token/0x643C4E15d7d62Ad0aBeC4a9BD4b001aA3Ef52d66",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Immunefi – Maple Bug Bounty",
+      "url": "https://immunefi.com/bug-bounty/maple/information/",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Maple Docs – Available Jurisdictions",
+      "url": "https://docs.maple.finance/legal/syrupusdc-and-syrupusdt-available-jurisdictions",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Maple Docs – Interface Terms of Use",
+      "url": "https://docs.maple.finance/legal/interface-terms-of-use",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Aave Governance – syrupUSDC 온보딩 (LlamaRisk)",
+      "url": "https://governance.aave.com/t/arfc-onboard-syrupusdc-to-aave-v3-core-instance/22456",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Aave Governance – syrupUSDG (LlamaRisk)",
+      "url": "https://governance.aave.com/t/maple-syrupusdg-on-aave-v4-global-dollar-hub/25327",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Maple Transparency – Financials",
+      "url": "https://maple.finance/transparency/financials",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Maple Transparency – SYRUP",
+      "url": "https://maple.finance/transparency/syrup",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Blockworks – Maple Token Transparency",
+      "url": "https://blockworks.com/token-transparency/filing/maple-finance",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Modular Capital – Maple",
+      "url": "https://www.modularcapital.xyz/writing/maple",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "pharos.watch – syrupUSDT",
+      "url": "https://pharos.watch/stablecoin/syrupusdt-maple/",
+      "accessed": "2026-11-11"
+    }
+  ],
+  "openItems": [
+    {
+      "item": "차입 기관 명단",
+      "status": "미공시",
+      "tried": "Maple 문서·투명성 페이지, LlamaRisk·Jupiter Lend 위험 평가서를 확인했다. 건수와 비중만 있고 이름은 없다.",
+      "howToVerify": "Maple에 차입자 공개 범위를 문의하거나 기관 투자자용 자료를 요청한다.",
+      "matters": "최대 차입자가 26%를 차지해 한 곳의 부도가 풀 전체에 크게 번진다."
+    },
+    {
+      "item": "담보 수탁 계약 조건과 키 통제권",
+      "status": "미공시",
+      "tried": "Maple 문서, Zodia 발표, Aave 거버넌스의 LlamaRisk 평가를 확인했다.",
+      "howToVerify": "Maple 또는 Anchorage Digital·BitGo·Zodia에 수탁 구조 문서를 요청한다.",
+      "matters": "부도 때 담보를 실제로 회수할 수 있는지가 여기에 달려 있다."
+    },
+    {
+      "item": "자산별 공통 마진콜·청산 기준표",
+      "status": "미공시",
+      "tried": "Maple 담보 공시 문서와 LlamaRisk 평가를 확인했다. 대출별 예시만 있다.",
+      "howToVerify": "투명성 페이지의 대출별 표를 주기적으로 기록하거나 Maple에 기준표를 요청한다."
+    },
+    {
+      "item": "개인 예치자에 대한 신원확인 적용 여부",
+      "status": "미공시",
+      "tried": "예치 안내 문서, 이용약관, RWA.xyz, LlamaRisk 평가를 확인했다. 자료마다 서술이 다르다.",
+      "howToVerify": "app.maple.finance에서 첫 예치 절차를 직접 진행하거나 Maple에 문의한다."
+    },
+    {
+      "item": "운영비 규모",
+      "status": "미공시",
+      "tried": "Maple 재무 페이지, 분기 업데이트, Blockworks 투명성 공시를 확인했다.",
+      "howToVerify": "Maple DAO Foundation에 연간 운영비를 문의한다.",
+      "matters": "매출 중 토큰 보유자에게 돌아갈 여력을 가늠하는 값이다."
+    },
+    {
+      "item": "Core Foundation 합의 조건과 손상 처리 결과",
+      "status": "미공시",
+      "tried": "Maple 발표문, The Block·CoinDesk·DL News 보도를 확인했다.",
+      "howToVerify": "합의 조건은 비공개로 발표됐다. 해당 상품 예치자 공지를 확인한다."
+    },
+    {
+      "item": "SSF와 바이백 집행 지갑 주소",
+      "status": "미공시",
+      "tried": "Maple 투명성 페이지, Blockworks 공시, Blockscout의 SYRUP 상위 보유자를 확인했다.",
+      "howToVerify": "주소가 공개되면 Blockscout에서 SYRUP 잔고로 8,063만 개를 대조한다."
+    },
+    {
+      "item": "2026년 10월분 바이백 수량과 금액",
+      "status": "미공시",
+      "tried": "Maple SYRUP 투명성 페이지 표의 최신 행이 9월이고 11월 Maple Memo도 아직 없다.",
+      "howToVerify": "maple.finance/transparency/syrup 표와 11월 Maple Memo를 확인한다."
+    },
+    {
+      "item": "준비금 증명의 보증 수준",
+      "status": "접근 실패",
+      "tried": "Maple 투명성 페이지, pharos.watch, TID Research를 확인했다. LedgerLens 대시보드와 Maple 소개 글은 열리지 않았다.",
+      "howToVerify": "LedgerLens의 Maple 대시보드에서 보고서가 AT-C 205 검토인지 AT-C 215 합의된 절차인지 확인한다.",
+      "matters": "검토는 감사인이 의견을 내지만 합의된 절차는 정해진 항목만 확인한다."
+    },
+    {
+      "item": "MIP-020·MIP-021 투표 수와 투표자 분포",
+      "status": "접근 실패",
+      "tried": "Snapshot 스페이스 maple.eth는 자바스크립트 앱이라 본문을 읽지 못했다. 포럼과 Maple 공식 게시물에는 찬성률만 있다.",
+      "howToVerify": "snapshot.org의 maple.eth 스페이스에서 각 제안의 표수와 상위 주소를 확인한다.",
+      "matters": "소수 주소가 표결을 좌우하는지를 보여 준다."
     }
   ]
 }

@@ -74,6 +74,13 @@
 모르는 값이 나오면 바로 "확인 불가"라고 쓰지 않는다. 아래 사다리를 **위에서부터 끝까지** 오른 뒤에도 남은 것만 미해결로 둔다.
 1. **공식 문서·깃허브** — 문서의 주소 목록(Addresses/Deployments), 깃허브 조직의 address registry·배포 스크립트·릴리스 노트.
 2. **온체인** — 계약 주소를 찾았다면 값은 대부분 블록체인에 있다. 멀티시그 서명자 수와 임계치(`getOwners`/`getThreshold`), 수수료율·한도 같은 설정값(전역 설정 계약의 view 함수), 재무·바이백 지갑 잔고(`balanceOf`), 미유통 물량 보유 주소(상위 보유자 목록)는 "문서에 없다"가 아니라 **온체인에서 읽는다**. 익스플로러·Safe·Dune·DefiLlama 페이지를 검색으로 찾아 읽는다.
+   **노트북 없이 온체인 읽는 법 (이더리움, WebFetch만으로 동작 확인됨)** — Blockscout 공개 API를 WebFetch로 연다. 승인 요청 없이 열리는 형식:
+   - 토큰·보유자: `https://eth.blockscout.com/api/v2/tokens/<토큰주소>` · `.../tokens/<토큰주소>/holders`
+   - 주소·거래: `https://eth.blockscout.com/api/v2/addresses/<주소>` · `.../addresses/<주소>/logs` · `.../transactions/<해시>`
+   - 이벤트 로그: `https://eth.blockscout.com/api?module=logs&action=getLogs&fromBlock=0&toBlock=latest&address=<계약>&topic0=<이벤트해시>` (특정 대상만: `&topic0_1_opr=and&topic1=<32바이트로 채운 주소>`)
+   - view 함수 직접 호출(`eth_call`, `methods-read`)은 **안 된다**. 대신 설정값은 **그 값을 바꾼 이벤트의 마지막 로그**로 복원한다. 예: Safe 서명자·임계치 = `SafeSetup`+`AddedOwner`/`RemovedOwner`+`ChangedThreshold` 누적, 수수료율 = `...FeeRateSet` 마지막 값, 업그레이드 = `Upgraded` 마지막 버전, 타임락 지연 = 예약 이벤트의 실행 가능 시각 − 예약 시각.
+   - 이벤트 해시는 `keccak256("이벤트명(타입,...)")`. 파이썬 hashlib의 sha3_256은 keccak이 아니므로 쓰지 않는다 (저장소 밖 도구가 없으면 순수 파이썬 keccak을 작성).
+   - 가격은 Blockscout 값을 쓰지 않는다 (CoinGecko 기준 유지).
 3. **거버넌스** — 포럼 글과 Snapshot 투표 페이지(찬반 표수·참여 주소 수).
 4. **제3자 보고서** — 감사 보고서, 리스크 평가서(LlamaRisk·Chaos Labs·Credora·S&P 등), 준비금 검증 보고서 원문.
 5. **보도** — 위에서 못 찾은 사건·합의 조건.
@@ -83,7 +90,7 @@
 |---|---|---|
 | `미공시` | 공개될 만한 곳을 다 봤지만 프로젝트가 공개하지 않는다. 이것 자체가 정보다 | 차입 기관 명단, 수탁 계약 조건, 운영비 |
 | `접근 실패` | 자료는 있는데 이번 실행에서 읽지 못했다 | 차단된 페이지, 로그인 필요한 대시보드 |
-| `온체인 확인 대기` | 주소와 함수는 알지만 이번 실행 환경에서 체인을 읽지 못했다 | 멀티시그 임계치, 실제 수수료율 |
+| `온체인 확인 대기` | 주소는 알지만 Blockscout 로그로도 복원하지 못했다 (해당 이벤트가 없거나 다른 체인) | 이벤트를 남기지 않는 저장값 |
 각 항목에 `tried`(어디를 봤는지)와 `howToVerify`(계약 주소+함수명 또는 요청할 문서)를 반드시 적는다. `온체인 확인 대기`와 `접근 실패`는 다음 점검 때 채워지는 숙제이므로 주소·함수명을 정확히 남긴다.
 `미공시`가 아닌 미해결 항목이 5개를 넘으면 조사가 덜 된 것이다 — 사다리를 다시 오른다.
 - 커밋 메시지: `report: <TICKER> (<slot>) <date>`
