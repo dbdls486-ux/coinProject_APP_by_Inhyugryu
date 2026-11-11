@@ -1,6 +1,6 @@
 {
- "started": "2026-11-11T04:53:58.070Z",
- "finished": "2026-11-11T04:58:58.110Z",
+ "started": "2026-11-11T05:04:00.392Z",
+ "finished": "2026-11-11T05:25:20.597Z",
  "probes": [
   {
    "url": "https://api.bithumb.com/v1/market/all",
@@ -42,7 +42,9 @@
   "coins": 507,
   "failed": [],
   "coinsWithMissingDays": 5,
-  "maxMissing": 310
+  "maxMissing": 310,
+  "delisted": 202,
+  "funding": 475
  },
  "list": [
   {
