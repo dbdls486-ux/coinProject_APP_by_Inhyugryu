@@ -13,7 +13,7 @@
  * 결과: lab/results/latest.json, lab/results/REPORT.md
  */
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
-import { btcTiming } from "./bench.mjs";
+import { btcTiming, trendGrid } from "./bench.mjs";
 import { loadUniverse } from "./data.mjs";
 import { DEFAULTS, holdStats, periodStats, simulate, yearly } from "./engine.mjs";
 import { attachFunding, attachKimchi } from "./features.mjs";
@@ -104,6 +104,7 @@ async function runMarket(M, U, variant) {
     hold: { train: holdStats(U, ...P.train), test: holdStats(U, ...P.test) },
     timing: { train: btcTiming(U, ...P.train, fee), test: btcTiming(U, ...P.test, fee) },
   };
+  const trend = variant.id === "all" ? trendGrid(U, P, fee) : [];
   const portfolio = [];
   for (const st of STRATEGIES) {
     for (const exit of EXITS) {
@@ -171,6 +172,7 @@ async function runMarket(M, U, variant) {
       avgEligibleTest: Math.round(avg(U.universeSize.slice(split, end + 1))),
     },
     bench,
+    trend,
     regimeSummary,
     selection,
     placebo: {
@@ -278,6 +280,17 @@ function report(R) {
     L.push(`| *BTC 그냥 보유* | | ${pc(m.bench.hold.train.cagr)} | ${pc(m.bench.hold.test.cagr)} | ${pc(m.bench.hold.test.mdd)} | | |`);
     L.push(`| *BTC 50일선 타이밍* | | ${pc(m.bench.timing.train.cagr)} | ${pc(m.bench.timing.test.cagr)} | ${pc(m.bench.timing.test.mdd)} | | |`);
     L.push("");
+
+    if (m.trend?.length) {
+      L.push("### 메이저 추세 타이밍 견고성 (종가가 N일선 위일 때만 보유)");
+      L.push("| 코인 | 기준 | 고르는 기간 연수익 | 최대 낙폭 | 확인 기간 연수익 | 최대 낙폭 | 확인 기간 샤프 | 보유 비중 |");
+      L.push("|---|---|---|---|---|---|---|---|");
+      for (const r of m.trend) {
+        if (!r.train || !r.test) continue;
+        L.push(`| ${r.sym} | ${r.n ? `${r.n}일선` : "그냥 보유"} | ${pc(r.train.cagr)} | ${pc(r.train.mdd)} | ${pc(r.test.cagr)} | ${pc(r.test.mdd)} | ${r.test.sharpe.toFixed(2)} | ${Math.round(r.test.exposure * 100)}% |`);
+      }
+      L.push("");
+    }
 
     L.push("### 2. 종목 선택력 (같은 날·같은 변동성 구간 평균 대비 거래당 초과수익)");
     L.push(`통과 = 고르는 기간·확인 기간 모두 t ≥ ${s.tPass} 이고 로그 수익 기준으로도 플러스. 위약 규칙 ${m.placebo.count}개 중 고르는 기간 t≥${s.tPass} ${m.placebo.trainOver2}개, 확인 기간 ${m.placebo.testOver2}개, 둘 다 통과 ${m.placebo.passed}개 (최대 t ${t1(m.placebo.maxTrainT)} / ${t1(m.placebo.maxTestT)}).`);

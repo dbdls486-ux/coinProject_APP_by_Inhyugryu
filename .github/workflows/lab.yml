@@ -29,7 +29,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: 오늘 날짜
+        id: day
+        run: echo "d=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+      # 같은 날 다시 돌릴 때는 받아 둔 시세를 그대로 쓴다 (수집에 20분 넘게 걸린다)
+      - name: 시세 캐시
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: lab/.data
+          key: lab-data-v3-${{ steps.day.outputs.d }}
       - name: 과거 시세 수집
+        if: steps.cache.outputs.cache-hit != 'true'
         run: node lab/collect.mjs
       - name: 백테스트
         run: node --max-old-space-size=8192 lab/run.mjs
