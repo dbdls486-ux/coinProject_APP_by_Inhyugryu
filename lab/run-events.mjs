@@ -324,6 +324,42 @@ async function main() {
         }
       }
     }
+    // 빠르게 반응했다면: 첫 거래 전 8시간 안에 1시간 동안 BTC보다 5%p 넘게 뛴 첫 시간봉(공지로 추정)이 끝날 때 사서,
+    // 업비트 첫 거래 시간봉이 끝날 때 / 24시간 뒤에 팔았을 때
+    const fast = { jump: [], toOpen: [], to24: [], lead: [] };
+    for (const p of paths) {
+      const ex = (h) => {
+        const c1 = at(p.coin, p.t0 + h * 3_600_000);
+        const c0 = at(p.coin, p.t0 + (h - 1) * 3_600_000);
+        const b1 = at(p.btc, p.t0 + h * 3_600_000);
+        const b0 = at(p.btc, p.t0 + (h - 1) * 3_600_000);
+        return c1 && c0 && b1 && b0 ? c1[2] / c0[2] - 1 - (b1[2] / b0[2] - 1) : null;
+      };
+      let hj = null;
+      for (let h = -8; h <= -1; h++) {
+        const v = ex(h);
+        if (v !== null && v >= 0.05) {
+          hj = h;
+          fast.jump.push(v);
+          break;
+        }
+      }
+      if (hj === null) continue;
+      const rel = (h1) => {
+        const c0 = at(p.coin, p.t0 + hj * 3_600_000);
+        const b0 = at(p.btc, p.t0 + hj * 3_600_000);
+        const c1 = at(p.coin, p.t0 + h1 * 3_600_000);
+        const b1 = at(p.btc, p.t0 + h1 * 3_600_000);
+        return c0 && b0 && c1 && b1 ? c1[2] / c0[2] - 1 - (b1[2] / b0[2] - 1) : null;
+      };
+      const a = rel(0);
+      const b = rel(hj + 24);
+      if (a !== null) fast.toOpen.push(a);
+      if (b !== null) fast.to24.push(b);
+      fast.lead.push(-hj);
+    }
+    const st = (xs) => ({ n: xs.length, mean: mean(xs), median: median(xs), up: xs.filter((x) => x > 0).length / Math.max(1, xs.length) });
+    result.upbitFast = { total: used, found: fast.jump.length, medianLeadHours: median(fast.lead), jumpHour: st(fast.jump), toOpen: st(fast.toOpen), to24h: st(fast.to24) };
     result.upbitPath = {
       events: used,
       cumulative: HS.map((h) => ({ hour: h, mean: mean(cum.get(h)), median: median(cum.get(h)), n: cum.get(h).length })),
@@ -426,6 +462,14 @@ function report(R) {
     const lab = { h0: "첫 거래 시간봉이 끝났을 때", h1: "그 1시간 뒤", h4: "그 4시간 뒤" };
     for (const b of u.buyAfter) L.push(`| ${lab[b.when]} | ${pc(b.h24.mean)} / ${pc(b.h24.median)} / ${Math.round(b.h24.up * 100)}% | ${pc(b.h72.mean)} / ${pc(b.h72.median)} / ${Math.round(b.h72.up * 100)}% |`);
     L.push("");
+    if (R.upbitFast) {
+      const f = R.upbitFast;
+      L.push(`**1시간 안에 반응했다면** — 첫 거래 전 8시간 안에 1시간 동안 BTC보다 5%p 넘게 뛴 첫 시간봉(공지 시점으로 추정)이 ${f.total}건 중 ${f.found}건에서 잡혔다 (첫 거래의 중앙값 ${f.medianLeadHours}시간 전).`);
+      L.push(`- 그 한 시간 동안 이미 오른 폭: 평균 ${pc(f.jumpHour.mean)}, 중앙값 ${pc(f.jumpHour.median)}`);
+      L.push(`- 그 시간봉이 끝날 때 사서 업비트 첫 거래 시간봉이 끝날 때 팔면: 평균 ${pc(f.toOpen.mean)}, 중앙값 ${pc(f.toOpen.median)}, 오른 비율 ${Math.round(f.toOpen.up * 100)}% (${f.toOpen.n}건)`);
+      L.push(`- 같은 시점에 사서 24시간 들고 있으면: 평균 ${pc(f.to24h.mean)}, 중앙값 ${pc(f.to24h.median)}, 오른 비율 ${Math.round(f.to24h.up * 100)}%`);
+      L.push("");
+    }
   }
   if (R.h4?.length) {
     L.push("## 메이저 코인 4시간봉 타이밍 규칙 (바이낸스, 수수료 한쪽 0.1%)");
