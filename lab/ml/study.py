@@ -324,18 +324,21 @@ def walk_forward(df, feats, target):
         tr = (years < yr) & (t <= t[te].min() - (H + 2))
         if tr.sum() < 30000:
             continue
+        # 학습 구간에 값이 거의 없는 지표(예: 그 시기에 없던 펀딩비)는 뺀다
+        use = np.flatnonzero(np.isfinite(X[tr]).sum(axis=0) >= 500)
         m = HistGradientBoostingClassifier(max_iter=200, learning_rate=0.06, max_leaf_nodes=31, min_samples_leaf=200, l2_regularization=1.0, random_state=7)
-        m.fit(X[tr], y[tr])
-        pred[te] = m.predict_proba(X[te])[:, 1]
-        last_model = (m, te)
+        m.fit(X[tr][:, use], y[tr])
+        pred[te] = m.predict_proba(X[te][:, use])[:, 1]
+        last_model = (m, te, use)
         log(f"    {target} {yr}: 학습 {int(tr.sum()):,}행 → 예측 {int(te.sum()):,}행")
     imp = []
     if last_model is not None:
         # 마지막 해에서 지표를 하나씩 섞어 봤을 때 급등 적중이 얼마나 떨어지는가
-        m, te = last_model
+        m, te, use = last_model
         idx = np.flatnonzero(te)
         idx = RNG.choice(idx, size=min(60000, len(idx)), replace=False)
-        Xs, ys = X[idx], y[idx]
+        Xs, ys = X[idx][:, use], y[idx]
+        X_cols = [X_cols[i] for i in use]
 
         def top_rate(Xm):
             p = m.predict_proba(Xm)[:, 1]
