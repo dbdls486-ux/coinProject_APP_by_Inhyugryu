@@ -87,9 +87,10 @@ function hacT(xs, lag) {
  * @param from,to 신호일 범위 (날짜 번호). 고르는 기간은 매도까지 끝나도록 to 를 당겨서 넘긴다.
  * @param regimeOn 주어지면 그 날만 본다
  */
-export function selectionStats(U, strat, T, from, to, regimeOn = null, perDay = 10) {
+export function selectionStats(U, strat, T, from, to, regimeOn = null, perDay = 10, plainT = false) {
   const xs = [];
   const xl = [];
+  const each = [];
   let picks = 0;
   let raw = 0;
   for (let t = from; t <= to; t++) {
@@ -113,12 +114,17 @@ export function selectionStats(U, strat, T, from, to, regimeOn = null, perDay = 
       e += r - T.mean[t * 5 + b];
       el += Math.log1p(r) - T.meanLog[t * 5 + b];
       raw += r;
+      each.push(r - T.mean[t * 5 + b]);
     }
     xs.push(e / top.length);
     xl.push(el / top.length);
     picks += top.length;
   }
-  const s = hacT(xs, T.exit.maxHold);
-  const l = hacT(xl, T.exit.maxHold);
-  return { days: xs.length, picks, avgRet: picks ? raw / picks : 0, excess: s.mean, t: s.t, logExcess: l.mean, tLog: l.t };
+  // 드문 사건은 날짜가 띄엄띄엄이라 겹침 보정이 의미가 없다 → 단순 t (plainT)
+  const lag = plainT ? 0 : T.exit.maxHold;
+  const s = hacT(xs, lag);
+  const l = hacT(xl, lag);
+  each.sort((a, b) => a - b);
+  const medExcess = each.length ? each[Math.floor(each.length / 2)] : 0;
+  return { days: xs.length, picks, avgRet: picks ? raw / picks : 0, excess: s.mean, t: s.t, logExcess: l.mean, tLog: l.t, medExcess, winVsPeers: each.length ? each.filter((v) => v > 0).length / each.length : 0 };
 }

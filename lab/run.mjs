@@ -12,40 +12,16 @@
  * 고르는 기간: 데이터 시작 ~ 2023-12-31 / 확인 기간: 2024-01-01 ~
  * 결과: lab/results/latest.json, lab/results/REPORT.md
  */
-import { access, mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { btcTiming, trendGrid } from "./bench.mjs";
-import { loadUniverse } from "./data.mjs";
+import { DATA, MARKETS, OUT, periods, prepareAll } from "./common.mjs";
 import { DEFAULTS, holdStats, periodStats, simulate, yearly } from "./engine.mjs";
-import { attachFunding, attachKimchi } from "./features.mjs";
 import { buildRegimes } from "./regimes.mjs";
 import { selectionStats, tradeTable } from "./selection.mjs";
 import { EXITS, STRATEGIES, randomStrategy } from "./strategies.mjs";
 
-const DATA = process.env.LAB_DATA ?? "lab/.data";
-const OUT = process.env.LAB_OUT ?? "lab/results";
-const SPLIT = process.env.LAB_SPLIT ?? "2024-01-01";
 const PLACEBOS = Number(process.env.LAB_PLACEBOS ?? 10);
-const MIN_UNIVERSE = 20;
 const T_PASS = 2;
-
-const MARKETS = [
-  {
-    id: "bithumb",
-    label: "빗썸 원화마켓",
-    unit: "원",
-    tzOffsetH: 9, // 일봉 날짜가 한국 날짜
-    minValue: 1e9, // 20일 평균 거래대금 10억 원 이상
-    sim: { fee: 0.0025, liquidValue: 1e10, slipLiquid: 0.0015, slipThin: 0.003 },
-  },
-  {
-    id: "binance",
-    label: "바이낸스 USDT마켓",
-    unit: "USDT",
-    tzOffsetH: 0,
-    minValue: 1e6, // 20일 평균 거래대금 100만 USDT 이상
-    sim: { fee: 0.001, liquidValue: 2e7, slipLiquid: 0.0005, slipThin: 0.0015 },
-  },
-];
 
 /** 무작위 위약 규칙: 매일 약 10% 종목에 무작위 점수 */
 function placebo(seed) {
@@ -53,30 +29,11 @@ function placebo(seed) {
   return { id: `PLACEBO${seed}`, family: "위약", label: `무작위 선택 ${seed}`, entry: (k, i, t) => (r.entry() < 0.1 ? r.entry() : null) };
 }
 
-async function prepare(M, topN) {
-  const today = new Date(Date.now() + M.tzOffsetH * 3_600_000).toISOString().slice(0, 10);
-  const U = await loadUniverse(DATA, { exchange: M.id, minValue: M.minValue, dropFrom: today, topN });
-  U.today = today;
-  U.live = Array.from({ length: U.T }, (_, t) => {
-    const out = [];
-    for (const k of U.coins) {
-      const i = k.idx[t];
-      if (i >= 0 && k.eligible[i]) out.push([k, i]);
-    }
-    return out;
-  });
-  return U;
-}
-
 async function runMarket(M, U, variant) {
   const t0 = Date.now();
   const today = U.today;
-  const start = U.universeSize.findIndex((n) => n >= MIN_UNIVERSE);
-  if (start < 0) throw new Error(`거래 가능한 종목이 ${MIN_UNIVERSE}개 넘는 날이 없음`);
-  const end = U.T - 1;
-  const split = U.dates.findIndex((d) => d >= SPLIT);
-  if (split - start < 365 || end - split < 180) throw new Error(`데이터 기간이 짧아 판정하지 않음 (${U.dates[start]} ~ ${U.dates[end]})`);
-  const P = { train: [start, split - 1], test: [split, end] };
+  const P = periods(U);
+  const { start, split, end } = P;
   console.log(`[${M.label}] 종목 ${U.coins.length}개 · ${U.dates[start]} ~ ${U.dates[end]} · 액면 변경 의심으로 앞부분을 자른 종목 ${U.truncated}개`);
 
   const regimes = buildRegimes(U);
@@ -198,18 +155,10 @@ async function main() {
     { id: "all", suffix: "", topN: undefined },
     { id: "top20", suffix: " · 거래대금 상위 20", topN: 20 },
   ]) {
-    const U = {};
-    for (const M of MARKETS) {
-      try {
-        await access(`${DATA}/${M.id}`);
-        U[M.id] = await prepare(M, variant.topN);
-      } catch (e) {
-        skipped.push({ market: M.id, label: `${M.label}${variant.suffix}`, reason: e.message });
-      }
-    }
-    if (U.bithumb && U.binance) extras.kimchi = attachKimchi(U.bithumb, U.binance);
-    if (U.binance) extras.fundingBinance = await attachFunding(U.binance, DATA, 0);
-    if (U.bithumb) extras.fundingBithumb = await attachFunding(U.bithumb, DATA, 1);
+    const prep = await prepareAll(variant.topN);
+    const U = prep.U;
+    Object.assign(extras, prep.extras);
+    for (const x of prep.skipped) skipped.push({ ...x, label: `${x.label}${variant.suffix}` });
     for (const M of MARKETS) {
       if (!U[M.id]) continue;
       try {

@@ -44,6 +44,10 @@ jobs:
         run: node lab/collect.mjs
       - name: 백테스트
         run: node --max-old-space-size=8192 lab/run.mjs
+      - name: 사건 자료 수집
+        run: node lab/events-collect.mjs
+      - name: 사건·국면·메이저 실험
+        run: node --max-old-space-size=8192 lab/run-events.mjs
       - name: 수집 기록 보관
         if: always()
         run: mkdir -p lab/results && cp lab/.data/meta.json lab/results/collect-meta.json || true

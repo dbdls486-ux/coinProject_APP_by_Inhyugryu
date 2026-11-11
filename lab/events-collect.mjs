@@ -1,0 +1,160 @@
+#!/usr/bin/env node
+/**
+ * 사건 자료 수집 — 날짜가 객관적으로 찍히는 재료만 모은다 (공식 공개 API 만 사용).
+ *  - 업비트 원화 상장: 종목별 첫 거래 시각 (api.upbit.com 캔들)
+ *  - 바이낸스 현물 상장: 첫 1시간봉 시각 (data-api.binance.vision)
+ *  - 바이낸스 선물 상장: 펀딩비 첫 날짜 (이미 받아 둔 자료실 파일)
+ *  - 빗썸 원화 상장: 일봉 첫 날짜 (이미 받아 둔 파일)
+ *  - 해킹: DefiLlama 공개 목록 (프로토콜 이름을 코인 영문명과 맞춤)
+ * 결과: lab/.data/events.json — [{ type, sym, ts(밀리초, 이 시각에는 확실히 공개된 상태) }]
+ */
+import { readdir, readFile, writeFile } from "node:fs/promises";
+
+const OUT = process.env.LAB_DATA ?? "lab/.data";
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const DAY = 86_400_000;
+
+async function getJson(url, tries = 5) {
+  let last;
+  for (let i = 0; i < tries; i++) {
+    try {
+      const res = await fetch(url, { headers: { Accept: "application/json" } });
+      if (res.status === 429 || res.status >= 500) {
+        last = new Error(`HTTP ${res.status}`);
+        await sleep(1500 * (i + 1));
+        continue;
+      }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
+    } catch (e) {
+      last = e;
+      await sleep(800 * (i + 1));
+    }
+  }
+  throw last;
+}
+
+async function pool(items, n, gapMs, fn) {
+  const q = [...items];
+  await Promise.all(
+    Array.from({ length: n }, async () => {
+      for (let x = q.shift(); x !== undefined; x = q.shift()) {
+        try {
+          await fn(x);
+        } catch {
+          /* 한 종목 실패는 건너뜀 */
+        }
+        await sleep(gapMs);
+      }
+    }),
+  );
+}
+
+const events = [];
+const names = new Map(); // 심볼 → 영문명 (해킹 이름 맞추기용)
+const note = {};
+
+/* ---------- 업비트 ---------- */
+try {
+  const markets = (await getJson("https://api.upbit.com/v1/market/all?is_details=false")).filter((m) => m.market.startsWith("KRW-"));
+  for (const m of markets) names.set(m.market.slice(4), m.english_name);
+  let n = 0;
+  await pool(markets, 3, 140, async (m) => {
+    const months = await getJson(`https://api.upbit.com/v1/candles/months?market=${m.market}&count=200`);
+    const first = months.at(-1)?.first_day_of_period ?? months.at(-1)?.candle_date_time_utc?.slice(0, 10);
+    if (!first) return;
+    // 첫 거래 시각: 첫날부터 이틀 뒤까지의 1시간봉 중 가장 이른 것
+    const to = new Date(Date.parse(first + "T00:00:00Z") + 3 * DAY).toISOString().slice(0, 19) + "Z";
+    await sleep(140);
+    const hours = await getJson(`https://api.upbit.com/v1/candles/minutes/60?market=${m.market}&to=${encodeURIComponent(to)}&count=200`);
+    const oldest = hours.at(-1)?.candle_date_time_utc;
+    const ts = oldest ? Date.parse(oldest + "Z") + 3_600_000 : Date.parse(first + "T00:00:00Z") + DAY;
+    events.push({ type: "LIST_UPBIT", sym: m.market.slice(4), ts });
+    n++;
+  });
+  note.upbit = `${n}/${markets.length}`;
+} catch (e) {
+  note.upbitError = String(e?.message ?? e);
+}
+
+/* ---------- 바이낸스 현물 ---------- */
+try {
+  const files = (await readdir(`${OUT}/binance`)).filter((f) => f.endsWith(".json"));
+  let exact = 0;
+  await pool(files, 4, 60, async (f) => {
+    const j = JSON.parse(await readFile(`${OUT}/binance/${f}`, "utf8"));
+    if (!j.rows?.length) return;
+    let ts = Date.parse(j.rows[0][0] + "T00:00:00Z") + DAY; // 날짜만 알 때는 그날 끝
+    if (!j.delisted) {
+      try {
+        const k = await getJson(`https://data-api.binance.vision/api/v3/klines?symbol=${j.sym}USDT&interval=1h&startTime=0&limit=1`, 2);
+        if (k?.[0]?.[0]) {
+          ts = k[0][0] + 3_600_000;
+          exact++;
+        }
+      } catch {
+        /* 날짜 기준 유지 */
+      }
+    }
+    events.push({ type: "LIST_BINANCE", sym: j.sym, ts });
+  });
+  note.binance = `${files.length}개 (시각까지 ${exact}개)`;
+} catch (e) {
+  note.binanceError = String(e?.message ?? e);
+}
+
+/* ---------- 바이낸스 선물 ---------- */
+try {
+  const files = (await readdir(`${OUT}/funding`)).filter((f) => f.endsWith(".json"));
+  for (const f of files) {
+    const j = JSON.parse(await readFile(`${OUT}/funding/${f}`, "utf8"));
+    if (j.rows?.length) events.push({ type: "LIST_PERP", sym: j.sym, ts: Date.parse(j.rows[0][0] + "T00:00:00Z") + DAY });
+  }
+  note.perp = files.length;
+} catch (e) {
+  note.perpError = String(e?.message ?? e);
+}
+
+/* ---------- 빗썸 ---------- */
+try {
+  const files = (await readdir(`${OUT}/bithumb`)).filter((f) => f.endsWith(".json"));
+  for (const f of files) {
+    const j = JSON.parse(await readFile(`${OUT}/bithumb/${f}`, "utf8"));
+    if (!j.rows?.length) continue;
+    if (j.en && !names.has(j.sym)) names.set(j.sym, j.en);
+    // 빗썸 일봉 날짜는 한국 날짜 → 그날 끝 = 같은 날짜 15:00 UTC
+    events.push({ type: "LIST_BITHUMB", sym: j.sym, ts: Date.parse(j.rows[0][0] + "T15:00:00Z") });
+  }
+  note.bithumb = files.length;
+} catch (e) {
+  note.bithumbError = String(e?.message ?? e);
+}
+
+/* ---------- 해킹 ---------- */
+try {
+  const hacks = await getJson("https://api.llama.fi/hacks");
+  const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, "");
+  const SUFFIX = /(network|protocol|finance|bridge|dao|labs|chain|swap|exchange|token|foundation|wallet)$/;
+  const byName = new Map();
+  for (const [sym, en] of names) {
+    const n = norm(en);
+    if (n.length >= 4) byName.set(n, sym);
+  }
+  let matched = 0;
+  for (const h of hacks) {
+    if (!(h.amount >= 1e6) || !h.date) continue;
+    const full = norm(h.name);
+    const sym = byName.get(full) ?? byName.get(full.replace(SUFFIX, ""));
+    if (!sym) continue;
+    events.push({ type: "HACK", sym, ts: h.date * 1000 + DAY, amount: h.amount, name: h.name });
+    matched++;
+  }
+  note.hacks = `${matched}/${hacks.length}`;
+} catch (e) {
+  note.hacksError = String(e?.message ?? e);
+}
+
+await writeFile(`${OUT}/events.json`, JSON.stringify({ collectedAt: new Date().toISOString(), note, events }));
+const count = {};
+for (const e of events) count[e.type] = (count[e.type] ?? 0) + 1;
+console.log("사건 수집:", JSON.stringify(count), JSON.stringify(note));
