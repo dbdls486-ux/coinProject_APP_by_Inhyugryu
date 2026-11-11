@@ -12,6 +12,11 @@ on:
       - "lab/**"
       - "!lab/results/**"
       - "!lab/ml/**"
+      - "!lab/ml3/**"
+      - "!lab/ml4/**"
+      - "!lab/ml5/**"
+      - "!lab/news/**"
+      - "!lab/paper/**"
       - ".github/workflows/lab.yml"
 
 permissions:

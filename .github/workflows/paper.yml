@@ -1,0 +1,92 @@
+# 모의매매.
+#   live     : 4시간마다 바이낸스 시세를 받아 장부(data/paper/state.json 등)를 갱신한다.
+#   backtest : 매주 월요일과 lab/paper 코드가 바뀔 때, 과거 재현과 기대값 표(data/paper/playbook.json)를 다시 만든다.
+name: paper
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "7 */4 * * *"
+    - cron: "37 1 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - "lab/paper/**"
+      - ".github/workflows/paper.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    if: github.event_name != 'schedule' || github.event.schedule == '37 1 * * 1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 오늘 날짜
+        id: day
+        run: echo "d=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+      - name: 시세 캐시
+        uses: actions/cache@v4
+        with:
+          path: lab/.data
+          key: lab-data-v3-${{ steps.day.outputs.d }}
+          restore-keys: lab-data-v3-
+      - name: 시세가 없거나 이틀 넘게 묵었으면 다시 수집
+        run: |
+          LAST=$(python -c "import json;print(json.load(open('lab/.data/binance/BTC.json'))['rows'][-1][0])" 2>/dev/null || echo 0000-00-00)
+          LIMIT=$(date -u -d '2 days ago' +%Y-%m-%d)
+          echo "마지막 봉 $LAST, 기준 $LIMIT"
+          if [[ "$LAST" < "$LIMIT" ]]; then node lab/collect.mjs; fi
+      - name: 파이썬 패키지
+        run: pip install --quiet "numpy>=2" "pandas>=2.2"
+      - name: 과거 재현과 기대값 표
+        run: python lab/paper/backtest.py
+      - name: 결과 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/paper/backtest.json data/paper/playbook.json lab/results/PAPER.md
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "paper: 과거 재현·기대값 표 $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1
+
+  live:
+    needs: backtest
+    if: always() && (needs.backtest.result == 'success' || needs.backtest.result == 'skipped')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 파이썬 패키지
+        run: pip install --quiet "numpy>=2" "pandas>=2.2"
+      - name: 장부 갱신
+        run: python lab/paper/live.py
+      - name: 결과 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/paper/state.json data/paper/equity.json data/paper/trades.json lab/results/PAPER.md
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "paper: 장부 갱신 $(date -u '+%Y-%m-%d %H:%M')"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1
