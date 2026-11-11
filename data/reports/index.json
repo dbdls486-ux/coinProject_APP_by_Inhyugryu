@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-11-11-syrup",
+    "date": "2026-11-11",
+    "slot": "outside_top100",
+    "project": "Maple Finance",
+    "ticker": "SYRUP",
+    "question": "syrupUSDC에 맡긴 달러는 누구에게 대출되고, 그 이자 가운데 얼마가 SYRUP 보유자에게 돌아올까?",
+    "oneLiner": "쉽게 말하면, 달러 스테이블코인을 모아 비트코인 등을 담보로 잡고 기관에 빌려주는 온체인 대출 운용사이며, SYRUP은 그 수수료 일부로 시장에서 되사들이는 거버넌스 토큰이다.",
+    "sector": "Institutional Lending · Onchain Asset Management"
+  },
+  {
     "id": "2026-11-09-ena",
     "date": "2026-11-09",
     "slot": "top100",
