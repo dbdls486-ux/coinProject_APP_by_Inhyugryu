@@ -201,6 +201,25 @@ async function main() {
         });
       }
     }
+    // 사건별 내역 (어떤 상장이 올랐고 어떤 상장이 빠졌는지 보려고)
+    const eventList = [];
+    for (const E of EVENT_TYPES) {
+      for (const [k, f] of flags.get(E.id)) {
+        for (let i = 1; i < k.n; i++) {
+          if (!f[i] || !k.eligible[i] || k.day[i] < P.start) continue;
+          const t = k.day[i];
+          const b = k.bucket[i];
+          const ex = (id) => {
+            const r = tables[id].table.get(k)[i];
+            const mu = b >= 0 ? tables[id].mean[t * 5 + b] : NaN;
+            return Number.isFinite(r) && Number.isFinite(mu) ? r - mu : null;
+          };
+          const raw = tables.H14.table.get(k)[i];
+          eventList.push({ type: E.id, sym: k.sym, name: k.name, date: U.dates[t], btcUp: up[t], day0: k.c[i] / k.c[i - 1] - 1 - cross.medR[t], pre3: i >= 4 ? k.c[i - 1] / k.c[i - 4] - 1 : null, ex7: ex("H7"), ex14: ex("H14"), ex28: ex("H28"), raw14: Number.isFinite(raw) ? raw : null });
+        }
+      }
+    }
+    eventList.sort((a, b) => (a.date < b.date ? -1 : 1));
     // 2. 사건 전후 반응
     const reactions = EVENT_TYPES.map((E) => ({ type: E.id, label: E.label, ...reaction(U, flags.get(E.id), cross, P.start, P.end) }));
     // 3. 신규 상장 코인
@@ -222,7 +241,11 @@ async function main() {
         });
       }
     }
-    const pumps = pumpList(U, P, cross, 0.25, 90);
+    const pumps = pumpList(U, P, cross, 0.25, 150);
+    for (const p of pumps) {
+      const end = Date.parse(p.date + "T00:00:00Z") + M.dayEndUtcH * 3_600_000;
+      p.events = [...new Set(events.filter((e) => e.sym === p.sym && e.type !== "LIST_" + M.id.toUpperCase() && Math.abs(e.ts - end) <= 2 * DAY).map((e) => e.type))];
+    }
     // 5. 규칙의 국면별 선택력 (14일 보유)
     const T14 = tables.H14;
     const regimeRows = STRATEGIES.map((st) => ({
@@ -234,7 +257,7 @@ async function main() {
     // 6. 메이저 타이밍
     const majors = majorsTiming(U, P, M.sim.fee);
 
-    result.markets.push({ market: M.id, label: M.label, periods: { train: [U.dates[P.start], U.dates[P.split - 1]], test: [U.dates[P.split], U.dates[P.end]] }, eventRows, reactions, listing, pumpRows, pumps, regimeRows, majors });
+    result.markets.push({ market: M.id, label: M.label, periods: { train: [U.dates[P.start], U.dates[P.split - 1]], test: [U.dates[P.split], U.dates[P.end]] }, eventRows, eventList, reactions, listing, pumpRows, pumps, regimeRows, majors });
     console.log(`[${M.label}] 사건 실험 완료`);
   }
 
