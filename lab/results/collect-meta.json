@@ -1,6 +1,6 @@
 {
- "started": "2026-11-11T05:04:00.392Z",
- "finished": "2026-11-11T05:25:20.597Z",
+ "started": "2026-11-11T05:28:00.830Z",
+ "finished": "2026-11-11T05:50:52.574Z",
  "probes": [
   {
    "url": "https://api.bithumb.com/v1/market/all",
