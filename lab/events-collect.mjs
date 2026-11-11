@@ -160,7 +160,53 @@ try {
   note.hacksError = String(e?.message ?? e);
 }
 
-await writeFile(`${OUT}/events.json`, JSON.stringify({ collectedAt: new Date().toISOString(), note, events }));
+/* ---------- 업비트 상장 전후 시간 단위 가격 (바이낸스 1시간봉) ---------- */
+// 공지는 첫 거래보다 몇 시간 앞서 나온다. 가격이 언제 뛰는지 보려고 첫 거래 24시간 전 ~ 72시간 후를 받는다.
+const paths = [];
+try {
+  const listed = new Set((await readdir(`${OUT}/binance`)).map((f) => f.replace(/\.json$/, "")));
+  const targets = events.filter((e) => e.type === "LIST_UPBIT" && e.exact && e.ts >= Date.UTC(2019, 6, 1) && listed.has(e.sym) && e.sym !== "BTC");
+  const kl = async (symbol, start) => (await getJson(`https://data-api.binance.vision/api/v3/klines?symbol=${symbol}&interval=1h&startTime=${start}&limit=104`, 2)).map((k) => [k[0], +k[1], +k[4]]);
+  await pool(targets, 3, 80, async (e) => {
+    const t0 = e.ts - 3_600_000; // 첫 거래가 있던 1시간봉의 시작
+    const start = t0 - 25 * 3_600_000;
+    const coin = await kl(`${e.sym}USDT`, start);
+    if (coin.length < 60 || coin[0][0] > start + 3_600_000) return; // 상장 전부터 바이낸스에 있던 코인만
+    const btc = await kl("BTCUSDT", start);
+    paths.push({ sym: e.sym, t0, coin, btc });
+  });
+  note.paths = `${paths.length}/${targets.length}`;
+} catch (e) {
+  note.pathsError = String(e?.message ?? e);
+}
+
+/* ---------- 메이저 코인 4시간봉 (바이낸스) ---------- */
+try {
+  const { mkdir } = await import("node:fs/promises");
+  await mkdir(`${OUT}/h4`, { recursive: true });
+  let saved = 0;
+  for (const sym of ["BTC", "ETH", "XRP", "SOL", "DOGE"]) {
+    const rows = [];
+    let start = Date.UTC(2019, 0, 1);
+    for (let page = 0; page < 40; page++) {
+      const list = await getJson(`https://data-api.binance.vision/api/v3/klines?symbol=${sym}USDT&interval=4h&startTime=${start}&limit=1000`);
+      await sleep(80);
+      if (!Array.isArray(list) || list.length === 0) break;
+      for (const k of list) rows.push([k[0], +k[1], +k[2], +k[3], +k[4], +k[7]]);
+      if (list.length < 1000) break;
+      start = list.at(-1)[0] + 4 * 3_600_000;
+    }
+    if (rows.length) {
+      await writeFile(`${OUT}/h4/${sym}.json`, JSON.stringify({ sym, rows }));
+      saved++;
+    }
+  }
+  note.h4 = saved;
+} catch (e) {
+  note.h4Error = String(e?.message ?? e);
+}
+
+await writeFile(`${OUT}/events.json`, JSON.stringify({ collectedAt: new Date().toISOString(), note, events, paths }));
 const count = {};
 for (const e of events) count[e.type] = (count[e.type] ?? 0) + 1;
 // 점검: 날짜가 매달 1~2일에 몰려 있으면 실제 날짜가 아니라 달의 시작으로 잡힌 것이다

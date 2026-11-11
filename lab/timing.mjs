@@ -52,7 +52,7 @@ export const TIMING_RULES = [
 ];
 
 /** @param stopPct 주어지면 매수가 대비 그만큼 빠질 때 손절 */
-export function ruleTiming(U, k, a, b, fee, rule, stopPct = 0) {
+export function ruleTiming(U, k, a, b, fee, rule, stopPct = 0, barsPerDay = 1) {
   const x = context(k);
   let cash = 1;
   let qty = 0;
@@ -95,14 +95,14 @@ export function ruleTiming(U, k, a, b, fee, rule, stopPct = 0) {
   }
   if (rs.length < 30) return null;
   if (qty > 0) tr.push((qty * k.c[k.idx[b] >= 0 ? k.idx[b] : k.n - 1] * (1 - fee)) / entryCash - 1);
-  const days = b - a + 1;
+  const days = (b - a + 1) / barsPerDay;
   const total = prev - 1;
   const mean = rs.reduce((s, v) => s + v, 0) / rs.length;
   const sd = Math.sqrt(rs.reduce((s, v) => s + (v - mean) ** 2, 0) / Math.max(1, rs.length - 1));
   return {
     cagr: total > -1 ? (1 + total) ** (365 / days) - 1 : -1,
     mdd,
-    sharpe: sd > 0 ? (mean / sd) * Math.sqrt(365) : 0,
+    sharpe: sd > 0 ? (mean / sd) * Math.sqrt(365 * barsPerDay) : 0,
     exposure: inDays / rs.length,
     trades: tr.length,
     winRate: tr.length ? tr.filter((v) => v > 0).length / tr.length : 0,
@@ -122,6 +122,26 @@ export function majorsTiming(U, P, fee) {
       for (const stop of rule.id === "HOLD" || rule.id === "TREND50" ? [0] : [0, 0.05]) {
         out.push({ sym, rule: rule.id, label: rule.label, stop, train: ruleTiming(U, k, ...P.train, fee, rule, stop), test: ruleTiming(U, k, ...P.test, fee, rule, stop) });
       }
+    }
+  }
+  return out;
+}
+
+/**
+ * 4시간봉 버전 — 워뇨띠의 실제 매매 주기(수 시간~수일)에 더 가깝게.
+ * 같은 규칙을 봉 개수 기준 그대로 쓴다 (50봉선 = 약 8일, 30봉 박스 = 5일, 최대 보유 20봉 = 약 3일).
+ * @param rows [[시각ms, 시가, 고가, 저가, 종가, 거래대금], ...]
+ */
+export function h4Timing(sym, rows, splitTs, fee) {
+  const n = rows.length;
+  const col = (i) => Float64Array.from(rows, (r) => r[i]);
+  const k = { sym, n, o: col(1), h: col(2), l: col(3), c: col(4), idx: Int32Array.from({ length: n }, (_, i) => i) };
+  const split = rows.findIndex((r) => r[0] >= splitTs);
+  if (split < 500 || n - split < 500) return [];
+  const out = [];
+  for (const rule of TIMING_RULES) {
+    for (const stop of rule.id === "HOLD" || rule.id === "TREND50" ? [0] : [0, 0.05]) {
+      out.push({ sym, rule: rule.id, label: rule.label, stop, train: ruleTiming(null, k, 200, split - 1, fee, rule, stop, 6), test: ruleTiming(null, k, split, n - 1, fee, rule, stop, 6) });
     }
   }
   return out;

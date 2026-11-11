@@ -13,7 +13,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { DATA, MARKETS, OUT, SPLIT, periods, prepareAll } from "./common.mjs";
 import { selectionStats, tradeTable } from "./selection.mjs";
 import { EXITS, STRATEGIES } from "./strategies.mjs";
-import { MAJORS, TIMING_RULES, majorsTiming } from "./timing.mjs";
+import { MAJORS, TIMING_RULES, h4Timing, majorsTiming } from "./timing.mjs";
 
 const DAY = 86_400_000;
 const EVENT_TYPES = [
@@ -167,7 +167,7 @@ function pumpList(U, P, cross, minExcess, limit) {
 
 async function main() {
   const t0 = Date.now();
-  const { events, note } = JSON.parse(await readFile(`${DATA}/events.json`, "utf8"));
+  const { events, note, paths = [] } = JSON.parse(await readFile(`${DATA}/events.json`, "utf8"));
   const { U: Us } = await prepareAll(undefined);
   const result = { generatedAt: new Date().toISOString(), collectNote: note, markets: [] };
 
@@ -246,6 +246,37 @@ async function main() {
       const end = Date.parse(p.date + "T00:00:00Z") + M.dayEndUtcH * 3_600_000;
       p.events = [...new Set(events.filter((e) => e.sym === p.sym && e.type !== "LIST_" + M.id.toUpperCase() && Math.abs(e.ts - end) <= 2 * DAY).map((e) => e.type))];
     }
+    // 4-2. 급등의 성격별 시나리오: 시장 전체가 같이 오른 날인지, 혼자 오른 것인지, 거래량 쏠림, 급등 뒤 눌림
+    const pumpEx = (k, i, t) => (i >= 1 ? k.c[i] / k.c[i - 1] - 1 - cross.medR[t] : NaN);
+    const isPump = (k, i, t) => pumpEx(k, i, t) >= 0.2;
+    const SCEN = [
+      { id: "PUMP_BROAD", label: "급등 + 그날 시장 중앙값도 +3% 이상 (시장 동반 상승)", entry: (k, i, t) => (isPump(k, i, t) && cross.medR[t] >= 0.03 ? 1 : null) },
+      { id: "PUMP_ALONE", label: "급등 + 그날 시장 중앙값 +1% 미만 (혼자 급등)", entry: (k, i, t) => (isPump(k, i, t) && cross.medR[t] < 0.01 ? 1 : null) },
+      { id: "PUMP_VOL20", label: "급등 + 거래대금 평소 20배 이상", entry: (k, i, t) => (isPump(k, i, t) && k.f.volRatio[i] >= 20 ? 1 : null) },
+      { id: "PUMP_VOL5", label: "급등 + 거래대금 평소 5배 미만", entry: (k, i, t) => (isPump(k, i, t) && k.f.volRatio[i] < 5 ? 1 : null) },
+      { id: "PUMP_TREND", label: "급등 + 급등 전 이미 50일선 위", entry: (k, i, t) => (isPump(k, i, t) && k.c[i - 1] > k.f.sma50[i - 1] ? 1 : null) },
+      { id: "PUMP_BASE", label: "급등 + 급등 전 50일선 아래 (바닥권)", entry: (k, i, t) => (isPump(k, i, t) && k.c[i - 1] < k.f.sma50[i - 1] ? 1 : null) },
+      {
+        id: "PUMP_PULLBACK",
+        label: "급등 3~10일 뒤 눌림: 고점 대비 20% 넘게 식었지만 급등일 시가보다 5% 이상 위, 거래대금은 급등일의 절반 미만",
+        entry: (k, i, t) => {
+          for (let j = i - 3; j >= Math.max(1, i - 10); j--) {
+            if (!isPump(k, j, k.day[j])) continue;
+            let hi = 0;
+            for (let m = j; m <= i; m++) if (k.h[m] > hi) hi = k.h[m];
+            return k.c[i] <= hi * 0.8 && k.c[i] >= k.o[j] * 1.05 && k.v[i] < k.v[j] * 0.5 ? 1 : null;
+          }
+          return null;
+        },
+      },
+    ];
+    const scenRows = [];
+    for (const st of SCEN) {
+      for (const exit of EXITS) {
+        const T = tables[exit.id];
+        scenRows.push({ id: st.id, label: st.label, exit: exit.id, exitLabel: exit.label, train: selectionStats(U, st, T, P.start, P.split - 2 - exit.maxHold), test: selectionStats(U, st, T, P.split, P.end) });
+      }
+    }
     // 5. 규칙의 국면별 선택력 (14일 보유)
     const T14 = tables.H14;
     const regimeRows = STRATEGIES.map((st) => ({
@@ -257,8 +288,57 @@ async function main() {
     // 6. 메이저 타이밍
     const majors = majorsTiming(U, P, M.sim.fee);
 
-    result.markets.push({ market: M.id, label: M.label, periods: { train: [U.dates[P.start], U.dates[P.split - 1]], test: [U.dates[P.split], U.dates[P.end]] }, eventRows, eventList, reactions, listing, pumpRows, pumps, regimeRows, majors });
+    result.markets.push({ market: M.id, label: M.label, periods: { train: [U.dates[P.start], U.dates[P.split - 1]], test: [U.dates[P.split], U.dates[P.end]] }, eventRows, eventList, reactions, listing, pumpRows, scenRows, pumps, regimeRows, majors });
     console.log(`[${M.label}] 사건 실험 완료`);
+  }
+
+  // 7. 업비트 상장 전후 시간 단위 경로 (바이낸스 1시간봉, BTC 대비)
+  {
+    const HS = [-24, -12, -6, -4, -3, -2, -1, 0, 1, 2, 4, 8, 12, 24, 48, 72];
+    const at = (rows, ts) => rows.find((r) => r[0] === ts);
+    const cum = new Map(HS.map((h) => [h, []]));
+    const after = { h0: { 24: [], 72: [] }, h1: { 24: [], 72: [] }, h4: { 24: [], 72: [] } };
+    let used = 0;
+    for (const p of paths) {
+      const base = at(p.coin, p.t0 - 25 * 3_600_000) ?? p.coin[0];
+      const bbase = at(p.btc, base[0]);
+      if (!bbase) continue;
+      const rel = (h) => {
+        const c = at(p.coin, p.t0 + h * 3_600_000);
+        const b = at(p.btc, p.t0 + h * 3_600_000);
+        return c && b ? c[2] / base[2] - 1 - (b[2] / bbase[2] - 1) : null; // h 시간째 봉의 종가까지
+      };
+      used++;
+      for (const h of HS) {
+        const v = rel(h);
+        if (v !== null) cum.get(h).push(v);
+      }
+      // 첫 거래 시간봉이 끝난 뒤(h0), 1시간 뒤, 4시간 뒤에 샀을 때 24·72시간 뒤까지 (BTC 대비)
+      for (const [key, h] of [["h0", 0], ["h1", 1], ["h4", 4]]) {
+        const c0 = at(p.coin, p.t0 + h * 3_600_000);
+        const b0 = at(p.btc, p.t0 + h * 3_600_000);
+        for (const fw of [24, 72]) {
+          const c1 = at(p.coin, p.t0 + (h + fw) * 3_600_000);
+          const b1 = at(p.btc, p.t0 + (h + fw) * 3_600_000);
+          if (c0 && b0 && c1 && b1) after[key][fw].push(c1[2] / c0[2] - 1 - (b1[2] / b0[2] - 1));
+        }
+      }
+    }
+    result.upbitPath = {
+      events: used,
+      cumulative: HS.map((h) => ({ hour: h, mean: mean(cum.get(h)), median: median(cum.get(h)), n: cum.get(h).length })),
+      buyAfter: Object.entries(after).map(([key, v]) => ({ when: key, h24: { mean: mean(v[24]), median: median(v[24]), up: v[24].filter((x) => x > 0).length / Math.max(1, v[24].length), n: v[24].length }, h72: { mean: mean(v[72]), median: median(v[72]), up: v[72].filter((x) => x > 0).length / Math.max(1, v[72].length), n: v[72].length } })),
+    };
+  }
+  // 8. 메이저 4시간봉 타이밍 규칙 (바이낸스)
+  result.h4 = [];
+  for (const sym of MAJORS) {
+    try {
+      const j = JSON.parse(await readFile(`${DATA}/h4/${sym}.json`, "utf8"));
+      result.h4.push(...h4Timing(sym, j.rows, Date.parse(SPLIT + "T00:00:00Z"), 0.001));
+    } catch {
+      /* 자료 없음 */
+    }
   }
 
   await mkdir(OUT, { recursive: true });
@@ -304,6 +384,11 @@ function report(R) {
     L.push("|---|---|---|---|---|---|");
     for (const r of m.pumpRows) L.push(`| +${Math.round(r.threshold * 100)}%p 이상 | ${r.exitLabel} | ${cell(r.train)} | ${cell(r.test)} | ${cell(r.btcUp)} | ${cell(r.btcDown)} |`);
     L.push("");
+    L.push("### 4-2. 급등의 성격별로 나누면 (급등 = 시장 중앙값보다 +20%p 이상)");
+    L.push("| 조건 | 매도 | 고르는 기간 | 확인 기간 |");
+    L.push("|---|---|---|---|");
+    for (const r of m.scenRows) L.push(`| ${r.label} | ${r.exitLabel} | ${cell(r.train)} | ${cell(r.test)} |`);
+    L.push("");
     L.push("### 5. 규칙별 선택력을 BTC 국면으로 나누면 (14일 보유, 전체 기간)");
     L.push("| 규칙 | BTC 50일선 위 | BTC 50일선 아래 |");
     L.push("|---|---|---|");
@@ -325,6 +410,42 @@ function report(R) {
       }
       L.push("");
     }
+  }
+  if (R.upbitPath?.events) {
+    const u = R.upbitPath;
+    L.push(`## 업비트 원화 상장 전후 시간 단위 가격 (바이낸스 1시간봉, BTC 대비, ${u.events}건)`);
+    L.push("기준은 업비트에서 첫 거래가 시작된 1시간봉(0시간). 값은 첫 거래 25시간 전 가격 대비 누적 등락.");
+    L.push("");
+    L.push(`| 시점 | ${u.cumulative.map((c) => (c.hour === 0 ? "첫 거래 시간" : `${c.hour > 0 ? "+" : ""}${c.hour}h`)).join(" | ")} |`);
+    L.push(`|---|${u.cumulative.map(() => "---").join("|")}|`);
+    L.push(`| 평균 | ${u.cumulative.map((c) => pc(c.mean)).join(" | ")} |`);
+    L.push(`| 중앙값 | ${u.cumulative.map((c) => pc(c.median)).join(" | ")} |`);
+    L.push("");
+    L.push("| 매수 시점 | 24시간 뒤 (평균 / 중앙값 / 오른 비율) | 72시간 뒤 |");
+    L.push("|---|---|---|");
+    const lab = { h0: "첫 거래 시간봉이 끝났을 때", h1: "그 1시간 뒤", h4: "그 4시간 뒤" };
+    for (const b of u.buyAfter) L.push(`| ${lab[b.when]} | ${pc(b.h24.mean)} / ${pc(b.h24.median)} / ${Math.round(b.h24.up * 100)}% | ${pc(b.h72.mean)} / ${pc(b.h72.median)} / ${Math.round(b.h72.up * 100)}% |`);
+    L.push("");
+  }
+  if (R.h4?.length) {
+    L.push("## 메이저 코인 4시간봉 타이밍 규칙 (바이낸스, 수수료 한쪽 0.1%)");
+    L.push("규칙의 숫자는 봉 개수 기준이다 (50봉선 ≈ 8일, 30봉 박스 = 5일, 최대 보유 20봉 ≈ 3일).");
+    for (const period of ["train", "test"]) {
+      L.push("");
+      L.push(`**${period === "train" ? "고르는 기간 (2019~2023)" : "확인 기간 (2024~)"}** — 연수익 / 최대 낙폭 · 거래 수 · 승률`);
+      L.push("");
+      const syms = MAJORS.filter((s) => R.h4.some((x) => x.sym === s));
+      L.push(`| 규칙 | 손절 | ${syms.join(" | ")} |`);
+      L.push(`|---|---|${syms.map(() => "---").join("|")}|`);
+      for (const rule of TIMING_RULES) {
+        for (const stop of [0, 0.05]) {
+          const rows = syms.map((s) => R.h4.find((x) => x.sym === s && x.rule === rule.id && x.stop === stop));
+          if (rows.every((r) => !r)) continue;
+          L.push(`| ${rule.label} | ${stop ? "5%" : "없음"} | ${rows.map((r) => (r?.[period] ? `${pc(r[period].cagr)} / ${pc(r[period].mdd)} · ${r[period].trades}회 · ${Math.round(r[period].winRate * 100)}%` : "-")).join(" | ")} |`);
+        }
+      }
+    }
+    L.push("");
   }
   L.push("## 주의");
   L.push("- 상장 사건은 \"첫 거래가 시작된 시각\" 기준이다. 상장 공지는 보통 그보다 몇 시간~며칠 앞서 나오고, 가격은 공지 직후 움직인다. 그래서 '공개된 날' 이전 칸에 이미 상승이 잡힌다.");
