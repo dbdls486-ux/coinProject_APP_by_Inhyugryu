@@ -11,6 +11,7 @@ on:
     paths:
       - "lab/**"
       - "!lab/results/**"
+      - "!lab/ml/**"
       - ".github/workflows/lab.yml"
 
 permissions:

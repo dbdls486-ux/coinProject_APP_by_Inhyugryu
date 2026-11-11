@@ -1,0 +1,57 @@
+# 급등 예측 지표 검증: 지표 100여 개 개별 채점 + 합성 점수·기계학습 모델의 연도별 검증.
+# lab/ml 코드가 바뀔 때와 매주 월요일 07:17 KST 에 돈다. 시세는 lab 워크플로가 받아 둔 캐시를 쓴다.
+name: ml
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 22 * * 0"
+  push:
+    branches: [main]
+    paths:
+      - "lab/ml/**"
+      - ".github/workflows/ml.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ml
+  cancel-in-progress: false
+
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 오늘 날짜
+        id: day
+        run: echo "d=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+      - name: 시세 캐시
+        uses: actions/cache@v4
+        with:
+          path: lab/.data
+          key: lab-data-v3-${{ steps.day.outputs.d }}
+          restore-keys: lab-data-v3-
+      - name: 시세가 없으면 수집
+        run: if [ ! -d lab/.data/bithumb ]; then node lab/collect.mjs; fi
+      - name: 파이썬 패키지
+        run: pip install --quiet "numpy>=2" "pandas>=2.2" "scikit-learn>=1.5"
+      - name: 지표 검증
+        run: python lab/ml/study.py
+      - name: 결과 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lab/results
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "ml: 지표 검증 결과 $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1
