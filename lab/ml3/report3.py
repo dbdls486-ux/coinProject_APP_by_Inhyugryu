@@ -62,6 +62,52 @@ def render(R):
             A(f"| {r['label']} | {a['n']} / {b['n']} | {num(a['lift'], 2)} / {num(b['lift'], 2)} | {pc(a['net'])} / {pc(b['net'])} | {pc(b['median'])} · {round(b['win'] * 100)}% | {ext(a)} | {ext(b)} | {pc(a.get('net28'))} / {pc(b.get('net28'))} | {ext(b, 't28', 'ex28')} | {r2} | {tr} | {r['verdict']} |")
         A("")
 
+        A("**연도별 (건수 · 7일 실수익 · 28일 실수익)** — 건수가 있는 주요 시나리오")
+        A("")
+        for r in m["setups"]:
+            if r.get("yearly") and (r["verdict"] in ("통과",) or r["verdict"].startswith("약함") or r["id"] in ("s1a", "s1b", "s1c", "s3e", "s5c", "s6a", "s13c")):
+                A(f"- {r['group']} — {r['label'].strip()}: " + " / ".join(f"{y} {v['n']}건 {pc(v['net'])} {pc(v['net28'])}" for y, v in r["yearly"].items()))
+        A("")
+        A("**손절·2배 익절 매매를 계좌로 굴리면** (자금을 10칸으로 나눠 신호마다 한 칸, 칸이 차면 건너뜀)")
+        A("")
+        A("| 시나리오 | 고르는 기간: 누적 · 연환산 · 최대 낙폭 · 실제 진입/건너뜀 | 확인 기간: 누적 · 연환산 · 최대 낙폭 · 실제 진입/건너뜀 |")
+        A("|---|---|---|")
+        for r in m["setups"]:
+            ac = [((r[p].get("exits") or {}).get("account")) for p in ("train", "test")]
+            if not all(ac):
+                continue
+            cell = lambda a: f"{pc(a['total'], 0)} · {pc(a['cagr'], 0)} · {pc(a['mdd'], 0)} · {a['taken']}/{a['skipped']}"
+            A(f"| {r['group']} — {r['label'].strip()} | {cell(ac[0])} | {cell(ac[1])} |")
+        A("")
+
+        fam = m.get("families") or {}
+        for key, title, note in (("capitulation", "가설 묶음 1 — 거래량이 터지며 신저가를 찍은 뒤 저점을 지키면 오른다", "거래량 배수·신저가 기준·종가 위치·지킨 일수·하락 흐름·확인 봉·BTC 장세·주봉 상태를 전부 바꿔 가며 본 것"), ("base_breakout", "가설 묶음 2 — 조용히 횡보하던 코인이 거래량을 동반해 고점을 돌파하면 오른다", "횡보 폭·급등 없던 기간·돌파 기준·거래량 배수·BTC 장세를 전부 바꿔 가며 본 것")):
+            F = fam.get(key)
+            if not F or not F.get("usable"):
+                continue
+            md = F["median"]
+            A(f"### A2. {title}")
+            A(f"{note}. 조합 {F['variants']}개 중 두 기간 모두 50건 이상인 {F['usable']}개 기준.")
+            A("")
+            A(f"- 조합들의 중앙값: 7일 실수익 고르는 기간 {pc(md['train_net'])} / 확인 기간 {pc(md['test_net'])}, 28일 실수익 {pc(md['train_net28'])} / {pc(md['test_net28'])}, 또래 대비 초과 {pp(md['train_ex'])} / {pp(md['test_ex'])}, 7일 뒤 오른 비율 {pc(md['train_win'], 0)} / {pc(md['test_win'], 0)}")
+            A(f"- 참고로 아무 코인·아무 날: 7일 실수익 {pc(m['base']['net_train'])} / {pc(m['base']['net_test'])}, 28일 {pc(m['base'].get('net28_train'))} / {pc(m['base'].get('net28_test'))}, 오른 비율 {pc(m['base'].get('win_train'), 0)} / {pc(m['base'].get('win_test'), 0)}")
+            A(f"- 확인 기간 7일 실수익이 플러스인 조합 {pc(F['test_net_pos'], 0)}, 두 기간 모두 7일 플러스 {pc(F['both_net_pos'], 0)}, 두 기간 모두 28일 플러스 {pc(F['both_net28_pos'], 0)}, 두 기간 모두 또래보다 뚜렷이 좋음(t≥2) {pc(F['both_ex_sig'], 0)}, 두 기간 모두 또래보다 뚜렷이 나쁨 {pc(F['both_ex_neg'], 0)}")
+            A("")
+            A("| 조건 | 값 | 조합 수 | 7일 실수익 중앙값 (고름/확인) | 28일 실수익 중앙값 (고름/확인) | 확인 기간 초과 중앙값 | 두 기간 모두 28일 플러스인 비율 |")
+            A("|---|---|---|---|---|---|---|")
+            for dname, vals in F["byDim"].items():
+                for v in vals:
+                    A(f"| {dname} | {v['value']} | {v['n']} | {pc(v['train_net'])} / {pc(v['test_net'])} | {pc(v['train_net28'])} / {pc(v['test_net28'])} | {pp(v['test_ex'])} | {pc(v['both_net28_pos'], 0)} |")
+            A("")
+            A("두 기간 모두에서 28일 성적이 가장 좋았던 조합 8개 (결과를 보고 고른 것이라 그대로 믿으면 안 되고, 어떤 조건이 공통인지 보는 용도)")
+            A("")
+            A("| 조합 | 건수 (고름/확인) | 7일 실수익 | 28일 실수익 | 7일 초과 (t) 고름 / 확인 |")
+            A("|---|---|---|---|---|")
+            for r in F["top"]:
+                a, b = r["train"], r["test"]
+                A(f"| {' · '.join(f'{k} {v}' for k, v in r['p'].items())} | {a['n']} / {b['n']} | {pc(a['net'])} / {pc(b['net'])} | {pc(a.get('net28'))} / {pc(b.get('net28'))} | {ext(a)} / {ext(b)} |")
+            A("")
+
         A("### B. 자료에서 찾은 조건 조합 (2023년까지로 나무를 키우고 2024년 이후에 그대로 적용)")
         for key, title in (("ex7", "7일 초과수익 기준"), ("ex28", "28일 초과수익 기준"), ("abs7", "7일 실수익 기준 (시장 상태 지표 포함)"), ("new_only", "주봉·순서형 지표만으로, 7일 초과수익 기준")):
             mn = (m.get("mines") or {}).get(key)

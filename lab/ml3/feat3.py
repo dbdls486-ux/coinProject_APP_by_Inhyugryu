@@ -106,6 +106,18 @@ def sequence(o, h, l, c, v, btc_c):
     out["vr"], out["clv"], out["newlows10"], out["drop10"] = vr, clv, newlows10, drop10
     out["clx"], out["clx_any"] = clx.astype(float), clx_any.astype(float)
 
+    # 가설 묶음 검증용: "거래량 터짐 + 신저가 → k일간 저점 지킴"을 기준값을 바꿔 가며 전부 만든다
+    #   g{거래량 배수}_{신저가 기준 일수}_{종가 위치 하한×10}_{지킨 일수}_{하락 흐름 조건 0/1}
+    for ln in (20, 60):
+        nl = (L < L.rolling(ln).min().shift(1)).to_numpy()
+        for vm in (2, 3, 5):
+            for cmin in (0.0, 0.4):
+                for ctx in (0, 1):
+                    base = pd.Series((vr >= vm) & nl & (clv >= cmin) & (decline if ctx else True))
+                    for k in (0, 3, 5):
+                        ev = base if k == 0 else (base.shift(k, fill_value=False) & (L.rolling(k).min() >= L.shift(k)))
+                        out[f"g{vm}_{ln}_{int(cmin * 10)}_{k}_{ctx}"] = ev.to_numpy().astype(float)
+
     # 투매일 이후 상태 (최대 30일 추적)
     dsc = np.full(n, np.nan)
     hold = np.full(n, np.nan)
@@ -237,6 +249,7 @@ LABEL3 = {
 }
 # 모델·나무에 넣을 지표 (손절 기준가 등 가격 수준 자체는 뺀다)
 MODEL3 = [k for k in LABEL3 if k not in ("clx_low",)]
+GRID1 = [(vm, ln, c, k, ctx) for ln in (20, 60) for vm in (2, 3, 5) for c in (0, 4) for ctx in (0, 1) for k in (0, 3, 5)]
 
 
 def features3(o, h, l, c, v, btc_c):

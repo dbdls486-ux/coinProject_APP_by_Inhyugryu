@@ -25,10 +25,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, "..", "ml"))
 import study as S  # noqa: E402
-from feat3 import LABEL3, MODEL3, features3  # noqa: E402
-from features import LABEL  # noqa: E402
+from feat3 import GRID1, LABEL3, MODEL3, features3  # noqa: E402
+from features import BINARY, LABEL  # noqa: E402
 from round2 import picks_of, trade_stats  # noqa: E402
 
+FLAGS3 = {"w_align", "w_gc", "w_rsi_turn", "w_macd_up", "w_macd_cross", "w_hl2", "w_ll3", "w_fib_zone", "clx", "clx_any", "retest", "hl", "hh", "struct_turn", "turn10", "brk_piv", "rev_bar", "brk10", "rsi_up40", "near_sma20", "touch50_5", "sq5", "btc_dd_recent", "btc_reclaim"}
 OUT = S.OUT
 NEWS = os.environ.get("LAB_NEWS", "lab/.news")
 RNG = np.random.default_rng(31)
@@ -134,8 +135,8 @@ def struct_exits(coins, sub, cost, cap=20000):
     """
     if len(sub) > cap:
         sub = sub.sample(cap, random_state=1)
-    r2, rr, rt = [], [], []
-    for sym, bar, sref in zip(sub.sym.to_numpy(), sub.bar.to_numpy(), sub.stop_ref.to_numpy()):
+    r2, rr, rt, trades = [], [], [], []
+    for sym, bar, sref, t0 in zip(sub.sym.to_numpy(), sub.bar.to_numpy(), sub.stop_ref.to_numpy(), sub.t.to_numpy()):
         c = coins[sym]
         o, h, l, cl = c["o"], c["h"], c["l"], c["c"]
         n, i = len(cl), int(bar)
@@ -147,12 +148,13 @@ def struct_exits(coins, sub, cost, cap=20000):
         stop, tgt = entry * (1 - risk), entry * (1 + 2 * risk)
         px = None
         end = min(i + 28, n - 1)
+        dx = end
         for d in range(i + 1, end + 1):
             if l[d] <= stop:
-                px = min(o[d], stop)
+                px, dx = min(o[d], stop), d
                 break
             if h[d] >= tgt:
-                px = max(o[d], tgt)
+                px, dx = max(o[d], tgt), d
                 break
         if px is None and i + 28 <= n - 1:
             px = cl[end]
@@ -160,6 +162,7 @@ def struct_exits(coins, sub, cost, cap=20000):
             ret = px / entry * (1 - cost) / (1 + cost) - 1
             r2.append(ret)
             rr.append((px / entry - 1) / risk)
+            trades.append((int(t0) + 1, int(t0) + (dx - i), ret))
         px = None
         end = min(i + 60, n - 1)
         sell = False
@@ -180,7 +183,37 @@ def struct_exits(coins, sub, cost, cap=20000):
     out = dict(r2=f(r2), trail=f(rt))
     if out["r2"]:
         out["r2"]["R"] = float(np.mean(rr))
+        out["account"] = account(trades)
     return out
+
+
+def account(trades, slots=10):
+    """손절·2배 익절 매매를 실제 계좌처럼: 자금을 10칸으로 나눠 신호마다 한 칸씩, 칸이 다 차면 그 신호는 건너뛴다. (청산 시점 기준 손익)"""
+    if len(trades) < 30:
+        return None
+    trades = sorted(trades)
+    eq, peak, mdd, skipped = 1.0, 1.0, 0.0, 0
+    open_pos = []  # (청산일, 투입액, 수익률)
+    for ent, ex, ret in trades:
+        still = []
+        for p in sorted(open_pos):
+            if p[0] <= ent:
+                eq += p[1] * p[2]
+                peak = max(peak, eq)
+                mdd = min(mdd, eq / peak - 1)
+            else:
+                still.append(p)
+        open_pos = still
+        if len(open_pos) >= slots:
+            skipped += 1
+            continue
+        open_pos.append((ex, eq / slots, ret))
+    for p in sorted(open_pos):
+        eq += p[1] * p[2]
+        peak = max(peak, eq)
+        mdd = min(mdd, eq / peak - 1)
+    days = max(trades[-1][1] - trades[0][0], 30)
+    return dict(total=float(eq - 1), cagr=float(eq ** (365 / days) - 1) if eq > 0 else -1.0, mdd=float(mdd), taken=len(trades) - skipped, skipped=skipped, years=round(days / 365, 2))
 
 
 def event_stats(df, mask, coins, cost, with_exits=True):
@@ -205,6 +238,89 @@ def event_stats(df, mask, coins, cost, with_exits=True):
         if with_exits:
             r["exits"] = struct_exits(coins, sub, cost)
         out[per] = r
+    if with_exits and mask.sum() >= 60:
+        yr = df.date.to_numpy()[mask].astype("U4")
+        f7, f28 = df.fwd.to_numpy()[mask], df.fwd28.to_numpy()[mask]
+        out["yearly"] = {y: dict(n=int((yr == y).sum()), net=float(f7[yr == y].mean()), net28=float(np.nanmean(f28[yr == y])) if np.isfinite(f28[yr == y]).any() else None) for y in sorted(set(yr))}
+    return out
+
+
+def light_stats(df, m):
+    """가설 묶음용 가벼운 채점"""
+    out = {}
+    t, ex, fwd, f28, e28 = df.t.to_numpy(), df.ex.to_numpy(), df.fwd.to_numpy(), df.fwd28.to_numpy(), df.ex28.to_numpy()
+    for per, pm in (("train", ~df.is_test.to_numpy()), ("test", df.is_test.to_numpy())):
+        k = m & pm
+        n = int(k.sum())
+        if n < 50:
+            out[per] = dict(n=n)
+            continue
+        d = pd.Series(ex[k]).groupby(t[k]).mean().to_numpy()
+        ok28 = np.isfinite(f28[k])
+        out[per] = dict(n=n, net=float(fwd[k].mean()), win=float((fwd[k] > 0).mean()), ex=float(d.mean()), t=hac_t(d) if len(d) >= 60 else None,
+                        net28=float(f28[k][ok28].mean()) if ok28.sum() >= 30 else None, win28=float((f28[k][ok28] > 0).mean()) if ok28.sum() >= 30 else None, ex28=float(np.nanmean(e28[k])) if ok28.sum() >= 30 else None)
+    return out
+
+
+def summarize_family(rows, dims):
+    full = [r for r in rows if "net" in r["train"] and "net" in r["test"]]
+    if not full:
+        return dict(variants=len(rows), usable=0)
+    share = lambda fn: float(np.mean([bool(fn(r)) for r in full]))
+    med = lambda xs: float(np.median(xs)) if len(xs) else None
+    g = lambda r, p, k: r[p].get(k)
+    out = dict(
+        variants=len(rows), usable=len(full),
+        test_net_pos=share(lambda r: r["test"]["net"] > 0), both_net_pos=share(lambda r: r["train"]["net"] > 0 and r["test"]["net"] > 0),
+        both_net28_pos=share(lambda r: (g(r, "train", "net28") or -1) > 0 and (g(r, "test", "net28") or -1) > 0),
+        both_ex_sig=share(lambda r: (g(r, "train", "t") or 0) >= 2 and (g(r, "test", "t") or 0) >= 2), both_ex_neg=share(lambda r: (g(r, "train", "t") or 0) <= -2 and (g(r, "test", "t") or 0) <= -2),
+        median=dict(train_net=med([r["train"]["net"] for r in full]), test_net=med([r["test"]["net"] for r in full]), train_net28=med([g(r, "train", "net28") for r in full if g(r, "train", "net28") is not None]),
+                    test_net28=med([g(r, "test", "net28") for r in full if g(r, "test", "net28") is not None]), train_ex=med([r["train"]["ex"] for r in full]), test_ex=med([r["test"]["ex"] for r in full]),
+                    train_win=med([r["train"]["win"] for r in full]), test_win=med([r["test"]["win"] for r in full])),
+        byDim={},
+    )
+    for dname, _ in dims:
+        vals = {}
+        for r in full:
+            vals.setdefault(r["p"][dname], []).append(r)
+        out["byDim"][dname] = [dict(value=v, n=len(rs), train_net=med([r["train"]["net"] for r in rs]), test_net=med([r["test"]["net"] for r in rs]),
+                                    train_net28=med([g(r, "train", "net28") for r in rs if g(r, "train", "net28") is not None]), test_net28=med([g(r, "test", "net28") for r in rs if g(r, "test", "net28") is not None]),
+                                    test_ex=med([r["test"]["ex"] for r in rs]), both_net28_pos=float(np.mean([(g(r, "train", "net28") or -1) > 0 and (g(r, "test", "net28") or -1) > 0 for r in rs]))) for v, rs in vals.items()]
+    key = lambda r: min(g(r, "train", "net28") if g(r, "train", "net28") is not None else -9, g(r, "test", "net28") if g(r, "test", "net28") is not None else -9)
+    out["top"] = sorted(full, key=key, reverse=True)[:8]
+    return out
+
+
+def family_grids(df):
+    g = lambda k: np.nan_to_num(df[k].to_numpy())
+    btc = df.btc_d_sma50.to_numpy()
+    regimes = [("전체", np.ones(len(df), bool)), ("BTC 50일선 위", btc > 0), ("BTC 50일선 아래", btc <= 0)]
+    rev = g("rev_bar") == 1
+    wk = [("전체", np.ones(len(df), bool)), ("52주 하단 25%", df.w_pos52.to_numpy() < 0.25), ("주봉 상승 추세", (df.w_d_sma20.to_numpy() > 0) & (df.w_slope20.to_numpy() > 0))]
+    # 가설 1: 거래량 터짐 + 신저가 → 저점 지킴
+    rows = []
+    for vm, ln, c, k, ctx in GRID1:
+        base = g(f"g{vm}_{ln}_{c}_{k}_{ctx}") == 1
+        for cname, cm in ((("없음", np.ones(len(df), bool)),) if k == 0 else (("없음", np.ones(len(df), bool)), ("전일 고가 넘는 양봉", rev))):
+            for rname, rm in regimes:
+                for wname, wm in wk:
+                    m = dedup(df, base & cm & rm & wm)
+                    rows.append(dict(p={"거래량 배수": f"{vm}배 이상", "신저가 기준": f"{ln}일", "당일 종가 위치": "범위 위쪽 60% 안" if c else "조건 없음", "저점 지킨 일수": f"{k}일" if k else "당일 바로", "하락 흐름 조건": "있음" if ctx else "없음", "확인 봉": cname, "BTC 장세": rname, "주봉 상태": wname}, **light_stats(df, m)))
+    dims1 = [(d, None) for d in ("거래량 배수", "신저가 기준", "당일 종가 위치", "저점 지킨 일수", "하락 흐름 조건", "확인 봉", "BTC 장세", "주봉 상태")]
+    out = dict(capitulation=summarize_family(rows, dims1))
+    # 가설 2: 조용한 횡보 뒤 거래량 동반 돌파
+    rows = []
+    rng, quiet, vr = df.range60_prev.to_numpy(), df.days_since_pump.to_numpy(), df.vr.to_numpy()
+    for rv in (0.3, 0.45, 0.6, 0.9, 99):
+        for q in (0, 60, 120, 250):
+            for b in ("brk20", "brk60", "brk250"):
+                for v in (1.5, 2, 3, 5):
+                    base = (rng < rv) & (quiet > q) & (g(b) == 1) & (vr >= v)
+                    for rname, rm in regimes:
+                        m = dedup(df, base & rm)
+                        rows.append(dict(p={"직전 60일 범위": "제한 없음" if rv > 9 else f"{round(rv * 100)}% 미만", "급등 없던 기간": "제한 없음" if q == 0 else f"{q}일 넘게", "돌파 기준": {"brk20": "20일 고점", "brk60": "60일 고점", "brk250": "250일 고점"}[b], "거래량 배수": f"{v}배 이상", "BTC 장세": rname}, **light_stats(df, m)))
+    dims2 = [(d, None) for d in ("직전 60일 범위", "급등 없던 기간", "돌파 기준", "거래량 배수", "BTC 장세")]
+    out["base_breakout"] = summarize_family(rows, dims2)
     return out
 
 
@@ -235,13 +351,17 @@ def col_label(c):
     return LABEL3.get(c) or MKT_LABEL.get(c) or LABEL.get(c, c)
 
 
+def is_flag(c):
+    return c in BINARY or c in FLAGS3
+
+
 def cond_text(c, thr, left):
     name = col_label(c)
     if thr < -100:
         return f"{name}: {'값 없음' if left else '값 있음'}"
     if c.startswith("r_"):
         return f"{name} 하위 {thr * 100:.0f}% 이내" if left else f"{name} 상위 {(1 - thr) * 100:.0f}% 이내"
-    if abs(thr - 0.5) < 1e-6:
+    if is_flag(c) and 0 < thr < 1:
         return f"{name}: {'아니오' if left else '예'}"
     return f"{name} {'≤' if left else '>'} {thr:.3g}"
 
@@ -513,7 +633,9 @@ def main():
             st = event_stats(df, m, raw[mkt], cfg["cost"])
             rows.append(dict(id=sid, group=group, label=label, verdict=verdict(st), **st))
         log(f"  A 시나리오 {len(rows)}개 채점 완료")
-        tree_cols = [f"r_{c}" for c in feats] + model3
+        tree_cols = [c if c in BINARY else f"r_{c}" for c in feats] + model3
+        fam = family_grids(df)
+        log("  A2 가설 묶음 (기준값을 바꿔 가며) 채점 완료")
         mines = dict(
             ex7=mine(df, tree_cols, "ex"), ex28=mine(df, tree_cols, "ex28", lag=28), abs7=mine(df, tree_cols + S.MARKET_FEATS, "fwd"),
             new_only=mine(df, model3, "ex"),
@@ -525,7 +647,7 @@ def main():
         if tagged is not None:
             nr = news_round(df, raw[mkt], cfg, tagged, tree_cols)
             log(f"  D 뉴스 × 차트 완료 (뉴스가 붙은 코인·날 {nr['eventDays']:,}개)")
-        result["markets"].append(dict(market=mkt, label=cfg["label"], rows=int(len(df)), coins=int(df.sym.nunique()), dates=[df.date.min(), df.date.max()], base=dict(train=float(df.pump[~df.is_test].mean()), test=float(df.pump[df.is_test].mean()), net_train=float(df.fwd[~df.is_test].mean()), net_test=float(df.fwd[df.is_test].mean())), setups=rows, mines=mines, models=models, news=nr))
+        result["markets"].append(dict(market=mkt, label=cfg["label"], rows=int(len(df)), coins=int(df.sym.nunique()), dates=[df.date.min(), df.date.max()], base=dict(train=float(df.pump[~df.is_test].mean()), test=float(df.pump[df.is_test].mean()), net_train=float(df.fwd[~df.is_test].mean()), net_test=float(df.fwd[df.is_test].mean()), net28_train=float(df.fwd28[~df.is_test].mean()), net28_test=float(df.fwd28[df.is_test].mean()), win_train=float((df.fwd[~df.is_test] > 0).mean()), win_test=float((df.fwd[df.is_test] > 0).mean())), setups=rows, families=fam, mines=mines, models=models, news=nr))
         del df
 
     def clean(o):
