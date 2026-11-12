@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-11-13-aave",
+    "date": "2026-11-13",
+    "slot": "top100",
+    "project": "Aave",
+    "ticker": "AAVE",
+    "question": "Aave V4는 예치금을 어떻게 한 금고에 모아 빌려주고, 그 이자 가운데 얼마가 AAVE 보유자 몫이 될까?",
+    "oneLiner": "쉽게 말하면, 코인을 맡기면 이자를 주고 담보를 잡아 코인을 빌려주는 온체인 대출 창구이며, AAVE는 그 규칙을 정하고 매출 일부로 되사들이기로 한 거버넌스 토큰이다.",
+    "sector": "DeFi Lending · Money Market"
+  },
+  {
     "id": "2026-11-11-syrup",
     "date": "2026-11-11",
     "slot": "outside_top100",

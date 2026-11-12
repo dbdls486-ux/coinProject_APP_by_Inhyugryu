@@ -1,0 +1,742 @@
+{
+  "id": "2026-11-13-aave",
+  "date": "2026-11-13",
+  "slot": "top100",
+  "project": "Aave",
+  "ticker": "AAVE",
+  "question": "Aave V4는 예치금을 어떻게 한 금고에 모아 빌려주고, 그 이자 가운데 얼마가 AAVE 보유자 몫이 될까?",
+  "oneLiner": "쉽게 말하면, 코인을 맡기면 이자를 주고 담보를 잡아 코인을 빌려주는 온체인 대출 창구이며, AAVE는 그 규칙을 정하고 매출 일부로 되사들이기로 한 거버넌스 토큰이다.",
+  "meta": {
+    "sector": "DeFi Lending · Money Market",
+    "krwMarkets": [
+      "코인원 2020-10-15 (KRW)",
+      "업비트 2021-10-27 (KRW)",
+      "빗썸 (2021-10 이전 상장, 상장일 미확인)"
+    ],
+    "rank": "CoinGecko #49 · 시총 약 18.0억 달러 (2026-11-12)",
+    "launched": "V4 2026-03-30 이더리움 메인넷 (Aave Labs 블로그)"
+  },
+  "tldr": [
+    "Aave는 예치금을 담보 대출로 돌리는 온체인 대출 시장이며, V3 예치 자산은 DefiLlama 기준 2026년 11월 8일 157.6억 달러다.",
+    "V4는 자산을 허브 한 곳에 모으고 스포크별로 위험을 나누며, 차입 이자의 약 13%가 DAO 금고로 가고 나머지는 예치자 몫이다.",
+    "AAVE로 가는 유일한 경로인 바이백은 2026년 4월 19일부터 멈춰 있고, 자동 바이백 약속은 온체인에서 아직 확인되지 않는다."
+  ],
+  "who": {
+    "lead": "예치자는 코인을 놀리지 않고 이자를 받으려고, 차입자는 코인을 팔지 않고 다른 코인이나 달러를 구하려고 Aave를 쓴다.",
+    "glossary": [
+      {
+        "term": "허브 · Hub",
+        "meaning": "V4에서 체인마다 하나씩 두는 공동 금고. 예치된 자산이 실제로 보관되는 곳"
+      },
+      {
+        "term": "스포크 · Spoke",
+        "meaning": "사용자가 실제로 접하는 대출 창구. 담보 종류와 위험 기준을 따로 정하고 허브에서 돈을 꺼내 쓴다"
+      },
+      {
+        "term": "GHO",
+        "meaning": "Aave가 담보를 받고 직접 찍는 달러 스테이블코인. 이자가 전부 DAO 수입이 된다"
+      },
+      {
+        "term": "AAVE · stkAAVE",
+        "meaning": "거버넌스 투표에 쓰이는 토큰과 그 스테이킹 증서. 예치 지분과는 별개다"
+      }
+    ],
+    "body": [
+      "예치자의 문제는 유휴 자산이다. ETH나 USDC를 지갑에 두면 이자가 없다. Aave에 맡기면 차입자가 내는 이자를 받고, 담보로도 동시에 쓸 수 있다.",
+      "차입자의 문제는 세금과 포지션이다. ETH를 팔지 않고 달러를 쓰고 싶은 사람이 ETH를 담보로 USDC를 빌린다. wstETH를 맡기고 ETH를 빌려 스테이킹 수익을 키우는 레버리지 수요도 크다.",
+      "2026년에는 기관과 발행사가 창구를 직접 열었다. Circle의 Arc 체인에서는 USDC와 EURC 대출 시장이, Base에서는 토큰화 미국 주식 7종을 담보로 USDC를 빌리는 시장이 열렸다. Maple의 syrupUSDC와 Ethena의 USDe도 V4 스포크에 올라 있다."
+    ]
+  },
+  "money": {
+    "lead": "돈은 전부 온체인 계약에 있지만, 어떤 자산을 담보로 받고 한도를 얼마로 둘지는 DAO 투표와 위원회가 정한다.",
+    "overview": [
+      "V4의 구도는 허브와 스포크다. 체인마다 허브라는 공동 금고가 있고, 예치자가 넣은 자산은 모두 허브에 쌓인다. 사용자는 허브를 직접 건드리지 않고 스포크라는 창구를 통해 넣고 빌린다. 이더리움에는 Core·Prime·Plus 세 허브와 열 개 남짓의 스포크가 2026년 3월 30일 출범했다.",
+      "스포크는 각자 담보 종류와 담보계수, 청산 기준을 따로 정한다. 허브는 스포크마다 꺼내 쓸 수 있는 한도를 주고, 전체 차입이 전체 예치를 넘지 못하게 막는다. 그래서 한 스포크에서 사고가 나도 손실은 그 스포크의 적자로 먼저 기록되고, 허브 예치자 전체에 바로 번지지 않는 구조를 목표로 한다.",
+      "오프체인에는 사람이 있다. 위험 기준은 LlamaRisk 같은 위험 서비스 제공자가 제안하고 DAO가 투표로 정한다. 비상시 정지와 동결 권한은 Protocol Security Council이라는 멀티시그가 쥔다. 매출이 쌓이는 DAO 금고의 운용과 AAVE 바이백 집행은 서비스 제공자 네 곳으로 짜인 Aave Finance Committee가 맡는다. 아직 자산 대부분은 V3에 있어, V3는 157.6억 달러, V4는 7.7억 달러 규모다."
+    ],
+    "userFlow": {
+      "title": "일반 사용자가 Aave V4에서 맡기고 빌리는 과정",
+      "steps": [
+        {
+          "text": "Aave Pro 화면에서 스포크 하나를 고르고 자산을 맡긴다. 돈은 그 스포크가 연결된 허브로 들어간다.",
+          "detail": "V4 인터페이스는 pro.aave.com이며 시장 이름은 '스포크 · 허브'로 표시된다. 예치 자산은 스포크를 거쳐 Hub 계약에 보관되고, 사용자 지분은 aToken이 아니라 addedShares라는 내부 지분 수량으로 추적된다. 이더리움 Core Hub 주소는 0xCca852Bc40e560adC3b1Cc58CA5b55638ce826c9, Main Spoke는 0x94e7A5dCbE816e498b89aB752661904E2F56c485이다. ETH는 NativeTokenGateway가 WETH로 감싸 넣고, 서명 기반 입금은 SignatureGateway가 처리한다."
+        },
+        {
+          "text": "맡긴 자산에는 차입자가 낸 이자가 매 블록 쌓인다. 수수료를 뗀 뒤의 금액이 예치자 몫이다.",
+          "detail": "금리는 자산별 이용률 곡선으로 정한다. 이용률 = 차입 ÷ 총유동성이며 기준금리, 최적 이용률, 그 위아래 기울기가 Hub Asset별로 설정된다. 공급 금리는 차입 이자에서 liquidityFee만큼 뗀 값에서 나온다. V4 활성화 제안서 요약 기준 liquidityFee는 ETH 15%, 주요 스테이블코인 10%, WBTC·cbBTC·RLUSD·USDG·frxUSD 20%다. 2026년 10월 28일 DefiLlama 30일 수치로 V4 수수료 111만 달러 가운데 14.9만 달러가 프로토콜 매출로 잡혔다."
+        },
+        {
+          "text": "맡긴 자산을 담보로 켜고 다른 자산을 빌린다. 빌릴 수 있는 한도는 담보계수가 정한다.",
+          "detail": "Core Main 스포크의 담보계수는 Chaos Labs 제안 기준 ETH 83%, wstETH 80%, WBTC·cbBTC·USDC·USDT 78%, AAVE 76%, LINK 71%다. Lido 스포크의 wstETH는 95.5%로 상관 자산 전용이다. 건전성 지수 = 담보 인정가치 ÷ 부채이며 1 아래로 내려가면 청산 대상이다. 담보에 위험 프리미엄이 붙은 자산이 섞이면 차입자는 기준금리 위에 사용자별 프리미엄을 더 낸다. 2026년 10월 Arc의 syrupUSDC가 이 프리미엄을 처음 적용받은 자산이다."
+        },
+        {
+          "text": "담보 가치가 떨어져 지수가 1 아래로 가면 누구나 빚을 대신 갚고 담보를 할인가에 받아 간다.",
+          "detail": "청산자는 spoke.liquidationCall(collateralReserveId, debtReserveId, user, debtToCover, receiveShares)를 호출한다. 전부 갚지 않고 스포크별 targetHealthFactor까지만 갚는데 Core Main은 1.24, Lido 스포크는 1.0137이다. 보너스는 지수가 낮을수록 커지는 더치 옥션 방식으로 Core Main ETH의 최대 보너스는 5.55%, AAVE는 8.33%다. 남는 부채나 담보가 1,000달러 미만이면 전액 청산해야 한다. 청산 보너스의 10%는 liquidation fee로 프로토콜이 가져간다."
+        },
+        {
+          "text": "빚을 갚고 나면 맡긴 자산과 쌓인 이자를 아무 때나 뺀다. 단 허브에 현금이 남아 있어야 한다.",
+          "detail": "출금은 스포크의 withdraw로 허브에서 꺼내며 대기열은 없다. 이용률이 100%에 닿으면 차입자가 갚거나 새 예치가 들어올 때까지 출금이 막힌다. 2026년 4월 18일 사태 때 V3의 WETH 풀이 실제로 100% 이용률에 묶여 Aave Labs가 공급자에게 출금을 권고했다. 사용자는 GiverPositionManager·TakerPositionManager 같은 등록된 계약에 위임해 대신 넣고 빌리게 할 수도 있다."
+        }
+      ]
+    },
+    "issuerFlow": {
+      "title": "DAO와 위원회가 시장을 열고 돈을 관리하는 과정",
+      "steps": [
+        {
+          "text": "새 허브나 스포크, 새 담보는 포럼 제안과 투표를 거쳐 추가한다. 위험 기준은 외부 위험 업체가 제안한다.",
+          "detail": "절차는 ARFC 포럼 글 → Snapshot 투표 → 온체인 AIP 실행이다. V4 활성화는 2026년 3월 13일 ARFC, 3월 23일 Snapshot 통과, 3월 30일 AIP 실행으로 진행됐고 표수는 요약 자료에만 있어 미확인이다. Hub와 Spoke는 모두 governance가 배포·관리하며 Hub는 불변, Spoke는 업그레이드 가능하다. 담보계수·청산 기준은 Chaos Labs와 LlamaRisk가 제안했고, Chaos Labs는 이후 서비스 제공자 자리를 떠났다. 2026년 11월 9일에는 Babylon 금고에 잠긴 비트코인을 담보계수 78%로 받는 안이 Snapshot을 찬성 100%로 통과해 AIP 단계로 넘어갔다."
+        },
+        {
+          "text": "허브는 스포크마다 넣을 수 있는 양과 꺼낼 수 있는 양에 한도를 둔다. 출범 직후 한도는 보수적으로 잡고 단계적으로 올렸다.",
+          "detail": "한도는 HubSpokeConfig의 supplyCap·borrowCap과 SpokeData의 addCap·drawCap으로 자산별·스포크별로 걸린다. 허브 전체에도 totalSupplyCap·totalBorrowCap이 있다. 활성화 제안서 요약 기준 Core Main의 초기 add/draw 한도는 USDC·USDT 각 125만, WETH 1,500/130이었고 2026년 4월 9일·15일·30일 세 차례 증액 안건이 있었다. 증액 실행은 Aave Security Council이 확인했다. V4 Risk Steward는 2026년 7월 기준 활성화 준비 단계였다."
+        },
+        {
+          "text": "차입자가 내는 이자와 청산 수수료 가운데 프로토콜 몫이 DAO 금고에 쌓인다. Aave Labs 제품 매출도 전부 금고로 보내기로 했다.",
+          "detail": "Hub Asset 구조체에는 liquidityFee, realizedFees, feeReceiver 필드가 있고 수수료는 feeReceiver로 쌓인다. 수신 주소는 문서에 없다. 2026년 3월 27일 Aave Will Win 프레임워크는 aave.com 스왑, Aave App, Aave Card, Aave Pro 등 Aave Labs 브랜드 제품 매출 100%를 DAO 금고로 보내고 V4 프로토콜 매출도 100% DAO 귀속으로 명시했다. 대가로 Aave Labs는 스테이블코인 2,500만 달러와 4년 선형 베스팅 AAVE 7만 5,000개, 성장 보조금 1,750만 달러를 받는다. DefiLlama 기준 V3 누적 매출은 2.58억 달러, 2026년 10월 한 달 매출은 486만 달러다."
+        },
+        {
+          "text": "외부 운용사가 자기 허브를 열 수도 있다. 이때 매출은 DAO와 운용사가 절반씩 나눈다.",
+          "detail": "2026년 9월 28일 Sentora의 ARFC는 DAO가 계약 소유권과 Short Executor 권한을 갖고 Sentora에 철회 가능한 역할만 주는 구조다. 위험을 낮추는 변경은 Risk Steward로 즉시, 높이는 변경은 48시간 타임락, 새 허브·담보는 2주 포럼 검토 후 이의 시 Snapshot이다. 매출은 DAO 50%, Sentora 50%이며 최저 reserve factor는 20%다. 한 참여자의 포크 테스트는 이 20% 하한이 코드로 강제되지 않는다고 지적했다. 차입 가능 자산은 RLUSD·PYUSD·OUSD이며 2026년 10월 이더리움에서 가동을 시작했다."
+        },
+        {
+          "text": "담보가 부족해 못 받은 빚은 그 스포크의 적자로 기록된다. V3에서는 예치자가 스테이킹한 자산이 먼저 깎여 메운다.",
+          "detail": "V4 Hub Asset과 SpokeData에는 deficitRay 필드가 있어 적자를 자산별·스포크별로 기록한다. V3의 Umbrella는 UmbrellaCore가 풀 적자가 설정된 offset을 넘으면 자동으로 StakeToken을 slash하고 깎인 자산은 Aave Collector로 보낸다. USDT의 offset은 10만 USDT로 DAO가 그만큼 먼저 부담한다. 스테이킹 해지는 20일 쿨다운과 2일 창이다. Umbrella가 V4 허브를 보장하는지는 문서에 없고, LlamaRisk의 2026년 1월 분석은 허브별 Umbrella를 설계 선택지로 다뤘다."
+        },
+        {
+          "text": "비상시에는 보안 위원회가 시장을 멈추거나 담보 인정을 0으로 내린다. 2026년 4월 실제로 그렇게 했다.",
+          "detail": "V4 출범기에는 Protocol Security Council이 Guardian 성격으로 정지·동결 권한만 갖고, 안정화 뒤 물러나기로 했다. 2026년 11월 Babylon 스레드에서 Aave Labs는 이 위원회가 아직 소유자라고 밝혔다. 한 참여자의 포크 테스트는 V4 Security Council Safe가 5명 중 3명 서명이라고 보고했다. 2026년 4월 18일 rsETH 사태 때는 약 1시간 반 안에 모든 V3 배포의 rsETH·wrsETH를 동결하고 LTV를 0으로 내렸다. 사후에는 168개 자산 풀에 295건의 파라미터 변경을 실행하고, 브리지가 뚫린 자산의 담보 가치를 자동으로 0으로 내리는 LTV0 서킷브레이커를 도입했다."
+        },
+        {
+          "text": "금고 매출로 AAVE를 시장에서 사는 바이백은 위원회가 매주 집행했으나 지금은 멈춰 있다.",
+          "detail": "2024년 8월 Aavenomics 개편으로 승인되고 2025년 4월 9일 집행이 시작됐다. 연 5,000만 달러 예산, 주당 25만~175만 달러, 집행은 Chaos Labs·TokenLogic·LlamaRisk·ACI의 4인 중 3인 멀티시그인 AFC다. 매입분은 소각하지 않고 Ecosystem Reserve에 둔다. 2026년 3월 예산이 약 3,000만 달러로 줄었고, TokenLogic의 2026년 4월 22일 ARFC로 4월 19일부터 집행이 중단됐다. Grip Research 집계로 누적 매입은 4,290만 달러, 20만 5,000 AAVE 이상이다. 창업자는 2026년 6월 25일 매출 100%를 자동으로 AAVE에 돌리는 Aavenomics 3.0을 예고했지만 포럼 ARFC·AIP는 이번 조사에서 찾지 못했다."
+        }
+      ]
+    },
+    "example": [
+      "ETH 1개가 3,000달러라고 하자. 어떤 사용자가 Main 스포크에 ETH 100개를 맡기고 담보계수 83%까지인 24만 9,000달러 가운데 20만 달러의 USDC를 빌렸다. 건전성 지수는 24.9만 ÷ 20만으로 1.245다. ETH가 20% 내려 2,400달러가 되면 담보 인정가치는 19만 9,200달러로 지수가 0.996이 되어 청산 대상이 된다.",
+      "청산자는 지수를 1.24로 되돌릴 만큼만 USDC를 대신 갚고 그 금액의 최대 5.55%를 보너스로 얹어 ETH를 받아 간다. 보너스의 10%는 프로토콜 몫이다. 평소 이자는 차입자가 USDC 금리 5%를 낸다면 10%인 0.5가 DAO 금고로, 4.5가 예치자에게 간다. DefiLlama의 V3 최근 30일 수치로는 수수료 100 가운데 약 13이 DAO 몫이다."
+    ],
+    "mix": {
+      "asOf": "2026-11-08",
+      "source": "DefiLlama · Aave V3 (2026-11-08) / Aave V4 (2026-10-28) / AL Development Update October 2026 (2026-11-02)",
+      "headers": [
+        "구분",
+        "항목",
+        "금액 · 비중"
+      ],
+      "rows": [
+        [
+          "V3 예치 자산",
+          "TVL 전체 · 21개 체인",
+          "157.6억 달러 · 대출 잔액 114.9억 달러"
+        ],
+        [
+          "V3 예치 자산",
+          "이더리움",
+          "132.0억 달러 · 83.8%"
+        ],
+        [
+          "V3 예치 자산",
+          "Base · Arbitrum · Plasma",
+          "5.21억 · 4.91억 · 4.04억 달러"
+        ],
+        [
+          "V4 예치 자산",
+          "TVL 전체 · 4개 체인",
+          "7.67억 달러 · 대출 잔액 4.87억 달러 (2026-10-28)"
+        ],
+        [
+          "V4 예치 자산",
+          "이더리움 · Arc · Avalanche · Base",
+          "5.32억 · 1.79억 · 0.43억 · 0.13억 달러"
+        ],
+        [
+          "V4 예치 자산",
+          "Aave Labs 집계 예치금 · 대출",
+          "15억 달러 초과 · 4.5억 달러 초과 (2026-11-02 게시)"
+        ],
+        [
+          "V3 30일 흐름",
+          "차입자가 낸 수수료",
+          "3,712만 달러"
+        ],
+        [
+          "V3 30일 흐름",
+          "DAO 금고 귀속 매출",
+          "477만 달러 · 수수료의 약 13%"
+        ],
+        [
+          "V3 30일 흐름",
+          "AAVE 보유자 귀속",
+          "0달러 · 2026년 5월 이후 0"
+        ],
+        [
+          "GHO",
+          "발행량 · 준비자산 · 담보율",
+          "6.01억 GHO · 5.52억 달러 · 245% (2026-07 기준, AL 7월 업데이트)"
+        ]
+      ]
+    },
+    "trust": [
+      "DAO 거버넌스와 위험 서비스 제공자 — 어떤 자산을 담보로 받고 담보계수를 얼마로 둘지는 투표가 정한다. 제안의 질은 LlamaRisk 등 외부 업체에 달려 있으며, 2026년 들어 BGD Labs와 Chaos Labs가 서비스 제공자 자리를 떠났다.",
+      "Protocol Security Council — V4 출범기 정지·동결 권한을 가진 멀티시그다. 서명자 명단과 임계치는 공식 문서에 없고, 포럼 참여자의 포크 테스트가 5명 중 3명이라고 보고했다. 공식 문서는 안정화 뒤 물러난다고 적지만 2026년 11월에도 소유자다.",
+      "Aave Finance Committee — DAO 금고 운용과 바이백 집행을 맡은 4인 중 3인 멀티시그다. 바이백 중단도 투표가 끝나기 전에 이 위원회 판단으로 먼저 이뤄졌다는 지적이 포럼에 있다.",
+      "오라클과 브리지 — 가격은 Chainlink 피드와 CAPO 어댑터에 의존한다. 담보 자산 자체의 브리지는 Aave 밖의 신뢰 가정이며, 2026년 4월 rsETH 사태는 Aave 계약이 아니라 LayerZero 1-of-1 DVN 설정의 브리지가 뚫려 생겼다.",
+      "외부 큐레이터 — Sentora 허브는 담보와 금리 곡선을 Sentora가 정한다. DAO는 계약 소유권을 갖지만 20% 최저 수수료 하한은 코드가 아니라 약속이다.",
+      "Babylon 통합 — 비트코인 담보는 Babylon 금고 계약과 Babylon 거버넌스 멀티시그에 의존한다. Babylon 측 설명으로 임시 거버넌스는 7명 중 4명, 비상 가디언은 5명 중 3명이며 정지에는 타임락이 없다. 아직 메인넷에 배포되지 않았다.",
+      "Aave Labs — V4 코드를 짓고 배포하며 DAO에서 연 수천만 달러 보조금을 받는 회사다. 제품 매출 100%를 DAO로 보내겠다는 약속의 이행은 분기 보고와 제3자 검증에 달려 있다.",
+      "현재 구현 vs 로드맵 — 지금 돌아가는 것은 V3 풀, V4 허브 세 곳과 스포크들, Umbrella의 V3 보장이다. 자동 바이백, 매입분 소각, 비트코인 네이티브 담보, V4 Risk Steward는 예고나 제안 단계다."
+    ],
+    "security": [
+      "V4 감사 — Trail of Bits·Blackthorn·ChainSecurity 감사와 Certora 형식 검증, Sherlock 6주 공개 경연에 900명 이상 참여했다. Aave Labs는 누적 약 345일의 보안 검토와 DAO가 승인한 150만 달러 보안 예산을 밝혔다.",
+      "V3 사고 — DefiLlama 기록상 2026년 3월 12일 오라클 조작으로 86만 2,000달러 손실이 났고 전액 반환됐다.",
+      "rsETH 사태 — 2026년 4월 18일 17시 35분 UTC에 Kelp DAO의 LayerZero 브리지가 뚫려 뒷받침 없는 rsETH 11만 6,500개가 발행됐다. 공격자는 그중 8만 9,567개를 Aave V3 이더리움·Arbitrum에 담보로 넣고 WETH 8만 2,650개와 wstETH 821개를 빌렸다.",
+      "사태 규모 — Aave Labs와 LlamaRisk의 4월 20일 보고서는 손실을 1.24억~2.3억 달러로 추정했다. Bitquery 집계로 4월 18일부터 24일까지 이더리움 메인 시장에서 124억 달러가 순유출됐고 USDC·USDT 차입 금리는 3.5%에서 14%로 뛰었다.",
+      "사태 수습 — Mantle·Aave DAO·Lido·Ether.fi 등이 참여한 DeFi United 기금이 4월 25일까지 1.6억 달러를 모았다. Mantle의 최대 3만 ETH는 Lido 수익률 더하기 1%의 3년 신용공여 형태다. 5월 6일 공격자 포지션이 청산돼 회수 담보는 Recovery Guardian 멀티시그로 갔고, 6월 1일 Aave는 3억 달러 기금으로 정상화됐다고 발표했다. 예치자 손실 여부는 Aave가 '다른 사용자 영향 없음'이라고 밝힌 것 외에 제3자 확인이 없다.",
+      "Umbrella — V3 적자를 메우는 자동 slash 장치다. rsETH 사태 보고서는 Core 손실 시 WETH Umbrella 일시 정지를 권고했고, 실제 slash가 있었다는 보도는 없다.",
+      "버그바운티 — Sherlock에 V4 버그바운티가 있고, Babylon 통합에는 50만 달러 바운티가 걸려 있다."
+    ],
+    "body": [
+      "가장 가까운 비교 대상은 Morpho나 Euler 같은 모듈형 대출과 Aave 자신의 V3다. V3는 체인마다 풀을 따로 두어 유동성이 나뉘고, 모듈형은 시장마다 금고를 따로 두어 위험이 격리된다. V4는 금고를 허브 하나로 합쳐 유동성을 모으고, 위험 기준만 스포크로 나눈 절충이다.",
+      "그래서 믿어야 하는 대상도 중간이다. 모듈형은 큐레이터의 판단을, V3는 DAO의 한 벌 기준을 믿는다. **V4 예치자는 허브 하나에 돈을 넣고 DAO가 승인한 여러 창구의 위험을 한도만큼 나눠 지는 셈**이며, 한도를 정하는 손은 결국 투표와 위원회다."
+    ]
+  },
+  "usage": {
+    "lead": "대출 잔액 115억 달러로 온체인 대출 1위지만 예치 자산은 1년 전 고점의 3분의 1이고, 이자의 약 87%는 예치자에게 간다.",
+    "usageMetrics": [
+      {
+        "label": "Aave V3 TVL · 대출 잔액",
+        "value": "157.6억 달러 · 114.9억 달러 (2026-11-08)",
+        "source": "DefiLlama · Aave V3",
+        "meaning": "실제로 이자를 버는 돈의 규모다. 2025년 10월 7일 고점 454.4억 달러에서 3분의 1 수준으로 줄었고, 2026년 4월 사태 뒤 회복이 더디다. 대출 카테고리 519개 가운데 1위로 비중은 31.5%다."
+      },
+      {
+        "label": "Aave V4 TVL · 대출 잔액",
+        "value": "7.67억 달러 · 4.87억 달러 (2026-10-28)",
+        "source": "DefiLlama · Aave V4 / AL Development Update October 2026",
+        "meaning": "새 구조로 옮겨 간 돈의 규모다. Aave Labs는 2026년 11월 2일 게시물에서 예치금 15억 달러와 대출 4.5억 달러를 넘겼다고 밝혀 집계 기준이 다르다. 전체 대출 잔액의 4% 안팎이 V4에 있다."
+      },
+      {
+        "label": "V4 체인 · 허브 구성",
+        "value": "4개 체인 · 이더리움 3허브 (2026-10-28)",
+        "source": "DefiLlama · Aave Docs Changelog · AL Development Update",
+        "meaning": "이더리움 69.4%, Arc 23.4%로 두 체인이 대부분이다. Arc 시장은 2026년 9월 16일에, Base 토큰화 주식 시장은 3주 뒤에 열렸으며 Base 시장은 예치 900만 달러대다."
+      },
+      {
+        "label": "GHO 발행량",
+        "value": "6.01억 GHO · 준비자산 5.52억 달러 (2026-07)",
+        "source": "AL Development Update July 2026 (2026-08-14 게시)",
+        "meaning": "Aave가 직접 찍는 스테이블코인으로 차입 이자가 전부 DAO 수입이 된다. 2026년 10월 V3 Core의 GHO 차입 금리는 연 4.50%다."
+      }
+    ],
+    "revenueMetrics": [
+      {
+        "label": "V3 30일 Fees",
+        "value": "3,712만 달러 (2026-11-08)",
+        "source": "DefiLlama · Aave V3",
+        "meaning": "차입자가 낸 이자와 플래시론·청산 수수료의 총액이다. 연환산 약 4.5억 달러이며 2026년 10월 한 달은 3,809만 달러였다. 대부분은 예치자에게 간다."
+      },
+      {
+        "label": "V3 30일 Revenue",
+        "value": "477만 달러 (2026-11-08)",
+        "source": "DefiLlama · Aave V3",
+        "meaning": "DAO 금고로 가는 몫으로 Fees의 약 13%다. 누적 매출은 2.58억 달러, 누적 Fees는 18.75억 달러다. 2026년 3월 Aave Labs는 V3 연환산 매출을 1억 달러 이상이라고 적었다."
+      },
+      {
+        "label": "V3 30일 Holders Revenue",
+        "value": "0달러 (2026-11-08)",
+        "source": "DefiLlama · Aave V3",
+        "meaning": "AAVE 매입에 쓰인 것으로 집계된 금액이다. 2026년 4월 157만 달러가 마지막이고 5월부터 0이다. 누적은 4,642만 달러다."
+      },
+      {
+        "label": "DAO 금고 규모",
+        "value": "1.81억 달러 (2026-04-20)",
+        "source": "Unchained · CoinDesk (Aave Labs·LlamaRisk 사고 보고서 인용)",
+        "meaning": "ETH 연동 자산 6,200만, AAVE 5,400만, 스테이블코인 5,200만 달러였다. 이후 수치는 이번 조사에서 읽지 못했다. 사태 수습에 DAO가 2만 5,000 ETH 출연을 제안했으므로 지금은 구성이 다를 수 있다."
+      }
+    ],
+    "valueQuestion": "Aave 대출이 늘면 AAVE 보유자에게도 수익이 돌아가나?",
+    "valueAnswer": [
+      "예치자가 가장 많이 가져간다. 차입자가 낸 이자에서 자산별 liquidityFee만큼 뗀 나머지가 예치 지분 가치에 쌓인다. DefiLlama 최근 30일 수치로 Fees 3,712만 달러 가운데 약 87%가 예치자 몫이다.",
+      "프로토콜에 남는 돈은 약 13%다. 여기에 GHO 이자, 청산 수수료의 10%, 플래시론 수수료, 2026년 3월부터는 Aave Labs 제품 매출이 더해져 DAO 금고에 쌓인다. 금고는 서비스 제공자 보수, 보안 감사, Umbrella 보상에 쓰인다.",
+      "AAVE 보유자에게 직접 오는 현금은 없다. 승인된 경로는 금고 돈으로 AAVE를 시장에서 사서 Ecosystem Reserve에 쌓는 바이백 하나인데 2026년 4월 19일부터 멈춰 있다. stkAAVE 스테이킹 보상은 Umbrella 전환 뒤 Ecosystem Reserve에서 나오는 발행분이다.",
+      "창업자가 2026년 6월 예고한 Aavenomics 3.0은 매출 전부를 자동으로 AAVE에 돌리고 일부를 소각한다는 구상이다. **그러나 포럼에 ARFC나 AIP가 없고, 제3자 집계는 2026년 6월 24일 이후 온체인 매입이 없다고 본다.**"
+    ],
+    "policies": [
+      {
+        "name": "Aavenomics 바이백 프로그램",
+        "approved": "2024년 8월 거버넌스 승인 · 2025년 10월 ACI가 연 5,000만 달러 상설화 제안",
+        "executed": "2025년 4월 9일부터 AFC가 주당 25만~175만 달러 집행, 누적 4,290만 달러 · 2026년 3월 예산 약 3,000만 달러로 축소 · 2026년 4월 19일부터 중단",
+        "note": "매입분은 소각하지 않고 Ecosystem Reserve에 보관한다. 2025년 10월 제안의 Snapshot 표수는 이번 조사에서 확인하지 못했다."
+      },
+      {
+        "name": "[ARFC] Pause AAVE Buybacks",
+        "approved": "2026년 4월 22일 TokenLogic 게시 · Snapshot 가결 (댓글 기준 기권 37%, 표수 미확인)",
+        "executed": "집행 — 4월 19일 이후 매입 거래 없음. 재개 조건은 'rsETH 사태가 명확해질 때까지'로 날짜 없음",
+        "note": "투표 종료 전에 집행이 먼저 멈췄다는 지적이 포럼에 있다. 2026년 5월 18일 재개 요구 글은 7월 26일 답변 없이 닫혔다."
+      },
+      {
+        "name": "[ARFC] Aave Will Win Framework",
+        "approved": "2026년 3월 27일 Aave Labs 게시 · 3월 31일 Snapshot 상정 (표수 미확인)",
+        "executed": "Aave Labs 제품 매출 100% DAO 귀속과 2,500만 달러·7만 5,000 AAVE 보조금 체계. 분기 보고 이행 여부는 이번 조사에서 확인하지 못했다",
+        "note": "V4 비준은 별도 ARFC로 분리돼 3월 30일 실행됐다. BGD Labs·ACI가 맡던 유지보수를 Aave Labs가 흡수한다."
+      },
+      {
+        "name": "Aavenomics 3.0 자동 바이백",
+        "approved": "2026년 6월 25일 창업자 X 예고 · 2026년 10월 커뮤니티 방송에서 소각 포함 구상 발표 — 포럼 ARFC·Snapshot·AIP 없음",
+        "executed": "미집행 — DefiLlama Holders Revenue 2026년 5월 이후 0달러, Grip Research는 6월 24일 이후 온체인 매입 없음",
+        "note": "언론은 6월 27일 '가동'이라고 보도했지만 계약 주소, 매출 비율, 소각 비율을 밝힌 1차 자료가 없다."
+      },
+      {
+        "name": "[ARFC] Onboard Native BTC via Babylon Trustless Bitcoin Vaults",
+        "approved": "2026년 10월 14일 Babylon Labs 게시 · 11월 5일 Snapshot 상정 · 11월 9일 찬성 100% 가결 (TokenPost 보도)",
+        "executed": "미집행 — AIP 단계, 메인넷 목표 2026년 말. 계약은 11월 기준 이더리움 미배포",
+        "note": "매출은 연 50만 달러까지 DAO 100%, 그 위는 구간별로 Babylon과 나눈다. 토큰 매입 배분은 AAVE 85%·BABY 15%다."
+      }
+    ],
+    "tokenomics": {
+      "circulating": "유통 1,544만 / 총공급 1,600만 AAVE, 유통률 약 96.5%, CoinGecko 2026년 11월 12일 기준 · 가격 약 116달러, 시총 약 18.0억 달러, FDV 약 18.6억 달러, ATH 661.69달러 대비 -82.4%.",
+      "nextUnlock": "예정된 투자자·팀 언락 없음 — 미유통분은 DAO가 관리하는 Ecosystem Reserve로 스테이킹 보상·보조금에 쓰인다. Aave Labs의 7만 5,000 AAVE는 2026년부터 4년 선형 베스팅이다.",
+      "valuePath": "DAO 금고 매출로 AAVE를 시장 매입해 Ecosystem Reserve에 두는 바이백 하나. 배당·소각은 없고 바이백은 2026년 4월 19일부터 중단.",
+      "valueCapture": "indirect"
+    }
+  },
+  "risks": {
+    "lead": "가장 큰 변수는 담보로 받은 외부 자산의 브리지와 발행사가 무너질 때 허브 적자를 누가 메우는가다.",
+    "items": [
+      {
+        "risk": "담보 자산의 외부 위험 전염 (신용)",
+        "why": "rsETH 사태는 Aave 코드가 아니라 담보 자산의 브리지가 뚫려 2.3억 달러까지 손실 추정이 나왔다. V4 스포크는 적자를 격리하지만, 허브 예치자는 연결된 모든 스포크의 위험을 한도만큼 나눠 진다. LRT·토큰화 주식·syrupUSDC 같은 외부 발행 담보가 늘고 있다.",
+        "indicator": "스포크별 deficitRay 기록과 허브 한도 대비 외부 발행 담보 비중 / LTV0 서킷브레이커 발동 기록"
+      },
+      {
+        "risk": "출금 유동성 (유동성)",
+        "why": "출금은 허브에 현금이 있어야 가능하고 대기열이 없다. 2026년 4월에는 한 주에 124억 달러가 빠지면서 WETH 이용률이 100%에 묶여 출금이 막혔다. V4도 같은 이용률 구조다.",
+        "indicator": "주요 자산 이용률과 차입 금리 급등 여부, Aave Pro·DefiLlama 일별 순유출"
+      },
+      {
+        "risk": "토큰 가치귀속의 공백 (토큰)",
+        "why": "AAVE로 가는 유일한 경로인 바이백이 7개월째 멈춰 있고 재개 조건에 날짜가 없다. 자동 바이백 약속은 1차 자료가 없어 기대와 현실의 차이가 크다. 매입분을 소각하지 않아 유통량도 줄지 않는다.",
+        "indicator": "DefiLlama Holders Revenue가 0에서 벗어나는지 / 포럼에 Aavenomics 3.0 ARFC와 계약 주소가 올라오는지"
+      },
+      {
+        "risk": "운영 집중과 서비스 제공자 이탈 (운영)",
+        "why": "V4 코드와 배포, 제품, 매출 보고가 Aave Labs 한 곳에 모였고 BGD Labs·Chaos Labs가 떠났다. 보안 위원회 서명자와 임계치는 문서에 없다. 바이백 중단이 투표 전에 집행된 전례도 있다.",
+        "indicator": "Protocol Security Council 서명자·임계치 공개 여부 / Aave Labs 분기 매출 보고와 제3자 검증 게시 여부"
+      },
+      {
+        "risk": "V3에서 V4로의 이전 속도 (사업)",
+        "why": "대출 잔액의 96%가 아직 V3에 있다. V4 매출은 월 15만 달러 수준이어서 허브 구조의 장점이 숫자로 드러나지 않았다. 외부 큐레이터 허브는 매출을 절반 나눠 DAO 몫이 작다.",
+        "indicator": "DefiLlama V4 TVL·Active Loans의 V3 대비 비중 / Sentora·Babylon 스포크 매출의 DAO 귀속분"
+      }
+    ]
+  },
+  "watchlist": [
+    {
+      "indicator": "V3 Holders Revenue와 바이백 재개 안건",
+      "why": "AAVE에 돈이 돌아오는 유일한 경로의 가동 여부다",
+      "signal": "2026년 5월부터 0달러인 값이 바뀌는지, Aavenomics 3.0 ARFC와 계약 주소가 포럼에 오르는지"
+    },
+    {
+      "indicator": "V3·V4 TVL 합계와 V4 비중",
+      "why": "사태 뒤 회복과 새 구조로의 이전 속도를 함께 보여 준다",
+      "signal": "157.6억 달러에서 다시 줄어드는지, V4 대출 잔액이 전체의 4%에서 10%를 넘는지"
+    },
+    {
+      "indicator": "외부 발행 담보 비중과 스포크 적자",
+      "why": "다음 사고가 날 자리는 Aave 코드가 아니라 담보 자산의 발행사와 브리지다",
+      "signal": "LRT·syrupUSDC·토큰화 주식·네이티브 BTC 한도 증액과 deficitRay가 0에서 벗어나는지"
+    },
+    {
+      "indicator": "DAO 금고 잔고와 구성",
+      "why": "바이백 재개와 손실 흡수 여력을 가늠하는 값이다",
+      "signal": "2026년 4월 20일 1.81억 달러 대비 회복 여부와 AAVE 자기토큰 비중"
+    },
+    {
+      "indicator": "Babylon BTC 담보 AIP와 PoR",
+      "why": "비트코인 네이티브 담보는 V4 구조의 첫 큰 시험이다",
+      "signal": "AIP 실행일, 300 BTC 초기 한도의 증액, LlamaRisk가 권고한 준비금 증명 도입 여부"
+    }
+  ],
+  "verdict": "Aave는 대출 잔액 115억 달러와 누적 매출 2.58억 달러를 가진 온체인 대출 1위이며, V4는 금고를 허브로 합치고 위험을 스포크로 나눈 구조를 실제 가동 중이지만 자산의 96%는 아직 V3에 있다. 가장 큰 변수는 외부 발행 담보의 브리지·발행사 사고가 허브 적자로 번질 때의 처리와, 7개월째 멈춘 바이백이 약속대로 자동화되어 재개되는지다. 확인 지표는 DefiLlama Holders Revenue, V4 TVL 비중, 스포크별 적자 기록, DAO 금고 잔고다.",
+  "terms": [
+    {
+      "term": "허브와 스포크",
+      "meaning": "Hub & Spoke. 예치 자산을 보관하는 공동 금고 하나에 여러 대출 창구가 연결된 구조"
+    },
+    {
+      "term": "담보계수",
+      "meaning": "Collateral Factor. 담보 가치 가운데 빌릴 수 있는 비율. 83%면 100을 맡기고 83까지 빌린다"
+    },
+    {
+      "term": "건전성 지수",
+      "meaning": "Health Factor. 담보 인정가치를 부채로 나눈 값. 1 아래면 청산 대상"
+    },
+    {
+      "term": "청산",
+      "meaning": "제3자가 빚을 대신 갚고 담보를 할인가에 받아 가는 것"
+    },
+    {
+      "term": "청산 보너스",
+      "meaning": "청산자가 갚은 금액 위에 얹어 받는 담보의 할인 폭"
+    },
+    {
+      "term": "이용률",
+      "meaning": "Utilization. 예치금 가운데 빌려 나간 비율. 100%면 출금할 현금이 없다"
+    },
+    {
+      "term": "유동성 수수료",
+      "meaning": "liquidityFee. 차입 이자 가운데 프로토콜이 떼는 비율. V3의 reserve factor에 해당"
+    },
+    {
+      "term": "위험 프리미엄",
+      "meaning": "Risk Premium. 위험한 담보를 맡긴 차입자가 기준금리 위에 더 내는 이자"
+    },
+    {
+      "term": "크레딧 라인",
+      "meaning": "허브가 스포크에 허용하는 차입 한도. 다른 허브의 스포크에도 줄 수 있다"
+    },
+    {
+      "term": "적자",
+      "meaning": "deficit. 담보를 다 팔아도 못 받은 빚. 자산별·스포크별로 기록된다"
+    },
+    {
+      "term": "Umbrella",
+      "meaning": "V3 예치 토큰을 스테이킹해 적자가 나면 자동으로 깎아 메우는 안전 장치"
+    },
+    {
+      "term": "slash",
+      "meaning": "스테이킹된 자산을 강제로 깎아 손실을 메우는 것"
+    },
+    {
+      "term": "Ecosystem Reserve",
+      "meaning": "DAO가 관리하는 AAVE 보유 금고. 스테이킹 보상·보조금·바이백 매입분이 모인다"
+    },
+    {
+      "term": "AFC",
+      "meaning": "Aave Finance Committee. 금고 운용과 바이백을 집행하는 서비스 제공자 4곳의 멀티시그"
+    },
+    {
+      "term": "ARFC · Snapshot · AIP",
+      "meaning": "포럼 제안 → 오프체인 가결 투표 → 온체인 실행 투표로 이어지는 Aave 거버넌스 3단계"
+    },
+    {
+      "term": "Risk Steward",
+      "meaning": "투표 없이 정해진 범위 안에서 위험 기준을 바꿀 수 있는 위임 계약"
+    },
+    {
+      "term": "Protocol Security Council",
+      "meaning": "V4 출범기에 정지·동결 권한을 가진 보안 멀티시그"
+    },
+    {
+      "term": "LRT",
+      "meaning": "Liquid Restaking Token. rsETH·weETH처럼 재스테이킹 지분을 토큰화한 자산"
+    },
+    {
+      "term": "DVN",
+      "meaning": "LayerZero 브리지에서 메시지를 검증하는 노드. 1-of-1이면 검증자 하나만 뚫리면 된다"
+    },
+    {
+      "term": "LTV0 서킷브레이커",
+      "meaning": "브리지가 뚫린 담보의 인정 가치를 자동으로 0으로 내리는 장치"
+    },
+    {
+      "term": "플래시론",
+      "meaning": "한 거래 안에서 빌리고 갚는 무담보 대출. 수수료가 DAO 수입이 된다"
+    },
+    {
+      "term": "바이백",
+      "meaning": "프로토콜이 자기 토큰을 시장에서 되사는 것"
+    },
+    {
+      "term": "토큰화 주식",
+      "meaning": "미국 주식 1주와 연동되도록 발행한 온체인 토큰. Base 시장의 담보로 쓰인다"
+    },
+    {
+      "term": "TVL",
+      "meaning": "Total Value Locked. 프로토콜에 묶인 자산 총액. 대출 시장에서는 예치금에서 차입을 뺀 값에 가깝다"
+    },
+    {
+      "term": "FDV",
+      "meaning": "총공급량 기준 시가총액"
+    }
+  ],
+  "openItems": [
+    {
+      "item": "Aavenomics 3.0 자동 바이백의 계약 주소·매출 비율·소각 비율",
+      "status": "미공시",
+      "tried": "Aave 거버넌스 포럼 검색, Aave Will Win·바이백 중단·재개 스레드, The Defiant·TechFlow·Grip Research 기사를 확인했다. 창업자 발언과 보도만 있고 ARFC·AIP·계약이 없다.",
+      "howToVerify": "governance.aave.com에 Aavenomics 3.0 ARFC가 오르면 계약 주소를 받아 Blockscout에서 AAVE 매입 거래를 확인한다.",
+      "matters": "AAVE 보유자에게 돈이 가는 유일한 경로의 실체다."
+    },
+    {
+      "item": "V4 허브별 liquidityFee 실제 설정값과 feeReceiver 주소",
+      "status": "온체인 확인 대기",
+      "tried": "Aave V4 문서의 Hubs·Spokes 페이지와 활성화 ARFC를 읽었다. 필드명은 있으나 값은 제안서 요약에만 있고 문서의 parameters 페이지는 열지 못했다.",
+      "howToVerify": "Core Hub 0xCca852Bc40e560adC3b1Cc58CA5b55638ce826c9의 Asset 설정 변경 이벤트 로그에서 liquidityFee와 feeReceiver 최종값을 읽는다."
+    },
+    {
+      "item": "Protocol Security Council 서명자 수·임계치·명단",
+      "status": "미공시",
+      "tried": "V4 활성화 ARFC, Aave 문서, Babylon 스레드의 Aave Labs 댓글을 확인했다. 포럼 참여자의 포크 테스트가 5명 중 3명이라고 적은 것이 유일하다.",
+      "howToVerify": "Aave 문서 addresses 페이지 또는 Permission Book에서 Safe 주소를 찾아 Blockscout의 SafeSetup·AddedOwner·ChangedThreshold 로그로 복원한다."
+    },
+    {
+      "item": "DAO 금고 현재 잔고와 구성",
+      "status": "접근 실패",
+      "tried": "DefiLlama Aave 페이지 3개에 treasury 항목이 없었고, TokenLogic 금고 대시보드는 링크로만 확인했다. 2026년 4월 20일 1.81억 달러가 마지막 수치다.",
+      "howToVerify": "TokenLogic Aave 재무 대시보드 또는 Aave Collector 계약 잔고를 Blockscout에서 읽는다."
+    },
+    {
+      "item": "rsETH 사태의 최종 손실 배분",
+      "status": "미공시",
+      "tried": "CoinDesk·Unchained·Bitcoin.com·Bitquery 기사를 읽었다. Aave는 '다른 사용자 영향 없음'이라고만 밝혔고 DAO 금고 출연 ETH 수량, Umbrella slash 여부, Mantle 신용공여 상환 조건의 최종 확정치는 없다.",
+      "howToVerify": "governance.aave.com의 rsETH Incident Report 스레드와 DeFi United 25,000 ETH 출연 AIP 실행 기록을 확인한다.",
+      "matters": "DAO 금고가 실제로 얼마를 썼는지가 바이백 재개 여력을 정한다."
+    },
+    {
+      "item": "주요 투표의 표수 (V4 활성화 · 바이백 중단 · Babylon ARFC)",
+      "status": "접근 실패",
+      "tried": "포럼 스레드에는 가결 사실과 날짜만 있고 Snapshot 페이지는 열지 않았다. Babylon 안건은 TokenPost 보도의 찬성 100%만 있다.",
+      "howToVerify": "snapshot.org의 aave.eth 스페이스에서 각 제안의 표수와 상위 주소를 확인한다."
+    },
+    {
+      "item": "빗썸 AAVE 원화마켓 상장일",
+      "status": "접근 실패",
+      "tried": "검색 결과에 빗썸 공지가 없었고, 2021년 10월 27일 기사가 빗썸·코인원·코빗에서 이미 거래 중이라고만 적었다.",
+      "howToVerify": "빗썸 고객센터 공지사항에서 '에이브' 상장 공지를 검색한다."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Aave Docs – Aave V4 Overview",
+      "url": "https://aave.com/docs/aave-v4",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Docs – V4 Hubs",
+      "url": "https://aave.com/docs/aave-v4/liquidity/hubs",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Docs – V4 Spokes",
+      "url": "https://aave.com/docs/aave-v4/liquidity/spokes",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Docs – V4 Position Managers",
+      "url": "https://aave.com/docs/aave-v4/positions/managers",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Docs – V4 Liquidations",
+      "url": "https://aave.com/docs/aave-v4/positions/liquidations",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Docs – AAVE Token (바이백 프로그램·AFC)",
+      "url": "https://aave.com/docs/ecosystem/aave",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Docs – Umbrella (V3)",
+      "url": "https://aave.com/docs/aave-v3/umbrella",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Docs – Changelog (V4 Base·Arc·Avalanche 배포일)",
+      "url": "https://aave.com/docs/resources/changelog",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Labs 블로그 – Aave V4 is Live on Ethereum (2026-03-30)",
+      "url": "https://aave.com/blog/aave-v4-live-ethereum",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Labs 블로그 – Understanding Aave V4's Architecture (2025-06-12)",
+      "url": "https://aave.com/blog/understanding-aave-v4s-architecture",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Labs 블로그 – Aave V4 Risk Premiums (2025-07-24)",
+      "url": "https://aave.com/blog/aave-v4-risk-premiums",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Labs 블로그 – Aave Pro User Guide (2026-03-29)",
+      "url": "https://aave.com/blog/aave-pro-user-guide",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – [ARFC] Aave V4 Activation on Ethereum Mainnet (2026-03-13)",
+      "url": "https://governance.aave.com/t/arfc-aave-v4-activation-on-ethereum-mainnet/24293",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – Aave V4 Hub-and-Spoke Initial Configurations (2026-03-04)",
+      "url": "https://governance.aave.com/t/aave-v4-hub-and-spoke-initial-configurations/24233",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – [ARFC] Aave Will Win Framework (2026-03-27)",
+      "url": "https://governance.aave.com/t/arfc-aave-will-win-framework/24352",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – [ARFC] Pause AAVE Buybacks (2026-04-22)",
+      "url": "https://governance.aave.com/t/arfc-pause-aave-buybacks/24686",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – Restart aave buy backs (2026-05-18)",
+      "url": "https://governance.aave.com/t/restart-aave-buy-backs/24936",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – Hubs & Spokes in Aave V4: A Risk-Centric Analysis, LlamaRisk (2026-01-20)",
+      "url": "https://governance.aave.com/t/hubs-spokes-in-aave-v4-a-risk-centric-analysis/23907",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – [ARFC] Sentora Externally Curated Hub & Spoke Framework on Aave V4 (2026-09-28)",
+      "url": "https://governance.aave.com/t/arfc-sentora-externally-curated-hub-spoke-framework-on-aave-v4/25723",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – [ARFC] Onboard Native BTC as Collateral to Aave V4 via Babylon Trustless Bitcoin Vaults (2026-10-14)",
+      "url": "https://governance.aave.com/t/arfc-onboard-native-btc-as-collateral-to-aave-v4-via-babylon-trustless-bitcoin-vaults/25845",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – AL Development Update, October 2026 (2026-11-02)",
+      "url": "https://governance.aave.com/t/al-development-update-october-2026/25979",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – AL Development Update, July 2026 (2026-08-14)",
+      "url": "https://governance.aave.com/t/al-development-update-july-2026/25482",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Aave Governance – TokenLogic Delegate Platform, June 2026 voting report (2026-08-01)",
+      "url": "https://governance.aave.com/t/tokenlogic-delegate-platform/12516/38",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "DefiLlama – Aave V3 (2026-11-08 데이터)",
+      "url": "https://defillama.com/protocol/aave-v3",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "DefiLlama – Aave V4 (2026-10-28 데이터)",
+      "url": "https://defillama.com/protocol/aave-v4",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "DefiLlama – Aave (상위 페이지)",
+      "url": "https://defillama.com/protocol/aave",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "CoinGecko – Aave (AAVE)",
+      "url": "https://www.coingecko.com/en/coins/aave",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "TokenPost – Aave DAO Approves Plan to Add Native Bitcoin Collateral to V4 (2026-11-10)",
+      "url": "https://www.tokenpost.com/news/technology/53076",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "The Defiant – Aave Confirms Aavenomics 3.0 Is Live With Buybacks and DAO Spending Cut (2026-06-27)",
+      "url": "https://thedefiant.io/news/defi/aave-confirms-aavenomics-3-0-live-buybacks-dao-spending-cut",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "The Defiant – Aave Advances Automated AAVE Buyback Overhaul With Aavenomics 3.0 (2026-06-27)",
+      "url": "https://thedefiant.io/news/defi/aave-advances-automated-aave-buyback-overhaul-aavenomics-3-0",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "TechFlow – Aave Announces Aavenomics 3.0, V4 Supports 7 Tokenized Stocks (2026-10-23)",
+      "url": "https://www.techflowpost.com/en-US/article/34817",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "SpazioCrypto – Aave Buys Back Its Token in a Bear Market (2026-06-28)",
+      "url": "https://en.spaziocrypto.com/defi/aave-buys-back-token-bear-market-buyback-aavenomics/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Grip Research – THE DIVE: AAVE (2026-10-16, 수치 2026-11-12 갱신)",
+      "url": "https://gripresearch.xyz/articles/aave",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "The Block – Aave DAO proposes $50 million annual token buyback program (2025-10-22)",
+      "url": "https://www.theblock.co/post/375677/aave-dao-token-buyback-program-revenue-zeller-aci",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Unchained – Aave Faces Up to $230 Million in Losses After Kelp DAO Exploit (2026-04-21)",
+      "url": "https://unchainedcrypto.com/aave-faces-up-to-230-million-in-losses-after-kelp-dao-exploit-incident-report-finds/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "CoinDesk – Aave could face up to $230M in losses after Kelp DAO bridge exploit (2026-04-20)",
+      "url": "https://www.coindesk.com/tech/2026/04/20/aave-could-face-up-to-usd230-million-in-losses-after-kelp-dao-bridge-exploit-triggers-defi-chaos",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "CoinDesk – Arkham says Aave raised $160 million of the $200 million it needs (2026-04-26)",
+      "url": "https://www.coindesk.com/business/2026/04/26/aave-raises-nearly-80-of-the-usd200-million-it-needs-to-cover-bad-debt-left-by-kelp-dao-exploit",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "CoinDesk – A crypto coalition releases technical proposal to save Aave users (2026-04-28)",
+      "url": "https://www.coindesk.com/tech/2026/04/28/a-crypto-coalition-releases-technical-proposal-to-save-aave-users-from-a-massive-token-exploit",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Bitcoin.com News – DeFi United Secures $160M as Industry Moves to Cover Aave Bad Debt Crisis (2026-04-26)",
+      "url": "https://news.bitcoin.com/defi-united-secures-160m-as-industry-moves-to-cover-aave-bad-debt-crisis/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Bitcoin.com News – Aave Says Operations Back to Normal as $300M Backstop Replaces Drained Assets (2026-06-03)",
+      "url": "https://news.bitcoin.com/aave-says-operations-back-to-normal-as-300m-backstop-replaces-drained-assets/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Bitcoin Foundation News – Aave Liquidates Kelp DAO Hacker's Positions (2026-05-07)",
+      "url": "https://bitcoinfoundation.org/news/crimes-and-fraud-news/aave-liquidates-hackers-positions/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Bitquery – Aave TVL After the Kelp DAO Hack: $12 Billion Left in a Week (2026-09-24)",
+      "url": "https://bitquery.io/investigations/aave-rseth-exploit-run",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Crypto Briefing – Aave lays out rsETH risk and recovery paths after Kelp DAO exploit",
+      "url": "https://cryptobriefing.com/aave-kelp-dao-exploit-implications/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "P2P.org – DeFi Dispatch October 2026 (Aave TVL·분기 자산 검토)",
+      "url": "https://p2p.org/economy/defi-dispatch-defi-news-october-2026-issue-1/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "코인원 – 에이브(AAVE) 원화마켓 상장 안내 (2020-10-14)",
+      "url": "https://coinone.co.kr/info/notice/1112",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "내외경제TV – 업비트, 1인치 네트워크(1INCH)·에이브(AAVE) 상장 (2021-10-27)",
+      "url": "https://www.nbntv.co.kr/news/articleView.html?idxno=938369",
+      "accessed": "2026-11-12"
+    }
+  ]
+}
