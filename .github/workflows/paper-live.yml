@@ -1,0 +1,72 @@
+# 모의매매 실시간 장부.
+#
+# GitHub 의 예약 실행(schedule)은 몇 시간씩 밀리거나 아예 빠진다 (매시간으로 걸어 둔 것이 21시간에 2번만 돌았음).
+# 그래서 예약 실행에 기대지 않고, 한 번 시작하면 스스로 이어 간다:
+#   - 한 회차는 약 5시간 30분 동안 돌며 매시 5분(UTC)마다 장부를 갱신한다. 00:05 UTC 회차가 전날 일봉 마감을 처리한다.
+#   - 끝나기 직전에 다음 회차를 직접 예약한다(workflow_dispatch). 같은 묶음(concurrency)이라 앞 회차가 끝나야 시작한다.
+#   - 3시간마다의 예약 실행은 '지킴이'다. 사슬이 끊겼을 때만 새로 시작되고, 돌고 있을 때는 대기열에서 다음 회차와 합쳐진다.
+name: paper-live
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */3 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/paper-live.yml"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: paper-live
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 파이썬 패키지
+        run: pip install --quiet "numpy>=2" "pandas>=2.2"
+      - name: 매시간 장부 갱신 (약 5시간 30분)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          END=$(( $(date +%s) + 330 * 60 ))
+          while :; do
+            # 최신 코드·기대값 표를 받는다. 꼬이면 저장소 상태로 되돌린다 (장부는 저장소에 있는 것이 기준)
+            git pull -q --rebase origin main || { git rebase --abort 2>/dev/null; git fetch -q origin main && git reset -q --hard origin/main; }
+            if python lab/paper/live.py; then
+              git add data/paper/state.json data/paper/equity.json data/paper/trades.json lab/results/PAPER.md
+              if ! git diff --cached --quiet; then
+                git commit -q -m "paper: 장부 갱신 $(date -u '+%Y-%m-%d %H:%M')"
+                for i in 1 2 3 4 5; do
+                  if git pull -q --rebase origin main && git push -q; then break; fi
+                  git rebase --abort 2>/dev/null; sleep $(( i * 5 ))
+                done
+              fi
+            else
+              echo "이번 갱신 실패 — 다음 회차에 다시 시도"
+            fi
+            NOW=$(date +%s)
+            NEXT=$(( (NOW / 3600 + 1) * 3600 + 300 ))
+            if [ "$NEXT" -gt "$END" ]; then break; fi
+            echo "다음 갱신 $(date -u -d @$NEXT '+%H:%M') UTC"
+            sleep $(( NEXT - NOW ))
+          done
+      - name: 다음 회차 예약
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in 1 2 3; do gh workflow run paper-live.yml --ref main -R "$GITHUB_REPOSITORY" && exit 0; sleep 10; done
+          exit 1

@@ -60,7 +60,7 @@ GitHub Actions(`.github/workflows/lab.yml`)가 실행한다. `lab/` 코드가 �
 
 ## 모의매매 (`paper/` → `data/paper/*.json`, `results/PAPER.md`)
 
-검증에서 살아남은 것만 모아 실제처럼 장부를 굴린다. 실제 주문은 내지 않는다. `.github/workflows/paper.yml` 이 4시간마다 돌린다.
+검증에서 살아남은 것만 모아 실제처럼 장부를 굴린다. 실제 주문은 내지 않는다. 실시간 장부는 `.github/workflows/paper-live.yml` 이 매시간 갱신하고(한 회차가 약 5시간 30분 돌며 끝날 때 다음 회차를 직접 예약), 과거 재현과 기대값 표는 `paper.yml` 이 매주 다시 만든다.
 
 - `paper/core.py`: 신호 6종 × 시장 상태 4종 × 과열 여부로 나눈 '기대값 표'와 장부 엔진. 하루를 시가(주문 체결) → 장중(손절·익절) → 종가(만료·평가·새 주문) 세 단계로 처리한다.
 - `paper/backtest.py`: 같은 엔진으로 2020년부터 과거를 재현하고, 마지막 날 기준 기대값 표(`playbook.json`)를 만든다. 표는 매주 그 시점까지 끝난 거래만으로 계산한다.

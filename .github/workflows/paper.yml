@@ -1,13 +1,10 @@
-# 모의매매.
-#   live     : 매시간 바이낸스 시세를 받아 장부(data/paper/state.json 등)를 갱신한다.
-#              (깃허브 예약 실행은 몇 시간씩 밀리거나 빠지는 일이 있어 자주 시도한다. 빠진 회차는 다음 실행이 밀린 날짜를 한꺼번에 처리한다.)
-#   backtest : 매주 월요일과 lab/paper 코드가 바뀔 때, 과거 재현과 기대값 표(data/paper/playbook.json)를 다시 만든다.
+# 모의매매 과거 재현과 기대값 표(data/paper/playbook.json).
+# 매주 월요일과 lab/paper 코드가 바뀔 때 다시 만든다. 실시간 장부는 paper-live.yml 이 맡는다 (다음 갱신 때 새 표를 읽는다).
 name: paper
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "23 * * * *"
     - cron: "37 1 * * 1"
   push:
     branches: [main]
@@ -24,7 +21,6 @@ concurrency:
 
 jobs:
   backtest:
-    if: github.event_name != 'schedule' || github.event.schedule == '37 1 * * 1'
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -60,34 +56,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/paper/backtest.json data/paper/playbook.json lab/results/PAPER.md
+          git add data/paper/backtest.json data/paper/playbook.json
           if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
           git commit -m "paper: 과거 재현·기대값 표 $(date -u +%Y-%m-%d)"
           for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
           exit 1
 
-  live:
-    needs: backtest
-    if: always() && (needs.backtest.result == 'success' || needs.backtest.result == 'skipped')
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: 파이썬 패키지
-        run: pip install --quiet "numpy>=2" "pandas>=2.2"
-      - name: 장부 갱신
-        run: python lab/paper/live.py
-      - name: 결과 커밋
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/paper/state.json data/paper/equity.json data/paper/trades.json lab/results/PAPER.md
-          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
-          git commit -m "paper: 장부 갱신 $(date -u '+%Y-%m-%d %H:%M')"
-          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
-          exit 1
