@@ -1,0 +1,535 @@
+{
+  "id": "2026-11-13",
+  "date": "2026-11-13",
+  "asOf": "2026-11-13 09:25 KST",
+  "window": "최근 24시간 (11/12 08:30 → 11/13 08:30 KST)",
+  "title": "젠슨 황 사임에 비트코인 -3%, 니어·유니스왑 등 알트는 -9%",
+  "regime": "하락장",
+  "tldr": [
+    "엔비디아 CEO 사임 발표 뒤 비트코인이 7만 1천 달러대로 밀리며 3개월 최저를 찍었다.",
+    "비트코인 24시간 -3.4%, 시총 100위 안 하락 상위 9종은 -7.6~-9.2%였다.",
+    "11/12 거래일 ETF 집계, 오늘 21시 펄 코인베이스 거래 개시를 본다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "BTC vs 알트 (24시간)",
+      "value": "-3.4% vs -8%대",
+      "basis": "11/13 08~09시 기준 24시간 · 바이낸스, CoinMarketCap",
+      "tone": "down",
+      "details": [
+        {
+          "label": "BTC",
+          "value": "업비트 9,664만원, 전일 9시 대비 -3.68%. 바이낸스 71,421달러, 저점 71,200달러"
+        },
+        {
+          "label": "ETH",
+          "value": "24시간 -2.0%, 2,016달러. 원화 환산 약 268만원"
+        },
+        {
+          "label": "메이저",
+          "value": "BNB -4.5% · SOL -3.8% · DOGE -3.6% · XRP -2.5% · HYPE -2.2%"
+        },
+        {
+          "label": "시총 100위 안 24시간 하락 상위",
+          "value": "QNT -9.2% · NEAR -9.0% · UNI -8.9% · STX -8.7% · XMR -8.5% · ENA -8.5% · AAVE -8.1% · INJ -7.9% · VVV -7.6%"
+        },
+        {
+          "label": "시총 100위 안 24시간 상승",
+          "value": "PEARL +11.7% · M +2.3% · JST +1.3% · XDC +0.9%. 원화 마켓 상승 종목 비율 31%"
+        }
+      ]
+    },
+    {
+      "label": "파생 청산 (24시간)",
+      "value": "6.62억 달러, BTC는 롱 96%",
+      "basis": "11/13 08시 기준 24시간 · Coinglass, 블록미디어 인용",
+      "tone": "down",
+      "details": [
+        {
+          "label": "BTC",
+          "value": "2.75억 달러 청산, 대부분 롱"
+        },
+        {
+          "label": "05시 기준",
+          "value": "전체 5.57억 달러, 롱 91.7% · BTC 2.84억 · ETH 1.18억 달러 (토큰포스트)"
+        },
+        {
+          "label": "옵션",
+          "value": "BTC 풋/콜 거래량 비율 1.27, 미결제 비율 0.74"
+        }
+      ]
+    },
+    {
+      "label": "미국 BTC 현물 ETF",
+      "value": "11/12 거래일 미집계",
+      "basis": "11/11 거래일 -3.00억 달러 · Farside, 코인센트럴 인용",
+      "tone": "down",
+      "details": [
+        {
+          "label": "11/11 거래일",
+          "value": "-3.00억 달러로 5거래일 연속 순유출. IBIT -2.70억, GBTC -0.39억, MSBT +0.09억"
+        },
+        {
+          "label": "11/5~11 누적",
+          "value": "BTC ETF -14.4억 달러, 이 중 IBIT -10.7억 달러"
+        },
+        {
+          "label": "ETH ETF",
+          "value": "11/11 거래일 -1.45억 달러, ETHA -1.30억. 5거래일 누적 -5.24억 달러"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "24시간 -3.4%, 71,421달러",
+      "note": "업비트 9,664만원으로 전일 9시 대비 -3.68%. 장중 71,200달러로 8월 20일 이후 최저. 21주 이동평균 73,078달러 아래로 복귀."
+    },
+    {
+      "label": "ETH",
+      "value": "24시간 -2.0%, 2,016달러",
+      "note": "원화 환산 약 268만원. 블록미디어 08시 기준."
+    },
+    {
+      "label": "전체 시총",
+      "value": "24시간 -2.5%, 2.483조 달러",
+      "note": "CoinGecko 09시대 조회. 24시간 거래량 712억 달러. 원화 마켓 업비트·빗썸 합산 거래대금 1.58조원."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "57.8%",
+      "note": "CoinGecko. ETH 도미넌스 9.93%. 전일 57.7%에서 거의 그대로."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/12 거래일 미집계",
+      "note": "11/11 거래일 -3.00억 달러로 5거래일 연속 유출. IBIT가 -2.70억 달러로 대부분."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/12 거래일 미집계",
+      "note": "11/11 거래일 -1.45억 달러로 5거래일 연속 유출, 11/5 이후 누적 -5.24억 달러."
+    },
+    {
+      "label": "전체 청산(24시간)",
+      "value": "6.62억 달러, BTC 롱 96%",
+      "note": "Coinglass 08시 기준 블록미디어 인용. 전일 2.47억 달러의 약 2.7배."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "28, 공포",
+      "note": "토큰포스트 인용, 전일 29. 김치 프리미엄 1.6%."
+    },
+    {
+      "label": "거시·증시",
+      "value": "엔비디아 장 초반 -13%, 마감 -4%대",
+      "note": "12일 젠슨 황 CEO 사임 발표, 콜레트 크레스 CFO가 임시 CEO. S&P500 -0.4%, 나스닥100 -0.3%. 브렌트유 95달러 위로 +3%."
+    },
+    {
+      "label": "집계 기준",
+      "value": "CoinMarketCap·CoinGecko 24시간, 09시대 조회",
+      "note": "종목 등락은 CoinMarketCap 상위 100 표, 시총·순위는 CoinGecko. 원화 마켓 등락은 토큰포스트 07시 집계로 교차 확인."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,330.7원",
+      "note": "11/12 서울 외환시장 마감가 일괄 적용, 전일보다 2.9원 하락. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "Pearl",
+      "ticker": "PEARL",
+      "direction": "up",
+      "change": "+11.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+15.1%p",
+      "marketCap": "5.26억 달러",
+      "rank": 100,
+      "volume24h": "0.16억 달러 (시총의 3.1%)",
+      "causeType": "가능한 배경",
+      "headline": "코인베이스 상장 공지에 +12%, 오늘 21시 거래 시작.",
+      "happened": [
+        "12일 코인베이스가 13일 21시 현물·무기한선물 개시를 공지.",
+        "공지 직후 1.59달러까지 하루 +9%를 기록."
+      ],
+      "reaction": [
+        "24시간 +11.7%, 1,656원 → 1,850원.",
+        "현재 1.39달러로 공지 직후 고점 대비 13% 반납."
+      ],
+      "watch": "13일 21시 거래 개시 뒤 1.59달러 고점 재돌파 여부.",
+      "caveat": "공지 뒤 오른 것은 맞지만 거래량 변화는 확인하지 못했다. 원화 마켓 24시간 +4.6%.",
+      "confidence": "B"
+    },
+    {
+      "project": "NEAR Protocol",
+      "ticker": "NEAR",
+      "direction": "down",
+      "change": "-9.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.6%p",
+      "marketCap": "44.9억 달러",
+      "rank": 22,
+      "volume24h": "4.07억 달러 (시총의 9.1%)",
+      "causeType": "수급 주도",
+      "headline": "개별 사건 없이 롱 청산이 숏의 170배.",
+      "happened": [
+        "12일 유럽 시간 3.36달러까지 밀려 8주 최저.",
+        "10일 NEAR AI 이용자 약 100명 정보 유출, 코인·키는 무관."
+      ],
+      "reaction": [
+        "24시간 -9.0%, 4,972원 → 4,524원.",
+        "OKX OI 11일 0.54억 → 12일 0.475억 달러, -12%."
+      ],
+      "watch": "HSP-029 발행 축소 시행 일정과 3.36달러 저점 지지.",
+      "caveat": "롱 청산 비율은 OKX 한 곳 약 3시간 표본이다. 원화 마켓 24시간 -8.0%.",
+      "confidence": "B",
+      "flows": {
+        "openInterest": "0.475억 달러, -12% (OKX, 11/12)",
+        "fundingRate": "0.00015% / 8시간",
+        "liquidations": "OKX 약 3시간 롱 51만 달러 vs 숏 0.3만 달러"
+      }
+    },
+    {
+      "project": "Quant",
+      "ticker": "QNT",
+      "direction": "down",
+      "change": "-9.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.8%p",
+      "marketCap": "23.7억 달러",
+      "rank": 41,
+      "volume24h": "0.95억 달러 (시총의 4.0%)",
+      "causeType": "수급 주도",
+      "headline": "1주일 새 약 19% 하락, OI 감소에 롱 청산 우위.",
+      "happened": [
+        "퀀트 고유 악재는 확인되지 않음.",
+        "1주 전 200달러 위에서 162달러까지 내려왔다."
+      ],
+      "reaction": [
+        "24시간 -9.2%, 23.8만원 → 21.6만원.",
+        "선물 OI 24시간 -8.6%, 청산 51만 달러 중 롱 49만 달러."
+      ],
+      "watch": "164~165달러 지지 회복과 OI 감소 지속 여부.",
+      "caveat": "청산 규모가 작아 수급만으로 하락폭 전부를 설명하지는 못한다.",
+      "confidence": "B",
+      "flows": {
+        "openInterest": "24시간 -8.6% (captainaltcoin 인용)",
+        "liquidations": "24시간 51만 달러, 롱 49만 달러"
+      }
+    },
+    {
+      "project": "Uniswap",
+      "ticker": "UNI",
+      "direction": "down",
+      "change": "-8.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.5%p",
+      "marketCap": "36.9억 달러",
+      "rank": 26,
+      "volume24h": "4.68억 달러 (시총의 12.7%)",
+      "causeType": "원인 불명",
+      "headline": "거래가 줄어든 채 9% 하락, 사건 없음.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "7일 고래 100만 UNI 매도는 지난주 사건."
+      ],
+      "reaction": [
+        "24시간 -8.9%, 8,766원 → 7,984원.",
+        "원화 마켓 거래량 변동 배수 0.5배로 거래가 줄었다."
+      ],
+      "watch": "6달러 지지와 원화 마켓 거래량 회복 여부.",
+      "caveat": "거래량 감소 속 하락이라 매도 주체를 특정할 수 없다. 원화 마켓 24시간 -8.2%.",
+      "confidence": "C"
+    },
+    {
+      "project": "Stacks",
+      "ticker": "STX",
+      "direction": "down",
+      "change": "-8.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.3%p",
+      "marketCap": "5.38억 달러",
+      "rank": 97,
+      "volume24h": "0.13억 달러 (시총의 2.5%)",
+      "causeType": "원인 불명",
+      "headline": "BTC 스테이킹 채권 소식과 무관하게 -9%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "13일 아침 Bond 2의 505 BTC 모집·1.21 BTC 보상 지급 보도."
+      ],
+      "reaction": [
+        "24시간 -8.7%, 424원 → 387원.",
+        "12일 오후 3시 ET까지 24시간 -11.0%, 0.284달러."
+      ],
+      "watch": "0.28달러 지지 여부와 다음 채권 공지.",
+      "caveat": "Bond 2 소식은 하락 뒤에 나온 호재 성격이라 원인이 아니다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Monero",
+      "ticker": "XMR",
+      "direction": "down",
+      "change": "-8.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.1%p",
+      "marketCap": "103.9억 달러",
+      "rank": 13,
+      "volume24h": "1.60억 달러 (시총의 1.5%)",
+      "causeType": "원인 불명",
+      "headline": "한 달 고점보다 16% 아래, 고유 악재는 없음.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "토르체인 XMR 스와프는 통합만 끝났고 개시일 미정."
+      ],
+      "reaction": [
+        "24시간 -8.5%, 78.4만원 → 71.7만원.",
+        "24시간 범위 538~592달러, 4일 고점은 640달러."
+      ],
+      "watch": "토르체인 스와프 개시일과 530달러대 지지.",
+      "caveat": "차익 실현 가능성은 수치로 확인되지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Ethena",
+      "ticker": "ENA",
+      "direction": "down",
+      "change": "-8.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.1%p",
+      "marketCap": "18.9억 달러",
+      "rank": 46,
+      "volume24h": "2.73억 달러 (시총의 14.4%)",
+      "causeType": "원인 불명",
+      "headline": "언락 없는 날에도 8% 하락.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "2일 재단·5일 팀 정기 언락은 분석 기간 밖."
+      ],
+      "reaction": [
+        "24시간 -8.5%, 202원 → 185원.",
+        "거래량 2.73억 달러로 시총의 14%."
+      ],
+      "watch": "12월 2일 재단·5일 팀 언락 전 0.14달러 회복 여부.",
+      "caveat": "거래량이 시총 대비 커서 매도가 활발했지만 주체는 미확인.",
+      "confidence": "C"
+    },
+    {
+      "project": "Aave",
+      "ticker": "AAVE",
+      "direction": "down",
+      "change": "-8.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.7%p",
+      "marketCap": "17.6억 달러",
+      "rank": 49,
+      "volume24h": "2.22억 달러 (시총의 12.6%)",
+      "causeType": "원인 불명",
+      "headline": "DeFi 대형주도 BTC의 두 배 넘게 하락.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "오늘 코인 리포트 대상이며 바이백은 4월부터 정지 상태."
+      ],
+      "reaction": [
+        "24시간 -8.1%, 16.5만원 → 15.1만원.",
+        "거래량 2.22억 달러로 시총의 13%."
+      ],
+      "watch": "110달러 지지와 바이백 재개 안건 상정 여부.",
+      "caveat": "바이백 정지는 오래된 사실이라 오늘 하락의 원인으로 쓰지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Injective",
+      "ticker": "INJ",
+      "direction": "down",
+      "change": "-7.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.5%p",
+      "marketCap": "7.45억 달러",
+      "rank": 85,
+      "volume24h": "0.78억 달러 (시총의 10.5%)",
+      "causeType": "원인 불명",
+      "headline": "이틀째 하락, OI도 줄었다.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "12일 오후까지 24시간 -9.6%에 이어 이틀째 하락."
+      ],
+      "reaction": [
+        "24시간 -7.9%, 10,575원 → 9,741원.",
+        "선물 OI 24시간 -4%, 1.41억 달러."
+      ],
+      "watch": "7달러 지지와 OI 감소가 멈추는지.",
+      "caveat": "OI 감소폭이 작아 수급 설명으로는 부족하다.",
+      "confidence": "C",
+      "flows": {
+        "openInterest": "1.41억 달러, 24시간 -4% (KuCoin 인용)"
+      }
+    },
+    {
+      "project": "Venice Token",
+      "ticker": "VVV",
+      "direction": "down",
+      "change": "-7.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.2%p",
+      "marketCap": "9.29억 달러",
+      "rank": 76,
+      "volume24h": "0.27억 달러 (시총의 2.9%)",
+      "causeType": "원인 불명",
+      "headline": "전날 오후 상승분을 밤사이 되돌렸다.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "12일 오후 5시 기준으로는 24시간 +3.5%였다."
+      ],
+      "reaction": [
+        "24시간 -7.6%, 27,170원 → 25,110원.",
+        "거래량 0.27억 달러로 시총의 2.9%."
+      ],
+      "watch": "20달러 회복 여부.",
+      "caveat": "거래량이 적어 소수 매도에도 크게 움직이는 구간이다.",
+      "confidence": "C"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "PEPE",
+      "reason": "CoinMarketCap 24h -11.9%이나 급락은 11/11 밤~11/12 오전에 나와 어제 브리프에서 다룸. 원화 마켓 하락 상위에는 없음"
+    },
+    {
+      "ticker": "ZEC",
+      "reason": "CoinMarketCap -7.4%와 CoinGecko 표 수치가 크게 달라 기간 불일치로 제외"
+    },
+    {
+      "ticker": "SPX",
+      "reason": "CoinMarketCap 98위 -8.7%이나 CoinGecko 100위 밖·밈코인"
+    },
+    {
+      "ticker": "GT",
+      "reason": "-7.2%, 거래소 토큰"
+    },
+    {
+      "ticker": "BTT",
+      "reason": "CoinMarketCap 100위 -7.5%이나 CoinGecko 100위 밖"
+    },
+    {
+      "ticker": "NIGHT",
+      "reason": "상승률이 출처·시각마다 +2.7%~+9.5%로 갈려 미확인"
+    },
+    {
+      "ticker": "봄바드",
+      "reason": "업비트 24h +52.2%로 원화 마켓 상승 1위, 시총·글로벌 데이터 미확인"
+    }
+  ],
+  "watchNext": [
+    "11/12 거래일 미 BTC·ETH 현물 ETF 순유출입 — 미집계, 6거래일 연속 유출 여부",
+    "13일 21시 코인베이스 PEARL 현물·무기한선물 거래 개시",
+    "BTC 71,200달러 저점과 21주 이동평균 73,078달러 회복 여부",
+    "엔비디아 후임 CEO 발표와 미국 10월 PPI에 대한 2년물 금리 반응"
+  ],
+  "highlight": "오늘은 시장 전체를 흔든 사건이 코인 밖에서 나왔다. 엔비디아 CEO 사임으로 기술주가 흔들린 날 비트코인은 3% 빠졌고 시총 100위 안 알트 9종은 그 두 배 넘게 밀렸다. 이 가운데 NEAR와 QNT만 OI 감소와 롱 청산이 숫자로 남아 수급 주도로 분류할 수 있었고, 나머지 7종은 고유 사건도 수급 수치도 없어 원인 불명으로 남겼다. 상승 쪽 PEARL은 코인베이스 공지 뒤에 올랐다는 선후는 있지만 거래량 반응을 확인하지 못해 가능한 배경에 그친다.",
+  "sources": [
+    {
+      "title": "CoinGecko — 시총 1~100위, 시장 개요 (11/13 09시대 조회)",
+      "url": "https://www.coingecko.com/"
+    },
+    {
+      "title": "CoinMarketCap — 상위 100 24h 상승·하락",
+      "url": "https://coinmarketcap.com/gainers-losers/"
+    },
+    {
+      "title": "블록미디어 — 비트코인, 젠슨 황 퇴진 충격에 7만1000달러대로 (11/13 08:10)",
+      "url": "https://www.blockmedia.co.kr/archives/1165296"
+    },
+    {
+      "title": "토큰포스트 — [아침 시황] 비트코인 9697만원…상승 종목 31%, 공포지수 28 (11/13 06:58)",
+      "url": "https://www.tokenpost.kr/news/cryptocurrency/437401"
+    },
+    {
+      "title": "토큰포스트 — 11월 13일 출근길 팟캐스트, 롱 청산 5.57억달러",
+      "url": "https://www.tokenpost.kr/news/insights/437358"
+    },
+    {
+      "title": "CoinCentral — BlackRock Leads $445 Million Bitcoin and Ether ETF Exodus (11/11 거래일)",
+      "url": "https://coincentral.com/blackrock-leads-445-million-bitcoin-and-ether-etf-exodus"
+    },
+    {
+      "title": "crypto.news — BlackRock leads $300 million Bitcoin ETF outflows",
+      "url": "https://crypto.news/blackrock-leads-300-million-bitcoin-etf-outflows-as-btc-struggles-near-73k/"
+    },
+    {
+      "title": "뉴스1 — 환율 2.9원↓ 1330.7원 마감 (11/12)",
+      "url": "https://www.news1.kr/finance/market-exr/6352275"
+    },
+    {
+      "title": "CBS News — Jensen Huang resignation timeline",
+      "url": "https://www.cbsnews.com/news/jensen-huang-nvidia-resignation-scandal-timeline/"
+    },
+    {
+      "title": "cryptonews.net — Pearl rises 9% as Coinbase schedules spot and perpetual debut",
+      "url": "https://cryptonews.net/news/altcoins/33738842/"
+    },
+    {
+      "title": "CryptoTicker — NEAR price drops to 8-week low as long liquidations mount",
+      "url": "https://cryptoticker.io/en/near-protocol-price-3-40-long-liquidations-eight-week-low/"
+    },
+    {
+      "title": "CaptainAltcoin — Here's why Quant (QNT) price is crashing",
+      "url": "https://captainaltcoin.com/heres-why-quant-qnt-price-is-crashing/"
+    },
+    {
+      "title": "TokenPost — Stacks Drops 10.97% as 76 of 90 Major Cryptocurrencies Fall",
+      "url": "https://www.tokenpost.com/news/investing/55966"
+    },
+    {
+      "title": "TokenPost — Stacks Bond 2 Paid 1.21 BTC in Rewards",
+      "url": "https://www.tokenpost.com/news/technology/55968"
+    },
+    {
+      "title": "CryptoTicker — Monero price at lowest since mid-October",
+      "url": "https://cryptoticker.io/en/monero-price-lowest-since-mid-october/"
+    },
+    {
+      "title": "TokenPost — Pepe Drops 15.04% as 63 of the Top 90 Cryptocurrencies Decline",
+      "url": "https://www.tokenpost.com/news/investing/55454"
+    },
+    {
+      "title": "KuCoin — Injective futures OI drops 4% as price falls below $7.50",
+      "url": "https://www.kucoin.com/news/flash/injective-futures-open-interest-drops-4-as-price-falls-below-7-50"
+    },
+    {
+      "title": "BigGo Finance — Uniswap whale dumps 1 million UNI (11/7)",
+      "url": "https://finance.biggo.com/news/fdc46c85-9bec-4146-a1ee-ee1c25602650"
+    },
+    {
+      "title": "CoinMarketCap — Ethena drops 3.8% amid hack, unlocks (11/7)",
+      "url": "https://coinmarketcap.com/top-stories/6aef4c0f186e1f6fb5ccbe6c/"
+    }
+  ],
+  "terms": [
+    {
+      "term": "롱 청산",
+      "meaning": "가격 상승에 빌린 돈으로 건 포지션이 증거금 부족으로 강제 정리되는 것. 하락을 더 키운다"
+    },
+    {
+      "term": "미결제약정(OI)",
+      "meaning": "아직 청산되지 않은 선물 계약의 총액. 줄어들면 레버리지가 빠져나가는 중"
+    },
+    {
+      "term": "펀딩비",
+      "meaning": "무기한 선물에서 롱과 숏이 주고받는 수수료. 0에 가까우면 롱 수요가 식은 상태"
+    },
+    {
+      "term": "무기한 선물",
+      "meaning": "만기 없이 계속 보유할 수 있는 선물 계약"
+    },
+    {
+      "term": "김치 프리미엄",
+      "meaning": "국내 원화 마켓 가격이 해외 가격보다 비싼 정도"
+    },
+    {
+      "term": "21주 이동평균",
+      "meaning": "최근 21주 종가의 평균. 비트코인 중기 추세선으로 자주 쓰인다"
+    }
+  ]
+}
