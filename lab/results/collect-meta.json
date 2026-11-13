@@ -1,6 +1,6 @@
 {
- "started": "2026-11-11T05:28:00.830Z",
- "finished": "2026-11-11T05:50:52.574Z",
+ "started": "2026-11-13T02:19:31.552Z",
+ "finished": "2026-11-13T02:45:35.421Z",
  "probes": [
   {
    "url": "https://api.bithumb.com/v1/market/all",
@@ -36,7 +36,7 @@
   "bithumbMaxMissing": 4,
   "binanceCoinsWithMissingDays": 5
  },
- "coins": 490,
+ "coins": 489,
  "failed": [],
  "binance": {
   "coins": 507,
@@ -49,3432 +49,3425 @@
  "list": [
   {
    "sym": "0G",
-   "days": 416,
+   "days": 418,
    "first": "2025-09-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "1INCH",
-   "days": 1764,
+   "days": 1766,
    "first": "2022-01-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "2Z",
-   "days": 406,
+   "days": 408,
    "first": "2025-10-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "A",
-   "days": 3257,
+   "days": 3259,
    "first": "2017-12-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "A8",
-   "days": 667,
+   "days": 669,
    "first": "2025-01-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AAVE",
-   "days": 2079,
+   "days": 2081,
    "first": "2021-03-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ACE",
-   "days": 1060,
+   "days": 1062,
    "first": "2023-12-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ACH",
-   "days": 1674,
+   "days": 1676,
    "first": "2022-04-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ACS",
-   "days": 1239,
+   "days": 1241,
    "first": "2023-06-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ACU",
-   "days": 28,
+   "days": 30,
    "first": "2026-10-15",
-   "last": "2026-11-11",
-   "missing": 0
-  },
-  {
-   "sym": "ACX",
-   "days": 600,
-   "first": "2025-03-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ADA",
-   "days": 3073,
+   "days": 3075,
    "first": "2018-06-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ADP",
-   "days": 2177,
+   "days": 2179,
    "first": "2020-11-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AEON",
-   "days": 106,
+   "days": 108,
    "first": "2026-07-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AERO",
-   "days": 657,
+   "days": 659,
    "first": "2025-01-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AGI",
-   "days": 1164,
+   "days": 1166,
    "first": "2023-09-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AGLD",
-   "days": 665,
+   "days": 667,
    "first": "2025-01-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AHT",
-   "days": 671,
+   "days": 673,
    "first": "2025-01-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AI",
-   "days": 178,
+   "days": 180,
    "first": "2026-05-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AIA",
-   "days": 35,
+   "days": 37,
    "first": "2026-10-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AIOZ",
-   "days": 919,
+   "days": 921,
    "first": "2024-05-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AKT",
-   "days": 933,
+   "days": 935,
    "first": "2024-04-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AL",
-   "days": 1450,
+   "days": 1452,
    "first": "2022-11-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ALGO",
-   "days": 2296,
+   "days": 2298,
    "first": "2020-07-30",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ALICE",
-   "days": 2040,
+   "days": 2042,
    "first": "2021-04-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ALLO",
-   "days": 338,
+   "days": 340,
    "first": "2025-12-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ALT",
-   "days": 728,
+   "days": 730,
    "first": "2024-11-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AMO",
-   "days": 2871,
+   "days": 2873,
    "first": "2019-01-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AMP",
-   "days": 587,
+   "days": 589,
    "first": "2025-04-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ANIME",
-   "days": 650,
+   "days": 652,
    "first": "2025-01-31",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ANKR",
-   "days": 2750,
+   "days": 2752,
    "first": "2019-05-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "APE",
-   "days": 1213,
+   "days": 1215,
    "first": "2023-07-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "API3",
-   "days": 1101,
+   "days": 1103,
    "first": "2023-11-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "APT",
-   "days": 1351,
+   "days": 1353,
    "first": "2023-03-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AR",
-   "days": 898,
+   "days": 900,
    "first": "2024-05-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ARB",
-   "days": 1329,
+   "days": 1331,
    "first": "2023-03-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ARDR",
-   "days": 658,
+   "days": 660,
    "first": "2025-01-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ARK",
-   "days": 1022,
+   "days": 1024,
    "first": "2024-01-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ARKM",
-   "days": 1134,
+   "days": 1136,
    "first": "2023-10-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ARPA",
-   "days": 2374,
+   "days": 2376,
    "first": "2020-05-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ARX",
-   "days": 139,
+   "days": 141,
    "first": "2026-06-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ASTER",
-   "days": 398,
+   "days": 400,
    "first": "2025-10-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ASTR",
-   "days": 1148,
+   "days": 1150,
    "first": "2023-09-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AT",
-   "days": 22,
+   "days": 24,
    "first": "2026-10-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ATH",
-   "days": 820,
+   "days": 822,
    "first": "2024-08-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ATOM",
-   "days": 2177,
+   "days": 2179,
    "first": "2020-11-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AUCTION",
-   "days": 749,
+   "days": 751,
    "first": "2024-10-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AUDIO",
-   "days": 1074,
+   "days": 1076,
    "first": "2023-12-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AVA",
-   "days": 56,
+   "days": 58,
    "first": "2026-09-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AVAIL",
-   "days": 842,
+   "days": 844,
    "first": "2024-07-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AVAX",
-   "days": 1707,
+   "days": 1709,
    "first": "2022-03-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AVL",
-   "days": 615,
+   "days": 617,
    "first": "2025-03-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AVNT",
-   "days": 423,
+   "days": 425,
    "first": "2025-09-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AWE",
-   "days": 1316,
+   "days": 1318,
    "first": "2023-04-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AXIS",
-   "days": 19,
+   "days": 21,
    "first": "2026-10-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AXS",
-   "days": 1918,
+   "days": 1920,
    "first": "2021-08-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AZIT",
-   "days": 1427,
+   "days": 1429,
    "first": "2022-12-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "AZTEC",
-   "days": 265,
+   "days": 267,
    "first": "2026-02-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "B3",
-   "days": 533,
+   "days": 535,
    "first": "2025-05-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BABY",
-   "days": 580,
+   "days": 582,
    "first": "2025-04-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BANK",
-   "days": 108,
+   "days": 110,
    "first": "2026-07-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BARD",
-   "days": 420,
+   "days": 422,
    "first": "2025-09-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BASED",
-   "days": 205,
+   "days": 207,
    "first": "2026-04-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BAT",
-   "days": 2912,
+   "days": 2914,
    "first": "2018-11-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BB",
-   "days": 715,
+   "days": 717,
    "first": "2024-11-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BCH",
-   "days": 3387,
+   "days": 3389,
    "first": "2017-08-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BEAM",
-   "days": 749,
+   "days": 751,
    "first": "2024-10-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BEL",
-   "days": 2114,
+   "days": 2116,
    "first": "2021-01-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BERA",
-   "days": 644,
+   "days": 646,
    "first": "2025-02-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BFC",
-   "days": 1906,
+   "days": 1908,
    "first": "2021-08-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BICO",
-   "days": 717,
+   "days": 719,
    "first": "2024-11-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BIGTIME",
-   "days": 1078,
+   "days": 1080,
    "first": "2023-11-30",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BILL",
-   "days": 168,
+   "days": 170,
    "first": "2026-05-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BIO",
-   "days": 450,
+   "days": 452,
    "first": "2025-08-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BIOT",
-   "days": 2075,
+   "days": 2077,
    "first": "2021-03-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BIRB",
-   "days": 282,
+   "days": 284,
    "first": "2026-02-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BLEND",
-   "days": 197,
+   "days": 199,
    "first": "2026-04-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BLUE",
-   "days": 539,
+   "days": 541,
    "first": "2025-05-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BLUR",
-   "days": 1365,
+   "days": 1367,
    "first": "2023-02-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BMT",
-   "days": 604,
+   "days": 606,
    "first": "2025-03-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BNB",
-   "days": 1995,
+   "days": 1997,
    "first": "2021-05-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BNT",
-   "days": 1962,
+   "days": 1964,
    "first": "2021-06-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BOB",
-   "days": 344,
+   "days": 346,
    "first": "2025-12-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BOBA",
-   "days": 1778,
+   "days": 1780,
    "first": "2021-12-30",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BONK",
-   "days": 910,
+   "days": 912,
    "first": "2024-05-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BORA",
-   "days": 2290,
+   "days": 2292,
    "first": "2020-08-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BOUNTY",
-   "days": 664,
+   "days": 666,
    "first": "2025-01-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BR",
-   "days": 37,
+   "days": 39,
    "first": "2026-10-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BRETT",
-   "days": 856,
+   "days": 858,
    "first": "2024-07-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BREV",
-   "days": 309,
+   "days": 311,
    "first": "2026-01-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BSB",
-   "days": 97,
+   "days": 99,
    "first": "2026-08-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BSV",
-   "days": 2914,
+   "days": 2916,
    "first": "2018-11-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BTC",
    "days": 4000,
-   "first": "2015-11-30",
-   "last": "2026-11-11",
+   "first": "2015-12-02",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BTR",
-   "days": 413,
+   "days": 415,
    "first": "2025-09-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "BTT",
-   "days": 1772,
+   "days": 1774,
    "first": "2022-01-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "C",
-   "days": 471,
+   "days": 473,
    "first": "2025-07-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "C98",
-   "days": 1751,
+   "days": 1753,
    "first": "2022-01-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CAKE",
-   "days": 1981,
+   "days": 1983,
    "first": "2021-06-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CAMP",
-   "days": 440,
+   "days": 442,
    "first": "2025-08-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CAP",
-   "days": 135,
+   "days": 137,
    "first": "2026-06-30",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CARDS",
-   "days": 2,
+   "days": 4,
    "first": "2026-11-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CARV",
-   "days": 744,
+   "days": 746,
    "first": "2024-10-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CASHCAT",
-   "days": 35,
+   "days": 37,
    "first": "2026-10-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CBK",
-   "days": 665,
+   "days": 667,
    "first": "2025-01-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CC",
-   "days": 142,
+   "days": 144,
    "first": "2026-06-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CELO",
-   "days": 1197,
+   "days": 1199,
    "first": "2023-08-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CELR",
-   "days": 1988,
+   "days": 1990,
    "first": "2021-06-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CFG",
-   "days": 253,
+   "days": 255,
    "first": "2026-03-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CFX",
-   "days": 1276,
+   "days": 1278,
    "first": "2023-05-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CHECK",
-   "days": 112,
+   "days": 114,
    "first": "2026-07-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CHIP",
-   "days": 205,
+   "days": 207,
    "first": "2026-04-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CHR",
-   "days": 2619,
+   "days": 2621,
    "first": "2019-09-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CHZ",
-   "days": 2023,
+   "days": 2025,
    "first": "2021-04-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CKB",
-   "days": 2012,
+   "days": 2014,
    "first": "2021-05-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "COMP",
-   "days": 2072,
+   "days": 2074,
    "first": "2021-03-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "COOKIE",
-   "days": 640,
+   "days": 642,
    "first": "2025-02-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CORE",
-   "days": 871,
+   "days": 873,
    "first": "2024-06-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "COS",
-   "days": 2437,
+   "days": 2439,
    "first": "2020-03-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "COTI",
-   "days": 1785,
+   "days": 1787,
    "first": "2021-12-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "COW",
-   "days": 617,
+   "days": 619,
    "first": "2025-03-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CP",
-   "days": 65,
+   "days": 67,
    "first": "2026-09-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CPOOL",
-   "days": 386,
+   "days": 388,
    "first": "2025-10-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CRO",
-   "days": 2668,
+   "days": 2670,
    "first": "2019-07-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CRTS",
-   "days": 1373,
+   "days": 1375,
    "first": "2023-02-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CRV",
-   "days": 1246,
+   "days": 1248,
    "first": "2023-06-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CSPR",
-   "days": 1700,
+   "days": 1702,
    "first": "2022-03-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CT",
-   "days": 24,
+   "days": 26,
    "first": "2026-10-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CTC",
-   "days": 1785,
+   "days": 1787,
    "first": "2021-12-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CTK",
-   "days": 1960,
+   "days": 1962,
    "first": "2021-07-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CTR",
-   "days": 156,
+   "days": 158,
    "first": "2026-06-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CTSI",
-   "days": 1973,
+   "days": 1975,
    "first": "2021-06-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CUDIS",
-   "days": 412,
+   "days": 414,
    "first": "2025-09-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CVC",
-   "days": 973,
+   "days": 975,
    "first": "2024-03-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CYBER",
-   "days": 1171,
+   "days": 1173,
    "first": "2023-08-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "CYS",
-   "days": 245,
+   "days": 247,
    "first": "2026-03-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DAO",
-   "days": 1757,
+   "days": 1759,
    "first": "2022-01-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DATA",
-   "days": 637,
+   "days": 639,
    "first": "2025-02-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DBR",
-   "days": 692,
+   "days": 694,
    "first": "2024-12-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DEBIT",
-   "days": 63,
+   "days": 65,
    "first": "2026-09-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DEEP",
-   "days": 673,
+   "days": 675,
    "first": "2025-01-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DEXE",
-   "days": 328,
+   "days": 330,
    "first": "2025-12-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DKA",
-   "days": 664,
+   "days": 666,
    "first": "2025-01-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DOGE",
-   "days": 2008,
+   "days": 2010,
    "first": "2021-05-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DOOD",
-   "days": 391,
+   "days": 393,
    "first": "2025-10-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DOS",
-   "days": 93,
+   "days": 95,
    "first": "2026-08-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DOT",
-   "days": 2227,
+   "days": 2229,
    "first": "2020-10-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DRV",
-   "days": 121,
+   "days": 123,
    "first": "2026-07-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "DYDX",
-   "days": 1289,
+   "days": 1291,
    "first": "2023-05-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EDEN",
-   "days": 331,
+   "days": 333,
    "first": "2025-12-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EDGE",
-   "days": 253,
+   "days": 255,
    "first": "2026-03-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EDGEX",
-   "days": 189,
+   "days": 191,
    "first": "2026-05-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EDU",
-   "days": 1143,
+   "days": 1145,
    "first": "2023-09-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EGG",
-   "days": 2395,
+   "days": 2397,
    "first": "2020-04-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EGLD",
-   "days": 1736,
+   "days": 1738,
    "first": "2022-02-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EIGEN",
-   "days": 771,
+   "days": 773,
    "first": "2024-10-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EL",
-   "days": 2423,
+   "days": 2425,
    "first": "2020-03-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ELF",
-   "days": 3136,
+   "days": 3138,
    "first": "2018-04-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ELSA",
-   "days": 287,
+   "days": 289,
    "first": "2026-01-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ENA",
-   "days": 625,
+   "days": 627,
    "first": "2025-02-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ENJ",
-   "days": 2967,
+   "days": 2969,
    "first": "2018-09-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ENS",
-   "days": 898,
+   "days": 900,
    "first": "2024-05-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ENSO",
-   "days": 379,
+   "days": 381,
    "first": "2025-10-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EPT",
-   "days": 553,
+   "days": 555,
    "first": "2025-05-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ERA",
-   "days": 482,
+   "days": 484,
    "first": "2025-07-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ESP",
-   "days": 261,
+   "days": 263,
    "first": "2026-02-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ETC",
-   "days": 3465,
+   "days": 3467,
    "first": "2017-05-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ETH",
-   "days": 3692,
+   "days": 3694,
    "first": "2016-09-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 4
   },
   {
    "sym": "ETHFI",
-   "days": 798,
+   "days": 800,
    "first": "2024-09-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EUL",
-   "days": 433,
+   "days": 435,
    "first": "2025-09-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "EURC",
-   "days": 76,
+   "days": 78,
    "first": "2026-08-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "F",
-   "days": 702,
+   "days": 704,
    "first": "2024-12-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FANC",
-   "days": 1351,
+   "days": 1353,
    "first": "2023-03-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FCT2",
-   "days": 2562,
+   "days": 2564,
    "first": "2019-11-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FET",
-   "days": 1254,
+   "days": 1256,
    "first": "2023-06-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FF",
-   "days": 409,
+   "days": 411,
    "first": "2025-09-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FIL",
-   "days": 675,
+   "days": 677,
    "first": "2025-01-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FLOCK",
-   "days": 531,
+   "days": 533,
    "first": "2025-05-30",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FLOKI",
-   "days": 1274,
+   "days": 1276,
    "first": "2023-05-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FLR",
-   "days": 1402,
+   "days": 1404,
    "first": "2023-01-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FLUID",
-   "days": 412,
+   "days": 414,
    "first": "2025-09-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FLUX",
-   "days": 1162,
+   "days": 1164,
    "first": "2023-09-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FOLD",
-   "days": 76,
+   "days": 78,
    "first": "2026-08-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FORT",
-   "days": 511,
+   "days": 513,
    "first": "2025-06-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "FRAX",
-   "days": 1176,
+   "days": 1178,
    "first": "2023-08-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "G",
-   "days": 839,
+   "days": 841,
    "first": "2024-07-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GAME2",
-   "days": 666,
+   "days": 668,
    "first": "2025-01-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GAS",
-   "days": 1016,
+   "days": 1018,
    "first": "2024-01-31",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GEOD",
-   "days": 108,
+   "days": 110,
    "first": "2026-07-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GHX",
-   "days": 1987,
+   "days": 1989,
    "first": "2021-06-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GLM",
-   "days": 3115,
+   "days": 3117,
    "first": "2018-05-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GMT",
-   "days": 1654,
+   "days": 1656,
    "first": "2022-05-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GMX",
-   "days": 1296,
+   "days": 1298,
    "first": "2023-04-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GNO",
-   "days": 631,
+   "days": 633,
    "first": "2025-02-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GPS",
-   "days": 261,
+   "days": 263,
    "first": "2026-02-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GRAM",
-   "days": 721,
+   "days": 723,
    "first": "2024-11-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GRASS",
-   "days": 566,
+   "days": 568,
    "first": "2025-04-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GRND",
-   "days": 1241,
+   "days": 1243,
    "first": "2023-06-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GRT",
-   "days": 2086,
+   "days": 2088,
    "first": "2021-02-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GRVT",
-   "days": 104,
+   "days": 106,
    "first": "2026-07-31",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GTC",
-   "days": 1009,
+   "days": 1011,
    "first": "2024-02-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "GWEI",
-   "days": 259,
+   "days": 261,
    "first": "2026-02-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HAEDAL",
-   "days": 559,
+   "days": 561,
    "first": "2025-05-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HBAR",
-   "days": 1155,
+   "days": 1157,
    "first": "2023-09-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HEMI",
-   "days": 414,
+   "days": 416,
    "first": "2025-09-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HFT",
-   "days": 1190,
+   "days": 1192,
    "first": "2023-08-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HIVE",
-   "days": 2275,
+   "days": 2277,
    "first": "2020-08-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HNT",
-   "days": 164,
+   "days": 166,
    "first": "2026-06-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HOLO",
-   "days": 421,
+   "days": 423,
    "first": "2025-09-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HOME",
-   "days": 506,
+   "days": 508,
    "first": "2025-06-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HP",
-   "days": 665,
+   "days": 667,
    "first": "2025-01-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HPP",
-   "days": 155,
+   "days": 157,
    "first": "2026-06-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HUMA",
-   "days": 511,
+   "days": 513,
    "first": "2025-06-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HUNT",
-   "days": 973,
+   "days": 975,
    "first": "2024-03-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HYPE",
-   "days": 2,
+   "days": 4,
    "first": "2026-11-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "HYPER",
-   "days": 490,
+   "days": 492,
    "first": "2025-07-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ICNT",
-   "days": 128,
+   "days": 130,
    "first": "2026-07-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ICP",
-   "days": 883,
+   "days": 885,
    "first": "2024-06-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ID",
-   "days": 1154,
+   "days": 1156,
    "first": "2023-09-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ILV",
-   "days": 1183,
+   "days": 1185,
    "first": "2023-08-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "IMX",
-   "days": 1232,
+   "days": 1234,
    "first": "2023-06-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "IN",
-   "days": 391,
+   "days": 393,
    "first": "2025-10-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "INIT",
-   "days": 531,
+   "days": 533,
    "first": "2025-05-30",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "INJ",
-   "days": 1318,
+   "days": 1320,
    "first": "2023-04-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "IO",
-   "days": 827,
+   "days": 829,
    "first": "2024-08-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "IOST",
-   "days": 2898,
+   "days": 2900,
    "first": "2018-12-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "IOTA",
-   "days": 670,
+   "days": 672,
    "first": "2025-01-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "IOTX",
-   "days": 1074,
+   "days": 1076,
    "first": "2023-12-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "IQ",
-   "days": 968,
+   "days": 970,
    "first": "2024-03-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "IRYS",
-   "days": 350,
+   "days": 352,
    "first": "2025-11-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "JOE",
-   "days": 1169,
+   "days": 1171,
    "first": "2023-08-31",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "JST",
-   "days": 2172,
+   "days": 2174,
    "first": "2020-12-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "JTO",
-   "days": 798,
+   "days": 800,
    "first": "2024-09-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "JUP",
-   "days": 1015,
+   "days": 1017,
    "first": "2024-02-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "KAIA",
-   "days": 2008,
+   "days": 2010,
    "first": "2021-05-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "KAITO",
-   "days": 630,
+   "days": 632,
    "first": "2025-02-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "KAT",
-   "days": 231,
+   "days": 233,
    "first": "2026-03-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "KAVA",
-   "days": 1024,
+   "days": 1026,
    "first": "2024-01-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "KERNEL",
-   "days": 575,
+   "days": 577,
    "first": "2025-04-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "KGEN",
-   "days": 31,
+   "days": 33,
    "first": "2026-10-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "KITE",
-   "days": 374,
+   "days": 376,
    "first": "2025-11-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "KMNO",
-   "days": 419,
+   "days": 421,
    "first": "2025-09-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "KNC",
-   "days": 3122,
+   "days": 3124,
    "first": "2018-04-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "KSM",
-   "days": 1997,
+   "days": 1999,
    "first": "2021-05-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LA",
-   "days": 525,
+   "days": 527,
    "first": "2025-06-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LAYER",
-   "days": 638,
+   "days": 640,
    "first": "2025-02-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LDO",
-   "days": 1283,
+   "days": 1285,
    "first": "2023-05-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LINEA",
-   "days": 427,
+   "days": 429,
    "first": "2025-09-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LINK",
-   "days": 2975,
+   "days": 2977,
    "first": "2018-09-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LISTA",
-   "days": 476,
+   "days": 478,
    "first": "2025-07-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LIT",
-   "days": 269,
+   "days": 271,
    "first": "2026-02-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LM",
-   "days": 1358,
+   "days": 1360,
    "first": "2023-02-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LPT",
-   "days": 2012,
+   "days": 2014,
    "first": "2021-05-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LSK",
-   "days": 1010,
+   "days": 1012,
    "first": "2024-02-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "LWP",
-   "days": 1344,
+   "days": 1346,
    "first": "2023-03-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MAGIC",
-   "days": 1032,
+   "days": 1034,
    "first": "2024-01-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MAGMA",
-   "days": 7,
+   "days": 9,
    "first": "2026-11-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MANA",
-   "days": 2040,
+   "days": 2042,
    "first": "2021-04-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MANTA",
-   "days": 1029,
+   "days": 1031,
    "first": "2024-01-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MANTRA",
-   "days": 254,
+   "days": 256,
    "first": "2026-03-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MAPO",
-   "days": 2026,
+   "days": 2028,
    "first": "2021-04-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MASK",
-   "days": 1204,
+   "days": 1206,
    "first": "2023-07-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MAV",
-   "days": 1218,
+   "days": 1220,
    "first": "2023-07-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MAY",
-   "days": 1707,
+   "days": 1709,
    "first": "2022-03-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MBL",
-   "days": 2529,
+   "days": 2531,
    "first": "2019-12-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MBX",
-   "days": 1651,
+   "days": 1653,
    "first": "2022-05-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ME",
-   "days": 701,
+   "days": 703,
    "first": "2024-12-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MED",
-   "days": 1764,
+   "days": 1766,
    "first": "2022-01-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MEGA",
-   "days": 196,
+   "days": 198,
    "first": "2026-04-30",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MERL",
-   "days": 476,
+   "days": 478,
    "first": "2025-07-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MET",
-   "days": 359,
+   "days": 361,
    "first": "2025-11-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "META",
-   "days": 2380,
+   "days": 2382,
    "first": "2020-05-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "META2",
-   "days": 100,
+   "days": 102,
    "first": "2026-08-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "METIS",
-   "days": 721,
+   "days": 723,
    "first": "2024-11-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MEV",
-   "days": 2458,
+   "days": 2460,
    "first": "2020-02-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MEW",
-   "days": 888,
+   "days": 890,
    "first": "2024-06-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MINA",
-   "days": 1099,
+   "days": 1101,
    "first": "2023-11-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MIRA",
-   "days": 412,
+   "days": 414,
    "first": "2025-09-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MLK",
-   "days": 2268,
+   "days": 2270,
    "first": "2020-08-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MMT",
-   "days": 373,
+   "days": 375,
    "first": "2025-11-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MNT",
-   "days": 1003,
+   "days": 1005,
    "first": "2024-02-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MOC",
-   "days": 1081,
+   "days": 1083,
    "first": "2023-11-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MOCA",
-   "days": 696,
+   "days": 698,
    "first": "2024-12-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MON",
-   "days": 352,
+   "days": 354,
    "first": "2025-11-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MOODENG",
-   "days": 696,
+   "days": 698,
    "first": "2024-12-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MORPHO",
-   "days": 707,
+   "days": 709,
    "first": "2024-12-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MOVE",
-   "days": 702,
+   "days": 704,
    "first": "2024-12-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MPLX",
-   "days": 132,
+   "days": 134,
    "first": "2026-07-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MTL",
-   "days": 2849,
+   "days": 2851,
    "first": "2019-01-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MVC",
-   "days": 2054,
+   "days": 2056,
    "first": "2021-03-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "MVL",
-   "days": 730,
+   "days": 732,
    "first": "2024-11-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "NCT",
-   "days": 1234,
+   "days": 1236,
    "first": "2023-06-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "NEAR",
-   "days": 919,
+   "days": 921,
    "first": "2024-05-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "NEO",
-   "days": 1016,
+   "days": 1018,
    "first": "2024-01-31",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "NEWT",
-   "days": 505,
+   "days": 507,
    "first": "2025-06-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "NEX",
-   "days": 132,
+   "days": 134,
    "first": "2026-07-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "NEXO",
-   "days": 83,
+   "days": 85,
    "first": "2026-08-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "NFT",
-   "days": 1771,
+   "days": 1773,
    "first": "2022-01-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "NIL",
-   "days": 597,
+   "days": 599,
    "first": "2025-03-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "NMR",
-   "days": 1927,
+   "days": 1929,
    "first": "2021-08-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "NXPC",
-   "days": 546,
+   "days": 548,
    "first": "2025-05-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "O",
-   "days": 107,
+   "days": 109,
    "first": "2026-07-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "OBSR",
-   "days": 2170,
+   "days": 2172,
    "first": "2020-12-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "OBT",
-   "days": 608,
+   "days": 610,
    "first": "2025-03-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "OGN",
-   "days": 1660,
+   "days": 1662,
    "first": "2022-04-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ONDO",
-   "days": 933,
+   "days": 935,
    "first": "2024-04-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ONG",
-   "days": 2255,
+   "days": 2257,
    "first": "2020-09-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ONT",
-   "days": 2255,
+   "days": 2257,
    "first": "2020-09-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "OP",
-   "days": 1312,
+   "days": 1314,
    "first": "2023-04-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "OPEN",
-   "days": 428,
+   "days": 430,
    "first": "2025-09-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "OPG",
-   "days": 174,
+   "days": 176,
    "first": "2026-05-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ORBS",
-   "days": 2765,
+   "days": 2767,
    "first": "2019-04-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ORCA",
-   "days": 594,
+   "days": 596,
    "first": "2025-03-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ORDER",
-   "days": 709,
+   "days": 711,
    "first": "2024-12-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "OSMO",
-   "days": 1052,
+   "days": 1054,
    "first": "2023-12-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PARTI",
-   "days": 553,
+   "days": 555,
    "first": "2025-05-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PAXG",
-   "days": 601,
+   "days": 603,
    "first": "2025-03-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PCI",
-   "days": 850,
+   "days": 852,
    "first": "2024-07-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PEAQ",
-   "days": 679,
+   "days": 681,
    "first": "2025-01-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PENDLE",
-   "days": 1091,
+   "days": 1093,
    "first": "2023-11-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PENGU",
-   "days": 688,
+   "days": 690,
    "first": "2024-12-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PEPE",
-   "days": 1274,
+   "days": 1276,
    "first": "2023-05-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PHA",
-   "days": 237,
+   "days": 239,
    "first": "2026-03-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PIEVERSE",
-   "days": 353,
+   "days": 355,
    "first": "2025-11-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PLUME",
-   "days": 617,
+   "days": 619,
    "first": "2025-03-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "POD",
-   "days": 37,
+   "days": 39,
    "first": "2026-10-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "POKT",
-   "days": 520,
+   "days": 522,
    "first": "2025-06-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "POL",
-   "days": 1984,
+   "days": 1986,
    "first": "2021-06-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "POLYX",
-   "days": 854,
+   "days": 856,
    "first": "2024-07-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PONKE",
-   "days": 723,
+   "days": 725,
    "first": "2024-11-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PONS",
-   "days": 35,
+   "days": 37,
    "first": "2026-10-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "POPCAT",
-   "days": 413,
+   "days": 415,
    "first": "2025-09-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "POWR",
-   "days": 3102,
+   "days": 3104,
    "first": "2018-05-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PRL",
-   "days": 199,
+   "days": 201,
    "first": "2026-04-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PROM",
-   "days": 80,
+   "days": 82,
    "first": "2026-08-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PROMPT",
-   "days": 541,
+   "days": 543,
    "first": "2025-05-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PROS",
-   "days": 188,
+   "days": 190,
    "first": "2026-05-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PROVE",
-   "days": 463,
+   "days": 465,
    "first": "2025-08-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PUFFER",
-   "days": 717,
+   "days": 719,
    "first": "2024-11-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PUMP",
-   "days": 427,
+   "days": 429,
    "first": "2025-09-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PUMPBTC",
-   "days": 569,
+   "days": 571,
    "first": "2025-04-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PUNDIX",
-   "days": 2051,
+   "days": 2053,
    "first": "2021-04-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PYBOBO",
-   "days": 22,
+   "days": 24,
    "first": "2026-10-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PYR",
-   "days": 1113,
+   "days": 1115,
    "first": "2023-10-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PYTH",
-   "days": 989,
+   "days": 991,
    "first": "2024-02-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "PYUSD",
-   "days": 45,
+   "days": 47,
    "first": "2026-09-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "Q",
-   "days": 45,
+   "days": 47,
    "first": "2026-09-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "QKC",
-   "days": 658,
+   "days": 660,
    "first": "2025-01-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "QTUM",
-   "days": 3310,
+   "days": 3312,
    "first": "2017-10-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "QUID",
-   "days": 100,
+   "days": 102,
    "first": "2026-08-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RAD",
-   "days": 1032,
+   "days": 1034,
    "first": "2024-01-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RAY",
-   "days": 723,
+   "days": 725,
    "first": "2024-11-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RE",
-   "days": 146,
+   "days": 148,
    "first": "2026-06-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RECALL",
-   "days": 387,
+   "days": 389,
    "first": "2025-10-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RED",
-   "days": 597,
+   "days": 599,
    "first": "2025-03-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "REI",
-   "days": 1690,
+   "days": 1692,
    "first": "2022-03-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RENDER",
-   "days": 1213,
+   "days": 1215,
    "first": "2023-07-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "REQ",
-   "days": 1646,
+   "days": 1648,
    "first": "2022-05-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "REZ",
-   "days": 590,
+   "days": 592,
    "first": "2025-04-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RLC",
-   "days": 2016,
+   "days": 2018,
    "first": "2021-05-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RLUSD",
-   "days": 106,
+   "days": 108,
    "first": "2026-07-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ROA",
-   "days": 1133,
+   "days": 1135,
    "first": "2023-10-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ROBO",
-   "days": 239,
+   "days": 241,
    "first": "2026-03-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RON",
-   "days": 699,
+   "days": 701,
    "first": "2024-12-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RPL",
-   "days": 1304,
+   "days": 1306,
    "first": "2023-04-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "RSR",
-   "days": 1969,
+   "days": 1971,
    "first": "2021-06-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "S",
-   "days": 1213,
+   "days": 1215,
    "first": "2023-07-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SAFE",
-   "days": 671,
+   "days": 673,
    "first": "2025-01-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SAHARA",
-   "days": 504,
+   "days": 506,
    "first": "2025-06-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SAND",
-   "days": 2191,
+   "days": 2193,
    "first": "2020-11-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SAPIEN",
-   "days": 342,
+   "days": 344,
    "first": "2025-12-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SC",
-   "days": 960,
+   "days": 962,
    "first": "2024-03-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SCR",
-   "days": 699,
+   "days": 701,
    "first": "2024-12-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SD",
-   "days": 443,
+   "days": 445,
    "first": "2025-08-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SEI",
-   "days": 1185,
+   "days": 1187,
    "first": "2023-08-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SENT",
-   "days": 287,
+   "days": 289,
    "first": "2026-01-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SFP",
-   "days": 1380,
+   "days": 1382,
    "first": "2023-02-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SHELL",
-   "days": 622,
+   "days": 624,
    "first": "2025-02-28",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SHIB",
-   "days": 1358,
+   "days": 1360,
    "first": "2023-02-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SIGN",
-   "days": 561,
+   "days": 563,
    "first": "2025-04-30",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SIX",
-   "days": 1660,
+   "days": 1662,
    "first": "2022-04-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SKL",
-   "days": 715,
+   "days": 717,
    "first": "2024-11-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SKR",
-   "days": 294,
+   "days": 296,
    "first": "2026-01-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SKY",
-   "days": 757,
+   "days": 759,
    "first": "2024-10-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SLX",
-   "days": 164,
+   "days": 166,
    "first": "2026-06-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SNT",
-   "days": 3073,
+   "days": 3075,
    "first": "2018-06-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SOL",
-   "days": 1911,
+   "days": 1913,
    "first": "2021-08-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SOLV",
-   "days": 657,
+   "days": 659,
    "first": "2025-01-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SOMI",
-   "days": 407,
+   "days": 409,
    "first": "2025-10-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SONIC",
-   "days": 671,
+   "days": 673,
    "first": "2025-01-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SOON",
-   "days": 538,
+   "days": 540,
    "first": "2025-05-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SOPH",
-   "days": 528,
+   "days": 530,
    "first": "2025-06-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SPACE",
-   "days": 149,
+   "days": 151,
    "first": "2026-06-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SPK",
-   "days": 513,
+   "days": 515,
    "first": "2025-06-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SPX",
-   "days": 149,
+   "days": 151,
    "first": "2026-06-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "STABLE",
-   "days": 336,
+   "days": 338,
    "first": "2025-12-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "STAT",
-   "days": 1414,
+   "days": 1416,
    "first": "2022-12-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "STEEM",
-   "days": 3094,
+   "days": 3096,
    "first": "2018-05-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "STRAX",
-   "days": 960,
+   "days": 962,
    "first": "2024-03-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "STRK",
-   "days": 996,
+   "days": 998,
    "first": "2024-02-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "STX",
-   "days": 1269,
+   "days": 1271,
    "first": "2023-05-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SUI",
-   "days": 1288,
+   "days": 1290,
    "first": "2023-05-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SUN",
-   "days": 1975,
+   "days": 1977,
    "first": "2021-06-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SUPER",
-   "days": 406,
+   "days": 408,
    "first": "2025-10-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SUSHI",
-   "days": 2061,
+   "days": 2063,
    "first": "2021-03-22",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SWAP",
-   "days": 1666,
+   "days": 1668,
    "first": "2022-04-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SWELL",
-   "days": 728,
+   "days": 730,
    "first": "2024-11-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SXT",
-   "days": 548,
+   "days": 550,
    "first": "2025-05-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "SYRUP",
-   "days": 503,
+   "days": 505,
    "first": "2025-06-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "T",
-   "days": 1701,
+   "days": 1703,
    "first": "2022-03-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TAIKO",
-   "days": 856,
+   "days": 858,
    "first": "2024-07-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TAO",
-   "days": 420,
+   "days": 422,
    "first": "2025-09-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TAVA",
-   "days": 1590,
+   "days": 1592,
    "first": "2022-07-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TDROP",
-   "days": 1728,
+   "days": 1730,
    "first": "2022-02-18",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TEMCO",
-   "days": 2164,
+   "days": 2166,
    "first": "2020-12-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TFUEL",
-   "days": 2052,
+   "days": 2054,
    "first": "2021-03-31",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "THE",
-   "days": 636,
+   "days": 638,
    "first": "2025-02-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "THETA",
-   "days": 3002,
+   "days": 3004,
    "first": "2018-08-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "THQ",
-   "days": 324,
+   "days": 326,
    "first": "2025-12-23",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TIA",
-   "days": 1107,
+   "days": 1109,
    "first": "2023-11-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TOKAMAK",
-   "days": 730,
+   "days": 732,
    "first": "2024-11-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TOSHI",
-   "days": 421,
+   "days": 423,
    "first": "2025-09-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TOWNS",
-   "days": 456,
+   "days": 458,
    "first": "2025-08-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TRAC",
-   "days": 344,
+   "days": 346,
    "first": "2025-12-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TRB",
-   "days": 92,
+   "days": 94,
    "first": "2026-08-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TREE",
-   "days": 461,
+   "days": 463,
    "first": "2025-08-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TRUMP",
-   "days": 660,
+   "days": 662,
    "first": "2025-01-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TRUST",
-   "days": 372,
+   "days": 374,
    "first": "2025-11-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TRX",
-   "days": 3142,
+   "days": 3144,
    "first": "2018-04-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "TURBO",
-   "days": 730,
+   "days": 732,
    "first": "2024-11-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "UB",
-   "days": 98,
+   "days": 100,
    "first": "2026-08-06",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "UMA",
-   "days": 2157,
+   "days": 2159,
    "first": "2020-12-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "UNI",
-   "days": 2220,
+   "days": 2222,
    "first": "2020-10-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "UOS",
-   "days": 1906,
+   "days": 1908,
    "first": "2021-08-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "UP",
-   "days": 183,
+   "days": 185,
    "first": "2026-05-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "US",
-   "days": 41,
+   "days": 43,
    "first": "2026-10-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "USD1",
-   "days": 437,
+   "days": 439,
    "first": "2025-09-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "USDC",
-   "days": 1069,
+   "days": 1071,
    "first": "2023-12-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "USDE",
-   "days": 302,
+   "days": 304,
    "first": "2026-01-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "USDG",
-   "days": 100,
+   "days": 102,
    "first": "2026-08-04",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "USDS",
-   "days": 1987,
+   "days": 1989,
    "first": "2021-06-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 1
   },
   {
    "sym": "USDT",
-   "days": 1071,
+   "days": 1073,
    "first": "2023-12-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "USELESS",
-   "days": 65,
+   "days": 67,
    "first": "2026-09-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "VANA",
-   "days": 679,
+   "days": 681,
    "first": "2025-01-02",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "VERONA",
-   "days": 351,
+   "days": 353,
    "first": "2025-11-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "VET",
-   "days": 2974,
+   "days": 2976,
    "first": "2018-09-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "VIRTUAL",
-   "days": 713,
+   "days": 715,
    "first": "2024-11-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "VTHO",
-   "days": 650,
+   "days": 652,
    "first": "2025-01-31",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "VVV",
-   "days": 225,
+   "days": 227,
    "first": "2026-04-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "W",
-   "days": 953,
+   "days": 955,
    "first": "2024-04-03",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WAL",
-   "days": 595,
+   "days": 597,
    "first": "2025-03-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WAVES",
-   "days": 2975,
+   "days": 2977,
    "first": "2018-09-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WAXL",
-   "days": 1039,
+   "days": 1041,
    "first": "2024-01-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WAXP",
-   "days": 3102,
+   "days": 3104,
    "first": "2018-05-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WCT",
-   "days": 575,
+   "days": 577,
    "first": "2025-04-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WET",
-   "days": 332,
+   "days": 334,
    "first": "2025-12-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WIF",
-   "days": 520,
+   "days": 522,
    "first": "2025-06-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WLD",
-   "days": 1207,
+   "days": 1209,
    "first": "2023-07-24",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WLFI",
-   "days": 437,
+   "days": 439,
    "first": "2025-09-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WNCG",
-   "days": 1248,
+   "days": 1250,
    "first": "2023-06-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "WOO",
-   "days": 1757,
+   "days": 1759,
    "first": "2022-01-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XAI",
-   "days": 890,
+   "days": 892,
    "first": "2024-06-05",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XAN",
-   "days": 401,
+   "days": 403,
    "first": "2025-10-07",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XAUT",
-   "days": 315,
+   "days": 317,
    "first": "2026-01-01",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XCN",
-   "days": 1484,
+   "days": 1486,
    "first": "2022-10-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XDP",
-   "days": 34,
+   "days": 36,
    "first": "2026-10-09",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XEC",
-   "days": 1903,
+   "days": 1905,
    "first": "2021-08-27",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XLM",
-   "days": 2918,
+   "days": 2920,
    "first": "2018-11-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XPL",
-   "days": 409,
+   "days": 411,
    "first": "2025-09-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XPLA",
-   "days": 1337,
+   "days": 1339,
    "first": "2023-03-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XPR",
-   "days": 2388,
+   "days": 2390,
    "first": "2020-04-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XRP",
-   "days": 3452,
+   "days": 3454,
    "first": "2017-05-31",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XTER",
-   "days": 532,
+   "days": 534,
    "first": "2025-05-29",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XTZ",
-   "days": 2276,
+   "days": 2278,
    "first": "2020-08-19",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XVS",
-   "days": 1981,
+   "days": 1983,
    "first": "2021-06-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "XYO",
-   "days": 566,
+   "days": 568,
    "first": "2025-04-25",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "YB",
-   "days": 391,
+   "days": 393,
    "first": "2025-10-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "YFI",
-   "days": 2192,
+   "days": 2194,
    "first": "2020-11-11",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "YGG",
-   "days": 1039,
+   "days": 1041,
    "first": "2024-01-08",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZAMA",
-   "days": 212,
+   "days": 214,
    "first": "2026-04-14",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZBT",
-   "days": 391,
+   "days": 393,
    "first": "2025-10-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZEST",
-   "days": 31,
+   "days": 33,
    "first": "2026-10-12",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZETA",
-   "days": 910,
+   "days": 912,
    "first": "2024-05-16",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZIL",
-   "days": 3108,
+   "days": 3110,
    "first": "2018-05-10",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZK",
-   "days": 878,
+   "days": 880,
    "first": "2024-06-17",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZKC",
-   "days": 423,
+   "days": 425,
    "first": "2025-09-15",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZKP",
-   "days": 321,
+   "days": 323,
    "first": "2025-12-26",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZORA",
-   "days": 387,
+   "days": 389,
    "first": "2025-10-21",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZRC",
-   "days": 668,
+   "days": 670,
    "first": "2025-01-13",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZRO",
-   "days": 875,
+   "days": 877,
    "first": "2024-06-20",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   },
   {
    "sym": "ZRX",
-   "days": 3088,
+   "days": 3090,
    "first": "2018-05-30",
-   "last": "2026-11-11",
+   "last": "2026-11-13",
    "missing": 0
   }
  ]
