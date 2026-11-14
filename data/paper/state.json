@@ -1,6 +1,6 @@
 {
- "updatedAt": "2026-11-13T23:06Z",
- "today": "2026-11-13",
+ "updatedAt": "2026-11-14T00:06Z",
+ "today": "2026-11-14",
  "startedAt": "2026-11-11",
  "initialCash": 10000.0,
  "equity": 10000.0,
@@ -8,15 +8,15 @@
  "returnPct": 0.0,
  "mdd": 0.0,
  "exposure": 0.0,
- "btcReturnPct": -0.08166486676206175,
+ "btcReturnPct": -0.077080779718675,
  "playbookAsof": "2026-11-11",
  "market": {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "state": "DOWN",
-  "btc_rsi": 29.5,
-  "btc_d50": -0.1172,
-  "mkt_brk": 0.0,
-  "names": 161,
+  "btc_rsi": 24.5,
+  "btc_d50": -0.1527,
+  "mkt_brk": 0.0063,
+  "names": 159,
   "stateLabel": "BTC 50일선 아래",
   "note": "BTC 종가가 50일선 아래"
  },
@@ -25,18 +25,63 @@
  "pending": [],
  "decisions": [
   {
-   "sym": "AVGOB",
-   "type": "BRK_CALM",
+   "sym": "BMT",
+   "type": "PULL50",
    "state": "DOWN",
    "flagged": 1,
-   "n": 479,
-   "meanR": -0.23013776226351718,
-   "lb": -0.3062140631866961,
+   "n": 212,
+   "meanR": -0.10749182369823604,
+   "lb": -0.23018327364122823,
    "level": "칸",
    "grade": null,
    "decision": "관찰만",
    "why": "과거 성적이 플러스라고 보기 어려움",
-   "typeLabel": "거래량 동반 20일 고점 돌파",
+   "typeLabel": "주봉 정배열 속 50일선 눌림",
+   "stateLabel": "BTC 50일선 아래"
+  },
+  {
+   "sym": "INJ",
+   "type": "PULL50",
+   "state": "DOWN",
+   "flagged": 0,
+   "n": 224,
+   "meanR": -0.034605103844819254,
+   "lb": -0.1568963849525305,
+   "level": "칸",
+   "grade": null,
+   "decision": "관찰만",
+   "why": "과거 성적이 플러스라고 보기 어려움",
+   "typeLabel": "주봉 정배열 속 50일선 눌림",
+   "stateLabel": "BTC 50일선 아래"
+  },
+  {
+   "sym": "KITE",
+   "type": "TURN",
+   "state": "DOWN",
+   "flagged": 1,
+   "n": 210,
+   "meanR": -0.05109253544095582,
+   "lb": -0.17010150652213324,
+   "level": "칸",
+   "grade": null,
+   "decision": "관찰만",
+   "why": "과거 성적이 플러스라고 보기 어려움",
+   "typeLabel": "하락 구조 전환 뒤 직전 고점 돌파",
+   "stateLabel": "BTC 50일선 아래"
+  },
+  {
+   "sym": "SHELL",
+   "type": "BASE",
+   "state": "DOWN",
+   "flagged": 1,
+   "n": 88,
+   "meanR": -0.2480768991885995,
+   "lb": -0.38903117552323346,
+   "level": "칸",
+   "grade": null,
+   "decision": "관찰만",
+   "why": "과거 성적이 플러스라고 보기 어려움",
+   "typeLabel": "횡보 뒤 거래량 돌파",
    "stateLabel": "BTC 50일선 아래"
   }
  ],
@@ -56,8 +101,8 @@
   "positions": [],
   "majors": {},
   "pending": [],
-  "openDone": "2026-11-13",
-  "closeDone": "2026-11-12",
+  "openDone": "2026-11-14",
+  "closeDone": "2026-11-13",
   "equity": [
    [
     "2026-11-11",
@@ -74,6 +119,14 @@
     0,
     0,
     0.0
+   ],
+   [
+    "2026-11-13",
+    10000.0,
+    10000.0,
+    0,
+    0,
+    0.0
    ]
   ],
   "trades": [],
@@ -82,13 +135,52 @@
   "peak": 10000.0,
   "decisions": [
    {
-    "sym": "AVGOB",
-    "type": "BRK_CALM",
+    "sym": "BMT",
+    "type": "PULL50",
     "state": "DOWN",
     "flagged": 1,
-    "n": 479,
-    "meanR": -0.23013776226351718,
-    "lb": -0.3062140631866961,
+    "n": 212,
+    "meanR": -0.10749182369823604,
+    "lb": -0.23018327364122823,
+    "level": "칸",
+    "grade": null,
+    "decision": "관찰만",
+    "why": "과거 성적이 플러스라고 보기 어려움"
+   },
+   {
+    "sym": "INJ",
+    "type": "PULL50",
+    "state": "DOWN",
+    "flagged": 0,
+    "n": 224,
+    "meanR": -0.034605103844819254,
+    "lb": -0.1568963849525305,
+    "level": "칸",
+    "grade": null,
+    "decision": "관찰만",
+    "why": "과거 성적이 플러스라고 보기 어려움"
+   },
+   {
+    "sym": "KITE",
+    "type": "TURN",
+    "state": "DOWN",
+    "flagged": 1,
+    "n": 210,
+    "meanR": -0.05109253544095582,
+    "lb": -0.17010150652213324,
+    "level": "칸",
+    "grade": null,
+    "decision": "관찰만",
+    "why": "과거 성적이 플러스라고 보기 어려움"
+   },
+   {
+    "sym": "SHELL",
+    "type": "BASE",
+    "state": "DOWN",
+    "flagged": 1,
+    "n": 88,
+    "meanR": -0.2480768991885995,
+    "lb": -0.38903117552323346,
     "level": "칸",
     "grade": null,
     "decision": "관찰만",
@@ -96,12 +188,12 @@
    }
   ],
   "market": {
-   "date": "2026-11-12",
+   "date": "2026-11-13",
    "state": "DOWN",
-   "btc_rsi": 29.5,
-   "btc_d50": -0.1172,
-   "mkt_brk": 0.0,
-   "names": 161
+   "btc_rsi": 24.5,
+   "btc_d50": -0.1527,
+   "mkt_brk": 0.0063,
+   "names": 159
   },
   "bench": {
    "btc0": 74078.0
