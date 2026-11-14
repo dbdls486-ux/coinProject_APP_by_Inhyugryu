@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T09:06Z",
+ "updatedAt": "2026-11-14T10:06Z",
  "today": "2026-11-14",
  "startedAt": "2026-11-11",
  "initialCash": 10000.0,
@@ -8,7 +8,7 @@
  "returnPct": 0.0,
  "mdd": 0.0,
  "exposure": 0.0,
- "btcReturnPct": -0.09399484327330643,
+ "btcReturnPct": -0.09035786603310025,
  "playbookAsof": "2026-11-11",
  "market": {
   "date": "2026-11-13",
