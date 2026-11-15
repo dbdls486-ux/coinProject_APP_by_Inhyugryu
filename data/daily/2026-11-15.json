@@ -1,0 +1,559 @@
+{
+  "id": "2026-11-15",
+  "date": "2026-11-15",
+  "asOf": "2026-11-15 09:35 KST",
+  "window": "최근 24시간 (11/14 08:30 → 11/15 08:30 KST)",
+  "title": "비트코인 6만 5천 달러대로 -4.6%, 공포지수 13",
+  "regime": "하락장",
+  "tldr": [
+    "비트코인이 24시간 -4.6%로 6만 5천 달러대까지 밀렸고, 9시대에는 6만 4천 달러까지 내려왔다.",
+    "시총 100위 안에서 오른 종목은 3개뿐이고 ASTER는 롱 청산으로 -22%였다.",
+    "미국 BTC ETF는 7거래일 연속 유출, 공포지수는 13으로 극도의 공포다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "BTC (24시간)",
+      "value": "-4.6%, 8,892만원",
+      "basis": "11/15 07:30 기준 24시간 · 토큰포스트",
+      "tone": "down",
+      "details": [
+        {
+          "label": "BTC",
+          "value": "65,763달러, -4.63%. 09시대 CoinGecko 64,090달러로 24시간 -6.0%까지 확대"
+        },
+        {
+          "label": "ETH",
+          "value": "245만원, -6.9%. 1,836달러"
+        },
+        {
+          "label": "메이저",
+          "value": "HYPE -10.3% · SOL -9.9% · DOGE -9.0% · BNB -7.5% · XRP -7.1%"
+        },
+        {
+          "label": "시총 100위 안 24시간 상승",
+          "value": "PIEVERSE +6.9% · NIGHT +3.8% · M +1.5%, 3종뿐"
+        },
+        {
+          "label": "시총 100위 안 24시간 하락",
+          "value": "ASTER -22.0% · PUMP -15.2% · UNI -14.4% · WLD -13.0% · ENA -13.0% · PEPE -12.5% · FIL -12.2% · ICP -12.1% · NEAR -11.6% · AVAX -11.1%"
+        }
+      ]
+    },
+    {
+      "label": "파생 청산 (24시간)",
+      "value": "17.7억 달러",
+      "basis": "11/15 07:30 기준 24시간 · 토큰포스트 인용",
+      "tone": "down",
+      "details": [
+        {
+          "label": "롱·숏",
+          "value": "롱 49.4%, 숏 50.6%"
+        },
+        {
+          "label": "새벽 집계",
+          "value": "8.59억 달러 중 롱 91.6%. BTC 3.99억, ETH 2.32억 달러"
+        },
+        {
+          "label": "옵션",
+          "value": "데리비트 BTC 풋/콜 거래량 비율 1.64로 하락 대비 우세"
+        }
+      ]
+    },
+    {
+      "label": "미국 BTC 현물 ETF",
+      "value": "11/13 거래일 -1.85억 달러",
+      "basis": "7거래일 연속 순유출 · Farside 등, cryptonews 인용",
+      "tone": "down",
+      "details": [
+        {
+          "label": "펀드별",
+          "value": "IBIT -1.435억, FBTC -0.419억 달러, 나머지 0"
+        },
+        {
+          "label": "누적",
+          "value": "7거래일 -19.1억 달러, 11월 누적 -20억 달러 초과"
+        },
+        {
+          "label": "ETH ETF",
+          "value": "11/13 거래일 +0.024억 달러로 소폭 유입"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "24시간 -4.6%, 8,892만원",
+      "note": "65,763달러. 09시대 64,090달러로 하락 지속. 200주 이동평균 아래로 내려왔다는 분석."
+    },
+    {
+      "label": "ETH",
+      "value": "24시간 -6.9%, 245만원",
+      "note": "1,836달러. 09시대 CoinGecko 1,767달러."
+    },
+    {
+      "label": "전체 시총",
+      "value": "24시간 -5.7%, 2.256조 달러",
+      "note": "CoinGecko 09시대 조회. 24시간 거래량 943억 달러."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "57.1%",
+      "note": "CoinGecko. ETH 9.59%. 전일 57.4%."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/13 거래일 -1.85억 달러",
+      "note": "7거래일 연속 유출, 누적 -19.1억 달러. IBIT가 -1.435억 달러."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/13 거래일 +0.024억 달러",
+      "note": "소폭 유입으로 연속 유출이 멈춤."
+    },
+    {
+      "label": "전체 청산(24시간)",
+      "value": "17.7억 달러, 롱 49%",
+      "note": "토큰포스트 07:30 기준. 전일 13.29억 달러보다 많다."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "13, 극도의 공포",
+      "note": "전일 20. 사흘째 극도의 공포."
+    },
+    {
+      "label": "원화 마켓",
+      "value": "거래대금 2.2조원, 김프 3.9%",
+      "note": "업비트·빗썸 합산. 50억원 이상 거래 43종 중 상승 16%. 카바 -32.5%, PUMPBTC -32.1%."
+    },
+    {
+      "label": "집계 기준",
+      "value": "CoinMarketCap 상위 100 표, 09시대 조회",
+      "note": "순위·시총은 CoinGecko. ASTER는 CoinMarketCap 표에 없어 CoinGecko 24시간 값. BTC 대비 초과분은 같은 시각 CoinGecko BTC -6.0% 기준."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,336.7원",
+      "note": "11/13 서울 외환시장 마감가, 6.0원 상승. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "Pieverse",
+      "ticker": "PIEVERSE",
+      "direction": "up",
+      "change": "+6.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+12.9%p",
+      "marketCap": "4.98억 달러",
+      "rank": 98,
+      "volume24h": "0.69억 달러 (시총의 14%)",
+      "causeType": "원인 불명",
+      "headline": "8.6% 물량 언락 당일에도 +7%.",
+      "happened": [
+        "14일 09시 PIEVERSE 8,640만 개 언락, 유통량의 약 30%.",
+        "상승 이유는 확인되지 않음."
+      ],
+      "reaction": [
+        "24시간 +6.9%, 2,263원 → 2,419원.",
+        "거래량 0.69억 달러로 시총의 14%."
+      ],
+      "watch": "언락 물량의 거래소 입금 여부와 1.98달러 전고점.",
+      "caveat": "언락은 매도 압력 요인이라 상승을 설명하지 못한다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Midnight",
+      "ticker": "NIGHT",
+      "direction": "up",
+      "change": "+3.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+9.8%p",
+      "marketCap": "7.86억 달러",
+      "rank": 78,
+      "volume24h": "1.04억 달러 (시총의 13%)",
+      "causeType": "원인 불명",
+      "headline": "대부분이 빠진 날 몇 안 되는 상승.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "14일 거래량이 평소보다 크게 늘었다는 분석만 있다."
+      ],
+      "reaction": [
+        "24시간 +3.8%, 62원 → 64원.",
+        "거래량 1.04억 달러로 시총의 13%."
+      ],
+      "watch": "0.05달러 돌파 여부.",
+      "caveat": "거래량 증가의 주체는 확인되지 않았다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Aster",
+      "ticker": "ASTER",
+      "direction": "down",
+      "change": "-22.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-16.0%p",
+      "marketCap": "12.9억 달러",
+      "rank": 59,
+      "volume24h": "1.88억 달러 (시총의 15%)",
+      "causeType": "수급 주도",
+      "headline": "롱 청산과 OI 16% 감소로 -22%.",
+      "happened": [
+        "14일 저녁 30분 만에 0.60 → 0.54달러로 9.6% 급락.",
+        "그 몇 시간 전 한 지갑이 106만 ASTER, 약 68만 달러어치를 매도."
+      ],
+      "reaction": [
+        "24시간 -22.0%, 858원 → 669원.",
+        "24시간 청산 776만 달러 중 롱 774만 달러, OI -16%로 3.08억 달러."
+      ],
+      "watch": "OI 추가 감소 여부와 0.50달러 지지.",
+      "caveat": "지갑 매도 규모는 하락 전체를 설명하기엔 작다. CoinMarketCap 상위 100 표에는 없음.",
+      "confidence": "B",
+      "flows": {
+        "openInterest": "3.08억 달러, -16% (CoinGlass 인용)",
+        "liquidations": "24시간 776만 달러, 롱 774만 달러"
+      }
+    },
+    {
+      "project": "Pump.fun",
+      "ticker": "PUMP",
+      "direction": "down",
+      "change": "-15.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-9.2%p",
+      "marketCap": "13.4억 달러",
+      "rank": 56,
+      "volume24h": "1.20억 달러 (시총의 9%)",
+      "causeType": "원인 불명",
+      "headline": "시총 100위 안 하락 상위, 이유는 없음.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "원화 마켓 '펌프' -32%는 PUMPBTC로 다른 코인이다."
+      ],
+      "reaction": [
+        "24시간 -15.2%, 4.66원 → 3.95원.",
+        "15일 05시 기준 24시간 -17.1%로 90개 중 하락 1위."
+      ],
+      "watch": "0.0029달러 지지 여부.",
+      "caveat": "Pump.fun의 SOL 매도 보도는 기존 흐름이라 이날 원인으로 쓰지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Uniswap",
+      "ticker": "UNI",
+      "direction": "down",
+      "change": "-14.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-8.4%p",
+      "marketCap": "29.7억 달러",
+      "rank": 30,
+      "volume24h": "5.54억 달러 (시총의 19%)",
+      "causeType": "원인 불명",
+      "headline": "사흘 연속 하락, 이번 주 최대 낙폭.",
+      "happened": [
+        "UNI 고유 사건은 없었다는 분석.",
+        "12일 -8.9%, 13일 -4.0%에 이어 사흘째."
+      ],
+      "reaction": [
+        "24시간 -14.4%, 7,745원 → 6,630원.",
+        "거래량 5.54억 달러로 시총의 19%."
+      ],
+      "watch": "4.75달러 저점 지지 여부.",
+      "caveat": "거시 악재 속 매도라는 설명뿐 수치 근거는 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Worldcoin",
+      "ticker": "WLD",
+      "direction": "down",
+      "change": "-13.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-7.0%p",
+      "marketCap": "9.66억 달러",
+      "rank": 69,
+      "volume24h": "2.41억 달러 (시총의 25%)",
+      "causeType": "원인 불명",
+      "headline": "0.278달러 지지선을 내준 뒤 낙폭 확대.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "14일 0.278달러 지지가 무너진 뒤 하락 가속."
+      ],
+      "reaction": [
+        "24시간 -13.0%, 402원 → 350원.",
+        "거래량 2.41억 달러로 시총의 25%."
+      ],
+      "watch": "0.26달러 지지 여부.",
+      "caveat": "거래량이 시총 대비 커서 매도가 활발했지만 주체는 미확인.",
+      "confidence": "C"
+    },
+    {
+      "project": "Ethena",
+      "ticker": "ENA",
+      "direction": "down",
+      "change": "-13.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-7.0%p",
+      "marketCap": "15.5억 달러",
+      "rank": 51,
+      "volume24h": "3.73억 달러 (시총의 24%)",
+      "causeType": "원인 불명",
+      "headline": "사흘 연속 하락, 언락 전 매물 부담.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "12월 2일 재단·5일 팀 언락을 앞두고 있다."
+      ],
+      "reaction": [
+        "24시간 -13.0%, 183원 → 159원.",
+        "거래량 3.73억 달러로 시총의 24%."
+      ],
+      "watch": "0.12달러 회복 여부.",
+      "caveat": "언락은 아직 3주 뒤라 이날 원인으로 쓰지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pepe",
+      "ticker": "PEPE",
+      "direction": "down",
+      "change": "-12.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-6.5%p",
+      "marketCap": "16.3억 달러",
+      "rank": 49,
+      "volume24h": "4.30억 달러 (시총의 26%)",
+      "causeType": "원인 불명",
+      "headline": "전날 반등을 하루 만에 되돌렸다.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "13일 +2.8% 반등 뒤 다시 하락."
+      ],
+      "reaction": [
+        "24시간 -12.5%, 0.00599원 → 0.00524원.",
+        "거래량 4.30억 달러로 시총의 26%."
+      ],
+      "watch": "거래량이 줄며 하락이 멈추는지.",
+      "caveat": "밈코인이라 원인을 특정하기 어렵다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Filecoin",
+      "ticker": "FIL",
+      "direction": "down",
+      "change": "-12.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-6.2%p",
+      "marketCap": "5.23억 달러",
+      "rank": 96,
+      "volume24h": "1.13억 달러 (시총의 22%)",
+      "causeType": "원인 불명",
+      "headline": "시장 디레버리징 속 BTC의 두 배 하락.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "시장 전반 레버리지 축소 속 하락이라는 분석만 있다."
+      ],
+      "reaction": [
+        "24시간 -12.2%, 972원 → 854원.",
+        "거래량 1.13억 달러로 시총의 22%."
+      ],
+      "watch": "0.60달러 지지 여부.",
+      "caveat": "코인별 청산·OI 수치는 확인하지 못했다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Internet Computer",
+      "ticker": "ICP",
+      "direction": "down",
+      "change": "-12.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-6.1%p",
+      "marketCap": "12.1억 달러",
+      "rank": 63,
+      "volume24h": "0.59억 달러 (시총의 5%)",
+      "causeType": "원인 불명",
+      "headline": "한 시간 -5.3% 급락 구간이 포함됐다.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "1시간 만에 2.16달러까지 5.3% 밀린 구간이 있었다."
+      ],
+      "reaction": [
+        "24시간 -12.1%, 3,467원 → 3,048원.",
+        "거래량 0.59억 달러로 시총의 5%."
+      ],
+      "watch": "2달러 지지 여부.",
+      "caveat": "거래량이 적어 급락 구간의 매도 주체는 알 수 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "NEAR Protocol",
+      "ticker": "NEAR",
+      "direction": "down",
+      "change": "-11.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.6%p",
+      "marketCap": "39.7억 달러",
+      "rank": 23,
+      "volume24h": "6.75억 달러 (시총의 17%)",
+      "causeType": "원인 불명",
+      "headline": "13일 반등을 지키지 못하고 3달러 근처로.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "12일 -9.0%, 13일 +2.5%에 이어 다시 하락."
+      ],
+      "reaction": [
+        "24시간 -11.6%, 4,688원 → 4,144원.",
+        "거래량 6.75억 달러로 시총의 17%."
+      ],
+      "watch": "3달러 지지와 HSP-029 시행 공지.",
+      "caveat": "발행 축소 안건은 시행 일정이 나오지 않아 가격 재료가 되지 못했다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Avalanche",
+      "ticker": "AVAX",
+      "direction": "down",
+      "change": "-11.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.1%p",
+      "marketCap": "31.7억 달러",
+      "rank": 25,
+      "volume24h": "3.17억 달러 (시총의 10%)",
+      "causeType": "원인 불명",
+      "headline": "4주 -28%에 하루 -11% 추가.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "최근 4주 -28%로 BTC·ETH보다 약했다."
+      ],
+      "reaction": [
+        "24시간 -11.1%, 11,217원 → 9,972원.",
+        "거래량 3.17억 달러로 시총의 10%."
+      ],
+      "watch": "7달러 지지 여부.",
+      "caveat": "DeFi 예치 증가 같은 호재가 가격에 반영되지 않는 흐름이 이어졌다.",
+      "confidence": "C"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "PENGU·APT·VIRTUAL·PYTH·TIA",
+      "reason": "CoinMarketCap 상위 100 -12~-17%이나 CoinGecko 100위 밖"
+    },
+    {
+      "ticker": "ETHFI",
+      "reason": "CoinMarketCap 80위 -13.6%이나 CoinGecko 100위 밖으로 밀림"
+    },
+    {
+      "ticker": "INJ·HYPE·TAO·ONDO",
+      "reason": "-10.2~-10.7%, 하락 11위 이하라 종목 수 제한으로 제외. INJ는 Veyra 투표 정족수 미달 보도가 엇갈림"
+    },
+    {
+      "ticker": "GT·OKB",
+      "reason": "-10% 안팎, 거래소 토큰"
+    },
+    {
+      "ticker": "카바·PUMPBTC",
+      "reason": "원화 마켓 -32%대 하락, CoinGecko 100위 밖"
+    }
+  ],
+  "watchNext": [
+    "다음 거래일 미 BTC 현물 ETF — 8거래일 연속 유출 여부",
+    "BTC 64,000달러 지지와 200주 이동평균 재회복 여부",
+    "ASTER 미결제약정 추가 감소 여부",
+    "PIEVERSE 언락 물량의 거래소 입금"
+  ],
+  "highlight": "주말인데도 하락이 멈추지 않았다. 비트코인이 6만 5천 달러대로 밀리는 동안 시총 100위 안 알트 대부분은 그 두 배 넘게 빠졌고, 오른 종목은 3개뿐이었다. 하락 상위 중 ASTER만 롱 청산과 OI 감소가 숫자로 확인돼 수급 주도로 분류했고, 나머지는 고유 사건도 코인별 수급 수치도 없어 원인 불명으로 남겼다. 공포지수 13과 청산 17.7억 달러는 레버리지가 아직 정리되는 중이라는 신호다.",
+  "sources": [
+    {
+      "title": "토큰포스트 — [아침 시황] 비트코인 8,892만원, 24시간 4.6% 하락 (11/15 07:30)",
+      "url": "https://www.tokenpost.kr/news/cryptocurrency/438462"
+    },
+    {
+      "title": "토큰포스트 — 11월 15일 오전 팟캐스트, 롱 청산 8.6억달러",
+      "url": "https://www.tokenpost.kr/news/insights/438427"
+    },
+    {
+      "title": "CoinMarketCap — 상위 100 24h 상승·하락 (11/15 09시대 조회)",
+      "url": "https://coinmarketcap.com/gainers-losers/"
+    },
+    {
+      "title": "CoinGecko — 시총 1~100위, 시장 개요 (11/15 09시대 조회)",
+      "url": "https://www.coingecko.com/"
+    },
+    {
+      "title": "cryptonews.net — US spot Bitcoin ETFs bleed $185 million as outflow streak hits seven days",
+      "url": "https://cryptonews.net/news/bitcoin/33752304/"
+    },
+    {
+      "title": "TokenPost — Pump.fun leads crypto decliners with 17.05% drop as 80 of 90 fall (11/14 20:02 UTC)",
+      "url": "https://www.tokenpost.com/news/investing/57498"
+    },
+    {
+      "title": "cryptonews.net — A sharp and unexpected plunge in the altcoin backed by CZ (ASTER)",
+      "url": "https://cryptonews.net/news/analytics/33753405/"
+    },
+    {
+      "title": "CryptoTicker — Pieverse unlock November 14: 86.4m PIEVERSE tokens freed",
+      "url": "https://cryptoticker.io/en/pieverse-unlock-november-14-vesting-cliff/"
+    },
+    {
+      "title": "CoinMarketCap — Uniswap declines 15% amid broader crypto market selloff",
+      "url": "https://coinmarketcap.com/top-stories/6af7ddf10ada0c77afaf9379/"
+    },
+    {
+      "title": "DiarioBitcoin — WLD cae y pone a prueba el soporte de USD 0,278",
+      "url": "https://www.diariobitcoin.com/analisis/wld-cae-y-pone-a-prueba-el-soporte-de-usd-0278-el-14-de-noviembre-de-2026/"
+    },
+    {
+      "title": "DiarioBitcoin — Midnight (NIGHT) sube con volumen excepcional",
+      "url": "https://www.diariobitcoin.com/analisis/midnight-night-sube-con-volumen-excepcional-el-14-de-noviembre-de-2026/"
+    },
+    {
+      "title": "CoinMarketCap — Filecoin falls 4.27% amid broad market deleveraging",
+      "url": "https://coinmarketcap.com/top-stories/6af69a5e0ada0c77afae57bf/"
+    },
+    {
+      "title": "TokenPost — Internet Computer (ICP) falls 5.30% in an hour to $2.16",
+      "url": "https://www.tokenpost.com/news/investing/57521"
+    },
+    {
+      "title": "cryptonews.net — AVAX falls 28% in four weeks, lagging Bitcoin and Ether",
+      "url": "https://cryptonews.net/news/defi/33721986/"
+    },
+    {
+      "title": "Phemex — Injective Veyra cross-chain upgrade vote fails quorum",
+      "url": "https://phemex.com/news/article/injective-stakers-vote-on-veyra-crosschain-upgrade-after-quorum-failure-103412"
+    },
+    {
+      "title": "디지털애셋 — [아침코인] 11월 14일 PUMPBTC(펌프) 35%↑",
+      "url": "https://www.digitalasset.works/news/articleView.html?idxno=44297"
+    },
+    {
+      "title": "아시아경제 — 원·달러 환율 6.0원 오른 1336.7원 (11/13)",
+      "url": "https://view.asiae.co.kr/article/2026111315345800319"
+    }
+  ],
+  "terms": [
+    {
+      "term": "롱 청산",
+      "meaning": "가격 상승에 빌린 돈으로 건 포지션이 증거금 부족으로 강제 정리되는 것. 하락을 더 키운다"
+    },
+    {
+      "term": "미결제약정(OI)",
+      "meaning": "아직 청산되지 않은 선물 계약의 총액. 줄어들면 레버리지가 빠져나가는 중"
+    },
+    {
+      "term": "언락",
+      "meaning": "묶여 있던 토큰이 일정에 따라 팔 수 있는 상태로 풀리는 것"
+    },
+    {
+      "term": "풋/콜 비율",
+      "meaning": "하락에 거는 옵션 거래가 상승에 거는 거래의 몇 배인지. 1보다 크면 하락 대비가 많다"
+    },
+    {
+      "term": "200주 이동평균",
+      "meaning": "최근 200주 종가의 평균. 비트코인의 장기 바닥선으로 자주 쓰인다"
+    },
+    {
+      "term": "김치 프리미엄",
+      "meaning": "국내 원화 마켓 가격이 해외 가격보다 비싼 정도"
+    }
+  ]
+}
