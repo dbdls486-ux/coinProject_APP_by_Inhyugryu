@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-11-16-hype",
+    "date": "2026-11-16",
+    "slot": "new_listing",
+    "project": "Hyperliquid",
+    "ticker": "HYPE",
+    "question": "하이퍼리퀴드는 어떻게 자체 체인 위 호가창으로 선물을 거래시키고, 그 수수료는 어떻게 HYPE 매입·소각으로 이어질까?",
+    "oneLiner": "쉽게 말하면, 거래소처럼 호가창으로 코인·주식 선물을 사고파는 블록체인이며, HYPE는 그 수수료로 매일 시장에서 되사 묶어 두는 토큰이다.",
+    "sector": "Perp DEX · Layer 1"
+  },
+  {
     "id": "2026-11-13-aave",
     "date": "2026-11-13",
     "slot": "top100",
