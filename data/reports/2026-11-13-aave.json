@@ -363,103 +363,305 @@
   "terms": [
     {
       "term": "허브와 스포크",
-      "meaning": "Hub & Spoke. 예치 자산을 보관하는 공동 금고 하나에 여러 대출 창구가 연결된 구조"
+      "key": "hub-and-spoke",
+      "aliases": [
+        "Hub & Spoke"
+      ],
+      "meaning": "예치 자산을 보관하는 공동 금고 하나에 여러 대출 창구가 연결된 구조",
+      "inline": false
     },
     {
       "term": "담보계수",
-      "meaning": "Collateral Factor. 담보 가치 가운데 빌릴 수 있는 비율. 83%면 100을 맡기고 83까지 빌린다"
+      "key": "collateral-factor",
+      "aliases": [
+        "Collateral Factor"
+      ],
+      "meaning": "담보 가치 가운데 빌릴 수 있는 비율. 83%면 100을 맡기고 83까지 빌린다",
+      "inline": false
     },
     {
       "term": "건전성 지수",
-      "meaning": "Health Factor. 담보 인정가치를 부채로 나눈 값. 1 아래면 청산 대상"
+      "key": "health-factor",
+      "aliases": [
+        "Health Factor"
+      ],
+      "meaning": "담보 인정가치를 부채로 나눈 값. 1 아래면 청산 대상",
+      "role": "스포크에서 돈을 빌린 사람마다 계산된다. 담보 가격이 떨어져 1 아래로 내려가면 누구나 빚 일부를 대신 갚고 담보를 할인가에 받아 갈 수 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aave Docs – V4 Liquidations",
+          "url": "https://aave.com/docs/aave-v4/positions/liquidations"
+        }
+      ]
     },
     {
       "term": "청산",
-      "meaning": "제3자가 빚을 대신 갚고 담보를 할인가에 받아 가는 것"
+      "key": "liquidation",
+      "meaning": "제3자가 빚을 대신 갚고 담보를 할인가에 받아 가는 것",
+      "inline": false
     },
     {
       "term": "청산 보너스",
-      "meaning": "청산자가 갚은 금액 위에 얹어 받는 담보의 할인 폭"
+      "key": "liquidation-bonus",
+      "meaning": "청산자가 갚은 금액 위에 얹어 받는 담보의 할인 폭",
+      "inline": false
     },
     {
       "term": "이용률",
-      "meaning": "Utilization. 예치금 가운데 빌려 나간 비율. 100%면 출금할 현금이 없다"
+      "key": "utilization",
+      "aliases": [
+        "Utilization"
+      ],
+      "meaning": "예치금 가운데 빌려 나간 비율. 100%면 출금할 현금이 없다",
+      "inline": false
     },
     {
       "term": "유동성 수수료",
-      "meaning": "liquidityFee. 차입 이자 가운데 프로토콜이 떼는 비율. V3의 reserve factor에 해당"
+      "key": "liquidity-fee",
+      "aliases": [
+        "liquidityFee"
+      ],
+      "meaning": "차입 이자 가운데 프로토콜이 떼는 비율. V3의 reserve factor에 해당",
+      "inline": false
     },
     {
       "term": "위험 프리미엄",
-      "meaning": "Risk Premium. 위험한 담보를 맡긴 차입자가 기준금리 위에 더 내는 이자"
+      "key": "risk-premium",
+      "aliases": [
+        "Risk Premium"
+      ],
+      "meaning": "위험한 담보를 맡긴 차입자가 기준금리 위에 더 내는 이자",
+      "role": "V4에서는 담보에 위험 프리미엄이 붙은 자산이 섞이면, 그 차입자가 기준금리 위에 사용자별 프리미엄을 더 낸다. 위험한 담보를 쓰는 비용을 그 차입자가 지게 하는 장치다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aave Labs 블로그 – Aave V4 Risk Premiums (2025-07-24)",
+          "url": "https://aave.com/blog/aave-v4-risk-premiums"
+        }
+      ]
     },
     {
       "term": "크레딧 라인",
-      "meaning": "허브가 스포크에 허용하는 차입 한도. 다른 허브의 스포크에도 줄 수 있다"
+      "key": "credit-line",
+      "meaning": "허브가 스포크에 허용하는 차입 한도. 다른 허브의 스포크에도 줄 수 있다",
+      "inline": false
     },
     {
       "term": "적자",
-      "meaning": "deficit. 담보를 다 팔아도 못 받은 빚. 자산별·스포크별로 기록된다"
+      "key": "deficit",
+      "aliases": [
+        "deficit"
+      ],
+      "meaning": "담보를 다 팔아도 못 받은 빚. 자산별·스포크별로 기록된다",
+      "role": "V4에서 한 스포크가 담보를 다 팔고도 빚을 못 받으면 그 손실은 먼저 그 스포크의 적자로 기록된다. 이 적자를 무엇으로 메울지는 V4에서 아직 정해지지 않았다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aave Docs – V4 Liquidations",
+          "url": "https://aave.com/docs/aave-v4/positions/liquidations"
+        },
+        {
+          "title": "Aave Docs – V4 Hubs",
+          "url": "https://aave.com/docs/aave-v4/liquidity/hubs"
+        }
+      ]
     },
     {
       "term": "Umbrella",
-      "meaning": "V3 예치 토큰을 스테이킹해 적자가 나면 자동으로 깎아 메우는 안전 장치"
+      "key": "umbrella",
+      "meaning": "V3 예치 토큰을 스테이킹해 적자가 나면 자동으로 깎아 메우는 안전 장치",
+      "role": "V3에서는 예치 토큰을 스테이킹한 사람의 몫을, 풀 적자가 정해진 기준을 넘을 때 자동으로 깎아 메운다. V4 허브의 적자까지 보장하는지는 문서에 없다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aave Docs – Umbrella (V3)",
+          "url": "https://aave.com/docs/aave-v3/umbrella"
+        },
+        {
+          "title": "Aave Governance – Hubs & Spokes in Aave V4: A Risk-Centric Analysis, LlamaRisk (2026-01-20)",
+          "url": "https://governance.aave.com/t/hubs-spokes-in-aave-v4-a-risk-centric-analysis/23907"
+        }
+      ]
     },
     {
       "term": "slash",
-      "meaning": "스테이킹된 자산을 강제로 깎아 손실을 메우는 것"
+      "key": "slash",
+      "aliases": [
+        "슬래싱"
+      ],
+      "meaning": "스테이킹된 자산을 강제로 깎아 손실을 메우는 것",
+      "inline": false
     },
     {
       "term": "Ecosystem Reserve",
-      "meaning": "DAO가 관리하는 AAVE 보유 금고. 스테이킹 보상·보조금·바이백 매입분이 모인다"
+      "key": "ecosystem-reserve",
+      "meaning": "DAO가 관리하는 AAVE 보유 금고. 스테이킹 보상·보조금·바이백 매입분이 모인다",
+      "role": "AFC가 시장에서 사들인 AAVE는 소각하지 않고 이 금고에 쌓인다. Umbrella 전환 뒤 stkAAVE 스테이킹 보상도 매출이 아니라 이 금고에 있던 AAVE로 지급된다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aave Docs – AAVE Token (바이백 프로그램·AFC)",
+          "url": "https://aave.com/docs/ecosystem/aave"
+        }
+      ]
     },
     {
       "term": "AFC",
-      "meaning": "Aave Finance Committee. 금고 운용과 바이백을 집행하는 서비스 제공자 4곳의 멀티시그"
+      "key": "aave-finance-committee",
+      "aliases": [
+        "Aave Finance Committee"
+      ],
+      "meaning": "금고 운용과 바이백을 집행하는 서비스 제공자 4곳의 멀티시그",
+      "role": "Chaos Labs·TokenLogic·LlamaRisk·ACI 4곳 중 3곳이 서명해 DAO 금고 돈으로 AAVE를 사들였다. 2025년 4월부터 매주 집행하다 2026년 4월 19일부터 바이백을 멈췄다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aave Docs – AAVE Token (바이백 프로그램·AFC)",
+          "url": "https://aave.com/docs/ecosystem/aave"
+        },
+        {
+          "title": "Aave Governance – [ARFC] Pause AAVE Buybacks (2026-04-22)",
+          "url": "https://governance.aave.com/t/arfc-pause-aave-buybacks/24686"
+        }
+      ]
     },
     {
       "term": "ARFC · Snapshot · AIP",
-      "meaning": "포럼 제안 → 오프체인 가결 투표 → 온체인 실행 투표로 이어지는 Aave 거버넌스 3단계"
+      "key": "arfc-snapshot-aip",
+      "meaning": "포럼 제안 → 오프체인 가결 투표 → 온체인 실행 투표로 이어지는 Aave 거버넌스 3단계",
+      "inline": false
     },
     {
       "term": "Risk Steward",
-      "meaning": "투표 없이 정해진 범위 안에서 위험 기준을 바꿀 수 있는 위임 계약"
+      "key": "risk-steward",
+      "meaning": "투표 없이 정해진 범위 안에서 위험 기준을 바꿀 수 있는 위임 계약",
+      "role": "Aave에서 위험을 낮추는 설정 변경은 투표 없이 이 계약으로 바로 하고, 위험을 높이는 변경은 48시간 타임락을 거친다. V4용 Risk Steward는 2026년 7월 기준 활성화를 준비하는 단계였다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aave Governance – Aave V4 Hub-and-Spoke Initial Configurations (2026-03-04)",
+          "url": "https://governance.aave.com/t/aave-v4-hub-and-spoke-initial-configurations/24233"
+        },
+        {
+          "title": "Aave Governance – AL Development Update, July 2026 (2026-08-14)",
+          "url": "https://governance.aave.com/t/al-development-update-july-2026/25482"
+        }
+      ]
     },
     {
       "term": "Protocol Security Council",
-      "meaning": "V4 출범기에 정지·동결 권한을 가진 보안 멀티시그"
+      "key": "protocol-security-council",
+      "meaning": "V4 출범기에 정지·동결 권한을 가진 보안 멀티시그",
+      "role": "비상시 Aave 시장을 멈추고 자산을 동결할 수 있는 멀티시그다. V4 출범기에는 정지·동결 권한만 갖고, 안정화되면 물러나기로 했다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aave Governance – [ARFC] Aave V4 Activation on Ethereum Mainnet (2026-03-13)",
+          "url": "https://governance.aave.com/t/arfc-aave-v4-activation-on-ethereum-mainnet/24293"
+        }
+      ]
+    },
+    {
+      "term": "멀티시그",
+      "key": "multisig",
+      "aliases": [
+        "Multisig"
+      ],
+      "meaning": "여러 명이 함께 서명해야 실행되는 지갑",
+      "role": "Aave에서 비상 정지는 Protocol Security Council 멀티시그가, 바이백 집행은 4곳 중 3곳이 서명하는 AFC가 맡는다. 비트코인 담보 연동 쪽은 임시 거버넌스가 7명 중 4명, 비상 가디언이 5명 중 3명의 서명으로 움직인다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aave Governance – [ARFC] Aave V4 Activation on Ethereum Mainnet (2026-03-13)",
+          "url": "https://governance.aave.com/t/arfc-aave-v4-activation-on-ethereum-mainnet/24293"
+        },
+        {
+          "title": "Aave Docs – AAVE Token (바이백 프로그램·AFC)",
+          "url": "https://aave.com/docs/ecosystem/aave"
+        },
+        {
+          "title": "Aave Governance – [ARFC] Onboard Native BTC as Collateral to Aave V4 via Babylon Trustless Bitcoin Vaults (2026-10-14)",
+          "url": "https://governance.aave.com/t/arfc-onboard-native-btc-as-collateral-to-aave-v4-via-babylon-trustless-bitcoin-vaults/25845"
+        }
+      ]
+    },
+    {
+      "term": "타임락",
+      "key": "timelock",
+      "aliases": [
+        "Timelock"
+      ],
+      "meaning": "실행 전 강제 대기 시간",
+      "role": "Aave V4에서 위험을 높이는 설정 변경은 48시간 타임락을 거쳐야 실행된다. 비트코인 담보 연동의 비상 정지에는 타임락이 없다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aave Governance – Aave V4 Hub-and-Spoke Initial Configurations (2026-03-04)",
+          "url": "https://governance.aave.com/t/aave-v4-hub-and-spoke-initial-configurations/24233"
+        },
+        {
+          "title": "Aave Governance – [ARFC] Onboard Native BTC as Collateral to Aave V4 via Babylon Trustless Bitcoin Vaults (2026-10-14)",
+          "url": "https://governance.aave.com/t/arfc-onboard-native-btc-as-collateral-to-aave-v4-via-babylon-trustless-bitcoin-vaults/25845"
+        }
+      ]
     },
     {
       "term": "LRT",
-      "meaning": "Liquid Restaking Token. rsETH·weETH처럼 재스테이킹 지분을 토큰화한 자산"
+      "key": "lrt",
+      "aliases": [
+        "Liquid Restaking Token"
+      ],
+      "meaning": "rsETH·weETH처럼 재스테이킹 지분을 토큰화한 자산",
+      "inline": false
     },
     {
       "term": "DVN",
-      "meaning": "LayerZero 브리지에서 메시지를 검증하는 노드. 1-of-1이면 검증자 하나만 뚫리면 된다"
+      "key": "dvn",
+      "meaning": "LayerZero 브리지에서 메시지를 검증하는 노드. 1-of-1이면 검증자 하나만 뚫리면 된다",
+      "inline": false
     },
     {
       "term": "LTV0 서킷브레이커",
-      "meaning": "브리지가 뚫린 담보의 인정 가치를 자동으로 0으로 내리는 장치"
+      "key": "ltv0-circuit-breaker",
+      "aliases": [
+        "LTV0"
+      ],
+      "meaning": "브리지가 뚫린 담보의 인정 가치를 자동으로 0으로 내리는 장치",
+      "inline": false
     },
     {
       "term": "플래시론",
-      "meaning": "한 거래 안에서 빌리고 갚는 무담보 대출. 수수료가 DAO 수입이 된다"
+      "key": "flash-loan",
+      "meaning": "한 거래 안에서 빌리고 갚는 무담보 대출. 수수료가 DAO 수입이 된다",
+      "inline": false
     },
     {
       "term": "바이백",
-      "meaning": "프로토콜이 자기 토큰을 시장에서 되사는 것"
+      "key": "buyback",
+      "meaning": "프로토콜이 자기 토큰을 시장에서 되사는 것",
+      "inline": false
     },
     {
       "term": "토큰화 주식",
-      "meaning": "미국 주식 1주와 연동되도록 발행한 온체인 토큰. Base 시장의 담보로 쓰인다"
+      "key": "tokenized-stock",
+      "meaning": "미국 주식 1주와 연동되도록 발행한 온체인 토큰. Base 시장의 담보로 쓰인다",
+      "inline": false
     },
     {
       "term": "TVL",
-      "meaning": "Total Value Locked. 프로토콜에 묶인 자산 총액. 대출 시장에서는 예치금에서 차입을 뺀 값에 가깝다"
+      "key": "tvl",
+      "aliases": [
+        "Total Value Locked"
+      ],
+      "meaning": "프로토콜에 묶인 자산 총액. 대출 시장에서는 예치금에서 차입을 뺀 값에 가깝다",
+      "inline": false
     },
     {
       "term": "FDV",
-      "meaning": "총공급량 기준 시가총액"
+      "key": "fdv",
+      "meaning": "총공급량 기준 시가총액",
+      "inline": false
     }
   ],
   "openItems": [

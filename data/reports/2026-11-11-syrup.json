@@ -365,123 +365,340 @@
   "terms": [
     {
       "term": "초과담보",
-      "meaning": "빌린 금액보다 큰 가치의 담보를 맡기는 것"
+      "key": "overcollateralization",
+      "meaning": "빌린 금액보다 큰 가치의 담보를 맡기는 것",
+      "inline": false
     },
     {
       "term": "담보율",
-      "meaning": "담보 가치를 대출 원금으로 나눈 값. 164%면 100을 빌리고 164를 맡긴 상태"
+      "key": "collateral-ratio",
+      "meaning": "담보 가치를 대출 원금으로 나눈 값. 164%면 100을 빌리고 164를 맡긴 상태",
+      "inline": false
     },
     {
       "term": "마진콜",
-      "meaning": "담보 가치가 기준 아래로 떨어졌을 때 추가 담보를 요구하는 것"
+      "key": "margin-call",
+      "meaning": "담보 가치가 기준 아래로 떨어졌을 때 추가 담보를 요구하는 것",
+      "inline": false
     },
     {
       "term": "청산",
-      "meaning": "담보를 팔아 대출 원금을 회수하는 것"
+      "key": "liquidation",
+      "meaning": "담보를 팔아 대출 원금을 회수하는 것",
+      "inline": false
     },
     {
       "term": "손상",
-      "meaning": "impairment. 상환이 의심되는 대출의 장부 가치를 부도 전에 미리 깎는 조치"
+      "key": "impairment",
+      "aliases": [
+        "impairment"
+      ],
+      "meaning": "상환이 의심되는 대출의 장부 가치를 부도 전에 미리 깎는 조치",
+      "role": "Maple이 대출을 손상 처리하면 그만큼 syrupUSDC 출금 교환비율이 낮아진다. 손상 중에 출금하면 낮아진 비율로 손실이 확정되고, 나중에 회수되는 돈에 대한 몫도 잃는다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Maple Docs – syrupUSDC, syrupUSDT and syrupUSDG Defaults and Impairments",
+          "url": "https://docs.maple.finance/legal/syrupusdc-and-syrupusdt-defaults-and-impairments.md"
+        }
+      ]
     },
     {
       "term": "부도",
-      "meaning": "default. 유예 기간이 지나도 갚지 않아 대출을 손실로 확정하는 것"
+      "key": "default",
+      "aliases": [
+        "default"
+      ],
+      "meaning": "유예 기간이 지나도 갚지 않아 대출을 손실로 확정하는 것",
+      "inline": false
     },
     {
       "term": "풀 운용자",
-      "meaning": "Pool Delegate. 풀의 대출 실행·회수·손상 처리를 맡는 승인된 운용 주체"
+      "key": "pool-delegate",
+      "aliases": [
+        "Pool Delegate"
+      ],
+      "meaning": "풀의 대출 실행·회수·손상 처리를 맡는 승인된 운용 주체",
+      "role": "syrupUSDC 풀에서는 Maple 운용 조직이 이 자격으로 차입 기관을 심사하고 풀의 USDC를 대출로 내보내며, 회수 요구·손상·부도 처리를 결정한다. 유동성 한도와 수수료, 전략별 상한 같은 풀 설정도 이 주체가 정한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Maple Docs – Protocol Actors",
+          "url": "https://docs.maple.finance/technical-resources/protocol-overview/protocol-actors.md"
+        },
+        {
+          "title": "Maple Docs – Smart Contract Architecture",
+          "url": "https://docs.maple.finance/technical-resources/protocol-overview/smart-contract-architecture"
+        }
+      ]
     },
     {
       "term": "풀형 대출",
-      "meaning": "여러 사람의 예치금을 한 풀에 모아 공식으로 정한 금리로 빌려주는 방식"
+      "key": "pooled-lending",
+      "meaning": "여러 사람의 예치금을 한 풀에 모아 공식으로 정한 금리로 빌려주는 방식",
+      "inline": false
     },
     {
       "term": "오픈텀 대출",
-      "meaning": "만기를 못박지 않고, 대주가 회수를 요구하면 통지 기간 안에 갚는 대출"
+      "key": "open-term-loan",
+      "aliases": [
+        "Open Term Loan",
+        "오픈텀"
+      ],
+      "meaning": "만기를 못박지 않고, 대주가 회수를 요구하면 통지 기간 안에 갚는 대출",
+      "role": "Maple이 기관에 빌려주는 대출은 만기를 못박지 않는다. 출금에 쓸 현금이 필요하면 Maple이 원금 회수를 요구하고, 차입 기관은 정해진 통지 기간 안에 갚아야 한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Maple Docs – Open Term Loan",
+          "url": "https://docs.maple.finance/technical-resources/strategies/open-term-loans/open-term-loan.md"
+        }
+      ]
     },
     {
       "term": "회수 요구",
-      "meaning": "loan call. 대주가 원금 일부나 전부를 돌려 달라고 요구하는 것"
+      "key": "loan-call",
+      "aliases": [
+        "loan call"
+      ],
+      "meaning": "대주가 원금 일부나 전부를 돌려 달라고 요구하는 것",
+      "inline": false
     },
     {
       "term": "기본대출계약",
-      "meaning": "Master Lending Agreement. 차입 기관과 맺는 오프체인 법적 계약"
+      "key": "master-lending-agreement",
+      "aliases": [
+        "Master Lending Agreement",
+        "MLA"
+      ],
+      "meaning": "차입 기관과 맺는 오프체인 법적 계약",
+      "role": "Maple이 심사를 통과한 차입 기관과 맺는 계약이다. 차입 기관이 부도나면 Maple은 이 계약과 법적 집행으로 담보를 회수해야 하고, 회수가 막히면 손실은 예치자에게 간다.",
+      "inline": false
     },
     {
       "term": "수탁사",
-      "meaning": "고객 자산의 개인키를 대신 보관하는 전문 기관"
+      "key": "custodian",
+      "meaning": "고객 자산의 개인키를 대신 보관하는 전문 기관",
+      "role": "차입 기관이 맡긴 BTC 같은 담보는 대출 계약이 아니라 Anchorage Digital·BitGo·Zodia Custody 같은 수탁사의 분리 지갑에 있다. Zodia 연동에서는 담보가 차입자 명의 지갑에 남고, Maple은 부도 때 담보권만 행사한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Maple – Maple joins Zodia Custody's Interchange (2026-09-14)",
+          "url": "https://maple.finance/insights/zodia-custody-opens-interchange-to-maple"
+        },
+        {
+          "title": "Maple Docs – Trust Assumptions",
+          "url": "https://docs.maple.finance/technical-resources/security/list-of-assumptions.md"
+        }
+      ]
     },
     {
       "term": "OTC 데스크",
-      "meaning": "거래소 호가창 밖에서 큰 물량을 직접 사고파는 장외 창구"
+      "key": "otc-desk",
+      "meaning": "거래소 호가창 밖에서 큰 물량을 직접 사고파는 장외 창구",
+      "inline": false
     },
     {
       "term": "ERC-4626",
-      "meaning": "예치금과 지분 토큰의 교환 비율을 표준화한 이더리움 금고 규격"
+      "key": "erc-4626",
+      "aliases": [
+        "EIP-4626"
+      ],
+      "meaning": "예치금과 지분 토큰의 교환 비율을 표준화한 이더리움 금고 규격",
+      "role": "syrupUSDC 풀 계약이 이 규격을 따른다. USDC를 맡기면 syrupUSDC를 받고, 대출 이자가 쌓일수록 syrupUSDC 1개로 돌려받는 USDC가 늘어나며, 손상 처리된 대출이 있으면 출금할 때 그만큼 줄어든다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "ERC-4626: Tokenized Vaults",
+          "url": "https://eips.ethereum.org/EIPS/eip-4626"
+        },
+        {
+          "title": "Maple Docs – Smart Contract Architecture",
+          "url": "https://docs.maple.finance/technical-resources/protocol-overview/smart-contract-architecture"
+        }
+      ]
     },
     {
       "term": "교환비율",
-      "meaning": "지분 토큰 1개로 돌려받는 예치 자산의 양"
+      "key": "exchange-rate",
+      "meaning": "지분 토큰 1개로 돌려받는 예치 자산의 양",
+      "inline": false
     },
     {
       "term": "출금 대기열",
-      "meaning": "출금 요청을 먼저 온 순서대로 처리하는 줄"
+      "key": "withdrawal-queue",
+      "meaning": "출금 요청을 먼저 온 순서대로 처리하는 줄",
+      "role": "syrupUSDC를 돌려주며 낸 출금 요청은 접수 순서대로 처리된다. 돌려받을 USDC는 요청할 때가 아니라 처리할 때의 교환비율로 정해지고, 기다리는 동안에도 이자는 쌓인다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Maple Docs – Withdrawal Manager",
+          "url": "https://docs.maple.finance/technical-resources/pools/withdrawal-manager.md"
+        },
+        {
+          "title": "Maple Docs – Smart Contract Architecture",
+          "url": "https://docs.maple.finance/technical-resources/protocol-overview/smart-contract-architecture"
+        }
+      ]
     },
     {
       "term": "관리 지갑",
-      "meaning": "Managed Wallet. 풀 자금을 받아 계약 밖에서 운용하는 Maple 운영 주소"
+      "key": "managed-wallet",
+      "aliases": [
+        "Managed Wallet"
+      ],
+      "meaning": "풀 자금을 받아 계약 밖에서 운용하는 Maple 운영 주소",
+      "role": "대출에 나가지 않은 풀 현금 일부가 이 지갑으로 나가 새 전략에 쓰이며, 전략별 상한은 예치금의 5%다. 계약 밖에서 운용되므로 온체인에서 반환을 강제할 장치가 없다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Maple Docs – Allocation Strategy: Managed Wallets",
+          "url": "https://docs.maple.finance/technical-resources/strategies/allocation-strategy/managed-wallets.md"
+        },
+        {
+          "title": "Maple Docs – November 2026 Release",
+          "url": "https://docs.maple.finance/technical-resources/releases/november-2026-release-deployment-and-upgrade.md"
+        }
+      ]
     },
     {
       "term": "배분 전략",
-      "meaning": "풀 자금 일부를 관리 지갑으로 내보내 대출 외 방식으로 운용하는 장치"
+      "key": "allocation-strategy",
+      "meaning": "풀 자금 일부를 관리 지갑으로 내보내 대출 외 방식으로 운용하는 장치",
+      "inline": false
     },
     {
       "term": "타임락",
-      "meaning": "실행 전 강제 대기 시간"
+      "key": "timelock",
+      "meaning": "실행 전 강제 대기 시간",
+      "role": "계약 설정 변경 같은 최고 권한 안건은 Maple DAO 멀티시그가 낸 뒤 타임락 계약에서 대기 기간을 거쳐 실행된다. 일상 관리 멀티시그 경로에서는 풀 관리 계약 업그레이드만 대기 기간을 거치고, 보안 관리자의 정지에는 대기가 없다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Maple Docs – Governor Timelock",
+          "url": "https://docs.maple.finance/technical-resources/singletons/governor-timelock.md"
+        },
+        {
+          "title": "Maple Docs – Timelocked Functions",
+          "url": "https://docs.maple.finance/technical-resources/admin-functions/timelocks.md"
+        }
+      ]
     },
     {
       "term": "멀티시그",
-      "meaning": "여러 명이 함께 서명해야 실행되는 지갑"
+      "key": "multisig",
+      "meaning": "여러 명이 함께 서명해야 실행되는 지갑",
+      "role": "최고 권한 안건을 내는 Maple DAO 멀티시그는 서명자 7명 중 4명, 일상 관리 멀티시그는 5명 중 3명, 정지를 걸 수 있는 보안 관리자 멀티시그는 6명 중 3명이 서명해야 움직인다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Blockscout – Maple DAO Safe",
+          "url": "https://eth.blockscout.com/address/0xd6d4Bcde6c816F17889f1Dd3000aF0261B03a196"
+        },
+        {
+          "title": "Maple Docs – Governor Timelock",
+          "url": "https://docs.maple.finance/technical-resources/singletons/governor-timelock.md"
+        },
+        {
+          "title": "Maple Docs – Emergency Pause",
+          "url": "https://docs.maple.finance/technical-resources/security/emergency-protocol-pause.md"
+        }
+      ]
     },
     {
       "term": "SSF",
-      "meaning": "Syrup Strategic Fund. 매출 일부로 SYRUP을 매입하고 준비금을 쌓는 재단 산하 기금"
+      "key": "syrup-strategic-fund",
+      "aliases": [
+        "Syrup Strategic Fund"
+      ],
+      "meaning": "매출 일부로 SYRUP을 매입하고 준비금을 쌓는 재단 산하 기금",
+      "role": "SYRUP 보유자에게 돌아가는 유일한 경로로, Maple 월 매출 일부로 시장에서 SYRUP을 사들인다. 보유자가 받는 것은 현금이 아니라 매입 효과이고, 기금의 지갑 주소는 공개되지 않는다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Maple Governance Forum – MIP-019: Activate the SSF and Sunset Staking",
+          "url": "https://community.maple.finance/t/mip-019-activate-the-ssf-and-sunset-staking/1042"
+        },
+        {
+          "title": "Maple Governance Forum – MIP-021: A Rules-Based Buyback That Scales With Revenue",
+          "url": "https://community.maple.finance/t/mip-021-a-rules-based-buyback-that-scales-with-revenue/1153"
+        },
+        {
+          "title": "Maple Transparency – SYRUP",
+          "url": "https://maple.finance/transparency/syrup"
+        }
+      ]
     },
     {
       "term": "바이백",
-      "meaning": "프로토콜이 자기 토큰을 시장에서 되사는 것"
+      "key": "buyback",
+      "meaning": "프로토콜이 자기 토큰을 시장에서 되사는 것",
+      "inline": false
     },
     {
       "term": "MIP",
-      "meaning": "Maple Improvement Proposal. Maple 거버넌스 안건"
+      "key": "mip",
+      "aliases": [
+        "Maple Improvement Proposal"
+      ],
+      "meaning": "Maple 거버넌스 안건",
+      "inline": false
     },
     {
       "term": "AUM",
-      "meaning": "운용자산. Maple은 대출·현금·전략 예치분에 담보까지 더해 집계한다"
+      "key": "aum",
+      "meaning": "운용자산. Maple은 대출·현금·전략 예치분에 담보까지 더해 집계한다",
+      "inline": false
     },
     {
       "term": "TVL",
-      "meaning": "Total Value Locked. 프로토콜에 묶인 자산 총액"
+      "key": "tvl",
+      "aliases": [
+        "Total Value Locked"
+      ],
+      "meaning": "프로토콜에 묶인 자산 총액",
+      "inline": false
     },
     {
       "term": "연환산 매출",
-      "meaning": "최근 실적을 1년치로 환산한 매출"
+      "key": "annualized-revenue",
+      "meaning": "최근 실적을 1년치로 환산한 매출",
+      "inline": false
     },
     {
       "term": "준비금 증명",
-      "meaning": "담보가 실제로 있음을 제3자가 확인해 공개하는 절차"
+      "key": "proof-of-reserves",
+      "aliases": [
+        "PoR",
+        "Proof of Reserves"
+      ],
+      "meaning": "담보가 실제로 있음을 제3자가 확인해 공개하는 절차",
+      "inline": false
     },
     {
       "term": "베이시스 거래",
-      "meaning": "현물을 사고 선물을 팔아 가격 차이를 얻는 거래"
+      "key": "basis-trade",
+      "aliases": [
+        "베이시스"
+      ],
+      "meaning": "현물을 사고 선물을 팔아 가격 차이를 얻는 거래",
+      "inline": false
     },
     {
       "term": "분리 포트폴리오 회사",
-      "meaning": "SPC. 한 법인 안에서 포트폴리오별 자산과 부채를 법적으로 격리하는 구조"
+      "key": "segregated-portfolio-company",
+      "aliases": [
+        "SPC"
+      ],
+      "meaning": "한 법인 안에서 포트폴리오별 자산과 부채를 법적으로 격리하는 구조",
+      "inline": false
     },
     {
       "term": "후순위 자본",
-      "meaning": "손실이 나면 다른 투자자보다 먼저 깎이는 자금"
+      "key": "subordinated-capital",
+      "meaning": "손실이 나면 다른 투자자보다 먼저 깎이는 자금",
+      "role": "syrupUSDC 풀에는 이런 층이 없다. 담보를 팔아도 대출을 다 돌려받지 못하면 그 부족분은 예치자 전원이 지분 비율대로 진다.",
+      "inline": false
     }
   ],
   "sources": [

@@ -351,72 +351,210 @@
   "verdict": "수수료로 사들이는 HYPE는 일정상 풀릴 기여자 물량에 비하면 아직 작아, 3분기 매입량은 같은 분기 예정 언락의 7% 수준이었다. 다만 실제 지급이 2026년 11월 6일처럼 일정의 일부에 그치면, 월평균 약 68만 개로 추산되는 매입이 그달 새로 풀린 물량을 넘을 수 있다. 그래서 판단을 바꿀 조건은 매달 6일의 실제 지급량이 지원 기금의 월 매입량보다 작은 달이 계속 이어지는지다.",
   "terms": [
     {
-      "term": "무기한 선물 · Perpetual",
-      "meaning": "만기 없이 계속 들고 갈 수 있는 선물. 펀딩비로 현물 가격 근처에 붙어 다닌다"
+      "term": "무기한 선물",
+      "key": "perpetual-futures",
+      "aliases": [
+        "Perpetual"
+      ],
+      "meaning": "만기 없이 계속 들고 갈 수 있는 선물. 펀딩비로 현물 가격 근처에 붙어 다닌다",
+      "inline": false
     },
     {
       "term": "펀딩비",
-      "meaning": "선물 가격이 현물보다 높으면 롱이 숏에게, 낮으면 숏이 롱에게 주기적으로 내는 돈"
+      "key": "funding-rate",
+      "meaning": "선물 가격이 현물보다 높으면 롱이 숏에게, 낮으면 숏이 롱에게 주기적으로 내는 돈",
+      "inline": false
     },
     {
       "term": "메이커 · 테이커",
-      "meaning": "호가를 걸어 두는 쪽과 걸린 호가를 바로 가져가는 쪽. 보통 메이커 수수료가 더 싸다"
+      "key": "maker-taker",
+      "meaning": "호가를 걸어 두는 쪽과 걸린 호가를 바로 가져가는 쪽. 보통 메이커 수수료가 더 싸다",
+      "inline": false
     },
     {
-      "term": "미결제약정 · OI",
-      "meaning": "Open Interest. 아직 정리되지 않고 열려 있는 선물 포지션의 총액"
+      "term": "미결제약정",
+      "key": "open-interest",
+      "aliases": [
+        "OI",
+        "Open Interest"
+      ],
+      "meaning": "아직 정리되지 않고 열려 있는 선물 포지션의 총액",
+      "inline": false
     },
     {
       "term": "레버리지",
-      "meaning": "증거금보다 큰 포지션을 여는 배수. 50배면 1의 증거금으로 50의 포지션을 연다"
+      "key": "leverage",
+      "meaning": "증거금보다 큰 포지션을 여는 배수. 50배면 1의 증거금으로 50의 포지션을 연다",
+      "inline": false
     },
     {
-      "term": "자동 디레버리징 · ADL",
-      "meaning": "청산 포지션을 시장과 HLP가 소화하지 못할 때 반대편 이익 포지션을 강제로 줄이는 장치"
+      "term": "자동 디레버리징",
+      "key": "auto-deleveraging",
+      "aliases": [
+        "ADL",
+        "Auto-deleveraging"
+      ],
+      "meaning": "청산 포지션을 시장과 HLP가 소화하지 못할 때 반대편 이익 포지션을 강제로 줄이는 장치",
+      "role": "청산 물량을 시장과 HLP가 소화하지 못해 계정 가치가 마이너스가 되면, 반대편에서 이익을 내던 포지션을 이익과 레버리지 순으로 골라 직전 마크 가격에 강제로 닫는다. 그래서 거래소에 갚지 못한 빚이 남지 않는 대신, 이익 포지션이 원하지 않는 때에 닫힐 수 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Hyperliquid Docs – Auto-deleveraging",
+          "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/auto-deleveraging"
+        }
+      ]
     },
     {
-      "term": "지원 기금 · Assistance Fund",
-      "meaning": "수수료로 HYPE를 사서 꺼낼 수 없는 시스템 주소에 쌓는 프로토콜 기금"
+      "term": "지원 기금",
+      "key": "assistance-fund",
+      "aliases": [
+        "Assistance Fund"
+      ],
+      "meaning": "수수료로 HYPE를 사서 꺼낼 수 없는 시스템 주소에 쌓는 프로토콜 기금",
+      "role": "트레이더가 낸 수수료와 USDC 준비금 이자로 매일 HYPE를 사서, 아무도 꺼낼 수 없는 시스템 주소에 쌓는다. 보유자에게 현금을 나눠 주지 않고, 쌓인 HYPE는 소각된 것으로 센다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Hyperliquid Docs – Fees",
+          "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees"
+        },
+        {
+          "title": "crypto.news – Hyper Foundation confirms HYPE burn as validators back Assistance Fund vote (2025-12-24)",
+          "url": "https://crypto.news/hyper-foundation-confirms-hype-burn-as-validators-back-assistance-fund-vote/"
+        }
+      ]
     },
     {
       "term": "HIP-3",
-      "meaning": "외부 팀이 HYPE 50만 개를 보증금으로 맡기고 자기 선물 시장을 여는 규격"
+      "key": "hip-3",
+      "aliases": [
+        "HIP 3"
+      ],
+      "meaning": "외부 팀이 HYPE 50만 개를 보증금으로 맡기고 자기 선물 시장을 여는 규격",
+      "role": "외부 팀이 시장을 열려면 HYPE 50만 개를 묶어야 해서, HYPE의 쓰임 가운데 하나로 나온다. 2025년 10월 13일 메인넷에 적용됐고, 배포자는 자기 시장 수수료를 최대 50%까지 가져간다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "CoinGecko Learn – Hyperliquid HIP-3 & HIP-4",
+          "url": "https://www.coingecko.com/learn/hyperliquid-hip3-hip4-tokenized-stocks-and-prediction-markets"
+        }
+      ]
     },
     {
       "term": "AQAv2",
-      "meaning": "기준 스테이블코인 운영자가 HYPE를 스테이킹하고 준비금 이자를 프로토콜과 나누는 규격. 현재 USDC에 적용"
+      "key": "aqav2",
+      "meaning": "기준 스테이블코인 운영자가 HYPE를 스테이킹하고 준비금 이자를 프로토콜과 나누는 규격. 현재 USDC에 적용",
+      "role": "2026년 8월 26일 켜졌다. Coinbase가 준비금 보관, Circle이 기술 운영을 맡아 비용을 뺀 USDC 준비금 이자의 약 90%를 프로토콜에 넘기고, 이 돈이 수수료와 함께 HYPE 매입에 쓰인다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "crypto.news – Hyperliquid activates AQAv2 to fund HYPE buybacks",
+          "url": "https://crypto.news/hyperliquid-activates-aqav2-to-fund-hype-buybacks/"
+        }
+      ]
     },
     {
       "term": "오라클",
-      "meaning": "체인 밖 가격을 체인 안으로 들여오는 장치. 하이퍼리퀴드에서는 검증인이 직접 가격을 올린다"
+      "key": "oracle",
+      "meaning": "체인 밖 가격을 체인 안으로 들여오는 장치. 하이퍼리퀴드에서는 검증인이 직접 가격을 올린다",
+      "role": "청산과 펀딩비의 기준 가격은 검증인마다 바이낸스·OKX·바이비트 등 거래소 8곳 현물 시세의 가중 중앙값을 낸 뒤, 체인이 검증인 값들을 스테이크 비중으로 다시 중앙값 처리해 정한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Hyperliquid Docs – Oracle",
+          "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/hypercore/oracle"
+        }
+      ]
+    },
+    {
+      "term": "검증인",
+      "key": "validator",
+      "aliases": [
+        "밸리데이터",
+        "Validator"
+      ],
+      "meaning": "블록을 만들고 확정하며 네트워크 규칙을 집행하는 노드 운영자",
+      "role": "하이퍼리퀴드에서는 블록 확정, 오라클 가격, 브리지 출금 서명이 모두 검증인 스테이크 2/3 이상의 동의로 정해진다. 재단이 스테이킹된 HYPE의 약 49%를 쥐고 있다는 보도가 사실이면, 재단이 반대하는 결정은 통과하지 못한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Hyperliquid Docs – Staking",
+          "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/hypercore/staking"
+        },
+        {
+          "title": "Hyperliquid Docs – Bridge2 (Developers API)",
+          "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/bridge2"
+        }
+      ]
     },
     {
       "term": "가중 중앙값",
-      "meaning": "값마다 무게를 달아 줄 세웠을 때 무게의 절반 지점에 오는 값. 한두 곳의 튀는 가격에 덜 흔들린다"
+      "key": "weighted-median",
+      "meaning": "값마다 무게를 달아 줄 세웠을 때 무게의 절반 지점에 오는 값. 한두 곳의 튀는 가격에 덜 흔들린다",
+      "inline": false
     },
     {
       "term": "위임 스테이킹",
-      "meaning": "토큰을 검증인에게 맡겨 투표권을 실어 주고 보상을 나눠 받는 방식"
+      "key": "delegated-staking",
+      "meaning": "토큰을 검증인에게 맡겨 투표권을 실어 주고 보상을 나눠 받는 방식",
+      "inline": false
     },
     {
       "term": "슬래싱",
-      "meaning": "규칙을 어긴 스테이커가 맡긴 토큰을 몰수하는 것"
+      "key": "slash",
+      "aliases": [
+        "slash"
+      ],
+      "meaning": "규칙을 어긴 스테이커가 맡긴 토큰을 몰수하는 것",
+      "inline": false
     },
     {
       "term": "CCTP",
-      "meaning": "Circle이 한 체인에서 USDC를 태우고 다른 체인에서 다시 발행해 옮기는 공식 전송 방식"
+      "key": "cctp",
+      "aliases": [
+        "Circle CCTP"
+      ],
+      "meaning": "Circle이 한 체인에서 USDC를 태우고 다른 체인에서 다시 발행해 옮기는 공식 전송 방식",
+      "role": "현재 개발자 문서는 하이퍼리퀴드로 USDC를 넣는 경로로 이 방식을 안내하고, Arbitrum의 예전 브리지 계약은 레거시·사용 중단으로 표시한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Hyperliquid Docs – Bridge2 (Developers API)",
+          "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/bridge2"
+        }
+      ]
     },
     {
       "term": "분쟁 기간",
-      "meaning": "브리지 출금이 확정되기 전, 잘못된 출금을 막을 수 있도록 기다리는 시간"
+      "key": "dispute-period",
+      "meaning": "브리지 출금이 확정되기 전, 잘못된 출금을 막을 수 있도록 기다리는 시간",
+      "role": "예전 Arbitrum 브리지에서 USDC 출금은 검증인 스테이크 2/3 이상이 서명한 뒤 이 기간이 지나야 확정됐다. 스테이크 2/3의 콜드월렛 서명으로 브리지를 잠글 수도 있어, 그동안 사용자의 USDC는 체인 안에 묶인다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Hyperliquid Docs – Bridge2 (Developers API)",
+          "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/bridge2"
+        },
+        {
+          "title": "Hyperliquid Community Docs – Bridge",
+          "url": "https://hyperliquid-co.gitbook.io/community-docs/architecture/hypercore/bridge"
+        }
+      ]
     },
     {
       "term": "우선순위 수수료",
-      "meaning": "주문을 블록 앞쪽에 넣으려고 추가로 내는 수수료"
+      "key": "priority-fee",
+      "meaning": "주문을 블록 앞쪽에 넣으려고 추가로 내는 수수료",
+      "inline": false
     },
     {
       "term": "FDV",
-      "meaning": "Fully Diluted Valuation. 총공급 전체가 지금 가격으로 유통된다고 가정한 시가총액"
+      "key": "fdv",
+      "aliases": [
+        "Fully Diluted Valuation"
+      ],
+      "meaning": "총공급 전체가 지금 가격으로 유통된다고 가정한 시가총액",
+      "inline": false
     }
   ],
   "openItems": [

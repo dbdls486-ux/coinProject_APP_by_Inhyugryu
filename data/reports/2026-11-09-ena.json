@@ -305,103 +305,339 @@
   "terms": [
     {
       "term": "무기한 선물",
-      "meaning": "만기 없이 계속 보유하는 선물 계약"
+      "key": "perpetual-futures",
+      "meaning": "만기 없이 계속 보유하는 선물 계약",
+      "inline": false
     },
     {
       "term": "펀딩비",
-      "meaning": "롱과 숏이 주기적으로 주고받는 이자 성격의 수수료"
+      "key": "funding-rate",
+      "meaning": "롱과 숏이 주기적으로 주고받는 이자 성격의 수수료",
+      "inline": false
     },
     {
       "term": "델타 중립",
-      "meaning": "가격이 오르든 내리든 전체 가치가 변하지 않는 포지션"
+      "key": "delta-neutral",
+      "meaning": "가격이 오르든 내리든 전체 가치가 변하지 않는 포지션",
+      "inline": false
     },
     {
       "term": "헤징 시스템",
-      "meaning": "가격 산정·주문 라우팅·리스크 한도 감시를 묶은 Ethena의 오프체인 사설 서비스"
+      "key": "hedging-system",
+      "meaning": "가격 산정·주문 라우팅·리스크 한도 감시를 묶은 Ethena의 오프체인 사설 서비스",
+      "role": "받은 담보만큼 거래소별로 선물 공매도를 걸고, 발행·상환 가격을 Pyth·Redstone 오라클과 거래소 호가로 계산한다. 비공개 소프트웨어라 담보가 실제로 가격 변동에 중립인지는 Ethena 대시보드와 월간 증명으로만 확인할 수 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Ethena Docs – Hedging System",
+          "url": "https://docs.ethena.fi/technical-design/hedging-system.md"
+        }
+      ]
     },
     {
       "term": "쿨다운",
-      "meaning": "sUSDe를 언스테이킹한 뒤 USDe를 인출하기까지 대기하는 기간"
+      "key": "cooldown",
+      "meaning": "sUSDe를 언스테이킹한 뒤 USDe를 인출하기까지 대기하는 기간",
+      "role": "sUSDe를 USDe로 되돌리려면 USDe가 USDeSilo 계약에 묶인 채 이 기간을 기다려야 한다. 2026년 8월 25일 기준 1일이고, Risk Committee가 담보 유동성과 인출 대기 상황에 따라 늘릴 수 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Ethena Docs – Staking USDe",
+          "url": "https://docs.ethena.fi/technical-design/staking-usde.md"
+        },
+        {
+          "title": "Aave Governance – LlamaRisk Insights: Ethena sUSDe Dynamic Cooldown (2026-03-16)",
+          "url": "https://governance.aave.com/t/llamarisk-insights-ethena-susde-dynamic-cooldown/24305"
+        }
+      ]
     },
     {
       "term": "OES 커스터디",
-      "meaning": "Off-Exchange Settlement. 거래소 밖 수탁사에 담보를 두고 거래소는 그 담보를 증거금으로 인정하는 보관 방식"
+      "key": "oes-custody",
+      "aliases": [
+        "OES",
+        "Off-Exchange Settlement"
+      ],
+      "meaning": "거래소 밖 수탁사에 담보를 두고 거래소는 그 담보를 증거금으로 인정하는 보관 방식",
+      "role": "USDe 담보는 Copper ClearLoop·Ceffu·Fireblocks 같은 수탁사가 Ethena 명의로 보관하고, 거래소는 그 잔고를 선물 증거금으로 인정할 뿐 담보를 넘겨받지 않는다. 거래소가 파산해도 원금은 수탁사에 남지만, 4시간마다 정산하기 전에 쌓인 선물 이익은 잃을 수 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Ethena Docs – Off-Exchange Settlement in Detail",
+          "url": "https://docs.ethena.fi/backing-custody-and-security/overview/off-exchange-settlement-in-detail.md"
+        }
+      ]
     },
     {
       "term": "ERC-4626",
-      "meaning": "예치금과 지분 토큰의 교환 비율을 표준화한 이더리움 금고 규격"
+      "key": "erc-4626",
+      "aliases": [
+        "EIP-4626"
+      ],
+      "meaning": "예치금과 지분 토큰의 교환 비율을 표준화한 이더리움 금고 규격",
+      "role": "sUSDe를 내주는 스테이킹 금고가 이 규격을 따른다. USDe를 맡기면 sUSDe를 받고, 8시간마다 들어오는 운용 수익이 금고에 쌓일수록 sUSDe 1개로 돌려받는 USDe가 늘어난다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "ERC-4626: Tokenized Vaults",
+          "url": "https://eips.ethereum.org/EIPS/eip-4626"
+        },
+        {
+          "title": "Ethena Docs – Staking USDe",
+          "url": "https://docs.ethena.fi/technical-design/staking-usde.md"
+        }
+      ]
     },
     {
       "term": "RWA",
-      "meaning": "Real World Asset. 토큰화 국채·CLO·단기 크레딧 같은 실물 금융자산"
+      "key": "rwa",
+      "aliases": [
+        "Real World Asset"
+      ],
+      "meaning": "토큰화 국채·CLO·단기 크레딧 같은 실물 금융자산",
+      "inline": false
     },
     {
       "term": "베이시스",
-      "meaning": "현물을 사고 선물을 팔아 가격차·펀딩비를 얻는 거래"
+      "key": "basis-trade",
+      "meaning": "현물을 사고 선물을 팔아 가격차·펀딩비를 얻는 거래",
+      "inline": false
     },
     {
       "term": "벤팩터",
-      "meaning": "benefactor. USDe 발행·상환이 허용된 화이트리스트 마켓메이커·기관"
+      "key": "benefactor",
+      "aliases": [
+        "벤펙터",
+        "Benefactor"
+      ],
+      "meaning": "USDe 발행·상환이 허용된 화이트리스트 마켓메이커·기관",
+      "role": "USDT·USDC 같은 담보를 넘기며 EIP-712 서명 주문을 내 USDe를 직접 발행받고, USDe를 돌려주면 USDC·USDT 같은 스테이블코인으로 상환받는다. Ethena Dev 멀티시그가 등록한 주소만 할 수 있어, 일반 사용자는 Curve·Uniswap 같은 2차 시장에서 USDe를 산다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Ethena Docs – Mint and Redeem Contract V2",
+          "url": "https://docs.ethena.fi/technical-design/minting-usde/mint-and-redeem-contract-v2.md"
+        }
+      ]
+    },
+    {
+      "term": "EIP-712",
+      "key": "eip-712",
+      "aliases": [
+        "EIP 712",
+        "ERC-712"
+      ],
+      "meaning": "서명할 내용을 항목별로 구조화해 지갑이 사람이 읽을 수 있게 보여 주고 서명하는 이더리움 표준",
+      "role": "벤팩터가 USDe 발행·상환 주문을 낼 때 기본으로 쓰는 서명 형식이다. 주문 번호까지 서명한 주문 안에 들어간다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "EIP-712: Typed structured data hashing and signing",
+          "url": "https://eips.ethereum.org/EIPS/eip-712"
+        },
+        {
+          "title": "Ethena Docs – Mint and Redeem Contract V2",
+          "url": "https://docs.ethena.fi/technical-design/minting-usde/mint-and-redeem-contract-v2.md"
+        }
+      ]
+    },
+    {
+      "term": "EIP-1271",
+      "key": "erc-1271",
+      "aliases": [
+        "ERC-1271",
+        "EIP 1271"
+      ],
+      "meaning": "개인키가 없는 스마트컨트랙트 지갑의 서명이 유효한지 그 계약이 직접 확인해 주는 표준",
+      "role": "스마트컨트랙트 지갑도 화이트리스트에 오르면 이 방식으로 서명해 USDe를 직접 발행·상환할 수 있다. 일반 지갑은 EIP-712 서명을 쓴다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "ERC-1271: Standard Signature Validation Method for Contracts",
+          "url": "https://eips.ethereum.org/EIPS/eip-1271"
+        },
+        {
+          "title": "Ethena Docs – Mint and Redeem Contract V2",
+          "url": "https://docs.ethena.fi/technical-design/minting-usde/mint-and-redeem-contract-v2.md"
+        }
+      ]
     },
     {
       "term": "선형 베스팅",
-      "meaning": "시간에 비례해 조금씩 풀리는 방식"
+      "key": "linear-vesting",
+      "meaning": "시간에 비례해 조금씩 풀리는 방식",
+      "inline": false
     },
     {
       "term": "Reserve Fund",
-      "meaning": "음의 펀딩비나 담보 손실을 메우는 Ethena의 별도 지갑"
+      "key": "reserve-fund",
+      "meaning": "음의 펀딩비나 담보 손실을 메우는 Ethena의 별도 지갑",
+      "role": "펀딩비가 마이너스이거나 담보 손실이 나면 sUSDe 보상을 0으로 낮춘 뒤 이 기금으로 먼저 메운다. 2026년 10월 12일 기준 약 6,257만 달러로 USDe 공급의 약 1.3%이고, 매출 적립 비율이 0%라 늘지 않아 이를 넘는 손실은 USDe·sUSDe 보유자가 떠안는다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Ethena Docs – Reserve Fund",
+          "url": "https://docs.ethena.fi/protocol-overview/reserve-fund.md"
+        },
+        {
+          "title": "CryptoSlate – Ethena's USDe has 51.2% of backing in lending (LlamaRisk 2026-10-12 데이터 인용, 2026-10-13)",
+          "url": "https://cryptoslate.com/ethenas-usde-has-51-2-of-backing-in-lending-making-redemption-liquidity-the-key-test/"
+        }
+      ]
+    },
+    {
+      "term": "게이트키퍼",
+      "key": "gatekeeper",
+      "aliases": [
+        "Gatekeeper"
+      ],
+      "meaning": "이상 거래가 보이면 발행·상환을 즉시 멈출 수 있는 비상 정지 권한자",
+      "role": "USDe 발행·상환을 즉시 끄고 발행·상환 지갑의 권한을 회수할 수 있는, 온체인의 유일한 긴급 중단 장치다. 문서상 Ethena와 외부 기관의 일반 지갑 3개 이상이 맡지만, 외부 기관 참여는 아직 계획으로 표기돼 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Ethena Docs – Matrix of Multisig and Timelocks (Key Trust Assumptions)",
+          "url": "https://docs.ethena.fi/technical-design/key-trust-assumptions/matrix-of-multisig-and-timelocks.md"
+        }
+      ]
     },
     {
       "term": "페그",
-      "meaning": "USDe 가격의 1달러 고정"
+      "key": "peg",
+      "meaning": "USDe 가격의 1달러 고정",
+      "inline": false
     },
     {
       "term": "오라클",
-      "meaning": "외부 가격을 시스템에 공급하는 장치"
+      "key": "oracle",
+      "meaning": "외부 가격을 시스템에 공급하는 장치",
+      "inline": false
     },
     {
       "term": "EOA",
-      "meaning": "개인키 하나로 움직이는 일반 지갑"
+      "key": "eoa",
+      "meaning": "개인키 하나로 움직이는 일반 지갑",
+      "role": "USDe를 실제로 발행·상환하는 지갑은 Ethena가 운영하는 일반 지갑 각 20개이고, 게이트키퍼도 일반 지갑이다. 발행 지갑 키가 탈취되면 블록당 한도 안에서 담보 없는 USDe가 발행될 수 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Ethena Docs – Matrix of Multisig and Timelocks (Key Trust Assumptions)",
+          "url": "https://docs.ethena.fi/technical-design/key-trust-assumptions/matrix-of-multisig-and-timelocks.md"
+        }
+      ]
+    },
+    {
+      "term": "화이트리스트",
+      "key": "whitelist",
+      "aliases": [
+        "Whitelist",
+        "허용 목록"
+      ],
+      "meaning": "미리 승인해 등록한 주소만 특정 기능을 쓸 수 있게 하는 허용 명단",
+      "role": "Ethena Dev 멀티시그가 이 명단에 올린 주소만 USDe를 직접 발행·상환할 수 있다. 일반 사용자 지갑은 명단에 없어 2차 시장을 거친다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Ethena Docs – Mint and Redeem Contract V2",
+          "url": "https://docs.ethena.fi/technical-design/minting-usde/mint-and-redeem-contract-v2.md"
+        }
+      ]
     },
     {
       "term": "멀티시그",
-      "meaning": "여러 명이 함께 서명해야 실행되는 지갑"
+      "key": "multisig",
+      "meaning": "여러 명이 함께 서명해야 실행되는 지갑",
+      "role": "Owner 멀티시그는 담보 자산과 수탁 주소를, Admin 멀티시그는 발행·상환·게이트키퍼 권한을 정한다. 서명자 10명 중 5명이 승인하는 Ethena Dev 멀티시그는 벤팩터 등록과 블록당 발행 한도를 맡고, 관리자 타임락에 안건을 올린다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Ethena Docs – Matrix of Multisig and Timelocks (Key Trust Assumptions)",
+          "url": "https://docs.ethena.fi/technical-design/key-trust-assumptions/matrix-of-multisig-and-timelocks.md"
+        },
+        {
+          "title": "Ethena Docs – Mint and Redeem Contract V2",
+          "url": "https://docs.ethena.fi/technical-design/minting-usde/mint-and-redeem-contract-v2.md"
+        },
+        {
+          "title": "Blockscout – Ethena Dev 멀티시그",
+          "url": "https://eth.blockscout.com/address/0x3b0aaf6e6fcd4a7ceef8c92c32dfea9e64dc1862"
+        }
+      ]
     },
     {
       "term": "타임락",
-      "meaning": "실행 전 강제 대기 시간"
+      "key": "timelock",
+      "meaning": "실행 전 강제 대기 시간",
+      "role": "발행·상환 계약의 관리자 권한은 2026년 7월 13일부터 24시간 대기 타임락이 갖는다. 안건은 Ethena Dev 멀티시그만 올리거나 취소할 수 있고, 미리 지정한 일부 기능은 대기 없이 실행된다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Blockscout – EthenaMinting 관리자 이전 이벤트",
+          "url": "https://eth.blockscout.com/address/0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3"
+        },
+        {
+          "title": "Blockscout – EthenaTimelockController",
+          "url": "https://eth.blockscout.com/address/0xe8dc0fab349ea169283c48ccfd09d797e6db7c94"
+        }
+      ]
     },
     {
       "term": "미실현 PnL",
-      "meaning": "아직 확정하지 않은 평가손익"
+      "key": "unrealized-pnl",
+      "meaning": "아직 확정하지 않은 평가손익",
+      "inline": false
     },
     {
       "term": "파산 격리",
-      "meaning": "bankruptcy remoteness. 수탁사·거래소가 파산해도 고객 자산이 채권자 몫에 섞이지 않는 것"
+      "key": "bankruptcy-remoteness",
+      "aliases": [
+        "bankruptcy remoteness"
+      ],
+      "meaning": "수탁사·거래소가 파산해도 고객 자산이 채권자 몫에 섞이지 않는 것",
+      "inline": false
     },
     {
       "term": "초과담보",
-      "meaning": "빌린 금액보다 많은 담보를 잡는 것"
+      "key": "overcollateralization",
+      "meaning": "빌린 금액보다 많은 담보를 잡는 것",
+      "inline": false
     },
     {
       "term": "PoR",
-      "meaning": "Proof of Reserves. 준비금이 실제로 있음을 보이는 공개 증명"
+      "key": "proof-of-reserves",
+      "aliases": [
+        "준비금 증명",
+        "Proof of Reserves"
+      ],
+      "meaning": "준비금이 실제로 있음을 보이는 공개 증명",
+      "inline": false
     },
     {
       "term": "sENA",
-      "meaning": "ENA를 스테이킹하고 받는 토큰"
+      "key": "sena",
+      "meaning": "ENA를 스테이킹하고 받는 토큰",
+      "inline": false
     },
     {
       "term": "TVL",
-      "meaning": "Total Value Locked. 프로토콜에 예치된 자산 총액"
+      "key": "tvl",
+      "aliases": [
+        "Total Value Locked"
+      ],
+      "meaning": "프로토콜에 예치된 자산 총액",
+      "inline": false
     },
     {
       "term": "APY",
-      "meaning": "연환산 수익률"
+      "key": "apy",
+      "meaning": "연환산 수익률",
+      "inline": false
     },
     {
       "term": "락업",
-      "meaning": "매도 금지 기간"
+      "key": "lockup",
+      "meaning": "매도 금지 기간",
+      "inline": false
     }
   ],
   "sources": [
