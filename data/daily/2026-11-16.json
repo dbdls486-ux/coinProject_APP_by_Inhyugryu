@@ -1,0 +1,508 @@
+{
+  "id": "2026-11-16",
+  "date": "2026-11-16",
+  "asOf": "2026-11-16 09:40 KST",
+  "window": "최근 72시간 (11/13 08:30 → 11/16 08:30 KST), 종목 등락은 최근 24시간",
+  "title": "주말 6만 2천 달러까지 밀린 비트코인, 월요일 6만 5천 달러로 반등",
+  "regime": "하락장",
+  "tldr": [
+    "금요일 아침보다 비트코인 -8.6%, 주말 한때 6만 2천 달러로 7월 이후 최저까지 밀렸다.",
+    "월요일 새벽 반등으로 시총 90위 안 73종이 올랐지만 공포지수는 10으로 더 낮아졌다.",
+    "BTW는 닷새째 급락해 일주일 -53%, PEARL은 코인베이스 상장 뒤 사흘 +21%다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "BTC (72시간)",
+      "value": "-8.6%, 65,290달러",
+      "basis": "11/13 아침 → 11/16 09시 · 토큰포스트·CoinGecko",
+      "tone": "down",
+      "details": [
+        {
+          "label": "주말 저점",
+          "value": "약 62,000달러, 7월 이후 최저. 주간 -14.2%"
+        },
+        {
+          "label": "원화",
+          "value": "8,996만원, 금요일 아침 9,664만원 대비 -6.9%. 24시간 +1.2%"
+        },
+        {
+          "label": "ETH",
+          "value": "1,834달러, 72시간 -9.0%, 주간 -18.2%. 원화 252만원"
+        },
+        {
+          "label": "24시간 반등",
+          "value": "BTC +1.9% · ETH +3.8% · XRP +8.6% · DOGE +6.8% · SOL +5.3% · BNB +3.8%"
+        },
+        {
+          "label": "시총 100위 안 24시간 상승 상위",
+          "value": "VVV +18.2% · PEARL +11.7% · CC +10.7% · WLD +9.9% · UNI +9.6% · JUP +9.5% · QNT +9.4% · AAVE +9.1% · ZEC +9.1% · NEAR +9.0%"
+        }
+      ]
+    },
+    {
+      "label": "주말 청산",
+      "value": "20.2억 달러, 롱 83%",
+      "basis": "토 08시 → 일 08시 ET · CoinGlass, The Block 인용",
+      "tone": "down",
+      "details": [
+        {
+          "label": "롱·숏",
+          "value": "롱 16.8억, 숏 3.4억 달러"
+        },
+        {
+          "label": "최근 24시간",
+          "value": "7.36억 달러, 롱 50.4% (11/16 07:30 토큰포스트)"
+        },
+        {
+          "label": "옵션",
+          "value": "데리비트 BTC 풋/콜 거래량 비율 1.91로 하락 대비가 더 커짐"
+        }
+      ]
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "10, 극도의 공포",
+      "basis": "11/16 07:30 · 토큰포스트 인용, 전일 13",
+      "tone": "down",
+      "details": [
+        {
+          "label": "BTC 현물 ETF",
+          "value": "11/13 거래일 -1.85억 달러, 7거래일 연속 유출"
+        },
+        {
+          "label": "금리",
+          "value": "12월 FOMC 0.25%p 인상 확률 88.5% (CME FedWatch, 11/15 기준)"
+        },
+        {
+          "label": "주말 발언",
+          "value": "자오창펑은 바이낸스 매도설을 부인, 베선트 재무장관은 연준에 추가 긴축 자제 촉구"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "72시간 -8.6%, 65,290달러",
+      "note": "주말 약 62,000달러로 7월 이후 최저 뒤 반등. 24시간 +1.9%. 원화 8,996만원."
+    },
+    {
+      "label": "ETH",
+      "value": "72시간 -9.0%, 1,834달러",
+      "note": "주간 -18.2%. 원화 252만원, 24시간 +3.0%."
+    },
+    {
+      "label": "전체 시총",
+      "value": "2.269조 달러",
+      "note": "CoinGecko 09시대 조회. 금요일 아침 2.483조 달러에서 72시간 약 -8.6%."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "57.7%",
+      "note": "CoinGecko. ETH 9.84%."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/13 거래일 -1.85억 달러",
+      "note": "7거래일 연속 유출, 누적 -19.1억 달러. 다음 집계는 11/16 거래일."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/13 거래일 +0.024억 달러",
+      "note": "소폭 유입."
+    },
+    {
+      "label": "전체 청산",
+      "value": "주말 20.2억 달러, 롱 83%",
+      "note": "토 08시 → 일 08시 ET. 최근 24시간은 7.36억 달러로 롱·숏 반반."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "10, 극도의 공포",
+      "note": "전일 13. CoinMarketCap 지수는 13."
+    },
+    {
+      "label": "거시",
+      "value": "12월 인상 확률 88.5%",
+      "note": "CME FedWatch 11/15 기준. 베선트 재무장관이 연준에 추가 긴축 자제를 촉구."
+    },
+    {
+      "label": "원화 마켓",
+      "value": "거래대금 2.0조원, 김프 3.3%",
+      "note": "50억원 이상 거래 36종 중 상승 75%. 폴리스웜 +39.2%, 소폰 -52.0%."
+    },
+    {
+      "label": "집계 기준",
+      "value": "종목 등락은 토큰포스트 09:02 스냅숏",
+      "note": "VVV·PEARL·CC·QNT·AAVE·BTW는 토큰포스트 상위 90 스냅숏, 나머지는 CoinGecko 24시간. CoinMarketCap 표는 이번 점검에서 열지 못함."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,336.7원",
+      "note": "11/13 서울 외환시장 마감가, 주말 휴장. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "Venice Token",
+      "ticker": "VVV",
+      "direction": "up",
+      "change": "+18.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+16.3%p",
+      "marketCap": "9.95억 달러",
+      "rank": 69,
+      "volume24h": "0.55억 달러 (시총의 5.6%)",
+      "causeType": "원인 불명",
+      "headline": "반등장 상승 1위, 사건은 확인되지 않음.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "금요일 아침 18.87달러 대비 72시간 +8%."
+      ],
+      "reaction": [
+        "24시간 +18.2%, 23,115원 → 27,322원.",
+        "거래량은 시총의 5.6%로 크지 않았다."
+      ],
+      "watch": "20달러 위 유지 여부.",
+      "caveat": "거래가 얇아 반등 폭이 커지기 쉬운 종목이다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pearl",
+      "ticker": "PEARL",
+      "direction": "up",
+      "change": "+11.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+9.8%p",
+      "marketCap": "6.50억 달러",
+      "rank": 89,
+      "volume24h": "0.21억 달러 (시총의 3.2%)",
+      "causeType": "가능한 배경",
+      "headline": "코인베이스 상장 뒤 사흘 +21%.",
+      "happened": [
+        "13일 코인베이스 현물·무기한선물 거래 개시 공지 뒤 상승 지속.",
+        "금요일 아침 1.39달러에서 72시간 +21%."
+      ],
+      "reaction": [
+        "24시간 +11.7%, 2,010원 → 2,246원.",
+        "거래량은 시총의 3.2%에 그쳤다."
+      ],
+      "watch": "12일 고점 1.59달러 위 안착과 코인베이스 거래량.",
+      "caveat": "실제 현물 개시 시각과 코인베이스 거래량은 확인하지 못했다.",
+      "confidence": "B"
+    },
+    {
+      "project": "Canton",
+      "ticker": "CC",
+      "direction": "up",
+      "change": "+10.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+8.8%p",
+      "marketCap": "34.1억 달러",
+      "rank": 25,
+      "volume24h": "0.18억 달러 (시총의 0.5%)",
+      "causeType": "원인 불명",
+      "headline": "8센트 아래로 밀렸다가 하루 만에 회복.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "15일 아침 0.075달러 저점, 하루 -9.2% 뒤였다."
+      ],
+      "reaction": [
+        "24시간 +10.7%, 103원 → 115원.",
+        "거래량은 시총의 0.5%로 매우 적다."
+      ],
+      "watch": "0.085달러 위 유지 여부.",
+      "caveat": "거래량이 적어 가격 변화의 신뢰도가 낮다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Quant",
+      "ticker": "QNT",
+      "direction": "up",
+      "change": "+9.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.5%p",
+      "marketCap": "22.7억 달러",
+      "rank": 39,
+      "volume24h": "0.72억 달러 (시총의 3.2%)",
+      "causeType": "원인 불명",
+      "headline": "주중 급락 뒤 반등, 72시간으로는 여전히 -3%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "금요일 아침 162.18달러 대비 72시간 -3.1%."
+      ],
+      "reaction": [
+        "24시간 +9.4%, 19.20만원 → 21.01만원.",
+        "거래량은 시총의 3.2%."
+      ],
+      "watch": "160달러 회복 여부.",
+      "caveat": "주중 롱 청산 뒤 기술적 반등으로 보이나 수치 근거는 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Aave",
+      "ticker": "AAVE",
+      "direction": "up",
+      "change": "+9.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.2%p",
+      "marketCap": "16.9억 달러",
+      "rank": 47,
+      "volume24h": "2.33억 달러 (시총의 13.8%)",
+      "causeType": "원인 불명",
+      "headline": "DeFi 대형주 반등 선두.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "금요일 아침 113.61달러 대비 72시간 -3.5%."
+      ],
+      "reaction": [
+        "24시간 +9.1%, 13.43만원 → 14.65만원.",
+        "거래량은 시총의 14%로 매매가 활발했다."
+      ],
+      "watch": "110달러 위 회복과 바이백 재개 안건.",
+      "caveat": "13일 리포트 대상이며 고유 호재는 찾지 못했다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Worldcoin",
+      "ticker": "WLD",
+      "direction": "up",
+      "change": "+9.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+8.0%p",
+      "marketCap": "10.2억 달러",
+      "rank": 68,
+      "volume24h": "1.14억 달러 (시총의 11.2%)",
+      "causeType": "원인 불명",
+      "headline": "14일 -13% 뒤 절반가량 회복.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "14일 0.278달러 지지가 무너진 뒤의 반등."
+      ],
+      "reaction": [
+        "24시간 +9.9%, 326원 → 359원.",
+        "거래량은 시총의 11%."
+      ],
+      "watch": "0.278달러 재돌파 여부.",
+      "caveat": "CoinGecko 24시간 값이며 같은 시각 다른 집계와 차이가 있을 수 있다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Uniswap",
+      "ticker": "UNI",
+      "direction": "up",
+      "change": "+9.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.7%p",
+      "marketCap": "31.4억 달러",
+      "rank": 27,
+      "volume24h": "4.14억 달러 (시총의 13.2%)",
+      "causeType": "원인 불명",
+      "headline": "사흘 하락 뒤 첫 반등, 72시간은 -14%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "금요일 아침 6.00달러 대비 72시간 -13.8%."
+      ],
+      "reaction": [
+        "24시간 +9.6%, 6,305원 → 6,911원.",
+        "거래량은 시총의 13%."
+      ],
+      "watch": "5.5달러 회복 여부.",
+      "caveat": "CoinGecko 24시간 값이며 같은 시각 다른 집계와 차이가 있을 수 있다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Zcash",
+      "ticker": "ZEC",
+      "direction": "up",
+      "change": "+9.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.2%p",
+      "marketCap": "155.4억 달러",
+      "rank": 11,
+      "volume24h": "8.33억 달러 (시총의 5.4%)",
+      "causeType": "원인 불명",
+      "headline": "시총 10위권 중 반등 폭 최대.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "7일 기준으로는 여전히 -23.8%."
+      ],
+      "reaction": [
+        "24시간 +9.1%, 111.70만원 → 121.87만원.",
+        "거래량 8.33억 달러로 시총의 5.4%."
+      ],
+      "watch": "1,000달러 회복 여부.",
+      "caveat": "CoinGecko 24시간 값이다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Hyperliquid",
+      "ticker": "HYPE",
+      "direction": "up",
+      "change": "+8.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.0%p",
+      "marketCap": "160.5억 달러",
+      "rank": 10,
+      "volume24h": "10.4억 달러 (시총의 6.5%)",
+      "causeType": "원인 불명",
+      "headline": "14일 -10% 뒤 반등.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "수수료로 HYPE를 사서 소각하는 구조는 계속된다."
+      ],
+      "reaction": [
+        "24시간 +8.9%, 82,878원 → 90,254원.",
+        "거래량 10.4억 달러로 시총의 6.5%."
+      ],
+      "watch": "70달러 회복 여부.",
+      "caveat": "바이백은 매일 있는 일이라 이날 원인으로 쓰지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "XRP",
+      "ticker": "XRP",
+      "direction": "up",
+      "change": "+8.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+6.7%p",
+      "marketCap": "613.9억 달러",
+      "rank": 6,
+      "volume24h": "23.2억 달러 (시총의 3.8%)",
+      "causeType": "원인 불명",
+      "headline": "메이저 중 반등 폭 최대, 1달러는 아직 아래.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "14일 0.89달러까지 밀려 8월 저점을 깼었다."
+      ],
+      "reaction": [
+        "24시간 +8.6%, 1,190원 → 1,292원.",
+        "원화 마켓 거래대금 2,476억원으로 BTC와 비슷했다."
+      ],
+      "watch": "1달러 회복 여부.",
+      "caveat": "15일 저점에서 2.4억 XRP가 이동했지만 거래소로 간 것은 아니었다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Bitway",
+      "ticker": "BTW",
+      "direction": "down",
+      "change": "-26.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-28.8%p",
+      "marketCap": "7.98억 달러",
+      "rank": 78,
+      "volume24h": "0.09억 달러 (시총의 1.2%)",
+      "causeType": "원인 불명",
+      "headline": "닷새째 두 자릿수 하락, 일주일 -53%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "73개가 오른 반등장에서도 하락 1위."
+      ],
+      "reaction": [
+        "24시간 -26.9%, 973원 → 711원.",
+        "거래량은 시총의 1.2%로 얇다."
+      ],
+      "watch": "프로젝트 공지 여부와 0.50달러 지지.",
+      "caveat": "하락이 계속되는데 원인 자료가 전혀 없다는 점 자체가 위험 신호다.",
+      "confidence": "C"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "JUP·NEAR",
+      "reason": "+9.0~9.5%, 상승 상위이나 종목 수 제한으로 제외"
+    },
+    {
+      "ticker": "RAIN·LIT",
+      "reason": "-3.3%·-1.2%로 하락 2~3위, 낙폭이 작아 제외"
+    },
+    {
+      "ticker": "폴리스웜·소폰",
+      "reason": "원화 마켓 +39.2%·-52.0%, CoinGecko 100위 밖"
+    },
+    {
+      "ticker": "72시간 등락",
+      "reason": "종목별 72시간 표를 확보하지 못해 금요일 리포트·브리프에 가격이 남은 종목만 72시간 비교를 적음"
+    }
+  ],
+  "watchNext": [
+    "11/16 거래일 미 BTC 현물 ETF — 8거래일 연속 유출 여부",
+    "BTC 62,000달러 주말 저점 재시험 여부",
+    "12월 FOMC 인상 확률과 연준 인사 발언",
+    "BTW 프로젝트 공지와 0.50달러 지지"
+  ],
+  "highlight": "주말 사이 비트코인은 7월 이후 최저인 6만 2천 달러까지 밀렸다가 월요일 새벽 6만 5천 달러대로 돌아왔다. 금요일 아침과 비교하면 여전히 -8.6%이고 공포지수는 10으로 더 내려가 반등을 추세 전환으로 보기는 이르다. 반등 상위 종목들도 대부분 고유 사건 없이 주중 낙폭을 일부 되돌린 수준이고, 사건이 확인되는 것은 코인베이스 상장 뒤 사흘째 오른 PEARL 정도다. 반대로 BTW는 시장이 오른 날에도 닷새째 급락해 이유 없는 하락이 이어지고 있다.",
+  "sources": [
+    {
+      "title": "토큰포스트 — [아침 시황] 비트코인 8,996만원…상승 종목 75% (11/16 07:30)",
+      "url": "https://www.tokenpost.kr/news/cryptocurrency/438748"
+    },
+    {
+      "title": "토큰포스트 — 11월 16일 출근길 팟캐스트, 롱 청산 12.6억달러",
+      "url": "https://www.tokenpost.kr/news/insights/438735"
+    },
+    {
+      "title": "TokenPost — Bitway falls 26.92% to lead crypto decliners at 7:02 p.m. ET (11/15)",
+      "url": "https://www.tokenpost.com/news/investing/57941"
+    },
+    {
+      "title": "CoinGecko — 시총 1~100위, 시장 개요 (11/16 09시대 조회)",
+      "url": "https://www.coingecko.com/"
+    },
+    {
+      "title": "The Block — CZ denies Binance sold crypto as bitcoin bounces from four-month low near $62,000",
+      "url": "https://www.theblock.co/news/markets/2026-11-15-cz-denies-binance-sold-crypto-as-bitcoin-bounces-from-four-month-low-near-62000-440807"
+    },
+    {
+      "title": "아주경제 — 주말 급락 딛고 반등한 비트코인…6만5000달러대 회복 (11/16 08시)",
+      "url": "https://www.ajunews.com/view/20261116082543034"
+    },
+    {
+      "title": "CryptoTicker — Canton price crash: CC falls below 8 cents (11/15)",
+      "url": "https://cryptoticker.io/en/canton-price-crash-below-0-08-dollars/"
+    },
+    {
+      "title": "cryptonews.net — US spot Bitcoin ETFs bleed $185 million as outflow streak hits seven days",
+      "url": "https://cryptonews.net/news/bitcoin/33752304/"
+    },
+    {
+      "title": "CryptoTicker — XRP price prediction: 240M XRP moved at the low, no exchange (11/15)",
+      "url": "https://cryptoticker.io/en/xrp-price-prediction-240-million-xrp-whale-transfer-escrow-november-15-2026/"
+    },
+    {
+      "title": "NewsBTC — XRP briefly drops to $0.89 as crypto liquidity retreats",
+      "url": "https://www.newsbtc.com/xrp-news/xrp-falls-089-november-2026-market-liquidity/"
+    },
+    {
+      "title": "아시아경제 — 원·달러 환율 1336.7원 마감 (11/13)",
+      "url": "https://view.asiae.co.kr/article/2026111315345800319"
+    }
+  ],
+  "terms": [
+    {
+      "term": "청산",
+      "meaning": "빌린 돈으로 건 선물 포지션이 증거금 부족으로 강제 정리되는 것"
+    },
+    {
+      "term": "공포·탐욕 지수",
+      "meaning": "가격 변동성·거래량 등을 0~100으로 묶은 투자 심리 지표. 25 이하는 극도의 공포"
+    },
+    {
+      "term": "풋/콜 비율",
+      "meaning": "하락에 거는 옵션 거래가 상승에 거는 거래의 몇 배인지. 1보다 크면 하락 대비가 많다"
+    },
+    {
+      "term": "FedWatch",
+      "meaning": "CME 금리 선물 가격으로 계산한 다음 FOMC 금리 결정 확률"
+    },
+    {
+      "term": "김치 프리미엄",
+      "meaning": "국내 원화 마켓 가격이 해외 가격보다 비싼 정도"
+    },
+    {
+      "term": "기술적 반등",
+      "meaning": "새 재료 없이 급락 뒤 매도가 잦아들며 가격이 되돌아오는 것"
+    }
+  ]
+}
