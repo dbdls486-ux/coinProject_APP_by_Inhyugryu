@@ -5,8 +5,8 @@
     "slot": "new_listing",
     "project": "Hyperliquid",
     "ticker": "HYPE",
-    "question": "하이퍼리퀴드는 어떻게 자체 체인 위 호가창으로 선물을 거래시키고, 그 수수료는 어떻게 HYPE 매입·소각으로 이어질까?",
-    "oneLiner": "쉽게 말하면, 거래소처럼 호가창으로 코인·주식 선물을 사고파는 블록체인이며, HYPE는 그 수수료로 매일 시장에서 되사 묶어 두는 토큰이다.",
+    "question": "거래 수수료로 사들이는 HYPE는 새로 풀릴 물량에 비해 얼마나 될까?",
+    "oneLiner": "하이퍼리퀴드는 호가창 선물 거래를 체인 규칙으로 처리하는 자체 블록체인이고, 트레이더가 낸 수수료의 대부분은 시장에서 HYPE를 사들이는 데 쓰인다.",
     "sector": "Perp DEX · Layer 1"
   },
   {
@@ -15,8 +15,8 @@
     "slot": "top100",
     "project": "Aave",
     "ticker": "AAVE",
-    "question": "Aave V4는 예치금을 어떻게 한 금고에 모아 빌려주고, 그 이자 가운데 얼마가 AAVE 보유자 몫이 될까?",
-    "oneLiner": "쉽게 말하면, 코인을 맡기면 이자를 주고 담보를 잡아 코인을 빌려주는 온체인 대출 창구이며, AAVE는 그 규칙을 정하고 매출 일부로 되사들이기로 한 거버넌스 토큰이다.",
+    "question": "Aave V4에서 한 대출 창구가 빚을 돌려받지 못하면, 그 손실은 누가 떠안을까?",
+    "oneLiner": "Aave는 맡긴 코인을 담보 대출로 빌려주는 온체인 대출 시장이고, 2026년 3월 출범한 V4에서는 여러 대출 창구가 공동 금고 하나를 함께 쓴다.",
     "sector": "DeFi Lending · Money Market"
   },
   {
@@ -25,8 +25,8 @@
     "slot": "outside_top100",
     "project": "Maple Finance",
     "ticker": "SYRUP",
-    "question": "syrupUSDC에 맡긴 달러는 누구에게 대출되고, 그 이자 가운데 얼마가 SYRUP 보유자에게 돌아올까?",
-    "oneLiner": "쉽게 말하면, 달러 스테이블코인을 모아 비트코인 등을 담보로 잡고 기관에 빌려주는 온체인 대출 운용사이며, SYRUP은 그 수수료 일부로 시장에서 되사들이는 거버넌스 토큰이다.",
+    "question": "차입 기관이 내는 이자 100달러 가운데 SYRUP을 사들이는 데 쓰이는 돈은 얼마일까?",
+    "oneLiner": "Maple은 예치자들이 맡긴 달러를 비트코인 등을 담보로 잡고 기관에 빌려주며, SYRUP 보유자에게는 그 이자에서 Maple이 떼는 수수료의 일부가 토큰 매입으로 돌아온다.",
     "sector": "Institutional Lending · Onchain Asset Management"
   },
   {
@@ -35,8 +35,8 @@
     "slot": "top100",
     "project": "Ethena",
     "ticker": "ENA",
-    "question": "USDe는 어떻게 1달러를 따라가고, 그 과정에서 생긴 수익은 누구에게 돌아갈까?",
-    "oneLiner": "쉽게 말하면, 코인·스테이블코인을 담보로 받고 거래소에서 같은 금액만큼 공매도를 걸어 달러 가치를 고정시킨 '합성 달러(USDe)'를 발행하는 프로토콜이며, ENA는 그 운영 재단의 거버넌스 토큰이다.",
+    "question": "USDe 담보의 절반이 대출로 옮겨 간 지금, 상환이 몰리면 Ethena가 바로 내줄 수 있는 돈은 얼마나 될까?",
+    "oneLiner": "Ethena는 받은 담보를 선물 공매도와 대출로 운용해 1달러를 따라가는 USDe를 발행하고, 운용 수익을 USDe를 맡긴 예치자에게 돌린다.",
     "sector": "Synthetic Dollar · Delta-Neutral Stablecoin"
   }
 ]

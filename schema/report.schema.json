@@ -45,11 +45,11 @@
     },
     "question": {
       "type": "string",
-      "description": "이 글이 답할 질문. 예: 'USDe는 어떻게 1달러를 따라가고, 그 과정에서 생긴 수익은 누구에게 돌아갈까?'"
+      "description": "본문을 다 쓴 뒤 뽑는다. 각 줄이 새 정보를 보탠다: ① 질문에 대한 답 ② 그 답이 나오는 작동 원리 ③ 판단을 바꿀 조건. 각 줄 한 문장"
     },
     "oneLiner": {
       "type": "string",
-      "description": "'쉽게 말하면 ~' 한 문장"
+      "description": "첫 문장. '쉽게 말하면' 없이 프로젝트가 하는 일이나 질문의 답으로 시작한다"
     },
     "meta": {
       "type": "object",
@@ -401,7 +401,7 @@
     },
     "verdict": {
       "type": "string",
-      "description": "3문장: 평가 / 가장 큰 변수 / 확인 지표"
+      "description": "정리 3문장: 제목의 질문에 답하고, 그 판단을 바꿀 조건 한 가지를 남긴다"
     },
     "sources": {
       "type": "array",
