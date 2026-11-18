@@ -1,0 +1,655 @@
+{
+  "id": "2026-11-18-pendle",
+  "date": "2026-11-18",
+  "slot": "outside_top100",
+  "project": "Pendle",
+  "ticker": "PENDLE",
+  "question": "sPENDLE로 맡긴 PENDLE은 수수료로 사들인 PENDLE을 얼마나 돌려받을까?",
+  "oneLiner": "Pendle은 이자가 붙는 토큰을 원금 몫과 이자 몫으로 나눠 따로 사고팔게 하는 시장이고, 수수료의 80%로 PENDLE을 사서 스테이킹한 보유자에게 나눠 준다.",
+  "meta": {
+    "sector": "Yield Tokenization · DeFi",
+    "krwMarkets": [
+      "업비트 2024-08-06 (KRW·BTC)"
+    ],
+    "rank": "CoinGecko #142 · 시총 약 2.49억 달러 (2026-11-18)",
+    "launched": "PENDLE 토큰 판매 2021-04-28 · sPENDLE 2026-01-20"
+  },
+  "tldr": [
+    "최근 30일 보유자 몫 매출 33.6만 달러를 1년으로 늘려도 스테이킹된 PENDLE 가치의 약 2.1%다 (10월 25일 기준 계산).",
+    "V2 수수료의 80%로 2주마다 PENDLE을 사서 투표에 참여한 sPENDLE 보유자에게 sPENDLE로 나눠 줄 뿐, 소각은 없다.",
+    "예치 자산이 2025년 평균 57억 달러에서 10.7억 달러로 줄었고, 수수료가 이 규모에 머무는 한 돌려받는 몫도 작다."
+  ],
+  "who": {
+    "lead": "이자가 붙는 토큰을 가진 사람은 이자율을 고정하려고, 이자 변동에 베팅하려는 사람은 이자만 따로 사려고 Pendle을 쓴다.",
+    "glossary": [
+      {
+        "term": "SY",
+        "meaning": "이자가 붙는 토큰을 Pendle 규격으로 한 번 감싼 토큰. PT와 YT로 나누기 전 단계다"
+      },
+      {
+        "term": "PT",
+        "meaning": "만기가 되면 기초 자산으로 돌려받는 원금 몫. 할인된 값에 사서 만기까지 들고 있으면 고정 이자를 받는 셈이다"
+      },
+      {
+        "term": "YT",
+        "meaning": "만기까지 기초 자산에서 나오는 이자와 포인트를 받는 몫. 만기가 지나면 더 받을 것이 없다"
+      },
+      {
+        "term": "sPENDLE",
+        "meaning": "PENDLE을 1:1로 맡기고 받는 스테이킹 토큰. 수수료로 산 PENDLE을 나눠 받고 제안 투표권을 가진다"
+      }
+    ],
+    "body": [
+      "이자가 붙는 토큰의 이자율은 매일 바뀐다. 이를 고정하고 싶은 예치자는 PT를 할인된 값에 사서 만기까지 들고 있는다. 사는 값과 만기에 돌려받는 값의 차이가 그 기간의 고정 이자다.",
+      "반대로 이자가 오를 것으로 보는 사람은 YT만 산다. 적은 돈으로 큰 원금에서 나오는 이자와 포인트를 만기까지 받는다. 이자가 예상보다 낮으면 YT에 낸 돈은 그만큼 손실이 된다.",
+      "2026년 들어 Pendle은 Monad와 Robinhood Chain으로 배포 체인을 넓혔다. 자산운용사 상품을 기초로 한 시장도 열었다. 별도 상품인 Boros에서는 선물 펀딩비 자체를 거래한다."
+    ]
+  },
+  "money": {
+    "lead": "예치금은 Pendle 시장 계약 안에 기초 자산 형태로 있고, Pendle은 이자의 5%와 거래 수수료 일부를 떼어 그 80%로 PENDLE을 산다.",
+    "overview": [
+      "Pendle의 돈은 모두 체인 위 계약에 있다. 사용자가 맡긴 sUSDe 같은 이자 토큰은 SY로 감싸진 뒤 PT와 YT로 나뉘고, 원본은 만기까지 Pendle 계약이 보관한다. 이자 자체는 기초 자산을 만든 외부 프로토콜에서 나온다.",
+      "PT 거래는 시장마다 있는 PT 전용 AMM에서 이뤄진다. YT를 사고팔 때도 이 AMM을 거쳐 PT 기준으로 계산한다. 현재 새 시장을 여는 것은 Pendle 팀뿐이다.",
+      "운영 주체는 파나마 법인 Univerum Innovations Inc.로 정리돼 있고, 재단이나 DAO는 없다. sPENDLE 보유자가 PPP라는 프로토콜 제안에 투표하지만, 계약을 바꾸는 권한은 팀 멀티시그에 있다."
+    ],
+    "userFlow": {
+      "title": "예치자가 PT로 이자율을 고정하는 과정",
+      "steps": [
+        {
+          "text": "sUSDe 같은 이자 토큰을 들고 Pendle 앱에서 원하는 만기의 시장을 고른다.",
+          "detail": "앱은 입력 자산을 SY로 감싸고 PT AMM에서 PT로 바꾼다. 거래 수수료는 '수수료 등급 ÷ 365 × 만기까지 남은 일수'로 계산돼 만기가 가까울수록 낮아진다. 수수료 등급은 시장을 연 쪽이 시장마다 정한다."
+        },
+        {
+          "text": "PT를 할인된 값에 산다. 이때 정해진 할인 폭이 만기까지의 고정 이자다.",
+          "detail": "실제 할인 폭은 같은 시장에서 YT를 사려는 수요와 함께 정해진다. YT 수요가 많으면 PT 값이 내려가 고정 이자가 높아지고, 반대면 낮아진다."
+        },
+        {
+          "text": "만기 전에 팔면 그때의 시장 가격을 받고, 만기까지 들고 있으면 기초 자산으로 돌려받는다.",
+          "detail": "만기 뒤 PT 상환에는 프로토콜 수수료가 없고 가스비만 든다. 만기가 지났는데 상환하지 않고 둔 PT에서 생기는 이자와 포인트는 Pendle 재무 수수료 지갑으로 자동으로 넘어간다."
+        },
+        {
+          "text": "이자에 베팅하는 쪽은 YT를 사서 만기까지 나오는 이자와 포인트를 받는다.",
+          "detail": "YT가 받는 이자와 포인트의 5%는 Pendle이 떼어 간다. 포인트는 파트너 프로토콜이 배분할 때 5%를 빼서 Pendle이 관리하는 수수료 지갑으로 보낸다."
+        },
+        {
+          "text": "PENDLE을 sPENDLE로 맡기면 2주마다 매입분을 받는다. 빼려면 14일을 기다리거나 5%를 내고 바로 뺀다.",
+          "detail": "PENDLE과 sPENDLE은 1:1로 바뀌고 sPENDLE 자체 가치는 오르지 않는다. 보상은 머클 분배로 2주마다 계산되며 앱에서 아무 때나 청구한다. PPP 투표가 열려 있을 때 투표하지 않은 보유자는 비활성으로 분류돼 그 기간 보상을 받지 못한다."
+        }
+      ]
+    },
+    "issuerFlow": {
+      "title": "Pendle 팀이 시장을 열고 수수료로 PENDLE을 사들이는 과정",
+      "steps": [
+        {
+          "text": "Pendle 팀이 기초 자산과 만기를 정해 새 시장을 연다.",
+          "detail": "시장 계약은 한 번 배포하면 바꿀 수 없다. 반면 최근 SY 계약은 업그레이드 가능한 프록시라서, 감싼 자산을 다루는 로직을 나중에 교체할 수 있다. 라우터 계약에는 특별 권한이나 화이트리스트가 없다."
+        },
+        {
+          "text": "거래 수수료의 20%는 그 시장의 LP에게 이자로 간다.",
+          "detail": "나머지 거래 수수료와 YT 이자 수수료 전부를 모아 80%는 PENDLE 매입, 10%는 프로토콜 재무, 10%는 운영에 쓴다."
+        },
+        {
+          "text": "2주마다 수수료를 거둬 매입 계약에 넣고, 다음 한 주 동안 TWAP으로 나눠 PENDLE을 산다.",
+          "detail": "매입 계약 주소는 0x9e08C5499f953C6297A7755BcBcEd383b606896b다. 1시간 단위 시간가중평균가격으로 나눠 사서 한꺼번에 살 때의 가격 충격을 줄인다."
+        },
+        {
+          "text": "산 PENDLE은 최대 100%까지 활성 sPENDLE 보유자에게 sPENDLE로 나눠 준다. 소각은 하지 않는다.",
+          "detail": "분배량은 보유량에 비례하고 머클 분배로 처리된다. 포인트로 받는 에어드롭은 PENDLE로 바꾸지 않고 받은 토큰 그대로 나눠 준다."
+        },
+        {
+          "text": "LP 보상으로 새 PENDLE을 매주 찍는다. 2026년 1월부터는 시장 실적에 맞춰 산식으로 정한다.",
+          "detail": "AIM이라는 산식은 시장별 달러 보상액을 max(PENDLE 가격, 1.25달러)로 나눠 PENDLE 수량을 정한다. 수수료 연동분은 그 주 수수료의 25%이고 주당 625달러가 상한이다. 쓰지 않은 배정분은 발행하지 않고 다음 주로 넘기지도 않는다. 토크노믹스 문서상 2026년 4월부터 인센티브 발행은 연 2%가 상한이다."
+        },
+        {
+          "text": "기존 vePENDLE 보유자는 남은 잠금 기간에 따라 최대 4배의 가상 sPENDLE을 받았다.",
+          "detail": "2026년 1월 29일 0시 UTC 스냅숏 기준이다. 이 가상 잔고는 옮길 수 없고 잠금 만료일까지 1배로 줄어든 뒤 사라진다. 혜택을 이어가려면 잠긴 PENDLE을 찾아 sPENDLE로 다시 맡겨야 한다."
+        }
+      ]
+    },
+    "example": [
+      "가령 연 10% 이자가 붙는 토큰 100개를 1년 만기로 나눈다고 하자. PT 100개는 만기에 기초 자산 100개를 돌려받고, YT 100개는 1년 동안 나오는 이자 약 10개를 받는다. PT가 91개 값에 거래된다면 PT를 산 사람은 연 약 9.9%를 고정한다. YT를 산 사람은 9개 값을 내고, 수수료 5%를 뺀 이자 약 9.5개를 기대하는 셈이다.",
+      "매입 규모를 같은 방식으로 따져 보면 이렇다. DefiLlama의 10월 25일 기준 30일 보유자 몫 매출은 33.6만 달러다. 1년으로 늘리면 약 409만 달러로, 같은 날 스테이킹된 PENDLE 1.91억 달러어치의 약 2.1%다(공개정보 기반 계산)."
+    ],
+    "mix": {
+      "asOf": "2026-10-25",
+      "source": "DefiLlama · Pendle·Boros (2026-11-18 조회, 페이지 기준일 2026-10-25) / FalconX 2026-01-08 (2025년 수치)",
+      "headers": [
+        "구분",
+        "항목",
+        "금액"
+      ],
+      "rows": [
+        [
+          "예치 자산",
+          "TVL 전체",
+          "10.69억 달러"
+        ],
+        [
+          "예치 자산",
+          "Ethereum · Monad · Arbitrum",
+          "7.81억 · 1.61억 · 0.54억 달러"
+        ],
+        [
+          "예치 자산",
+          "2025년 평균 · 고점",
+          "약 57억 · 약 134억 달러"
+        ],
+        [
+          "수수료 30일",
+          "전체 수수료 · 프로토콜 매출",
+          "45.7만 · 45.0만 달러"
+        ],
+        [
+          "수수료 30일",
+          "보유자 몫 매출",
+          "33.6만 달러 · 매출의 약 75% (계산)"
+        ],
+        [
+          "인센티브 30일",
+          "새로 배출한 PENDLE 가치",
+          "7.46만 달러"
+        ],
+        [
+          "2025년 전체",
+          "수수료 · 보유자 몫",
+          "4,460만 · 3,490만 달러"
+        ],
+        [
+          "스테이킹",
+          "스테이킹된 PENDLE 가치",
+          "1.91억 달러 · 시총의 54.6%"
+        ],
+        [
+          "Boros 30일",
+          "명목 거래량 · 수수료",
+          "13.6억 달러 · 4.07만 달러"
+        ]
+      ]
+    },
+    "trust": [
+      "팀 멀티시그 — Pendle 팀이 새 시장을 열고 SY 계약을 업그레이드한다. 제3자 평가는 이 멀티시그를 4명 중 2명 서명으로 보고, 문서화된 타임락은 없다고 정리했다. 잘못된 SY 업그레이드가 들어가면 그 SY로 감싼 예치금 전체가 영향을 받는다.",
+      "기초 자산 발행사 — PT와 YT의 가치는 감싼 이자 토큰을 만든 외부 프로토콜에 달려 있다. 기초 자산이 페그를 잃거나 상환이 멈추면 PT를 고정 이자 상품으로 산 예치자가 그 손실을 그대로 진다.",
+      "매입과 분배 — 수수료 수거, TWAP 매입, 머클 분배를 모두 팀이 운영한다. 분배 비율은 '최대 100%'로만 적혀 있어, 실제로 얼마를 나눴는지는 매입 계약과 분배 기록으로 확인해야 한다.",
+      "PPP 투표 — sPENDLE 보유자는 제안에 투표하지만 DAO나 재단은 없다. 투표 결과를 계약에 반영하는 것은 팀 멀티시그다."
+    ],
+    "security": [
+      "감사 — Ackee·Dedaub·Dingbats와 Code4rena 상위 참가자가 감사했다.",
+      "sPENDLE 감사 — WatchPug가 2026년 1월 11일 보고서를 냈고, 지적 사항은 모두 5건이다.",
+      "MarketV6 검토 — 2025년 9월 26일 검토에서 High·Medium·Low 지적은 없고 참고 사항 2건이었다.",
+      "사고 이력 — Blockworks가 인용한 PT 담보 분석은 2021년 6월 이후 Pendle 계약에서 사고가 없었다고 정리한다."
+    ],
+    "body": [
+      "가장 가까운 비교 대상은 이자율이 매일 바뀌는 Aave 같은 대출 시장이다. Pendle은 이자 토큰 하나를 원금과 이자로 쪼개 서로 다른 사람에게 판다. 그래서 고정 이자를 받는 쪽의 상대방은 차입자가 아니라 YT를 산 사람이다. YT 수요가 줄면 PT 할인 폭과 거래 수수료가 함께 줄어든다."
+    ]
+  },
+  "usage": {
+    "lead": "예치 자산은 10억 달러대로 2025년 평균의 5분의 1 아래로 줄었고, 최근 30일 수수료는 45만 달러 수준이다.",
+    "usageMetrics": [
+      {
+        "label": "예치 자산 TVL",
+        "value": "10.69억 달러 (2026-10-25)",
+        "source": "DefiLlama · Pendle",
+        "meaning": "기초 자산을 감싸 Pendle 계약에 맡겨 둔 총액이다. 2025년 평균 약 57억 달러의 19% 수준으로, 수수료의 바탕이 그만큼 작아졌다."
+      },
+      {
+        "label": "체인별 예치 자산",
+        "value": "Ethereum 7.81억 · Monad 1.61억 · Arbitrum 0.54억 달러 (2026-10-25)",
+        "source": "DefiLlama · Pendle",
+        "meaning": "예치금의 73%가 이더리움에 있다. 2026년에 새로 배포한 Monad가 두 번째로 크다."
+      },
+      {
+        "label": "Boros 명목 거래량",
+        "value": "30일 13.6억 달러 · 누적 193억 달러",
+        "source": "DefiLlama · Boros (2026-11-18 조회)",
+        "meaning": "펀딩비를 거래하는 별도 상품이다. 거래량은 크지만 30일 수수료가 4.07만 달러라 매출 기여는 아직 작다."
+      }
+    ],
+    "revenueMetrics": [
+      {
+        "label": "30일 수수료",
+        "value": "45.7만 달러 · 프로토콜 매출 45.0만 달러 (2026-10-25)",
+        "source": "DefiLlama · Pendle",
+        "meaning": "YT 이자 수수료와 거래 수수료를 합친 것이다. 2025년 한 해 4,460만 달러의 월평균 약 372만 달러와 비교하면 8분의 1 수준이다."
+      },
+      {
+        "label": "30일 보유자 몫 매출",
+        "value": "33.6만 달러 · 누적 5,682만 달러 (2026-10-25)",
+        "source": "DefiLlama · Pendle",
+        "meaning": "PENDLE 매입에 쓰이는 몫이다. 프로토콜 매출의 약 75%로, 문서상 매입 비율과 비슷하다."
+      },
+      {
+        "label": "30일 인센티브",
+        "value": "7.46만 달러 · 최근 1년 382만 달러 (2026-10-25)",
+        "source": "DefiLlama · Pendle",
+        "meaning": "LP 보상으로 새로 찍어 준 PENDLE의 가치다. 같은 30일 보유자 몫 매출의 약 22%다."
+      }
+    ],
+    "valueQuestion": "Pendle 사용이 늘면 PENDLE 보유자에게도 수익이 돌아가나?",
+    "valueAnswer": [
+      "예치자와 LP가 먼저 받는다. PT 보유자는 할인 폭만큼 고정 이자를, YT 보유자는 이자의 95%를 받는다. LP는 거래 수수료의 20%와 AIM 인센티브를 받는다.",
+      "프로토콜에 남는 것은 YT 이자의 5%와 거래 수수료의 나머지 80%다. 이 돈의 80%로 PENDLE을 사고, 10%는 재무, 10%는 운영에 쓴다.",
+      "산 PENDLE은 sPENDLE로 맡기고 투표에 참여한 보유자에게만 sPENDLE로 돌아간다. 맡기지 않은 PENDLE에는 돌아오는 것이 없고, 소각이 없어 총공급도 줄지 않는다."
+    ],
+    "policies": [
+      {
+        "name": "vePENDLE에서 sPENDLE로 전환",
+        "approved": "2026년 1월 20일 발표·출시",
+        "executed": "집행 — 1월 29일 vePENDLE 신규 잠금 중단과 스냅숏, 기존 보유자에게 최대 4배 가상 sPENDLE 지급",
+        "note": "다년 잠금을 14일 대기로 바꿨다. 발표 당시 vePENDLE에 묶인 물량은 총공급의 약 20%였다."
+      },
+      {
+        "name": "수수료 80% PENDLE 매입·분배",
+        "approved": "2026년 1월 sPENDLE 도입과 함께 시행",
+        "executed": "진행 중 — 문서상 2주 주기로 매입 계약이 운영된다. 실제 매입량은 프로젝트가 공개하지 않아 온체인 확인 대기",
+        "note": "DefiLlama는 30일 보유자 몫을 33.6만 달러로 집계한다. 분배 비율은 '최대 100%'로만 적혀 있다."
+      },
+      {
+        "name": "AIM 알고리즘 인센티브",
+        "approved": "2026년 1월 29일 시작",
+        "executed": "집행 — 30일 인센티브 7.46만 달러",
+        "note": "시장별 실적에 맞춰 매주 자동으로 정하고 주당 상한이 있다. 쓰지 않은 배정분은 발행하지 않는다."
+      },
+      {
+        "name": "인센티브 연 2% 상한",
+        "approved": "토크노믹스 문서 — 2026년 4월부터",
+        "executed": "상한만 정해짐 — 실제 배출은 AIM 산식으로 정해진다",
+        "note": "총공급 2.815억 개 기준 상한은 연 약 563만 개다. 최근 1년 인센티브 382만 달러를 바닥 가격 1.25달러로 나눠도 약 306만 개라 상한 아래다(계산)."
+      }
+    ],
+    "tokenomics": {
+      "circulating": "유통 1.742억 / 총공급 2.815억 PENDLE, 유통률 약 62%, CoinGecko 2026년 11월 18일 기준 · 가격 1.43달러, 시총 2.49억 달러, FDV 4.03억 달러, 고점 7.50달러 대비 -81%. 문서상 유통량은 sPENDLE·vePENDLE 계약과 생태계 기금·멀티시그 보유분을 뺀 값이다.",
+      "nextUnlock": "팀·투자자 물량은 2024년 9월까지 모두 풀려 예정된 언락은 없다. 새로 늘어나는 물량은 LP 인센티브 배출뿐이다.",
+      "valuePath": "V2 수수료의 80%로 PENDLE을 사서 투표에 참여한 sPENDLE 보유자에게 sPENDLE로 나눠 준다. 소각과 현금 배당은 없다.",
+      "valueCapture": "direct"
+    }
+  },
+  "risks": {
+    "lead": "가장 큰 변수는 줄어든 예치금이 회복하지 않아 매입 재원이 작게 머무는 것과, 시장 개설과 SY 업그레이드 권한이 팀 멀티시그 하나에 몰린 구조다.",
+    "items": [
+      {
+        "risk": "수수료 기반 축소 (사업)",
+        "why": "예치 자산이 2025년 평균의 19%로 줄면서 30일 수수료도 2025년 월평균의 8분의 1이 됐다. 이 수준이면 sPENDLE 보유자가 받는 매입분은 스테이킹 가치의 연 2% 안팎에 머문다. 같은 기간 LP 보상으로 새 PENDLE도 찍히고 있다.",
+        "indicator": "DefiLlama 30일 수수료·TVL / 30일 인센티브 대비 보유자 몫 비율"
+      },
+      {
+        "risk": "기초 자산 위험의 전이 (신용)",
+        "why": "PT와 YT는 감싼 이자 토큰의 가치를 그대로 따른다. 기초 자산이 페그를 잃거나 상환이 멈추면 PT를 고정 이자 상품으로 산 예치자가 손실을 본다. 2025년 4월부터 Aave가 PT를 담보로 받고 있어 대출 청산으로 번질 수 있다.",
+        "indicator": "주요 기초 자산의 시장 가격과 상환 대기 / PT 담보 대출 규모"
+      },
+      {
+        "risk": "관리자 권한 집중 (지배구조)",
+        "why": "시장 개설과 SY 업그레이드를 팀 멀티시그가 맡고, 제3자 평가로는 4명 중 2명 서명에 타임락이 없다. 잘못된 업그레이드가 들어가면 예치자가 빠져나갈 시간 없이 반영된다. 이를 견제할 DAO나 재단도 없다.",
+        "indicator": "멀티시그 서명자·임계치 변경 / SY 계약 업그레이드 이벤트"
+      },
+      {
+        "risk": "매입·분배 운영 의존 (운영)",
+        "why": "수수료 수거, TWAP 매입, 머클 분배를 팀이 2주마다 직접 돌린다. 분배 비율이 '최대 100%'로만 적혀 있어 실제 지급액이 줄어도 계약이 막지 않는다. 투표에 빠진 보유자는 그 기간 보상을 받지 못한다.",
+        "indicator": "매입 계약의 2주 주기 매수 기록 / 분배 회차별 sPENDLE 지급량"
+      }
+    ]
+  },
+  "watchlist": [
+    {
+      "indicator": "30일 수수료와 TVL",
+      "why": "매입 재원의 크기를 정한다",
+      "signal": "30일 수수료가 45.7만 달러 아래로 더 내려가는지, TVL이 10억 달러를 지키는지"
+    },
+    {
+      "indicator": "보유자 몫 대비 인센티브",
+      "why": "새로 찍는 PENDLE과 사들이는 PENDLE의 균형이다",
+      "signal": "30일 인센티브가 보유자 몫의 22%에서 50%를 넘어서는지"
+    },
+    {
+      "indicator": "매입 계약 매수 기록",
+      "why": "문서의 80% 매입이 실제로 집행되는지 보여 준다",
+      "signal": "2주 주기가 끊기거나 매수액이 보유자 몫 매출과 크게 어긋나는지"
+    },
+    {
+      "indicator": "멀티시그 구성과 SY 업그레이드",
+      "why": "예치금 전체에 미치는 관리자 권한이다",
+      "signal": "서명자 수 감소, 타임락 도입 여부, 공지 없는 업그레이드"
+    },
+    {
+      "indicator": "Boros 수수료",
+      "why": "V2 밖의 새 수입원이 될 수 있다",
+      "signal": "30일 수수료 4.07만 달러가 V2 수수료의 10%를 넘어서는지"
+    }
+  ],
+  "verdict": "최근 30일 수수료로 사들일 수 있는 PENDLE은 스테이킹된 물량 가치의 연 2% 안팎으로 추산된다. 수수료의 80%를 매입에 쓰는 구조는 문서와 계약 주소까지 공개돼 있지만, 예치금이 2025년 평균의 5분의 1 아래로 줄어 재원 자체가 작다. 30일 수수료가 2025년 월평균 수준으로 다시 올라가는지가 이 판단을 바꿀 조건이다.",
+  "terms": [
+    {
+      "term": "바이백",
+      "key": "buyback",
+      "aliases": [
+        "매입",
+        "PENDLE 매입",
+        "Buyback"
+      ],
+      "meaning": "프로토콜이 번 돈으로 시장에서 자기 토큰을 사들이는 것",
+      "role": "Pendle은 V2 수수료의 80%를 2주마다 매입 계약에 넣어 PENDLE을 사고, 산 PENDLE을 활성 sPENDLE 보유자에게 sPENDLE로 나눠 준다. 소각하지는 않는다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Pendle Docs – sPENDLE",
+          "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/sPENDLE"
+        },
+        {
+          "title": "Pendle Docs – Fees",
+          "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/Fees"
+        }
+      ]
+    },
+    {
+      "term": "TWAP",
+      "key": "twap",
+      "aliases": [
+        "시간가중평균가격"
+      ],
+      "meaning": "정해진 기간 동안 시간에 따라 가중한 평균 가격. 큰 주문을 나눠 체결하는 기준으로 쓴다",
+      "role": "Pendle 매입 계약은 2주마다 받은 수수료로 다음 한 주 동안 1시간 단위 TWAP에 맞춰 PENDLE을 나눠 산다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Pendle Docs – sPENDLE",
+          "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/sPENDLE"
+        }
+      ]
+    },
+    {
+      "term": "머클 분배",
+      "key": "merkle-distribution",
+      "aliases": [
+        "merkle distribution",
+        "머클 루트"
+      ],
+      "meaning": "받을 사람과 금액 목록을 하나의 해시로 묶어 올리고, 각자 증명을 내고 청구하게 하는 배분 방식",
+      "role": "Pendle은 매입한 PENDLE을 활성 sPENDLE 보유량에 비례해 2주마다 머클 분배로 나누고, 보유자는 앱에서 아무 때나 청구한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Pendle Docs – sPENDLE",
+          "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/sPENDLE"
+        }
+      ]
+    },
+    {
+      "term": "PPP",
+      "key": "governance-proposal",
+      "aliases": [
+        "Pendle Protocol Proposal",
+        "프로토콜 제안"
+      ],
+      "meaning": "토큰 보유자가 투표하는 프로토콜 변경 제안",
+      "role": "Pendle에서는 PPP가 열려 있는 동안 투표하지 않은 sPENDLE 보유자를 비활성으로 보고 그 기간 매입 보상을 주지 않는다. 투표권은 제안 생성 시점 스냅숏으로 정한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Pendle Docs – sPENDLE",
+          "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/sPENDLE"
+        },
+        {
+          "title": "Blockworks – Pendle Transparency Report 2026 H2",
+          "url": "https://blockworks.com/api/transparency-report/pendle-2026-h2-b1-initial"
+        }
+      ]
+    },
+    {
+      "term": "AIM",
+      "key": "algorithmic-incentive-model",
+      "aliases": [
+        "Algorithmic Incentive Model",
+        "알고리즘 인센티브"
+      ],
+      "meaning": "시장별 실적을 산식에 넣어 유동성 보상 규모를 자동으로 정하는 방식",
+      "role": "Pendle은 2026년 1월부터 LP 보상을 시장별 유동성과 수수료로 매주 계산하고, 달러 금액을 max(PENDLE 가격, 1.25달러)로 나눠 PENDLE 수량을 정한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Pendle Docs – Incentives",
+          "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/Incentives"
+        }
+      ]
+    },
+    {
+      "term": "멀티시그",
+      "key": "multisig",
+      "aliases": [
+        "다중 서명",
+        "Multisig"
+      ],
+      "meaning": "정해진 수 이상의 서명자가 승인해야 실행되는 지갑",
+      "role": "Pendle에서는 팀 멀티시그가 시장 개설과 SY 업그레이드를 맡는다. 제3자 평가는 이를 4명 중 2명 서명으로 본다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Blockworks – Pendle Transparency Report 2026 H2",
+          "url": "https://blockworks.com/api/transparency-report/pendle-2026-h2-b1-initial"
+        }
+      ]
+    },
+    {
+      "term": "업그레이드 가능한 프록시",
+      "key": "upgradeable-proxy",
+      "aliases": [
+        "프록시",
+        "Upgradeable Proxy"
+      ],
+      "meaning": "주소는 그대로 두고 실행 로직만 바꿀 수 있게 만든 스마트 계약 구조",
+      "role": "Pendle의 최근 SY 계약이 이 구조라서, 팀 멀티시그가 감싼 자산을 다루는 로직을 나중에 교체할 수 있다. 시장 계약 자체는 바꿀 수 없다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Blockworks – Pendle Transparency Report 2026 H2",
+          "url": "https://blockworks.com/api/transparency-report/pendle-2026-h2-b1-initial"
+        }
+      ]
+    },
+    {
+      "term": "타임락",
+      "key": "timelock",
+      "aliases": [
+        "Timelock"
+      ],
+      "meaning": "관리자 변경을 예약한 뒤 정해진 시간이 지나야 실행되게 하는 장치",
+      "role": "Blockworks가 인용한 제3자 평가는 Pendle 멀티시그에 문서화된 타임락이 없다고 정리했다. 예치자는 업그레이드를 미리 보고 빠져나갈 시간을 보장받지 못한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Blockworks – Pendle Transparency Report 2026 H2",
+          "url": "https://blockworks.com/api/transparency-report/pendle-2026-h2-b1-initial"
+        }
+      ]
+    },
+    {
+      "term": "vePENDLE",
+      "key": "vetoken",
+      "aliases": [
+        "ve 토큰",
+        "veToken"
+      ],
+      "meaning": "토큰을 오래 잠글수록 투표권과 보상을 더 주는 잠금형 토큰 모델",
+      "role": "Pendle은 최대 2년 잠금의 vePENDLE을 2026년 1월 sPENDLE로 바꿨다. 기존 보유자는 남은 잠금 기간에 따라 최대 4배의 가상 sPENDLE을 받았다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "The Block – Pendle retires vePENDLE multi-year lockups",
+          "url": "https://www.theblock.co/news/ecosystems/2026-01-20-pendle-retires-vependle-multi-year-lockups-as-spendle-staking-goes-live-386255"
+        },
+        {
+          "title": "Pendle Docs – sPENDLE",
+          "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/sPENDLE"
+        }
+      ]
+    },
+    {
+      "term": "AMM",
+      "key": "amm",
+      "aliases": [
+        "자동 시장 조성자"
+      ],
+      "meaning": "호가창 없이 풀에 맡긴 자산과 정해진 공식으로 가격을 정해 거래하는 방식",
+      "role": "Pendle에서는 시장마다 PT 전용 AMM이 있고, YT 거래도 이 AMM을 거친다.",
+      "inline": false,
+      "sources": [
+        {
+          "title": "Pendle Docs – Fees",
+          "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/Fees"
+        }
+      ]
+    },
+    {
+      "term": "LP",
+      "key": "liquidity-provider",
+      "aliases": [
+        "유동성 공급자"
+      ],
+      "meaning": "거래 풀에 자산을 맡겨 거래 상대가 되어 주고 수수료를 받는 사람",
+      "role": "Pendle LP는 그 시장 거래 수수료의 20%와 AIM 인센티브를 받는다.",
+      "inline": false,
+      "sources": [
+        {
+          "title": "Pendle Docs – Fees",
+          "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/Fees"
+        },
+        {
+          "title": "Pendle Docs – Incentives",
+          "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/Incentives"
+        }
+      ]
+    },
+    {
+      "term": "펀딩비",
+      "key": "funding-rate",
+      "aliases": [
+        "Funding Rate"
+      ],
+      "meaning": "무기한 선물 가격을 현물에 붙여 두려고 롱과 숏이 주기적으로 주고받는 돈",
+      "inline": false
+    },
+    {
+      "term": "TVL",
+      "key": "tvl",
+      "aliases": [
+        "예치 자산"
+      ],
+      "meaning": "프로토콜 계약에 맡겨진 자산의 총가치",
+      "inline": false
+    },
+    {
+      "term": "FDV",
+      "key": "fdv",
+      "aliases": [
+        "완전 희석 시가총액"
+      ],
+      "meaning": "총공급 전체가 지금 가격으로 유통된다고 가정한 시가총액",
+      "inline": false
+    },
+    {
+      "term": "터미널 인플레이션",
+      "key": "terminal-inflation",
+      "aliases": [
+        "연 2% 상한"
+      ],
+      "meaning": "초기 배출이 끝난 뒤 계속 적용되는 고정 연간 발행률",
+      "inline": false
+    }
+  ],
+  "openItems": [
+    {
+      "item": "매입 계약의 실제 PENDLE 매수량과 회차별 sPENDLE 분배량",
+      "status": "온체인 확인 대기",
+      "tried": "Pendle 문서 sPENDLE 페이지, Blockworks 투명성 보고서, DefiLlama 보유자 몫 항목을 확인했다. Blockworks 보고서도 매입액과 매입 수량은 공개되지 않았다고 적는다.",
+      "howToVerify": "https://eth.blockscout.com/api/v2/addresses/0x9e08C5499f953C6297A7755BcBcEd383b606896b/logs 에서 PENDLE Transfer 이벤트를 2주 단위로 합산한다.",
+      "matters": "문서의 80% 매입과 '최대 100%' 분배가 실제로 집행되는지 확인하는 유일한 방법이다."
+    },
+    {
+      "item": "거버넌스·팀 멀티시그의 서명자 수, 임계치, 타임락 유무",
+      "status": "온체인 확인 대기",
+      "tried": "Blockworks 보고서의 제3자 평가와 Pendle 토크노믹스 문서를 확인했다. 문서는 거버넌스·팀 멀티시그를 유통량 제외 주소로만 언급하고, 이번 실행에서 주소 자체는 읽지 못했다.",
+      "howToVerify": "Pendle 토크노믹스 문서에 링크된 거버넌스 멀티시그 주소를 eth.blockscout.com/api/v2/addresses/<주소>/logs 로 열어 SafeSetup·AddedOwner·ChangedThreshold 이벤트를 누적한다.",
+      "matters": "SY 업그레이드와 시장 개설 권한이 이 지갑에 있다."
+    },
+    {
+      "item": "sPENDLE 스테이킹 수량과 활성 비율",
+      "status": "접근 실패",
+      "tried": "DefiLlama의 스테이킹 가치 1.91억 달러를 확인했다. sPENDLE 토큰 주소와 투표 참여율 자료는 이번 실행에서 찾지 못했다.",
+      "howToVerify": "Pendle 문서 Deployments 항목에서 sPENDLE 토큰 주소를 찾아 eth.blockscout.com/api/v2/tokens/<주소> 의 총공급을 읽고, 최근 PPP 스냅숏 투표 수와 비교한다.",
+      "matters": "활성 비율이 낮을수록 투표에 참여한 보유자가 받는 몫이 커진다."
+    },
+    {
+      "item": "시장별 TVL과 기초 자산 구성",
+      "status": "접근 실패",
+      "tried": "DefiLlama는 체인별 TVL만 보여 준다. Pendle 앱의 시장 목록은 이번 실행에서 열지 않았다.",
+      "howToVerify": "Pendle 앱 Markets 화면 또는 Pendle 공개 API의 시장 목록에서 시장별 TVL과 기초 자산을 받는다.",
+      "matters": "가장 큰 기초 자산이 흔들릴 때 PT 보유자 손실이 어디에 몰리는지 보여 준다."
+    },
+    {
+      "item": "운영사 Univerum Innovations Inc.의 재무 현황과 운영 기간",
+      "status": "미공시",
+      "tried": "Blockworks 보고서와 Pendle 문서를 확인했다. 런웨이와 재무 보유액은 공개되지 않았다.",
+      "howToVerify": "Pendle 팀의 재무 공시나 투명성 보고서 갱신본을 요청한다."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Pendle Docs – Fees",
+      "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/Fees",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Pendle Docs – sPENDLE",
+      "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/sPENDLE",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Pendle Docs – Tokenomics",
+      "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/Tokenomics",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Pendle Docs – Incentives (AIM)",
+      "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/Mechanisms/Incentives",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Blockworks – Pendle Transparency Report 2026 H2",
+      "url": "https://blockworks.com/api/transparency-report/pendle-2026-h2-b1-initial",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "DefiLlama – Pendle (페이지 기준일 2026-10-25)",
+      "url": "https://defillama.com/protocol/pendle",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "DefiLlama – Boros",
+      "url": "https://defillama.com/protocol/boros",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "CoinGecko – Pendle",
+      "url": "https://www.coingecko.com/en/coins/pendle",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "The Block – Pendle retires vePENDLE multi-year lockups as sPENDLE staking goes live (2026-01-20)",
+      "url": "https://www.theblock.co/news/ecosystems/2026-01-20-pendle-retires-vependle-multi-year-lockups-as-spendle-staking-goes-live-386255",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "FalconX – Pendle: One Venue, All of Fixed Income (2026-01-08)",
+      "url": "https://www.falconx.io/newsroom/pendle-one-venue-all-of-fixed-income",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "CoinStats – What Is Pendle? Fundamentals Explained (2026-11 업데이트, 체인 배포 일정 참고)",
+      "url": "https://coinstats.app/ai/a/fundamental-analysis-pendle",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Invezz – PENDLE rises 40% as Upbit listing fuels recovery attempt (2024-08-06)",
+      "url": "https://invezz.com/news/2024/08/06/pendle-rises-40-as-upbit-listing-fuels-recovery-attempt/",
+      "accessed": "2026-11-18"
+    }
+  ]
+}

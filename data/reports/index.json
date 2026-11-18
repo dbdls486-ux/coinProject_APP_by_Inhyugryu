@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-11-18-pendle",
+    "date": "2026-11-18",
+    "slot": "outside_top100",
+    "project": "Pendle",
+    "ticker": "PENDLE",
+    "question": "sPENDLE로 맡긴 PENDLE은 수수료로 사들인 PENDLE을 얼마나 돌려받을까?",
+    "oneLiner": "Pendle은 이자가 붙는 토큰을 원금 몫과 이자 몫으로 나눠 따로 사고팔게 하는 시장이고, 수수료의 80%로 PENDLE을 사서 스테이킹한 보유자에게 나눠 준다.",
+    "sector": "Yield Tokenization · DeFi"
+  },
+  {
     "id": "2026-11-16-hype",
     "date": "2026-11-16",
     "slot": "new_listing",
