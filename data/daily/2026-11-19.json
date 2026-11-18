@@ -1,0 +1,661 @@
+{
+  "id": "2026-11-19",
+  "date": "2026-11-19",
+  "asOf": "2026-11-19 08:27 KST",
+  "window": "최근 24시간 (11/18 08:30 → 11/19 08:30 KST)",
+  "title": "비트코인 6만 2천 달러대로 밀린 날, 파이버스 홀로 +74%",
+  "regime": "하락장",
+  "tldr": [
+    "비트코인은 FOMC 의사록 전후 미국장에서 계속 밀렸고 이더리움도 함께 내렸다.",
+    "24시간 BTC -3.3%, ETH -2.7%, 시총 상위 89종 중 64종 하락, 공포·탐욕 지수 11.",
+    "11/18 거래일 ETF 집계와 비트코인이 200주 이동평균을 되찾는지 본다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "BTC (24시간)",
+      "value": "-3.3%, 62,484달러",
+      "basis": "11/18 08시 → 11/19 08시 · CoinGecko",
+      "tone": "down",
+      "details": [
+        {
+          "label": "원화",
+          "value": "8,516만원, 업비트 07:30 기준 24시간 -3.2%"
+        },
+        {
+          "label": "장중 저점",
+          "value": "62,282달러, 일요일 저점 61,947달러까지 1% 미만"
+        },
+        {
+          "label": "ETH",
+          "value": "1,768달러, 24시간 -2.7%"
+        },
+        {
+          "label": "시총 100위 안 상승 상위",
+          "value": "PIEVERSE +74.0% · PEARL +21.2% · BTW +12.8% · MNT +3.0%"
+        },
+        {
+          "label": "시총 100위 안 하락 상위",
+          "value": "ASTER -8.4% · PUMP -8.1% · PI -7.1% · SKY -6.3% · ENA -5.5% · LIT -5.5%"
+        }
+      ]
+    },
+    {
+      "label": "하락 종목 (24시간)",
+      "value": "89종 중 64종",
+      "basis": "시총 상위, 스테이블코인 제외 · TokenPost 11/18 미 동부 15시 스냅숏",
+      "tone": "down",
+      "details": [
+        {
+          "label": "원화 마켓",
+          "value": "50억원 이상 거래 33종 중 16종 상승, 48%"
+        },
+        {
+          "label": "전체 시총",
+          "value": "2.222조 달러 · CoinGecko 08시대"
+        },
+        {
+          "label": "BTC 도미넌스",
+          "value": "56.6%, ETH 9.72% · CoinGecko"
+        },
+        {
+          "label": "주간",
+          "value": "7일 BTC -16%, ETH -15%, 200주 이동평균 아래로"
+        }
+      ]
+    },
+    {
+      "label": "미국 BTC 현물 ETF",
+      "value": "2.40억 달러 순유출",
+      "basis": "11/17 거래일 기준 · Farside·SoSoValue",
+      "tone": "down",
+      "details": [
+        {
+          "label": "종목별",
+          "value": "IBIT -2.10억 · GBTC -0.18억 · ARKB -0.13억 달러"
+        },
+        {
+          "label": "직전 거래일",
+          "value": "11/16 +0.08억 달러, 하루 유입 뒤 다시 유출"
+        },
+        {
+          "label": "5거래일 누적",
+          "value": "-10.0억 달러"
+        },
+        {
+          "label": "ETH 현물 ETF",
+          "value": "11/17 거래일 -0.29억 달러, 3거래일 연속 유출"
+        },
+        {
+          "label": "11/18 거래일",
+          "value": "미집계"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "24시간 -3.3%, 62,484달러",
+      "note": "미국장 오전부터 밀려 저점 62,282달러. 원화 8,516만원은 업비트 07:30 값."
+    },
+    {
+      "label": "ETH",
+      "value": "24시간 -2.7%, 1,768달러",
+      "note": "원화 240만원, 업비트 07:30 기준 -2.6%."
+    },
+    {
+      "label": "전체 시총",
+      "value": "2.222조 달러",
+      "note": "CoinGecko 08시대 조회. TokenPost 미 동부 16시 집계는 2.16조 달러, 24시간 -4.06%."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "56.6%",
+      "note": "CoinGecko. ETH 9.72%."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/17 거래일 -2.40억 달러",
+      "note": "IBIT 한 종목이 -2.10억 달러. 11/18 거래일은 미집계."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/17 거래일 -0.29억 달러",
+      "note": "ETHA -0.28억 달러. 3거래일 연속 유출, 11/18 거래일은 미집계."
+    },
+    {
+      "label": "전체 청산",
+      "value": "24시간 4.06억 달러, 롱 49.6%",
+      "note": "토큰포스트 07:30 집계. 전날 3.61억 달러보다 늘었다. 18일 밤 Coinglass 집계는 4.47억 달러, 롱 73%."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "11, 극도의 공포",
+      "note": "전일 12, 일주일 전 29. 6일 연속 극도의 공포."
+    },
+    {
+      "label": "파생",
+      "value": "BTC 풋/콜 비율 1.60",
+      "note": "데리비트 거래량 기준, 전일 1.45. 하락 대비 수요가 더 늘었다."
+    },
+    {
+      "label": "거시",
+      "value": "FOMC 의사록, 추가 인상 가능 시사",
+      "note": "18일 S&P500 -0.23%, 나스닥 +0.42%, 다우 -1.11%. 미 10년물 5.09%."
+    },
+    {
+      "label": "원화 마켓",
+      "value": "거래대금 2.1조원, 김프 2.3%",
+      "note": "업비트 파이버스 +74.6%, 모멘텀 +67.7%. 전날 +109% 브레비스는 -28.7%."
+    },
+    {
+      "label": "집계 기준",
+      "value": "종목 등락은 CoinGecko 08시대 스냅숏",
+      "note": "등락 방향은 CoinMarketCap·TokenPost 스냅숏으로 교차 확인. 원화 가격은 달러 가격 환산."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,333.0원",
+      "note": "11/18 서울 외환시장 마감, 전일 대비 -5.2원. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "Mantle",
+      "ticker": "MNT",
+      "direction": "up",
+      "change": "+3.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+6.3%p",
+      "marketCap": "12.6억 달러",
+      "rank": 59,
+      "volume24h": "0.37억 달러 (시총의 2.9%)",
+      "causeType": "가능한 배경",
+      "headline": "일본 GMO코인 상장 발표 날, 30일 저점에서 반등.",
+      "happened": [
+        "18일 16시 26분 맨틀이 일본 GMO코인 상장을 보도자료로 알렸다.",
+        "17일 종가 0.3647달러는 30일 최저였다."
+      ],
+      "reaction": [
+        "24시간 +3.0%, 493원 → 508원.",
+        "하락장에서 시총 100위 안 상승 종목 4개 중 하나, 거래량은 시총의 2.9%."
+      ],
+      "watch": "0.38달러 위 유지, 일본 거래 비중 변화.",
+      "caveat": "GMO코인 실제 거래 개시는 10월 31일이라 발표가 원인인지는 미확인.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pieverse",
+      "ticker": "PIEVERSE",
+      "direction": "up",
+      "change": "+74.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+77.3%p",
+      "marketCap": "9.36억 달러",
+      "rank": 71,
+      "volume24h": "1.76억 달러 (시총의 18.8%)",
+      "causeType": "원인 불명",
+      "headline": "하락장에 홀로 +74%, 국내 거래대금 1천억원.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "18일 20시 30분부터 두 시간 사이 상승 폭이 +13%에서 +51%로 커졌다."
+      ],
+      "reaction": [
+        "24시간 +74.6%, 2,757원 → 4,814원 업비트.",
+        "업비트 거래대금 854억원, 빗썸 162억원, 전체 거래량은 30일 평균의 2배."
+      ],
+      "watch": "12월 14일 3,340만개 언락 전까지 상승 유지 여부.",
+      "caveat": "11일 포닷밈 제휴와 16일 컨피덴셜 에이전트 공개는 모두 기간 이전 사건.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pearl",
+      "ticker": "PEARL",
+      "direction": "up",
+      "change": "+21.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+24.5%p",
+      "marketCap": "8.92억 달러",
+      "rank": 73,
+      "volume24h": "0.54억 달러 (시총의 6.0%)",
+      "causeType": "원인 불명",
+      "headline": "이틀 연속 급등, 7일 +64%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "17일 테스트넷에만 FP8 하드포크가 예정됐고 메인넷은 무관."
+      ],
+      "reaction": [
+        "24시간 +21.2%, 2,563원 → 3,106원.",
+        "7일 1.09달러 → 2.33달러, 거래량은 시총의 6.0%."
+      ],
+      "watch": "2달러 지지와 거래량 유지.",
+      "caveat": "13일 코인베이스 상장은 기간 이전이라 원인으로 쓰지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Bitway",
+      "ticker": "BTW",
+      "direction": "up",
+      "change": "+12.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+16.1%p",
+      "marketCap": "7.16억 달러",
+      "rank": 82,
+      "volume24h": "0.16억 달러 (시총의 2.2%)",
+      "causeType": "원인 불명",
+      "headline": "주간 -58% 뒤 이틀째 반등.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "15일 -27%, 17일 -33% 뒤 18일 반등했다."
+      ],
+      "reaction": [
+        "24시간 +12.8%, 561원 → 633원.",
+        "주간 고점 1.13달러 대비 여전히 -58%, 거래량은 시총의 2.2%."
+      ],
+      "watch": "0.5달러 회복 여부.",
+      "caveat": "급락과 반등 모두 원인 자료가 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Aster",
+      "ticker": "ASTER",
+      "direction": "down",
+      "change": "-8.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.1%p",
+      "marketCap": "13.5억 달러",
+      "rank": 56,
+      "volume24h": "1.07억 달러 (시총의 7.9%)",
+      "causeType": "원인 불명",
+      "headline": "키 유출 확인 다음 날, 시총 상위 중 최대 낙폭.",
+      "happened": [
+        "17일 CEO가 API 지갑 키 유출로 456만 달러 피해를 공식 확인했다.",
+        "16일에는 15분 만에 -32.5% 급락 뒤 회복한 바 있다."
+      ],
+      "reaction": [
+        "24시간 -8.4%, 766원 → 702원.",
+        "거래량 1.07억 달러로 전날 2.50억 달러의 절반 아래."
+      ],
+      "watch": "12월 4일까지 열린 에어드롭 6단계 6,338만개 매물.",
+      "caveat": "유출 확인은 기간 시작 11시간 전이라 당일 하락의 원인으로 확인되지 않았다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pump.fun",
+      "ticker": "PUMP",
+      "direction": "down",
+      "change": "-8.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.8%p",
+      "marketCap": "11.6억 달러",
+      "rank": 65,
+      "volume24h": "0.93억 달러 (시총의 8.0%)",
+      "causeType": "원인 불명",
+      "headline": "90일 최저, ICO 가격의 63%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "11월 중 67.7억개 선형 언락, 14일 팀 지갑이 14.6억개를 코인베이스 프라임에 넣었다."
+      ],
+      "reaction": [
+        "24시간 -8.1%, 3.68원 → 3.38원.",
+        "코인원 기준 -10.9%, 7일 -28.6%."
+      ],
+      "watch": "하루 50만 달러 안팎 바이백이 유지되는지.",
+      "caveat": "언락과 지갑 이동은 모두 기간 이전이고 매도 여부는 미확인.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pi Network",
+      "ticker": "PI",
+      "direction": "down",
+      "change": "-7.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-3.8%p",
+      "marketCap": "6.42억 달러",
+      "rank": 90,
+      "volume24h": "0.06억 달러 (시총의 0.9%)",
+      "causeType": "원인 불명",
+      "headline": "첫 에코시스템 서밋 둘째 날, 사상 최저가 재시험.",
+      "happened": [
+        "17일 서밋 첫날 런치패드·DEX 메인넷을 2027년 1분기로 제시했다.",
+        "18일 밤 AI 세션이 이어졌고 신규 출시 발표는 없었다."
+      ],
+      "reaction": [
+        "24시간 -7.1%, 80.9원 → 75.1원.",
+        "미결제약정 680만 → 621만 달러로 -8.7%, 사상 최저 0.0552달러에 근접."
+      ],
+      "watch": "19일 해커톤 발표와 0.055달러 지지.",
+      "caveat": "서밋이 매도를 불렀는지는 확인되지 않았고 거래량은 시총의 0.9%에 그친다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Sky",
+      "ticker": "SKY",
+      "direction": "down",
+      "change": "-6.3%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-3.0%p",
+      "marketCap": "11.7억 달러",
+      "rank": 63,
+      "volume24h": "0.06억 달러 (시총의 0.5%)",
+      "causeType": "원인 불명",
+      "headline": "전날 상위 40종 중 1위 상승분 반납.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "17일에는 +5.1%로 상위 40종 중 가장 많이 올랐다."
+      ],
+      "reaction": [
+        "24시간 -6.3%, 71.2원 → 66.8원.",
+        "거래량은 30일 평균보다 20% 적고 RSI 26.6."
+      ],
+      "watch": "19일 거버넌스 스펠과 USDS 공급 55.9억 달러 회복 여부.",
+      "caveat": "거래가 얇아 작은 주문에도 가격이 크게 움직인다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Ethena",
+      "ticker": "ENA",
+      "direction": "down",
+      "change": "-5.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-2.2%p",
+      "marketCap": "15.0억 달러",
+      "rank": 52,
+      "volume24h": "2.94억 달러 (시총의 19.6%)",
+      "causeType": "원인 불명",
+      "headline": "USDe 공급 정체 속 7일 -26%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "USDe 공급 약 49억 달러로 바이백 발동 기준 75억 달러에 못 미친다."
+      ],
+      "reaction": [
+        "24시간 -5.5%, 156원 → 148원.",
+        "거래량은 시총의 19.6%, RSI 20."
+      ],
+      "watch": "0.108달러 지지와 USDe 공급 반등.",
+      "caveat": "하락은 수 주째 이어진 흐름으로 당일 요인은 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Lighter",
+      "ticker": "LIT",
+      "direction": "down",
+      "change": "-5.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-2.2%p",
+      "marketCap": "6.72억 달러",
+      "rank": 88,
+      "volume24h": "0.51억 달러 (시총의 7.5%)",
+      "causeType": "원인 불명",
+      "headline": "해킹 뒤 반등이 하루 만에 꺾였다.",
+      "happened": [
+        "16일 API 키 유출로 1,039만 USDC가 빠져나갔고 17일 출금이 재개됐다.",
+        "18일 03시에는 +7.9%로 상위 100종 중 상승 1위였다."
+      ],
+      "reaction": [
+        "24시간 -5.5%, 3,795원 → 3,586원.",
+        "추적 대상 상위 트레이더의 롱 비중이 59.3%에서 10.9%로 줄었다."
+      ],
+      "watch": "11월 중 CFTC 신고 여부와 12월 29일 시작 베스팅.",
+      "caveat": "해킹은 기간 이틀 전 사건이라 당일 하락의 원인으로 쓰지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "PancakeSwap",
+      "ticker": "CAKE",
+      "direction": "down",
+      "change": "-4.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-1.6%p",
+      "marketCap": "5.20억 달러",
+      "rank": 96,
+      "volume24h": "0.32억 달러 (시총의 6.2%)",
+      "causeType": "시장 베타",
+      "headline": "팬케이크로 리브랜딩한 날, BNB와 함께 하락.",
+      "happened": [
+        "18일 18시 38분 팬케이크스왑이 이름을 팬케이크로 바꿨다고 발표했다.",
+        "티커와 컨트랙트는 그대로이며 토큰 이전은 없다."
+      ],
+      "reaction": [
+        "24시간 -4.9%, 2,187원 → 2,079원.",
+        "BTC 대비 초과 하락 1.6%p, BNB는 -2.4%."
+      ],
+      "watch": "LP 수수료 88% 배분 뒤 TVL 24억 달러 유지 여부.",
+      "caveat": "리브랜딩은 중립 뉴스로 하락 원인이 아니다.",
+      "confidence": "B"
+    },
+    {
+      "project": "Morpho",
+      "ticker": "MORPHO",
+      "direction": "down",
+      "change": "-4.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-1.5%p",
+      "marketCap": "11.8억 달러",
+      "rank": 62,
+      "volume24h": "0.10억 달러 (시총의 0.8%)",
+      "causeType": "시장 베타",
+      "headline": "호재 속에서도 시장 따라 하락.",
+      "happened": [
+        "18일 해시키 체인·베이스가 모르포 기반 기관 대출 협력을 밝혔다.",
+        "16일 코인베이스가 모르포 USDC 대출을 미국 50개 주로 넓혔다."
+      ],
+      "reaction": [
+        "24시간 -4.8%, 2,352원 → 2,239원.",
+        "BTC 대비 초과 하락 1.5%p, 7일 -16.8%."
+      ],
+      "watch": "1.65달러 지지.",
+      "caveat": "거래량이 시총의 0.8%로 얇다.",
+      "confidence": "B"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "RENDER",
+      "reason": "CoinGecko 3.2%였으나 스냅숏별 등락 방향이 엇갈려 제외"
+    },
+    {
+      "ticker": "NEAR·JST",
+      "reason": "+1~2% 상승, 종목 수 제한으로 제외"
+    },
+    {
+      "ticker": "GRAM·ARB·GT·ICP·HYPE·ZRO·ONDO·ZEC·INJ",
+      "reason": "-4.0~4.7%로 BTC 대비 초과 하락 1.5%p 미만, 종목 수 제한으로 제외"
+    },
+    {
+      "ticker": "모멘텀·브레비스",
+      "reason": "업비트 +67.7% / -28.7%, CoinGecko 100위 밖"
+    }
+  ],
+  "watchNext": [
+    "11/18 거래일 미 BTC 현물 ETF — 유출이 이틀째 이어지는지",
+    "19일 미국 증시 앤트로픽 상장 첫날의 위험자산 심리",
+    "비트코인 200주 이동평균 회복 여부와 일요일 저점 61,947달러 지지",
+    "12월 8~9일 FOMC까지 금리 인상 확률, 현재 96%"
+  ],
+  "highlight": "FOMC 의사록이 추가 인상 가능성을 시사하자 비트코인은 미국장 내내 밀려 24시간 -3.3%, 62,484달러로 내려왔다. 시총 상위 89종 중 64종이 내렸고 ETF는 11/17 거래일 2.40억 달러가 빠져 하루 만에 유출로 돌아섰다. 반대로 파이버스·모멘텀·펄 같은 국내 거래 비중이 큰 소형주는 사건 없이 거래대금만 늘며 급등했다. 맨틀은 일본 상장 발표와 반등이 같은 날 겹쳤지만 실제 거래 개시는 10월 31일이어서 원인 확정은 어렵다.",
+  "sources": [
+    {
+      "title": "토큰포스트 — [아침 시황] 비트코인 8,516만원…업비트 파이버스 75% 급등 (11/19 07:30)",
+      "url": "https://www.tokenpost.kr/news/cryptocurrency/440412"
+    },
+    {
+      "title": "CoinGecko — 시총 1~100위, 시장 개요 (11/19 08시대 조회)",
+      "url": "https://www.coingecko.com/"
+    },
+    {
+      "title": "CoinMarketCap — Top Crypto Gainers and Losers (Top 100, 등락 방향 교차 확인)",
+      "url": "https://coinmarketcap.com/gainers-losers/"
+    },
+    {
+      "title": "TokenPost — Crypto Market Cap Falls 4.06% to $2.16 Trillion as Bitcoin Declines (11/18 4:07 p.m. ET)",
+      "url": "https://www.tokenpost.com/news/investing/60816"
+    },
+    {
+      "title": "TokenPost — Pieverse Rises 59.05% to $3.34 as Most Large Tokens Fall (11/18 3:07 p.m. ET)",
+      "url": "https://www.tokenpost.com/news/investing/60794"
+    },
+    {
+      "title": "TokenPost — U.S. Spot Bitcoin ETFs Post $239.9 Million in Nov. 17 Outflows",
+      "url": "https://www.tokenpost.com/news/investing/60143"
+    },
+    {
+      "title": "KuCoin — U.S. Bitcoin and Ethereum spot ETFs recorded net outflows of $239.9 million and $29.1 million on November 17",
+      "url": "https://www.kucoin.com/news/flash/us-bitcoin-and-ethereum-spot-etfs-recorded-net-outflows-of-239-9m-and-29-1m-on-nov-17"
+    },
+    {
+      "title": "TechFlow — $447 million in network-wide liquidations over the past 24 hours (11/18)",
+      "url": "https://www.techflowpost.com/en-US/newsletter/145545"
+    },
+    {
+      "title": "Alternative.me — Crypto Fear & Greed Index",
+      "url": "https://alternative.me/crypto/fear-and-greed-index/"
+    },
+    {
+      "title": "The Motley Fool — Crypto Market Today, Nov. 18: Bitcoin's 12% Weekly Plunge Has Triggered a Rare Signal",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/18/crypto-market-today-nov-18-bitcoin-s-12-weekly-plunge-has-triggered-a-rare-signal-with-a-surprising-history/"
+    },
+    {
+      "title": "CryptoTicker — Bitcoin after Fed minutes: $63,117 → $62,706 (11/18)",
+      "url": "https://cryptoticker.io/en/bitcoin-price-prediction-fed-minutes-november-18-2026/"
+    },
+    {
+      "title": "디지털애셋 — 아침코인: 파이버스 업비트 +69.89% 4,740원, 거래대금 854억원 (11/19 08:17)",
+      "url": "https://www.digitalasset.works/news/articleView.html?idxno=44409"
+    },
+    {
+      "title": "DiarioBitcoin — Pieverse sube con fuerza el 18 de noviembre de 2026, volumen casi duplica su promedio",
+      "url": "https://diariobitcoin.com/analisis/pieverse-pieverse-sube-con-fuerza-el-18-de-noviembre-de-2026-volumen-casi-duplica-su-promedio"
+    },
+    {
+      "title": "Crypto News Flash — Pieverse price rallies 150% ahead of insider unlock (12/14 언락)",
+      "url": "https://www.crypto-news-flash.com/pieverse-price-rallies-150-ahead-of-insider-unlock/"
+    },
+    {
+      "title": "CoinStats — Latest news for Pearl (11/18 03:04 UTC, 확인된 촉매 없음)",
+      "url": "https://coinstats.app/ai/a/latest-news-for-pearl-2"
+    },
+    {
+      "title": "GitHub pearl-research-labs — PR #515 schedule FP8 fork on testnet",
+      "url": "https://github.com/pearl-research-labs/pearl/pull/515"
+    },
+    {
+      "title": "CoinMarketCap CMC AI — Bitway (BTW) latest updates",
+      "url": "https://coinmarketcap.com/cmc-ai/bitway-btw/latest-updates/"
+    },
+    {
+      "title": "PR Newswire — Mantle Marks Major Milestone as MNT Becomes Available on GMO Coin (11/18 02:26 ET)",
+      "url": "https://www.prnewswire.com/news-releases/mantle-marks-major-milestone-as-mnt-becomes-available-on-gmo-coin-following-japans-rigorous-asset-review-framework-302943507.html"
+    },
+    {
+      "title": "BlockchainReporter — Mantle price today: MNT +5.04% on Japan GMO Coin listing news (11/18)",
+      "url": "https://blockchainreporter.net/mantle-price-today-mnt-japan-gmo-coin-listing/"
+    },
+    {
+      "title": "Coinpaper — ASTER Price Drops 5% as Aster Investigates $4.56M Wallet Security Incident (11/18)",
+      "url": "https://coinpaper.com/39010/aster-price-drops-5-as-aster-investigates-4-56m-wallet-security-incident"
+    },
+    {
+      "title": "The Defiant — Aster says it tightened security after API wallet leak (11/17)",
+      "url": "https://thedefiant.io/news/security/aster-says-it-tightened-security-after-api-wallet-leak"
+    },
+    {
+      "title": "Bitcoin.com News — Pump.fun sold $888M SOL, Kraken deposit; team wallets move 1.458B PUMP to Coinbase Prime (11/14)",
+      "url": "https://news.bitcoin.com/crypto-news/pump-fun-sold-888m-sol-kraken-deposit/"
+    },
+    {
+      "title": "토큰포스트 — 신규 주소, 코인베이스에서 펌프펀 13억4400만개 출금 (11/17)",
+      "url": "https://www.tokenpost.kr/news/cryptocurrency/439524"
+    },
+    {
+      "title": "CoinEdition — Pi Network price prediction: why is PI falling during its first Ecosystem Summit (11/17)",
+      "url": "https://coinedition.com/pi-network-price-prediction-why-is-pi-falling-during-its-first-ecosystem-summit/"
+    },
+    {
+      "title": "CBC뉴스 — 파이코인, 메인넷 확장 계획 발표에도 0.06달러 아래로 (11/18 22:54)",
+      "url": "https://www.cbci.co.kr/news/articleView.html?idxno=628432"
+    },
+    {
+      "title": "DiarioBitcoin — Sky (SKY) el 18 de noviembre de 2026",
+      "url": "https://diariobitcoin.com/analisis/sky-sky-el-18-de-noviembre-de-2026"
+    },
+    {
+      "title": "DiarioBitcoin — Ethena (ENA) el 18 de noviembre de 2026",
+      "url": "https://diariobitcoin.com/analisis/ena-el-18-de-noviembre-de-2026-presion-bajista-y-senales-de-sobreventa"
+    },
+    {
+      "title": "CoinMarketCap CMC AI — Ethena latest updates (USDe 공급·바이백 조건)",
+      "url": "https://coinmarketcap.com/cmc-ai/ethena/latest-updates/"
+    },
+    {
+      "title": "Bitcoin.com News — Lighter exploit: $15M drained via leaked market-maker API key (11/16)",
+      "url": "https://news.bitcoin.com/security/lighter-confirms-security-breach-lit-token-dives-15-swapped/"
+    },
+    {
+      "title": "토큰포스트 — 라이터 1,039만 USDC 유출 경위와 출금 재개, 애스터 급락 (11/17 18:04)",
+      "url": "https://www.tokenpost.kr/news/cryptocurrency/439701"
+    },
+    {
+      "title": "CoinMarketCap CMC AI — Lighter latest updates (상위 트레이더 롱 비중 59.3% → 10.9%)",
+      "url": "https://coinmarketcap.com/cmc-ai/lighter/latest-updates/"
+    },
+    {
+      "title": "The Daily Hodl — PancakeSwap rebrands as Pancake (11/18 09:38 UTC)",
+      "url": "https://dailyhodl.com/2026/11/18/more-than-a-swap-pancakeswap-rebrands-as-pancake-ahead-of-mobile-app-launch/"
+    },
+    {
+      "title": "CoinMarketCap CMC AI — Morpho latest updates (HashKey·Base 협력, 코인베이스 50개 주)",
+      "url": "https://coinmarketcap.com/cmc-ai/morpho/latest-updates/"
+    },
+    {
+      "title": "CoinDesk — Crypto markets live updates Nov. 18 (FOMC 의사록, 종가, MSTR)",
+      "url": "https://www.coindesk.com/business/2026/11/18/live-updates-bitcoin-stuck-near-usd65-000-as-popular-basis-trade-returns-dry-up"
+    },
+    {
+      "title": "파이낸셜뉴스 — 원·달러 환율 5.2원 내린 1333.0원 (11/18 15:35)",
+      "url": "https://www.fnnews.com/news/202611181530444651"
+    }
+  ],
+  "terms": [
+    {
+      "term": "FOMC 의사록",
+      "meaning": "미 연준 금리 회의의 논의 내용을 약 3주 뒤 공개하는 문서"
+    },
+    {
+      "term": "200주 이동평균",
+      "meaning": "최근 200주 종가의 평균선. 장기 추세의 기준으로 자주 쓰인다"
+    },
+    {
+      "term": "청산",
+      "meaning": "빌린 돈으로 건 선물 포지션이 증거금 부족으로 강제 정리되는 것"
+    },
+    {
+      "term": "공포·탐욕 지수",
+      "meaning": "가격 변동성·거래량 등을 0~100으로 묶은 투자 심리 지표. 25 이하는 극도의 공포"
+    },
+    {
+      "term": "풋/콜 비율",
+      "meaning": "하락에 거는 옵션 거래가 상승에 거는 거래의 몇 배인지. 1보다 크면 하락 대비가 많다"
+    },
+    {
+      "term": "미결제약정",
+      "meaning": "아직 정리되지 않고 열려 있는 선물 포지션의 총액"
+    },
+    {
+      "term": "RSI",
+      "meaning": "최근 상승·하락 폭을 0~100으로 나타낸 지표. 30 아래는 과매도로 본다"
+    },
+    {
+      "term": "언락",
+      "meaning": "잠겨 있던 팀·투자자 물량이 풀려 시장에 나올 수 있게 되는 것"
+    },
+    {
+      "term": "김치 프리미엄",
+      "meaning": "국내 원화 마켓 가격이 해외 가격보다 비싼 정도"
+    },
+    {
+      "term": "시장 베타",
+      "meaning": "개별 사건 없이 시장 전체와 비슷한 폭으로 움직인 경우"
+    }
+  ]
+}
