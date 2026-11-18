@@ -1,0 +1,570 @@
+{
+  "id": "2026-11-18",
+  "date": "2026-11-18",
+  "asOf": "2026-11-18 09:40 KST",
+  "window": "최근 24시간 (11/17 09:00 → 11/18 09:00 KST)",
+  "title": "증시 급락에 흔들린 비트코인, 엔비디아 실적 뒤 보합 회복",
+  "regime": "횡보장",
+  "tldr": [
+    "비트코인은 새벽 6만 3천 달러대까지 밀렸다가 엔비디아 실적 뒤 24시간 +0.1%로 돌아왔다.",
+    "상위 90종 중 68종이 올랐고, 전날 +74%였던 RAIN은 -25%로 되돌렸다.",
+    "19일 새벽 FOMC 10월 의사록과, 7거래일 유출 뒤 ETF 유입이 이어지는지 본다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "BTC (24시간)",
+      "value": "+0.1%, 64,895달러",
+      "basis": "11/17 09시 → 11/18 09시 · TokenPost 스냅숏",
+      "tone": "neutral",
+      "details": [
+        {
+          "label": "원화",
+          "value": "8,798만원, 07:30 기준 24시간 -1.4%"
+        },
+        {
+          "label": "장중 저점",
+          "value": "63,647달러, 토큰포스트 아침 팟캐스트 기준"
+        },
+        {
+          "label": "ETH",
+          "value": "1,824달러, 24시간 +0.3%"
+        },
+        {
+          "label": "시총 100위 안 상승 상위",
+          "value": "BTW +15.6% · PEARL +13.0% · JUP +9.1% · INJ +8.3% · RENDER +8.0% · NEAR +7.7%"
+        },
+        {
+          "label": "시총 100위 안 하락 상위",
+          "value": "RAIN -25.1% · ICP -7.7%. 나머지 하락 종목은 4% 미만"
+        }
+      ]
+    },
+    {
+      "label": "상승 종목 (24시간)",
+      "value": "90종 중 68종",
+      "basis": "시총 상위, 스테이블코인 제외 · TokenPost 7:02 p.m. ET",
+      "tone": "up",
+      "details": [
+        {
+          "label": "원화 마켓",
+          "value": "50억원 이상 거래 35종 중 20종 상승, 57%"
+        },
+        {
+          "label": "전체 시총",
+          "value": "2.285조 달러, 하루 전 2.297조 달러 · CoinGecko"
+        },
+        {
+          "label": "BTC 도미넌스",
+          "value": "57.1%, 하루 전 56.6% · CoinGecko"
+        }
+      ]
+    },
+    {
+      "label": "엔비디아 3분기 매출",
+      "value": "1,158억 달러",
+      "basis": "17일 미 장 마감 뒤 발표, 전년 대비 +103%",
+      "tone": "up",
+      "details": [
+        {
+          "label": "뉴욕증시 17일",
+          "value": "S&P500 -1.03%, 나스닥 -0.74%"
+        },
+        {
+          "label": "엔비디아 주가",
+          "value": "정규장 -0.44%, 시간외 초반 +1.3%"
+        },
+        {
+          "label": "4분기 매출 전망",
+          "value": "약 1,300억 달러"
+        },
+        {
+          "label": "공포·탐욕 지수",
+          "value": "12, 전일 10. 극도의 공포"
+        },
+        {
+          "label": "BTC 현물 ETF",
+          "value": "11/16 거래일 +0.08억 달러, 7거래일 유출 끝"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "24시간 +0.1%, 64,895달러",
+      "note": "새벽 63,647달러까지 밀렸다가 회복. 원화 8,798만원은 07:30 값."
+    },
+    {
+      "label": "ETH",
+      "value": "24시간 +0.3%, 1,824달러",
+      "note": "원화 247만원, 07:30 기준 -1.5%."
+    },
+    {
+      "label": "전체 시총",
+      "value": "2.285조 달러",
+      "note": "CoinGecko 09시대 조회, 하루 전 2.297조 달러."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "57.1%",
+      "note": "CoinGecko. ETH 9.75%."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/16 거래일 +0.08억 달러",
+      "note": "SoSoValue 집계. 7거래일 연속 유출을 끊었다. 11/17 거래일은 미집계."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/16 거래일 미집계",
+      "note": "직전 11/13 거래일 +0.024억 달러."
+    },
+    {
+      "label": "전체 청산",
+      "value": "24시간 3.61억 달러, 롱 50.6%",
+      "note": "토큰포스트 07:30 집계. 전날 2.91억 달러보다 늘었다."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "12, 극도의 공포",
+      "note": "전일 10에서 소폭 올랐다."
+    },
+    {
+      "label": "파생",
+      "value": "BTC 풋/콜 비율 1.45",
+      "note": "데리비트, 전일 1.28. 하락 대비 수요가 다시 늘었다."
+    },
+    {
+      "label": "거시",
+      "value": "뉴욕증시 S&P500 -1.03%",
+      "note": "엔비디아는 장 마감 뒤 매출 1,158억 달러로 예상을 웃돌았다."
+    },
+    {
+      "label": "자금 흐름",
+      "value": "지난주 크립토 펀드 -10.7억 달러",
+      "note": "3주 연속 순유출. 토큰포스트 팟캐스트 인용."
+    },
+    {
+      "label": "원화 마켓",
+      "value": "거래대금 2.3조원, 김프 2.1%",
+      "note": "브레비스 업비트 상장 직후 +108.6%. 후마파이낸스 -25.4%."
+    },
+    {
+      "label": "집계 기준",
+      "value": "종목 등락은 TokenPost 09:02 스냅숏",
+      "note": "INJ·ZEC·STX·NIGHT·M은 CoinGecko 09시대 값. 순위는 CoinGecko."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,338.2원",
+      "note": "11/17 서울 외환시장 마감. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "NEAR Protocol",
+      "ticker": "NEAR",
+      "direction": "up",
+      "change": "+7.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.6%p",
+      "marketCap": "44.6억 달러",
+      "rank": 21,
+      "volume24h": "5.77억 달러 (시총의 13.0%)",
+      "causeType": "가능한 배경",
+      "headline": "엔비디아 실적 뒤 AI 코인 동반 상승.",
+      "happened": [
+        "17일 미 장 마감 뒤 엔비디아가 매출 1,158억 달러를 발표했다.",
+        "발표 전 16시 스냅숏에서는 상승 폭이 5.1% 미만이었다."
+      ],
+      "reaction": [
+        "24시간 +7.7%, 4,225원 → 4,550원.",
+        "거래량은 시총의 13.0%로 활발했다."
+      ],
+      "watch": "AI 코인 상승이 하루를 넘겨 이어지는지.",
+      "caveat": "FXStreet는 실적 뒤 크립토 반응이 미미했다고 평가했다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Jupiter",
+      "ticker": "JUP",
+      "direction": "up",
+      "change": "+9.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+9.0%p",
+      "marketCap": "8.71억 달러",
+      "rank": 74,
+      "volume24h": "0.68억 달러 (시총의 7.8%)",
+      "causeType": "가능한 배경",
+      "headline": "솔라나 반등에 전날 낙폭 회복.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "같은 기간 솔라나가 +4.8% 올랐다."
+      ],
+      "reaction": [
+        "24시간 +9.1%, 321원 → 351원.",
+        "전날 -9.8%를 거의 되돌렸다."
+      ],
+      "watch": "0.26달러 위 유지.",
+      "caveat": "솔라나 동반 상승 외 근거는 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Injective",
+      "ticker": "INJ",
+      "direction": "up",
+      "change": "+8.3%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+8.2%p",
+      "marketCap": "7.41억 달러",
+      "rank": 80,
+      "volume24h": "1.32억 달러 (시총의 17.8%)",
+      "causeType": "가능한 배경",
+      "headline": "도쿄대 블록체인 강좌 파트너 발표 뒤 상승.",
+      "happened": [
+        "16일 도쿄대 블록체인 혁신 기부강좌 파트너가 됐다고 밝혔다.",
+        "17일 낮 한때 +13%까지 올랐다."
+      ],
+      "reaction": [
+        "24시간 +8.3%, 9,156원 → 9,916원.",
+        "거래량은 시총의 17.8%."
+      ],
+      "watch": "스테이킹 INJ ETF인 INJC 자금 유입.",
+      "caveat": "발표가 가격에 얼마나 기여했는지는 알 수 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Render",
+      "ticker": "RENDER",
+      "direction": "up",
+      "change": "+8.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.9%p",
+      "marketCap": "8.27억 달러",
+      "rank": 76,
+      "volume24h": "0.31억 달러 (시총의 3.7%)",
+      "causeType": "가능한 배경",
+      "headline": "GPU 연산 토큰, 엔비디아 실적과 함께 상승.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "같은 날 엔비디아 데이터센터 매출이 1,076억 달러였다."
+      ],
+      "reaction": [
+        "24시간 +8.0%, 1,846원 → 1,994원.",
+        "거래량은 시총의 3.7%."
+      ],
+      "watch": "AI·GPU 토큰 동반 흐름 지속 여부.",
+      "caveat": "실적 발표와 상승의 시간 선후는 확인하지 못했다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Zcash",
+      "ticker": "ZEC",
+      "direction": "up",
+      "change": "+6.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+6.1%p",
+      "marketCap": "165.1억 달러",
+      "rank": 11,
+      "volume24h": "8.20억 달러 (시총의 5.0%)",
+      "causeType": "수급 주도",
+      "headline": "숏 청산 712만 달러가 끌어올린 반등.",
+      "happened": [
+        "24시간 숏 청산 712만 달러, 전체 청산 972만 달러.",
+        "선물 거래량이 현물의 약 16배였다."
+      ],
+      "reaction": [
+        "24시간 +6.2%, 121.85만원 → 129.41만원.",
+        "선물 미결제약정은 약 20.6억 달러."
+      ],
+      "watch": "12월 1일 마감 거버넌스 투표 결과.",
+      "caveat": "투표는 개발 기금 8% 재배분과 블록 시간 20초 단축을 묻는다.",
+      "confidence": "B"
+    },
+    {
+      "project": "Bitway",
+      "ticker": "BTW",
+      "direction": "up",
+      "change": "+15.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+15.5%p",
+      "marketCap": "6.44억 달러",
+      "rank": 89,
+      "volume24h": "0.22억 달러 (시총의 3.4%)",
+      "causeType": "원인 불명",
+      "headline": "엿새 급락 뒤 첫 반등.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "전날까지 엿새 연속 하락 1위였다."
+      ],
+      "reaction": [
+        "24시간 +15.6%, 495원 → 573원.",
+        "거래량은 시총의 3.4%."
+      ],
+      "watch": "반등이 이어지는지, 일주일 -62% 회복 여부.",
+      "caveat": "급락과 반등 모두 원인 자료가 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pearl",
+      "ticker": "PEARL",
+      "direction": "up",
+      "change": "+13.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+12.9%p",
+      "marketCap": "6.93억 달러",
+      "rank": 87,
+      "volume24h": "0.26억 달러 (시총의 3.7%)",
+      "causeType": "원인 불명",
+      "headline": "코인베이스 상장 나흘 뒤 다시 급등.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "13일 코인베이스 현물·무기한 선물 거래가 열렸다."
+      ],
+      "reaction": [
+        "24시간 +13.0%, 2,143원 → 2,422원.",
+        "거래량은 시총의 3.7%."
+      ],
+      "watch": "1.8달러 위 유지.",
+      "caveat": "코인베이스 상장은 이번 기간 이전이라 원인으로 쓰지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Stacks",
+      "ticker": "STX",
+      "direction": "up",
+      "change": "+6.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.9%p",
+      "marketCap": "5.28억 달러",
+      "rank": 97,
+      "volume24h": "0.15억 달러 (시총의 2.8%)",
+      "causeType": "원인 불명",
+      "headline": "비트코인 L2 토큰 반등, 사건 없음.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "비트코인보다 6%p 가까이 더 올랐다."
+      ],
+      "reaction": [
+        "24시간 +6.0%, 354원 → 375원.",
+        "거래량은 시총의 2.8%."
+      ],
+      "watch": "0.28달러 지지.",
+      "caveat": "CoinMarketCap 이른 시각 집계는 +1.1%였다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Midnight",
+      "ticker": "NIGHT",
+      "direction": "up",
+      "change": "+5.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.5%p",
+      "marketCap": "7.44억 달러",
+      "rank": 79,
+      "volume24h": "0.26억 달러 (시총의 3.5%)",
+      "causeType": "원인 불명",
+      "headline": "전날 하락분 되돌림.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "전날 호스킨슨 발언 논란 속 -5.2%였다."
+      ],
+      "reaction": [
+        "24시간 +5.6%, 57원 → 60원.",
+        "거래량은 시총의 3.5%."
+      ],
+      "watch": "Midnight 메인넷 일정 공지.",
+      "caveat": "17일 아침 미 동부 기준으로는 +8.7%까지 올랐다.",
+      "confidence": "C"
+    },
+    {
+      "project": "MemeCore",
+      "ticker": "M",
+      "direction": "up",
+      "change": "+5.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+4.9%p",
+      "marketCap": "20.5억 달러",
+      "rank": 42,
+      "volume24h": "0.016억 달러 (시총의 0.08%)",
+      "causeType": "원인 불명",
+      "headline": "거래 거의 없는 상승.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "24시간 거래량이 156만 달러에 그쳤다."
+      ],
+      "reaction": [
+        "24시간 +5.0%, 1,135원 → 1,192원.",
+        "거래량은 시총의 0.08%."
+      ],
+      "watch": "거래량 동반 여부.",
+      "caveat": "거래가 얇아 작은 주문에도 가격이 크게 움직인다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Rain",
+      "ticker": "RAIN",
+      "direction": "down",
+      "change": "-25.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-25.2%p",
+      "marketCap": "32.7억 달러",
+      "rank": 26,
+      "volume24h": "0.07억 달러 (시총의 0.2%)",
+      "causeType": "원인 불명",
+      "headline": "하루 +74% 뒤 -25%, 상승분 절반 넘게 반납.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "17일 아침 -29.6%까지 밀린 뒤 소폭 회복했다."
+      ],
+      "reaction": [
+        "24시간 -25.1%, 8.18원 → 6.13원.",
+        "거래량은 시총의 0.2%로 더 줄었다."
+      ],
+      "watch": "0.004달러 지지와 거래량.",
+      "caveat": "급등과 급락 모두 거래가 얇은 상태에서 나왔다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Internet Computer",
+      "ticker": "ICP",
+      "direction": "down",
+      "change": "-7.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-7.8%p",
+      "marketCap": "12.8억 달러",
+      "rank": 60,
+      "volume24h": "0.56억 달러 (시총의 4.4%)",
+      "causeType": "원인 불명",
+      "headline": "전날 +12% 뒤 되돌림.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "17일 아침에 이미 -8.1%였다."
+      ],
+      "reaction": [
+        "24시간 -7.7%, 3,335원 → 3,078원.",
+        "거래량은 시총의 4.4%."
+      ],
+      "watch": "2.2달러 지지.",
+      "caveat": "급등 때도 원인 자료가 없었다.",
+      "confidence": "C"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "SKY·SOL·POL·AAVE",
+      "reason": "+4~5%로 상승 11위 이하, 종목 수 제한으로 제외"
+    },
+    {
+      "ticker": "PUMP·PI",
+      "reason": "CoinMarketCap 이른 시각 하락 상위였으나 CoinGecko 09시대 낙폭은 2% 미만"
+    },
+    {
+      "ticker": "브레비스",
+      "reason": "업비트 신규 상장 +108.6%, CoinGecko 100위 밖"
+    }
+  ],
+  "watchNext": [
+    "19일 새벽 FOMC 10월 의사록",
+    "11/17 거래일 미 BTC 현물 ETF — 유입 전환이 이어지는지",
+    "20일 ZRO 유통량 5.8% 언락",
+    "AI 코인 상승이 엔비디아 실적 하루 뒤에도 이어지는지"
+  ],
+  "highlight": "뉴욕증시가 1% 안팎 떨어지는 동안 비트코인도 새벽 6만 3천 달러대까지 밀렸다. 장 마감 뒤 엔비디아가 매출 1,158억 달러로 예상을 웃돌자 비트코인은 09시 64,895달러로 하루 전 수준을 되찾았다. 시총 상위 90종 중 68종이 올랐고, NEAR·RENDER 같은 AI 코인과 솔라나 계열 JUP가 앞섰다. 반대로 전날 거래 없이 급등한 RAIN은 하루 만에 -25%로 상승분 절반 넘게 반납했다.",
+  "sources": [
+    {
+      "title": "토큰포스트 — [아침 시황] 비트코인 8,798만원…업비트 브레비스 109% 급등 (11/18 07:30)",
+      "url": "https://www.tokenpost.kr/news/cryptocurrency/440054"
+    },
+    {
+      "title": "토큰포스트 — 11월 18일 출근길 팟캐스트",
+      "url": "https://www.tokenpost.kr/news/insights/440014"
+    },
+    {
+      "title": "TokenPost — Rain Falls 25.09% to Lead Declines in 90-Crypto Market Snapshot (11/17 7:06 p.m. ET)",
+      "url": "https://www.tokenpost.com/news/investing/59964"
+    },
+    {
+      "title": "TokenPost — Crypto Market Cap Drops 3.69% to $2.20 Trillion (11/17 4:07 p.m. ET)",
+      "url": "https://www.tokenpost.com/news/investing/59847"
+    },
+    {
+      "title": "TokenPost — Rain Falls 29.55% to $0.00507 (11/17 11:24 a.m. ET)",
+      "url": "https://www.tokenpost.com/news/investing/59606"
+    },
+    {
+      "title": "TokenPost — Rain Falls 14.14% to Lead Crypto Declines in Nov. 17 Snapshot (7:05 a.m. ET)",
+      "url": "https://www.tokenpost.com/news/investing/59341"
+    },
+    {
+      "title": "CoinGecko — 시총 1~100위, 시장 개요 (11/18 09시대 조회)",
+      "url": "https://www.coingecko.com/"
+    },
+    {
+      "title": "CoinMarketCap — Top Crypto Gainers and Losers (Top 100)",
+      "url": "https://coinmarketcap.com/gainers-losers/"
+    },
+    {
+      "title": "The Motley Fool — Stock Market Today, Nov. 17: Nvidia Slides Ahead of Earnings but Soars in After Hours",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/17/stock-market-today-nov-17-nvidia-slides-ahead-of-earnings-but-soars-in-after-hours-trading/"
+    },
+    {
+      "title": "KuCoin — Bitcoin Spot ETFs Record $7.99 Million Net Inflow on November 16",
+      "url": "https://www.kucoin.com/news/flash/bitcoin-spot-etfs-see-7-99m-net-inflow-on-nov-16"
+    },
+    {
+      "title": "Coinpaper — Why Is Zcash Up Today? ZEC Rallies 10% as Traders Eye Another Short Squeeze (11/17)",
+      "url": "https://coinpaper.com/38949/why-is-zcash-up-today-zec-rallies-10-as-traders-eye-another-short-squeeze"
+    },
+    {
+      "title": "Crypto Economy — Zcash Vote Could Reshape Funding and Cut Block Times to 20 Seconds (11/17)",
+      "url": "https://crypto-economy.com/zcash-vote-could-reshape-funding-and-cut-block-times-to-20-seconds/"
+    },
+    {
+      "title": "Altcoin Buzz — Injective Jumps 13% on University of Tokyo Partnership and SEC News (11/17)",
+      "url": "https://www.altcoinbuzz.io/injective-university-tokyo-partnership-sec-transfer-agent"
+    },
+    {
+      "title": "cryptonews.net — Pearl Rises 9% as Coinbase Schedules Spot and Perpetual Futures Debut (11/12)",
+      "url": "https://cryptonews.net/news/altcoins/33738842/"
+    },
+    {
+      "title": "FXStreet — Nvidia posts record $115.8B Q3 revenue, but crypto stays muted (제목만 확인)",
+      "url": "https://www.fxstreet.com/cryptocurrencies/news/nvidia-posts-record-1158b-q3-revenue-but-crypto-stays-muted-202611172316"
+    },
+    {
+      "title": "아시아경제 — 원·달러 환율, 2.5원 오른 1338.2원 (11/17 15:30)",
+      "url": "https://view.asiae.co.kr/article/2026111715454798265"
+    }
+  ],
+  "terms": [
+    {
+      "term": "청산",
+      "meaning": "빌린 돈으로 건 선물 포지션이 증거금 부족으로 강제 정리되는 것"
+    },
+    {
+      "term": "숏 스퀴즈",
+      "meaning": "가격이 오르며 하락에 건 포지션이 연쇄 청산돼 상승이 더 커지는 현상"
+    },
+    {
+      "term": "공포·탐욕 지수",
+      "meaning": "가격 변동성·거래량 등을 0~100으로 묶은 투자 심리 지표. 25 이하는 극도의 공포"
+    },
+    {
+      "term": "풋/콜 비율",
+      "meaning": "하락에 거는 옵션 거래가 상승에 거는 거래의 몇 배인지. 1보다 크면 하락 대비가 많다"
+    },
+    {
+      "term": "FOMC 의사록",
+      "meaning": "미 연준 금리 회의의 논의 내용을 약 3주 뒤 공개하는 문서"
+    },
+    {
+      "term": "미결제약정",
+      "meaning": "아직 정리되지 않고 열려 있는 선물 포지션의 총액"
+    },
+    {
+      "term": "김치 프리미엄",
+      "meaning": "국내 원화 마켓 가격이 해외 가격보다 비싼 정도"
+    }
+  ]
+}
