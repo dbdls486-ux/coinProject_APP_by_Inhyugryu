@@ -1,6 +1,6 @@
 {
- "updatedAt": "2026-11-17T23:06Z",
- "today": "2026-11-17",
+ "updatedAt": "2026-11-18T00:06Z",
+ "today": "2026-11-18",
  "startedAt": "2026-11-11",
  "initialCash": 10000.0,
  "equity": 10000.0,
@@ -8,22 +8,38 @@
  "returnPct": 0.0,
  "mdd": 0.0,
  "exposure": 0.0,
- "btcReturnPct": -0.12345662679877967,
+ "btcReturnPct": -0.12420016739112827,
  "playbookAsof": "2026-11-11",
  "market": {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "state": "DOWN",
-  "btc_rsi": 23.7,
-  "btc_d50": -0.1834,
+  "btc_rsi": 24.0,
+  "btc_d50": -0.1787,
   "mkt_brk": 0.0,
-  "names": 155,
+  "names": 157,
   "stateLabel": "BTC 50일선 아래",
   "note": "BTC 종가가 50일선 아래"
  },
  "positions": [],
  "majors": [],
  "pending": [],
- "decisions": [],
+ "decisions": [
+  {
+   "sym": "MMT",
+   "type": "BRK_CALM",
+   "state": "DOWN",
+   "flagged": 1,
+   "n": 479,
+   "meanR": -0.23013776226351718,
+   "lb": -0.3062140631866961,
+   "level": "칸",
+   "grade": null,
+   "decision": "관찰만",
+   "why": "과거 성적이 플러스라고 보기 어려움",
+   "typeLabel": "거래량 동반 20일 고점 돌파",
+   "stateLabel": "BTC 50일선 아래"
+  }
+ ],
  "stats": {
   "trades": 0,
   "altTrades": 0,
@@ -40,8 +56,8 @@
   "positions": [],
   "majors": {},
   "pending": [],
-  "openDone": "2026-11-17",
-  "closeDone": "2026-11-16",
+  "openDone": "2026-11-18",
+  "closeDone": "2026-11-17",
   "equity": [
    [
     "2026-11-11",
@@ -90,20 +106,42 @@
     0,
     0,
     0.0
+   ],
+   [
+    "2026-11-17",
+    10000.0,
+    10000.0,
+    0,
+    0,
+    0.0
    ]
   ],
   "trades": [],
   "seq": 0,
   "lastEquity": 10000.0,
   "peak": 10000.0,
-  "decisions": [],
+  "decisions": [
+   {
+    "sym": "MMT",
+    "type": "BRK_CALM",
+    "state": "DOWN",
+    "flagged": 1,
+    "n": 479,
+    "meanR": -0.23013776226351718,
+    "lb": -0.3062140631866961,
+    "level": "칸",
+    "grade": null,
+    "decision": "관찰만",
+    "why": "과거 성적이 플러스라고 보기 어려움"
+   }
+  ],
   "market": {
-   "date": "2026-11-16",
+   "date": "2026-11-17",
    "state": "DOWN",
-   "btc_rsi": 23.7,
-   "btc_d50": -0.1834,
+   "btc_rsi": 24.0,
+   "btc_d50": -0.1787,
    "mkt_brk": 0.0,
-   "names": 155
+   "names": 157
   },
   "bench": {
    "btc0": 74078.0
