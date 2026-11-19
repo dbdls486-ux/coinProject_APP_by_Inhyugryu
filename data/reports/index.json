@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-11-19-uni",
+    "date": "2026-11-19",
+    "slot": "top100",
+    "project": "Uniswap",
+    "ticker": "UNI",
+    "question": "거래 수수료로 태우는 UNI는 Labs에 분기마다 주는 500만 UNI보다 많을까?",
+    "oneLiner": "유니스왑은 유동성 풀로 토큰을 맞바꾸는 온체인 거래소이고, 2025년 12월부터 거래 수수료의 일부를 TokenJar라는 금고에 모아 UNI를 태운 사람에게만 내준다.",
+    "sector": "DEX · AMM · DeFi"
+  },
+  {
     "id": "2026-11-18-pendle",
     "date": "2026-11-18",
     "slot": "outside_top100",
