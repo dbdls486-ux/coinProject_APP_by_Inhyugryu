@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T09:14:27+09:00",
+  "updatedAt": "2026-11-20T09:27:25+09:00",
   "sources": [
     {
       "id": "tiger",
@@ -7,9 +7,9 @@
       "home": "https://reports.tiger-research.com/s/korean/archive",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-12",
-      "note": "Archive page (found via search) read OK: newest Korean post is democrats-take-congress-what-the-us-kor (Nov 4), already in the feed, so nothing newer than 2026-11-04. Items below are 2026 Korean posts surfaced by search that were not in the existing list, each confirmed on its page. the-crypto-markets-shift-from-narrative-kor and the /hub/kor/ listing returned client_error (not retried); 2025-date",
-      "count": 26
+      "lastOk": "2026-11-20",
+      "note": "RSS(/s/korean/feed)·/ko/ 직접 fetch 는 권한 프롬프트 미응답으로 차단, WebSearch 결과 URL 과 글 내 Recent Episodes 링크로 수집. 최신 글 2026-11-17 DTCC 1건 신규(11/4~11/17 사이 다른 글 없음).",
+      "count": 27
     },
     {
       "id": "xangle",
@@ -17,9 +17,9 @@
       "home": "https://xangle.io/research",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-12",
-      "note": "Search (5 queries) + 연관 리서치 links on 17 detail pages; no id newer than 2576 found anywhere (2576 itself blocked by PROVENANCE_REQUIRED); 14 older Korean '쟁글 오리지널' pieces missing from existing list were verified and added. Search budget ran out after 5 queries.",
-      "count": 42
+      "lastOk": "2026-11-20",
+      "note": "/research 목록·sitemap은 미시도(차단 이력), 쟁글 리서치팀 저자 페이지(/research/author/46, Weekly Xangle 시황만)와 검색 결과 상세 페이지의 '연관 리서치' 링크를 따라 수집. 최신 2596(2026-11-17), 2589(11-11), 2584(11-03) 포함 쟁글 오리지널 15건 신규(한국어·타기관 재게시 아님 확인). [Weekly Xangle] 주간 시황(최신 2569, 2026-10-08)은 기존 관행대로 미수집. 2326·2258·2257·2050·2009·1181 등 더 오래된 미수집 오리지널은 다음 실행에서 추가 가능. 검색 예산 소진.",
+      "count": 57
     },
     {
       "id": "despread",
@@ -27,8 +27,8 @@
       "home": "https://research.despread.io/ko/",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-12",
-      "note": "/ko/ home, /ko/insight/ and /ko/report/ listings (found via search) read OK: newest Report is report-zest (24 9월, 2026) and newest Insight is crypto_to_ai_pivot (25 3월, 2026), both already in the feed; no new insight/report posts. Blog/guide/market-commentary posts skipped per rules.",
+      "lastOk": "2026-11-20",
+      "note": "/ko/insight/·/ko/report/ 목록 페이지 읽음(/ko/ 홈 직접 fetch 는 권한 프롬프트로 차단). 리포트 최신 2026-09-24 제스트, 인사이트 최신 2026-03-25 — 신규 없음.",
       "count": 21
     },
     {
@@ -37,9 +37,9 @@
       "home": "https://research.4pillars.io/ko/research",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-12",
-      "note": "Listing /ko/research read (page 1 = Nov 4-11, 2026; only 1 new since 11-10: gotchi-labs). Site pagination skips from Nov 4 (p1) to Aug 6 (p2), so Sep-Oct items are unreachable via paging; older gaps filled from search hits + page-2 August items, each opened and verified. Page-2 items not yet opened (still unverified): koreas-digital-payment-experiments-enter-real-transactions-asa-news-25, the-endg",
-      "count": 32
+      "lastOk": "2026-11-20",
+      "note": "목록 홈·사이트맵 fetch는 권한 미응답으로 차단됐으나 글 페이지 내 링크로 유형별 목록(?type=issue/comment/article/report)을 읽어 수집. 최신 글 2026-11-19 (가치 환원 / 펄) 등 11-12 이후 9건 + 10월 미수집 6건, 총 15건 신규. 각 글 페이지에서 제목·날짜·리드 확인. ASA 뉴스 #25 등 과거 미확인 항목은 미추가.",
+      "count": 47
     },
     {
       "id": "digitalx",
@@ -57,8 +57,8 @@
       "home": "https://hashedopenresearch.com/research",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-12",
-      "note": "목록 정상(67건, 신규 없음). 미수집 한국어 9건은 상세 페이지 fetch가 provenance 차단으로 미확인 → 다음 실행에서 재시도.",
+      "lastOk": "2026-11-20",
+      "note": "/research 목록·sitemap·기존 항목 상세(3ede…d109)는 PROVENANCE 차단으로 미열람. 홈(hashedopenresearch.com) '최신 리서치'는 영문판 4건(최신 2026-09-28 'Crypto Regulation…' = 기존 한국어판 '디지털자산 정책으로 읽는 국가 전략과 시장의 진화' 2026-09)만 노출 → 2026-09 이후 신규 없음. 상세 페이지(디파이와 전통금융…)는 열렸으나 연관 링크 없음. 미수집 한국어 9건은 검색(5회)으로 URL을 못 찾아 이번에도 미추가.",
       "count": 22
     },
     {
@@ -68,7 +68,7 @@
       "method": "page",
       "status": "stale",
       "lastOk": "2026-11-11",
-      "note": "검색 한도 소진과 목록 페이지(provenance) 차단으로 이번 실행에서 확인 못함. 1090(10/26) 이후 신규 여부 미확인, 기존 항목 유지.",
+      "note": "이번 실행에서 업비트 투자자보호센터 페이지를 하나도 읽지 못함: 기존 글 1090·1089 및 목록(upbitcare.com/academy/research) fetch가 권한 미응답(PROVENANCE_REQUIRED)으로 거부되고, WebSearch 공유 한도(200회) 소진으로 검색도 불가. 기존 최신 항목 id 1090 (2026-10-26) 유지. 신규 0건.",
       "count": 18
     },
     {
@@ -77,8 +77,8 @@
       "home": "https://www.kcmi.re.kr/report/report_list",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-12",
-      "note": "Checked 이슈/연구/조사보고서 lists (newest topical = 2026-10-06 토큰화 report, already known), 자본시장포커스 2026-20~22호 and 제도동향 11월호; no new topical report after 2026-10-06. Items below are older topical 자본시장포커스 articles not in the skip list. 제도동향 2026-11호 entry '가상자산 연루된 전기통신금융사기 범죄 피해 방지' (cno=6879) excluded: page title differs (category name) and it is a one-line regulation note; '토큰 증권 관련 개정안' (디지털자산시장 제도동향 2",
+      "lastOk": "2026-11-20",
+      "note": "collect.try 목록 2개(report_list, pub_list?zcd=002001016)는 승인 필요로 차단. 검색으로 찾은 홈페이지·자본시장포커스(publications_list, 2026-23호 2026.11.16)·OPINION 목록·이슈보고서/연구보고서/조사보고서 목록·디지털자산시장 제도동향(pub_detail_da_list, 최신 2026-04호) 페이지를 읽음. 2026-10-06 이후 디지털자산 관련 신규 보고서 없음(최신 이슈보고서 2026-11-11 핀플루언서, 포커스 2026-22호 OPINION·2026-23호 전체 비디지털). 2026-22호(2026.11.02) ZOOM-IN 목차는 확인 못함. 신규 0건.",
       "count": 27
     },
     {
@@ -96,23 +96,144 @@
       "name": "한국은행",
       "home": "https://www.bok.or.kr/portal/bbs/B0000232/list.do?menuNo=200706",
       "method": "page",
-      "status": "stale",
-      "lastOk": "2026-11-11",
-      "note": "검색 한도 소진과 list.do(provenance) 차단으로 이번 실행에서 확인 못함. 기존 항목 유지.",
-      "count": 8
+      "status": "ok",
+      "lastOk": "2026-11-20",
+      "note": "list.do 미시도. 검색 + 디지털화폐 허브(cbdc.do) + 게시글 상세 페이지로 수집. 2026-09-30 이후 신규 텍스트 보고서 없음. 허브에 블로그 '프로젝트 한강의 기관용 디지털화폐, 일반인용 CBDC와 어떻게 다를까'(2026.10.08, nttId=11065408)가 보이지만 해당 URL을 열면 2026.07.31 글이 표시되어 제목 불일치로 미수록(다음 실행 재확인 필요). BOK이슈해설 스테이블코인 2건은 영상이라 제외. 과거 누락분 3건 추가(프로젝트 한강 1차 파일럿 결과보고서 2025-10-30, 이슈노트 2024-29호 토큰증권 녹색채권, PYUSD 2023-09-04). WebSearch 한도 소진으로 추가 검색 중단.",
+      "count": 11
     },
     {
       "id": "brokers",
       "name": "증권사 리서치",
       "home": "https://consensus.hankyung.com/analysis/list?search_text=%EA%B0%80%EC%83%81%EC%9E%90%EC%82%B0",
       "method": "pdf",
-      "status": "ok",
+      "status": "stale",
       "lastOk": "2026-11-12",
-      "note": "Opened 키움(bbn), 삼성(samsungpop PDF), iM(imfnsec PDF), 신한(shinhangroup) reports; no 2026-11 digital-asset reports surfaced in search (search budget exhausted mid-run); 15 backfill items added. Blocked: bbn.kiwoom.com/rfBC1363 (provenance), shinhangroup insight list page (provenance), hanaw.com PDFs (robots), hanaw AgentEcon PDF (server error); 미래에셋 11월 '미래의 생각' not crypto-focused, skipped.",
+      "note": "2026-11-20 실행: 2026-11-02 이후 신규 증권사 디지털자산 보고서를 확인하지 못함. 한경컨센서스 collect.try·iM증권 공개목록(rs01.jsp)·키움 bbn.kiwoom.com/rfBC1390 은 WebFetch 권한(PROVENANCE) 미응답으로 거부. 미래에셋 리서치 게시판(categoryId=1527/1578)은 2026-11-20 자 목록까지 읽혔으나 항목 링크가 JS 라 개별 URL 수집 불가, 1페이지에 디지털자산 보고서 없음. 키움 텔레그램(t.me/s/KiwoomResearch) 최신 노출 글이 10/23 까지라 11월 Monthly 미확인. 메리츠 텔레그램 11/9~11/11 구간에 디지털자산 보고서 없음. 삼성·iM·신한·미래에셋 도메인 검색은 기존 수집분(최신 ",
       "count": 35
     }
   ],
   "items": [
+    {
+      "id": "fourpillars:value-accrual-between-narrative-and-fundamentals",
+      "source": "fourpillars",
+      "title": "가치 환원, 내러티브와 펀더멘털 그 사이",
+      "url": "https://research.4pillars.io/ko/research/value-accrual-between-narrative-and-fundamentals",
+      "publishedAt": "2026-11-19",
+      "summary": "매출을 홀더에게 환원하는 프로토콜들은 빠르게 늘고 있지만, 유통량 증가를 넘어 홀더에게 실제로 순환원한 토큰은 시가총액 $50M 이상 주요 토큰 66개 중 16개에 그쳤습니다. 소각, 보유, 분배 세 유형의 환원 구조가 홀더에게 얼마나 귀속되고 가격에는 얼마나 반영됐는지 살펴봅니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:if-bitcoin-fails-what-does-pearl-inherit",
+      "source": "fourpillars",
+      "title": "비트코인이 실패한다면, 펄은 무엇을 물려받을까?",
+      "url": "https://research.4pillars.io/ko/research/if-bitcoin-fails-what-does-pearl-inherit",
+      "publishedAt": "2026-11-19",
+      "summary": "더 나은 기술만으로 비트코인이 쌓아온 신뢰를 이어받기는 어려운 만큼, 펄도 비트코인이 성공하는 세상에서 더 큰 기회를 얻을 수 있다고 판단합니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:hip-4-isnt-here-to-build-another-polymarket-or-kalshi",
+      "source": "fourpillars",
+      "title": "HIP-4의 목표는 또 하나의 폴리마켓도, 칼시도 아니다",
+      "url": "https://research.4pillars.io/ko/research/hip-4-isnt-here-to-build-another-polymarket-or-kalshi",
+      "publishedAt": "2026-11-17",
+      "summary": "HIP-4는 하이퍼리퀴드의 기존 파생상품 시장에 이벤트 계약을 더해 헤지와 다양한 손익 구조의 거래를 가능하게 함으로써, ‘모든 금융을 담겠다’는 제프의 비전을 구체화합니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "tiger:dtcc-from-canton-to-solana-the-next-kor",
+      "source": "tiger",
+      "title": "DTCC: 캔톤에서 솔라나까지, 미국 증권 토큰화의 다음 단계",
+      "url": "https://reports.tiger-research.com/p/dtcc-from-canton-to-solana-the-next-kor",
+      "publishedAt": "2026-11-17",
+      "summary": "미국 예탁결제원인 DTCC는 최근 1년 동안 주요 블록체인 네트워크 및 금융기관들과의 파트너십을 연이어 확대하며 토큰화 생태계를 빠르게 확장하고 있다.",
+      "collectedAt": "2026-11-20T09:13:57+09:00",
+      "lang": "ko",
+      "pdf": false
+    },
+    {
+      "id": "xangle:2596",
+      "source": "xangle",
+      "title": "[Xangle RWA Series] 중앙화 거래소",
+      "url": "https://xangle.io/research/detail/2596",
+      "publishedAt": "2026-11-17",
+      "summary": "주식이나 채권을 블록체인 위에서 토큰화했다면 이를 탈중앙화 거래소(DEX)와 같은 온체인 거래소에서 거래하는 것이 가장 자연스러워 보인다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
+    },
+    {
+      "id": "fourpillars:sbi-and-the-national-bank-of-cambodia-to-test-tokenized-bonds-and-yen-stablecoin-remittances-asa-news-35",
+      "source": "fourpillars",
+      "title": "SBI와 캄보디아 국립은행, 토큰화 국채와 엔화 스테이블코인 송금 실증 추진 (ASA News #35)",
+      "url": "https://research.4pillars.io/ko/research/sbi-and-the-national-bank-of-cambodia-to-test-tokenized-bonds-and-yen-stablecoin-remittances-asa-news-35",
+      "publishedAt": "2026-11-16",
+      "summary": "언제나 그렇듯 SBI가 앞서 나가기 시작했습니다. SBI 홀딩스(SBI Holdings)는 11월 13일 캄보디아 국립은행(National Bank of Cambodia)과 개념검증을 위한 양해각서 두 건을 체결했다고 발표했습니다. 하나는 캔톤 네트워크(Canton Network)에서 캄보디아 국채를 토큰화하는 것이고, 다른 하나는 일본과 캄보디아 간 송금을 엔화 스테이블코인 JPYSC로 정산하는 것이입니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:nov-winter-is-here-fp-weekly-47",
+      "source": "fourpillars",
+      "title": "차가운 시장 [FP Weekly 47]",
+      "url": "https://research.4pillars.io/ko/research/nov-winter-is-here-fp-weekly-47",
+      "publishedAt": "2026-11-16",
+      "summary": "지난주 주요 소식을 살펴봅니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:monthly-eip-oct-2026",
+      "source": "fourpillars",
+      "title": "월간 EIP - 2026년 10월 (ft. 이더리움의 탈중앙화, 지식에도 진입 장벽이 없어야 한다)",
+      "url": "https://research.4pillars.io/ko/research/monthly-eip-oct-2026",
+      "publishedAt": "2026-11-16",
+      "summary": "10월에는 글램스테르담을 통한 이더리움의 처리량 확대와 온체인 자산 활용을 위한 EIP 논의가 활발했으며, EF는 기존 컨트랙트와의 호환성을 더 검증하기 위해 Hoodi 업그레이드를 연기하는 한편, 사용자 보호와 프라이버시를 강화하는 기술도 선보입니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:onchain-real-estate-market-two-working-models",
+      "source": "fourpillars",
+      "title": "온체인 부동산 시장, 앞으로 성장할 두 가지 모델",
+      "url": "https://research.4pillars.io/ko/research/onchain-real-estate-market-two-working-models",
+      "publishedAt": "2026-11-13",
+      "summary": "과거의 실패 사례는 건물 자체를 온체인에 올리려 했고, 부동산 관리, 매각의 어려움, 플랫폼 비용 문제로 무너졌다. 두 가지 모델은 성공할 가능성이 있는데, 부동산을 직접 토큰화하는게 아닌 가격을 기반으로 파생상품 거래를 할 수 있도록 하거나 부동산 사모 신용을 온체인으로 가져오는 것이다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:qfex-managed-account-why-the-house-doesnt-have-to-win",
+      "source": "fourpillars",
+      "title": "QFEX 매니지드 어카운트: 하우스가 이기지 않아도 되는 이유",
+      "url": "https://research.4pillars.io/ko/research/qfex-managed-account-why-the-house-doesnt-have-to-win",
+      "publishedAt": "2026-11-12",
+      "summary": "누군가의 수익은 비용이듯, 퍼프덱스 볼트의 수익은 같은 거래소 이용자의 비용입니다. 볼트의 수익원인 스프레드, 청산, 수수료가 모두 이용자에게서 나옵니다. QFEX의 매니지드 어카운트(Managed Account)는 시장중립 롱숏 전략으로 이용자의 비용이 아닌 알파에서 수익을 내고, 동시에 거래소의 유동성을 개선하는 방식을 제시합니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:hype-26q3-report",
+      "source": "fourpillars",
+      "title": "HYPE 26Q3 Report",
+      "url": "https://research.4pillars.io/ko/research/hype-26q3-report",
+      "publishedAt": "2026-11-12",
+      "summary": "하이퍼리퀴드는 3분기부터 USDC 준비금 운용수익을 매출에 반영하기 시작했고, HIP-3에서는 주식이 거래대금 1위에 올랐으며, 크라켄 모회사 페이워드는 하이퍼리퀴드에서 미국 고객 대상 무기한 선물 시장을 운영하겠다는 계획을 발표했습니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
     {
       "id": "fourpillars:gotchi-labs-what-it-takes-for-ai-to-become-a-daily-habit",
       "source": "fourpillars",
@@ -123,6 +244,17 @@
       "collectedAt": "2026-11-12T09:14:27+09:00",
       "pdf": false,
       "lang": "ko"
+    },
+    {
+      "id": "xangle:2589",
+      "source": "xangle",
+      "title": "BOB, 비트코인으로 넓히는 금융의 가능성",
+      "url": "https://xangle.io/research/detail/2589",
+      "publishedAt": "2026-11-11",
+      "summary": "비트코인은 시가총액 기준 가장 큰 가상자산이자, 전통 금융시장에서도 투자하고 보유하는 자산으로 자리 잡았다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
     },
     {
       "id": "fourpillars:infinit-shaping-the-future-of-asset-management",
@@ -275,6 +407,17 @@
       "lang": "ko"
     },
     {
+      "id": "xangle:2584",
+      "source": "xangle",
+      "title": "Bread Wallet: 프라이버시를 일상으로",
+      "url": "https://xangle.io/research/detail/2584",
+      "publishedAt": "2026-11-03",
+      "summary": "Miden의 프라이빗 월렛 Bread가 계정 정보를 보호하면서 자산 관리와 복구를 지원하는 방식, 그리고 스왑·크로스체인·Earn의 사용 경험을 살펴본다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
+    },
+    {
       "id": "fourpillars:a-tale-of-two-exchanges-fp-weekly-45",
       "source": "fourpillars",
       "title": "두 거래소 이야기 [FP Weekly 45]",
@@ -357,6 +500,17 @@
       "lang": "ko"
     },
     {
+      "id": "fourpillars:monad-the-last-general-purpose-l1-2",
+      "source": "fourpillars",
+      "title": "모나드: 마지막 범용 목적 레이어1",
+      "url": "https://research.4pillars.io/ko/research/monad-the-last-general-purpose-l1-2",
+      "publishedAt": "2026-10-28",
+      "summary": "모나드 메인넷 출시 이후 생태계 전략과 섹터별 성과, 그리고 기술 아키텍처가 실제 환경에서 어떻게 진화하고 있는지를 평가해볼 수 있는 시점입니다. 본 리포트에서는 메인넷 출시 이후 이루어진 프로토콜 및 인프라 변화와 주요 생태계 섹터의 성과를 살펴보고, 모나드가 고성능 EVM이라는 정체성을 넘어 범용 Layer 1으로서 지속 가능한 입지를 구축하기 위해 앞으로 무엇을 증명해야 하는지 짚어봅니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "tiger:banks-that-do-not-wait-for-regulation-kor",
       "source": "tiger",
       "title": "규제를 기다리지 않는 은행들: 유럽 MiCA가 제시하는 스테이블코인 실행 기준",
@@ -407,6 +561,17 @@
       "lang": "ko"
     },
     {
+      "id": "fourpillars:blackthorn-the-frontier-of-confidential-ai",
+      "source": "fourpillars",
+      "title": "아르키움 블랙손(Blackthorn): 기밀 AI의 최전선을 향해",
+      "url": "https://research.4pillars.io/ko/research/blackthorn-the-frontier-of-confidential-ai",
+      "publishedAt": "2026-10-22",
+      "summary": "본 글에서는 AI 서비스에서 프롬프트가 평문으로 처리되는 문제와 반복적으로 뚫려 온 x86 CPU TEE의 한계를 짚고, CPU TEE 대신 MPC와 NVIDIA GPU 기밀 컴퓨팅 모드를 결합한 Arcium Blackthorn의 구조, 성능, 시장 가능성, 한계에 대해 살펴봅니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "xangle:2574",
       "source": "xangle",
       "title": "Pakt, 안전한 에이전틱 트레이딩을 위한 통제 인프라",
@@ -428,6 +593,28 @@
       "lang": "ko"
     },
     {
+      "id": "fourpillars:stablecoin-middleware-is-getting-fatter",
+      "source": "fourpillars",
+      "title": "사업 영역을 넓혀가는 스테이블코인 미들웨어",
+      "url": "https://research.4pillars.io/ko/research/stablecoin-middleware-is-getting-fatter",
+      "publishedAt": "2026-10-16",
+      "summary": "규제 불확실성은 스테이블코인 미들웨어의 더 빠르고 폭넓은 확장을 제약하고 있으며, 이런 상황에서 미들웨어 제공업체들이 사업 범위를 넓힐 기회가 생기고 있다. 이들이 언제 초고속 확장이 가능한 규제 환경이 구축될지는 여전히 불확실하지만(특히 아시아에서), 미들웨어 사업이 어느 방향으로 확장하고 있는지는 이제 확인할 수 있다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:monthly-eip-sep-2026",
+      "source": "fourpillars",
+      "title": "월간 EIP - 2026년 9월 (ft. 이더리움의 이상은 어떻게 현실이 되는가)",
+      "url": "https://research.4pillars.io/ko/research/monthly-eip-sep-2026",
+      "publishedAt": "2026-10-15",
+      "summary": "9월에는 기존 EIP의 진전이 줄어든 가운데, 코어 단에서는 인증 개선과 검증·저장 부담 완화가, ERC에서는 거래 보호와 에이전트 및 모듈의 공통 규격 마련이 주로 논의됐습니다. 한편, EF는 장기 연구 목표를 헤고타의 우선순위에 반영했으며, 기관 도입과 ETH 가치에 대한 관심이 커지면서 이더리움의 원칙을 지키며 실질적인 성장을 이뤄낼 방법도 주요 과제로 떠올랐습니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "upbitcare:1089",
       "source": "upbitcare",
       "title": "[미국] 특정 암호자산 및 관련 거래에 대한 증권법 적용 FAQ(번역본)",
@@ -436,6 +623,28 @@
       "summary": "미국 증권거래위원회(SEC)는 2026.9.25., 연방 증권 법규가 암호자산 및 암호자산이 결부된 특정 거래에 어떻게 적용되는지에 대한 해석 지침 (가이던스 )을 발표했습니다.",
       "collectedAt": "2026-11-10T02:30:00+09:00",
       "lang": "ko"
+    },
+    {
+      "id": "fourpillars:glamsterdam-ethereums-next-hard-fork-is-two-months-away",
+      "source": "fourpillars",
+      "title": "두 달 앞으로 다가온 이더리움의 다음 하드포크",
+      "url": "https://research.4pillars.io/ko/research/glamsterdam-ethereums-next-hard-fork-is-two-months-away",
+      "publishedAt": "2026-10-14",
+      "summary": "이더리움 L1 확장의 기반이 될 글램스테르담이 두 달 앞으로 다가왔다. 오픈소스 커뮤니티 기반의 이더리움 업그레이드는 느리고 복잡하며 예전만큼 주목받지 못하지만, 다가올 채택을 감당하기 위한 인프라인 만큼 꾸준히 지켜봐야 한다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "xangle:2571",
+      "source": "xangle",
+      "title": "[CIS 서울 파트너 서밋 하이라이트] 체인링크 : 전통 금융과 온체인을 연결하는 인프라",
+      "url": "https://xangle.io/research/detail/2571",
+      "publishedAt": "2026-10-14",
+      "summary": "최근 금융권에서는 펀드 등 금융자산을 토큰으로 발행하고, 이를 온체인에서 거래하거나 담보로 활용하는 시도가 이어지고 있다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
     },
     {
       "id": "tiger:the-era-of-industry-q3-2026-crypto-kor",
@@ -486,6 +695,17 @@
       "publishedAt": "2026-10-05",
       "summary": "무기한선물은 만기가 없는 선물계약으로 월물 교체가 필요하지 않고 거래 유동성을 단일 계약에 집중할 수 있다는 장점으로 가상자산시장에서 빠르게 성장하였다. 특히 2026년 들어 무기한선물은 주식ㆍ주가지수 ETF 등 전통적 파생상품 기초자산으로 영역을 넓히고 있으며 미국에서는 비트코인 무기한선물이 정식 선물계약으로 승인되면서 제도권에 편입되었다.",
       "collectedAt": "2026-11-10T03:55:00+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:ethereum-korea-one-ethereum-in-2026-and-beyond",
+      "source": "fourpillars",
+      "title": "Ethereum Korea One: 2026년, 그리고 그 이후의 이더리움",
+      "url": "https://research.4pillars.io/ko/research/ethereum-korea-one-ethereum-in-2026-and-beyond",
+      "publishedAt": "2026-10-02",
+      "summary": "메인넷 출시 11년, 이더리움은 이미 온체인 기관 자산의 기본 정산 레이어가 되었습니다. 이더리움만이 줄 수 있는 고유한 가치와 기관들이 이더리움을 선택한 이유를 데이터와 사례로 확인하고, 앞으로의 로드맵이 향하는 방향까지 담았습니다. 국내 제도화가 시작된 지금, 기술 선택을 정책의 언어로 검토한 이더리움 코리아 컨소시엄 제2회 정책 세미나의 주요 논의도 함께 실었습니다.",
+      "collectedAt": "2026-11-20T09:19:17+09:00",
+      "pdf": false,
       "lang": "ko"
     },
     {
@@ -612,6 +832,17 @@
       "lang": "ko"
     },
     {
+      "id": "xangle:2552",
+      "source": "xangle",
+      "title": "[CIS 서울 파트너 서밋 하이라이트] Sumsub, 디지털 자산 사업을 위한 AI 기반 신뢰 인프라",
+      "url": "https://xangle.io/research/detail/2552",
+      "publishedAt": "2026-09-11",
+      "summary": "최근 미국에서는 전통 금융의 온체인 전환을 뒷받침하는 제도적 기반이 빠르게 마련되고 있다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
+    },
+    {
       "id": "fourpillars:korea-expands-token-securities-as-global-banks-form-a-stablecoin-consortium-asa-news-30",
       "source": "fourpillars",
       "title": "한국, 토큰증권 적용 범위 확대…글로벌 은행권은 스테이블코인 회사 설립 추진 (ASA 뉴스 #30)",
@@ -672,6 +903,17 @@
       "summary": "퍼블릭 블록체인은 누구나 같은 원장을 확인하고 거래의 유효성을 검증할 수 있게 했다.",
       "collectedAt": "2026-11-10T02:30:00+09:00",
       "lang": "ko"
+    },
+    {
+      "id": "xangle:2540",
+      "source": "xangle",
+      "title": "Rexy: AI가 위조할 수 없는 유일한 자산에 가격을 매기다",
+      "url": "https://xangle.io/research/detail/2540",
+      "publishedAt": "2026-08-25",
+      "summary": "2024년 말 WPP Media 전망에 따르면 미국 정치 광고를 제외한 전 세계 광고 매출은 2024년 처음 1조 달러를 넘어섰고, 2025년에는 1.1조 달러에 이를 것으로 예상됐다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
     },
     {
       "id": "xangle:2536",
@@ -935,6 +1177,17 @@
       "lang": "ko"
     },
     {
+      "id": "xangle:2512",
+      "source": "xangle",
+      "title": "[Xangle RWA Series] 컴플라이언스",
+      "url": "https://xangle.io/research/detail/2512",
+      "publishedAt": "2026-07-15",
+      "summary": "블록체인 위에서 현실의 자산을 다루려는 시도가 빠르게 늘고 있다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
+    },
+    {
       "id": "tiger:the-age-of-control-crypto-venture-kor",
       "source": "tiger",
       "title": "2026 H1 암호화폐 VC 투자 현황 보고서",
@@ -954,6 +1207,17 @@
       "collectedAt": "2026-11-11T09:55:00+09:00",
       "pdf": false,
       "lang": "ko"
+    },
+    {
+      "id": "xangle:2506",
+      "source": "xangle",
+      "title": "ETHGas, 기관용 블록스페이스",
+      "url": "https://xangle.io/research/detail/2506",
+      "publishedAt": "2026-07-08",
+      "summary": "이더리움은 이미 가장 강력한 퍼블릭 블록체인 중 하나다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
     },
     {
       "id": "brokers:samsung-20260706",
@@ -1519,6 +1783,17 @@
       "lang": "ko"
     },
     {
+      "id": "xangle:2446",
+      "source": "xangle",
+      "title": "당신의 수익률은 시장이 결정한다 1편 - 상승장과 하락장의 구분",
+      "url": "https://xangle.io/research/detail/2446",
+      "publishedAt": "2026-04-02",
+      "summary": "액티브 펀드가 패시브 펀드를 장기적으로 이기기 어렵다는 사실은 다양한 데이터로 반복적으로 확인된다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
+    },
+    {
       "id": "xangle:2445",
       "source": "xangle",
       "title": "원화 스테이블코인, 법안을 넘어 유통과 사용을 논의할 때",
@@ -1589,6 +1864,16 @@
       "collectedAt": "2026-11-12T09:14:27+09:00",
       "pdf": true,
       "lang": "ko"
+    },
+    {
+      "id": "xangle:2437",
+      "source": "xangle",
+      "title": "매직블록, 블록체인의 실시간 실행 엔진",
+      "url": "https://xangle.io/research/detail/2437",
+      "publishedAt": "2026-03-24",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
     },
     {
       "id": "kcmi:pub-6738",
@@ -1725,6 +2010,16 @@
       "collectedAt": "2026-11-12T09:14:27+09:00",
       "pdf": false,
       "lang": "ko"
+    },
+    {
+      "id": "xangle:2419",
+      "source": "xangle",
+      "title": "휴머니티 프로토콜 : 인간 증명(Proof of Identity)을 넘어서, 신뢰 증명(Proof of Trust)으로",
+      "url": "https://xangle.io/research/detail/2419",
+      "publishedAt": "2026-02-20",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
     },
     {
       "id": "brokers:samsung-2026020915191681K_02_02",
@@ -1888,6 +2183,17 @@
       "lang": "ko"
     },
     {
+      "id": "xangle:2402",
+      "source": "xangle",
+      "title": "ETHGas, 이더리움을 실시간으로 만들다",
+      "url": "https://xangle.io/research/detail/2402",
+      "publishedAt": "2026-01-12",
+      "summary": "만약 이더리움을 10분 동안 통째로 빌릴 수 있다면, 무엇을 할 수 있을까?",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
+    },
+    {
       "id": "xangle:2399",
       "source": "xangle",
       "title": "BTCFi: 개인에서 기관으로, 기관에서 Starknet으로",
@@ -1981,6 +2287,17 @@
       "lang": "ko"
     },
     {
+      "id": "xangle:2373",
+      "source": "xangle",
+      "title": "Espresso, 찐한 커피향 나는 L2의 스타벅스",
+      "url": "https://xangle.io/research/detail/2373",
+      "publishedAt": "2025-12-08",
+      "summary": "2020년 이후 이더리움의 확장성 한계를 해결하기 위해 다양한 L2 체인들이 등장해왔다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
+    },
+    {
       "id": "kif:356347",
       "source": "kif",
       "title": "글로벌 은행의 디지털자산 서비스 최근 동향과 시사점",
@@ -2066,6 +2383,17 @@
       "collectedAt": "2026-11-12T09:14:27+09:00",
       "pdf": false,
       "lang": "ko"
+    },
+    {
+      "id": "xangle:2365",
+      "source": "xangle",
+      "title": "Miden, 모두의 프라이버시를 위한 투명 망토",
+      "url": "https://xangle.io/research/detail/2365",
+      "publishedAt": "2025-11-24",
+      "summary": "전세계적으로 5.9억명 이상의 가상자산 보유자가 존재하고, 국내 가상자산 거래소 가입자가 1,600만명을 넘어가며 비트코인과 이더리움 ETF가 승인되고 있는 지금은 이미 매스 어돕션이 이루어졌다고 볼 수 있을까?",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
     },
     {
       "id": "kcmi:cno6661",
@@ -2171,6 +2499,16 @@
       "lang": "ko"
     },
     {
+      "id": "bok:10094317",
+      "source": "bok",
+      "title": "프로젝트 한강 1차 실거래 파일럿 결과보고서",
+      "url": "https://www.bok.or.kr/portal/bbs/B0000232/view.do?menuNo=200725&nttId=10094317",
+      "publishedAt": "2025-10-30",
+      "collectedAt": "2026-11-20T09:17:38+09:00",
+      "lang": "ko",
+      "pdf": false
+    },
+    {
       "id": "despread:report-boundless",
       "source": "despread",
       "title": "바운드리스(Boundless) — 무한한 확장성으로",
@@ -2221,6 +2559,17 @@
       "collectedAt": "2026-11-11T09:55:00+09:00",
       "pdf": false,
       "lang": "ko"
+    },
+    {
+      "id": "xangle:2341",
+      "source": "xangle",
+      "title": "Web3 진입장벽을 낮추기 위한 노드옵스의 여정",
+      "url": "https://xangle.io/research/detail/2341",
+      "publishedAt": "2025-10-24",
+      "summary": "대부분의 블록체인 인프라 및 DePIN 프로젝트는 TGE(Token Generation Event) 이후 급격한 하락세를 피하지 못한다.",
+      "collectedAt": "2026-11-20T09:20:38+09:00",
+      "lang": "ko",
+      "pdf": false
     },
     {
       "id": "digitalx:137",
@@ -3100,6 +3449,17 @@
       "lang": "ko"
     },
     {
+      "id": "bok:10087277",
+      "source": "bok",
+      "title": "[제2024-29호] 토큰증권(Security Token Offering)을 통한 녹색채권 발행 사례 및 시사점",
+      "url": "https://www.bok.or.kr/portal/bbs/P0002353/view.do?nttId=10087277&searchCnd=1&searchKwd=&depth2=201156&depth3=200433&depth=200433&pageUnit=10&pageIndex=2&programType=newsData&menuNo=200433&oldMenuNo=200433",
+      "publishedAt": "2024-10-03",
+      "summary": "탄소중립 목표 달성을 위해서는 저탄소·친환경 분야에 막대한 자금이 소요될 것으로 예상되나, 동 자금을 조달하기 위한 국내 녹색금융 시장의 성장세는 더딘 상황이다.",
+      "collectedAt": "2026-11-20T09:17:38+09:00",
+      "lang": "ko",
+      "pdf": false
+    },
+    {
       "id": "hor:334e6434-c594-805c-ab66-d63946554c4c",
       "source": "hor",
       "title": "부동산 토큰증권을 통한 공유경제 구현과 부동산 소유의 대중화",
@@ -3501,6 +3861,16 @@
       "collectedAt": "2026-11-11T09:55:00+09:00",
       "pdf": false,
       "lang": "ko"
+    },
+    {
+      "id": "bok:10079311",
+      "source": "bok",
+      "title": "페이팔 스테이블코인 PYUSD의 거래구조 및 시사점",
+      "url": "https://www.bok.or.kr/portal/bbs/B0000346/view.do?nttId=10079311&menuNo=201108&pageIndex=1",
+      "publishedAt": "2023-09-04",
+      "collectedAt": "2026-11-20T09:17:38+09:00",
+      "lang": "ko",
+      "pdf": false
     },
     {
       "id": "digitalx:69",
