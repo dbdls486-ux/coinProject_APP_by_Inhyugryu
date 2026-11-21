@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T09:27:25+09:00",
+  "updatedAt": "2026-11-21T10:07:55+09:00",
   "sources": [
     {
       "id": "tiger",
@@ -7,18 +7,18 @@
       "home": "https://reports.tiger-research.com/s/korean/archive",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-20",
-      "note": "RSS(/s/korean/feed)·/ko/ 직접 fetch 는 권한 프롬프트 미응답으로 차단, WebSearch 결과 URL 과 글 내 Recent Episodes 링크로 수집. 최신 글 2026-11-17 DTCC 1건 신규(11/4~11/17 사이 다른 글 없음).",
-      "count": 27
+      "lastOk": "2026-11-21",
+      "note": "피드/아카이브 직접 접근은 권한 프롬프트로 차단. WebSearch 결과 포스트 5곳의 Recent Episodes 가 모두 최신 = 2026-11-17 DTCC 를 가리켜 11/17 이후 신규 없음. 누락됐던 2026년 글 8건(3~9월) 페이지 확인 후 백필.",
+      "count": 35
     },
     {
       "id": "xangle",
       "name": "쟁글 리서치",
       "home": "https://xangle.io/research",
       "method": "page",
-      "status": "ok",
+      "status": "stale",
       "lastOk": "2026-11-20",
-      "note": "/research 목록·sitemap은 미시도(차단 이력), 쟁글 리서치팀 저자 페이지(/research/author/46, Weekly Xangle 시황만)와 검색 결과 상세 페이지의 '연관 리서치' 링크를 따라 수집. 최신 2596(2026-11-17), 2589(11-11), 2584(11-03) 포함 쟁글 오리지널 15건 신규(한국어·타기관 재게시 아님 확인). [Weekly Xangle] 주간 시황(최신 2569, 2026-10-08)은 기존 관행대로 미수집. 2326·2258·2257·2050·2009·1181 등 더 오래된 미수집 오리지널은 다음 실행에서 추가 가능. 검색 예산 소진.",
+      "note": "/research·sitemap 시드와 기존 상세 2596 fetch 모두 권한 프롬프트로 차단. 검색(14회)·연관 리서치 링크로 도달한 최신 오리지널은 2576(10-22, 기존)으로 2596(11-17) 이후 신규 확인 불가. 신규 0건. 다음 실행은 시드보다 기존 상세 URL을 먼저 시도.",
       "count": 57
     },
     {
@@ -26,9 +26,9 @@
       "name": "디스프레드 리서치",
       "home": "https://research.despread.io/ko/",
       "method": "page",
-      "status": "ok",
+      "status": "stale",
       "lastOk": "2026-11-20",
-      "note": "/ko/insight/·/ko/report/ 목록 페이지 읽음(/ko/ 홈 직접 fetch 는 권한 프롬프트로 차단). 리포트 최신 2026-09-24 제스트, 인사이트 최신 2026-03-25 — 신규 없음.",
+      "note": "/ko/rss/·/ko/ 시드는 권한 프롬프트, 저자 페이지는 robots 차단. 검색 인덱스에는 2024~25년 글만 노출돼 2026-09-24 제스트 이후 신규 여부 미확인. 신규 0건.",
       "count": 21
     },
     {
@@ -37,9 +37,9 @@
       "home": "https://research.4pillars.io/ko/research",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-20",
-      "note": "목록 홈·사이트맵 fetch는 권한 미응답으로 차단됐으나 글 페이지 내 링크로 유형별 목록(?type=issue/comment/article/report)을 읽어 수집. 최신 글 2026-11-19 (가치 환원 / 펄) 등 11-12 이후 9건 + 10월 미수집 6건, 총 15건 신규. 각 글 페이지에서 제목·날짜·리드 확인. ASA 뉴스 #25 등 과거 미확인 항목은 미추가.",
-      "count": 47
+      "lastOk": "2026-11-21",
+      "note": "목록·sitemap 시드 차단. 검색으로 얻은 글 페이지의 ?type=issue/comment/article/report 링크로 목록 확인. 최신 2026-11-21 '템포, x402를 위한 온체인 PG를 만들다' 1건 신규. /ko/data/content/ 데이터 코멘터리는 기존 관행대로 미수집.",
+      "count": 48
     },
     {
       "id": "digitalx",
@@ -57,8 +57,8 @@
       "home": "https://hashedopenresearch.com/research",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-20",
-      "note": "/research 목록·sitemap·기존 항목 상세(3ede…d109)는 PROVENANCE 차단으로 미열람. 홈(hashedopenresearch.com) '최신 리서치'는 영문판 4건(최신 2026-09-28 'Crypto Regulation…' = 기존 한국어판 '디지털자산 정책으로 읽는 국가 전략과 시장의 진화' 2026-09)만 노출 → 2026-09 이후 신규 없음. 상세 페이지(디파이와 전통금융…)는 열렸으나 연관 링크 없음. 미수집 한국어 9건은 검색(5회)으로 URL을 못 찾아 이번에도 미추가.",
+      "lastOk": "2026-11-21",
+      "note": "/research·sitemap 시드 차단. 검색 결과로 홈 '최신 리서치' 블록 확인: 2026-09-28 영문판(기존 한국어판 '디지털자산 정책으로 읽는 국가 전략과 시장의 진화')이 최신, 10·11월 신규 없음. 신규 0건.",
       "count": 22
     },
     {
@@ -68,7 +68,7 @@
       "method": "page",
       "status": "stale",
       "lastOk": "2026-11-11",
-      "note": "이번 실행에서 업비트 투자자보호센터 페이지를 하나도 읽지 못함: 기존 글 1090·1089 및 목록(upbitcare.com/academy/research) fetch가 권한 미응답(PROVENANCE_REQUIRED)으로 거부되고, WebSearch 공유 한도(200회) 소진으로 검색도 불가. 기존 최신 항목 id 1090 (2026-10-26) 유지. 신규 0건.",
+      "note": "목록(upbitcare.com·m.upbitcare.com /academy/research)은 열렸으나 클라이언트 렌더링으로 비어 있고, 기존 글 1090·1089 fetch 는 권한 프롬프트로 거부돼 이전/다음 체인 추적 불가. 검색(5회)에 id 1090 이후 글 없음. 최신 1090(2026-10-26) 유지, 신규 0건.",
       "count": 18
     },
     {
@@ -77,9 +77,9 @@
       "home": "https://www.kcmi.re.kr/report/report_list",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-20",
-      "note": "collect.try 목록 2개(report_list, pub_list?zcd=002001016)는 승인 필요로 차단. 검색으로 찾은 홈페이지·자본시장포커스(publications_list, 2026-23호 2026.11.16)·OPINION 목록·이슈보고서/연구보고서/조사보고서 목록·디지털자산시장 제도동향(pub_detail_da_list, 최신 2026-04호) 페이지를 읽음. 2026-10-06 이후 디지털자산 관련 신규 보고서 없음(최신 이슈보고서 2026-11-11 핀플루언서, 포커스 2026-22호 OPINION·2026-23호 전체 비디지털). 2026-22호(2026.11.02) ZOOM-IN 목차는 확인 못함. 신규 0건.",
-      "count": 27
+      "lastOk": "2026-11-21",
+      "note": "collect.try 시드·publications_list 는 차단. 검색 결과(토큰화 통합검색, 포커스 상세)로 확인: 2026-10-06 이후 디지털자산 신규 보고서 없음(11-12 토큰증권 심포지엄 보도자료만). 누락됐던 2026년 자본시장포커스 디지털자산 글 4건(3~9월) 백필. 2026-24호 포커스는 미발간.",
+      "count": 31
     },
     {
       "id": "kif",
@@ -97,8 +97,8 @@
       "home": "https://www.bok.or.kr/portal/bbs/B0000232/list.do?menuNo=200706",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-20",
-      "note": "list.do 미시도. 검색 + 디지털화폐 허브(cbdc.do) + 게시글 상세 페이지로 수집. 2026-09-30 이후 신규 텍스트 보고서 없음. 허브에 블로그 '프로젝트 한강의 기관용 디지털화폐, 일반인용 CBDC와 어떻게 다를까'(2026.10.08, nttId=11065408)가 보이지만 해당 URL을 열면 2026.07.31 글이 표시되어 제목 불일치로 미수록(다음 실행 재확인 필요). BOK이슈해설 스테이블코인 2건은 영상이라 제외. 과거 누락분 3건 추가(프로젝트 한강 1차 파일럿 결과보고서 2025-10-30, 이슈노트 2024-29호 토큰증권 녹색채권, PYUSD 2023-09-04). WebSearch 한도 소진으로 추가 검색 중단.",
+      "lastOk": "2026-11-21",
+      "note": "list.do 미시도. 검색 + 디지털화폐 허브(cbdc.do) + 상세 페이지로 확인: 2026-09-30 이후 신규 텍스트 연구물 없음. 허브의 블로그 '프로젝트 한강의 기관용 디지털화폐…'(2026.10.08, nttId=11065408)는 여전히 07-31 글로 렌더링돼 미수록. 이슈해설 스테이블코인 2건·ECB 포럼은 영상이라 제외.",
       "count": 11
     },
     {
@@ -106,13 +106,24 @@
       "name": "증권사 리서치",
       "home": "https://consensus.hankyung.com/analysis/list?search_text=%EA%B0%80%EC%83%81%EC%9E%90%EC%82%B0",
       "method": "pdf",
-      "status": "stale",
-      "lastOk": "2026-11-12",
-      "note": "2026-11-20 실행: 2026-11-02 이후 신규 증권사 디지털자산 보고서를 확인하지 못함. 한경컨센서스 collect.try·iM증권 공개목록(rs01.jsp)·키움 bbn.kiwoom.com/rfBC1390 은 WebFetch 권한(PROVENANCE) 미응답으로 거부. 미래에셋 리서치 게시판(categoryId=1527/1578)은 2026-11-20 자 목록까지 읽혔으나 항목 링크가 JS 라 개별 URL 수집 불가, 1페이지에 디지털자산 보고서 없음. 키움 텔레그램(t.me/s/KiwoomResearch) 최신 노출 글이 10/23 까지라 11월 Monthly 미확인. 메리츠 텔레그램 11/9~11/11 구간에 디지털자산 보고서 없음. 삼성·iM·신한·미래에셋 도메인 검색은 기존 수집분(최신 ",
-      "count": 35
+      "status": "ok",
+      "lastOk": "2026-11-21",
+      "note": "검색(25회) 기준 2026-11-02 키움 Monthly 이후 신규 증권사 디지털자산 보고서 없음(키움 12월호 12/1 예정). 하나증권 '토큰화 시대가 온다'(2026-10-21, 공식 PDF) 백필. 한화 '10월 디지털자산 정책 인사이트'(10-13)는 알파스퀘어 미러 PDF로만 확인돼 미수록, 한화 2027 전망(11/14 보도)은 보고서 URL 미확보. 한경컨센서스 시드·iM 공개목록·한화 리스트는 권한 거부.",
+      "count": 36
     }
   ],
   "items": [
+    {
+      "id": "fourpillars:tempo-brings-onchain-pg-to-x402",
+      "source": "fourpillars",
+      "title": "템포, x402를 위한 온체인 PG를 만들다",
+      "url": "https://research.4pillars.io/ko/research/tempo-brings-onchain-pg-to-x402",
+      "publishedAt": "2026-11-21",
+      "summary": "템포는 x402 퍼실리테이터를 통해 베이스에서 받은 USDC 결제는 플랫폼의 조직 계정에 기록하고, 대금은 각 판매자의 지갑에 템포 체인의 OUSD로 지급하는 온체인 PG를 구축했습니다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
     {
       "id": "fourpillars:value-accrual-between-narrative-and-fundamentals",
       "source": "fourpillars",
@@ -572,6 +583,17 @@
       "lang": "ko"
     },
     {
+      "id": "brokers:hana-20261021",
+      "source": "brokers",
+      "title": "토큰화 시대가 온다: 전통 금융과 만드는 새로운 금융 인프라",
+      "url": "https://file.hanaw.com/download/research/FileServer/WEB/strategy/digital_asset/2026/10/20/RWA_20261021.pdf",
+      "publishedAt": "2026-10-21",
+      "summary": "하나증권 · RWA, 금융의 인터넷화. 경쟁의 핵심은 유동성 확보. 글로벌 토큰화 시장의 확대와 국내 시장 개화. 비트코인은 반감기 사이클상 반등 국면 진입, RWA는 토큰화 주식 중심 성장하며 경쟁 초점이 발행에서 거래·담보·결제 인프라와 유동성 확보로 이동. 국내 토큰증권 제도는 2027년 2월 시행 예정.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": true,
+      "lang": "ko"
+    },
+    {
       "id": "xangle:2574",
       "source": "xangle",
       "title": "Pakt, 안전한 에이전틱 트레이딩을 위한 통제 인프라",
@@ -854,6 +876,17 @@
       "lang": "ko"
     },
     {
+      "id": "kcmi:pub-6836",
+      "source": "kcmi",
+      "title": "주요국 토큰증권 인프라 구축 동향과 국내 시사점: 기존 예탁결제체계와 DLT 원장의 단계적 결합을 중심으로",
+      "url": "https://www.kcmi.re.kr/publications/pub_detail_view?syear=2026&zcd=002001016&zno=1934&cno=6836",
+      "publishedAt": "2026-09-07",
+      "summary": "토큰증권 논의는 글로벌 토큰화 금융자산 활용 확대와 함께 발행 허용 문제를 넘어, 기존 자본시장 인프라와 DLT 원장의 결합 방식을 구체화하는 단계로 이동하고 있다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "xangle:2548",
       "source": "xangle",
       "title": "토큰화 주식 시장의 비즈니스 모델",
@@ -861,6 +894,17 @@
       "publishedAt": "2026-09-04",
       "summary": "토큰화 주식 시장은 2026년 들어 빠르게 성장했다.",
       "collectedAt": "2026-11-10T02:30:00+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "tiger:korea-crypto-market-a-guide-to-the-kor",
+      "source": "tiger",
+      "title": "한국 암호화폐 시장, 2026 하반기 최신 가이드",
+      "url": "https://reports.tiger-research.com/p/korea-crypto-market-a-guide-to-the-kor",
+      "publishedAt": "2026-09-01",
+      "summary": "표면적으로 가상자산 생태계는 국경 없는 모습으로 보이나, 실질적으로는 각 국가별로 규제가 정립되며 국경이 더욱 명확해지고 있다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
       "lang": "ko"
     },
     {
@@ -1136,6 +1180,17 @@
       "lang": "ko"
     },
     {
+      "id": "tiger:the-crypto-markets-shift-from-narrative-kor",
+      "source": "tiger",
+      "title": "2026년 암호화폐 시장의 변화: 내러티브에서 PMF로",
+      "url": "https://reports.tiger-research.com/p/the-crypto-markets-shift-from-narrative-kor",
+      "publishedAt": "2026-07-21",
+      "summary": "암호화폐 시장에서 ‘내러티브(Narrative)’는 시장 참여자들의 관심을 결집하고 유동성을 견인하는 핵심 동력이었다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "xangle:2500",
       "source": "xangle",
       "title": "SynFutures가 여는 온체인 트레이딩의 미래",
@@ -1218,6 +1273,17 @@
       "collectedAt": "2026-11-20T09:20:38+09:00",
       "lang": "ko",
       "pdf": false
+    },
+    {
+      "id": "tiger:below-the-surface-how-canton-network-kor",
+      "source": "tiger",
+      "title": "빙산 아래의 자본시장: 캔톤 네트워크가 바꾸는 금융 인프라",
+      "url": "https://reports.tiger-research.com/p/below-the-surface-how-canton-network-kor",
+      "publishedAt": "2026-07-07",
+      "summary": "지금 시장이 주목하는 자산 토큰화는 수면 위로 드러난 빙하의 일각일 뿐입니다. 그 아래에는 전통 금융의 레일을 근본적으로 재편할 수천조 원 규모의 거대한 시장이 숨겨져 있습니다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
+      "lang": "ko"
     },
     {
       "id": "brokers:samsung-20260706",
@@ -1327,6 +1393,17 @@
       "lang": "ko"
     },
     {
+      "id": "kcmi:pub-6794",
+      "source": "kcmi",
+      "title": "금융 인프라의 재구성: 글로벌 CSD의 진화와 국내 후선 인프라 시장의 변화",
+      "url": "https://www.kcmi.re.kr/publications/pub_detail_view?syear=2026&zcd=002001016&zno=1922&cno=6794",
+      "publishedAt": "2026-06-29",
+      "summary": "글로벌 금융시장 인프라는 디지털 자산, 토큰화, 분산원장기술의 확산에 대응하여 기존의 기록ㆍ보관 중심 기능을 넘어 다자산ㆍ다중 네트워크를 연결하는 플랫폼형 인프라로 진화하고 있다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "brokers:shinhan-33050",
       "source": "brokers",
       "title": "잠잠한 비트코인과 움직이는 제도권, 디지털 자산 시장 현황 및 주간 핵심 이슈",
@@ -1394,6 +1471,17 @@
       "url": "https://xangle.io/research/detail/2490",
       "publishedAt": "2026-06-18",
       "collectedAt": "2026-11-11T09:09:30+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "tiger:internet-capital-markets-2026-us-kor",
+      "source": "tiger",
+      "title": "인터넷 자본시장 2026: 미국의 구조적 변화와 아시아 기관의 방향성",
+      "url": "https://reports.tiger-research.com/p/internet-capital-markets-2026-us-kor",
+      "publishedAt": "2026-06-18",
+      "summary": "암호화폐 시장은 기술적 실험 단계를 넘어 본격적인 산업화 과정에 진입했다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
       "lang": "ko"
     },
     {
@@ -1560,6 +1648,17 @@
       "lang": "ko"
     },
     {
+      "id": "tiger:tokenized-stocks-what-traditional-kor",
+      "source": "tiger",
+      "title": "주식 토큰화, 기존 전통 금융 거래소에서는 무엇을 잃는가?",
+      "url": "https://reports.tiger-research.com/p/tokenized-stocks-what-traditional-kor",
+      "publishedAt": "2026-05-22",
+      "summary": "2026년 5월 18일, 미국 증권거래위원회(SEC)가 이르면 이번 주 안에 주식 토큰화 거래를 허용하는 ‘혁신 면제’ 프레임워크를 공식 발표할 예정이라는 블룸버그 보도가 나왔다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "brokers:samsung-2026051810291443K_02_02",
       "source": "brokers",
       "title": "디지털 자산 Weekly: 미국 상원 은행위원회, Clarity Act 통과",
@@ -1668,6 +1767,17 @@
       "lang": "ko"
     },
     {
+      "id": "tiger:2026-know-your-agent-kor",
+      "source": "tiger",
+      "title": "2026 Know Your Agent: 에이전트 신원 인프라",
+      "url": "https://reports.tiger-research.com/p/2026-know-your-agent-kor",
+      "publishedAt": "2026-05-07",
+      "summary": "AI 에이전트 시대가 본격화되고 있습니다. 한편에서는 에이전트의 무분별한 생성과 활동을 우려하는 목소리도 커지고 있습니다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "brokers:kiwoom-rfBC1375",
       "source": "brokers",
       "title": "Digital Asset Monthly: 비트코인 중심의 디지털자산 시장",
@@ -1676,6 +1786,17 @@
       "summary": "키움증권 · 4월 비트코인은 비우호적인 매크로 여건 속에서도 반등.",
       "collectedAt": "2026-11-10T02:30:00+09:00",
       "pdf": true,
+      "lang": "ko"
+    },
+    {
+      "id": "kcmi:pub-6760",
+      "source": "kcmi",
+      "title": "미국 금융업권의 블록체인 활용 전략 차별화와 국내 시사점",
+      "url": "https://www.kcmi.re.kr/publications/pub_detail_view?syear=2026&zcd=002001016&zno=1912&cno=6760",
+      "publishedAt": "2026-05-04",
+      "summary": "최근 미국 자본시장에서 블록체인 기술은 단순한 가상자산 투자 영역을 넘어 금융 시스템 전반의 인프라로 자리잡고 있다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
       "lang": "ko"
     },
     {
@@ -1748,6 +1869,17 @@
       "url": "https://xangle.io/research/detail/2458",
       "publishedAt": "2026-04-22",
       "collectedAt": "2026-11-11T09:09:30+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "tiger:bitcoin-target-price-143000-2x-upside-kor",
+      "source": "tiger",
+      "title": "26년 2분기 비트코인 밸류에이션 리포트, $143,000 2배 간다",
+      "url": "https://reports.tiger-research.com/p/bitcoin-target-price-143000-2x-upside-kor",
+      "publishedAt": "2026-04-21",
+      "summary": "비트코인은 1분기 보고서 이후 약 27% 하락해 4월 초 평균 $70,500 수준에서 거래되고 있다. 전쟁이라는 변수가 있었으나 전체 매크로 환경은 여전히 비트코인에 우호적이다. 변한 것은 방향이 아니라 속도다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
       "lang": "ko"
     },
     {
@@ -1896,6 +2028,17 @@
       "lang": "ko"
     },
     {
+      "id": "kcmi:pub-6735",
+      "source": "kcmi",
+      "title": "디지털 위안화 2.0의 출범과 국경 간 결제 확대",
+      "url": "https://www.kcmi.re.kr/publications/pub_detail_view?syear=2026&zcd=002001016&zno=1905&cno=6735",
+      "publishedAt": "2026-03-23",
+      "summary": "□ 중국은 2026년부터 중앙은행 디지털화폐인 디지털 위안화를 디지털 현금에서 이자 지급형 예금화폐로 격상시키는 '디지털 위안화 2.0' 체계를 공식화",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "upbitcare:1080",
       "source": "upbitcare",
       "title": "[미국] 트럼프 대통령의 미국을 위한 사이버 전략 [번역본]",
@@ -1903,6 +2046,17 @@
       "publishedAt": "2026-03-17",
       "summary": "미국 백악관은 2026.3.6. ‘트럼프 대통령의 미국 사이버 전략’(President Trump’s Cyber Strategy for America)을 발표했습니다. 이번 사이버 전략은 사이버 공간에서 미국의 안보와 기술 우위를 유지하기 위한 새로운 정책 방향을 제시하는 것으로,",
       "collectedAt": "2026-11-10T02:30:00+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "tiger:what-ai-services-are-crypto-firms-kor",
+      "source": "tiger",
+      "title": "암호화폐 기업들은 어떤 AI 서비스를 제공하고 있는가?",
+      "url": "https://reports.tiger-research.com/p/what-ai-services-are-crypto-firms-kor",
+      "publishedAt": "2026-03-17",
+      "summary": "암호화폐 기업들이 FOMO에 떨고 있습니다. 거래소부터 보안 업체까지 AI 관련 서비스를 출시하고 있는데 이들이 왜 지금 이런 움직임을 보이는지 알아보겠습니다.",
+      "collectedAt": "2026-11-21T10:07:55+09:00",
+      "pdf": false,
       "lang": "ko"
     },
     {
@@ -2098,7 +2252,7 @@
       "lang": "ko"
     },
     {
-      "id": "kcmi:cno6703",
+      "id": "kcmi:pub-6703",
       "source": "kcmi",
       "title": "RWA 제도 사례 분석 1: BlackRock의 BUIDL",
       "url": "https://www.kcmi.re.kr/publications/pub_detail2_view?syear=2026&zcd=002001019&zno=1896&cno=6703",
@@ -2396,7 +2550,7 @@
       "pdf": false
     },
     {
-      "id": "kcmi:cno6661",
+      "id": "kcmi:pub-6661",
       "source": "kcmi",
       "title": "미국 비트코인 현물 ETF 제도 분석 (2)",
       "url": "https://www.kcmi.re.kr/publications/pub_detail2_view?syear=2025&zcd=002001019&zno=1885&cno=6661",
@@ -2437,7 +2591,7 @@
       "lang": "ko"
     },
     {
-      "id": "kcmi:cno6651",
+      "id": "kcmi:pub-6651",
       "source": "kcmi",
       "title": "2025년 소득세법 개정안에 따른 가상자산 소득 과세에 대한 소고",
       "url": "https://www.kcmi.re.kr/publications/pub_detail_view?syear=2025&zcd=002001016&zno=1881&cno=6651",
@@ -2771,7 +2925,7 @@
       "lang": "ko"
     },
     {
-      "id": "kcmi:cno6604",
+      "id": "kcmi:pub-6604",
       "source": "kcmi",
       "title": "스테이블코인의 도입과 이용자 보호",
       "url": "https://www.kcmi.re.kr/publications/pub_detail_view?syear=2025&zcd=002001016&zno=1867&cno=6604",
@@ -3179,7 +3333,7 @@
       "lang": "ko"
     },
     {
-      "id": "kcmi:cno6508",
+      "id": "kcmi:pub-6508",
       "source": "kcmi",
       "title": "트럼프행정부 스테이블코인 육성책에 대한 비판적 고찰",
       "url": "https://www.kcmi.re.kr/publications/pub_detail_view?syear=2025&zcd=002001016&zno=1837&cno=6508",
