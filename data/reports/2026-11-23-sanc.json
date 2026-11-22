@@ -1,0 +1,867 @@
+{
+  "id": "2026-11-23-sanc",
+  "date": "2026-11-23",
+  "slot": "new_listing",
+  "project": "Sanctum",
+  "ticker": "SANC",
+  "question": "1,862만 SOL을 맡아 두고도 Sanctum이 한 분기에 남기는 돈이 9,446 SOL에 그치는 이유는 무엇일까?",
+  "oneLiner": "Sanctum은 거래소·지갑·기업이 자기 이름을 붙인 솔라나 스테이킹 토큰을 발행할 수 있게 스테이킹 금고와 운영을 빌려주는 인프라이고, 맡겨진 SOL이 버는 보상의 대부분은 예치자에게 돌아가며 Sanctum은 보상의 수 퍼센트만 수수료로 떼어 파트너와 나눈다.",
+  "meta": {
+    "sector": "Liquid Staking Infrastructure · Solana",
+    "krwMarkets": [
+      "업비트 2026-11-13 (KRW·BTC·USDT)"
+    ],
+    "rank": "CoinGecko #639 · 시총 약 3,096만 달러 (2026-11-23)",
+    "launched": "Socean Stake 2021-09 · 2023-08 Sanctum으로 개명 · 토큰 CLOUD→SANC 명칭 변경 2026-10"
+  },
+  "tldr": [
+    "Sanctum이 3분기에 남긴 9,446 SOL은 맡겨진 SOL이 번 보상의 약 3%로 추산되며, 나머지 보상은 LST 보유자에게 간다.",
+    "파트너 LST는 보상의 기본 10%를 수수료로 떼고 그 절반을 파트너에게 돌려주는데, jupSOL처럼 수수료 0%로 계약한 대형 파트너가 있어 실제 몫은 더 작다.",
+    "이 돈은 Sanctum 금고에 쌓일 뿐 SANC로는 한 푼도 가지 않으므로, 팀이 '재량적'이라고 말한 바이백이 실제 집행되는지가 판단을 바꾸는 조건이다."
+  ],
+  "who": {
+    "lead": "Sanctum의 고객은 SOL을 맡기는 개인이 아니라, 자기 브랜드의 스테이킹 토큰을 갖고 싶은 거래소·지갑·기업이다.",
+    "glossary": [
+      {
+        "term": "파트너 LST",
+        "meaning": "jupSOL·bbSOL·dfdvSOL처럼 파트너가 이름을 붙이고 Sanctum이 운영하는 스테이킹 토큰. 1개가 맡긴 SOL과 쌓인 보상을 함께 나타내 가치가 매 에포크 오른다"
+      },
+      {
+        "term": "INF",
+        "meaning": "여러 LST를 한 바구니에 담은 공동 유동성 풀 Infinity의 지분 토큰. 바구니의 평균 스테이킹 수익과 교환 수수료를 받는다"
+      },
+      {
+        "term": "Reserve",
+        "meaning": "스테이킹 중인 SOL을 즉시 SOL로 바꿔 주는 Sanctum의 대기 SOL 금고. 바꿔 준 뒤 스스로 언스테이킹해 SOL을 채운다"
+      },
+      {
+        "term": "SANC",
+        "meaning": "옛 이름 CLOUD인 Sanctum의 거버넌스 토큰. 수수료 배분이나 스테이킹 보상은 현재 없다"
+      }
+    ],
+    "body": [
+      "솔라나에서 SOL을 그냥 스테이킹하면 보상은 받지만 그 SOL을 담보로 쓰거나 바로 팔 수는 없다. 그래서 스테이킹한 SOL을 대신 나타내는 토큰인 LST가 생겼고, Jito의 JitoSOL이나 Marinade의 mSOL처럼 운영사 한 곳이 토큰 하나를 내는 구조가 먼저 자리를 잡았다.",
+      "Sanctum은 이 구조를 뒤집어, 토큰을 내고 싶은 쪽이 누구든 자기 이름의 LST를 만들 수 있게 했다. Jupiter는 jupSOL로 자기 검증인에 스테이크를 모으고, Bybit은 bbSOL로 거래소 고객의 SOL을 묶어 두고, 상장사인 DeFi Development Corp와 Forward Industries는 dfdvSOL·fwdSOL로 회사가 보유한 SOL을 스테이킹한다. 이들이 Sanctum을 쓰는 이유는 스테이크 풀을 직접 배포·감사·운영하는 비용을 피하면서도 토큰의 이름과 검증인 선택권은 가져가기 때문이다.",
+      "일반 사용자는 Sanctum을 이름으로 알지 못한 채 쓴다. Jupiter에서 jupSOL을 사거나 Bybit에서 bbSOL을 받는 순간 그 SOL은 Sanctum의 스테이크 풀에 들어가고, 되팔 때는 Sanctum의 라우터·Infinity·Reserve가 교환을 처리한다. 2026년 9월 말 기준 이렇게 Sanctum을 거쳐 스테이킹된 SOL은 1,862만 SOL이다."
+    ]
+  },
+  "money": {
+    "lead": "맡긴 SOL은 전부 솔라나의 스테이크 풀 프로그램 아래 스테이크 계정에 묶여 있고, Sanctum은 그 보상에서 떼는 수수료와 교환 장치 세 개의 수수료만 가져간다.",
+    "overview": [
+      "온체인에는 LST 하나마다 스테이크 풀이 하나씩 있다. 예치자가 SOL을 넣으면 풀이 LST를 찍어 주고, 풀은 받은 SOL을 스테이크 계정으로 만들어 검증인에게 위임한다. 약 2일인 에포크가 끝날 때마다 검증인 보상이 스테이크 계정에 붙고, 그만큼 LST 1개가 나타내는 SOL 가치가 오른다. Sanctum이 쓰는 풀 프로그램은 Solana Labs의 스테이크 풀 프로그램을 포크한 것으로, Jito나 Blaze가 쓰는 것과 같은 뿌리다.",
+      "LST를 SOL로 되돌리는 길은 세 가지다. 라우터는 두 풀의 스테이크 계정을 맞바꿔 LST끼리 교환하고 수수료가 거의 없다. Infinity는 수십 종의 LST를 한 풀에 담아 두고 LST↔SOL, LST↔LST 교환을 받아 주며, 교환 수수료의 90%는 풀에 남아 INF 보유자 몫이 되고 10%가 Sanctum 몫이다. Reserve는 대기 중인 SOL을 갖고 있다가 스테이크 계정을 넘겨받고 SOL을 즉시 내주며, 남은 SOL이 적을수록 수수료가 0.1%에서 8%까지 오른다.",
+      "오프체인에는 운영 회사 Sanctum이 있다. 풀의 매니저 키를 쥐고 LST를 배포하고, 에포크마다 풀을 갱신하는 크랭크를 돌리고, 수수료를 거둬 파트너 몫을 보낸다. 프로그램 코드를 바꾸는 업그레이드 권한은 Sanctum 혼자가 아니라 Jupiter·Jito·Sol Strategies·Solblaze 등이 들어간 11인 멀티시그에 있고 다수결로 움직인다. 거둔 수수료는 Squads 멀티시그 금고에 쌓이며, 2026년 10월 23일 기준 금고는 스테이블코인 352만 달러와 SOL·LST 250만 달러로 602만 달러다."
+    ],
+    "userFlow": {
+      "title": "예치자: SOL을 맡기고 LST를 받아 되파는 과정",
+      "steps": [
+        {
+          "text": "SOL을 파트너 LST의 풀에 넣고 같은 가치의 LST를 받는다. 풀에 따라 입금 수수료가 붙을 수 있다.",
+          "detail": "SPL 스테이크 풀 프로그램의 DepositSol 명령이다. SOL은 먼저 풀의 reserve 스테이크 계정에 들어가고, Sanctum의 크랭크가 UpdateStakePool로 검증인별 스테이크 계정에 위임한다. jupSOL은 SOL 입금 수수료 0.1%, 스테이크 입금·출금 수수료 0%로 공시됐다. 라우터의 StakeWrappedSol을 거치면 라우터 수수료는 0이다."
+        },
+        {
+          "text": "에포크마다 보상이 풀에 쌓여 LST 1개의 SOL 가치가 오른다. 보상의 기본 10%는 수수료로 떼어진다.",
+          "detail": "에포크 수수료는 보상이 들어온 만큼의 LST를 새로 찍어 매니저 수수료 계정에 넣는 방식이라, 보유자는 자기 LST 가치가 수수료만큼 덜 오르는 것으로 체감한다. 문서상 기본값은 보상의 10%이고 파트너가 절반을 받기로 하면 Sanctum 몫은 5%다. jupSOL은 관리 수수료 0%로 계약했다. 파트너별 실제 수수료율은 각 풀 계정의 epoch_fee 필드에서 읽을 수 있다."
+        },
+        {
+          "text": "되팔 때는 라우터로 다른 LST로 바꾸거나, Infinity 풀에서 SOL로 교환하거나, Reserve에서 즉시 SOL을 받는다.",
+          "detail": "라우터 SwapViaStake는 두 풀이 공통 검증인을 가져야 작동하며 수수료는 WithdrawWrappedSol 1bp, DepositStake 10bp다. Infinity SwapExactIn은 LST별 입력·출력 수수료를 받고 90/10으로 풀과 프로토콜 금고에 나눈다. Reserve는 스테이크 계정의 staker·withdrawer 권한을 넘겨받고 SOL을 내주며 수수료는 풀 잔량에 따라 8~800bp다. 2026년 7월 10일 162,000 SOL 단건 언스테이크에서 1,651 SOL이 수수료로 나왔다."
+        },
+        {
+          "text": "풀에서 직접 출금하면 스테이크 계정을 돌려받고 다음 에포크에 해제돼 SOL이 되며, 출금 수수료 0.1%가 붙는다.",
+          "detail": "WithdrawStake·WithdrawSol 명령이다. Sanctum LST 공통으로 두 출금 모두 10bp 수수료가 공시돼 있다. 2026년 2분기에는 한 파트너 풀의 대량 출금으로 약 1,700 SOL의 일회성 출금 수수료가 Sanctum에 들어왔다."
+        },
+        {
+          "text": "SOL이나 LST를 Infinity에 넣고 INF를 받아 두면 바구니 평균 수익과 교환 수수료를 함께 받는다. 꺼낼 때 0.2%가 빠진다.",
+          "detail": "AddLiquidity는 수수료 0, RemoveLiquidity는 20bp다. 에포크 말에 목표치 이상의 SOL은 성과 좋은 LST로 스테이킹되고 부족하면 성과 낮은 LST가 언스테이킹된다. 3분기 INF 연환산 수익률은 5.68%로 LST 바스켓 평균 5.14%보다 높았다."
+        }
+      ]
+    },
+    "issuerFlow": {
+      "title": "파트너: 자기 이름의 LST를 만들고 수수료를 나누는 과정",
+      "steps": [
+        {
+          "text": "파트너가 토큰 민트를 만들고 동결 권한을 없앤 뒤, 발행 권한을 Sanctum의 매니저 키에 잠시 넘긴다.",
+          "detail": "metaboss create fungible --decimals 9로 민트를 만들고 spl-token authorize --disable로 freeze authority를 끈다. mint authority는 Sanctum이 관리하는 매니저 키 GRwm4EXMyVwtftQeTft7DZT3HBRxx439PrKq4oM6BwoZ로 옮긴다. 문서는 아직 수동 배포이며 비허가형 도구를 준비 중이라고 적는다."
+        },
+        {
+          "text": "이름·로고를 제출하고, 보상에서 떼는 10% 수수료의 절반을 받을지와 받을 지갑을 정한다.",
+          "detail": "설정 문서는 모든 Sanctum LST에 기본 10% 수수료가 붙고 파트너는 그 절반을 받을 수 있다고 적는다. 수익 공유를 택하면 솔라나 지갑 주소를 제출한다. 과거 자동 LST 안내에서는 5% 관리 수수료의 절반을 검증인에게 준다고 적혀 있어 문서 간 수치가 다르다. 2025년 2월의 자동 LST 제도는 폐지됐다."
+        },
+        {
+          "text": "Sanctum이 며칠 안에 스테이크 풀을 배포하고, 발행 권한을 풀로 넘겨 그 풀만 LST를 찍을 수 있게 한다.",
+          "detail": "배포 뒤 mint authority는 스테이크 풀 PDA로 이전된다. 풀의 manager는 Sanctum이 보유하며 문서는 이 권한이 자금을 빼갈 수는 없고 수수료만 올릴 수 있으며, 인상에는 상한과 사전 공지가 있다고 적는다. 검증인 구성은 파트너가 정한다. 예: jupSOL은 Jupiter 검증인 단일 위임."
+        },
+        {
+          "text": "에포크마다 Sanctum이 풀을 갱신해 보상을 반영하고, 수수료로 찍힌 LST에서 파트너 몫을 보낸다.",
+          "detail": "크랭크가 UpdateStakePool을 호출해 검증인 스테이크 계정 잔고를 집계하고 에포크 수수료를 LST로 발행한다. Sanctum 분기 보고서는 매출총이익을 '파트너 LST와 스테이킹 보상을 나눈 뒤 Sanctum이 남기는 몫'으로 정의한다. 파트너 몫 송금의 온체인 계정 구조는 문서에 없다."
+        },
+        {
+          "text": "파트너 LST는 자동으로 라우터와 Infinity에 연결돼 다른 LST나 SOL과 즉시 바꿀 수 있게 된다.",
+          "detail": "Infinity의 S 컨트롤러가 LST를 화이트리스트에 넣고 LST별 SOL 가치 계산 프로그램을 연결한다. Jupiter 통합은 배포 뒤 약 2~3일 걸린다. S 컨트롤러 관리자는 사고 시 풀 전체를 일시정지할 수 있다."
+        }
+      ]
+    },
+    "example": [
+      "가령 한 파트너 LST 풀에 100만 SOL이 맡겨져 있고 연 5.14%의 보상이 붙는다고 하자. 약 2일인 에포크 하나에 보상은 약 282 SOL이다. 기본 수수료 10%를 떼면 28 SOL이 수수료이고, 파트너가 절반을 받기로 했다면 14 SOL이 파트너, 14 SOL이 Sanctum 몫이다. 나머지 254 SOL은 LST 가치에 더해져 보유자에게 간다. 1년으로 늘리면 보상 5.14만 SOL 가운데 Sanctum 몫은 약 2,570 SOL이다.",
+      "실제 3분기 수치를 같은 틀에 넣어 보면 Sanctum 몫은 이보다 작다. 파트너 LST 잔고가 1,418만 SOL에서 1,626만 SOL로 늘어난 분기이므로 평균 약 1,522만 SOL에 바스켓 평균 수익률 5.14%를 92일 적용하면 보상은 약 19.7만 SOL로 추산된다. 같은 분기 스테이킹 부문 매출총이익은 6,146 SOL이니 보상의 약 3.1%다. 기본 조건대로면 5%가 돼야 하는데 jupSOL처럼 관리 수수료 0%로 계약한 대형 파트너가 섞여 있어 평균이 내려간 것으로 보인다. 공개정보 기반 추정이다."
+    ],
+    "mix": {
+      "asOf": "2026-09-30",
+      "source": "Sanctum Quarterly Report Q3 2026 (2026-10-23 발행) / DefiLlama · Sanctum Reserve (2026-10-25) / Sanctum Docs · Infinity·Reserve·Router",
+      "headers": [
+        "부문",
+        "하는 일",
+        "규모",
+        "3분기 매출총이익",
+        "수수료 규칙"
+      ],
+      "rows": [
+        [
+          "Stake + Validator Services (파트너 LST)",
+          "파트너 이름의 LST 발행·운영",
+          "1,626만 SOL (2026-10-01)",
+          "6,146 SOL · 54.4만 달러 (전분기 대비 SOL -29.4%)",
+          "보상의 기본 10%, 파트너와 절반 분배 · 출금 0.1%"
+        ],
+        [
+          "Reserve + Router",
+          "즉시 언스테이킹 · LST 간 교환",
+          "Reserve 6,359만 달러 (2026-10-25)",
+          "1,860 SOL · 14.8만 달러 (SOL +93.6%)",
+          "Reserve 0.1~8% 잔량 연동 · 라우터 0~10bp"
+        ],
+        [
+          "Infinity (INF)",
+          "다중 LST 유동성 풀",
+          "195만 SOL (2026-10-01)",
+          "1,441 SOL · 13.4만 달러 (SOL -11.1%)",
+          "교환 수수료 LST별 · 90% 풀 / 10% Sanctum · 출금 0.2%"
+        ],
+        [
+          "합계",
+          "",
+          "TVL 1,862만 SOL",
+          "9,446 SOL · 82.6만 달러 (SOL -16.3%)",
+          ""
+        ],
+        [
+          "금고 (2026-10-23)",
+          "Squads 멀티시그 vault",
+          "602만 달러",
+          "스테이블 352만 · SOL·LST 250만 달러",
+          "SANC 보유분·마켓메이커 대여분 제외"
+        ]
+      ]
+    },
+    "trust": [
+      "풀의 매니저 키는 Sanctum 한 곳이 쥔다. 문서는 이 키로 자금을 빼갈 수는 없고 수수료를 올릴 수만 있으며 인상에는 상한과 사전 공지가 있다고 적는다. 수수료가 오르면 그만큼 LST 가치 상승이 줄어 손실은 LST 보유자가 진다. 상한 수치와 공지 기간은 이번 실행에서 원문을 읽지 못했다.",
+      "프로그램 코드를 바꾸는 업그레이드 권한은 Jupiter·Jito·Sol Strategies·Solblaze·Sanctum 등 11인 멀티시그가 다수결로 쥔다. 멀티시그가 악의적이거나 잘못된 코드를 올리면 그 프로그램 아래 모든 파트너 LST의 1,626만 SOL이 영향을 받는다. 구성원 주소와 임계치는 공개 문서에 없고, Sanctum은 장기적으로 구성원을 늘린 뒤 프로그램을 동결하겠다고 적는다.",
+      "Infinity의 S 컨트롤러 관리자는 Sanctum이며 LST 추가·제외와 풀 전체 일시정지를 할 수 있다. 일시정지 중에는 INF 보유자가 출금하지 못한다. LST 가격은 외부 오라클이 아니라 각 스테이크 풀의 온체인 상태를 읽어 계산하므로, 어떤 풀이 잘못된 값을 보고하면 그 LST를 담은 INF 보유자가 손실을 본다.",
+      "Reserve의 즉시 언스테이킹은 Reserve에 남은 SOL에 달려 있다. 대량 출금이 몰려 SOL이 바닥나면 수수료가 8%까지 오르고 그마저 안 되면 사용자는 다음 에포크까지 기다려야 한다. Reserve에 SOL을 넣는 예치는 현재 일반 사용자에게 열려 있지 않다.",
+      "토큰 쪽에서는 커뮤니티 리저브만 퓨타키 투표로 쓸 수 있었고 2026년 10월 소각으로 사라졌다. 1.1억 개 이상인 전략 리저브는 팀이 재량으로 쓴다고 명시돼 있어, SANC 보유자가 투표로 막을 수 있는 돈은 남아 있지 않다."
+    ],
+    "security": [
+      "스테이크 풀 프로그램은 Solana Labs 원본의 감사를 그대로 이어받는다. Kudelski 2021년 7월 7일, Quantstamp 2021년 10월 22일, Neodyme 2022년 12월 10일, OtterSec 2023년 1월 20일, Halborn 2023년 12월 31일 보고서가 공개돼 있다. Sanctum이 포크한 뒤 바꾼 부분에 대한 별도 감사는 문서에 없다.",
+      "Infinity는 Neodyme·OtterSec·Sec3 세 곳의 감사 보고서를 공개하고 있으나 문서에 날짜가 없다. Reserve는 Sec3가 2023년 7월 24일에 감사했다. 라우터는 자산을 보관하지 않아 위험 자산이 없다고 문서는 적는다.",
+      "자금 손실 사고는 읽은 자료에서 확인되지 않았다. 2026년 1분기 Step Finance 해킹 자금이 Reserve를 거치며 낸 수수료 4,096 SOL은 Step 팀에 반환됐고 분기 수치에서 제외됐다. 2025년 10월 10일 급락 때 INF는 한 에포크에 연환산 26.12%의 수익을 냈는데, 이는 LST가 할인 가격에 쏟아지는 상황에서 Infinity 풀이 매수자 역할을 한 결과다."
+    ],
+    "body": [
+      "Jito와 Marinade는 운영사가 자기 LST 하나를 내고 검증인 선택도 운영사가 한다. Sanctum은 풀 프로그램과 운영은 공유하되 LST의 이름과 검증인 선택은 파트너에게 주고, 그 대신 모든 파트너 풀의 보상에서 조금씩 떼어 간다. 그래서 TVL이 1,862만 SOL로 솔라나 최대인데도 매출총이익은 Jito보다 작은 비율로 남고, 대형 파트너와의 수수료 협상이 이익을 좌우한다.",
+      "LST가 여러 개로 쪼개지면 각 LST의 유동성이 얕아지는 문제가 생기는데, Infinity와 라우터가 이를 메운다. 어떤 파트너 LST든 Infinity 풀이나 공통 검증인 경로로 SOL이나 다른 LST로 바뀌므로 파트너는 유동성 풀을 따로 만들 필요가 없다. 2026년 1월부터 9월까지 순유입은 Sanctum 약 +440만 SOL, Jito 약 -390만 SOL, Marinade 약 -120만 SOL로, 자금이 단일 LST에서 파트너 LST로 옮겨 가는 흐름이 분기 보고서에 DefiLlama 출처로 실려 있다."
+    ]
+  },
+  "usage": {
+    "lead": "맡겨진 SOL과 그 보상은 꾸준히 늘지만, Sanctum이 남기는 SOL은 1년 전 수준이고 SANC 보유자에게 가는 돈은 없다.",
+    "usageMetrics": [
+      {
+        "label": "스테이킹된 SOL (TVL)",
+        "value": "1,862만 SOL (2026-09-30) · 달러 환산 18.1억 달러는 2026-11-08 DefiLlama 기준",
+        "source": "Sanctum Quarterly Report Q3 2026 / DefiLlama · Sanctum",
+        "meaning": "파트너 LST·Infinity·Reserve를 거쳐 스테이킹된 SOL 총량이다. 12분기 연속 늘었고 전분기 1,664만 SOL에서 11.9% 증가했다. 달러 TVL은 SOL 가격 하락으로 30일 동안 13.1% 줄었다."
+      },
+      {
+        "label": "파트너 LST 순유입",
+        "value": "3분기 +183만 SOL, 그중 dfdvSOL +105만 · fwdSOL +72.4만 (2026-07-01~09-30)",
+        "source": "Sanctum Quarterly Report Q3 2026",
+        "meaning": "보상을 제외하고 새로 들어온 SOL이다. 97%가 상장사 두 곳의 재무용 LST에서 왔으므로, TVL 성장이 소매 수요가 아니라 소수 기업의 결정에 달려 있다."
+      },
+      {
+        "label": "Infinity 풀 규모",
+        "value": "195만 SOL (2026-10-01) · DefiLlama 달러 환산 2.26억 달러는 날짜 미표시",
+        "source": "Sanctum Quarterly Report Q3 2026 / DefiLlama · Sanctum Infinity",
+        "meaning": "LST 교환을 받아 주는 공동 풀의 크기다. 분기 중 3.1% 줄었고, 이 풀이 작아지면 파트너 LST를 SOL로 바꾸는 길이 좁아진다."
+      },
+      {
+        "label": "SANC 보유 지갑",
+        "value": "약 78,900개 (2026-11-13)",
+        "source": "Solana Compass · Upbit 상장 기사",
+        "meaning": "토큰을 가진 주소 수다. 2026년 9월 19일 약 79,216개에서 거의 변하지 않아, 업비트 상장 전까지 신규 보유자 유입이 거의 없었다."
+      }
+    ],
+    "revenueMetrics": [
+      {
+        "label": "3분기 매출총이익",
+        "value": "9,446 SOL · 82.6만 달러 (2026-07-01~09-30)",
+        "source": "Sanctum Quarterly Report Q3 2026",
+        "meaning": "파트너와 보상을 나눈 뒤 Sanctum이 남긴 몫이다. SOL 기준 전분기보다 16.3% 줄었는데, 전분기에 일회성 출금 수수료 약 1,700 SOL이 있었던 영향이다. 1년 전인 2025년 3분기 9,149 SOL과 비슷한 수준이다."
+      },
+      {
+        "label": "30일 수수료 vs 프로토콜 매출",
+        "value": "수수료 860만 달러 · 매출 29.7만 달러 (2026-11-08)",
+        "source": "DefiLlama · Sanctum",
+        "meaning": "DefiLlama의 수수료는 LST 보유자에게 간 스테이킹 보상까지 포함한 숫자이고, 매출은 Sanctum 몫만이다. 둘의 비율 3.4%가 이 글의 질문에 대한 또 하나의 답이다. 보유자 매출은 0달러로 기록된다."
+      },
+      {
+        "label": "금고",
+        "value": "602만 달러 · 스테이블 352만, SOL·LST 250만 (2026-10-23)",
+        "source": "Sanctum Quarterly Report Q3 2026",
+        "meaning": "Squads 멀티시그에 있는 운영 자금이다. SANC 보유분과 마켓메이커에게 빌려준 토큰은 제외한다. 2026년 7월 보고서의 584만 달러에서 18만 달러 늘었다."
+      },
+      {
+        "label": "2025년 연간 매출총이익",
+        "value": "580만 달러 (2025년, 2026-02-04 발표)",
+        "source": "Sanctum Blog · The Cloud Address Q4 2025",
+        "meaning": "2024년 179만 달러에서 3배 넘게 늘었고 회사는 2025년에 흑자였다고 밝힌다. 2026년은 3분기까지 분기 평균 97만 달러로 2025년보다 낮은 추세다."
+      }
+    ],
+    "valueQuestion": "Sanctum에 맡겨지는 SOL이 늘면 SANC 보유자에게도 돈이 돌아오나?",
+    "valueAnswer": [
+      "예치자가 받는 몫: LST 보유자는 스테이킹 보상에서 기본 10% 이내의 수수료를 뺀 나머지를 LST 가치 상승으로 받는다. INF 보유자는 여기에 교환 수수료의 90%를 더 받는다. 3분기 INF 연환산 수익률 5.68%가 그 결과다.",
+      "프로토콜에 남는 몫: 보상 수수료의 Sanctum 몫, Reserve·라우터 수수료 전부, Infinity 수수료의 10%가 매출총이익 9,446 SOL로 모여 Squads 금고에 쌓인다. 이 돈은 운영 회사의 것이며 2025년에는 비용을 빼고도 남았다.",
+      "SANC로 가는 몫: 현재 없다. DefiLlama는 보유자 매출을 0달러로 기록하고, 3분기 보고서는 바이백·수익 배분을 언급하지 않는다. 팀은 2026년 6월 22일 포럼에서 바이백은 안정적 매출과 토큰의 저평가가 전제돼야 하며 지금은 권하지 않는다고 썼고, 9월 2일 제안서에서도 프로그램형 바이백 대신 재량적 검토를 택했다. CLOUD 스테이킹 보상인 ASR도 2026년 7월 28일로 끝났다.",
+      "남은 연결 고리는 두 가지다. 하나는 거버넌스인데, 투표로 쓸 수 있던 커뮤니티 리저브가 소각돼 투표 대상이 되는 자산이 사실상 없어졌다. 다른 하나는 IR 페이지의 문구로, 회사가 인수될 경우 토큰을 남겨두지 않겠다고 적지만 구체적 조건은 없다. 시총 3,096만 달러는 3분기 매출총이익을 연환산한 약 330만 달러의 9배 수준이라는 계산이 가능하지만, 그 이익이 토큰으로 가는 경로가 없으니 이 배수는 참고치일 뿐이다."
+    ],
+    "policies": [
+      {
+        "name": "CLOUD-007 · 마지막 ASR 1,500만 개 분배 후 스테이킹 보상 종료",
+        "approved": "MetaDAO 퓨타키 투표 통과 (2026년 8월, 포럼 표기 PASSED)",
+        "executed": "집행 — 2025년 8월 24일~2026년 7월 28일 스테이킹분에 비례해 1,500만 SANC 분배 완료, 이후 신규 발행 없음 (3분기 보고서)",
+        "note": "2025년 6월 투명성 보고서에서 미래 분배로 잡혀 있던 1,500만 개가 이것이다."
+      },
+      {
+        "name": "CLOUD-008 · 커뮤니티 리저브 2.59억 개 소각",
+        "approved": "2026년 9월 2일 제안, 9월 16일부터 72시간 MetaDAO 퓨타키 투표, 9월 19일 통과",
+        "executed": "집행 — 2026년 10월 6일 02:43 UTC 슬롯 453,770,313에서 Community Cold Multisig가 Squads로 2.5억 개 소각, 총공급 10억 → 7억 4,067만 8,163개 (3분기 보고서·Solscan 보도)",
+        "note": "소각 총량 2억 5,932만 개 중 연결된 거래로 확인된 것은 2.5억 개이고 나머지 약 930만 개의 거래는 보도에 없다. 티커 변경은 투표 대상이 아니었고 메타데이터만 바꿨다."
+      },
+      {
+        "name": "바이백 · 수익 배분",
+        "approved": "승인된 정책 없음",
+        "executed": "집행 없음 — 팀은 '재량적으로 검토', '지금은 권하지 않음'이라는 입장 (2026년 6월 22일, 9월 2일 포럼)",
+        "note": "2026년 1월 포럼의 '매출 기반 바이백·스테이킹' 제안은 토론 단계에 머물렀다."
+      }
+    ],
+    "tokenomics": {
+      "circulating": "유통 4.95억 / 총공급 7.41억 개로 유통률 약 66.9%, 최대 공급 표기는 10억 (CoinGecko 2026년 11월 23일 기준)",
+      "nextUnlock": "팀 2.5억·투자자 1.3억 개가 2025년 7월부터 24개월 선형 해제 중이라 2027년 7월까지 매달 약 1,583만 개로 추산된다. 계산 기준은 3.8억 ÷ 24이며 2025년 6월 투명성 보고서의 일정이다. 보도는 2026년 9월 기준 잔여 베스팅 약 1.056억 개로 적어 수치 차이가 있다",
+      "valuePath": "현재 토큰으로 가는 현금 경로는 없다. 소각으로 공급만 줄었고 바이백·수익 배분·스테이킹 보상은 모두 없거나 끝났다",
+      "valueCapture": "none"
+    }
+  },
+  "risks": {
+    "lead": "TVL이 늘어도 Sanctum 몫이 따라 늘지 않는 구조, 소수 파트너 의존, 그리고 토큰과 이익 사이의 끊어진 연결이 이 글의 답을 흔들 수 있는 세 축이다.",
+    "items": [
+      {
+        "risk": "대형 파트너의 수수료 협상력",
+        "why": "jupSOL처럼 관리 수수료 0%로 계약한 파트너가 늘면 TVL이 커져도 Sanctum 몫은 늘지 않는다. 3분기에 파트너 LST 잔고가 15% 늘었는데 스테이킹 매출총이익은 SOL 기준 29% 줄어든 것이 이 위험의 현재 모습이다. 손실은 금고 성장을 기대한 SANC 보유자가 본다.",
+        "indicator": "분기 스테이킹 매출총이익 SOL ÷ 파트너 LST 평균 잔고. 3분기 약 0.04%(6,146 ÷ 1,522만)에서 더 내려가면 수수료 0% 파트너 비중이 커진 것이다."
+      },
+      {
+        "risk": "소수 기업 파트너 의존",
+        "why": "3분기 순유입의 97%가 dfdvSOL·fwdSOL 두 상장사 재무용 LST에서 왔다. 이들이 재무 전략을 바꿔 한꺼번에 언스테이킹하면 TVL이 급감하고, Reserve의 SOL이 바닥나면 다른 LST 보유자도 즉시 출금이 막힌다.",
+        "indicator": "파트너별 LST 잔고 비중과 Reserve 잔량. 상위 두 LST 비중이 늘거나 Reserve 수수료가 0.1%를 넘어 올라가는 날이 잦아지면 위험이 커진다."
+      },
+      {
+        "risk": "매니저 키와 업그레이드 멀티시그",
+        "why": "매니저 키는 Sanctum 혼자 쥐고 수수료를 올릴 수 있으며, 11인 멀티시그는 다수결로 프로그램 코드를 바꿀 수 있다. 수수료 인상은 LST 보유자의 수익을, 잘못된 업그레이드는 1,626만 SOL 전체를 위험에 노출시킨다. 구성원 주소와 임계치가 공개되지 않아 외부에서 검증할 수 없다.",
+        "indicator": "각 풀 계정의 epoch_fee 변경 공지와 스테이크 풀 프로그램의 upgrade authority 주소 공개 여부. 멀티시그 구성·임계치가 문서에 실리거나 프로그램이 동결되면 위험이 줄어든다."
+      },
+      {
+        "risk": "SOL 가격과 네트워크 수익률 하락",
+        "why": "Sanctum 매출총이익은 SOL로 들어오고 비용은 달러로 나간다. 2026년 2분기에는 SOL 기준 매출총이익이 1% 줄었을 뿐인데 달러 기준으로는 26% 줄었고, SIMD-207·256 같은 프로토콜 변경으로 LST 수익률 자체도 내려갔다. 수익률이 내려가면 같은 TVL에서 떼는 수수료도 줄어든다.",
+        "indicator": "LST 바스켓 평균 APY와 SOL 달러 가격. 3분기 5.14%였던 바스켓 APY가 4%대로 내려가면 분기 매출총이익 SOL도 비례해 줄어든다."
+      },
+      {
+        "risk": "언락 물량 대비 매수 수요 부재",
+        "why": "매달 약 1,583만 개로 추산되는 팀·투자자 물량이 2027년 7월까지 풀리는데, 이를 받아 줄 바이백이나 배분 수요는 없다. 팀은 시장 매도를 하지 않았다고 밝혔지만 투자자 매도는 막을 수 없고, 업비트 상장 직후 2배 넘게 오른 가격이 그 물량을 받아 내지 못하면 손실은 신규 매수자가 본다.",
+        "indicator": "투자자 대시보드의 언락 일정과 유통량 변화, 그리고 바이백 승인 여부. 유통량이 월 1,500만 개 안팎으로 늘면서 바이백 결의가 없으면 위험이 그대로다."
+      }
+    ]
+  },
+  "watchlist": [
+    {
+      "indicator": "분기 스테이킹 매출총이익 SOL ÷ 파트너 LST 잔고",
+      "why": "Sanctum이 보상에서 실제로 떼는 비율이 유지되는지 보여 준다. 이 비율이 이 글의 질문에 대한 답이다.",
+      "signal": "3분기 약 0.04%에서 더 내려가면 수수료 0% 계약이 늘어난 것이고, 0.05% 위로 올라오면 기본 수수료를 내는 파트너가 늘어난 것이다."
+    },
+    {
+      "indicator": "상위 2개 파트너 LST의 잔고 비중",
+      "why": "dfdvSOL·fwdSOL 두 상장사가 유입의 97%를 만들었다. 이 둘의 움직임이 TVL과 Reserve 유동성을 함께 흔든다.",
+      "signal": "두 LST 잔고가 한 분기에 10% 이상 줄거나, 같은 기간 Reserve 수수료가 1% 위로 올라가는 날이 생기면 대량 출금이 시작된 것이다."
+    },
+    {
+      "indicator": "바이백 또는 수익 배분 제안의 포럼 등재와 MetaDAO 투표",
+      "why": "현재 SANC로 가는 현금 경로가 없으므로, 이 정책 하나가 토큰 판단을 바꾸는 유일한 조건이다.",
+      "signal": "팀이 포럼에 바이백 금액·주기를 적은 제안을 올리고 금고에서 실제 매입 거래가 나오면 valueCapture가 바뀐다. 제안만 있고 집행이 없으면 바뀌지 않는다."
+    },
+    {
+      "indicator": "월간 유통량 증가 vs 금고 잔액",
+      "why": "매달 약 1,583만 개로 추산되는 해제 물량이 2027년 7월까지 이어진다. 금고가 늘지 않으면 이를 흡수할 수단이 없다.",
+      "signal": "CoinGecko 유통량이 월 1,500만 개 안팎으로 늘고 금고가 600만 달러 선에서 정체되면 공급 압력이 그대로 시장에 간다."
+    },
+    {
+      "indicator": "LST 바스켓 평균 APY와 SOL 가격",
+      "why": "매출총이익은 SOL 수량에 수익률을 곱한 값이고, 달러 환산은 SOL 가격을 다시 곱한다. 두 변수 모두 Sanctum이 통제하지 못한다.",
+      "signal": "바스켓 APY가 4%대로 내려가거나 SOL이 분기 평균 80달러 아래로 가면 분기 매출총이익 달러가 2분기의 88만 달러 아래로 내려간다."
+    }
+  ],
+  "verdict": "Sanctum이 1,862만 SOL을 맡아 두고도 한 분기에 9,446 SOL만 남기는 이유는 보상의 90% 이상이 LST 보유자에게 가고, 남은 수수료도 파트너와 절반씩 나누며, 가장 큰 파트너들은 수수료 0%로 계약했기 때문이다. 그 9,446 SOL은 운영 회사의 금고로 가고 SANC 보유자에게는 소각으로 줄어든 공급 외에 돌아오는 것이 없다. 팀이 재량적이라고 말한 바이백이 금액과 주기를 정한 제안으로 올라와 금고에서 실제 매입이 집행되면 이 판단은 바뀐다.",
+  "sources": [
+    {
+      "title": "Sanctum Quarterly Report Q3 2026 (Markdown, 2026-10-23 발행)",
+      "url": "https://sanctum.so/quarterly/2026q3.md",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Quarterly – 보고서 목록",
+      "url": "https://sanctum.so/quarterly",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Docs – Sanctum LSTs (스테이크 풀 프로그램·수수료·멀티시그)",
+      "url": "https://learn.sanctum.so/docs/technical-documentation/sanctum-lsts",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Docs – Infinity (Technical)",
+      "url": "https://learn.sanctum.so/docs/technical-documentation/infinity",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Docs – Infinity (Non-Technical)",
+      "url": "https://learn.sanctum.so/docs/technical-documentation/infinity-non-technical",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Docs – Sanctum Reserve",
+      "url": "https://learn.sanctum.so/docs/technical-documentation/reserve",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Docs – Router",
+      "url": "https://learn.sanctum.so/docs/technical-documentation/router",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Docs – Setting up an LST with Sanctum",
+      "url": "https://learn.sanctum.so/docs/sanctum-lsts/setting-up-an-lst-with-sanctum",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Docs – Creating the token mint",
+      "url": "https://learn.sanctum.so/docs/sanctum-lsts/setting-up-an-lst-with-sanctum/1.-creating-the-token-mint",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Research – CLOUD-008: Should Sanctum burn 1/4 of total CLOUD supply? (2026-09-02)",
+      "url": "https://research.sanctum.so/t/cloud-008-should-sanctum-burn-1-4-of-total-cloud-supply/2001",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Research – Tokenomics Refresh & Long-Term Alignment (2026-01-19, 팀 답변 2026-06-22)",
+      "url": "https://research.sanctum.so/t/tokenomics-refresh-long-term-alignment/1934",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Blog – Every CLOUD Spoken For: Transparency Report (2025-06-24)",
+      "url": "https://sanctum.so/blog/cloud-audit",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Blog – The Cloud Address Q4 2025 (2026-02-04)",
+      "url": "https://sanctum.so/blog/the-cloud-address-q4-2025",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Blog – Introducing jupSOL (2024-04-16)",
+      "url": "https://sanctum.so/blog/introducing-jupsol-liquid-staking-token-by-jupiter",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Blog – Sanctum Automated LSTs: A Validator's Guide (2025-02-12, 폐지 표기)",
+      "url": "https://sanctum.so/blog/sanctum-automated-lst",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Sanctum Investor Relations (값은 스크립트로 로드돼 읽지 못함)",
+      "url": "https://investors.sanctum.so/",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "DefiLlama – Sanctum",
+      "url": "https://defillama.com/protocol/sanctum",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "DefiLlama – Sanctum Validator LSTs",
+      "url": "https://defillama.com/protocol/sanctum-validator-lsts",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "DefiLlama – Sanctum Infinity",
+      "url": "https://defillama.com/protocol/sanctum-infinity",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "DefiLlama – Sanctum Reserve",
+      "url": "https://defillama.com/protocol/sanctum-reserve",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "CoinGecko – Sanctum (SANC)",
+      "url": "https://www.coingecko.com/en/coins/cloud",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Solana Compass – Sanctum CLOUD-008 Vote Passes (2026-09-19)",
+      "url": "https://solanacompass.com/news/sanctum-governance-vote-passes-259m-cloud-tokens-to-be-burned-ticker-renames-to-sanc",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Solana Compass – Sanctum CLOUD Burn Executed (2026-10-07)",
+      "url": "https://solanacompass.com/news/sanctum-burns-its-cloud-community-reserve-cutting-token-supply-to-7407-million-as-sanc-ticker-appears",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Solana Compass – Upbit Lists Sanctum's SANC (2026-11-13)",
+      "url": "https://solanacompass.com/news/upbit-lists-sanctums-sanc-on-krw-btc-and-usdt-markets-as-the-former-cloud-token-doubles-on-solana",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Solana Compass – Sanctum project page",
+      "url": "https://solanacompass.com/projects/sanctum",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Solana Horizon – Sanctum Q2 2026 Investor Update (2026-07-20)",
+      "url": "https://www.solanahorizon.com/sanctum-releases-q2-2026-investor-update-highlighting-sol-tvl-growth-and-app-rollout/",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "디지털투데이 – 업비트, 솔라나 유동성 스테이킹 프로젝트 생텀 거래지원 개시 (2026-11-13)",
+      "url": "https://www.digitaltoday.co.kr/disclosure/articleView.html?idxno=715317",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "디지털애셋 – 업비트, SANC(생텀) 상장 (2026-11-13)",
+      "url": "https://www.digitalasset.works/news/articleView.html?idxno=44282",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "ChainCatcher – UPBIT launches Sanctum SANC (2026-11-13)",
+      "url": "https://www.chaincatcher.com/en/article/2304368",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "KuCoin News – Sanctum Q3 2026 commentary (2026-10-30)",
+      "url": "https://www.kucoin.com/news/insight/SOL/6ae4b657bbcb52000745309e",
+      "accessed": "2026-11-23"
+    }
+  ],
+  "terms": [
+    {
+      "term": "스테이크 풀 프로그램",
+      "key": "stake-pool-program",
+      "aliases": [
+        "스테이크 풀",
+        "SPL 스테이크 풀",
+        "stake pool",
+        "SPL Stake Pool",
+        "SanctumSPL"
+      ],
+      "meaning": "여러 사람의 SOL을 모아 검증인에게 위임하고 그 지분을 토큰으로 발행하는 솔라나 표준 프로그램",
+      "role": "Sanctum의 모든 파트너 LST는 Solana Labs 스테이크 풀 프로그램을 포크한 Sanctum 버전 위에 풀 하나씩으로 만들어진다. 예치자의 SOL은 이 풀의 스테이크 계정에 묶이고, 보상의 기본 10%가 에포크 수수료로 떼어진다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Docs – Sanctum LSTs",
+          "url": "https://learn.sanctum.so/docs/technical-documentation/sanctum-lsts"
+        }
+      ]
+    },
+    {
+      "term": "스테이크 계정",
+      "key": "stake-account",
+      "aliases": [
+        "stake account",
+        "스테이크계정"
+      ],
+      "meaning": "솔라나에서 SOL을 특정 검증인에게 위임해 두는 계정으로, staker와 withdrawer 권한이 따로 있다",
+      "role": "파트너 LST 풀이 받은 SOL은 검증인별 스테이크 계정으로 위임된다. Reserve는 이 계정의 staker·withdrawer 권한을 넘겨받는 대가로 SOL을 즉시 내주고, 라우터는 두 풀의 스테이크 계정을 맞바꿔 LST를 교환한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Docs – Sanctum Reserve",
+          "url": "https://learn.sanctum.so/docs/technical-documentation/reserve"
+        },
+        {
+          "title": "Sanctum Docs – Router",
+          "url": "https://learn.sanctum.so/docs/technical-documentation/router"
+        }
+      ]
+    },
+    {
+      "term": "에포크",
+      "key": "epoch",
+      "aliases": [
+        "epoch",
+        "에폭"
+      ],
+      "meaning": "솔라나에서 스테이킹 보상이 정산되고 위임 변경이 반영되는 약 2일 단위의 기간",
+      "role": "파트너 LST의 가치는 에포크마다 보상이 붙으며 오르고, 수수료도 이때 LST로 발행된다. 풀에서 직접 출금하면 다음 에포크에 SOL이 되고, Reserve는 넘겨받은 스테이크를 에포크 말에 회수한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Docs – Infinity (Non-Technical)",
+          "url": "https://learn.sanctum.so/docs/technical-documentation/infinity-non-technical"
+        }
+      ]
+    },
+    {
+      "term": "에포크 수수료",
+      "key": "epoch-fee",
+      "aliases": [
+        "epoch fee",
+        "관리 수수료",
+        "management fee",
+        "yield fee"
+      ],
+      "meaning": "스테이크 풀이 매 에포크 들어온 보상 중 일정 비율을 풀 토큰으로 찍어 운영자에게 주는 수수료",
+      "role": "Sanctum LST의 기본값은 보상의 10%이고 파트너가 절반을 받을 수 있어 Sanctum 몫은 5%다. jupSOL은 0%로 계약했다. 이 수수료가 Sanctum 스테이킹 부문 매출총이익 6,146 SOL의 원천이다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Docs – Setting up an LST with Sanctum",
+          "url": "https://learn.sanctum.so/docs/sanctum-lsts/setting-up-an-lst-with-sanctum"
+        },
+        {
+          "title": "Sanctum Blog – Introducing jupSOL",
+          "url": "https://sanctum.so/blog/introducing-jupsol-liquid-staking-token-by-jupiter"
+        }
+      ]
+    },
+    {
+      "term": "매니저 키",
+      "key": "manager-key",
+      "aliases": [
+        "manager key",
+        "매니저 권한",
+        "manager"
+      ],
+      "meaning": "스테이크 풀의 수수료와 운영 권한을 쥔 관리자 키로, 자금 인출 권한은 없다",
+      "role": "Sanctum이 GRwm4EXMyVwtftQeTft7DZT3HBRxx439PrKq4oM6BwoZ 주소로 모든 파트너 LST 풀의 매니저를 맡는다. LST 배포 때 민트 권한을 잠시 받아 두고, 운영 중에는 수수료를 올릴 수 있으나 상한과 사전 공지 제한이 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Docs – Creating the token mint",
+          "url": "https://learn.sanctum.so/docs/sanctum-lsts/setting-up-an-lst-with-sanctum/1.-creating-the-token-mint"
+        },
+        {
+          "title": "Sanctum Docs – Sanctum LSTs",
+          "url": "https://learn.sanctum.so/docs/technical-documentation/sanctum-lsts"
+        }
+      ]
+    },
+    {
+      "term": "멀티시그",
+      "key": "multisig",
+      "aliases": [
+        "multisig",
+        "다중서명",
+        "Squads"
+      ],
+      "meaning": "여러 서명자 중 정해진 수가 동의해야 거래가 실행되는 지갑",
+      "role": "스테이크 풀 프로그램의 업그레이드 권한은 Jupiter·Jito·Sol Strategies·Solblaze·Sanctum 등 11인 멀티시그가 다수결로 쥔다. 금고와 커뮤니티 리저브는 Squads 멀티시그에 있고, 2026년 10월 6일 소각도 Community Cold Multisig가 실행했다. 구성원 주소와 임계치는 공개돼 있지 않다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Docs – Sanctum LSTs",
+          "url": "https://learn.sanctum.so/docs/technical-documentation/sanctum-lsts"
+        },
+        {
+          "title": "Solana Compass – Sanctum CLOUD Burn Executed",
+          "url": "https://solanacompass.com/news/sanctum-burns-its-cloud-community-reserve-cutting-token-supply-to-7407-million-as-sanc-ticker-appears"
+        }
+      ]
+    },
+    {
+      "term": "S 컨트롤러",
+      "key": "s-controller",
+      "aliases": [
+        "S Controller",
+        "S컨트롤러",
+        "에스 컨트롤러"
+      ],
+      "meaning": "Infinity 풀의 예치·교환·출금과 LST 화이트리스트, 일시정지를 맡는 핵심 프로그램",
+      "role": "프로그램 ID 5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx로, INF의 발행 권한과 LST 보유 계정의 소유자다. 각 LST의 SOL 가치를 계산 프로그램으로 읽어 교환 비율을 정하고, 관리자인 Sanctum은 사고 시 풀 전체를 멈출 수 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Docs – Infinity (Technical)",
+          "url": "https://learn.sanctum.so/docs/technical-documentation/infinity"
+        }
+      ]
+    },
+    {
+      "term": "라우터",
+      "key": "router",
+      "aliases": [
+        "Router",
+        "Sanctum Router"
+      ],
+      "meaning": "서로 다른 스테이크 풀 사이에서 스테이크 계정을 옮겨 토큰을 교환해 주는 중계 프로그램",
+      "role": "Sanctum 라우터는 두 풀이 공통 검증인을 가질 때 스테이크 계정을 맞바꿔 LST 간 교환을 처리하고 Jupiter에 AMM처럼 연결돼 있다. 자산을 보관하지 않으며 수수료는 0~10bp다. Reserve와 함께 쓰면 즉시 SOL을 받을 수 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Docs – Router",
+          "url": "https://learn.sanctum.so/docs/technical-documentation/router"
+        }
+      ]
+    },
+    {
+      "term": "크랭크",
+      "key": "crank",
+      "aliases": [
+        "crank",
+        "크랭크 봇"
+      ],
+      "meaning": "온체인 프로그램이 스스로 실행하지 못하는 정기 갱신 작업을 외부에서 호출해 주는 자동 봇",
+      "role": "Sanctum의 크랭크가 에포크마다 각 파트너 LST 풀을 갱신해 보상을 반영하고 수수료를 발행하며, 들어온 SOL을 검증인에게 위임한다. jupSOL 출시 글은 Sanctum이 이 크랭크를 운영한다고 적는다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Blog – Introducing jupSOL",
+          "url": "https://sanctum.so/blog/introducing-jupsol-liquid-staking-token-by-jupiter"
+        }
+      ]
+    },
+    {
+      "term": "퓨타키",
+      "key": "futarchy",
+      "aliases": [
+        "futarchy",
+        "퓨타르키",
+        "MetaDAO 투표",
+        "MetaDAO"
+      ],
+      "meaning": "제안이 통과했을 때와 부결됐을 때의 토큰 가격을 조건부 시장에서 거래해 결과를 정하는 의사결정 방식",
+      "role": "Sanctum의 CLOUD-007·CLOUD-008은 MetaDAO의 퓨타키 시장에서 72시간 거래로 결정됐다. 2026년 9월 19일 통과한 CLOUD-008이 커뮤니티 리저브 소각을 승인했다. 조건부 시장의 가격·거래량은 이번 실행에서 읽지 못했다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Solana Compass – Sanctum CLOUD-008 Vote Passes",
+          "url": "https://solanacompass.com/news/sanctum-governance-vote-passes-259m-cloud-tokens-to-be-burned-ticker-renames-to-sanc"
+        },
+        {
+          "title": "Sanctum Research – CLOUD-008",
+          "url": "https://research.sanctum.so/t/cloud-008-should-sanctum-burn-1-4-of-total-cloud-supply/2001"
+        }
+      ]
+    },
+    {
+      "term": "커뮤니티 리저브",
+      "key": "community-reserve",
+      "aliases": [
+        "Community Reserve",
+        "커뮤니티 예비분"
+      ],
+      "meaning": "토큰 발행량 중 거버넌스 투표로만 쓸 수 있게 따로 잠가 둔 몫",
+      "role": "SANC의 커뮤니티 리저브는 약 3.07억 개로 출발해 ASR 4,500만 개와 Kamino 인센티브 약 300만 개만 쓰였고, 남은 2억 5,932만 개가 2026년 10월 6일 소각됐다. 이 소각으로 보유자가 투표로 움직일 수 있는 자산이 사실상 없어졌다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Research – CLOUD-008",
+          "url": "https://research.sanctum.so/t/cloud-008-should-sanctum-burn-1-4-of-total-cloud-supply/2001"
+        },
+        {
+          "title": "Sanctum Quarterly Report Q3 2026",
+          "url": "https://sanctum.so/quarterly/2026q3.md"
+        }
+      ]
+    },
+    {
+      "term": "전략 리저브",
+      "key": "strategic-reserve",
+      "aliases": [
+        "Strategic Reserve",
+        "팀 리저브",
+        "Team Reserve"
+      ],
+      "meaning": "팀이 재량으로 보상·보조금에 쓰는 토큰 예비분",
+      "role": "SANC의 전략 리저브는 1.1억 개로 배정됐고 제안서 시점에 그 이상이 남아 있다. 팀은 창업자·직원 보상용 리프레셔 그랜트에 쓰고 '적절히 판단해 쓸 권리'를 갖는다고 적어, 거버넌스 투표 대상이 아니다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Research – CLOUD-008",
+          "url": "https://research.sanctum.so/t/cloud-008-should-sanctum-burn-1-4-of-total-cloud-supply/2001"
+        },
+        {
+          "title": "Sanctum Blog – Every CLOUD Spoken For",
+          "url": "https://sanctum.so/blog/cloud-audit"
+        }
+      ]
+    },
+    {
+      "term": "ASR",
+      "key": "active-staking-rewards",
+      "aliases": [
+        "Active Staking Rewards",
+        "액티브 스테이킹 리워드",
+        "스테이킹 보상 ASR"
+      ],
+      "meaning": "거버넌스 토큰을 스테이킹하고 투표에 참여한 보유자에게 토큰을 추가 지급하는 제도",
+      "role": "CLOUD 보유자가 받던 유일한 토큰 보상으로, CLOUD-007로 마지막 1,500만 개를 나눈 뒤 2026년 7월 28일 종료됐다. 이후 SANC 보유에 따른 보상은 없다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Sanctum Quarterly Report Q3 2026",
+          "url": "https://sanctum.so/quarterly/2026q3.md"
+        },
+        {
+          "title": "Sanctum Research – Tokenomics Refresh",
+          "url": "https://research.sanctum.so/t/tokenomics-refresh-long-term-alignment/1934"
+        }
+      ]
+    },
+    {
+      "term": "매출총이익",
+      "key": "gross-profit",
+      "aliases": [
+        "gross profit",
+        "프로토콜 매출총이익"
+      ],
+      "meaning": "매출에서 직접 나눠 주는 몫을 뺀 뒤 회사에 남는 이익",
+      "role": "Sanctum 분기 보고서는 파트너 LST와 스테이킹 보상을 나눈 뒤 Sanctum이 남기는 몫으로 정의하며, 3분기 9,446 SOL이 이 값이다. DefiLlama의 'revenue'와 같은 개념이다.",
+      "inline": false,
+      "sources": [
+        {
+          "title": "Sanctum Quarterly Report Q3 2026",
+          "url": "https://sanctum.so/quarterly/2026q3.md"
+        }
+      ]
+    },
+    {
+      "term": "LST",
+      "key": "lst",
+      "aliases": [
+        "Liquid Staking Token",
+        "유동성 스테이킹 토큰",
+        "리퀴드 스테이킹 토큰"
+      ],
+      "meaning": "스테이킹된 코인과 그 보상에 대한 청구권을 나타내 거래·담보로 쓸 수 있게 한 토큰",
+      "inline": false,
+      "sources": [
+        {
+          "title": "Sanctum Docs – Infinity (Non-Technical)",
+          "url": "https://learn.sanctum.so/docs/technical-documentation/infinity-non-technical"
+        }
+      ]
+    },
+    {
+      "term": "TVL",
+      "key": "tvl",
+      "aliases": [
+        "Total Value Locked",
+        "총 예치 자산"
+      ],
+      "meaning": "프로토콜의 계약에 맡겨진 자산의 총액",
+      "inline": false,
+      "sources": [
+        {
+          "title": "DefiLlama – Sanctum",
+          "url": "https://defillama.com/protocol/sanctum"
+        }
+      ]
+    },
+    {
+      "term": "APY",
+      "key": "apy",
+      "aliases": [
+        "연환산 수익률",
+        "annual percentage yield"
+      ],
+      "meaning": "복리를 반영해 1년 기준으로 환산한 수익률",
+      "inline": false,
+      "sources": [
+        {
+          "title": "Sanctum Quarterly Report Q3 2026",
+          "url": "https://sanctum.so/quarterly/2026q3.md"
+        }
+      ]
+    },
+    {
+      "term": "DAT",
+      "key": "digital-asset-treasury",
+      "aliases": [
+        "디지털자산 재무회사",
+        "digital asset treasury",
+        "재무용 LST"
+      ],
+      "meaning": "회사 자금으로 코인을 사서 재무 자산으로 보유하는 상장사",
+      "role": "DeFi Development Corp의 dfdvSOL과 Forward Industries의 fwdSOL이 이런 회사가 보유 SOL을 스테이킹하기 위해 만든 파트너 LST다. 3분기 Sanctum 순유입의 97%가 이 둘에서 왔다.",
+      "inline": false,
+      "sources": [
+        {
+          "title": "Sanctum Quarterly Report Q3 2026",
+          "url": "https://sanctum.so/quarterly/2026q3.md"
+        }
+      ]
+    }
+  ],
+  "openItems": [
+    {
+      "item": "스테이크 풀 프로그램 업그레이드 멀티시그의 11인 구성원 주소와 서명 임계치",
+      "status": "미공시",
+      "tried": "Sanctum 기술 문서 Sanctum LSTs 페이지와 Solana Compass 프로젝트 페이지를 읽었다. 문서는 Jupiter·Jito·Sol Strategies·Solblaze·Sanctum 등 11인과 '다수결'만 적고 주소는 없다.",
+      "howToVerify": "Sanctum 포크 스테이크 풀 프로그램의 upgrade authority 주소를 익스플로러에서 읽고, 그 Squads 멀티시그 계정의 members·threshold를 조회한다. 프로그램 주소는 https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml 의 풀 항목에서 찾는다.",
+      "matters": "다수결이 6명인지 그 이상인지에 따라 코드 교체에 필요한 담합 규모가 달라진다."
+    },
+    {
+      "item": "파트너 LST별 실제 에포크 수수료율과 Sanctum·파트너 분배 비율",
+      "status": "미공시",
+      "tried": "설정 문서는 기본 10%와 절반 분배만, jupSOL 출시 글은 0%만 적는다. 3분기 보고서는 부문 합계만 공개한다.",
+      "howToVerify": "sanctum-lst-list.toml의 각 풀 주소로 스테이크 풀 계정을 읽어 epoch_fee·sol_deposit_fee·stake_withdrawal_fee 필드를 확인한다. 또는 Sanctum에 파트너별 수수료 계약 조건을 요청한다.",
+      "matters": "이 글의 3.1% 추정이 몇 개 파트너의 0% 계약 때문인지, 전반적 할인 때문인지 가른다."
+    },
+    {
+      "item": "매니저 키의 수수료 인상 상한과 사전 공지 기간의 구체 수치",
+      "status": "접근 실패",
+      "tried": "Sanctum 문서는 SPL 스테이크 풀 수수료 문서를 가리키는데, 이번 실행에서 GitHub 원문은 요청 제한으로, spl.solana.com 페이지는 검색에서 찾지 못해 읽지 못했다.",
+      "howToVerify": "https://spl.solana.com/stake-pool/fees 의 fee 변경 규칙 절을 읽는다.",
+      "matters": "상한이 낮고 공지가 길수록 LST 보유자가 수수료 인상 전에 빠져나올 시간이 생긴다."
+    },
+    {
+      "item": "CLOUD-008 퓨타키 투표의 조건부 시장 가격·거래량과 통과 기준",
+      "status": "접근 실패",
+      "tried": "MetaDAO 제안 페이지는 권한 요청으로 열리지 않았고, 포럼과 보도는 '통과' 사실과 날짜만 적는다.",
+      "howToVerify": "https://www.metadao.fi/projects/sanctum 에서 CLOUD-008 제안의 pass/fail 시장 종가와 거래량을 읽는다.",
+      "matters": "투표에 참여한 자금 규모가 작으면 거버넌스가 소수의 손에 있다는 뜻이다."
+    },
+    {
+      "item": "소각 총량 2억 5,932만 개 중 연결 거래로 확인된 2.5억 개 외 약 930만 개의 소각 거래",
+      "status": "온체인 확인 대기",
+      "tried": "Solana Compass 보도는 슬롯 453,770,313의 250,000,000.07개 소각만 연결하고 나머지는 거래를 찾지 못했다고 적는다. 3분기 보고서는 소각 후 총공급 740,678,163개만 적는다.",
+      "howToVerify": "민트 CLoUDKc4Ane7HeQcPpE3YHnznRxhMimJ4MyaUqyHFzAu의 2026년 10월 5~7일 Burn 명령 거래를 익스플로러에서 모두 모아 합계가 259,321,837개인지 확인한다.",
+      "matters": "총공급 수치가 실제 온체인 소각과 일치하는지 검증하는 기본 절차다."
+    },
+    {
+      "item": "팀·투자자 베스팅의 현재 잔여 물량과 월별 해제량",
+      "status": "접근 실패",
+      "tried": "투자자 대시보드는 값이 스크립트로 로드돼 비어 있었고, 2025년 6월 투명성 보고서의 24개월 일정과 보도의 잔여 1.056억 개가 서로 맞지 않는다.",
+      "howToVerify": "https://investors.sanctum.so/data/export.csv 를 내려받아 Unlock Schedule 항목을 읽거나, 투명성 보고서의 구글 시트에서 베스팅 지갑 주소를 받아 잔고를 조회한다.",
+      "matters": "매달 풀리는 물량이 1,583만 개인지 그보다 적은지에 따라 공급 압력 추정이 달라진다."
+    }
+  ]
+}

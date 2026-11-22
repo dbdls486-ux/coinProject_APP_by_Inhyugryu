@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-11-23-sanc",
+    "date": "2026-11-23",
+    "slot": "new_listing",
+    "project": "Sanctum",
+    "ticker": "SANC",
+    "question": "1,862만 SOL을 맡아 두고도 Sanctum이 한 분기에 남기는 돈이 9,446 SOL에 그치는 이유는 무엇일까?",
+    "oneLiner": "Sanctum은 거래소·지갑·기업이 자기 이름을 붙인 솔라나 스테이킹 토큰을 발행할 수 있게 스테이킹 금고와 운영을 빌려주는 인프라이고, 맡겨진 SOL이 버는 보상의 대부분은 예치자에게 돌아가며 Sanctum은 보상의 수 퍼센트만 수수료로 떼어 파트너와 나눈다.",
+    "sector": "Liquid Staking Infrastructure · Solana"
+  },
+  {
     "id": "2026-11-20-uni",
     "date": "2026-11-20",
     "slot": "top100",
