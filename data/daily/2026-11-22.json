@@ -1,0 +1,476 @@
+{
+  "id": "2026-11-22",
+  "date": "2026-11-22",
+  "asOf": "2026-11-22 11:40 KST",
+  "window": "최근 24시간 (11/21 11:30 → 11/22 11:30 KST)",
+  "title": "비트코인 5만 5천 달러까지 밀렸다가 6만 달러 회복",
+  "regime": "혼조",
+  "tldr": [
+    "비트코인은 21일 55,127달러까지 떨어졌다가 6만 달러를 되찾아 24시간 +3.5%다.",
+    "VVV +24%, PIEVERSE +21%가 반등을 이끌었고 MemeCore만 -11%로 밀렸다.",
+    "25일 미 PCE 물가와 ETF 유출이 멈추는지가 반등 지속의 열쇠다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "BTC (24시간)",
+      "value": "+3.5%, 60,259달러",
+      "basis": "11/21 11시 → 11/22 11시 · CoinMarketCap",
+      "tone": "up",
+      "details": [
+        {
+          "label": "장중 저점",
+          "value": "55,127달러, CoinGlass 24시간 저점"
+        },
+        {
+          "label": "저점 대비",
+          "value": "약 +9.3% 반등"
+        },
+        {
+          "label": "ETH",
+          "value": "1,683달러, 24시간 +4.6%"
+        },
+        {
+          "label": "시총 100위 안 상승 상위",
+          "value": "VVV +23.9% · PIEVERSE +21.0% · XMR +8.5% · PI +8.2% · NIGHT +6.9% · ETHFI +6.9%"
+        },
+        {
+          "label": "시총 100위 안 하락 상위",
+          "value": "M -10.6% · ICP -4.4% · FET -3.7% · ATOM -3.5%"
+        }
+      ]
+    },
+    {
+      "label": "24시간 청산",
+      "value": "롱 10.2억 달러",
+      "basis": "CoinGlass · 21일 23시대 조회, 숏 2.04억 달러",
+      "tone": "down",
+      "details": [
+        {
+          "label": "반등 구간",
+          "value": "4시간 숏 청산 8,130만 달러, 롱은 321만 달러"
+        },
+        {
+          "label": "공포·탐욕 지수",
+          "value": "12, 극도의 공포 · 21일 아침 기준"
+        },
+        {
+          "label": "BTC 도미넌스",
+          "value": "미집계"
+        }
+      ]
+    },
+    {
+      "label": "BTC 현물 ETF",
+      "value": "11/19 거래일 -5.82억 달러",
+      "basis": "SoSoValue · IBIT -5.41억 달러",
+      "tone": "down",
+      "details": [
+        {
+          "label": "11/20 거래일",
+          "value": "-1.24억 달러, IBIT 미반영 잠정치"
+        },
+        {
+          "label": "11월 누적",
+          "value": "약 -34.7억 달러, 11/19까지"
+        },
+        {
+          "label": "ETH 현물 ETF",
+          "value": "11/19 거래일 -1.31억 달러"
+        },
+        {
+          "label": "다음 일정",
+          "value": "25일 PCE 물가·GDP 수정치, 12월 8~9일 FOMC"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "24시간 +3.5%, 60,259달러",
+      "note": "21일 중 55,127달러까지 밀렸다가 그날 밤 6만 달러를 회복했다."
+    },
+    {
+      "label": "ETH",
+      "value": "24시간 +4.6%, 1,683달러",
+      "note": "CoinMarketCap 11시대. 원화 약 224만원."
+    },
+    {
+      "label": "전체 시총",
+      "value": "미집계",
+      "note": "CoinGecko 조회가 막혔고 CoinMarketCap 전체 목록은 이전 시각 값이 남아 있었다."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/19 거래일 -5.82억 달러",
+      "note": "사흘 연속 유출. 11/20 거래일은 IBIT 미반영 잠정 -1.24억 달러."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/19 거래일 -1.31억 달러",
+      "note": "그 주 4거래일 연속 유출."
+    },
+    {
+      "label": "전체 청산",
+      "value": "24시간 롱 10.2억·숏 2.04억 달러",
+      "note": "CoinGlass, 21일 23시대 조회. 반등 4시간 동안은 숏 청산 8,130만 달러가 몰렸다."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "12, 극도의 공포",
+      "note": "토큰포스트 21일 아침 집계, 전일과 같다."
+    },
+    {
+      "label": "거시",
+      "value": "10월 FOMC 의사록, AI 투자 과열 논의",
+      "note": "동결 10대 2, 반대 2명은 0.25%p 인상 선호. 미 증시는 23일 다시 열린다."
+    },
+    {
+      "label": "집계 기준",
+      "value": "종목 등락은 CoinMarketCap 11시대",
+      "note": "예약 실행이 멈춰 점검에서 11시 30분에 작성했다. 순위는 CoinMarketCap."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,330.8원",
+      "note": "20일 고시 환율, 주말이라 갱신 없음. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "Venice Token",
+      "ticker": "VVV",
+      "direction": "up",
+      "change": "+23.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+20.4%p",
+      "rank": 49,
+      "volume24h": "0.69억 달러",
+      "causeType": "원인 불명",
+      "headline": "급락장 속 다시 상승 1위.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "20일에도 하루 +20%를 기록했다."
+      ],
+      "reaction": [
+        "24시간 +23.9%, 25,789원 → 31,953원.",
+        "거래량은 0.69억 달러."
+      ],
+      "watch": "24달러 위 유지와 상위 지갑 물량 이동.",
+      "caveat": "상위 10개 주소가 유통량의 90% 이상을 쥐고 있다는 보도가 있다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pieverse",
+      "ticker": "PIEVERSE",
+      "direction": "up",
+      "change": "+21.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+17.5%p",
+      "rank": 56,
+      "volume24h": "1.00억 달러",
+      "causeType": "수급 주도",
+      "headline": "숏 청산이 이끈 급등.",
+      "happened": [
+        "22일 크립토타임스는 숏 청산이 상승을 주도했다고 전했다.",
+        "20일에는 -12.9%로 하락 상위였다."
+      ],
+      "reaction": [
+        "24시간 +21.0%, 3,684원 → 4,458원.",
+        "거래량 1.00억 달러로 상승 종목 중 가장 많다."
+      ],
+      "watch": "숏 청산이 끝난 뒤 3달러 지지 여부.",
+      "caveat": "기사 본문은 열리지 않아 청산 규모는 확인하지 못했다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Monero",
+      "ticker": "XMR",
+      "direction": "up",
+      "change": "+8.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.0%p",
+      "rank": 11,
+      "volume24h": "1.72억 달러",
+      "causeType": "원인 불명",
+      "headline": "시총 11위, 반등 폭이 비트코인의 두 배.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "22일 집계로 20시간 동안 +14.3%였다."
+      ],
+      "reaction": [
+        "24시간 +8.5%, 59.39만원 → 64.44만원.",
+        "거래량은 1.72억 달러."
+      ],
+      "watch": "480달러대 유지.",
+      "caveat": "원인을 다룬 기사는 시세 자동 기사뿐이다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pi Network",
+      "ticker": "PI",
+      "direction": "up",
+      "change": "+8.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+4.7%p",
+      "rank": 71,
+      "volume24h": "0.07억 달러",
+      "causeType": "원인 불명",
+      "headline": "사상 최저가 근처에서 반등.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "생태계 서밋 뒤 0.05달러 근처에서 사상 최저가를 썼다."
+      ],
+      "reaction": [
+        "24시간 +8.2%, 64원 → 69원.",
+        "거래량은 657만 달러로 적다."
+      ],
+      "watch": "0.05달러 지지.",
+      "caveat": "거래가 얇아 반등 폭이 쉽게 커진다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Midnight",
+      "ticker": "NIGHT",
+      "direction": "up",
+      "change": "+6.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+3.4%p",
+      "rank": 63,
+      "volume24h": "0.48억 달러",
+      "causeType": "원인 불명",
+      "headline": "전날 하락 뒤 반등.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "비트코인보다 3%p 남짓 더 올랐다."
+      ],
+      "reaction": [
+        "24시간 +6.9%, 57원 → 60원.",
+        "거래량은 0.48억 달러."
+      ],
+      "watch": "0.045달러 지지.",
+      "caveat": "카르다노 쪽 별도 공지는 찾지 못했다.",
+      "confidence": "C"
+    },
+    {
+      "project": "ether.fi",
+      "ticker": "ETHFI",
+      "direction": "up",
+      "change": "+6.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+3.4%p",
+      "rank": 78,
+      "volume24h": "0.36억 달러",
+      "causeType": "시장 베타",
+      "headline": "이더리움 반등을 따라 상승.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "같은 기간 이더리움이 +4.6% 올랐다."
+      ],
+      "reaction": [
+        "24시간 +6.9%, 583원 → 623원.",
+        "이더리움 대비 초과분은 2%p 남짓이다."
+      ],
+      "watch": "이더리움 1,700달러 회복 여부.",
+      "caveat": "고점 대비 92% 아래라는 분석이 함께 나왔다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Raydium",
+      "ticker": "RAY",
+      "direction": "up",
+      "change": "+6.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+3.1%p",
+      "rank": 89,
+      "volume24h": "0.38억 달러",
+      "causeType": "시장 베타",
+      "headline": "솔라나 반등과 함께 상승.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "같은 기간 솔라나가 +2.9% 올랐다."
+      ],
+      "reaction": [
+        "24시간 +6.6%, 1,685원 → 1,797원.",
+        "거래량은 0.38억 달러."
+      ],
+      "watch": "솔라나 70달러 지지.",
+      "caveat": "솔라나 대비 초과분이 4%p 가까이 돼 베타만으로는 다 설명되지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Uniswap",
+      "ticker": "UNI",
+      "direction": "up",
+      "change": "+6.3%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+2.8%p",
+      "rank": 24,
+      "volume24h": "5.38억 달러",
+      "causeType": "시장 베타",
+      "headline": "거래량 많은 대형 DeFi 반등.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "같은 기간 이더리움이 +4.6% 올랐다."
+      ],
+      "reaction": [
+        "24시간 +6.3%, 5,884원 → 6,255원.",
+        "거래량 5.38억 달러로 상승 종목 중 가장 크다."
+      ],
+      "watch": "거래 수수료 소각량 추이.",
+      "caveat": "20일 심층 리포트에서 수수료 소각 구조를 다뤘다.",
+      "confidence": "C"
+    },
+    {
+      "project": "MemeCore",
+      "ticker": "M",
+      "direction": "down",
+      "change": "-10.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-14.1%p",
+      "rank": 36,
+      "volume24h": "0.03억 달러",
+      "causeType": "원인 불명",
+      "headline": "반등장에서 홀로 -10%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "IT타임스 11시 집계로 시총 100위 안 하락 1위."
+      ],
+      "reaction": [
+        "24시간 -10.6%, 1,133원 → 1,013원.",
+        "거래량은 288만 달러로 매우 적다."
+      ],
+      "watch": "0.75달러 지지.",
+      "caveat": "거래가 얇아 작은 매도에도 가격이 크게 움직인다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Internet Computer",
+      "ticker": "ICP",
+      "direction": "down",
+      "change": "-4.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-7.9%p",
+      "rank": 54,
+      "volume24h": "0.65억 달러",
+      "causeType": "원인 불명",
+      "headline": "반등장 속 하락 2위.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "비트코인보다 8%p 가까이 약했다."
+      ],
+      "reaction": [
+        "24시간 -4.4%, 2,673원 → 2,555원.",
+        "거래량은 0.65억 달러."
+      ],
+      "watch": "1.9달러 지지.",
+      "caveat": "일주일 낙폭이 이미 18%였다는 보도가 있다.",
+      "confidence": "C"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "币安人生",
+      "reason": "+5.2%, 밈코인이고 종목 수 제한으로 제외"
+    },
+    {
+      "ticker": "TAO·CRO",
+      "reason": "+4.6~4.8%로 상승 11~12위, 종목 수 제한으로 제외"
+    },
+    {
+      "ticker": "FET·ATOM·KITE·ZRO",
+      "reason": "-2.5~-3.7%로 낙폭이 작아 제외"
+    }
+  ],
+  "watchNext": [
+    "23일 미 증시 재개 뒤 나스닥 흐름",
+    "11/20 거래일 IBIT 포함 ETF 확정치",
+    "25일 미 PCE 물가·GDP 수정치",
+    "55,000달러 저점 재시험 여부"
+  ],
+  "highlight": "비트코인은 21일 55,127달러까지 떨어져 7월 저점 아래로 내려갔다가, 그날 밤 숏 청산이 몰리며 6만 달러를 되찾았다. 24시간 기준으로는 +3.5%지만 하루 롱 청산만 10억 달러를 넘었다. 미 현물 ETF에서는 19일 하루 5.82억 달러가 빠졌고, 그날까지 11월 누적 유출은 약 34.7억 달러다. 공포·탐욕 지수는 12로 극도의 공포가 이어진다.",
+  "sources": [
+    {
+      "title": "CoinMarketCap — Top Crypto Gainers and Losers, Top 100 24h (11/22 11시대 조회)",
+      "url": "https://coinmarketcap.com/gainers-losers/"
+    },
+    {
+      "title": "IT타임스 — Crypto Prices on Nov. 22: BTC Gains 1.85%, M Plunges 10.78%",
+      "url": "https://www.ittimes.com/news/articleView.html?idxno=88109"
+    },
+    {
+      "title": "IT타임스 — [11월 22일 코인 가격] 비트코인 1.85%↑, 베니스토큰 17.27% 급등",
+      "url": "https://www.ittimes.com/news/articleView.html?idxno=88108"
+    },
+    {
+      "title": "crypto.news — Bitcoin price above $60,000 after crash (11/21)",
+      "url": "https://crypto.news/bitcoin-price-above-60000-after-crash-what-would-make-the-recovery-last"
+    },
+    {
+      "title": "The Block — US spot bitcoin ETFs see $582 million in daily net outflows (11/20)",
+      "url": "https://www.theblock.co/news/markets/2026-11-20-us-spot-bitcoin-etfs-see-582-million-in-daily-net-outflows-as-november-total-nears-3-5-billion-444217"
+    },
+    {
+      "title": "Agentic blog — Bitcoin Plunges to $55,000, Then Reclaims $60,000 (11/22, ETF 11/20 잠정치 인용)",
+      "url": "https://github.com/elixirevo/agentic-blog/releases/tag/post-2026-11-22-crypto-briefing"
+    },
+    {
+      "title": "TokenPost — Bitcoin plunges to $58,700 as volume surges and fear deepens (11/21)",
+      "url": "https://www.tokenpost.com/news/investing/62387"
+    },
+    {
+      "title": "TokenPost — Rain Leads Large-Cap Crypto Declines With a 17.97% Drop (11/20)",
+      "url": "https://www.tokenpost.com/news/investing/61996"
+    },
+    {
+      "title": "KuCoin — Venice Token Surges 20% Amid Broader Crypto Selloff (11/20)",
+      "url": "https://www.kucoin.com/news/flash/venice-token-surges-20-amid-broader-crypto-selloff"
+    },
+    {
+      "title": "The Crypto Times — PIEVERSE Price Surges 23% in 24Hrs as Shorts Dominate Liquidations (11/22, 제목만 확인)",
+      "url": "https://www.cryptotimes.io/2026/11/22/pieverse-price-surges-23-in-24hrs-as-shorts-dominate-liquidations/"
+    },
+    {
+      "title": "Global Banking & Finance — Monero rises 14.28% over 20-hour window (11/22, 제목만 확인)",
+      "url": "https://www.globalbankingandfinance.com/monero-rises-14-28-percent-xmr-2026-11-22/"
+    },
+    {
+      "title": "BitcoinWorld — Pi Network's PI Hits Record Low Near $0.05 After Summit (제목만 확인)",
+      "url": "https://bitcoinworld.co.in/pi-network-pi-record-low-xrp-ada-fall/"
+    },
+    {
+      "title": "cryptonews.net — ETHFI Price Rebounds 10% Yet Still Sits 92% Below Its Peak (제목만 확인)",
+      "url": "https://cryptonews.net/news/analytics/33778398/"
+    },
+    {
+      "title": "코리안투데이 — [오늘의 환율] 11월 22일(일) 달러 1,330.8원 · 20일 고시 (제목만 확인)",
+      "url": "https://www.thekorean.today/62021"
+    }
+  ],
+  "terms": [
+    {
+      "term": "청산",
+      "meaning": "빌린 돈으로 건 선물 포지션이 증거금 부족으로 강제 정리되는 것"
+    },
+    {
+      "term": "숏 청산",
+      "meaning": "하락에 건 포지션이 가격 상승으로 강제 정리되는 것. 반등을 키운다"
+    },
+    {
+      "term": "공포·탐욕 지수",
+      "meaning": "가격 변동성·거래량 등을 0~100으로 묶은 투자 심리 지표. 25 이하는 극도의 공포"
+    },
+    {
+      "term": "PCE 물가",
+      "meaning": "미 연준이 가장 중시하는 개인소비지출 물가 지표"
+    },
+    {
+      "term": "FOMC 의사록",
+      "meaning": "미 연준 금리 회의의 논의 내용을 약 3주 뒤 공개하는 문서"
+    },
+    {
+      "term": "시장 베타",
+      "meaning": "개별 사건 없이 시장 전체 움직임을 따라간 정도"
+    }
+  ]
+}
