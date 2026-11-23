@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-16T00:58:33.972Z",
+ "generatedAt": "2026-11-23T01:36:41.959Z",
  "design": 3,
  "extras": {
   "kimchi": true,
@@ -66,7 +66,7 @@
     "split": "2024-01-01",
     "tPass": 2,
     "placebos": 10,
-    "droppedFrom": "2026-11-16"
+    "droppedFrom": "2026-11-23"
    },
    "periods": {
     "train": [
@@ -16537,7 +16537,7 @@
     "split": "2024-01-01",
     "tPass": 2,
     "placebos": 10,
-    "droppedFrom": "2026-11-16"
+    "droppedFrom": "2026-11-23"
    },
    "periods": {
     "train": [
@@ -33008,7 +33008,7 @@
     "split": "2024-01-01",
     "tPass": 2,
     "placebos": 10,
-    "droppedFrom": "2026-11-16"
+    "droppedFrom": "2026-11-23"
    },
    "periods": {
     "train": [
@@ -49170,7 +49170,7 @@
     "split": "2024-01-01",
     "tPass": 2,
     "placebos": 10,
-    "droppedFrom": "2026-11-16"
+    "droppedFrom": "2026-11-23"
    },
    "periods": {
     "train": [
