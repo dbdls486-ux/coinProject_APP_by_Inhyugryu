@@ -1,6 +1,6 @@
 {
- "updatedAt": "2026-11-23T23:07Z",
- "today": "2026-11-23",
+ "updatedAt": "2026-11-24T00:07Z",
+ "today": "2026-11-24",
  "startedAt": "2026-11-11",
  "initialCash": 10000.0,
  "equity": 10000.0,
@@ -8,15 +8,15 @@
  "returnPct": 0.0,
  "mdd": 0.0,
  "exposure": 0.0,
- "btcReturnPct": -0.17089419260779182,
+ "btcReturnPct": -0.17372850238937332,
  "playbookAsof": "2026-11-11",
  "market": {
-  "date": "2026-11-22",
+  "date": "2026-11-23",
   "state": "DOWN",
   "btc_rsi": 26.6,
-  "btc_d50": -0.2018,
+  "btc_d50": -0.1965,
   "mkt_brk": 0.0,
-  "names": 157,
+  "names": 158,
   "stateLabel": "BTC 50일선 아래",
   "note": "BTC 종가가 50일선 아래"
  },
@@ -40,8 +40,8 @@
   "positions": [],
   "majors": {},
   "pending": [],
-  "openDone": "2026-11-23",
-  "closeDone": "2026-11-22",
+  "openDone": "2026-11-24",
+  "closeDone": "2026-11-23",
   "equity": [
    [
     "2026-11-11",
@@ -138,6 +138,14 @@
     0,
     0,
     0.0
+   ],
+   [
+    "2026-11-23",
+    10000.0,
+    10000.0,
+    0,
+    0,
+    0.0
    ]
   ],
   "trades": [],
@@ -146,12 +154,12 @@
   "peak": 10000.0,
   "decisions": [],
   "market": {
-   "date": "2026-11-22",
+   "date": "2026-11-23",
    "state": "DOWN",
    "btc_rsi": 26.6,
-   "btc_d50": -0.2018,
+   "btc_d50": -0.1965,
    "mkt_brk": 0.0,
-   "names": 157
+   "names": 158
   },
   "bench": {
    "btc0": 74078.0
