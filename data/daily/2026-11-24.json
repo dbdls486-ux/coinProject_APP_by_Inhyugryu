@@ -1,0 +1,855 @@
+{
+  "id": "2026-11-24",
+  "date": "2026-11-24",
+  "asOf": "2026-11-24 08:25 KST",
+  "window": "최근 24시간 (11/23 08:30 → 11/24 08:30 KST)",
+  "title": "젠슨 황 복귀 랠리는 반납했지만 알트 10종은 BTC를 5%p 넘게 앞섰다",
+  "regime": "혼조",
+  "tldr": [
+    "엔비디아 CEO 복귀 소식에 비트코인이 밤 11시 27분 6만 4,603달러까지 뛰었다가 새벽 6만 400달러로 되밀렸다.",
+    "24시간 BTC +0.6%, ETH -0.1%인데 100위 안 상승 상위 10종은 +5~24%, 숏 청산은 약 5.2억 달러다.",
+    "11/23 거래일 ETF 집계, 25일 밤 미 PCE, 스카이·USDS 국내 입금 정지 뒤 가격 괴리 해소 여부를 본다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "BTC (24시간)",
+      "value": "+0.6%, 8,259만원",
+      "basis": "11/23 08시 → 11/24 08시 · 바이낸스·블록미디어",
+      "tone": "up",
+      "details": [
+        {
+          "label": "달러 가격",
+          "value": "61,181달러 → 61,363달러, 24일 08시 바이낸스"
+        },
+        {
+          "label": "장중 고점",
+          "value": "64,603달러, 23일 23시 27분 · 소식 뒤 6분 만에 +2,600달러"
+        },
+        {
+          "label": "장중 저점",
+          "value": "60,386달러, 24일 새벽 바이낸스 · 고점 대비 -6.5%"
+        },
+        {
+          "label": "ETH",
+          "value": "24시간 -0.1%, 1,722 → 1,717달러 · 231만원"
+        },
+        {
+          "label": "업비트 BTC",
+          "value": "8,383만8,000원, 24일 08시 · 전일 09시 대비 +0.33%"
+        },
+        {
+          "label": "시총 100위 안 상승 상위",
+          "value": "PEARL +23.7% · ATOM +9.3% · QNT +8.3% · ALGO +8.3% · CC +7.7% · KAS +6.0% · JUP +5.8% · ICP +5.5% · FIL +5.4% · M +5.0%"
+        },
+        {
+          "label": "시총 100위 안 하락 상위",
+          "value": "VVV -7.2% · BTW -4.8% · WLFI -4.7% · PIEVERSE -4.1% · SKY -3.4% · ETHFI -3.3% · RENDER -3.2% · BDX -3.1% · ARB -2.9% · ZEC -2.3%"
+        }
+      ]
+    },
+    {
+      "label": "전체 청산 (24시간)",
+      "value": "7.85억 달러, 숏 약 5.2억",
+      "basis": "11/24 08시 · Coinglass·블록미디어",
+      "tone": "neutral",
+      "details": [
+        {
+          "label": "BTC 청산",
+          "value": "3.25억 달러 중 숏 2.26억으로 70%"
+        },
+        {
+          "label": "급등 1시간",
+          "value": "23일 밤 1시간 청산 4.25억 달러 중 숏 88%, 바이낸스 BTC 숏 1,036만 달러 최대"
+        },
+        {
+          "label": "공포·탐욕 지수",
+          "value": "Alternative.me 11, 23일 · CoinMarketCap 9 · 극도의 공포"
+        },
+        {
+          "label": "BTC 도미넌스",
+          "value": "58.7%, 23일 뉴욕 마감 CoinMarketCap"
+        }
+      ]
+    },
+    {
+      "label": "미국 BTC 현물 ETF",
+      "value": "6.69억 달러 순유출",
+      "basis": "11/20 거래일 확정 · Farside",
+      "tone": "down",
+      "details": [
+        {
+          "label": "IBIT",
+          "value": "-5.45억 달러로 19일 -5.41억을 넘는 하루 유출 사상 최대"
+        },
+        {
+          "label": "종목별",
+          "value": "FBTC -0.72억 · GBTC -0.33억 · BTC미니 -0.13억 · BITB -0.07억 · MSBT +0.02억"
+        },
+        {
+          "label": "11/16~20 주간",
+          "value": "-17.9억 달러, 4주 연속 유출 · 역대 3번째 규모"
+        },
+        {
+          "label": "11월 누적",
+          "value": "-41.4억 달러, 15거래일 중 13일 유출"
+        },
+        {
+          "label": "ETH 현물 ETF",
+          "value": "11/20 -0.97억 달러, 6일 연속 · 주간 -3.14억, 8주 연속"
+        },
+        {
+          "label": "11/23 거래일",
+          "value": "미집계 · 24일 저녁 Farside 발표"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "24시간 +0.6%, 8,234만원 → 8,259만원",
+      "note": "23일 밤 11시 27분 6만 4,603달러 고점 뒤 새벽 6만 386달러까지 되밀렸다. 업비트는 24일 08시 8,384만원으로 김치 프리미엄 약 1.5%."
+    },
+    {
+      "label": "ETH",
+      "value": "24시간 -0.1%, 232만원 → 231만원",
+      "note": "미 장중 1,760달러까지 올랐다가 1,717달러로 반납. 7일 -5.4%로 BTC와 비슷하다."
+    },
+    {
+      "label": "전체 시총",
+      "value": "2.12조 달러, 24일 08시 CoinGecko",
+      "note": "전날 같은 시각 2.08조 달러에서 +1.9%. CoinGecko 24시간 표기는 -1.05%로 기준 시각이 달라 참고만. 뉴욕 마감 CMC 집계는 2.09조 달러."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "58.7%",
+      "note": "23일 뉴욕 마감 CoinMarketCap. 코인코덱스 23일 15시 집계는 59.8%."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/20 거래일 -6.69억 달러, 확정",
+      "note": "잠정치 -1.25억에서 IBIT -5.45억 반영으로 확대. 11/23 거래일은 미집계."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/20 거래일 -0.97억 달러",
+      "note": "ETHA -0.61억, FETH -0.16억. 11/16~20 주간 -3.14억 달러로 8주 연속 유출."
+    },
+    {
+      "label": "전체 청산",
+      "value": "24시간 7.85억 달러, 숏 약 3분의 2",
+      "note": "급등 1시간에 숏 3.7억 달러가 정리됐고 반락 때 롱이 추가됐다. 미결제약정은 고점 대비 약 10% 감소 상태."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "9~11, 극도의 공포",
+      "note": "Alternative.me 23일 11로 전주 10과 비슷. CoinMarketCap 지수는 뉴욕 마감 9. 24일치는 09시 갱신."
+    },
+    {
+      "label": "거시",
+      "value": "나스닥 +6.5%, S&P500 +4.7%, 엔비디아 +31%",
+      "note": "22일 이사회가 젠슨 황 CEO 복귀를 결정. 12월 0.25%p 인상 확률 96%, 달러인덱스 103.96, 금 +2.8%. 25일 PCE·GDP 수정치, 26일 미 증시 휴장."
+    },
+    {
+      "label": "국내",
+      "value": "코스피 -3.3%, 스카이·USDS 3사 입금 정지",
+      "note": "23일 20시 업비트·빗썸·코인원이 SKY·USDS를 거래유의종목으로 지정하고 입금을 막았다. 업비트 USDS는 24일 08시 4,180원으로 USDT의 3배."
+    },
+    {
+      "label": "집계 기준",
+      "value": "24시간 등락: 23일 08시 대비 24일 08~09시",
+      "note": "BTC·ETH는 블록미디어 바이낸스 시세. 알트 등락률은 24일 00~01시 UTC 집계 사이트 3곳과 09시 CMC 표를 합쳤고 사이트별로 1~3%p 차이가 난다. 순위는 CoinGecko."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,345.9원",
+      "note": "11/23 서울 외환시장 주간 종가, 전일 대비 +9.7원. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "Sky",
+      "ticker": "SKY",
+      "direction": "down",
+      "change": "-3.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.0%p",
+      "marketCap": "9.38억 달러",
+      "rank": 70,
+      "volume24h": "0.57억 달러",
+      "causeType": "확인된 원인",
+      "headline": "국내 3사 입금 정지에 업비트만 +81% 괴리.",
+      "happened": [
+        "23일 20시 업비트·빗썸·코인원이 SKY·USDS 거래유의 지정, 입금 정지.",
+        "같은 날 룬 크리스텐센이 77M USDS 채무 상환용 SKY 매각 검토를 밝혔다."
+      ],
+      "reaction": [
+        "글로벌 24시간 -3.4%, 54.1원. 업비트는 21시 49분 103원으로 +81%.",
+        "stUSDS 풀 1.59억 달러 이용률 99.99%, 출금 가능액 0."
+      ],
+      "watch": "12/21~24 유의종목 심사 결과와 입금 재개 시 업비트 프리미엄 소멸 폭.",
+      "caveat": "글로벌 하락은 19일 자금세탁 보도 뒤 이어진 흐름이라 국내 조치가 글로벌 낙폭을 키웠는지는 미확인.",
+      "flows": {
+        "exchangeNetflow": "USDS 유통량 19일 52.4억 → 21일 31.1억 달러"
+      },
+      "confidence": "B"
+    },
+    {
+      "project": "Pieverse",
+      "ticker": "PIEVERSE",
+      "direction": "down",
+      "change": "-4.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.7%p",
+      "marketCap": "9.65억 달러",
+      "rank": 68,
+      "volume24h": "1.31억 달러",
+      "causeType": "수급 주도",
+      "headline": "22일 고점 -49% 급락 뒤 레버리지 정리 이틀째.",
+      "happened": [
+        "22일 19시 5.40달러 신고가 뒤 4시간 만에 2.73달러로 -49%.",
+        "기간 내 새 사건 없음. 23일 16~17시 한 시간에 -8% 추가 하락."
+      ],
+      "reaction": [
+        "24시간 -4.1%, 4,778원. 업비트 5,035원 → 4,741원.",
+        "선물 미결제약정 1,640만 → 1,500만 달러로 -8.5%, 펀딩비 양수 유지."
+      ],
+      "watch": "업비트 거래대금 1위 자리를 XRP에 내준 뒤 거래량 감소 속도.",
+      "caveat": "급락의 출발점인 22일 고점은 기간 시작 전이라 기간 내 하락은 그 여진이다.",
+      "flows": {
+        "openInterest": "1,500만 달러, 23일 17시 · 22일 고점 2,490만",
+        "fundingRate": "+0.005%/4시간"
+      },
+      "confidence": "B"
+    },
+    {
+      "project": "Quant",
+      "ticker": "QNT",
+      "direction": "up",
+      "change": "+8.3%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.7%p",
+      "marketCap": "18.7억 달러",
+      "rank": 38,
+      "volume24h": "1.16억 달러",
+      "causeType": "가능한 배경",
+      "headline": "퓨전 메인넷 공개 전환일에 장중 +19%.",
+      "happened": [
+        "23일 퀀트가 퓨전 롤업 메인넷을 일반 공개로 전환, KYC 가입 개시.",
+        "공지 시각은 미확인. 가격 고점은 23일 21시 30분 이전."
+      ],
+      "reaction": [
+        "24시간 +8.3%, 192,000원 → 207,900원. 장중 170.29달러 고점.",
+        "거래량 1.14억 달러로 30일 평균의 1.5배."
+      ],
+      "watch": "20일 이동평균 165.7달러 회복과 퓨전 사용량 공개 여부.",
+      "caveat": "공지와 가격 급등의 선후가 미확인이고, 같은 날 BTC 숏 스퀴즈와 겹쳤다.",
+      "confidence": "B"
+    },
+    {
+      "project": "Internet Computer",
+      "ticker": "ICP",
+      "direction": "up",
+      "change": "+5.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+4.9%p",
+      "marketCap": "11.6억 달러",
+      "rank": 63,
+      "volume24h": "0.48억 달러",
+      "causeType": "가능한 배경",
+      "headline": "파키스탄 국영 메신저 베타 일정 공개 뒤 반등.",
+      "happened": [
+        "23일 05시 ICP 기반 파키스탄 메신저 챗T의 12/1 공개 베타 일정 보도.",
+        "23일 저녁 DFINITY 계정과 커뮤니티가 재확산."
+      ],
+      "reaction": [
+        "24시간 +5.5%, 2,678원 → 2,786원. 장중 2.15달러 고점.",
+        "거래량 4,770만 달러로 30일 평균과 같다."
+      ],
+      "watch": "2.15달러 재돌파와 12/1 베타 출시 실제 진행.",
+      "caveat": "출시가 아닌 일정 공지이고 거래량 증가가 없어 AI 토큰 순환매 영향과 구분되지 않는다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pearl",
+      "ticker": "PEARL",
+      "direction": "up",
+      "change": "+23.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+23.1%p",
+      "marketCap": "9.0억 달러",
+      "rank": 69,
+      "volume24h": "0.51억 달러",
+      "causeType": "원인 불명",
+      "headline": "100위 안 최대 상승, 10월 신고가 재시험.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "FP8 채굴 업그레이드 테스트넷 일정은 17일, 코인베이스 상장은 13일로 기간 전."
+      ],
+      "reaction": [
+        "24시간 +23.7%, 3,324원. 10월 21일 신고가 2.46달러와 같은 수준.",
+        "23일 11시 47분 기준 거래량 5,129만 달러, 이미 +14%였다."
+      ],
+      "watch": "2.46달러 신고가 돌파 유지와 상위 53개 지갑의 50.7% 물량 이동.",
+      "caveat": "엔비디아 반등일에 AI 채굴 코인이 함께 올랐지만 개별 사건은 없다. 상승은 기간 시작 전부터 진행 중이었다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Cosmos Hub",
+      "ticker": "ATOM",
+      "direction": "up",
+      "change": "+9.3%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+8.7%p",
+      "marketCap": "6.92억 달러",
+      "rank": 85,
+      "volume24h": "0.35억 달러",
+      "causeType": "원인 불명",
+      "headline": "토크노믹스 발표 기다리는 사이 +9%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "19일 예고된 토크노믹스 개편안은 24일 아침까지 포럼에 미게시."
+      ],
+      "reaction": [
+        "24시간 +9.3%, 1,588원 → 1,723원. 상승분 대부분 23일 21시 전 형성.",
+        "거래량 2,966만 달러로 30일 평균의 1.1배."
+      ],
+      "watch": "이번 주 토크노믹스 제안 게시와 1.27달러 고점 유지.",
+      "caveat": "18일 가이아 v29 업그레이드는 기간 전이며 가격 반응이 없었다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Algorand",
+      "ticker": "ALGO",
+      "direction": "up",
+      "change": "+8.3%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.7%p",
+      "marketCap": "7.38억 달러",
+      "rank": 81,
+      "volume24h": "0.63억 달러",
+      "causeType": "원인 불명",
+      "headline": "장중 +12% 뒤 절반 반납.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "재단의 공급 상한 해제 철회는 11월 6일로 기간 전."
+      ],
+      "reaction": [
+        "24시간 +8.3%, 103.5원 → 109.4원. 장중 0.087달러 고점.",
+        "23일 21시 28분 기준 거래량 7,827만 달러로 30일 평균의 1.4배."
+      ],
+      "watch": "30일 이동평균 0.089달러 회복 여부.",
+      "caveat": "거래량 증가는 확인되나 개별 촉매가 없어 반등장 베타 이상의 설명이 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Canton Network",
+      "ticker": "CC",
+      "direction": "up",
+      "change": "+7.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.1%p",
+      "marketCap": "31.6억 달러",
+      "rank": 25,
+      "volume24h": "0.23억 달러",
+      "causeType": "원인 불명",
+      "headline": "시총 25위, 평균 거래량으로 +8%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "CC 소각을 메인넷으로 확대하는 승인은 21일로 기간 전."
+      ],
+      "reaction": [
+        "24시간 +7.7%, 106원. 장중 0.0755 → 0.0810달러.",
+        "거래량 2,299만 달러로 30일 평균의 1.05배."
+      ],
+      "watch": "0.081달러 장중 고점 재돌파와 소각량 추이.",
+      "caveat": "거래량이 평균 수준이라 얇은 매수로도 움직인 반등으로 볼 여지가 있다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Kaspa",
+      "ticker": "KAS",
+      "direction": "up",
+      "change": "+6.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.4%p",
+      "marketCap": "7.50억 달러",
+      "rank": 80,
+      "volume24h": "0.12억 달러",
+      "causeType": "원인 불명",
+      "headline": "엔비디아 급등 시각 +13% 찍고 절반 반납.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "kUSDT 스테이블코인 출시는 15일로 기간 전."
+      ],
+      "reaction": [
+        "24시간 +6.0%, 34.7원 → 36.5원. 장중 0.0292달러 고점.",
+        "거래량 1,235만 달러로 30일 평균의 1.2배, 선물 OI 3,595만 달러."
+      ],
+      "watch": "0.029달러 재돌파와 28일 메인넷 5주년 행사.",
+      "caveat": "국내는 코인원만 상장. 고점이 BTC 급등 시각과 겹쳐 시장 베타에 가깝다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Jupiter",
+      "ticker": "JUP",
+      "direction": "up",
+      "change": "+5.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.2%p",
+      "marketCap": "7.85억 달러",
+      "rank": 78,
+      "volume24h": "0.49억 달러",
+      "causeType": "원인 불명",
+      "headline": "BTC 급등에 +12%까지 갔다가 절반 반납.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "23일 COO 인터뷰는 보안 계획 소개로 가격 사건이 아니다."
+      ],
+      "reaction": [
+        "24시간 +5.8%, 318원. 24일 00시 0.25달러 고점 뒤 0.236달러.",
+        "23일 20시 32분 기준 거래량 4,866만 달러로 30일 평균의 1.4배."
+      ],
+      "watch": "0.259달러 저항과 솔라나 대비 초과 상승 지속 여부.",
+      "caveat": "같은 시간 솔라나는 +2%로, 초과분은 숏 청산 쏠림 외 설명이 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Filecoin",
+      "ticker": "FIL",
+      "direction": "up",
+      "change": "+5.4%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+4.8%p",
+      "marketCap": "4.71억 달러",
+      "rank": 99,
+      "volume24h": "0.84억 달러",
+      "causeType": "시장 베타",
+      "headline": "22일 90일 저점에서 평균 거래량으로 반등.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "22일 0.4906달러로 90일 최저를 찍은 뒤 23일 반등."
+      ],
+      "reaction": [
+        "24시간 +5.4%, 716원 → 752원. 장중 0.581달러 고점.",
+        "거래량 8,369만 달러로 30일 평균의 1.05배."
+      ],
+      "watch": "0.58달러 회복과 30일 이동평균 0.75달러.",
+      "caveat": "7일 -9.5%, 30일 -41%로 하락 추세 안의 되돌림이다.",
+      "confidence": "C"
+    },
+    {
+      "project": "MemeCore",
+      "ticker": "M",
+      "direction": "up",
+      "change": "+5.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+4.4%p",
+      "marketCap": "18.1억 달러",
+      "rank": 44,
+      "volume24h": "0.02억 달러",
+      "causeType": "원인 불명",
+      "headline": "일주일 -10% 뒤 얇은 거래로 +5%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "다음 언락은 12월 2일 5,611만 M으로 기간 밖."
+      ],
+      "reaction": [
+        "24시간 +5.0%, 1,061원.",
+        "거래량 170만 달러로 시총의 0.1%."
+      ],
+      "watch": "0.75달러 지지와 12/2 언락 전 거래량 변화.",
+      "caveat": "거래가 얇아 작은 매수에도 가격이 크게 움직인다. 국내 거래소 미상장.",
+      "confidence": "C"
+    },
+    {
+      "project": "Venice Token",
+      "ticker": "VVV",
+      "direction": "down",
+      "change": "-7.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-7.8%p",
+      "marketCap": "12.2억 달러",
+      "rank": 60,
+      "volume24h": "0.57억 달러",
+      "causeType": "원인 불명",
+      "headline": "사흘 +30% 랠리 뒤 새벽 -7% 되돌림.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "23일 밤까지 26달러대를 지키다 24일 새벽 24.4달러로 밀렸다."
+      ],
+      "reaction": [
+        "24시간 -7.2%, 35,100원 → 32,840원. 7일 기준 여전히 +21%.",
+        "거래량 5,671만 달러, 시총의 4.6%."
+      ],
+      "watch": "24달러 지지와 상위 10개 지갑의 90% 물량 이동.",
+      "caveat": "헤이즈 관련 지갑의 매도 흔적은 확인되지 않았다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Bitway",
+      "ticker": "BTW",
+      "direction": "down",
+      "change": "-4.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.4%p",
+      "marketCap": "11억 달러",
+      "rank": 66,
+      "volume24h": "0.06억 달러",
+      "causeType": "원인 불명",
+      "headline": "7일 연속 상승 뒤 첫 음봉.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "16일 0.37달러에서 22일 0.74달러까지 7일 연속 오른 뒤 첫 하락."
+      ],
+      "reaction": [
+        "24시간 -4.8%, 992원 → 958원. 장중 0.662달러 저점.",
+        "거래량 580만 달러로 시총의 0.5%."
+      ],
+      "watch": "0.66달러 저점 지지와 12/2 1억 160만 BTW 언락.",
+      "caveat": "유통량 집계가 사이트마다 2배 차이라 시총이 불확실하다. 국내 미상장.",
+      "confidence": "C"
+    },
+    {
+      "project": "World Liberty Financial",
+      "ticker": "WLFI",
+      "direction": "down",
+      "change": "-4.7%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-5.3%p",
+      "marketCap": "13.2억 달러",
+      "rank": 55,
+      "volume24h": "0.36억 달러",
+      "causeType": "원인 불명",
+      "headline": "소각 뒤에도 7일 -6%, 반등장 소외.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "20일 1억 WLFI 첫 소각, 19일 아부다비 법원 동결 명령은 기간 전."
+      ],
+      "reaction": [
+        "24시간 -4.7%, 57.6원 → 56.3원.",
+        "거래량 3,551만 달러, 시총의 2.7%."
+      ],
+      "watch": "0.0415달러 지지와 12/1 아부다비 동결 재심리.",
+      "caveat": "바이백에 6,560만 달러를 썼지만 보유 토큰 가치는 2,100만 달러 수준이라는 집계가 있다.",
+      "confidence": "C"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "ETHFI·RENDER·BDX·ARB·ZEC",
+      "reason": "100위 안 하락 6~10위이나 24시간 -2.3~-3.3%로 BTC 대비 초과분 -4%p 이내, 개별 사건 없음"
+    },
+    {
+      "ticker": "MON",
+      "reason": "24시간 -7.8%, 시총 191위. 24일 166억 MON 언락이 유통량의 140%로 앞둔 선반영, 사상 최저 0.0115달러"
+    },
+    {
+      "ticker": "PROM",
+      "reason": "24시간 +12.4%, 시총 약 1억 달러. 23일 선물 주도 급등락 3.85 → 7.10 → 5.2달러, 거래량이 시총 초과, 사건 미확인"
+    },
+    {
+      "ticker": "LIT·INJ",
+      "reason": "24일 01시 집계는 +16.8%·+9.7%였으나 08시 기준 +1%대로 반납, 상승 순위 밖"
+    },
+    {
+      "ticker": "EGLD",
+      "reason": "한 집계 사이트의 +69.7%는 다른 사이트에서 확인되지 않아 제외"
+    }
+  ],
+  "watchNext": [
+    "11/23 거래일 BTC·ETH 현물 ETF 집계, 5거래일 연속 유출 여부(24일 저녁 Farside)",
+    "11/25 22:30 KST 미 10월 PCE 물가·3분기 GDP 수정치, 12월 인상 확률 96%",
+    "스카이·USDS 국내 3사 입금 정지 뒤 업비트 프리미엄 해소와 12/21~24 유의종목 심사",
+    "6만 달러 지지와 26일 미 증시 휴장 전 거래량, 모나드 166억 MON 언락 물량 유입"
+  ],
+  "highlight": "젠슨 황 복귀 소식에 비트코인은 6분 만에 2,600달러 뛰어 6만 4,603달러를 찍었지만 미 증시가 나스닥 +6.5%로 마감하는 동안 상승분을 모두 반납했다. 1시간 청산 4.25억 달러 중 88%가 숏이었고 미결제약정은 줄어, 새 매수가 아니라 숏 정리가 만든 랠리였음을 숫자가 보여준다. 반면 알트 상승 상위 10종은 +5~24%로 BTC보다 크게 올랐지만 사건이 확인된 종목은 퀀트 메인넷 공개 하나뿐이고 나머지는 거래량만 평균의 1.1~1.5배다. 사건이 분명한 움직임은 오히려 하락 쪽의 스카이로, 국내 3사 입금 정지라는 시각이 찍힌 사건 뒤 업비트 가격만 +81% 벌어졌다.",
+  "sources": [
+    {
+      "title": "블록미디어 — [코인시황] 젠슨 황 복귀에 美 증시 급등…비트코인은 '반짝' 랠리에 그쳐 (11/24 08:25)",
+      "url": "https://www.blockmedia.co.kr/archives/1169689"
+    },
+    {
+      "title": "블록미디어 — [코인시황] 비트코인, 주말 급락 딛고 6만달러선 회복 (11/23 08:17, 전일 기준값)",
+      "url": "https://www.blockmedia.co.kr/archives/1169194"
+    },
+    {
+      "title": "블록미디어 — [뉴욕 코인시황/마감] '젠슨 황 효과'에도 비트코인 상승분 반납…6만1000달러대 후퇴 (11/24 06:00)",
+      "url": "https://www.blockmedia.co.kr/archives/1169654"
+    },
+    {
+      "title": "블록미디어 — [뉴욕증시 마감] '젠슨 황 복귀' 증시 턴어라운드…나스닥 6%·다우 1440p 상승 (11/24 06:15)",
+      "url": "https://www.blockmedia.co.kr/archives/1169660"
+    },
+    {
+      "title": "블록미디어 — [뉴욕 금·채권·달러] 연준 12월 금리 인상론 96% 굳어지며 달러 강세 (11/24 06:50)",
+      "url": "https://www.blockmedia.co.kr/archives/1169665"
+    },
+    {
+      "title": "블록미디어 — 엑스알피 1달러 돌파 후 반락 (11/24 03:32)",
+      "url": "https://www.blockmedia.co.kr/archives/1169609"
+    },
+    {
+      "title": "블록미디어 — [퇴근길시황] 코스피 4700선 턱걸이⋯비트코인 6.1만달러 반등에도 ETF 이탈 (11/23 17:30)",
+      "url": "https://www.blockmedia.co.kr/archives/1169396"
+    },
+    {
+      "title": "파이낸셜뉴스 — 원·달러 환율 9.7원 오른 1345.9원 (11/23 15:40)",
+      "url": "https://www.fnnews.com/news/202611231537512889"
+    },
+    {
+      "title": "crypto.news — Bitcoin gives back $64K rally as spot demand stalls (11/23 18:57 UTC)",
+      "url": "https://crypto.news/bitcoin-rally-fades-short-squeeze-64k/"
+    },
+    {
+      "title": "Bitcoin.com News — Trump Applauds Nvidia CEO Comeback as Bitcoin Price Races Toward $64K (11/23 09:28 ET)",
+      "url": "https://news.bitcoin.com/market-updates/trump-applauds-nvidia-ceo-comeback-as-bitcoin-price-races-toward-64k/"
+    },
+    {
+      "title": "Bitcoin.com News — Bitcoin Price Plunges Back Below $61K Hours After Nvidia CEO Return Rally (11/23 14:53 ET)",
+      "url": "https://news.bitcoin.com/market-updates/bitcoin-plunges-below-61k-hours-nvidia-ceo-return-rally/"
+    },
+    {
+      "title": "KuCoin — Bitcoin Surges Past $64,000 as Nvidia Reinstates Jensen Huang, Triggering $372M in Short Liquidations (11/23)",
+      "url": "https://www.kucoin.com/news/flash/bitcoin-surges-past-64-000-as-nvidia-reinstates-jensen-huang-triggering-372m-in-short-liquidations"
+    },
+    {
+      "title": "Motley Fool — Crypto Market Today, Nov. 23: Bitcoin Sits Out Wall Street's Historic Rally as $1.8 Billion ETF Exodus Weighs on Prices",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/crypto-market-today-nov-23-bitcoin-sits-out-wall-street-s-historic-rally-as-usd1-8-billion-etf-exodus-weighs-on-prices/"
+    },
+    {
+      "title": "TFTC — Bitcoin ETF Flows November 2026 (Farside 일별·종목별 표)",
+      "url": "https://www.tftc.io/bitcoin-etf-flows/november-2026"
+    },
+    {
+      "title": "The Block — Spot bitcoin ETFs shed $1.79 billion in past week (11/23)",
+      "url": "https://www.theblock.co/news/markets/2026-11-23-spot-bitcoin-etfs-shed-1-79-billion-in-past-week-444857"
+    },
+    {
+      "title": "Cointelegraph — Bitcoin ETFs post third-largest weekly outflows of $1.8B (11/23)",
+      "url": "https://cointelegraph.com/markets/bitcoin-etfs-third-largest-weekly-outflows-1-8-billion"
+    },
+    {
+      "title": "KuCoin — Ethereum Spot ETFs See $97.3M Net Outflow on Nov 20, BlackRock's ETHA Leads",
+      "url": "https://www.kucoin.com/news/flash/ethereum-spot-etfs-see-97-3m-net-outflow-on-nov-20-blackrock-s-etha-leads"
+    },
+    {
+      "title": "PANews — Crypto Futures Liquidations Reach $638M Over Past 24 Hours, Led by Short Positions (11/23 15:30 UTC)",
+      "url": "https://panews.io/articles/01a20907-42f4-73b5-9b47-fe8d46e24bc9"
+    },
+    {
+      "title": "Coinpedia — Here is why Bitcoin erased Nvidia-induced gains today (11/23 22:33 UTC)",
+      "url": "https://coinpedia.org/price-analysis/here-is-why-bitcoin-btc-erased-nvidia-induced-gains-today/"
+    },
+    {
+      "title": "Cryptonro — Crypto Fear and Greed Index (11/23 집계, Alternative.me 11)",
+      "url": "https://cryptonro.com/crypto-fear-and-greed-index"
+    },
+    {
+      "title": "이투데이 — 코인시황 24일 09:00 KST (CoinMarketCap 상위 종목 24시간 등락)",
+      "url": "https://www.etoday.co.kr/news/view/2652053"
+    },
+    {
+      "title": "Toolz.trade — Crypto Gainers & Losers, CoinGecko Top 250 (11/24 00:30 UTC 조회)",
+      "url": "https://toolz.trade/crypto-gainers-losers/"
+    },
+    {
+      "title": "CoinCheckup — Top Gainers / Top Losers (11/24 00:45 UTC 조회)",
+      "url": "https://coincheckup.com/top-gainers"
+    },
+    {
+      "title": "Top100CEX — CoinGecko Top 100 (11/23 16:30 UTC 스냅샷, 시총·거래량)",
+      "url": "https://www.top100cex.com/coins"
+    },
+    {
+      "title": "IT타임스 — [11월 24일 코인 가격] 비트코인 2.86%↑, 라이터 16.81% 급등 (01:30 KST 기준)",
+      "url": "https://www.ittimes.com/news/articleView.html?idxno=88138"
+    },
+    {
+      "title": "코인리더스 — 업비트·빗썸·코인원, 스카이·USDS 거래유의종목 지정·입금 정지 (11/23 20:02)",
+      "url": "https://www.coinreaders.com/272655"
+    },
+    {
+      "title": "코인원 공지 — SKY·USDS 거래유의종목 지정 안내 (11/23 20:00)",
+      "url": "https://coinone.co.kr/info/notice/5989"
+    },
+    {
+      "title": "국제뉴스 — 업비트 거래대금 1위 파이버스, USDS +219%·SKY +81% (11/23 21:49)",
+      "url": "https://www.gukjenews.com/news/articleView.html?idxno=3760852"
+    },
+    {
+      "title": "톱스타뉴스 — 업비트 24일 08:00 USDS 4,180원 +205%, SKY +51% (11/24 09:03)",
+      "url": "https://www.topstarnews.net/news/articleView.html?idxno=16284553"
+    },
+    {
+      "title": "The Block — Sky co-founder weighs SKY sale to repay $77 million as stUSDS pool runs dry (11/23 17:30 UTC)",
+      "url": "https://www.theblock.co/news/defi/2026-11-23-sky-cofounder-weighs-sky-sale-repay-77-million-stusds-pool-runs-dry-445373"
+    },
+    {
+      "title": "FinanceFeeds — Sky's USDS holds $1 peg despite $2 billion in withdrawals (11/21, USDS 유통량·PSM 잔고)",
+      "url": "https://financefeeds.com/skys-usds-holds-1-peg-despite-2-billion-in-withdrawals-and-illicit-fund-claims/"
+    },
+    {
+      "title": "OKX Orbit — PIEVERSE 선물 1시간 -8%, OI 1,640만 → 1,500만 달러 (11/23 17:46 UTC+8)",
+      "url": "https://www.okx.com/en-us/orbit/insight/93552644187968"
+    },
+    {
+      "title": "OKX Orbit — PIEVERSE 22일 5.40달러 고점 뒤 4시간 -49%, OI -49% (11/23 19:37 UTC+8)",
+      "url": "https://www.okx.com/en-us/orbit/insight/93559473071904"
+    },
+    {
+      "title": "Genfinity — Quant Fusion Mainnet Public Access, Quant Connect KYC, uUSDC (11/23 17:28 UTC)",
+      "url": "https://genfinity.io/2026/11/23/quant-fusion-mainnet-public-access-quant-connect-kyc-uusdc"
+    },
+    {
+      "title": "DiarioBitcoin — QNT gana impulso el 23 de noviembre de 2026 (18:25 UTC 기준 가격·거래량)",
+      "url": "https://www.diariobitcoin.com/analisis/qnt-gana-impulso-el-23-de-noviembre-de-2026-pero-enfrenta-resistencias-clave/"
+    },
+    {
+      "title": "Internet Computer News — Pakistan's ChatT messenger on ICP opens public beta Dec 1 (11/22 20:31 UTC)",
+      "url": "https://internetcomputer.news/news/pakistan-chatt-messenger-icp-beta"
+    },
+    {
+      "title": "DiarioBitcoin — ICP rebota con el mercado el 23 de noviembre de 2026 (23:35 UTC)",
+      "url": "https://diariobitcoin.com/analisis/icp-rebota-con-el-mercado-pero-la-tendencia-sigue-bajo-presion-el-23-de-noviembre-de-2026"
+    },
+    {
+      "title": "CoinStats — Latest news for Pearl (11/23 02:47 UTC, 촉매 미확인)",
+      "url": "https://coinstats.app/ai/a/latest-news-for-pearl-2"
+    },
+    {
+      "title": "crypto.news — Pearl price surges 66% as FP8 mining upgrade advances (11/19)",
+      "url": "https://crypto.news/pearl-price-rally-fp8-upgrade-ai-mining-demand/"
+    },
+    {
+      "title": "Coingabbar — PEARL whale supply breakout levels (11/19, 상위 지갑 집중도)",
+      "url": "https://www.coingabbar.com/en/pearl-price-prediction-whale-supply-breakout-levels"
+    },
+    {
+      "title": "DiarioBitcoin — Cosmos ATOM rebota 7,27% el 23 de noviembre de 2026",
+      "url": "https://www.diariobitcoin.com/analisis/cosmos-atom-rebota-727-y-pone-a-prueba-resistencias-tecnicas-el-23-de-noviembre-de-2026/"
+    },
+    {
+      "title": "Cosmos Forum — Hub Weekly Update #25 (11/19, 토크노믹스 일정)",
+      "url": "https://forum.cosmos.network/t/hub-weekly-update-25-november-19-2026/17603"
+    },
+    {
+      "title": "DiarioBitcoin — Algorand ALGO sube 11,81% el 23 de noviembre de 2026",
+      "url": "https://www.diariobitcoin.com/analisis/algorand-algo-sube-1181-el-23-de-noviembre-de-2026-y-pone-a-prueba-una-resistencia-clave/"
+    },
+    {
+      "title": "DiarioBitcoin — CC al 23 de noviembre de 2026: rebote diario (23:20 UTC)",
+      "url": "https://www.diariobitcoin.com/analisis/cc-al-23-de-noviembre-de-2026-rebote-diario-frente-a-una-tendencia-bajista/"
+    },
+    {
+      "title": "ChainCatcher — Canton approves extending CC burn to mainnet (11/21)",
+      "url": "https://www.chaincatcher.com/en/article/2306974"
+    },
+    {
+      "title": "DiarioBitcoin — Kaspa KAS el 23 de noviembre de 2026: rebote con señales frágiles (23:33 UTC)",
+      "url": "https://www.diariobitcoin.com/analisis/kaspa-kas-el-23-de-noviembre-de-2026-rebote-con-senales-tecnicas-todavia-fragiles/"
+    },
+    {
+      "title": "DiarioBitcoin — Jupiter JUP sube 4,15% el 23 de noviembre de 2026",
+      "url": "https://diariobitcoin.com/analisis/jupiter-jup-sube-415-el-23-de-noviembre-de-2026-pero-sigue-bajo-presion-tecnica"
+    },
+    {
+      "title": "DiarioBitcoin — Filecoin FIL rebota el 23 de noviembre pero sigue bajo presión técnica",
+      "url": "https://diariobitcoin.com/analisis/filecoin-fil-rebota-el-23-de-noviembre-pero-sigue-bajo-presion-tecnica"
+    },
+    {
+      "title": "Nox Terminal — MemeCore (M) unlock schedule (다음 언락 12/2)",
+      "url": "https://terminalnox.com/unlocks/M"
+    },
+    {
+      "title": "Holder.io — MemeCore markets (거래소별 거래량)",
+      "url": "https://holder.io/coins/m-5/markets/"
+    },
+    {
+      "title": "CoinEdition via cryptonews.net — Venice Token 11/23 21:54 UTC 26.11달러 +4%",
+      "url": "https://cryptonews.net/news/altcoins/33798281/"
+    },
+    {
+      "title": "KuCoin — Venice Token surges 20% amid broader crypto selloff (11/20, 상위 10개 지갑 90%)",
+      "url": "https://www.kucoin.com/news/flash/venice-token-surges-20-amid-broader-crypto-selloff"
+    },
+    {
+      "title": "Cryptonro — Bitway (BTW) daily prices (11/24 00:17 UK)",
+      "url": "https://cryptonro.com/analysis/btw-today"
+    },
+    {
+      "title": "Phemex — Bitway BTW unlock calendar (12/2 1억 160만 BTW)",
+      "url": "https://phemex.com/blogs/bitway-btw-price-prediction-unlock-calendar"
+    },
+    {
+      "title": "CoinStats — Latest news for World Liberty Financial (11/23 02:15 UTC)",
+      "url": "https://coinstats.app/ai/a/latest-news-for-world-liberty-financial"
+    },
+    {
+      "title": "Coingabbar — WLFI burns first 100M tokens (11/20~21)",
+      "url": "https://www.coingabbar.com/en/wlfi-token-burn-world-liberty-financial-burns-first-100m-tokens"
+    },
+    {
+      "title": "StartupFortune — Monad's 16.6 billion MON unlock lands today with trackers split on its size (11/23 23:58 UTC)",
+      "url": "https://startupfortune.com/monads-166-billion-mon-unlock-lands-today-with-trackers-split-on-its-size/"
+    },
+    {
+      "title": "KuCoin Square — PROM +29.7%, 거래량 1.39억 달러, 공시 없음 (11/23 13:22 UTC)",
+      "url": "https://www.kucoin.com/zh-hant/square/post/content_6b044b64760f860007440a0f"
+    },
+    {
+      "title": "Coingape — Bitcoin price forecast: key macro events this week (11/23, PCE·GDP·휴장 일정)",
+      "url": "https://coingape.com/markets/bitcoin-price-forecast-key-macro-events-that-could-move-btc-this-week/"
+    }
+  ],
+  "terms": [
+    {
+      "term": "숏 스퀴즈",
+      "meaning": "하락에 건 포지션이 급등으로 강제 청산되며 매수를 불러 상승이 더 커지는 현상"
+    },
+    {
+      "term": "청산",
+      "meaning": "빌린 돈으로 건 선물 포지션이 증거금 부족으로 강제 정리되는 것"
+    },
+    {
+      "term": "미결제약정",
+      "meaning": "아직 청산되지 않은 선물 계약 총액. 줄면 레버리지가 빠져나간 것"
+    },
+    {
+      "term": "펀딩비",
+      "meaning": "무기한 선물에서 롱·숏이 주기적으로 주고받는 비용. 양수면 롱이 우세"
+    },
+    {
+      "term": "거래유의종목",
+      "meaning": "국내 거래소가 투자자 손실 우려가 있는 자산에 붙이는 표시. 심사 뒤 해제 또는 상장폐지로 이어진다"
+    },
+    {
+      "term": "김치 프리미엄",
+      "meaning": "국내 거래소 가격이 해외보다 높은 비율. 입금이 막히면 차익거래가 불가능해 벌어진다"
+    },
+    {
+      "term": "stUSDS",
+      "meaning": "스카이의 USDS 예치 상품. 예치금이 모두 대출돼 이용률 100%가 되면 출금이 막힌다"
+    },
+    {
+      "term": "롤업",
+      "meaning": "거래를 밖에서 모아 처리하고 결과만 메인 체인에 기록하는 확장 기술. 퀀트 퓨전은 OP 스택 기반"
+    },
+    {
+      "term": "언락",
+      "meaning": "묶여 있던 토큰이 일정에 따라 풀려 유통 가능해지는 것"
+    },
+    {
+      "term": "공포·탐욕 지수",
+      "meaning": "변동성·거래량 등을 0~100으로 묶은 투자 심리 지표. 25 이하는 극도의 공포"
+    },
+    {
+      "term": "도미넌스",
+      "meaning": "전체 암호화폐 시총 중 비트코인이 차지하는 비중"
+    },
+    {
+      "term": "PCE 물가",
+      "meaning": "미 연준이 가장 중시하는 개인소비지출 물가 지표"
+    }
+  ]
+}
