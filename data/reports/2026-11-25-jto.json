@@ -1,0 +1,763 @@
+{
+  "id": "2026-11-25-jto",
+  "date": "2026-11-25",
+  "slot": "outside_top100",
+  "project": "Jito",
+  "ticker": "JTO",
+  "question": "Jito가 버는 돈 중 JTO 보유자에게 돌아오는 몫은 얼마나 될까?",
+  "oneLiner": "Jito는 솔라나에서 스테이킹 토큰 JitoSOL과 거래 순서 경매를 운영하고, 거기서 뗀 수수료를 JTO 투표로 움직이는 DAO 재무에 모은다.",
+  "meta": {
+    "sector": "MEV · Liquid Staking (Solana)",
+    "krwMarkets": [
+      "업비트 2025-02-21 (KRW)"
+    ],
+    "rank": "CoinMarketCap #142 · 시총 약 1.26억 달러 (2026-11-25)",
+    "launched": "JTO 발행 2023-12-07 · JTX 2026-07-14"
+  },
+  "tldr": [
+    "최근 30일 매출 43만 달러 중 보유자 몫으로 잡힌 돈은 2,034달러이고, 매달 새로 풀린 JTO는 약 275만 달러어치로 추산된다.",
+    "매출은 MEV 팁의 6%와 JitoSOL 보상의 4%에서 나와 DAO 재무에 쌓이며, JTO 매입은 투표로 정할 때만 일어난다.",
+    "JTX 수수료로 하는 매입·소각 규모가 공개되는지와 JIP-40으로 새 수입이 재단에 먼저 가는지가 판단을 바꾼다."
+  ],
+  "who": {
+    "lead": "SOL 보유자는 보상을 받으면서도 언제든 팔 수 있도록 JitoSOL을 쓰고, 트레이더는 원하는 실행 순서를 사려고 Jito에 팁을 낸다.",
+    "glossary": [
+      {
+        "term": "JitoSOL",
+        "meaning": "SOL을 Jito 스테이크 풀에 맡기고 받는 토큰. 스테이킹 보상과 MEV 팁이 쌓이며 SOL 대비 가격이 오른다"
+      },
+      {
+        "term": "JTO",
+        "meaning": "Jito DAO의 투표 토큰. 1개가 1표이며 재무 사용과 수수료 배분을 정한다"
+      },
+      {
+        "term": "JTX",
+        "meaning": "Jito가 2026년 7월 연 비수탁 거래 플랫폼. 수수료의 80%가 DAO 몫으로 JTO 매입·소각에 쓰인다"
+      }
+    ],
+    "body": [
+      "SOL을 직접 스테이킹하면 검증인을 고르고 빼는 데 시간이 걸린다. JitoSOL은 이 일을 대신 처리하고, 받은 토큰을 다른 DeFi에서 담보로 쓰거나 바로 팔 수 있게 한다. 보상에는 일반 스테이킹 보상과 함께 MEV 팁이 들어간다.",
+      "차익거래나 청산 봇은 거래가 특정 순서로 실행돼야 이익을 낸다. 이들은 팁을 붙인 번들을 Jito 블록 엔진에 보내 그 순서를 산다. 검증인은 이 팁을 받으려고 Jito 클라이언트를 돌리며, 2026년 2분기 기준 활성 스테이크의 약 54%가 Jito 계열 클라이언트를 쓴다.",
+      "Jito는 BAM과 JTX로 사업을 넓히고 있다. BAM은 검증인이 블록을 만드는 과정을 시장 형태로 운영하는 소프트웨어로, 2분기 말 스테이크의 33%가 참여했다. JTX는 솔라나 토큰과 실물자산 토큰을 현물로 거래하는 비수탁 플랫폼이다."
+    ]
+  },
+  "money": {
+    "lead": "SOL 예치금은 체인 위 스테이크 풀에 있고 거래 순서 경매는 Jito Labs의 오프체인 서버에서 열리며, 두 곳에서 뗀 수수료가 DAO 재무로 모인다.",
+    "overview": [
+      "Jito의 돈은 두 갈래로 들어온다. 하나는 JitoSOL이다. 사용자가 맡긴 SOL은 체인 위 스테이크 풀에 있고, StakeNet이라는 자동 위임 시스템이 약 400개 검증인에게 나눠 맡긴다. 보상은 풀에 쌓여 JitoSOL 가격으로 돌아온다.",
+      "다른 하나는 MEV다. 봇은 원하는 순서로 실행될 거래 묶음에 팁을 붙여 블록 엔진에 보낸다. 블록 엔진은 Jito Labs가 운영하는 오프체인 서버이고, 팁은 체인 위 계약을 거쳐 검증인과 그 스테이커에게 간다.",
+      "두 갈래에서 뗀 수수료는 JTO 투표로 운영되는 DAO 재무에 모인다. 소프트웨어는 미국 델라웨어 법인 Jito Labs가 만들고, 케이맨 제도의 Jito 재단이 DAO 결정을 법적으로 집행한다. 2분기 말 DAO 재무 1.647억 달러 가운데 94%가 JTO였다."
+    ],
+    "userFlow": {
+      "title": "SOL 보유자가 JitoSOL로 스테이킹하고 빠져나오는 과정",
+      "steps": [
+        {
+          "text": "Jito 웹사이트나 지갑에서 SOL을 맡기고 JitoSOL을 받는다.",
+          "detail": "SOL로 바로 맡기면 별도 예치 수수료가 없다. 이미 스테이킹된 계정을 맡기면 Interceptor라는 장치가 10시간 동안 보류한 뒤 넘겨 주며, 문서는 기다리는 데 수수료가 없다고 적는다. Blockworks 보고서는 Interceptor 수수료를 DAO 재무 수입원 중 하나로 적는다."
+        },
+        {
+          "text": "맡긴 SOL은 StakeNet이 고른 약 400개 검증인에게 자동으로 나뉘어 위임된다.",
+          "detail": "StakeNet은 20~30일마다 성과 기준으로 상위 400개 검증인을 다시 고르고, 문서는 이 과정에 사람이 개입하지 않는다고 설명한다. 바탕이 되는 스테이크 풀 프로그램은 Solana Labs가 만든 것이고, Jito DAO가 이 풀의 관리자 역할을 갖는다."
+        },
+        {
+          "text": "스테이킹 보상과 MEV 팁이 쌓이면서 JitoSOL 1개로 바꿀 수 있는 SOL이 늘어난다.",
+          "detail": "JitoSOL 수량은 그대로이고 SOL 대비 가격이 오른다. Jito는 검증인 수수료를 뺀 보상 전체의 4%를 관리 수수료로 떼며, 문서는 이를 맡긴 SOL의 연 약 0.3%로 설명한다."
+        },
+        {
+          "text": "빼고 싶으면 웹사이트에서 상환을 신청해 최대 한 에포크, 약 2일을 기다리거나 Jupiter에서 바로 판다.",
+          "detail": "웹사이트 상환에는 출금액의 0.1%가 수수료로 붙는다. Jupiter 매도에는 이 수수료가 없지만, 금액이 크면 호가 차이와 슬리피지를 확인해야 한다고 문서는 안내한다."
+        },
+        {
+          "text": "JTO를 가진 사람은 JIP라는 제안에 투표해 DAO 재무의 쓰임과 수수료 배분을 정한다.",
+          "detail": "1 JTO가 1표이고 위임할 수 있다. 총공급의 1% 이상이 투표해야 성립하고 단순 과반으로 통과한다. 보안 위원회와 재단은 거부권을 갖지만 쓴 적은 없다고 Blockworks 보고서는 적는다."
+        }
+      ]
+    },
+    "issuerFlow": {
+      "title": "Jito Labs와 DAO가 팁을 모으고 수입을 나누는 과정",
+      "steps": [
+        {
+          "text": "Jito Labs가 검증인용 클라이언트와 블록 엔진을 만들어 운영한다.",
+          "detail": "블록 엔진은 오프체인 서버다. Neodyme의 2022년 감사는 블록 엔진을 범위에서 뺐고, 검증인 쪽 중계 소프트웨어가 블록 엔진에서 온 번들과 거래를 그대로 믿는 점을 Low 등급으로 지적했다. 이 지적은 해결로 표시됐다."
+        },
+        {
+          "text": "봇이 원하는 실행 순서를 담은 번들에 팁을 붙여 블록 엔진에 보내고, 블록 엔진이 이를 리더 검증인에게 넘긴다.",
+          "detail": "팁은 체인 위 팁 결제 계약으로 리더 검증인에게 가고, 두 번째 계약이 머클 트리로 그 검증인의 스테이커에게 나눈다. 2분기에 이렇게 오간 MEV 팁은 990만 달러로 전 분기의 약 절반이었다."
+        },
+        {
+          "text": "팁의 6%는 DAO 재무로 간다. JIP-24 이전에는 Jito Labs와 DAO가 3%씩 나눴다.",
+          "detail": "Blockworks 보고서는 DAO 재무 수입원을 팁의 6%, JitoSOL 보상의 4%와 부대 수수료, BAM 플러그인 수수료, Interceptor 수수료로 적는다. 같은 보고서는 이 팁 몫에서 30bp가 스테이킹된 JTO와 JitoSOL 보유자에게 간다고 적는다."
+        },
+        {
+          "text": "BAM을 검증인에게 보급하고, DAO 재무로 참여 검증인에게 보조금을 준다.",
+          "detail": "BAM 참여 검증인은 2분기에 340개에서 378개로 늘었다. 2분기 BAM 보조금은 120만 달러였고, JIP-37이 보조금을 9월까지 연장하면서 3분기 매출만큼 JTO를 살 자금을 Cryptoeconomics SubDAO에 예약했다."
+        },
+        {
+          "text": "JTX를 열고, 그 수수료의 80%를 DAO 몫으로 돌려 JTO를 사서 소각한다.",
+          "detail": "JIP-38은 DAO 몫 전부를 공개 시장 매입과 영구 소각에 쓰고 나머지 20%는 JTX 개발에 쓰도록 했다. 20%의 쓰임을 추천인 보상으로 적은 보도도 있다. 매입은 개발 위원회가 감독하는 Rev Splitter가 자동으로 집행하며, 출시 후 최소 1년인 2027년 4분기까지 유지한 뒤 재검토한다."
+        },
+        {
+          "text": "11월 23일 공개된 JIP-40은 새 수입을 연 2,000만 달러가 될 때까지 재단에 먼저 주자고 제안했다.",
+          "detail": "BAM 플러그인 수수료 같은 새 수입원이 대상이다. 합계가 연 2,000만 달러에 이르면 BAM 수수료는 DAO 80%, 재단 20%로 나뉜다. 기존 DAO 수입과 JTX 매입·소각 몫은 바뀌지 않으며, 투표 일정은 보도에 나오지 않는다."
+        }
+      ]
+    },
+    "example": [
+      "가령 1,000 SOL을 JitoSOL로 맡긴 해에 검증인 수수료를 뺀 스테이킹 보상과 MEV 팁이 60 SOL 나왔다고 하자. Jito는 그 4%인 2.4 SOL을 떼고 57.6 SOL을 JitoSOL 가격에 반영한다. 1년 뒤 웹사이트에서 상환하면 1,057.6 SOL의 0.1%인 약 1.06 SOL을 출금 수수료로 더 낸다.",
+      "가령 한 봇이 번들에 팁 1 SOL을 붙였다고 하자. 그 6%인 0.06 SOL이 DAO 몫이고, 나머지는 리더 검증인과 그 스테이커에게 간다. 2분기 실제 수치로 보면 MEV 팁 990만 달러 중 DAO 매출로 남은 것은 53.9만 달러, 약 5.4%다(공개정보 기반 계산)."
+    ],
+    "mix": {
+      "asOf": "2026-11-18",
+      "source": "DefiLlama · Jito (2026-11-25 조회, 페이지 기준일 2026-11-18) / Solana Compass · Jito 2026년 2분기 보고 요약",
+      "headers": [
+        "구분",
+        "항목",
+        "금액"
+      ],
+      "rows": [
+        [
+          "예치 자산",
+          "TVL 전체 · JitoSOL",
+          "7.48억 · 7.44억 달러"
+        ],
+        [
+          "예치 자산",
+          "TVL 고점 (2025-01-26)",
+          "39.1억 달러"
+        ],
+        [
+          "수수료 30일",
+          "전체 수수료 · 프로토콜 매출",
+          "772만 · 43.0만 달러"
+        ],
+        [
+          "수수료 30일",
+          "보유자 몫 매출",
+          "2,034달러 · 매출의 0.5% (계산)"
+        ],
+        [
+          "2026년 2분기",
+          "프로토콜 매출",
+          "128만 달러 · 전 분기 대비 -45%"
+        ],
+        [
+          "2026년 2분기",
+          "에포크·출금 수수료 · MEV 팁 관련",
+          "73.3만 · 53.9만 달러"
+        ],
+        [
+          "2026년 2분기",
+          "MEV 팁 전체",
+          "990만 달러"
+        ],
+        [
+          "2026년 2분기 말",
+          "DAO 재무 · 그중 JTO",
+          "1.647억 · 1.546억 달러"
+        ],
+        [
+          "2026년 2분기 말",
+          "JitoSOL 공급 · LST 점유율",
+          "986만 SOL · 17.3%"
+        ]
+      ]
+    },
+    "trust": [
+      "블록 엔진 — 번들 경매는 Jito Labs가 운영하는 오프체인 서버에서 열린다. 블록 엔진이 멈추거나 경매를 잘못 운영하면 팁 수입이 줄고, 그 손실은 팁을 받는 검증인과 JitoSOL 보유자, 팁의 6%를 받는 DAO가 함께 진다.",
+      "검증인 선택 — StakeNet이 검증인을 자동으로 고르고, Jito DAO는 풀 관리자로서 검증인 선택과 수수료에 관한 제한된 권한을 갖는다. 성과가 나쁜 검증인에게 맡겨지면 JitoSOL 보유자의 수익이 줄어든다. 문서는 현재 솔라나에 슬래싱이 없다고 설명한다.",
+      "프로그램 업그레이드 — 업그레이드 권한은 DAO에 있고, 신뢰 없이 집행하기 어려운 버그 수정은 7명 중 4명이 서명하는 보안 위원회가 맡는다. Blockworks 보고서에는 타임락 언급이 없다. 잘못된 변경이 들어가면 JitoSOL 예치자가 먼저 손실을 본다.",
+      "수입 배분 — DAO 매출을 JTO 매입에 쓸지는 JTO 투표로 정한다. 재단 지갑은 멀티시그지만 서명자 수와 임계치는 공개되지 않았다. 배분이 바뀌면 JTO 보유자가 기대하던 매입이 줄어든다."
+    ],
+    "security": [
+      "MEV 소프트웨어 감사 — Neodyme가 2022년 9월 12일 보고서를 냈다. 팁 결제·분배 계약과 중계 소프트웨어를 봤고, 지적 3건 중 Medium·Low는 해결, 참고 1건은 수용으로 처리됐다. 블록 엔진은 범위 밖이었다.",
+      "스테이크 풀 — JitoSOL은 Solana Labs가 만든 스테이크 풀 프로그램 위에 있다. Jito 문서는 세 곳이 감사했다고 적지만, 이번에 연 페이지에는 감사사 이름과 날짜가 없다.",
+      "사고 이력 — Blockworks 보고서는 2026년 4월 23일까지 토큰 보유자나 프로토콜 자금에 영향을 준 사고가 없었다고 적는다.",
+      "비수탁 구조 — Jito 문서는 Jito가 예치된 SOL에 접근할 수 없고, Jito가 사라져도 보유자가 검증인에게서 SOL을 뺄 수 있다고 설명한다."
+    ],
+    "body": [
+      "가장 가까운 비교 대상은 이더리움의 MEV-Boost다. 이더리움에서는 블록 빌더가 블록 전체를 만들어 검증인에게 입찰하고, 검증인은 가장 높은 입찰을 고른다. Jito에서는 봇이 번들마다 팁을 붙이고, 팁 계약이 그 팁을 리더 검증인과 스테이커에게 나눈다. 그래서 Jito의 매출은 블록 단위 입찰가가 아니라 번들 팁의 6%라는 고정 비율로 정해진다."
+    ]
+  },
+  "usage": {
+    "lead": "예치 자산은 2025년 1월 고점의 5분의 1 아래로 줄었고, 최근 30일 프로토콜 매출은 43만 달러다.",
+    "usageMetrics": [
+      {
+        "label": "예치 자산 TVL",
+        "value": "7.48억 달러 · JitoSOL 7.44억 달러 (2026-11-18)",
+        "source": "DefiLlama · Jito",
+        "meaning": "2025년 1월 고점 39.1억 달러의 19%다. 예치금이 줄면 4% 관리 수수료의 바탕도 함께 줄어든다."
+      },
+      {
+        "label": "JitoSOL 공급",
+        "value": "986만 SOL · LST 점유율 17.3% (2026년 2분기 말)",
+        "source": "Solana Compass · Jito 2분기 보고 요약",
+        "meaning": "1분기 1,235만 SOL에서 한 분기에 20% 줄었다. 솔라나 스테이킹 토큰 시장에서 점유율도 20.3%에서 내려갔다."
+      },
+      {
+        "label": "클라이언트·BAM 점유율",
+        "value": "Jito 계열 클라이언트 약 54% · BAM 33%, 378개 검증인 (2026년 2분기)",
+        "source": "Solana Compass · Jito 2분기 보고 요약",
+        "meaning": "팁 수입은 Jito 소프트웨어를 돌리는 검증인 비중에 달려 있다. Harmonic이 약 21%로 두 번째다."
+      }
+    ],
+    "revenueMetrics": [
+      {
+        "label": "30일 수수료와 매출",
+        "value": "수수료 772만 달러 · 매출 43.0만 달러 (2026-11-18)",
+        "source": "DefiLlama · Jito",
+        "meaning": "수수료 대부분은 스테이커와 검증인 몫이고 DAO에 남는 매출은 5.6%다(계산). 2분기 월평균 약 43만 달러와 같은 수준이다."
+      },
+      {
+        "label": "30일 보유자 몫",
+        "value": "2,034달러 (2026-11-18)",
+        "source": "DefiLlama · Jito",
+        "meaning": "DefiLlama가 JTO 보유자 몫으로 집계한 돈이다. JTX 수수료 매입·소각은 전용 집계가 없어 여기에 들어 있지 않다."
+      },
+      {
+        "label": "분기 매출",
+        "value": "128만 달러, 전 분기 대비 -45% (2026년 2분기)",
+        "source": "Solana Compass · Jito 2분기 보고 요약",
+        "meaning": "5분기 연속 감소했고, 고점이던 2025년 1분기 2,610만 달러의 약 5%다."
+      },
+      {
+        "label": "DAO 재무",
+        "value": "1.647억 달러 · 그중 JTO 1.546억 달러 (2026년 2분기 말)",
+        "source": "Solana Compass · Jito 2분기 보고 요약",
+        "meaning": "늘어난 금액은 번 돈이 아니라 JTO 가격 상승분이라고 보고서는 설명한다. 현금성 운영 자금은 이보다 훨씬 작다."
+      }
+    ],
+    "valueQuestion": "Jito 사용이 늘면 JTO 보유자에게도 수익이 돌아가나?",
+    "valueAnswer": [
+      "예치자와 검증인이 먼저 받는다. JitoSOL 보유자는 검증인 수수료를 뺀 보상의 96%를 가격 상승으로 받고, 봇이 낸 팁은 94%가 리더 검증인과 그 스테이커에게 간다.",
+      "프로토콜에 남는 것은 팁의 6%, JitoSOL 보상의 4%, 상환 수수료 0.1%와 BAM·Interceptor 수수료다. 이 돈은 모두 DAO 재무로 가며, 최근 30일 기준 43만 달러다.",
+      "JTO 보유자에게 자동으로 오는 배당은 없다. DAO가 투표로 매입을 정할 때만 시장에서 JTO를 사고, 지금 자동으로 집행되는 경로는 JTX 수수료의 DAO 몫으로 하는 매입·소각뿐이다. 이 경로는 공급을 줄이는 방식이고 보유자에게 현금을 주지는 않는다."
+    ],
+    "policies": [
+      {
+        "name": "JIP-24 블록 엔진 수수료 DAO 귀속",
+        "approved": "2025년 8월 통과",
+        "executed": "집행 — 팁의 6% 전부가 DAO 재무로 간다",
+        "note": "이전에는 Jito Labs와 DAO가 3%씩 나눴다. tokenomics.com은 DAO 수입이 연 약 3,400만 달러로 늘 것으로 추정했는데, 최근 30일 매출을 1년으로 늘린 약 523만 달러의 6배가 넘는다(계산)."
+      },
+      {
+        "name": "DAO 매출 100% JTO 매입",
+        "approved": "JIP-24 이후 DAO 지침, 6개월 한시",
+        "executed": "집행 후 종료 — WEEX는 첫 회 100만 달러를 포함해 250만 달러를 샀다고 보도했고, 이후 BAM 보조금으로 전환됐다",
+        "note": "매달 전월 매출만큼 사는 방식이었다. Blockworks는 총매입액이 공개되지 않았다고 적는다."
+      },
+      {
+        "name": "BAM 보조금과 3분기 매입 예약",
+        "approved": "JIP-31 보조금 · JIP-37 연장, JIP-37은 2026년 2분기 승인",
+        "executed": "보조금 집행 — 2분기 120만 달러. 3분기 매입은 계획으로만 보도됐고 집행 기록은 찾지 못했다",
+        "note": "JIP-37은 Cryptoeconomics SubDAO 자금을 3분기 매출만큼의 JTO 매입에 쓰도록 예약했다."
+      },
+      {
+        "name": "JIP-38 JTX 수수료 매입·소각",
+        "approved": "2026년 7월 13일 통과, 표결 수는 미공개",
+        "executed": "진행 중 — JTX가 7월 14일 열렸고 Rev Splitter가 자동 집행하도록 돼 있다. 실제 소각량은 공개 집계가 없어 확인 대기",
+        "note": "JTX 수수료의 80%가 DAO 몫이고 그 전부를 매입·소각한다. 최소 1년, 2027년 4분기까지 유지된다."
+      },
+      {
+        "name": "JIP-40 새 수입 재단 우선 배분",
+        "approved": "2026년 11월 23일 제안 — 투표 일정 미발표",
+        "executed": "미집행 — 제안 단계",
+        "note": "새 수입이 연 2,000만 달러가 될 때까지 재단에 가고, 이후 BAM 수수료는 DAO 80%, 재단 20%로 나뉜다. 기존 DAO 수입과 JTX 몫은 바뀌지 않는다."
+      }
+    ],
+    "tokenomics": {
+      "circulating": "유통 5.474억 / 총공급 9.858억 JTO, 유통률 약 56%, CoinMarketCap 2026년 11월 25일 기준 · 가격 0.2308달러, 시총 1.26억 달러, FDV 2.28억 달러, 고점 5.61달러 대비 -95.9%. DefiLlama는 총공급을 10억 개로 표기한다.",
+      "nextUnlock": "다음 언락 날짜와 수량은 공식 일정표로 확인하지 못했다. 2026년 2월 약 4.335억 개였던 유통량이 11월 5.474억 개가 돼 월 약 1,200만 개씩 늘어난 셈이다(계산). 핵심 기여자 몫 2.45억 개 중 1.36억 개가 2026년 1분기까지 풀렸다.",
+      "valuePath": "DAO 매출은 재무에 쌓이고 JTO 매입 여부는 투표로 정한다. 자동 경로는 JTX 수수료 DAO 몫의 매입·소각 하나이며, 보유자에게 현금 배당은 없다.",
+      "valueCapture": "indirect"
+    }
+  },
+  "risks": {
+    "lead": "가장 큰 변수는 MEV 팁과 JitoSOL 예치가 함께 줄어 매출이 작아진 점과, 그 매출이 JTO로 가는 길이 투표에 달려 있다는 점이다.",
+    "items": [
+      {
+        "risk": "팁·예치 수입 감소 (사업)",
+        "why": "2분기 MEV 팁이 전 분기의 절반으로 줄었고 프로토콜 매출은 5분기 연속 감소했다. JitoSOL 공급도 한 분기에 20% 줄었다. Harmonic 같은 경쟁 클라이언트가 스테이크를 가져가면 팁 6%의 바탕이 더 줄어 DAO 재무와 JTO 매입 재원이 함께 작아진다.",
+        "indicator": "DefiLlama 30일 매출 / 분기별 MEV 팁 / 클라이언트별 스테이크 점유율"
+      },
+      {
+        "risk": "보유자 몫의 정책 의존 (지배구조)",
+        "why": "DAO 매출을 JTO 매입에 쓸지는 투표로 정하고, 6개월 매입 프로그램도 BAM 보조금으로 바뀌었다. JIP-40이 통과하면 새 수입은 연 2,000만 달러가 될 때까지 재단으로 먼저 간다. 그만큼 JTO 보유자가 기대할 매입이 늦어진다.",
+        "indicator": "JIP-40 투표 결과 / DAO 재무 지출 내역"
+      },
+      {
+        "risk": "물량 증가 (토큰)",
+        "why": "2026년 2월 이후 유통량이 월 약 1,200만 개씩 늘었고, 핵심 기여자 몫도 약 1.09억 개가 남아 있다(계산). 매입·소각이 이보다 작으면 새로 풀린 물량을 시장이 받아야 하고, 그 가격 부담은 기존 JTO 보유자가 진다.",
+        "indicator": "월별 유통량 변화 / 핵심 기여자 잔여 물량"
+      },
+      {
+        "risk": "업그레이드·운영 권한 (보안)",
+        "why": "스테이크 풀과 팁 프로그램 업그레이드는 DAO 권한이지만 버그 수정은 7명 중 4명의 보안 위원회가 집행할 수 있다. 공개 자료에 타임락이 없어 잘못된 변경이 들어가면 JitoSOL 예치자가 빠져나갈 시간이 짧다. 블록 엔진은 오프체인이라 감사 범위 밖이었다.",
+        "indicator": "보안 위원회 구성 변경 / 프로그램 업그레이드 기록"
+      }
+    ]
+  },
+  "watchlist": [
+    {
+      "indicator": "DefiLlama 30일 매출",
+      "why": "DAO가 JTO 매입에 쓸 수 있는 돈의 크기다",
+      "signal": "43만 달러 아래로 내려가 감소가 6분기째 이어지는지"
+    },
+    {
+      "indicator": "Rev Splitter 매입·소각 기록",
+      "why": "자동으로 집행되는 유일한 JTO 매입 경로다",
+      "signal": "월 매입액이 공개되는지, 매달 새로 풀리는 약 275만 달러어치에 견줄 만큼 커지는지"
+    },
+    {
+      "indicator": "JIP-40 투표",
+      "why": "새 수입이 DAO와 재단 중 어디로 먼저 가는지 정한다",
+      "signal": "통과 여부와 연 2,000만 달러 기준이 바뀌는지"
+    },
+    {
+      "indicator": "월별 유통량 증가",
+      "why": "매입·소각이 상쇄해야 할 새 물량이다",
+      "signal": "월 증가분이 1,200만 개를 넘는지, 총공급 표기가 9.858억 개에서 더 줄어드는지"
+    },
+    {
+      "indicator": "JitoSOL 공급과 클라이언트 점유율",
+      "why": "스테이킹 수수료와 팁 수입의 바탕이다",
+      "signal": "JitoSOL 공급이 986만 SOL, Jito 계열 클라이언트 점유율이 54% 아래로 내려가는지"
+    }
+  ],
+  "verdict": "최근 30일 Jito 매출 가운데 JTO 보유자 몫으로 집계된 돈은 0.5%에 못 미친다. 매출은 DAO 재무에 쌓이고 매입은 투표로 정하는 구조라, 지금 자동으로 집행되는 경로는 JTX 수수료의 매입·소각뿐이며 그 규모는 아직 공개 집계가 없다. 이 매입·소각액이 매달 새로 풀리는 JTO 가치에 견줄 만큼 커지는지가 판단을 바꿀 조건이다.",
+  "terms": [
+    {
+      "term": "MEV",
+      "key": "mev",
+      "aliases": [
+        "MEV 팁",
+        "최대 추출 가치"
+      ],
+      "meaning": "블록에 들어갈 거래의 순서를 정해 얻을 수 있는 추가 이익",
+      "role": "Jito에서는 봇이 블록 엔진 경매에 낸 팁이 리더 검증인과 그 스테이커에게 가고, JitoSOL 보유자는 이 팁을 스테이킹 보상과 함께 가격으로 받는다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Jito Docs – JitoSOL General FAQs",
+          "url": "https://www.jito.network/pt/docs/jitosol/faqs/general-faqs/"
+        },
+        {
+          "title": "Solana Compass – Jito Q2 2026",
+          "url": "https://solanacompass.com/news/jito-q2-2026-protocol-revenue-falls-45-to-128m-as-bam-reaches-33-of-solana-stake"
+        }
+      ]
+    },
+    {
+      "term": "번들",
+      "key": "bundle",
+      "aliases": [
+        "Bundle",
+        "거래 묶음"
+      ],
+      "meaning": "정해진 순서대로 함께 실행되도록 묶어 보내는 거래 묶음",
+      "role": "Jito에서는 봇이 번들에 팁을 붙여 블록 엔진에 보낸다. Neodyme 감사는 검증인 쪽 중계 소프트웨어가 블록 엔진에서 온 번들을 그대로 믿는 점을 지적했다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Neodyme – Security Audit: Jito MEV Validator",
+          "url": "https://neodyme.io/reports/JitoMEV.pdf"
+        }
+      ]
+    },
+    {
+      "term": "블록 엔진",
+      "key": "block-engine",
+      "aliases": [
+        "Block Engine"
+      ],
+      "meaning": "검증인 밖에서 거래 묶음을 모아 경매하고 검증인에게 넘기는 서버",
+      "role": "Jito Labs가 운영하는 오프체인 서버다. JIP-24 이후 블록 엔진 수수료인 팁의 6%가 전부 DAO로 간다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "tokenomics.com – Jito Tokenomics",
+          "url": "https://tokenomics.com/articles/jito-tokenomics-how-jto-captures-mev-and-staking-revenue-on-solana"
+        },
+        {
+          "title": "Neodyme – Security Audit: Jito MEV Validator",
+          "url": "https://neodyme.io/reports/JitoMEV.pdf"
+        }
+      ]
+    },
+    {
+      "term": "BAM",
+      "key": "block-assembly-marketplace",
+      "aliases": [
+        "Block Assembly Marketplace",
+        "블록 조립 시장"
+      ],
+      "meaning": "검증인이 블록을 만드는 과정을 시장 형태로 운영하는 Jito의 검증인 소프트웨어",
+      "role": "2026년 2분기 말 378개 검증인, 스테이크의 33%가 참여했다. DAO는 참여 검증인에게 보조금을 주고, BAM 플러그인 수수료는 JIP-40의 배분 대상이다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Solana Compass – Jito Q2 2026",
+          "url": "https://solanacompass.com/news/jito-q2-2026-protocol-revenue-falls-45-to-128m-as-bam-reaches-33-of-solana-stake"
+        },
+        {
+          "title": "KuCoin – Jito JIP-40",
+          "url": "https://www.kucoin.com/news/flash/jito-proposes-new-revenue-allocation-strategy-to-reach-20m-threshold-before-sharing-with-dao"
+        }
+      ]
+    },
+    {
+      "term": "StakeNet",
+      "key": "stakenet",
+      "aliases": [
+        "스테이크넷"
+      ],
+      "meaning": "정해진 기준으로 검증인을 고르고 스테이크를 자동으로 다시 나누는 시스템",
+      "role": "JitoSOL 풀의 SOL을 20~30일마다 상위 400개 검증인에게 다시 나눠 맡기며, 문서는 사람이 개입하지 않는다고 설명한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Jito Docs – JitoSOL General FAQs",
+          "url": "https://www.jito.network/pt/docs/jitosol/faqs/general-faqs/"
+        },
+        {
+          "title": "Jito Docs – JitoSOL Security Overview",
+          "url": "https://www.jito.network/fr/docs/jitosol/jitosol-liquid-staking/security/overview/"
+        }
+      ]
+    },
+    {
+      "term": "스테이크 풀",
+      "key": "stake-pool",
+      "aliases": [
+        "Stake Pool",
+        "스테이크 풀 프로그램"
+      ],
+      "meaning": "여러 사람의 SOL을 모아 검증인에게 위임하고 지분 토큰을 발행하는 솔라나 프로그램",
+      "role": "JitoSOL은 Solana Labs가 만든 스테이크 풀 프로그램 위에 있고, Jito DAO가 이 풀의 관리자 역할을 갖는다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Jito Docs – JitoSOL General FAQs",
+          "url": "https://www.jito.network/pt/docs/jitosol/faqs/general-faqs/"
+        },
+        {
+          "title": "Jito Docs – JitoSOL Security Overview",
+          "url": "https://www.jito.network/fr/docs/jitosol/jitosol-liquid-staking/security/overview/"
+        }
+      ]
+    },
+    {
+      "term": "바이백",
+      "key": "buyback",
+      "aliases": [
+        "매입",
+        "JTO 매입",
+        "Buyback"
+      ],
+      "meaning": "프로토콜이 번 돈으로 시장에서 자기 토큰을 사들이는 것",
+      "role": "Jito DAO는 JIP-24 이후 6개월간 매출 전부로 JTO를 샀다가 BAM 보조금으로 돌렸다. 2026년 7월부터는 JTX 수수료의 DAO 몫으로 JTO를 사서 소각한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Blockworks – Jito Governance Token Transparency Report",
+          "url": "https://blockworks.com/api/transparency-report/jito-governance-token"
+        },
+        {
+          "title": "WEEX – Jito: 100% of network revenue for JTO buyback",
+          "url": "https://www.weex.com/news/detail/jito-100-of-network-revenue-will-be-used-for-jto-token-buyback-199696"
+        },
+        {
+          "title": "crypto.news – Jito proposes permanent JTO burns",
+          "url": "https://crypto.news/jito-proposes-permanent-jto-burns-revenue-overhaul/"
+        }
+      ]
+    },
+    {
+      "term": "소각",
+      "key": "token-burn",
+      "aliases": [
+        "Burn",
+        "영구 소각"
+      ],
+      "meaning": "토큰을 누구도 쓸 수 없는 상태로 만들어 총공급에서 빼는 것",
+      "role": "JIP-38에 따라 JTX 수수료의 DAO 몫으로 산 JTO는 영구 소각되며, 이 방식은 출시 후 최소 1년간 유지된다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "crypto.news – Jito proposes permanent JTO burns",
+          "url": "https://crypto.news/jito-proposes-permanent-jto-burns-revenue-overhaul/"
+        },
+        {
+          "title": "Phemex – What is JTX and why Jito burns JTO",
+          "url": "https://phemex.com/blogs/what-is-jtx-why-jito-burns-jto"
+        }
+      ]
+    },
+    {
+      "term": "Rev Splitter",
+      "key": "revenue-splitter",
+      "aliases": [
+        "Revenue Splitter",
+        "수익 분배 계약"
+      ],
+      "meaning": "들어온 수수료를 정해진 비율로 여러 주소에 자동으로 나누는 장치",
+      "role": "Jito에서는 JIP-17로 승인된 장치이고, JTX 수수료의 매입·소각을 개발 위원회 감독 아래 자동으로 집행한다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "crypto.news – Jito proposes permanent JTO burns",
+          "url": "https://crypto.news/jito-proposes-permanent-jto-burns-revenue-overhaul/"
+        },
+        {
+          "title": "Blockworks – Jito Governance Token Transparency Report",
+          "url": "https://blockworks.com/api/transparency-report/jito-governance-token"
+        }
+      ]
+    },
+    {
+      "term": "보안 위원회",
+      "key": "security-council",
+      "aliases": [
+        "Security Council"
+      ],
+      "meaning": "긴급 수정처럼 제한된 일을 처리하도록 정해 둔 서명자 집단",
+      "role": "Jito에서는 7명 중 4명이 서명하면 신뢰 없이 집행하기 어려운 버그 수정과 업그레이드를 처리하고, 재단과 함께 거부권을 갖는다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Blockworks – Jito Governance Token Transparency Report",
+          "url": "https://blockworks.com/api/transparency-report/jito-governance-token"
+        }
+      ]
+    },
+    {
+      "term": "멀티시그",
+      "key": "multisig",
+      "aliases": [
+        "다중 서명",
+        "Multisig"
+      ],
+      "meaning": "정해진 수 이상의 서명자가 승인해야 실행되는 지갑",
+      "role": "Jito 재단 지갑이 멀티시그다. Blockworks 보고서는 재단과 Jito Labs 멀티시그의 임계치가 공개되지 않았다고 적는다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Blockworks – Jito Governance Token Transparency Report",
+          "url": "https://blockworks.com/api/transparency-report/jito-governance-token"
+        }
+      ]
+    },
+    {
+      "term": "JIP",
+      "key": "governance-proposal",
+      "aliases": [
+        "Jito Improvement Proposal",
+        "거버넌스 제안"
+      ],
+      "meaning": "토큰 보유자가 투표하는 프로토콜 변경 제안",
+      "role": "Jito에서는 1 JTO가 1표이고 총공급의 1% 이상이 투표해야 성립하며 단순 과반으로 통과한다. 수수료 배분을 바꾼 JIP-24·38과 제안 중인 JIP-40이 이 절차를 따른다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Blockworks – Jito Governance Token Transparency Report",
+          "url": "https://blockworks.com/api/transparency-report/jito-governance-token"
+        },
+        {
+          "title": "KuCoin – Jito JIP-40",
+          "url": "https://www.kucoin.com/news/flash/jito-proposes-new-revenue-allocation-strategy-to-reach-20m-threshold-before-sharing-with-dao"
+        }
+      ]
+    },
+    {
+      "term": "Jito 클라이언트",
+      "key": "validator-client",
+      "aliases": [
+        "Jito 계열 클라이언트",
+        "검증인 클라이언트",
+        "검증인용 클라이언트"
+      ],
+      "meaning": "검증인이 블록을 만들고 검증하려고 돌리는 노드 소프트웨어",
+      "role": "검증인은 Jito 클라이언트를 돌려야 블록 엔진 경매의 팁을 받는다. 2026년 2분기 기준 활성 스테이크의 약 54%가 Jito 계열이다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Jito Docs – JitoSOL General FAQs",
+          "url": "https://www.jito.network/pt/docs/jitosol/faqs/general-faqs/"
+        },
+        {
+          "title": "Solana Compass – Jito Q2 2026",
+          "url": "https://solanacompass.com/news/jito-q2-2026-protocol-revenue-falls-45-to-128m-as-bam-reaches-33-of-solana-stake"
+        }
+      ]
+    },
+    {
+      "term": "에포크",
+      "key": "epoch",
+      "aliases": [
+        "Epoch"
+      ],
+      "meaning": "블록체인이 보상 계산과 스테이크 변경을 묶어 처리하는 기간 단위. 솔라나에서는 약 2일이다",
+      "inline": false
+    },
+    {
+      "term": "LST",
+      "key": "liquid-staking-token",
+      "aliases": [
+        "유동 스테이킹 토큰"
+      ],
+      "meaning": "스테이킹한 자산을 대신해 받는, 거래할 수 있는 토큰",
+      "inline": false
+    },
+    {
+      "term": "TVL",
+      "key": "tvl",
+      "aliases": [
+        "예치 자산"
+      ],
+      "meaning": "프로토콜 계약에 맡겨진 자산의 총가치",
+      "inline": false
+    },
+    {
+      "term": "FDV",
+      "key": "fdv",
+      "aliases": [
+        "완전 희석 시가총액"
+      ],
+      "meaning": "총공급 전체가 지금 가격으로 유통된다고 가정한 시가총액",
+      "inline": false
+    },
+    {
+      "term": "슬래싱",
+      "key": "slashing",
+      "aliases": [
+        "Slashing"
+      ],
+      "meaning": "검증인이 규칙을 어기면 맡겨진 스테이크 일부를 깎는 벌칙",
+      "inline": false
+    }
+  ],
+  "openItems": [
+    {
+      "item": "JTX 수수료 규모와 Rev Splitter의 실제 JTO 매입·소각량",
+      "status": "접근 실패",
+      "tried": "JIP-38 보도, Phemex 설명, DefiLlama의 JTX 대시보드를 확인했다. DefiLlama는 JTX 전용 수수료 집계가 없어 매입·소각을 따라가지 못한다고 적는다.",
+      "howToVerify": "Jito 문서 Deployed Programs 페이지에서 Rev Splitter 프로그램 주소를 찾아, Solana 익스플로러에서 JTO 소각 명령을 월별로 합산한다.",
+      "matters": "JTO 보유자에게 자동으로 돌아오는 유일한 경로의 실제 크기다."
+    },
+    {
+      "item": "JTO 총공급 표기 차이 — CoinMarketCap 9.858억 개와 DefiLlama 10억 개",
+      "status": "접근 실패",
+      "tried": "CoinMarketCap과 DefiLlama의 토큰 정보를 비교했다. 차이가 소각분인지 집계 방식 차이인지 설명한 자료는 찾지 못했다.",
+      "howToVerify": "Solana 익스플로러에서 JTO 민트 계정의 supply 값을 읽어 10억 개와 비교하고, 소각 기록이 있으면 Rev Splitter 집행분과 맞춰 본다.",
+      "matters": "차이가 소각이라면 약 1,400만 개가 이미 공급에서 빠졌다는 뜻이 된다."
+    },
+    {
+      "item": "다음 언락 날짜와 월별 수량",
+      "status": "접근 실패",
+      "tried": "Blockworks 투명성 보고서와 tokenomics.com을 확인했다. Blockworks는 월별 언락량과 다음 언락일을 공개하지 않았다고 적고, CryptoRank 페이지는 다른 토큰 표기가 섞여 있어 쓰지 않았다.",
+      "howToVerify": "Jito 재단의 토큰 배분 문서나 Messari·Tokenomist의 JTO 언락 일정표에서 2026년 12월 이후 월별 수량을 확인한다.",
+      "matters": "매입·소각이 상쇄해야 할 새 물량의 정확한 크기다."
+    },
+    {
+      "item": "재단 멀티시그의 서명자 수와 임계치",
+      "status": "온체인 확인 대기",
+      "tried": "Blockworks 보고서에서 재단 지갑 주소 HLksszpjGgiRbyumXyQe5VpmJLuJEnf6YcRzghyDc8Fo와 멀티시그라는 설명을 확인했다. 임계치는 공개되지 않았고, Blockscout는 솔라나를 지원하지 않는다.",
+      "howToVerify": "Solana 익스플로러에서 HLksszpjGgiRbyumXyQe5VpmJLuJEnf6YcRzghyDc8Fo를 소유한 멀티시그 프로그램 계정을 찾아 멤버 목록과 threshold 값을 읽는다.",
+      "matters": "재단은 거부권을 갖고, JIP-40이 통과하면 새 수입을 먼저 받는다."
+    },
+    {
+      "item": "JitoSOL 스테이크 풀 감사사 이름·날짜와 업그레이드 대기 시간",
+      "status": "접근 실패",
+      "tried": "Jito 보안 개요 문서는 세 곳이 감사했다고만 적고, 감사 보고서 링크 페이지는 이번 실행에서 열지 못했다. Blockworks 보고서에는 타임락 언급이 없다.",
+      "howToVerify": "Jito 문서 Security 페이지의 감사 보고서 링크와 Deployed Programs 페이지의 프로그램 업그레이드 권한 주소를 확인한다.",
+      "matters": "예치금 7.44억 달러가 걸린 프로그램의 검증 범위와 변경 대기 시간이다."
+    },
+    {
+      "item": "JIP-24 이후 6개월 매입 프로그램의 총매입액",
+      "status": "미공시",
+      "tried": "Blockworks 보고서와 WEEX 보도를 확인했다. WEEX는 초기 250만 달러까지만 적고, Blockworks는 금액이 공개되지 않았다고 적는다.",
+      "howToVerify": "Jito DAO 재무 지갑 5eosrve6LktMZgVNszYzebgmmC7BjLK8NoWyRQtcmGTF의 JTO 유입 기록을 매입 기간에 맞춰 합산하거나 Cryptoeconomics SubDAO에 보고서를 요청한다."
+    }
+  ],
+  "sources": [
+    {
+      "title": "DefiLlama – Jito (페이지 기준일 2026-11-18)",
+      "url": "https://defillama.com/protocol/jito",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "CoinMarketCap – Jito (JTO)",
+      "url": "https://coinmarketcap.com/currencies/jito/",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "Solana Compass – Jito Q2 2026 protocol revenue falls 45% to $1.28M as BAM reaches 33% of Solana stake",
+      "url": "https://solanacompass.com/news/jito-q2-2026-protocol-revenue-falls-45-to-128m-as-bam-reaches-33-of-solana-stake",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "Blockworks – Jito Governance Token Transparency Report",
+      "url": "https://blockworks.com/api/transparency-report/jito-governance-token",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "Jito Docs – JitoSOL General FAQs",
+      "url": "https://www.jito.network/pt/docs/jitosol/faqs/general-faqs/",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "Jito Docs – JitoSOL Security Overview",
+      "url": "https://www.jito.network/fr/docs/jitosol/jitosol-liquid-staking/security/overview/",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "Neodyme – Security Audit: Jito MEV Validator (2022-09-12)",
+      "url": "https://neodyme.io/reports/JitoMEV.pdf",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "crypto.news – Jito proposes permanent JTO burns in revenue overhaul (2026-07-13)",
+      "url": "https://crypto.news/jito-proposes-permanent-jto-burns-revenue-overhaul/",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "Phemex – What is JTX and why Jito burns JTO",
+      "url": "https://phemex.com/blogs/what-is-jtx-why-jito-burns-jto",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "SolanaFloor – Jito announces JTX, directing 80% of platform revenue to JTO value accrual (2026-05-05)",
+      "url": "https://solanafloor.com/news/jito-announces-jtx-directing-80-platform-revenue-jto-value-accrual",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "KuCoin – Jito proposes new revenue allocation strategy with $20M threshold (2026-11-24)",
+      "url": "https://www.kucoin.com/news/flash/jito-proposes-new-revenue-allocation-strategy-to-reach-20m-threshold-before-sharing-with-dao",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "WEEX – Jito: 100% of network revenue will be used for JTO buyback",
+      "url": "https://www.weex.com/news/detail/jito-100-of-network-revenue-will-be-used-for-jto-token-buyback-199696",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "tokenomics.com – Jito Tokenomics: How JTO captures MEV and staking revenue (2026-02-07)",
+      "url": "https://tokenomics.com/articles/jito-tokenomics-how-jto-captures-mev-and-staking-revenue-on-solana",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "DefiLlama – JTX daily revenue and buybacks dashboard",
+      "url": "https://defillama.com/pro/jtx-follow-the-daily-revenue-and-buybacks-c99ed3",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "crypto.news – JTO soars nearly 30% after Upbit announces listing (2025-02-21)",
+      "url": "https://crypto.news/jto-soars-nearly-30-after-upbit-announces-listing/",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "Bloomingbit – 업비트 JTO KRW 마켓 추가 공지 보도 (2025-02-20)",
+      "url": "https://bloomingbit.io/feed/news/83674",
+      "accessed": "2026-11-25"
+    }
+  ]
+}

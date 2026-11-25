@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-11-25-jto",
+    "date": "2026-11-25",
+    "slot": "outside_top100",
+    "project": "Jito",
+    "ticker": "JTO",
+    "question": "Jito가 버는 돈 중 JTO 보유자에게 돌아오는 몫은 얼마나 될까?",
+    "oneLiner": "Jito는 솔라나에서 스테이킹 토큰 JitoSOL과 거래 순서 경매를 운영하고, 거기서 뗀 수수료를 JTO 투표로 움직이는 DAO 재무에 모은다.",
+    "sector": "MEV · Liquid Staking (Solana)"
+  },
+  {
     "id": "2026-11-23-sanc",
     "date": "2026-11-23",
     "slot": "new_listing",
