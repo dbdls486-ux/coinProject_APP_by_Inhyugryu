@@ -1,0 +1,529 @@
+{
+  "id": "2026-11-25",
+  "date": "2026-11-25",
+  "asOf": "2026-11-25 09:40 KST",
+  "window": "최근 24시간 (11/24 09:30 → 11/25 09:30 KST)",
+  "title": "관세 재부과 보도에 비트코인 6만 달러 아래, 100위 안 상승은 4종뿐",
+  "regime": "하락장",
+  "tldr": [
+    "비트코인은 미국의 새 관세 준비 보도 뒤 6만 달러를 내줘 24시간 -2.3%다.",
+    "시총 100위 안 상승은 4종뿐이고 PIEVERSE·ZRO·INJ·ZEC가 -12~-17%였다.",
+    "25일 밤 미 10월 PCE와 ETF 6거래일 연속 유출 여부를 본다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "BTC (24시간)",
+      "value": "-2.3%, 59,590달러",
+      "basis": "Coin360 08시 등락 · 토큰포스트 모닝 시세",
+      "tone": "down",
+      "details": [
+        {
+          "label": "원화",
+          "value": "8,170만원, 토큰포스트 아침 시황"
+        },
+        {
+          "label": "김치 프리미엄",
+          "value": "1.71%, 25일 0시 업비트·바이낸스"
+        },
+        {
+          "label": "ETH",
+          "value": "1,671달러, 24시간 -1.9%"
+        },
+        {
+          "label": "시총 100위 안 하락 상위",
+          "value": "PIEVERSE -16.8% · ZRO -14.0% · INJ -12.5% · ZEC -11.8% · MNT -10.1% · QNT -9.6%"
+        },
+        {
+          "label": "시총 100위 안 상승",
+          "value": "KITE +2.9% 외 3종은 +1% 미만"
+        }
+      ]
+    },
+    {
+      "label": "BTC 현물 ETF",
+      "value": "11/23 거래일 -5.70억 달러",
+      "basis": "SoSoValue · 5거래일 연속 유출",
+      "tone": "down",
+      "details": [
+        {
+          "label": "11월 누적",
+          "value": "-47.1억 달러, 출시 뒤 월간 최대"
+        },
+        {
+          "label": "ETH 현물 ETF",
+          "value": "-0.85억 달러, 토큰포스트 25일 팟캐스트"
+        },
+        {
+          "label": "11/24 거래일",
+          "value": "미집계"
+        }
+      ]
+    },
+    {
+      "label": "엔비디아 주가",
+      "value": "24일 -5.86%",
+      "basis": "전날 +31.5% 뒤 되돌림 · 디지털투데이",
+      "tone": "down",
+      "details": [
+        {
+          "label": "뉴욕증시 24일",
+          "value": "나스닥 -1.48%, S&P500 -0.50%, 다우 +0.85%"
+        },
+        {
+          "label": "관세",
+          "value": "WSJ, 중국·EU 등 16곳 대상 새 관세 준비 보도"
+        },
+        {
+          "label": "12월 금리 인상 확률",
+          "value": "97.1%, CME FedWatch"
+        },
+        {
+          "label": "공포·탐욕 지수",
+          "value": "9, 극도의 공포 · CoinMarketCap"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "24시간 -2.3%, 59,590달러",
+      "note": "23일 엔비디아 랠리 때 64,500달러까지 올랐다가 모두 반납했다."
+    },
+    {
+      "label": "ETH",
+      "value": "24시간 -1.9%, 1,671달러",
+      "note": "원화 약 224만원."
+    },
+    {
+      "label": "전체 시총",
+      "value": "2.05조 달러",
+      "note": "CoinMarketCap 09시대 조회. 변화율 부호는 확인하지 못했다."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "58.7%",
+      "note": "CoinMarketCap. ETH 10.0%."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/23 거래일 -5.70억 달러",
+      "note": "5거래일 연속 유출. 11월 누적 -47.1억 달러로 월간 최대."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "-0.85억 달러",
+      "note": "토큰포스트 25일 출근길 팟캐스트 인용, 거래일 표기 없음."
+    },
+    {
+      "label": "전체 청산",
+      "value": "24시간 8.44억 달러",
+      "note": "CoinGlass, 24일 저녁 기준이라 이번 창과 반쯤 겹친다. BTC 3.57억, ETH 1.76억 달러."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "9, 극도의 공포",
+      "note": "CoinMarketCap 지수."
+    },
+    {
+      "label": "파생",
+      "value": "데리비트 최대 미결제 12/4 만기 58,000달러 풋",
+      "note": "6,642 BTC 규모. 펀딩비는 소폭 양수."
+    },
+    {
+      "label": "거시",
+      "value": "WSJ 새 관세 준비 보도",
+      "note": "중국·EU 등이 대상이고 세율은 미정. 미 증시는 나스닥 -1.48%."
+    },
+    {
+      "label": "집계 기준",
+      "value": "종목 등락은 CoinMarketCap 09시대",
+      "note": "예약 실행이 사용 한도로 멈춰 점검에서 작성했다. 순위는 CoinMarketCap."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,342.4원",
+      "note": "24일 서울 외환시장 마감. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "LayerZero",
+      "ticker": "ZRO",
+      "direction": "down",
+      "change": "-14.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-11.7%p",
+      "rank": 84,
+      "volume24h": "1.04억 달러",
+      "causeType": "가능한 배경",
+      "headline": "스테이킹 개시 뒤 차익 실현.",
+      "happened": [
+        "24일 Zero 체인 검증인용 ZRO 스테이킹이 열렸다.",
+        "재단도 1억 ZRO를 같은 조건으로 맡겼다."
+      ],
+      "reaction": [
+        "24시간 -14.0%, 1,623원 → 1,396원.",
+        "CMC는 스테이킹 기대가 되돌려진 매도로 정리했다."
+      ],
+      "watch": "30일 Zero 메인넷 출시 전후 매도.",
+      "caveat": "스테이킹 물량은 내년 3월 말 무렵까지 묶인다는 보도가 있다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Injective",
+      "ticker": "INJ",
+      "direction": "down",
+      "change": "-12.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-10.2%p",
+      "rank": 72,
+      "volume24h": "0.91억 달러",
+      "causeType": "가능한 배경",
+      "headline": "Veyra 업그레이드 당일 하락.",
+      "happened": [
+        "24일 Veyra 메인넷 업그레이드가 예정돼 있었다.",
+        "스테이커 99.51% 찬성으로 통과된 안건이다."
+      ],
+      "reaction": [
+        "24시간 -12.5%, 8,914원 → 7,799원.",
+        "거래량은 0.91억 달러."
+      ],
+      "watch": "업그레이드 뒤 RWA 기능 사용 지표.",
+      "caveat": "업그레이드가 매도 계기였는지는 확인되지 않았다.",
+      "confidence": "C"
+    },
+    {
+      "project": "NEAR Protocol",
+      "ticker": "NEAR",
+      "direction": "down",
+      "change": "-7.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.9%p",
+      "rank": 20,
+      "volume24h": "5.82억 달러",
+      "causeType": "가능한 배경",
+      "headline": "엔비디아 되돌림과 함께 AI 코인 약세.",
+      "happened": [
+        "같은 날 엔비디아 주가가 -5.86% 내렸다.",
+        "TAO도 -6.4%로 AI 코인이 함께 밀렸다."
+      ],
+      "reaction": [
+        "24시간 -7.2%, 4,123원 → 3,826원.",
+        "거래량 5.82억 달러로 하락 종목 중 많은 편."
+      ],
+      "watch": "엔비디아 반등 여부와 함께 움직이는지.",
+      "caveat": "엔비디아와의 동조는 같은 날 움직임만 확인된다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Zcash",
+      "ticker": "ZEC",
+      "direction": "down",
+      "change": "-11.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-9.5%p",
+      "rank": 10,
+      "volume24h": "8.05억 달러",
+      "causeType": "수급 주도",
+      "headline": "시총 10위, 롱 청산에 700달러대로.",
+      "happened": [
+        "24일 롱 청산이 1,350만 달러로 집계됐다.",
+        "그레이스케일 ZEC ETF는 3주 연속 유출이다."
+      ],
+      "reaction": [
+        "24시간 -11.8%, 109.71만원 → 96.76만원.",
+        "900달러대 반등분을 대부분 반납했다."
+      ],
+      "watch": "700달러 지지와 ETF 자금 흐름.",
+      "caveat": "ZEC 고유 사건은 없다는 분석도 함께 나왔다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Pieverse",
+      "ticker": "PIEVERSE",
+      "direction": "down",
+      "change": "-16.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-14.5%p",
+      "rank": 58,
+      "volume24h": "1.18억 달러",
+      "causeType": "원인 불명",
+      "headline": "22일 +21% 뒤 되돌림, 100위 안 하락 1위.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "22일에는 숏 청산에 +21% 올랐다."
+      ],
+      "reaction": [
+        "24시간 -16.8%, 4,824원 → 4,014원.",
+        "거래량 1.18억 달러로 시총 대비 많다."
+      ],
+      "watch": "2.9달러 지지.",
+      "caveat": "급등과 급락 모두 파생 수급이 컸다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Mantle",
+      "ticker": "MNT",
+      "direction": "down",
+      "change": "-10.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-7.8%p",
+      "rank": 49,
+      "volume24h": "0.44억 달러",
+      "causeType": "원인 불명",
+      "headline": "L2 토큰 중 낙폭 최대.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "비트코인보다 8%p 가까이 더 내렸다."
+      ],
+      "reaction": [
+        "24시간 -10.1%, 539원 → 485원.",
+        "거래량은 0.44억 달러."
+      ],
+      "watch": "0.36달러 지지.",
+      "caveat": "개별 원인을 다룬 기사를 찾지 못했다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Quant",
+      "ticker": "QNT",
+      "direction": "down",
+      "change": "-9.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-7.3%p",
+      "rank": 37,
+      "volume24h": "0.68억 달러",
+      "causeType": "원인 불명",
+      "headline": "전날 +8% 뒤 되돌림.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "24일 데일리에서 +8.3%로 상승 상위였다."
+      ],
+      "reaction": [
+        "24시간 -9.6%, 21.58만원 → 19.51만원.",
+        "거래량은 0.68억 달러."
+      ],
+      "watch": "144달러 지지.",
+      "caveat": "하루 상승분을 그대로 반납한 모양이다.",
+      "confidence": "C"
+    },
+    {
+      "project": "ether.fi",
+      "ticker": "ETHFI",
+      "direction": "down",
+      "change": "-8.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-6.2%p",
+      "rank": 82,
+      "volume24h": "0.25억 달러",
+      "causeType": "원인 불명",
+      "headline": "이더리움보다 크게 약세.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "이더리움 -1.9%보다 6%p 넘게 더 내렸다."
+      ],
+      "reaction": [
+        "24시간 -8.5%, 667원 → 610원.",
+        "거래량은 0.25억 달러."
+      ],
+      "watch": "0.45달러 지지.",
+      "caveat": "이더리움 ETF 유출이 이어지는 중이다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Hyperliquid",
+      "ticker": "HYPE",
+      "direction": "down",
+      "change": "-7.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.8%p",
+      "rank": 9,
+      "volume24h": "10.86억 달러",
+      "causeType": "원인 불명",
+      "headline": "시총 9위, 60달러선 시험.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "지난주에도 프로젝트 소식 없이 하루 -11%가 있었다."
+      ],
+      "reaction": [
+        "24시간 -7.1%, 87,335원 → 81,135원.",
+        "거래량 10.86억 달러."
+      ],
+      "watch": "60달러 지지.",
+      "caveat": "16일 심층 리포트에서 매입·언락 구조를 다뤘다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Jupiter",
+      "ticker": "JUP",
+      "direction": "down",
+      "change": "-7.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-4.7%p",
+      "rank": 64,
+      "volume24h": "0.32억 달러",
+      "causeType": "시장 베타",
+      "headline": "솔라나 약세를 따라 하락.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "같은 집계에서 솔라나가 -5.5%였다."
+      ],
+      "reaction": [
+        "24시간 -7.0%, 323원 → 300원.",
+        "솔라나 대비 초과 낙폭은 1.5%p다."
+      ],
+      "watch": "솔라나 70달러 회복 여부.",
+      "caveat": "솔라나 동반 하락 외 근거는 없다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Kite",
+      "ticker": "KITE",
+      "direction": "up",
+      "change": "+2.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.2%p",
+      "rank": 85,
+      "volume24h": "0.20억 달러",
+      "causeType": "원인 불명",
+      "headline": "100위 안에서 거의 유일한 상승.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "IT타임스 새벽 집계에서도 100위 안 유일한 상승이었다."
+      ],
+      "reaction": [
+        "24시간 +2.9%, 187원 → 193원.",
+        "거래량은 0.20억 달러."
+      ],
+      "watch": "상승이 하루를 넘기는지.",
+      "caveat": "폭이 작아 의미를 두기 어렵다.",
+      "confidence": "C"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "RAY·KAS·LIT·PUMP·TAO",
+      "reason": "-6.4~-7.0%로 하락 11~15위, 종목 수 제한으로 제외"
+    },
+    {
+      "ticker": "NIGHT·JST·ATOM",
+      "reason": "+0.0~+0.5%로 상승 폭이 거의 없어 제외"
+    },
+    {
+      "ticker": "멀티버스엑스",
+      "reason": "업비트 원화 마켓 +102%, CoinMarketCap 100위 밖"
+    }
+  ],
+  "watchNext": [
+    "25일 밤 미 10월 PCE 물가·3분기 GDP 수정치",
+    "11/24 거래일 BTC 현물 ETF — 6거래일 연속 유출 여부",
+    "미국 새 관세 대상·세율 발표",
+    "30일 LayerZero Zero 메인넷 출시"
+  ],
+  "highlight": "23일 엔비디아 CEO 복귀 랠리로 64,500달러까지 올랐던 비트코인은 하루 만에 상승분을 모두 내주고 6만 달러 아래로 내려왔다. 미국이 중국·EU 등을 대상으로 새 관세를 준비한다는 WSJ 보도와 엔비디아 -5.86%가 겹쳤다. 미 현물 ETF는 5거래일 연속 유출로 11월 누적 47.1억 달러가 빠져 출시 뒤 월간 최대다. 시총 100위 안에서 오른 종목은 4개뿐이다.",
+  "sources": [
+    {
+      "title": "CoinMarketCap — Top Crypto Gainers and Losers, Top 100 24h (11/25 09시대 조회)",
+      "url": "https://coinmarketcap.com/gainers-losers/"
+    },
+    {
+      "title": "디지털투데이 — 비트코인 6만달러 턱걸이…하루 만에 상승폭 반납 (11/25 08:09)",
+      "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=717916"
+    },
+    {
+      "title": "IT타임스 — [11월 25일 코인 가격] 비트코인 4.46%↓, 파이버스 16.84% 급락",
+      "url": "https://www.ittimes.com/news/articleView.html?idxno=88157"
+    },
+    {
+      "title": "IT타임스 — 비트코인 전일비 1.74% 하락…김치 프리미엄 1.71% 기록",
+      "url": "https://www.ittimes.com/news/articleView.html?idxno=88155"
+    },
+    {
+      "title": "토큰포스트 — [아침 시황] 비트코인 8,170만원…업비트 멀티버스엑스 102% 급등 (제목만 확인)",
+      "url": "https://www.tokenpost.kr/news/cryptocurrency/443863"
+    },
+    {
+      "title": "토큰포스트 — [모닝 시세브리핑] 비트코인 59,590달러, 이더리움 1,671달러 (제목만 확인)",
+      "url": "https://www.tokenpost.kr/news/briefing/443816"
+    },
+    {
+      "title": "토큰포스트 — 11월 25일 출근길 팟캐스트: 미국 관세 인상 준비 보도, 이더리움 ETF 8490만달러 유출 (제목만 확인)",
+      "url": "https://www.tokenpost.kr/news/insights/443830"
+    },
+    {
+      "title": "CoinDesk — Bitcoin hands back Monday's Nvidia-driven gains, liquidations triple (11/24)",
+      "url": "https://www.coindesk.com/markets/2026/11/24/bitcoin-hands-back-monday-s-nvidia-driven-gains-liquidations-triple"
+    },
+    {
+      "title": "KuCoin — Bitcoin spot ETFs record $570M net outflow on November 23",
+      "url": "https://www.kucoin.com/news/flash/bitcoin-spot-etfs-record-570m-net-outflow-on-nov-23-fifth-consecutive-day-of-outflows"
+    },
+    {
+      "title": "The Block — Bitcoin ETFs see another $570 million in net outflows as November total nears $5 billion (제목만 확인)",
+      "url": "https://www.theblock.co/news/markets/2026-11-24-bitcoin-etfs-another-570-million-net-outflows-november-total-nears-5-billion-btc-dips-below-60k-445548"
+    },
+    {
+      "title": "Memesita — Bitcoin Falls Below $60K as WSJ Reports Trump Prepares Tariffs on China, EU and 14 Others (제목만 확인)",
+      "url": "https://www.memesita.com/bitcoin-falls-below-60k-as-wsj-reports-trump-prepares-tariffs-on-china-eu-and-14-others/"
+    },
+    {
+      "title": "CoinMarketCap — LayerZero (ZRO) Down 11% as Staking Euphoria Reverses (11/24)",
+      "url": "https://coinmarketcap.com/top-stories/6b05535bd816830ac0a1e98e/"
+    },
+    {
+      "title": "KuCoin — Injective's Veyra Mainnet Upgrade Approved by 99.51% of Stakers, Set for November 24 (제목만 확인)",
+      "url": "https://www.kucoin.com/news/flash/injective-s-veyra-mainnet-upgrade-approved-by-99-51-of-stakers-set-for-november-24"
+    },
+    {
+      "title": "The Crypto Times — Zcash Price Drops 18% in 24 Hours as Long Liquidations Reach $13.5M (11/24, 제목만 확인)",
+      "url": "https://www.cryptotimes.io/2026/11/24/zcash-price-drops-18-in-24-hours-as-long-liquidations-reach-13-5m/"
+    },
+    {
+      "title": "crypto.news — Zcash falls back toward $700 after its $900 rally fades (제목만 확인)",
+      "url": "https://crypto.news/zcash-price-falls-700-support/"
+    },
+    {
+      "title": "Altcoin Buzz — Why Did Zcash Drop 13.8%? No ZEC-Specific Cause Has Surfaced (제목만 확인)",
+      "url": "https://www.altcoinbuzz.io/why-did-zcash-drop-13-8-no-zec-specific-cause-has-surfaced"
+    },
+    {
+      "title": "COINOTAG — Grayscale's Zcash (ZEC) ETF Outflows Hit $61 Million in Third Straight Week (제목만 확인)",
+      "url": "https://en.coinotag.com/grayscale-zcash-zec-etf-outflows-61-million-third-straight-week"
+    },
+    {
+      "title": "Crypto Daily — Hyperliquid Price: HYPE Called Next Amazon, Then Fell 11% (11/21)",
+      "url": "https://cryptodaily.co.uk/2026/11/matt-hougan-sees-hype-becoming-the-next-amazon-but-hyperliquid-just-fell-11"
+    },
+    {
+      "title": "아시아경제 — 원·달러 환율, 3.5원 내린 1342.4원 (11/24 15:30, 제목만 확인)",
+      "url": "https://view.asiae.co.kr/article/2026112415312978173"
+    }
+  ],
+  "terms": [
+    {
+      "term": "청산",
+      "meaning": "빌린 돈으로 건 선물 포지션이 증거금 부족으로 강제 정리되는 것"
+    },
+    {
+      "term": "공포·탐욕 지수",
+      "meaning": "가격 변동성·거래량 등을 0~100으로 묶은 투자 심리 지표. 25 이하는 극도의 공포"
+    },
+    {
+      "term": "PCE 물가",
+      "meaning": "미 연준이 가장 중시하는 개인소비지출 물가 지표"
+    },
+    {
+      "term": "김치 프리미엄",
+      "meaning": "국내 원화 마켓 가격이 해외 가격보다 비싼 정도"
+    },
+    {
+      "term": "풋옵션",
+      "meaning": "정해진 가격에 팔 권리. 하락에 대비하거나 베팅할 때 산다"
+    },
+    {
+      "term": "시장 베타",
+      "meaning": "개별 사건 없이 시장 전체 움직임을 따라간 정도"
+    }
+  ]
+}
