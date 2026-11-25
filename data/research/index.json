@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T10:24:45+09:00",
+  "updatedAt": "2026-11-26T08:56:17+09:00",
   "sources": [
     {
       "id": "tiger",
@@ -7,9 +7,9 @@
       "home": "https://reports.tiger-research.com/s/korean/archive",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-24",
-      "note": "아카이브(기본·?sort=new) 열람: 11-17 DTCC 이후 신규 없음. 검색으로 2026년 누락 글 13건 백필(각 글 페이지에서 제목·날짜·본문 확인). /s/korean/feed 는 권한 프롬프트로 미열람.",
-      "count": 48
+      "lastOk": "2026-11-26",
+      "note": "피드(/s/korean/feed)와 아카이브(/archive, /archive?sort=new) 가져오기는 권한 미응답으로 차단됨. WebSearch 결과와 개별 포스트 페이지의 '최근 글' 목록으로 최신 게시물을 확인함(11/24 신규 1건 + 기존 목록에 누락돼 있던 2026-04-01 글 1건).",
+      "count": 50
     },
     {
       "id": "xangle",
@@ -17,9 +17,9 @@
       "home": "https://xangle.io/research",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-24",
-      "note": "/research 목록은 JS 렌더링(빈 목록). 검색 + 상세 페이지 '연관 리서치'·저자(46) 목록 체인으로 2599(11-23) 등 12건 추가, Weekly Xangle·Comment 포함. 확인된 최신 한국어 id 2599.",
-      "count": 69
+      "lastOk": "2026-11-26",
+      "note": "리서치 목록/사이트맵/최신 상세(2599)는 제공처 승인 미응답으로 차단됨. WebSearch 색인은 2569 이전까지만 있어 검색 결과로 얻은 2569 상세의 '연관 리서치' 링크를 따라 2602(11.24)를 확인. 2598·2594·2591·2602의 연관 리서치는 모두 동일 묶음이라 그 외 신규 ID는 발견하지 못함.",
+      "count": 70
     },
     {
       "id": "despread",
@@ -28,7 +28,7 @@
       "method": "page",
       "status": "stale",
       "lastOk": "2026-11-20",
-      "note": "/ko/ 는 권한 프롬프트, /ko/intelligent-defi/ robots 실패. 검색 노출은 기존 수록분·Market Commentary 구작뿐이라 2026-09-24 이후 신규 미확인. 신규 0건.",
+      "note": "/ko/rss/, /rss/는 권한 미응답으로 차단, /ko/ 및 /ko/tag/reports-kr/ 와 후보 글(intelligent-defi)은 robots.txt 읽기 실패로 가져오지 못함. WebSearch로는 2026-09-24 이후 신규 리포트를 확인하지 못함(Market Commentary 글은 연도·제목 확인 불가로 제외).",
       "count": 21
     },
     {
@@ -37,9 +37,9 @@
       "home": "https://research.4pillars.io/ko/research",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-24",
-      "note": "/ko/research 1페이지 열람(최신 11-23). 11-23 2건·11-21 1건·10-21 1건·1월 Comment 1건 추가, 각 글 페이지에서 제목·날짜·리드 확인. FP Weekly 48 미발행. /ko/data/content 글은 제외.",
-      "count": 68
+      "lastOk": "2026-11-26",
+      "note": "/ko/research 목록·사이트맵·기존 최신 상세(11.23)는 제공처 승인 미응답으로 차단됨. WebSearch 결과로 얻은 상세 페이지(why-hip3)의 추천 리서치 링크를 따라 11.24~11.26 신규 3건 확인. '베리에이셔널: 로빈후드와 시타델을 합치다'(2026.11.24)는 카드에 href가 노출되지 않아 URL 확인 불가로 제외.",
+      "count": 71
     },
     {
       "id": "digitalx",
@@ -57,8 +57,8 @@
       "home": "https://hashedopenresearch.com/research",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-24",
-      "note": "/research 목록 67건 열람: 한국어 제목 글은 모두 기존 수록. 10·11월 신규 없음, 신규 0건.",
+      "lastOk": "2026-11-26",
+      "note": "/research 목록 페이지를 정상적으로 읽음(총 67건, 한국어 최신 글은 기존 목록의 2026-09 '디지털자산 정책으로 읽는 국가 전략과 시장의 진화'). 2026-09 이후 신규 한국어 리포트 없음. 기존 파일의 최저 날짜(2024-07)보다 오래된 한국어 글 9건은 수집 대상에서 제외함.",
       "count": 22
     },
     {
@@ -66,9 +66,9 @@
       "name": "업비트 투자자보호센터",
       "home": "https://upbitcare.com/academy/research",
       "method": "page",
-      "status": "ok",
+      "status": "stale",
       "lastOk": "2026-11-24",
-      "note": "모바일 목록은 동적 렌더링. 995→1090 이전/다음 링크 체인으로 확인: 1090(10-26)에 다음글 없음, 신규 0건.",
+      "note": "목록 페이지(m.upbitcare.com/academy/research)는 열렸으나 클라이언트 렌더링으로 항목이 비어 있었고, 기존 최신 항목(1090, 1089) 상세 페이지 fetch는 권한 거부(classifier/provenance)되어 이전·다음글 탐색 불가. WebSearch(upbitcare.com)에서도 2026년 11월 신규 조사·연구 보고서 URL은 검색되지 않음.",
       "count": 18
     },
     {
@@ -77,8 +77,8 @@
       "home": "https://www.kcmi.re.kr/report/report_list",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-24",
-      "note": "홈·ZOOM-IN·디지털자산 제도동향 목록과 자본시장포커스 21~23호 글 확인: 10-06 이후 디지털자산 신규 보고서 없음. 11-12 토큰증권 심포지엄 보도자료는 보고서 아님. 신규 0건.",
+      "lastOk": "2026-11-26",
+      "note": "report_list·pub_list 직접 fetch는 승인 대기로 차단됐으나, 이슈보고서 목록(report_list?s_report_type=002002002013, 최신 2026-11-11 핀플루언서 보고서까지 4건)과 자본시장포커스 목록(2026-19~21호 ZOOM-IN, 2026-11-23 OPINION 증안펀드)은 읽음. 키워드(디지털자산·가상자산·스테이블코인·토큰화·토큰증권 등)에 해당하는 2026-10-06 이후 신규 보고서는 확인되지 않음. 참고: 디지털자산시장 제도동향 2026-04호(2026-01-29) '토큰 증권 관련 개정안'(신경희)은 기존 파일에 없으나 목록 링크가 javascript여서 URL 확보 불가로 미수록.",
       "count": 31
     },
     {
@@ -98,7 +98,7 @@
       "method": "page",
       "status": "stale",
       "lastOk": "2026-11-23",
-      "note": "지급결제 조사연구 목록(B0000232)은 '콘텐츠 준비중'으로 비어 있음. CBDC 서브메인에서 10-08 블로그 글 1건 확인했으나 본문 페이지 미열람으로 미수록. 검색상 10~11월 신규 연구물 없음.",
+      "note": "지급결제 조사연구 목록(B0000232/list.do)은 '콘텐츠 준비중' 안내만 표시, newsData/list.do는 권한 거부. 디지털화폐 서브메인(cbdc.do)에서 2026-10-08 블로그 '프로젝트 한강의 기관용 디지털화폐, 일반인용 CBDC와 어떻게 다를까'(B0000347 nttId=11065408)를 발견했으나 해당 URL fetch 시 다른 글(2026-07-31 블로그) 내용이 반환되어 제목·날짜 확인 실패로 미수록. WebSearch 결과의 BOK이슈해설(스테이블코인 A to Z 2025-10-31, 이해와 오해 2025-12-15)은 영상보고서로 제외. 2026-09-30 이후 확인된 신규 보고서 없음.",
       "count": 11
     },
     {
@@ -107,12 +107,67 @@
       "home": "https://consensus.hankyung.com/analysis/list?search_text=%EA%B0%80%EC%83%81%EC%9E%90%EC%82%B0",
       "method": "pdf",
       "status": "ok",
-      "lastOk": "2026-11-24",
-      "note": "검색으로 삼성 Weekly(8/18·6/8)·미래에셋 PDF(2/23, 2025-11-20) 공식 주소 확인·백필 4건. 한화 '디지털자산 Weekly 2026.11.20'은 목록에만 있고 PDF 링크 미노출. 11월 신규 공개 PDF 없음.",
+      "lastOk": "2026-11-26",
+      "note": "검색엔진 인덱스(키움 bbn/삼성 samsungpop/iM imfnsec/미래에셋/하나/신한) 기준 11월 신규 디지털자산 리포트 미발견(최신 인덱스: 키움 rfBC1390 11-02, 삼성 8-18, iM 5-12, 하나 RWA 10-21). 미래에셋 리서치 목록 페이지는 열렸으나 최신 10건에 디지털자산 없음. 한경컨센서스·iM 모바일 목록은 승인 미응답(provenance), KB rc.kbsec·하나 list·키움 텔레그램은 접근 거부, 한국투자 robots 차단. 뉴스로만 확인된 신규 리포트: iM증권 양현경(11-26, 가상자산·블루웨이브), 유안타 이환욱(11-12) — 원문 URL 미확보로 미수록.",
       "count": 41
     }
   ],
   "items": [
+    {
+      "id": "fourpillars:how-do-you-trade-5million-on-hyperliquid",
+      "source": "fourpillars",
+      "title": "하이퍼리퀴드에서 500만 달러를 거래하려면?",
+      "url": "https://research.4pillars.io/ko/research/how-do-you-trade-5million-on-hyperliquid",
+      "publishedAt": "2026-11-26",
+      "summary": "하이퍼리퀴드 42개 시장 분석을 통해 호가 잔량 부족과 기초자산 정규장 외 거래가 대규모 주문의 체결 비용을 높인다는 점을 확인하고, 체결 전에 가격을 합의하는 실루엣 RFQ의 역할을 살펴봅니다.",
+      "pdf": false,
+      "lang": "ko",
+      "collectedAt": "2026-11-26T08:56:17+09:00"
+    },
+    {
+      "id": "fourpillars:out-of-cash-borrowing-against-bitcoin-to-buy-the-dip",
+      "source": "fourpillars",
+      "title": "영끌을 위한 최후의 담보, BTC 활용법",
+      "url": "https://research.4pillars.io/ko/research/out-of-cash-borrowing-against-bitcoin-to-buy-the-dip",
+      "publishedAt": "2026-11-25",
+      "summary": "현금이 바닥났을때 지갑에 잠든 BTC는 요긴한 담보가 될 수 있습니다. 온체인에서는 이미 여러 방식으로 BTC를 담보로 활용할 수 있고, 전통금융권에서도 기관 고객의 비트코인을 대출 담보로 받으려는 움직임이 나타나고 있습니다.",
+      "pdf": false,
+      "lang": "ko",
+      "collectedAt": "2026-11-26T08:56:17+09:00"
+    },
+    {
+      "id": "xangle:2602",
+      "source": "xangle",
+      "title": "[Xangle Comment] 금융위, 디지털자산 통합법 제정안 공개",
+      "url": "https://xangle.io/research/detail/2602",
+      "publishedAt": "2026-11-24",
+      "summary": "그동안 국내 가상자산 규제는 자금세탁 방지와 이용자 재산 보호, 불공정거래 금지에 집중돼 있었다.",
+      "pdf": false,
+      "lang": "ko",
+      "collectedAt": "2026-11-26T08:56:17+09:00"
+    },
+    {
+      "id": "fourpillars:reflections-on-the-sky-protocol-incident",
+      "source": "fourpillars",
+      "title": "스카이 프로토콜 사태를 바라보며",
+      "url": "https://research.4pillars.io/ko/research/reflections-on-the-sky-protocol-incident",
+      "publishedAt": "2026-11-24",
+      "summary": "최근 발생한 스카이(Sky) stUSDS 유동성 고갈 사태의 경과와 쟁점을 정리하고, 청산 없는 대출 시장의 한계와 국내 거래소의 스테이블코인 대응 방식에 대해 살펴봅니다.",
+      "pdf": false,
+      "lang": "ko",
+      "collectedAt": "2026-11-26T08:56:17+09:00"
+    },
+    {
+      "id": "tiger:what-koreas-draft-digital-asset-basic-kor",
+      "source": "tiger",
+      "title": "디지털자산기본법: 4대 플레이어가 반드시 알아야 할 생존 법칙",
+      "url": "https://reports.tiger-research.com/p/what-koreas-draft-digital-asset-basic-kor",
+      "publishedAt": "2026-11-24",
+      "summary": "디지털자산기본법 정부안이 거래소, 국내 금융기관, 해외 스테이블코인 발행사, 웹3 재단에 요구하는 실무 변화를 분석하고, 시행령이 확정되기 전에 준비할 사항을 정리합니다.",
+      "pdf": false,
+      "lang": "ko",
+      "collectedAt": "2026-11-26T08:56:17+09:00"
+    },
     {
       "id": "fourpillars:the-making-of-a-commodity-market-for-compute",
       "source": "fourpillars",
@@ -2406,6 +2461,17 @@
       "collectedAt": "2026-11-12T09:14:27+09:00",
       "pdf": true,
       "lang": "ko"
+    },
+    {
+      "id": "tiger:krw-stablecoin-the-time-for-execution-kor",
+      "source": "tiger",
+      "title": "원화스테이블코인 이제는 달려야할 때",
+      "url": "https://reports.tiger-research.com/p/krw-stablecoin-the-time-for-execution-kor",
+      "publishedAt": "2026-04-01",
+      "summary": "지난 1년간 원화 스테이블코인 논의는 발행 주체나 준비자산 요건, 감독 권한 등 규제적 방향성(”What”)에만 머물러 있었습니다. 이제는 규제의 언어를 실제 작동 가능한 기술 구조(”How”)로 번역해야 하며, 누가 출발할지가 아니라 어떻게 달릴지를 이야기해야 할 때입니다.",
+      "pdf": false,
+      "lang": "ko",
+      "collectedAt": "2026-11-26T08:56:17+09:00"
     },
     {
       "id": "hor:38be6434-c594-8019-94ed-e4e7e441c148",
