@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-11-27-aero",
+    "date": "2026-11-27",
+    "slot": "top100",
+    "project": "Aero",
+    "ticker": "AERO",
+    "question": "Aero가 유동성 공급자에게 새로 찍어 주는 AERO는 sAERO 스테이커가 받는 매출의 몇 배일까?",
+    "oneLiner": "Aero는 Aerodrome과 Velodrome이 2026년 10월 22일 하나로 합쳐진 멀티체인 거래소이고, 거래 수수료와 유동성 지급금 전부를 AERO를 스테이킹한 사람에게 주는 대신 유동성 공급자에게는 새로 찍은 AERO를 준다.",
+    "sector": "DEX · ve(3,3) · Multichain (Base 본거지)"
+  },
+  {
     "id": "2026-11-25-jto",
     "date": "2026-11-25",
     "slot": "outside_top100",

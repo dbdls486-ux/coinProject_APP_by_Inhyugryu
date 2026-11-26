@@ -1,0 +1,1023 @@
+{
+  "id": "2026-11-27-aero",
+  "date": "2026-11-27",
+  "slot": "top100",
+  "project": "Aero",
+  "ticker": "AERO",
+  "question": "Aero가 유동성 공급자에게 새로 찍어 주는 AERO는 sAERO 스테이커가 받는 매출의 몇 배일까?",
+  "oneLiner": "Aero는 Aerodrome과 Velodrome이 2026년 10월 22일 하나로 합쳐진 멀티체인 거래소이고, 거래 수수료와 유동성 지급금 전부를 AERO를 스테이킹한 사람에게 주는 대신 유동성 공급자에게는 새로 찍은 AERO를 준다.",
+  "meta": {
+    "sector": "DEX · ve(3,3) · Multichain (Base 본거지)",
+    "krwMarkets": [
+      "빗썸 2025-01-24 (KRW)",
+      "업비트 2025-08-22 (KRW·BTC·USDT, 보도 기준)"
+    ],
+    "rank": "CoinMarketCap #93 · 시총 약 3.25억 달러 (2026-11-27) · CoinGecko 페이지는 이번 실행에서 접근 실패",
+    "launched": "Aerodrome 2023-08-28 · Aero 합병 출범 2026-10-22 00:00 UTC"
+  },
+  "tldr": [
+    "출범 첫 주 LP에게 찍어 준 AERO는 약 198만 달러어치로 추산돼 같은 주 스테이커 매출 100만 달러의 약 2배였고, 설계 목표는 1.2배 안팎이다.",
+    "스테이커 매출은 풀마다 쌓이는 수수료와 지급금을 그 풀에 배분한 sAERO가 나눠 갖는 돈이고, 발행량은 풀별 예상 매출에 배수를 곱한 게이지 상한으로 묶인다.",
+    "DefiLlama의 매출에서 인센티브를 뺀 수익이 플러스로 돌아서고 주간 매출이 합병 전 370만 달러 수준을 회복하는지가 판단을 바꾼다."
+  ],
+  "who": {
+    "lead": "트레이더는 Base에서 가장 깊은 유동성을 찾아 Aero에서 토큰을 바꾸고, 유동성 공급자는 수수료 대신 AERO를 받으려고, 토큰을 띄운 프로젝트는 유동성을 끌어오려고 Aero에 돈을 낸다.",
+    "glossary": [
+      {
+        "term": "AERO",
+        "meaning": "Aero의 거래·발행 토큰. Base에만 존재하는 ERC-20이며 스테이킹하지 않으면 수수료도 리베이스도 받지 못한다"
+      },
+      {
+        "term": "sAERO",
+        "meaning": "AERO를 6개월~4년 또는 영구로 스테이킹하면 받는 NFT. 풀에 배분 권한을 걸어 그 풀의 매출을 받으며 양도할 수 있다"
+      },
+      {
+        "term": "xAERO",
+        "meaning": "Base 밖 네트워크에서 LP가 AERO 보상을 수령할 때 받는 영수증 토큰. Base로 가져가면 1:1로 AERO가 된다"
+      }
+    ],
+    "body": [
+      "토큰을 바꾸려는 사람은 Base 체인에서 가장 깊은 유동성을 가진 곳을 찾고, 2026년 3분기 Base 탈중앙 거래소 거래량의 58%가 Aerodrome에서 나왔다. 합병 뒤에는 Base·이더리움 메인넷·OP 메인넷·Arbitrum·Arc·Ink·Robinhood Chain 일곱 네트워크를 한 화면에서 쓰고, 메타스왑으로 체인을 건너는 교환도 한 번의 거래로 처리한다. 11월 13일까지 30일 거래량은 206.8억 달러였다.",
+      "유동성 공급자는 두 가지 예치 중 하나를 고른다. 수수료형 예치는 자기 풀 수수료의 95~100%를 가져가고, AERO 보상형 예치는 자기 몫 수수료를 전부 스테이커에게 넘기는 대신 새로 찍히는 AERO를 받는다. 수수료가 아직 적은 신생 풀일수록 AERO 보상 쪽이 유리하다.",
+      "토큰을 새로 띄운 프로젝트는 자기 풀에 유동성을 모으려고 유동성 지급금이라는 돈을 그 풀에 배분하는 스테이커에게 건다. 2026년 11월 25일 Injective가 Base에 INJ 풀을 열 때도 Aero가 첫날 유동성을 댔다. AERO 보유자는 이 세 부류가 내는 돈을 받으려고 AERO를 묶어 sAERO로 바꾼다."
+    ]
+  },
+  "money": {
+    "lead": "모든 돈은 온체인 계약에 머물고, 수수료와 지급금은 풀 단위로 sAERO 보유자에게 흐르며 AERO는 LP가 보상을 청구할 때만 새로 찍힌다.",
+    "overview": [
+      "Aero에는 오프체인 운용이 없다. 거래 풀·게이지·보상 계약은 일곱 네트워크마다 따로 배포돼 있고, 발행과 네트워크 간 보상 배분을 조율하는 핵심 계약은 Base에 있다. 사용자 자금은 풀 계약과 스테이킹 계약에만 들어 있고, 문서는 재단도 개발사 Dromos Labs도 사용자 자금을 보관하지 않는다고 적는다.",
+      "돈의 흐름은 세 갈래다. 트레이더가 낸 스마트 수수료와 MEV 세금은 그 예치가 수수료형이면 LP에게, AERO 보상형이면 그 풀에 배분한 sAERO 보유자에게 간다. 프로젝트가 건 유동성 지급금은 전부 sAERO 보유자 몫이다. LP가 받는 AERO 보상은 청구 시점에 민터가 새로 찍으며, LP가 100개를 청구할 때마다 재단 몫 5개가 함께 찍혀 영구 스테이크로 들어간다.",
+      "합병은 2026년 10월 22일 0시 UTC에 일어났다. 옛 AERO는 1:1로, VELO는 0.044:1로 새 AERO로 바꾸며 전환은 되돌릴 수 없고 기한도 없다. 거래소 보유분은 거래소가 내부에서 바꿨고, 업비트와 빗썸은 11월 3일부터 입출금을 멈췄다가 업비트는 11월 6일 재개했다. 바꾸지 않은 옛 토큰은 영영 유통되지 않으므로 최대 공급 21.27억 개가 다 나오지는 않는다."
+    ],
+    "userFlow": {
+      "title": "트레이더·LP·스테이커의 돈이 움직이는 과정",
+      "steps": [
+        {
+          "text": "트레이더가 풀에서 토큰을 바꾸며 스마트 수수료를 내고, 급한 거래는 MEV 세금을 더 낸다.",
+          "detail": "스마트 수수료는 풀마다 동적으로 정해지는 거래 수수료다. MEV 세금은 우선순위 수수료가 기준치를 넘는 거래에만 붙고, 그 수익은 수수료형 LP 또는 그 풀의 스테이커에게 간다. 풀 수수료율 조정은 재단이 집행한다고 문서는 적는다."
+        },
+        {
+          "text": "LP는 수수료형 예치와 AERO 보상형 예치 중 하나를 골라 유동성을 넣는다.",
+          "detail": "수수료형 예치는 언스테이크 수수료 0~5%를 뗀 나머지를 LP가 갖는다. 출범 시 요율은 이더리움 메인넷·Arbitrum·Robinhood Chain 0%, Base·OP 메인넷·Arc·Ink 5%다. AERO 보상형 예치는 자기 몫 수수료 100%를 그 풀에 배분 중인 sAERO 보유자에게 넘긴다. Slipstream 집중 유동성 풀에서는 현재가를 가격 범위에 포함한 예치만 AERO를 받는다."
+        },
+        {
+          "text": "AERO 보상은 초 단위로 쌓이고, LP가 청구하는 순간에만 새로 발행된다.",
+          "detail": "게이지는 풀에 걸린 배분 권한 비율에 민터 발행률을 곱한 속도로 보상을 적립하되, 게이지 상한을 넘는 부분은 미발행 보상으로만 기록되고 영영 찍히지 않는다. Base 밖 네트워크에서는 xAERO로 지급되며 Base로 가져오면 xAERO를 태우고 같은 수의 AERO를 찍는다."
+        },
+        {
+          "text": "AERO 보유자는 6개월·1년·2년·3년·4년 또는 영구로 스테이킹해 sAERO를 받는다.",
+          "detail": "sAERO는 ERC-721 규격의 NFT로 스테이크 하나마다 하나씩 발급되며 양도할 수 있다. 배분 권한은 예치량 × 남은 기간 ÷ 4년으로 계산돼 시간이 갈수록 줄고, 영구 스테이크는 줄지 않는다. 기간은 늘릴 수만 있고 줄일 수 없다. 옛 veAERO·veVELO는 남은 락 기간을 주 단위로 올림해 그대로 이어받았고 영구 락은 최대 기간 스테이크가 됐다."
+        },
+        {
+          "text": "스테이커는 원하는 풀에 배분 권한을 걸고, 그 풀의 수수료와 지급금을 권한 비율대로 실시간으로 받는다.",
+          "detail": "예측 배분이라 부르는 이 방식에는 주간 에포크와 투표가 없다. 스테이크마다 배분을 바꾼 뒤 47시간 쿨다운이 걸린다. 매출이 발생하는 시점에 배분 중인 스테이크만 받고, 리베이스 보상은 폐지됐다. 직접 고르기 싫으면 오토파일럿에 맡길 수 있는데, Aero가 관리하는 전략에 따라 키퍼가 대신 배분하고 성과 수수료를 떼며 들어가고 나갈 때 최대 47시간 대기열을 거친다."
+        },
+        {
+          "text": "원금은 스테이킹 기간이 끝나야만 꺼낼 수 있고, 그 전에 나가려면 sAERO NFT를 통째로 팔아야 한다.",
+          "detail": "조기 해지는 없다. 영구 스테이크를 끄면 그 시점부터 4년 카운트다운이 시작된다. 기간이 끝나도 보유자가 직접 출금하기 전까지 NFT는 남는다. 소수 풀에 배분했다고 슬래시되거나 원금을 잃는 일은 없다고 문서는 적는다."
+        }
+      ]
+    },
+    "issuerFlow": {
+      "title": "재단·개발사·거버넌스가 발행량과 수수료를 정하는 과정",
+      "steps": [
+        {
+          "text": "Aero Fed가 민터의 전체 발행 상한을 정하며, 출범 시 상한은 연 20% 인플레이션이다.",
+          "detail": "문서는 20%를 목표가 아닌 천장으로 설명하고 실현 인플레이션을 약 12%로 적는다. 2026년 6월 FAQ는 Aero Fed가 규칙 기반 또는 AI 도구를 쓸 수 있다고만 적고, 누가 그 권한을 쥐는지는 이번 실행에서 읽은 문서에 없다. 옛 Aerodrome에서는 veAERO 보유자가 매주 투표로 발행률을 유통량의 0.01%씩 올리거나 내렸다."
+        },
+        {
+          "text": "풀마다 게이지 상한이 걸려, 예상 매출에 배수를 곱한 금액 이상의 AERO는 찍히지 않는다.",
+          "detail": "상한 = 예상 기간 거래 수수료 + MEV 세금 수익 + 48시간 내 예정 지급금, 여기에 정책 배수를 곱한다. 문서 예시 배수는 1.4이고 장기 목표는 풀 매출의 약 1.2배, 건강 범위는 1.1~1.4배다. 출범 시 48시간마다 다시 계산한다. 배수는 풀별·전체로 바꿀 수 있고 Governor 계약은 상한을 0으로 내려 발행을 멈출 수 있다. AER 엔진이라 부르는 이 두 장치가 발행량을 매출에 묶는다."
+        },
+        {
+          "text": "LP가 AERO 100개를 청구할 때마다 재단에 5개가 추가로 찍혀 영구 스테이크로 들어간다.",
+          "detail": "계약 수준에서 5%를 넘길 수 없다. 출범 주에는 LP 248만 개에 재단 10.1만 개가 찍혀 약 4%였다. 재단은 이 sAERO로 다른 스테이커와 같은 방식으로 배분하고 매출을 받는다. 옛 Aerodrome 재단도 주간 발행의 5%를 받았고 월 매출 약 30만 달러, 월 비용 약 2만 달러로 2025년 백서에 적었다."
+        },
+        {
+          "text": "재단의 모멘텀 펀드는 자기 sAERO가 번 매출로 AERO를 사서 태우거나 sAERO를 더 사고, 강세장에는 준비금을 쌓는다.",
+          "detail": "합병 전 Aerodrome의 매입·락 프로그램 누계는 2026년 10월 21일까지 1억 7,995만 AERO다. 합병 뒤 집행 규모는 공식 집계가 없고, 2차 자료는 2026년 11월 19일 50.3만 AERO 매입·스테이킹을 전한다. 출범 직후 재단은 모멘텀 펀드 veNFT 일부를 먼저 전환하고, 옛 게이지에 갇힌 마지막 투표 보상과 비슷한 금액의 AERO를 인센티브로 넣었다."
+        },
+        {
+          "text": "수수료율·게이지 상한 범위·새 네트워크 배포 같은 설정 변경은 재단이 집행하고, 핵심 계약 자체는 바꿀 수 없다고 문서는 적는다.",
+          "detail": "재단 멀티시그의 서명자 수와 임계치는 읽은 문서에 없다. 옛 Aerodrome에서는 프로토콜 팀 멀티시그 0xE6A41fE61E7a1996B59d508661e3f524d6A32075가 수수료 관리자·일시정지·민터 팀 요율 권한을, 비상 위원회 멀티시그 0x99249b10593fCa1Ae9DAE6D4819F1A6dae5C013D가 게이지 중단·복구 권한을 가졌다. 새 Aero의 보안 문서는 이번 실행에서 열지 못했다."
+        },
+        {
+          "text": "거래소에 들어온 토큰은 토큰 레지스트리에서 한 번 검증을 거쳐야 게이지가 켜지고 AERO 보상을 받을 수 있다.",
+          "detail": "풀과 게이지 생성은 누구나 할 수 있지만 게이지는 검증 전까지 비활성이다. 유동성 지급금 프로그램은 토큰·금액·시작·기간을 만들 때 고정하고 중간에 바꾸거나 취소할 수 없으며, 배분 권한이 없던 구간에 흘러간 토큰만 종료 후 만든 사람이 회수한다."
+        }
+      ]
+    },
+    "example": [
+      "가령 어떤 풀이 한 주에 수수료 10만 달러를 내고 LP 전원이 AERO 보상형으로 예치했다고 하자. 수수료 10만 달러는 그 풀에 배분한 sAERO 보유자들이 권한 비율대로 나눠 갖고, LP는 대신 AERO를 받는다. 게이지 배수가 1.4이면 LP에게 흐를 수 있는 AERO는 한 주 최대 14만 달러어치이고, 그 이상 배분 권한이 몰려도 더 찍히지 않는다. LP가 14만 달러어치를 전부 청구하면 재단 몫 7천 달러어치가 함께 찍힌다. 스테이커는 10만 달러를 받지만 그 사이 AERO 공급은 14.7만 달러어치 늘어나는 셈이다.",
+      "실제 출범 주인 2026년 10월 22일 주에는 LP에게 248만 AERO, 재단에 10.1만 AERO가 찍혔고 스테이커 매출은 거래 수수료 73.2만 달러와 유동성 지급금 26.7만 달러를 합쳐 약 100만 달러였다. 출범일 가격 약 0.80달러를 적용하면 LP 몫 발행은 약 198만 달러어치로 매출의 약 2배라는 추산이 나온다. 합병 직전인 9월 4주 동안은 거꾸로 veAERO 매출 1,490만 달러에 LP 발행 1,050만 달러로 0.7배였다."
+    ],
+    "mix": {
+      "asOf": "2026-11-13",
+      "source": "DefiLlama · Aero 상위 페이지, 기준일 2026-11-13 · aero.xyz 메트릭스 페이지, 기준 주 2026-10-22 (모두 2026-11-27 조회)",
+      "headers": [
+        "구분",
+        "항목",
+        "값"
+      ],
+      "rows": [
+        [
+          "예치 자산",
+          "TVL 전체 · Base",
+          "3.05억 · 2.62억 달러"
+        ],
+        [
+          "예치 자산",
+          "30일 변화",
+          "-26.3%"
+        ],
+        [
+          "예치 자산",
+          "OP 메인넷 · 이더리움 · Arbitrum · Robinhood · Ink · Arc",
+          "1,370만 · 1,197만 · 439만 · 395만 · 347만 · 185만 달러"
+        ],
+        [
+          "30일 흐름",
+          "거래량",
+          "206.8억 달러"
+        ],
+        [
+          "30일 흐름",
+          "수수료 · 매출 · 보유자 매출",
+          "1,001만 · 766만 · 739만 달러"
+        ],
+        [
+          "30일 흐름",
+          "LP에게 지급된 AERO · 매출-인센티브",
+          "1,189만 · -423만 달러"
+        ],
+        [
+          "월별",
+          "9월 수수료 · 매출",
+          "1,910만 · 1,534만 달러"
+        ],
+        [
+          "월별",
+          "10월 수수료 · 매출",
+          "1,111만 · 786만 달러"
+        ],
+        [
+          "월별",
+          "11월 1~13일 수수료 · 매출",
+          "420만 · 345만 달러"
+        ],
+        [
+          "출범 주 (2026-10-22)",
+          "발행 AERO 전체 · LP 몫 · 재단 몫",
+          "258만 · 248만 · 10.1만 개"
+        ],
+        [
+          "출범 주 (2026-10-22)",
+          "스테이커 매출 · 거래 수수료 · 지급금",
+          "약 100만 · 73.2만 · 26.7만 달러"
+        ],
+        [
+          "스테이킹 (2026-10-22)",
+          "총공급 · 스테이킹 · 비율",
+          "21.3억 · 9.83억 개 · 46.2%"
+        ],
+        [
+          "누계 (2026-10-27)",
+          "생애 거래소 매출 · 2026년 1·2·3분기 매출",
+          "5.81억 · 2,000만 · 1,600만 · 2,600만 달러"
+        ]
+      ]
+    },
+    "trust": [
+      "Aero Fed와 재단이 발행 천장과 게이지 배수를 정한다. 배수를 1.4에서 올리면 같은 매출에 더 많은 AERO가 찍히고 그 희석은 sAERO 보유자와 AERO 보유자가 진다. 반대로 Governor 계약이 상한을 0으로 내리면 그 풀 LP는 보상이 끊긴다. 누가 Aero Fed의 키를 쥐는지와 재단 멀티시그 구성은 이번 실행에서 확인하지 못했다.",
+      "재단은 풀 수수료율과 언스테이크 수수료 0~5%를 바꿀 수 있다. 수수료형 LP에서 떼는 비율을 올리면 LP 몫이 줄고 스테이커 몫이 는다. 문서는 핵심 계약이 불변이라고 적지만 이런 설정값은 바뀔 수 있는 범위다.",
+      "Base 밖 네트워크의 LP는 AERO가 아니라 xAERO를 받고 Base로 가져와야 AERO가 된다. 그 경로의 브리지가 멈추면 다른 체인의 보상은 묶인다. 메타스왑도 거래 안에서 브리징을 처리하므로 같은 의존성을 진다.",
+      "오토파일럿에 맡긴 sAERO는 Aero가 관리하는 전략과 키퍼가 대신 배분한다. 키퍼가 늦거나 잘못 배분하면 그 손실은 맡긴 사람 몫이고 성과 수수료는 출금 때 떼인다.",
+      "예측 배분과 게이지 상한은 2026년 10월 22일에 처음 실전에 들어갔고 Dromos Labs 스스로 출범 시점에 검증되지 않았다고 말했다. 분석용 Dune 쿼리도 아직 실데이터로 돌아가지 않은 알파 상태다. 운영 측이 내는 숫자를 독립적으로 검증할 수단이 아직 얇다."
+    ],
+    "security": [
+      "새 계약은 Sherlock과 ChainSecurity가 다섯 차례 감사했고, 2026년 8월 31일부터 3주간 상금 40만 달러의 공개 감사 대회를 열었다. 2026년 7월 16일 시점까지 치명·높음 등급 취약점은 없었다고 밝혔다. 출범일부터 Sherlock 버그 바운티가 가동되지만 최대 보상액은 읽은 자료에 없고 감사 보고서 원문 링크도 찾지 못했다.",
+      "옛 Aerodrome은 Velodrome V2 코드를 바탕으로 2023년 Spearbit 감사에서 치명 1건·높음 8건을 고쳤다. 2025년 11월 21일에는 Aerodrome·Velodrome 도메인이 탈취돼 약 70만 달러 피해가 났지만 계약은 뚫리지 않았다.",
+      "합병은 되돌릴 수 없다. 옛 주소로 보낸 토큰은 거래소에 따라 복구되지 않을 수 있다고 Coinbase가 공지했다고 2차 자료는 전한다. 바꾸지 않은 옛 토큰은 영영 유통되지 않는다."
+    ],
+    "body": [
+      "유니스왑 같은 일반 AMM은 거래 수수료를 LP에게 주고 토큰 보유자는 별도 장치를 켜야만 일부를 받는다. Curve류 ve 모델은 수수료 일부를 veToken 보유자에게 주되 주간 에포크마다 투표하고 리베이스로 희석을 보전한다. Aero는 수수료를 LP가 아닌 스테이커에게 주고 LP에게는 발행 토큰을 주는 ve(3,3) 구조를 유지하면서, 에포크·투표·리베이스를 없애고 발행량을 풀별 예상 매출에 묶는 상한을 넣었다. 그래서 Aero에서 LP의 수입은 AERO 가격에, 스테이커의 수입은 거래량에 달려 있다."
+    ]
+  },
+  "usage": {
+    "lead": "합병 뒤 한 달 동안 TVL은 26% 줄고 주간 매출은 9월의 3분의 1 수준으로 떨어졌으며, 같은 기간 LP에게 준 AERO는 스테이커가 받은 매출보다 많았다.",
+    "usageMetrics": [
+      {
+        "label": "예치 자산 TVL",
+        "value": "3.05억 달러 · Base 2.62억 달러 (2026-11-13)",
+        "source": "DefiLlama · Aero",
+        "meaning": "30일 전보다 26.3% 줄었다. 옛 Aerodrome Slipstream 풀의 TVL은 10월 21일 2.26억 달러에서 11월 19일 6,734만 달러로 빠졌는데 일부는 새 풀로 옮겨 가고 일부는 떠났다."
+      },
+      {
+        "label": "30일 거래량",
+        "value": "206.8억 달러 · Base 165.9억 달러 (2026-11-13)",
+        "source": "DefiLlama · Aero",
+        "meaning": "스테이커 매출의 원천이다. 같은 기간 수수료 1,001만 달러를 나누면 거래량 1달러당 약 0.05%가 수수료로 남은 셈이다."
+      },
+      {
+        "label": "스테이킹 비율",
+        "value": "46.2% · 9.83억 / 21.3억 AERO (2026-10-22)",
+        "source": "aero.xyz · Protocol Metrics",
+        "meaning": "합병 전 주 51.1%에서 5%p 내려갔다. 평균 스테이킹 기간은 3.95년이다. 스테이킹하지 않은 54%는 매출을 전혀 받지 못한다."
+      },
+      {
+        "label": "네트워크 수와 집중도",
+        "value": "7개 · TVL의 86%가 Base (2026-11-13)",
+        "source": "DefiLlama · Aero",
+        "meaning": "Base 밖 여섯 네트워크의 TVL을 합쳐도 약 4,300만 달러다. 멀티체인 확장은 아직 숫자보다 구조다."
+      }
+    ],
+    "revenueMetrics": [
+      {
+        "label": "30일 수수료 · 매출 · 보유자 매출",
+        "value": "1,001만 · 766만 · 739만 달러 (2026-11-13)",
+        "source": "DefiLlama · Aero",
+        "meaning": "매출은 수수료 중 LP가 가져간 몫을 뺀 값으로 스테이커에게 가는 수수료와 지급금이다. 보유자 매출 739만 달러가 실제로 sAERO에 분배된 돈이다."
+      },
+      {
+        "label": "30일 LP 인센티브 · 수익",
+        "value": "1,189만 · -423만 달러 (2026-11-13)",
+        "source": "DefiLlama · Aero",
+        "meaning": "인센티브는 LP에게 지급된 AERO의 달러 가치다. 매출보다 423만 달러 많아 DefiLlama 기준 수익은 마이너스다. 다만 이 30일에는 합병 전 마지막 주의 옛 발행분이 포함된다."
+      },
+      {
+        "label": "주간 스테이커 매출",
+        "value": "출범 주 약 100만 달러 · 11월 12~18일 207만 달러, 후자는 2차 자료 (2026-10-22 주 · 2026-11-18)",
+        "source": "aero.xyz · Protocol Metrics / CoinMarketCap AI·CoinStats AI가 인용한 CoinGecko 피드",
+        "meaning": "9월에는 주당 약 370만 달러였다. 11월 중순 수치는 공식 페이지가 아닌 2차 자료라 다음 갱신 때 확인이 필요하다."
+      },
+      {
+        "label": "분기 거래소 매출",
+        "value": "2026년 3분기 2,600만 달러 · 4분기 진행 중 650만 달러 (2026-10-27)",
+        "source": "aero.xyz · Protocol Metrics",
+        "meaning": "분기 매출은 1분기 2,000만, 2분기 1,600만 달러로 오르내렸다. 4분기는 합병 전환기가 섞여 앞 분기와 바로 비교하기 어렵다."
+      }
+    ],
+    "valueQuestion": "Aero 거래가 늘면 AERO 보유자에게도 수익이 돌아가나?",
+    "valueAnswer": [
+      "스테이킹하지 않은 AERO 보유자에게는 아무것도 돌아오지 않는다. 수수료도 리베이스도 없고, 유일한 간접 경로는 모멘텀 펀드가 AERO를 사서 태우는 것인데 합병 뒤 공식 집계가 없다.",
+      "sAERO 보유자는 자기가 배분한 풀의 수수료와 지급금 100%를 받는다. 2026년 11월 13일까지 30일 동안 실제 분배된 돈은 739만 달러다. 다만 전체 매출을 모두가 나누는 것이 아니라 풀 단위라서, 매출이 많은 풀을 고르지 못하면 거래량이 늘어도 내 몫은 늘지 않는다.",
+      "LP는 수수료 대신 새로 찍힌 AERO를 받는다. 같은 30일 동안 1,189만 달러어치가 지급돼 스테이커가 받은 돈보다 많았다. 거래가 늘면 게이지 상한도 같이 올라가므로 매출 증가분의 1.2~1.4배가 발행 허용량으로 따라온다.",
+      "재단은 LP 청구량의 5%를 추가로 받고 자기 sAERO로도 매출을 받는다. 이 돈으로 하는 매입·소각은 재단 재량이며 승인된 비율이나 일정은 없다."
+    ],
+    "policies": [
+      {
+        "name": "Aerodrome·Velodrome 합병과 토큰 전환",
+        "approved": "2026-03-30 경제 설계 공개 · 2026-09-25 출범일 확정",
+        "executed": "2026-10-22 집행 — AERO 1:1, VELO 0.044:1, 되돌릴 수 없고 기한 없음",
+        "note": "업비트·빗썸은 11월 3일 입출금을 멈추고 내부에서 전환했으며 업비트는 11월 6일 재개했다. 새 AERO 계약은 Base 0x3f5bF3EdAc59d650D8fDf9657a71F2f904A3a4Ee, 옛 AERO는 0x940181a94A35A4569E4529A3CDfB74e38FD98631이다."
+      },
+      {
+        "name": "연 20% 인플레이션 천장",
+        "approved": "2026-06 AER 엔진 FAQ에서 출범 시 설정 예고",
+        "executed": "출범 시 적용 — 공식 페이지는 실현 인플레이션 약 12%로 표기",
+        "note": "출범 주 발행 258만 개를 1년으로 늘리면 약 1.34억 개로 총공급의 6.3%라는 계산이 나오는데, 12%는 유통량 기준으로 보인다. 기준이 문서에 명시돼 있지 않다."
+      },
+      {
+        "name": "재단 5% 추가 발행",
+        "approved": "문서상 계약 상한 5%",
+        "executed": "집행 중 — 출범 주 LP 248만 개에 재단 10.1만 개",
+        "note": "재단 몫은 영구 스테이크로 들어가 매출 배분에 참여한다."
+      },
+      {
+        "name": "언스테이크 수수료 0~5%",
+        "approved": "출범 시 프로모션 요율",
+        "executed": "집행 — 이더리움·Arbitrum·Robinhood 0%, Base·OP·Arc·Ink 5%",
+        "note": "재단이 바꿀 수 있는 설정값이다."
+      },
+      {
+        "name": "모멘텀 펀드 매입·소각",
+        "approved": "재단 재량 — 승인된 비율·일정 없음",
+        "executed": "합병 전 누계 1억 7,995만 AERO (2026-10-21까지). 합병 뒤 공식 집계 없음, 2차 자료는 11월 19일 50.3만 AERO 매입·스테이킹",
+        "note": "공식 메트릭스 페이지의 매입 표는 10월 21일에서 멈춰 있다."
+      },
+      {
+        "name": "게이지 상한 48시간 재계산 · 배분 쿨다운 47시간",
+        "approved": "출범 설정",
+        "executed": "집행 — 쿨다운은 줄일 수 있다고 문서가 예고",
+        "note": "예시 배수 1.4, 장기 목표 1.2배."
+      }
+    ],
+    "tokenomics": {
+      "circulating": "유통 8.07억 / 총공급 21.5억 AERO, 유통률 약 38%, CoinMarketCap 2026년 11월 27일 기준 · 가격 0.4027달러, 시총 3.25억 달러, FDV 8.67억 달러. 출범일 약 0.80달러에서 5주 만에 반값이 됐다. DefiLlama는 유통 7.22억, 총공급 21.36억 개로 적어 스테이킹분 처리에 따라 집계가 갈린다.",
+      "nextUnlock": "팀·투자자 베스팅 물량은 없다. 공급은 LP가 청구할 때 찍히는 발행으로만 늘고 출범 주 속도면 주 258만 개다. 스테이킹 해제는 기간 만료 때 개별로 일어나며 평균 남은 기간은 3.95년이다.",
+      "valuePath": "sAERO로 스테이킹해야 풀 매출을 받고, 그 밖의 경로는 재단 모멘텀 펀드의 재량 매입·소각뿐이다. 스테이킹하지 않은 AERO는 현금흐름이 없다.",
+      "valueCapture": "direct"
+    }
+  },
+  "risks": {
+    "lead": "발행이 매출을 계속 웃돌거나 합병 뒤 떨어진 매출이 돌아오지 않으면, 매출 100%를 준다는 약속은 희석으로 메워지는 약속이 된다.",
+    "items": [
+      {
+        "risk": "발행이 매출을 웃도는 희석",
+        "why": "LP에게 찍어 주는 AERO가 스테이커가 받는 달러보다 많으면 sAERO 보유자는 받은 매출 이상으로 지분이 줄고, 스테이킹하지 않은 보유자는 받는 것 없이 희석만 당한다.",
+        "indicator": "DefiLlama Aero 페이지의 30일 수익, 즉 매출에서 인센티브를 뺀 값의 부호와 aero.xyz 메트릭스의 주간 발행량 × 가격 ÷ 주간 매출"
+      },
+      {
+        "risk": "합병 전환기 매출 급감의 고착",
+        "why": "주간 매출이 9월 약 370만 달러에서 출범 주 100만 달러로 줄었다. 옛 풀의 유동성이 새 풀로 옮겨 오지 않으면 스테이커 매출도 게이지 상한도 함께 작아져 LP 보상까지 줄어든다.",
+        "indicator": "aero.xyz 메트릭스의 주간 거래소 매출과 DefiLlama TVL의 Base 비중 변화"
+      },
+      {
+        "risk": "운영 측 설정 권한의 불투명",
+        "why": "Aero Fed가 누구인지, 재단 멀티시그 서명자와 임계치가 읽은 문서에 없다. 배수나 발행 천장을 올리는 결정이 내려져도 보유자가 미리 알기 어렵다.",
+        "indicator": "app.aero.xyz 보안 문서의 권한·주소 목록 공개 여부와 게이지 배수 변경 공지"
+      },
+      {
+        "risk": "검증되지 않은 새 메커니즘",
+        "why": "예측 배분·게이지 상한·xAERO는 출범 때 처음 가동됐다. 계산 오류나 브리지 장애가 나면 보상이 잘못 가거나 다른 체인 LP의 AERO가 묶인다.",
+        "indicator": "Sherlock 버그 바운티 지급 내역과 Base 밖 네트워크의 xAERO 미상환 잔량"
+      },
+      {
+        "risk": "sAERO 양도와 재단 집중",
+        "why": "sAERO는 팔 수 있는 NFT라 락업이 매도 압력을 막아 주지 않는다. 재단은 가장 큰 sAERO 보유자 중 하나이고 5% 추가 발행까지 받아 매출 배분의 큰 몫이 재단으로 돌아간다.",
+        "indicator": "스테이킹 비율 46%의 추이, 재단 sAERO 비중, sAERO 2차 시장 할인율"
+      }
+    ]
+  },
+  "watchlist": [
+    {
+      "indicator": "주간 발행 AERO의 달러 가치 ÷ 주간 거래소 매출",
+      "why": "제목 질문의 답이 바뀌는 자리다. 설계 목표는 1.2배 안팎이다.",
+      "signal": "1.5배 위에 머물면 희석이 매출을 앞서는 것이고, 1.2배 아래로 내려오면 게이지 상한이 설계대로 작동하는 것이다."
+    },
+    {
+      "indicator": "주간 거래소 매출",
+      "why": "스테이커가 실제로 받는 돈이자 게이지 상한의 분모다.",
+      "signal": "9월 수준인 주 370만 달러를 회복하는지, 100만~200만 달러대에 머무는지"
+    },
+    {
+      "indicator": "DefiLlama TVL과 Base 비중",
+      "why": "유동성이 새 풀로 옮겨 왔는지, 다른 체인으로 퍼지는지 보여 준다.",
+      "signal": "TVL이 3억 달러 아래로 더 내려가거나 Base 비중 86%가 줄지 않으면 멀티체인 확장은 아직 숫자가 없는 것이다."
+    },
+    {
+      "indicator": "스테이킹 비율과 sAERO 2차 거래 할인율",
+      "why": "sAERO는 양도할 수 있어 락업이 매도 압력을 막지 못한다.",
+      "signal": "46%가 더 내려가거나 sAERO가 원금 대비 큰 할인으로 거래되면 장기 보유자가 빠져나가는 신호다."
+    },
+    {
+      "indicator": "모멘텀 펀드 매입·소각 공식 집계",
+      "why": "스테이킹하지 않은 보유자에게 닿는 유일한 경로다.",
+      "signal": "aero.xyz 메트릭스의 매입 표가 10월 21일 이후로 갱신되는지와 월간 매입량이 월간 발행량의 몇 %인지"
+    }
+  ],
+  "verdict": "출범 첫 주 Aero가 LP에게 찍어 준 AERO는 스테이커가 받은 매출의 약 2배로 추산되고, 설계가 약속한 1.2배보다 크다. 합병 전 Aerodrome은 매출이 발행보다 많았으므로 지금의 역전은 전환기에 매출이 3분의 1로 줄어든 탓이 크고, 게이지 상한은 그 줄어든 매출에 맞춰 발행도 같이 줄이는 중이다. 주간 매출이 합병 전 수준으로 돌아오면서 발행 대비 비율이 1.2배 안으로 들어오는지, 아니면 매출은 그대로인 채 배수가 올라가는지가 판단을 바꾼다.",
+  "sources": [
+    {
+      "title": "Aero Docs – About Aero",
+      "url": "https://app.aero.xyz/docs/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – AERO and sAERO",
+      "url": "https://app.aero.xyz/docs/about/aero-and-saero/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – Emissions",
+      "url": "https://app.aero.xyz/docs/about/emissions",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – Foundation",
+      "url": "https://app.aero.xyz/docs/about/foundation",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – Glossary",
+      "url": "https://app.aero.xyz/docs/about/glossary",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – Gauges",
+      "url": "https://app.aero.xyz/docs/features/gauges",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – Predictive Allocation",
+      "url": "https://app.aero.xyz/docs/features/predictive-allocation",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – Incentive Programs",
+      "url": "https://app.aero.xyz/docs/features/incentive-programs",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – Autopilot",
+      "url": "https://app.aero.xyz/docs/features/autopilot",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – Staking",
+      "url": "https://app.aero.xyz/docs/products/staking",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – FAQ: Token Operators",
+      "url": "https://app.aero.xyz/docs/faq/token-operators",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero Docs – FAQ: Tokens and Rewards",
+      "url": "https://app.aero.xyz/docs/faq/tokens-and-rewards",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – Upgrade and Launch Hub",
+      "url": "https://aero.xyz/aero-upgrade/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – The Aero Economy (2026-10-19)",
+      "url": "https://aero.xyz/articles/the-aero-economy/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – Aero Launches Today (2026-10-21)",
+      "url": "https://aero.xyz/articles/aero-launches-today/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – Launch Update: All Systems Go (2026-09-25)",
+      "url": "https://aero.xyz/articles/aero-launch-update-all-systems-go/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – Aero is on the Horizon (2026-07-16)",
+      "url": "https://aero.xyz/articles/aero-is-on-the-horizon/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – The AER Engine and the Aero Economy (2026-06-07)",
+      "url": "https://aero.xyz/articles/the-aer-engine-and-the-aero-economy/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – AER Engine FAQ (2026-06-06)",
+      "url": "https://aero.xyz/articles/aero-the-aer-engine-faq/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – Predictive Allocation FAQ (2026-05-08)",
+      "url": "https://aero.xyz/articles/aero-predictive-allocation-faq/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – Aero Dynamics: The Economics of Ethereum's Unified Liquidity Layer (2026-03-30)",
+      "url": "https://aero.xyz/articles/aero-economic-case/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – Economics",
+      "url": "https://aero.xyz/economics/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aero – Protocol Metrics (Dune 기반, 최신 데이터 2026-10-27)",
+      "url": "https://aero.xyz/economics/metrics/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Aerodrome Foundation – MiCA Legal Disclosures / White Paper (2025-06-20)",
+      "url": "https://aero.xyz/documents/legal-disclosures.pdf",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "DefiLlama – Aero (상위 프로토콜, 페이지 기준일 2026-11-13)",
+      "url": "https://defillama.com/protocol/aerodrome",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "DefiLlama – Aerodrome Slipstream (페이지 기준일 2026-11-19)",
+      "url": "https://defillama.com/protocol/aerodrome-slipstream",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "DefiLlama – Aero Slipstream",
+      "url": "https://defillama.com/protocol/aero-slipstream",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "DefiLlama – Aero Basic",
+      "url": "https://defillama.com/protocol/aero-basic",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "CoinMarketCap – Aero (AERO)",
+      "url": "https://coinmarketcap.com/currencies/aerodrome-finance/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "GitHub – aerodrome-finance/contracts PERMISSIONS.md (옛 Aerodrome 권한)",
+      "url": "https://github.com/aerodrome-finance/contracts/blob/main/PERMISSIONS.md",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "GitHub – dromos-labs/aerov3_analytics_alpha",
+      "url": "https://github.com/dromos-labs/aerov3_analytics_alpha",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "GitHub – aerodrome-finance 저장소 목록",
+      "url": "https://github.com/orgs/aerodrome-finance/repositories",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Coinpaprika – Aerodrome and Velodrome Merge Into Aero Across Seven Networks (2026-10-22)",
+      "url": "https://coinpaprika.com/news/aerodrome-velodrome-merge-aero-seven-networks",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "BigGo Finance – Aerodrome and Velodrome Complete Merger (2026-10-22)",
+      "url": "https://finance.biggo.com/news/9b48a838-a0e9-4283-99cd-5f0520e06326",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "KuCoin News – AERO Rallies 6% as Aerodrome and Velodrome Merge (2026-10-21)",
+      "url": "https://www.kucoin.com/news/flash/aero-rallies-6-as-aerodrome-and-velodrome-merge-into-aero-on-october-21",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Wu Blockchain – Weekly Project Updates (2026-10-10)",
+      "url": "https://wublock.substack.com/p/weekly-project-updates-polymarket-03c",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Coinfomania – AerodromeFi Launches Audit Contest Using Sherlock's AI (2026-08-21)",
+      "url": "https://coinfomania.com/aerodromefi-launches-audit-contest-using-sherlocks-ai/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "이코노미블록 – 업비트, AERO 토큰 스왑으로 입출금 일시 중단 (2026-11-02)",
+      "url": "https://economybloc.com/article/121428/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "이코노미블록 – 업비트, AERO 입출금 재개 (2026-11-06)",
+      "url": "https://economybloc.com/article/121809/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "이코노미블록 – 빗썸, AERO 토큰 스왑으로 입출금 일시 중단 (2026-11-03)",
+      "url": "https://economybloc.com/article/121511/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "이코노미블록 – 에어로드롬 파이낸스(AERO) 코인 정보",
+      "url": "https://economybloc.com/article/46784/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "블록미디어 – 빗썸, AERO·SOLV 원화 마켓 상장 (2025-01-24)",
+      "url": "https://www.blockmedia.co.kr/archives/848425",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "CoinMarketCap AI – Latest Aero News (2026-11-26, 2차 자료)",
+      "url": "https://coinmarketcap.com/cmc-ai/aerodrome-finance/latest-updates/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "CoinStats AI – Aero News Today (2026-11-26, 2차 자료)",
+      "url": "https://coinstats.app/ai/a/latest-news-for-aero",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "CoinMarketCap AI – AERO Drops 4.5% Amid Ongoing Merger Digestion (2026-10-29, 2차 자료)",
+      "url": "https://coinmarketcap.com/top-stories/6ae2a9cf1d1ef400a3259cdd/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "ERC-721: Non-Fungible Token Standard",
+      "url": "https://eips.ethereum.org/EIPS/eip-721",
+      "accessed": "2026-11-27"
+    }
+  ],
+  "terms": [
+    {
+      "term": "예측 배분",
+      "key": "predictive-allocation",
+      "aliases": [
+        "Predictive Allocation",
+        "배분 권한",
+        "Allocation Power"
+      ],
+      "meaning": "주간 투표 대신 스테이커가 아무 때나 풀을 고르고 그 풀의 보상과 매출을 실시간으로 나누는 방식",
+      "role": "Aero에서 sAERO 보유자가 풀에 배분 권한을 걸면 그 풀의 AERO 보상 속도가 정해지고 그 풀의 수수료·지급금이 권한 비율대로 들어온다. 바꾼 뒤 47시간 쿨다운이 있고 리베이스는 없다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero Docs – Predictive Allocation",
+          "url": "https://app.aero.xyz/docs/features/predictive-allocation"
+        },
+        {
+          "title": "Aero – Predictive Allocation FAQ",
+          "url": "https://aero.xyz/articles/aero-predictive-allocation-faq/"
+        }
+      ]
+    },
+    {
+      "term": "게이지 상한",
+      "key": "gauge-cap",
+      "aliases": [
+        "Gauge Cap",
+        "게이지 캡",
+        "게이지 배수",
+        "정책 배수"
+      ],
+      "meaning": "한 풀에 흘러갈 수 있는 보상 토큰의 가치를 그 풀의 예상 매출에 배수를 곱해 묶는 상한",
+      "role": "Aero에서는 풀의 예상 거래 수수료·MEV 세금·48시간 내 예정 지급금에 배수를 곱한 금액까지만 AERO가 찍힌다. 예시 배수 1.4, 장기 목표 1.2배이며 Governor 계약이 0으로 내릴 수 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero Docs – Gauges",
+          "url": "https://app.aero.xyz/docs/features/gauges"
+        },
+        {
+          "title": "Aero – The AER Engine and the Aero Economy",
+          "url": "https://aero.xyz/articles/the-aer-engine-and-the-aero-economy/"
+        }
+      ]
+    },
+    {
+      "term": "AER 엔진",
+      "key": "aer-engine",
+      "aliases": [
+        "AER Engine",
+        "Adaptive Emissions Rate",
+        "적응형 발행률"
+      ],
+      "meaning": "전체 발행 천장과 풀별 상한으로 토큰 발행량을 매출에 연동시키는 발행 조절 장치",
+      "role": "Aero에서 Aero Fed가 정하는 연 20% 천장과 풀별 게이지 상한을 합쳐 부르는 이름이다. 상한을 넘는 보상은 미발행으로만 기록되고 찍히지 않는다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero Docs – Emissions",
+          "url": "https://app.aero.xyz/docs/about/emissions"
+        },
+        {
+          "title": "Aero – AER Engine FAQ",
+          "url": "https://aero.xyz/articles/aero-the-aer-engine-faq/"
+        }
+      ]
+    },
+    {
+      "term": "Aero Fed",
+      "key": "aero-fed",
+      "aliases": [
+        "에어로 페드",
+        "Fed Governor"
+      ],
+      "meaning": "프로토콜의 토큰 발행률 천장을 정하는 발행 정책 주체",
+      "role": "Aero에서 민터의 전체 발행 상한을 연 20%로 설정한 주체로 문서에 나오지만, 누가 그 권한을 쥐는지는 읽은 문서에 없다. 옛 Aerodrome에서는 veAERO 보유자의 주간 투표였다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero – AER Engine FAQ",
+          "url": "https://aero.xyz/articles/aero-the-aer-engine-faq/"
+        },
+        {
+          "title": "Aerodrome Foundation – MiCA Legal Disclosures",
+          "url": "https://aero.xyz/documents/legal-disclosures.pdf"
+        }
+      ]
+    },
+    {
+      "term": "유동성 지급금",
+      "key": "liquidity-payments",
+      "aliases": [
+        "Liquidity Payments",
+        "브라이브",
+        "bribe",
+        "런치 지급금",
+        "Launch Payments"
+      ],
+      "meaning": "토큰 발행 프로젝트가 자기 풀에 보상을 끌어오려고 스테이커에게 거는 인센티브",
+      "role": "Aero에서 프로젝트가 풀에 걸면 그 풀에 배분한 sAERO 보유자에게 초 단위로 흘러간다. 출범 주 스테이커 매출 100만 달러 중 26.7만 달러가 이 돈이었고, 게이지 상한 계산에도 들어간다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero Docs – Incentive Programs",
+          "url": "https://app.aero.xyz/docs/features/incentive-programs"
+        },
+        {
+          "title": "Aero – Protocol Metrics",
+          "url": "https://aero.xyz/economics/metrics/"
+        }
+      ]
+    },
+    {
+      "term": "모멘텀 펀드",
+      "key": "momentum-fund",
+      "aliases": [
+        "Momentum Fund"
+      ],
+      "meaning": "재단이 보유 스테이크의 매출로 자기 토큰을 사서 태우거나 준비금을 쌓는 기금",
+      "role": "Aero 재단이 운영하며 큰 sAERO 포지션의 매출로 AERO 매입·소각이나 sAERO 추가 매입을 한다. 합병 뒤 집행 규모는 공식 집계가 없다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero Docs – Foundation",
+          "url": "https://app.aero.xyz/docs/about/foundation"
+        },
+        {
+          "title": "Aero – The Aero Economy",
+          "url": "https://aero.xyz/articles/the-aero-economy/"
+        }
+      ]
+    },
+    {
+      "term": "오토파일럿",
+      "key": "autopilot",
+      "aliases": [
+        "Autopilot"
+      ],
+      "meaning": "스테이크를 모아 운영자나 자동 프로그램이 대신 배분하고 보상을 처리해 주는 위임 서비스",
+      "role": "Aero에서 sAERO를 맡기면 키퍼가 배분하고 보상을 AERO로 재스테이킹하거나 USDC로 바꿔 준다. 성과 수수료를 떼고 들어가고 나갈 때 최대 47시간 대기열이 있다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero Docs – Autopilot",
+          "url": "https://app.aero.xyz/docs/features/autopilot"
+        }
+      ]
+    },
+    {
+      "term": "영구 스테이크",
+      "key": "perpetual-stake",
+      "aliases": [
+        "Perpetual Stake",
+        "영구 락",
+        "permanent lock"
+      ],
+      "meaning": "만기를 두지 않아 권한이 줄지 않고, 끄는 순간부터 최대 기간 카운트다운이 시작되는 스테이킹",
+      "role": "Aero에서 배분 권한이 4년치로 고정되는 선택지다. 재단의 5% 추가 발행분이 여기로 들어가고, 옛 영구 락 veNFT도 이것으로 전환됐다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero Docs – Staking",
+          "url": "https://app.aero.xyz/docs/products/staking"
+        },
+        {
+          "title": "Aero Docs – Emissions",
+          "url": "https://app.aero.xyz/docs/about/emissions"
+        }
+      ]
+    },
+    {
+      "term": "언스테이크 수수료",
+      "key": "unstaked-fee",
+      "aliases": [
+        "unstaked fee",
+        "미스테이킹 수수료"
+      ],
+      "meaning": "보상 토큰을 받지 않는 유동성 공급자의 수수료에서 프로토콜이 떼어 스테이커에게 주는 비율",
+      "role": "Aero에서 수수료형 예치의 수수료에서 0~5%를 떼어 sAERO 보유자에게 준다. 출범 시 이더리움·Arbitrum·Robinhood는 0%, Base·OP·Arc·Ink는 5%다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero – Upgrade and Launch Hub",
+          "url": "https://aero.xyz/aero-upgrade/"
+        },
+        {
+          "title": "Aero Docs – FAQ: Token Operators",
+          "url": "https://app.aero.xyz/docs/faq/token-operators"
+        }
+      ]
+    },
+    {
+      "term": "MEV 세금",
+      "key": "mev-tax",
+      "aliases": [
+        "MEV tax",
+        "MEV 캡처",
+        "MEV capture"
+      ],
+      "meaning": "우선순위 수수료가 높은 거래에 추가로 물려 거래 순서 경쟁의 이익을 풀 쪽으로 돌리는 수수료",
+      "role": "Aero의 Slipstream V3 풀에서 기준치를 넘는 우선순위 수수료 거래에만 붙고, 수익은 수수료형 LP나 그 풀의 sAERO 보유자에게 간다. 게이지 상한의 예상 매출에도 포함된다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero – Upgrade and Launch Hub",
+          "url": "https://aero.xyz/aero-upgrade/"
+        },
+        {
+          "title": "Aero Docs – Gauges",
+          "url": "https://app.aero.xyz/docs/features/gauges"
+        }
+      ]
+    },
+    {
+      "term": "ERC-721",
+      "key": "erc-721",
+      "aliases": [
+        "EIP-721",
+        "ERC 721",
+        "NFT 표준"
+      ],
+      "meaning": "토큰마다 고유 번호가 있어 서로 바꿔 쓸 수 없는 토큰의 이더리움 표준 인터페이스",
+      "role": "Aero의 sAERO가 이 규격이라 스테이크 하나가 NFT 하나이고, transferFrom으로 다른 지갑에 넘기거나 팔 수 있다. 그래서 락업 중에도 포지션 자체는 유통된다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "ERC-721: Non-Fungible Token Standard",
+          "url": "https://eips.ethereum.org/EIPS/eip-721"
+        },
+        {
+          "title": "Aero Docs – Staking",
+          "url": "https://app.aero.xyz/docs/products/staking"
+        }
+      ]
+    },
+    {
+      "term": "멀티시그",
+      "key": "multisig",
+      "aliases": [
+        "multisig",
+        "다중서명",
+        "멀티시그 지갑"
+      ],
+      "meaning": "정해진 수 이상의 서명자가 동의해야 거래가 실행되는 지갑",
+      "role": "옛 Aerodrome에서는 프로토콜 팀 멀티시그가 수수료 관리와 일시정지를, 비상 위원회 멀티시그가 게이지 중단·복구를 맡았다. 새 Aero 재단 멀티시그의 서명자와 임계치는 읽은 문서에 없다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "GitHub – aerodrome-finance/contracts PERMISSIONS.md",
+          "url": "https://github.com/aerodrome-finance/contracts/blob/main/PERMISSIONS.md"
+        },
+        {
+          "title": "Aerodrome Foundation – MiCA Legal Disclosures",
+          "url": "https://aero.xyz/documents/legal-disclosures.pdf"
+        }
+      ]
+    },
+    {
+      "term": "토큰 레지스트리",
+      "key": "token-registry",
+      "aliases": [
+        "Token Registry"
+      ],
+      "meaning": "거래소에 등록된 토큰의 메타데이터와 상장 상태를 기록하는 온체인 목록",
+      "role": "Aero에서 네트워크마다 하나씩 있고, 풀의 토큰이 여기서 검증돼야 게이지가 켜져 AERO 보상이 나간다.",
+      "inline": true,
+      "sources": [
+        {
+          "title": "Aero Docs – Gauges",
+          "url": "https://app.aero.xyz/docs/features/gauges"
+        },
+        {
+          "title": "Aero Docs – Glossary",
+          "url": "https://app.aero.xyz/docs/about/glossary"
+        }
+      ]
+    },
+    {
+      "term": "메타스왑",
+      "key": "metaswap",
+      "aliases": [
+        "Metaswaps",
+        "Metaswap",
+        "메타스왑스"
+      ],
+      "meaning": "라우팅과 브리징을 한 거래 안에서 처리해 다른 체인의 토큰으로 바로 바꿔 주는 교환",
+      "role": "Aero에서 일곱 네트워크 사이의 교환을 한 번의 거래로 처리한다.",
+      "inline": false,
+      "sources": [
+        {
+          "title": "Aero Docs – Getting Started",
+          "url": "https://app.aero.xyz/docs/about/getting-started"
+        }
+      ]
+    },
+    {
+      "term": "ve(3,3)",
+      "key": "ve33",
+      "aliases": [
+        "ve33",
+        "보트 에스크로"
+      ],
+      "meaning": "토큰을 락업한 보유자가 보상 배분을 정하고 그 대가로 수수료와 인센티브를 받는 거래소 설계",
+      "role": "Aerodrome·Velodrome이 쓰던 구조이고 Aero는 에포크·투표·리베이스를 없앤 변형이다.",
+      "inline": false,
+      "sources": [
+        {
+          "title": "Aero – The Aero Economy",
+          "url": "https://aero.xyz/articles/the-aero-economy/"
+        }
+      ]
+    },
+    {
+      "term": "리베이스",
+      "key": "rebase",
+      "aliases": [
+        "rebase",
+        "리베이스 보상"
+      ],
+      "meaning": "새 발행으로 생기는 희석을 보전하려고 락업 보유자에게 추가로 주는 토큰",
+      "role": "옛 Aerodrome의 veAERO는 매주 리베이스를 받았지만 Aero의 sAERO는 받지 않는다.",
+      "inline": false,
+      "sources": [
+        {
+          "title": "Aerodrome Foundation – MiCA Legal Disclosures",
+          "url": "https://aero.xyz/documents/legal-disclosures.pdf"
+        },
+        {
+          "title": "Aero – Predictive Allocation FAQ",
+          "url": "https://aero.xyz/articles/aero-predictive-allocation-faq/"
+        }
+      ]
+    },
+    {
+      "term": "에포크",
+      "key": "epoch",
+      "aliases": [
+        "epoch",
+        "주간 에포크"
+      ],
+      "meaning": "보상 계산과 투표가 묶여 처리되는 고정된 기간 단위",
+      "role": "옛 Aerodrome은 목요일 0시 UTC 주간 에포크로 돌았고 Aero는 이를 없애고 초 단위 연속 정산으로 바꿨다.",
+      "inline": false,
+      "sources": [
+        {
+          "title": "Aero Docs – FAQ: Token Operators",
+          "url": "https://app.aero.xyz/docs/faq/token-operators"
+        }
+      ]
+    },
+    {
+      "term": "TVL",
+      "key": "tvl",
+      "aliases": [
+        "Total Value Locked",
+        "총예치자산"
+      ],
+      "meaning": "프로토콜 계약에 들어 있는 자산의 총 달러 가치",
+      "inline": false,
+      "sources": [
+        {
+          "title": "DefiLlama – Aero",
+          "url": "https://defillama.com/protocol/aerodrome"
+        }
+      ]
+    },
+    {
+      "term": "FDV",
+      "key": "fdv",
+      "aliases": [
+        "완전희석가치",
+        "Fully Diluted Valuation"
+      ],
+      "meaning": "총공급량 전부에 현재 가격을 곱한 가치",
+      "inline": false,
+      "sources": [
+        {
+          "title": "CoinMarketCap – Aero (AERO)",
+          "url": "https://coinmarketcap.com/currencies/aerodrome-finance/"
+        }
+      ]
+    }
+  ],
+  "openItems": [
+    {
+      "item": "새 Aero 핵심 계약 주소와 권한 목록 — 민터·sAERO·Governor·xAERO·재단 멀티시그",
+      "status": "접근 실패",
+      "tried": "app.aero.xyz/docs/security 페이지는 권한 요청으로 열지 못했고, aerodrome-finance 깃허브에는 새 Aero 저장소가 없으며 dromos-labs 분석 저장소는 주소 목록이 아직 비어 있다.",
+      "howToVerify": "app.aero.xyz/docs/security/ 의 네트워크별 주소 표와 dromos-labs/metadex 저장소의 deployment-addresses 폴더. 민터 계약의 owner·role 조회로 Aero Fed 주체 확인.",
+      "matters": "발행 천장과 게이지 배수를 누가 바꿀 수 있는지가 희석 위험의 크기를 정한다."
+    },
+    {
+      "item": "합병 후 모멘텀 펀드의 AERO 매입·소각 실적",
+      "status": "접근 실패",
+      "tried": "aero.xyz 메트릭스 페이지의 매입 표는 2026-10-21에서 멈춰 있고, 2차 자료만 11월 19일 50.3만 AERO 매입을 전한다.",
+      "howToVerify": "aero.xyz/economics/metrics 의 Buybacks 표 갱신분 또는 재단 공지의 매입 지갑 주소로 Base 익스플로러에서 AERO 이체·소각 합산.",
+      "matters": "스테이킹하지 않은 AERO 보유자에게 닿는 유일한 경로의 크기다."
+    },
+    {
+      "item": "업비트 AERO 원화 상장 공지 원문과 CoinGecko 순위",
+      "status": "접근 실패",
+      "tried": "업비트 공지는 네이트·99bitcoins 보도로만 검색됐고 두 페이지 모두 열리지 않았다. CoinGecko의 Aero 페이지는 client_error로 열리지 않아 CoinMarketCap 순위 #93만 확인했다.",
+      "howToVerify": "upbit.com 공지 검색에서 '에어로드롬파이낸스(AERO)' 2025-08-22 공지, coingecko.com/en/coins/aero.",
+      "matters": "top100 슬롯 요건은 CoinGecko 순위 기준이다."
+    },
+    {
+      "item": "Aero Foundation의 법인 정보와 Dromos Labs가 받는 보수",
+      "status": "미공시",
+      "tried": "Aero 문서·기사·2025년 MiCA 백서를 봤다. 백서는 옛 Aerodrome Foundation이 케이맨 재단이라고만 적고, Aero 문서는 Dromos가 '같은 메커니즘으로 번다'고만 적는다.",
+      "howToVerify": "Aero 명의의 새 MiCA 백서 또는 재단 등기 정보, Dromos Labs 보수 조건 공시.",
+      "matters": "5% 추가 발행과 재단 sAERO 매출이 결국 누구에게 가는지 알아야 보유자 몫을 계산할 수 있다."
+    },
+    {
+      "item": "Base 밖 네트워크에 쌓인 xAERO 미상환 잔량",
+      "status": "온체인 확인 대기",
+      "tried": "문서는 xAERO 메커니즘만 설명하고 잔량 집계가 없으며 DefiLlama도 따로 추적하지 않는다.",
+      "howToVerify": "네트워크별 xAERO 토큰 계약 주소의 totalSupply 합산. 주소는 보안 문서 공개 후 확인.",
+      "matters": "브리지 장애 시 묶이는 보상의 규모다."
+    }
+  ]
+}
