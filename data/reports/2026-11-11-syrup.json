@@ -293,7 +293,7 @@
       {
         "name": "MIP-021 — 월 매출 구간에 연동한 규칙형 바이백",
         "approved": "2026년 7월 13일~7월 17일 투표 · 찬성 99.97% 가결",
-        "executed": "집행 중 — 7월분 852,841 SYRUP을 136,768 달러, 8월분 676,294 SYRUP을 147,098 달러, 9월분 1,371,166 SYRUP을 314,116 달러에 매입했다. 9월분에는 20% 구간이 적용됐다. 10월분은 아직 게시되지 않았다",
+        "executed": "집행 중 — 7월분 852,841 SYRUP을 136,768 달러, 8월분 676,294 SYRUP을 147,098 달러, 9월분 1,371,166 SYRUP을 314,116 달러에 매입했다. 9월분에는 20% 구간이 적용됐다. 10월분은 아직 게시되지 않았고, Alea Research는 10월 매출 147만 달러에 10% 구간을 적용해 약 14.7만 달러로 계산했다",
         "note": "6개월 한시이고 매입분은 소각하지 않고 SSF가 보유한다. 매출이 총액인지 순액인지는 제안서에 없다. 공식 토큰 페이지는 아직 '매출의 25%가 바이백 재원'이라고 적어 현행 규칙과 다르다."
       }
     ],
@@ -1066,6 +1066,11 @@
       "title": "pharos.watch – syrupUSDT",
       "url": "https://pharos.watch/stablecoin/syrupusdt-maple/",
       "accessed": "2026-11-11"
+    },
+    {
+      "title": "Alea Research – Maple's buybacks climbed a tier (2026-11-12)",
+      "url": "https://alearesearch.substack.com/p/maple-q3-2026-management-fee-buyback-tier",
+      "accessed": "2026-11-27"
     }
   ],
   "openItems": [
@@ -1117,7 +1122,7 @@
     {
       "item": "2026년 10월분 바이백 수량과 금액",
       "status": "미공시",
-      "tried": "Maple SYRUP 투명성 페이지 표의 최신 행이 9월이고 11월 Maple Memo도 아직 없다.",
+      "tried": "Maple SYRUP 투명성 페이지 표의 최신 행이 9월이고 11월 Maple Memo도 아직 없다. Alea Research는 11월 12일 글에서 10월 매출이 147만 달러로 중간 구간에 3.5만 달러 모자라 10% 구간, 약 14.7만 달러가 적용된다고 계산했다. 실제 매입 수량과 금액은 아직 게시되지 않았다.",
       "howToVerify": "maple.finance/transparency/syrup 표와 11월 Maple Memo를 확인한다."
     },
     {
