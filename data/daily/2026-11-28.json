@@ -1,0 +1,840 @@
+{
+  "id": "2026-11-28",
+  "date": "2026-11-28",
+  "asOf": "2026-11-28 08:35 KST",
+  "window": "최근 24시간 (11/27 08:30 → 11/28 08:30 KST)",
+  "title": "미 증시 1년 최대 랠리에도 비트코인은 6만 달러를 내줬다",
+  "regime": "혼조",
+  "tldr": [
+    "옵션 만기 뒤 미 장 개장 40분 만에 비트코인이 2,600달러 밀리며 증시와 반대로 갔다.",
+    "24시간 비트코인 -1.2%, 전체 시총 -0.8%, 100위 안 하락 1위 WLFI -11%·상승 1위 SKY +6%.",
+    "주말 중 나올 11/27 거래일 ETF 집계와 30일 쿠코인 XMR 거래 종료를 본다."
+  ],
+  "keyMetrics": [
+    {
+      "label": "BTC (24시간)",
+      "value": "-1.2%, 8,094만원",
+      "basis": "28일 07시 CoinGecko 등락 · 07시 업비트 가격",
+      "tone": "down",
+      "details": [
+        {
+          "label": "달러",
+          "value": "59,781달러, 28일 07시 CoinGecko"
+        },
+        {
+          "label": "24시간 범위",
+          "value": "58,719달러 → 62,125달러, Bitcoin.com"
+        },
+        {
+          "label": "ETH",
+          "value": "24시간 -1.3%, 1,666달러 · 환산 223만원"
+        },
+        {
+          "label": "김치 프리미엄",
+          "value": "1.75%, 28일 0시 업비트·바이낸스"
+        },
+        {
+          "label": "시총 100위 안 상승 상위",
+          "value": "SKY +5.8% · LIT +5.1% · FET +5.0% · RENDER +4.8% · ZEC +4.6% · NIGHT +4.6% · PIEVERSE +4.6% · JUP +3.9% · UNI +3.7% · HYPE +3.3%"
+        },
+        {
+          "label": "시총 100위 안 하락 상위",
+          "value": "WLFI -10.9% · XMR -9.1% · PI -7.2% · ZRO -4.9% · KITE -4.8% · SEI -4.5% · ETHFI -3.1% · XDC -3.0% · MNT -2.5% · FIL -2.2%"
+        }
+      ]
+    },
+    {
+      "label": "BTC 현물 ETF",
+      "value": "11/27 거래일 미집계",
+      "basis": "Farside · 최신은 11/25 거래일 -4.53억 달러",
+      "tone": "neutral",
+      "details": [
+        {
+          "label": "11/25 거래일",
+          "value": "-4.53억 달러, IBIT -3.30억 달러 · 7거래일 연속 유출"
+        },
+        {
+          "label": "11월 누적",
+          "value": "-53.9억 달러, 월간 최대 유출 · SoSoValue"
+        },
+        {
+          "label": "ETH 현물 ETF",
+          "value": "11/25 거래일 -0.69억 달러, 9거래일 연속 · 11월 누적 -13.0억 달러"
+        },
+        {
+          "label": "11/26 거래일",
+          "value": "미 휴장으로 집계 없음, 27일은 단축 거래로 28일 아침까지 미발표"
+        }
+      ]
+    },
+    {
+      "label": "전체 청산 (24시간)",
+      "value": "4.78억 달러, 롱 58%",
+      "basis": "28일 04시 Coinglass · Altcoinbuzz",
+      "tone": "down",
+      "details": [
+        {
+          "label": "롱·숏",
+          "value": "롱 2.77억 · 숏 2.01억 달러, 97,766명"
+        },
+        {
+          "label": "BTC·ETH",
+          "value": "BTC 1.85억 · ETH 1.26억 달러"
+        },
+        {
+          "label": "최대 단일 청산",
+          "value": "999만 달러, 바이낸스 ETHUSDT · 28일 0시 PANews"
+        },
+        {
+          "label": "미 개장 직후",
+          "value": "BTC 롱 청산 1억 달러 이상, 숏은 800만 달러"
+        }
+      ]
+    }
+  ],
+  "market": [
+    {
+      "label": "BTC",
+      "value": "24시간 -1.2%, 8,094만원",
+      "note": "27일 11시 61,773달러 고점 뒤 미 개장 40분 만에 58,719달러까지 밀렸다. 7일 +2.2%, 7주 연속 하락은 벗어날 가능성."
+    },
+    {
+      "label": "ETH",
+      "value": "24시간 -1.3%, 1,666달러",
+      "note": "환산 223만원. 선물 미결제약정 200억 달러로 24시간 -7.1%."
+    },
+    {
+      "label": "전체 시총",
+      "value": "24시간 -0.8%, 2.06조 달러",
+      "note": "CoinMarketCap 28일 새벽 집계. 24시간 거래대금 709억 달러로 +12.9%."
+    },
+    {
+      "label": "BTC 도미넌스",
+      "value": "58.5%",
+      "note": "CoinMarketCap. ETH 9.8%, 알트 시즌 지수 61로 57에서 상승."
+    },
+    {
+      "label": "BTC 현물 ETF 순유출입(미국)",
+      "value": "11/27 거래일 미집계",
+      "note": "11/25 거래일 -4.53억 달러가 최신. 11월 누적 -53.9억 달러로 6월 -45.1억 달러를 넘었다."
+    },
+    {
+      "label": "ETH 현물 ETF 순유출입(미국)",
+      "value": "11/27 거래일 미집계",
+      "note": "11/25 거래일 -0.69억 달러로 9거래일 연속 유출."
+    },
+    {
+      "label": "전체 청산",
+      "value": "24시간 4.78억 달러, 롱 58%",
+      "note": "28일 04시 Coinglass. 전날 3.68억 달러는 숏 75%였는데 하루 만에 롱 청산으로 뒤집혔다."
+    },
+    {
+      "label": "공포·탐욕 지수",
+      "value": "12, 극도의 공포",
+      "note": "alternative.me 28일 집계, 전날 11. CoinMarketCap 지수는 9."
+    },
+    {
+      "label": "파생",
+      "value": "27일 17시 BTC 옵션 68억 달러 만기",
+      "note": "데리비트 110,800 BTC 만기, 풋콜 비율 0.79, 최대 고통 7만 달러. 만기 뒤 미 개장에서 급락했다."
+    },
+    {
+      "label": "거시",
+      "value": "S&P500 +1.6%, 나스닥 +2.3%",
+      "note": "27일 단축 거래에서 1년 만에 최대 주간 상승. 달러지수 104 위, 금 +2%. MSCI는 12월 1일 마감 뒤 스트래티지를 미국 지수 2개에서 뺀다."
+    },
+    {
+      "label": "국내",
+      "value": "업비트 CVC +27%, HAEDAL -23%",
+      "note": "4대 거래소 24시간 거래대금 1조 9,792억원. 거래대금 1위 XRP 1,678억원, 2위 SQD 1,634억원."
+    },
+    {
+      "label": "원화 환산",
+      "value": "1달러 = 1,337.9원",
+      "note": "27일 서울 외환시장 마감, 일주일 만에 1,340원 아래. 원화 마켓 실제 가격과 다를 수 있음."
+    }
+  ],
+  "movers": [
+    {
+      "project": "Monero",
+      "ticker": "XMR",
+      "direction": "down",
+      "change": "-9.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-7.9%p",
+      "rank": 13,
+      "marketCap": "76.6억 달러",
+      "volume24h": "1.42억 달러",
+      "causeType": "확인된 원인",
+      "headline": "쿠코인 상폐 이틀째, 이틀 누적 -21%.",
+      "happened": [
+        "26일 쿠코인이 30일 거래 종료를 공지했고 27일 21시 XMR 예치 상품부터 먼저 닫았다.",
+        "27일 새 상폐 공지는 없었고 30일부터 대출 담보에서도 빠진다."
+      ],
+      "reaction": [
+        "24시간 -9.1%, 58.9만원 → 53.5만원.",
+        "쿠코인 4개 페어가 글로벌 현물의 58%, 미결제약정 -2.6%에 청산의 83%가 롱."
+      ],
+      "watch": "30일 17시 거래 종료 전 쿠코인 물량 이동과 다른 거래소의 2% 호가 깊이.",
+      "caveat": "27일 하락분 상당수가 비트코인이 6만 달러를 깨던 23시 50분 전후에 겹쳐 시장 요인도 섞여 있다.",
+      "flows": {
+        "openInterest": "2.43억 달러, 24시간 -2.6%",
+        "liquidations": "24시간 95만 달러, 롱 83%",
+        "fundingRate": "+0.0171%/8시간"
+      },
+      "confidence": "A"
+    },
+    {
+      "project": "World Liberty Financial",
+      "ticker": "WLFI",
+      "direction": "down",
+      "change": "-10.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-9.7%p",
+      "rank": 51,
+      "marketCap": "11.9억 달러",
+      "volume24h": "0.53억 달러",
+      "causeType": "수급 주도",
+      "headline": "뉴스 없이 100위 안 하락 1위, 롱 청산 99%.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "27일 09시 바이낸스의 1.2억 WLFI 보상 캠페인이 끝났고 12월 1일 ADGM 동결 심리가 있다."
+      ],
+      "reaction": [
+        "24시간 -10.9%, 56원 → 50원, 업비트는 27일 밤 55원 -5.2%.",
+        "미결제약정 -13.9%, 청산의 99%가 롱, 현물 거래량은 30일 평균보다 25% 적다."
+      ],
+      "watch": "0.0399달러 지지 복구 여부와 12월 1일 ADGM 심리, 12월 10일 저스틴 선 소송 심리.",
+      "caveat": "하락의 대부분이 27일 22시 이후 비트코인 급락 구간에 몰려 있으나 낙폭은 시장의 3배였다.",
+      "flows": {
+        "openInterest": "2.52억 달러, 24시간 -13.9%",
+        "liquidations": "24시간 90만 달러, 롱 99%",
+        "perpToSpotVolume": "선물 1.37억 · 현물 0.27억 달러"
+      },
+      "confidence": "B"
+    },
+    {
+      "project": "Pi Network",
+      "ticker": "PI",
+      "direction": "down",
+      "change": "-7.2%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-6.0%p",
+      "rank": 73,
+      "marketCap": "5.8억 달러",
+      "volume24h": "0.04억 달러",
+      "causeType": "가능한 배경",
+      "headline": "CEX.IO 첫 거래소 상폐 통보 뒤 사상 최저가 재접근.",
+      "happened": [
+        "26일 CEX.IO가 PI 매수를 막고 12월 24일 거래 종료, 1월 11일 상폐를 공지했다.",
+        "같은 날 20만 USDT 해커톤과 개발자 콘솔 발표는 가격에 반영되지 않았다."
+      ],
+      "reaction": [
+        "24시간 -7.2%, 73원 → 68원.",
+        "거래량 369만 달러로 전날 904만 달러의 절반 이하, 시총 대비 1% 미만."
+      ],
+      "watch": "20일 사상 최저 0.0473달러 재시험 여부.",
+      "caveat": "CEX.IO의 PI 거래량은 미미해 물량보다 심리 요인이고, 하락은 하루 종일 얇은 거래량 속에 이어졌다.",
+      "confidence": "B"
+    },
+    {
+      "project": "LayerZero",
+      "ticker": "ZRO",
+      "direction": "down",
+      "change": "-4.9%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-3.7%p",
+      "rank": 64,
+      "marketCap": "4.5억 달러",
+      "volume24h": "0.65억 달러",
+      "causeType": "원인 불명",
+      "headline": "전날 +9% 반등분을 하루 만에 반납.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "25일 카카오페이·삼성카드 검증인 발표와 30일 메인넷 일정은 그대로다."
+      ],
+      "reaction": [
+        "24시간 -4.9%, 1,478원 → 1,405원.",
+        "27일 고가 1.14달러에서 1.03달러까지 -9.3%, 거래량은 30일 평균보다 11% 적다."
+      ],
+      "watch": "30일 Zero 메인넷 출시와 12월 20일 2,328만 ZRO 언락.",
+      "caveat": "7일 -7%대로 스테이킹 개시 뒤 하락 추세 안의 움직임이고 미결제약정 수치는 확인하지 못했다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Kite",
+      "ticker": "KITE",
+      "direction": "down",
+      "change": "-4.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-3.5%p",
+      "rank": 87,
+      "marketCap": "4.0억 달러",
+      "volume24h": "0.16억 달러",
+      "causeType": "원인 불명",
+      "headline": "0.145달러 이중 천장 뒤 비트코인과 함께 밀렸다.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "11월 말 언락 일정은 없고 바이낸스 해커 지갑의 KITE 매도 흔적도 확인되지 않았다."
+      ],
+      "reaction": [
+        "24시간 -4.8%, 193원 → 184원.",
+        "거래량 1,610만 달러로 30일 평균보다 6% 적고, 장중 저가 0.1362달러."
+      ],
+      "watch": "0.130달러 하락 목표 도달 여부와 빗썸 원화 마켓 거래량.",
+      "caveat": "7일 +5.4%, 30일 +25.7%로 아직 상승분을 지키고 있다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Sei",
+      "ticker": "SEI",
+      "direction": "down",
+      "change": "-4.5%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "-3.3%p",
+      "rank": 95,
+      "marketCap": "3.1억 달러",
+      "volume24h": "0.61억 달러",
+      "causeType": "수급 주도",
+      "headline": "미결제약정 +40%로 올린 급등을 하루 만에 되돌림.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "24일 v6.8 업그레이드 뒤 26일 +21% 급등이 있었고 27일 새 재료는 없었다."
+      ],
+      "reaction": [
+        "24시간 -4.5%, 54원 → 52원.",
+        "27일 10시 미결제약정 4,932만 달러로 +40%, 거래량은 30일 평균의 2.4배."
+      ],
+      "watch": "0.0366달러 지지와 미결제약정이 3,400만 달러 수준으로 되돌아가는지.",
+      "caveat": "장중 범위 0.0370~0.0396달러로 전날 범위 안에 머물렀고 7일 +14%는 유지했다.",
+      "flows": {
+        "openInterest": "4,932만 달러, 24시간 +40%",
+        "fundingRate": "-0.0053%/8시간"
+      },
+      "confidence": "B"
+    },
+    {
+      "project": "Sky",
+      "ticker": "SKY",
+      "direction": "up",
+      "change": "+5.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+7.0%p",
+      "rank": 55,
+      "marketCap": "11.9억 달러",
+      "volume24h": "0.45억 달러",
+      "causeType": "가능한 배경",
+      "headline": "스파크 4.08억 달러 상환·7일 바이백 500만 달러 소식에 이틀째 반등.",
+      "happened": [
+        "27일 21시 스파크가 USDS 유출 뒤 스카이에 4.08억 달러를 상환했다고 밝혔다.",
+        "28일 0시 블록웍스 집계로 7일 SKY 바이백이 500만 달러를 넘어 2025년 3월 이후 최대였다."
+      ],
+      "reaction": [
+        "24시간 +5.8%, 61원 → 65원, 28일 07시에는 +14%.",
+        "거래량 6,635만 달러로 30일 평균의 2.2배, 펀딩비 -0.0107%에 청산의 71%가 숏."
+      ],
+      "watch": "2,500만 USDS 긴급 이전 투표 결과와 stUSDS 인출 가능액 회복 여부.",
+      "caveat": "상승은 27일 새벽 두 소식 전에 이미 +9%였고, 27일 16시 stUSDS 인출 가능액은 7.8만 달러로 예치액의 0.05%였다.",
+      "flows": {
+        "openInterest": "약 2,860만 달러, 24시간 +6.6%",
+        "fundingRate": "-0.0107%/8시간"
+      },
+      "confidence": "B"
+    },
+    {
+      "project": "Lighter",
+      "ticker": "LIT",
+      "direction": "up",
+      "change": "+5.1%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+6.3%p",
+      "rank": 71,
+      "marketCap": "6.7억 달러",
+      "volume24h": "0.41억 달러",
+      "causeType": "원인 불명",
+      "headline": "해킹 저점에서 이틀째 반등, 거래량은 평균의 절반.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "26일 API 키 유출 뒤 보안 옵션을 추가했고 500만 USDC를 회수했다고 밝혔다."
+      ],
+      "reaction": [
+        "24시간 +5.1%, 3,309원 → 3,479원.",
+        "거래량 3,518만 달러로 30일 평균보다 54% 적고 청산의 82%가 롱."
+      ],
+      "watch": "업비트·빗썸 입출금 재개 시점과 11월 CFTC 신청 여부.",
+      "caveat": "펀딩비 +0.0033%로 롱이 비용을 내는 구조라 숏 스퀴즈도 아니고, 30일 -3.9%다.",
+      "flows": {
+        "fundingRate": "+0.0033%/8시간",
+        "liquidations": "롱 11.1만 · 숏 2.4만 달러"
+      },
+      "confidence": "C"
+    },
+    {
+      "project": "Artificial Superintelligence Alliance",
+      "ticker": "FET",
+      "direction": "up",
+      "change": "+5.0%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+6.2%p",
+      "rank": 94,
+      "marketCap": "3.0억 달러",
+      "volume24h": "1.88억 달러",
+      "causeType": "수급 주도",
+      "headline": "선물 거래량이 현물의 6배, 발표 없는 이틀째 상승.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "12월 7일 15시 빗썸·코인원 거래 종료가 예정돼 있고 28일 240만 FET 언락이 있다."
+      ],
+      "reaction": [
+        "24시간 +5.0%, 161원 → 169원, 빗썸 172원.",
+        "선물 미결제약정 +14.5%, 선물 거래량 8,917만 달러로 현물의 6.1배."
+      ],
+      "watch": "0.141달러 저항과 12월 7일 국내 상폐 전 원화 마켓 물량 이동.",
+      "caveat": "장중 +12%에서 +5%로 식었고 50일·200일 이동평균 아래라 반등 이상의 근거는 없다.",
+      "flows": {
+        "openInterest": "24시간 +14.5%",
+        "fundingRate": "+0.0084%/8시간",
+        "perpToSpotVolume": "선물 0.89억 · 현물 0.73억 달러"
+      },
+      "confidence": "B"
+    },
+    {
+      "project": "Render",
+      "ticker": "RENDER",
+      "direction": "up",
+      "change": "+4.8%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+6.0%p",
+      "rank": 66,
+      "marketCap": "7.2억 달러",
+      "volume24h": "0.26억 달러",
+      "causeType": "원인 불명",
+      "headline": "AI 섹터 동반 반등, 발행량 투표 결과는 29일 새벽.",
+      "happened": [
+        "확인된 개별 사건 없음.",
+        "25일 시작된 4년차 발행량 RNP-025 투표가 29일 05시 마감이라 결과는 아직 없다."
+      ],
+      "reaction": [
+        "24시간 +4.8%, 1,775원 → 1,860원, 업비트 1,875원 +4.0%.",
+        "거래량 2,798만 달러로 30일 평균보다 21% 많다."
+      ],
+      "watch": "29일 05시 RNP-025 결과와 1.41달러 장중 고점 돌파 여부.",
+      "caveat": "7일 +12.8%지만 30일 -15.2%, 20일부터 200일까지 모든 이동평균 아래다.",
+      "confidence": "C"
+    },
+    {
+      "project": "Zcash",
+      "ticker": "ZEC",
+      "direction": "up",
+      "change": "+4.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.8%p",
+      "rank": 10,
+      "marketCap": "120.8억 달러",
+      "volume24h": "9.91억 달러",
+      "causeType": "수급 주도",
+      "headline": "3개월 최저 마감 뒤 숏 스퀴즈로 반등, 모네로와 갈렸다.",
+      "happened": [
+        "27일 09시 그레이스케일이 ZEC ETF를 수년간 유지한다고 밝혔다.",
+        "27일 Zcash ETP는 200만 달러 순유출, 비트와이즈는 ZEC ETF를 신청했다."
+      ],
+      "reaction": [
+        "24시간 +4.6%, 95.6만원 → 99.9만원.",
+        "27일 10시 한 시간 숏 청산 91만 달러, 선물 유입 1.22억 달러 대 현물 14.6만 달러."
+      ],
+      "watch": "766달러 고점 돌파 여부와 Sapling 풀에 남은 40만 ZEC 이동.",
+      "caveat": "28일 02시 한 시간 -3.3%에 롱 청산 74만 달러가 나와 고점에서 밀렸고 30일 -41.7%다.",
+      "flows": {
+        "openInterest": "16.6억 달러, 24시간 +9.8%",
+        "liquidations": "24시간 1,216만 달러, 숏 54%",
+        "perpToSpotVolume": "선물 70.6억 · 현물 4.9억 달러"
+      },
+      "confidence": "B"
+    },
+    {
+      "project": "Midnight",
+      "ticker": "NIGHT",
+      "direction": "up",
+      "change": "+4.6%",
+      "changePeriod": "24시간",
+      "excessVsBtc": "+5.8%p",
+      "rank": 61,
+      "marketCap": "8.2억 달러",
+      "volume24h": "0.58억 달러",
+      "causeType": "가능한 배경",
+      "headline": "일본 스테이블코인 결제 MOU 뒤 상승폭 확대.",
+      "happened": [
+        "27일 19시 미드나잇 재단이 WEA JAPAN·넷스타즈와 프라이버시 스테이블코인 결제 MOU를 발표했다.",
+        "발표 시점 +1.6%였던 24시간 등락이 28일 08시 +4.6%로 커졌다."
+      ],
+      "reaction": [
+        "24시간 +4.6%, 64원 → 67원.",
+        "거래량 5,505만 달러로 30일 평균보다 34% 많고 90일 +161%."
+      ],
+      "watch": "0.052달러 저항과 90일 고점 0.0524달러 돌파 여부.",
+      "caveat": "MOU는 탐색 단계로 매출·일정이 없고, 같은 날 ZEC 반등에 묻어간 프라이버시 섹터 움직임일 수 있다.",
+      "confidence": "B"
+    }
+  ],
+  "excluded": [
+    {
+      "ticker": "PIEVERSE·JUP·UNI·HYPE",
+      "reason": "100위 안 상승 7~10위이나 +4.6%~+3.3%로 종목 수 제한으로 제외. PIEVERSE는 28일 02시 집계에서 -1.5%로 부호가 바뀌었다"
+    },
+    {
+      "ticker": "ETHFI·XDC·MNT·FIL",
+      "reason": "100위 안 하락 7~10위이나 -3.1% 이하로 폭이 작아 종목 수 제한으로 제외"
+    },
+    {
+      "ticker": "TEL",
+      "reason": "+15%, 시총 155위이나 거래량 312만 달러로 시총의 1.5%라 거래량 조건 미달"
+    },
+    {
+      "ticker": "CVC",
+      "reason": "업비트 +27%, 32원, 거래대금 535억원. 글로벌 시총·거래량 데이터 미확인"
+    },
+    {
+      "ticker": "HAEDAL·MMT",
+      "reason": "업비트 -23%·-20%, 거래대금 1,057억·491억원. 시총 1,390만·3,390만 달러로 300위 밖"
+    }
+  ],
+  "watchNext": [
+    "주말 중 Farside 11/27 거래일 BTC·ETH ETF 집계, 11월 누적 -53.9억 달러 갱신 여부",
+    "29일 05시 렌더 RNP-025 투표 마감, 30일 17시 쿠코인 XMR 거래 종료와 레이어제로 Zero 메인넷",
+    "12월 1일 미 장 마감 뒤 MSCI 지수에서 스트래티지 제외, 같은 날 ADGM 법원 WLFI 동결 심리",
+    "12월 4일 미 11월 고용지표, 12월 9일 FOMC"
+  ],
+  "highlight": "미 증시가 1년 만에 가장 크게 오른 날 비트코인은 옵션 68억 달러 만기 직후 미 개장 40분 만에 2,600달러를 잃었고, 청산은 전날 숏 75%에서 하루 만에 롱 58%로 뒤집혔다. 모네로는 새 공지 없이도 쿠코인 거래 종료가 다가오며 이틀 누적 -21%로, 쿠코인이 현물의 58%를 차지한다는 수치가 하락을 설명한다. 반면 WLFI -11%는 뉴스 없이 미결제약정 -14%와 롱 청산 99%만 남긴 수급 하락이고, 세이는 미결제약정 +40%로 만든 급등을 하루 만에 되돌렸다. 상승 쪽은 스카이의 상환·바이백 소식과 미드나잇의 MOU처럼 같은 날 재료가 있었지만, 스카이는 소식 전에 이미 +9%였다는 점에서 원인으로 못 박기는 어렵다.",
+  "sources": [
+    {
+      "title": "CoinMarketCap — Gainers & Losers, Top 100 24h (11/28 08:35 KST 조회)",
+      "url": "https://coinmarketcap.com/gainers-losers/"
+    },
+    {
+      "title": "Coinpaprika — Top 100 by market cap, 시총 (11/28 02:31 KST)",
+      "url": "https://coinpaprika.com/"
+    },
+    {
+      "title": "Motley Fool — Crypto Market Today, Nov. 27: Bitcoin Falls Below $60,000 Despite Wall Street's Biggest Rally (CoinGecko 21:17 UTC)",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/crypto-market-today-nov-27-bitcoin-falls-below-usd60-000-as-crypto-markets-struggle-despite-wall-street-s-biggest-rally-in-over-a-year/"
+    },
+    {
+      "title": "블록미디어 — [뉴욕 코인시황] 증시 상승에도 디지털자산 하락… BTC 반등은 숏스퀴즈 착시 (11/28 02:53)",
+      "url": "https://www.blockmedia.co.kr/archives/1171620"
+    },
+    {
+      "title": "CoinMarketCap Academy — Crypto News Today, Nov 27, 2026 (시총·도미넌스·알트시즌 지수·MSCI)",
+      "url": "https://coinmarketcap.com/academy/article/crypto-news-today-nov-27-2026"
+    },
+    {
+      "title": "TokenPost — 시장 스냅샷 11/27 16:02 ET (시총 2.08조 달러, 24시간 거래대금, 도미넌스)",
+      "url": "https://www.tokenpost.com/news/investing/63882"
+    },
+    {
+      "title": "IT타임스 — 비트코인 전일비 2.45% 하락…김치 프리미엄 1.75% 기록 (11/28 00:10)",
+      "url": "https://www.ittimes.com/news/articleView.html?idxno=88211"
+    },
+    {
+      "title": "탑스타뉴스 — 11/28 07시 업비트 시세·거래대금·급등락 종목",
+      "url": "https://www.topstarnews.net/news/articleView.html?idxno=16288190"
+    },
+    {
+      "title": "아시아경제 — 원·달러 환율, 4.8원 내린 1337.9원 (11/27 15:39)",
+      "url": "https://view.asiae.co.kr/article/2026112715394199343"
+    },
+    {
+      "title": "alternative.me — Crypto Fear & Greed Index (11/28 조회, 12 극도의 공포)",
+      "url": "https://alternative.me/crypto/fear-and-greed-index/"
+    },
+    {
+      "title": "Altcoinbuzz — Crypto liquidations hit $478M as Bitcoin longs take the biggest losses (11/27 19:06 UTC)",
+      "url": "https://www.altcoinbuzz.io/crypto-liquidations-hit-478m-as-bitcoin-longs-take-the-biggest-losses"
+    },
+    {
+      "title": "PANews — 24시간 청산 4.58억 달러, 최대 단일 청산 바이낸스 ETHUSDT 999만 달러 (11/27 15:31 UTC)",
+      "url": "https://panews.io/articles/01a21da1-e740-745d-a96c-b3e2c53168d8"
+    },
+    {
+      "title": "KuCoin — Bitcoin ETFs record a $453 million net outflow on November 25, seventh consecutive day (Farside)",
+      "url": "https://www.kucoin.com/news/flash/bitcoin-etfs-record-453m-net-outflow-on-nov-25-seventh-consecutive-day"
+    },
+    {
+      "title": "KuCoin — Ethereum spot ETF sees $68.5M net outflow on Nov 25",
+      "url": "https://www.kucoin.com/news/flash/ethereum-spot-etf-sees-68-5m-net-outflow-on-nov-25"
+    },
+    {
+      "title": "crypto.news — Bitcoin price rebounds ahead of $6.8B options expiry (11/27 05:42 UTC, SoSoValue 11월 누적·옵션 만기)",
+      "url": "https://crypto.news/bitcoin-price-rebounds-68b-options-expiry-november-27/"
+    },
+    {
+      "title": "CryptoTicker — Bitcoin price: $6.8 billion options expiry (풋콜 0.79, 최대 고통 7만 달러)",
+      "url": "https://cryptoticker.io/en/bitcoin-price-options-expiry-6-8-billion/"
+    },
+    {
+      "title": "The Library — North American session report: Bitcoin slips back below $60,000 in shortened U.S. session after morning options expiry (11/27)",
+      "url": "https://thelibraryestate.com/cryptocurrency-markets-north-american-session-report-bitcoin-slips-back-below-60000-in-shortened-u-s-session-after-morning-options-expiry-nov-27-2026/"
+    },
+    {
+      "title": "CoinDesk — Live: Bitcoin rebounds above $61,000 as AI stocks lead premarket gains (11/27, 6만 달러 이탈 시각)",
+      "url": "https://www.coindesk.com/tech/2026/11/27/live-news-bitcoin-rebounds-above-usd61-000-as-ai-stocks-lead-premarket-gains"
+    },
+    {
+      "title": "CoinLaw — Monero KuCoin delisting: 일정·Kraken 종가·이틀 누적 -21.4% (11/27 17:33 UTC)",
+      "url": "https://coinlaw.io/monero-kucoin-delisting/"
+    },
+    {
+      "title": "AMBCrypto — What KuCoin's Monero delisting means for liquidity (쿠코인 58.14% 점유, 2% 호가 깊이)",
+      "url": "https://ambcrypto.com/most-bearish-thing-for-xmr-what-kucoins-monero-delisting-means-for-liquidity/"
+    },
+    {
+      "title": "Coinglass — XMR futures (OI·청산·펀딩, 11/28 08:50 KST 조회)",
+      "url": "https://www.coinglass.com/currencies/XMR/futures"
+    },
+    {
+      "title": "CoinDesk — Monero suffers biggest single-day slide in over 5 months, here's why (11/27 07:33 UTC)",
+      "url": "https://www.coindesk.com/markets/2026/11/27/monero-suffers-biggest-single-day-slide-in-over-5-months-here-s-why"
+    },
+    {
+      "title": "Coinglass — WLFI futures (OI -13.91%, 청산 롱 99%, 11/28 08:50 KST 조회)",
+      "url": "https://www.coinglass.com/currencies/WLFI/futures"
+    },
+    {
+      "title": "DiarioBitcoin — WLFI cae 10,05% el 27 de noviembre de 2026 (거래량 30일 평균 대비 -24.9%)",
+      "url": "https://www.diariobitcoin.com/analisis/wlfi-cae-1005-el-27-de-noviembre-de-2026-y-la-presion-tecnica-domina/"
+    },
+    {
+      "title": "코인리더스 — WLFI 업비트 55원 -5.21% (11/27 22:03)",
+      "url": "https://www.coinreaders.com/274044"
+    },
+    {
+      "title": "TokenPost — Binance 120M WLFI + USD1 campaign ends Nov 27 00:00 UTC",
+      "url": "https://www.tokenpost.com/news/business/46387"
+    },
+    {
+      "title": "The Defiant — Reuters: Circle, World Liberty ordered to keep tokens frozen, ADGM hearing Dec 1",
+      "url": "https://thedefiant.io/news/hacks/reuters-circle-world-liberty-ordered-to-keep-tokens-frozen"
+    },
+    {
+      "title": "CoinMarketCap — Pi (PI) drops as CEX.IO delisting triggers sell-off (11/27 17:04 UTC)",
+      "url": "https://coinmarketcap.com/top-stories/6b09b81e8a1daa09b20ff6be/"
+    },
+    {
+      "title": "Wisevoter — CEX.IO delists Pi Network token (11/27 03:59 UTC)",
+      "url": "https://wisevoter.com/world/2026/11/27/cex-io-delists-pi-network-token"
+    },
+    {
+      "title": "crypto.news — Pi Network price recovery, DEX·Launchpad Q1 2027 (11/26 거래량 904만 달러)",
+      "url": "https://crypto.news/pi-network-price-recovery-dex-launchpad-q1-2027/"
+    },
+    {
+      "title": "DiarioBitcoin — ZRO retrocede 9,30% el 27 de noviembre de 2026 (거래량 30일 평균 대비 -11.3%)",
+      "url": "https://www.diariobitcoin.com/analisis/zro-retrocede-930-segun-el-proveedor-y-enfrenta-presion-tecnica-el-27-de-noviembre-de-2026/"
+    },
+    {
+      "title": "Tokenomist — LayerZero unlock events (12/20 2,328만 ZRO)",
+      "url": "https://tokenomist.ai/layerzero/unlock-events"
+    },
+    {
+      "title": "CoinMarketCap — KITE fell 4.16% over 10 hours, no KITE-specific catalyst (11/27 20:03 UTC)",
+      "url": "https://coinmarketcap.com/top-stories/6b09e2158a1daa09b2101d78/"
+    },
+    {
+      "title": "DiarioBitcoin — KITE el 27 de noviembre de 2026: señales técnicas mixtas (거래량 30일 평균 대비 -6%)",
+      "url": "https://diariobitcoin.com/analisis/kite-el-27-de-noviembre-de-2026-senales-tecnicas-mixtas-y-cautela-ante-la-falta-de-catalizadores"
+    },
+    {
+      "title": "CryptoTicker — Kite unlock cliff (11월 말 언락 없음)",
+      "url": "https://cryptoticker.io/en/kite-unlock-cliff-selling-pressure/"
+    },
+    {
+      "title": "Coinglass — SEI (OI 4,932만 달러 +39.96%, 펀딩 -0.0053%, 11/27 10:19 KST)",
+      "url": "https://www.coinglass.com/currencies/SEI"
+    },
+    {
+      "title": "DiarioBitcoin — SEI el 27 de noviembre de 2026: volumen elevado y señales técnicas divididas",
+      "url": "https://diariobitcoin.com/analisis/sei-sei-el-27-de-noviembre-de-2026-volumen-elevado-y-senales-tecnicas-divididas-2"
+    },
+    {
+      "title": "Coinpedia — SEI price rally accelerates after v6.8 upgrade (OI 3,400만 → 5,000만 달러)",
+      "url": "https://coinpedia.org/price-analysis/sei-price-rally-accelerates-after-v6-8-upgrade-is-0-05-next/"
+    },
+    {
+      "title": "TokenPost — Spark says it repaid $408 million to Sky after USDS outflows (11/27 12:52 UTC)",
+      "url": "https://www.tokenpost.com/news/investing/63592"
+    },
+    {
+      "title": "ChainCatcher — Seven-day SKY buybacks exceed $5 million, highest since March 2025 (11/27)",
+      "url": "https://www.chaincatcher.com/en/article/2308576"
+    },
+    {
+      "title": "CoinMarketCap — SKY +14% with OI +6.6%, funding -0.0107%, 71% short liquidations (11/27 22:04 UTC)",
+      "url": "https://coinmarketcap.com/top-stories/6b09fe708a1daa09b2102a3c/"
+    },
+    {
+      "title": "Unchained — Sky fast-tracks $25 million for its foundation as stUSDS withdrawals stall (인출 가능액 7.8만 달러)",
+      "url": "https://unchainedcrypto.com/sky-fast-tracks-25-million-for-its-foundation-to-pay-down-debt-as-stusds-withdrawals-stall/"
+    },
+    {
+      "title": "DiarioBitcoin — SKY el 27 de noviembre de 2026: rebote con riesgos de liquidez (거래량 30일 평균 대비 +122.7%)",
+      "url": "https://www.diariobitcoin.com/analisis/sky-sky-el-27-de-noviembre-de-2026-rebote-con-riesgos-de-liquidez-aun-abiertos/"
+    },
+    {
+      "title": "코인리더스 — 업비트, SKY·USDS 거래유의 지정·입금 중단 (11/23 20:02)",
+      "url": "https://www.coinreaders.com/272655"
+    },
+    {
+      "title": "DiarioBitcoin — LIT sube 4,78% el 27 de noviembre de 2026 pero el volumen modera la señal",
+      "url": "https://diariobitcoin.com/analisis/lit-sube-478-el-27-de-noviembre-de-2026-pero-el-volumen-modera-la-senal"
+    },
+    {
+      "title": "Coinperps — LIT perpetuals (펀딩 +0.0033%, 청산 롱 82%, 11/27 16:55 UTC)",
+      "url": "https://www.coinperps.com/perpetuals/lit"
+    },
+    {
+      "title": "CoinMarketCap — Lighter latest updates (11/26 API 키 보안 옵션, 500만 USDC 회수)",
+      "url": "https://coinmarketcap.com/cmc-ai/lighter/latest-updates/"
+    },
+    {
+      "title": "The Defiant — Upbit and Bithumb halt LIT transfers amid Lighter probe (11/16)",
+      "url": "https://thedefiant.io/news/security/upbit-and-bithumb-halt-lit-transfers-amid-lighter-probe"
+    },
+    {
+      "title": "The Coin Republic — FET price jumps 11% as AI crypto approaches key resistance zone (OI +14.48%, 선물 거래량 8,917만 달러, 11/27 09:30 UTC)",
+      "url": "https://www.thecoinrepublic.com/2026/11/27/fet-price-jumps-11-as-ai-crypto-approaches-key-resistance-zone/"
+    },
+    {
+      "title": "CoinMarketCap — FET: no new ASI Alliance announcement in the prior 24 hours (11/27 13:05 UTC)",
+      "url": "https://coinmarketcap.com/top-stories/6b09801b8a1daa09b20fb65c/"
+    },
+    {
+      "title": "이코노미블록 — 빗썸·코인원 FET 거래지원 종료 12월 7일",
+      "url": "https://economybloc.com/article/121704/"
+    },
+    {
+      "title": "와이즈바디 — FET 국내 거래소 시세 (빗썸 172원, 11/28)",
+      "url": "https://wisebody.co.kr/coin/FET"
+    },
+    {
+      "title": "DiarioBitcoin — Render el 27 de noviembre de 2026: rebote diario sin confirmación de tendencia (거래량 30일 평균 대비 +20.9%)",
+      "url": "https://www.diariobitcoin.com/analisis/render-el-27-de-noviembre-de-2026-rebote-diario-sin-confirmacion-de-tendencia/"
+    },
+    {
+      "title": "CoinMarketCap — Render latest updates (RNP-025 투표 11/28 20:00 UTC 마감)",
+      "url": "https://coinmarketcap.com/cmc-ai/render/latest-updates/"
+    },
+    {
+      "title": "와이즈바디 — RENDER 국내 거래소 시세 (업비트 1,875원 +3.99%, 11/28)",
+      "url": "https://wisebody.co.kr/coin/RENDER"
+    },
+    {
+      "title": "Cointelegraph — Privacy coins: KuCoin drops Monero, Grayscale commits to Zcash (11/27 00:35 UTC)",
+      "url": "https://cointelegraph.com/news/privacy-coins-kucoin-drop-monero-grayscale-zcash"
+    },
+    {
+      "title": "TokenPost — Zcash futures OI +9.8% to $1.66B, futures inflows $122M vs spot $145,700 (11/27 07:27 UTC)",
+      "url": "https://www.tokenpost.com/news/investing/63321"
+    },
+    {
+      "title": "ad-hoc-news — Zcash price rises 11.66%, short liquidations reach USD 910,000 (11/27 01:22~02:22 UTC)",
+      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/zcash-price-rises-11-66-prozent-short-liquidations-reach-usd-910-000/70560868"
+    },
+    {
+      "title": "TokenPost — ZEC $755 → $731 in one hour, long liquidations $740,000 (11/27 17:42 UTC)",
+      "url": "https://www.tokenpost.com/news/investing/63819"
+    },
+    {
+      "title": "Coinglass — ZEC futures (OI 16.2억 달러, 청산 1,216만 달러, 11/28 08:50 KST 조회)",
+      "url": "https://www.coinglass.com/currencies/ZEC/futures"
+    },
+    {
+      "title": "CoinMarketCap — Zcash latest updates (11/27 ETP 200만 달러 유출, 비트와이즈 ETF 신청, Sapling 40만 ZEC)",
+      "url": "https://coinmarketcap.com/cmc-ai/zcash/latest-updates/"
+    },
+    {
+      "title": "CoinGape — Midnight, WEA JAPAN and Netstars team up to explore privacy-focused stablecoin payments (11/27 10:18 UTC)",
+      "url": "https://coingape.com/midnight-wea-japan-and-netstars-team-up-to-explore-privacy-focused-stablecoin-payments/"
+    },
+    {
+      "title": "DiarioBitcoin — Midnight (NIGHT) el 27 de noviembre de 2026: volumen elevado (거래량 30일 평균 대비 +34.3%)",
+      "url": "https://www.diariobitcoin.com/analisis/midnight-night-el-27-de-noviembre-de-2026-volumen-elevado-y-senales-tecnicas-favorables/"
+    },
+    {
+      "title": "CoinMarketCap — Midnight latest updates (0.052달러 저항)",
+      "url": "https://coinmarketcap.com/cmc-ai/midnight-network/latest-updates/"
+    }
+  ],
+  "terms": [
+    {
+      "term": "옵션 만기",
+      "meaning": "정해진 가격에 사고팔 권리가 소멸하는 날. 만기 전후 헤지 물량 정리로 변동성이 커질 수 있다"
+    },
+    {
+      "term": "최대 고통",
+      "meaning": "만기 때 옵션 매수자 손실이 가장 커지는 가격. 가격이 그쪽으로 끌리는 경향이 있다는 가설"
+    },
+    {
+      "term": "풋콜 비율",
+      "meaning": "풋옵션 수량을 콜옵션 수량으로 나눈 값. 1 아래면 상승 베팅이 더 많다"
+    },
+    {
+      "term": "청산",
+      "meaning": "빌린 돈으로 건 선물 포지션이 증거금 부족으로 강제 정리되는 것"
+    },
+    {
+      "term": "미결제약정",
+      "meaning": "아직 청산되지 않은 선물 계약 총액. 줄면 레버리지가 빠진 것"
+    },
+    {
+      "term": "펀딩비",
+      "meaning": "무기한 선물에서 롱과 숏이 주기적으로 주고받는 수수료. 음수면 숏이 롱에게 낸다"
+    },
+    {
+      "term": "숏 스퀴즈",
+      "meaning": "가격이 오르자 하락에 건 숏 포지션이 강제 청산되며 매수가 매수를 부르는 급등"
+    },
+    {
+      "term": "공포·탐욕 지수",
+      "meaning": "가격 변동성·거래량 등을 0~100으로 묶은 투자 심리 지표. 25 이하는 극도의 공포"
+    },
+    {
+      "term": "김치 프리미엄",
+      "meaning": "국내 원화 마켓 가격이 해외 가격보다 비싼 정도"
+    },
+    {
+      "term": "상장폐지",
+      "meaning": "거래소가 특정 코인의 거래 지원을 끝내는 것. 입금이 먼저 막히고 출금 기간이 따로 주어진다"
+    },
+    {
+      "term": "거래유의 종목",
+      "meaning": "국내 거래소가 상폐 검토 전 단계로 지정하는 경고 상태. 보통 입금이 막힌다"
+    },
+    {
+      "term": "stUSDS",
+      "meaning": "스카이 프로토콜에 USDS를 예치하고 받는 이자 지급 토큰. 풀 이용률이 100%에 가까우면 인출이 막힌다"
+    },
+    {
+      "term": "바이백",
+      "meaning": "프로젝트가 수익이나 재단 자금으로 자기 토큰을 시장에서 사들이는 것"
+    },
+    {
+      "term": "언락",
+      "meaning": "팀·투자자에게 잠겨 있던 토큰이 풀려 시장에 나올 수 있게 되는 것"
+    },
+    {
+      "term": "Sapling 풀",
+      "meaning": "Zcash의 구세대 차폐 주소 체계. 개발진은 신형 Orchard 풀로의 이전을 권고했다"
+    },
+    {
+      "term": "2% 호가 깊이",
+      "meaning": "현재가에서 2% 안에 걸린 매수·매도 주문 금액. 작을수록 적은 물량에도 가격이 크게 흔들린다"
+    },
+    {
+      "term": "MOU",
+      "meaning": "법적 구속력이 없는 양해각서. 상용화 일정이나 매출을 보장하지 않는다"
+    },
+    {
+      "term": "ADGM",
+      "meaning": "아부다비 글로벌 마켓. 바이낸스 해킹 자금 동결 명령을 내린 아부다비 금융특구 법원"
+    }
+  ]
+}
