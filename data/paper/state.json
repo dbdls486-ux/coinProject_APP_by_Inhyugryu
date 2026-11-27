@@ -1,6 +1,6 @@
 {
- "updatedAt": "2026-11-26T23:06Z",
- "today": "2026-11-26",
+ "updatedAt": "2026-11-27T00:06Z",
+ "today": "2026-11-27",
  "startedAt": "2026-11-11",
  "initialCash": 10000.0,
  "equity": 10000.0,
@@ -8,15 +8,15 @@
  "returnPct": 0.0,
  "mdd": 0.0,
  "exposure": 0.0,
- "btcReturnPct": -0.18294230405788492,
+ "btcReturnPct": -0.18143011420394728,
  "playbookAsof": "2026-11-11",
  "market": {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "state": "DOWN",
-  "btc_rsi": 27.2,
-  "btc_d50": -0.1964,
-  "mkt_brk": 0.0062,
-  "names": 161,
+  "btc_rsi": 27.7,
+  "btc_d50": -0.1899,
+  "mkt_brk": 0.0,
+  "names": 163,
   "stateLabel": "BTC 50일선 아래",
   "note": "BTC 종가가 50일선 아래"
  },
@@ -25,7 +25,22 @@
  "pending": [],
  "decisions": [
   {
-   "sym": "BLUR",
+   "sym": "INIT",
+   "type": "STAIR",
+   "state": "DOWN",
+   "flagged": 1,
+   "n": 319,
+   "meanR": -0.32995200270338126,
+   "lb": -0.41741164222465754,
+   "level": "칸",
+   "grade": null,
+   "decision": "관찰만",
+   "why": "과거 성적이 플러스라고 보기 어려움",
+   "typeLabel": "계단식 하락 뒤 거래량 돌파",
+   "stateLabel": "BTC 50일선 아래"
+  },
+  {
+   "sym": "SSV",
    "type": "BRK_CALM",
    "state": "DOWN",
    "flagged": 1,
@@ -37,21 +52,6 @@
    "decision": "관찰만",
    "why": "과거 성적이 플러스라고 보기 어려움",
    "typeLabel": "거래량 동반 20일 고점 돌파",
-   "stateLabel": "BTC 50일선 아래"
-  },
-  {
-   "sym": "JST",
-   "type": "PULL50",
-   "state": "DOWN",
-   "flagged": 1,
-   "n": 212,
-   "meanR": -0.10749182369823604,
-   "lb": -0.23018327364122823,
-   "level": "칸",
-   "grade": null,
-   "decision": "관찰만",
-   "why": "과거 성적이 플러스라고 보기 어려움",
-   "typeLabel": "주봉 정배열 속 50일선 눌림",
    "stateLabel": "BTC 50일선 아래"
   }
  ],
@@ -71,8 +71,8 @@
   "positions": [],
   "majors": {},
   "pending": [],
-  "openDone": "2026-11-26",
-  "closeDone": "2026-11-25",
+  "openDone": "2026-11-27",
+  "closeDone": "2026-11-26",
   "equity": [
    [
     "2026-11-11",
@@ -193,6 +193,14 @@
     0,
     0,
     0.0
+   ],
+   [
+    "2026-11-26",
+    10000.0,
+    10000.0,
+    0,
+    0,
+    0.0
    ]
   ],
   "trades": [],
@@ -201,7 +209,20 @@
   "peak": 10000.0,
   "decisions": [
    {
-    "sym": "BLUR",
+    "sym": "INIT",
+    "type": "STAIR",
+    "state": "DOWN",
+    "flagged": 1,
+    "n": 319,
+    "meanR": -0.32995200270338126,
+    "lb": -0.41741164222465754,
+    "level": "칸",
+    "grade": null,
+    "decision": "관찰만",
+    "why": "과거 성적이 플러스라고 보기 어려움"
+   },
+   {
+    "sym": "SSV",
     "type": "BRK_CALM",
     "state": "DOWN",
     "flagged": 1,
@@ -212,28 +233,15 @@
     "grade": null,
     "decision": "관찰만",
     "why": "과거 성적이 플러스라고 보기 어려움"
-   },
-   {
-    "sym": "JST",
-    "type": "PULL50",
-    "state": "DOWN",
-    "flagged": 1,
-    "n": 212,
-    "meanR": -0.10749182369823604,
-    "lb": -0.23018327364122823,
-    "level": "칸",
-    "grade": null,
-    "decision": "관찰만",
-    "why": "과거 성적이 플러스라고 보기 어려움"
    }
   ],
   "market": {
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "state": "DOWN",
-   "btc_rsi": 27.2,
-   "btc_d50": -0.1964,
-   "mkt_brk": 0.0062,
-   "names": 161
+   "btc_rsi": 27.7,
+   "btc_d50": -0.1899,
+   "mkt_brk": 0.0,
+   "names": 163
   },
   "bench": {
    "btc0": 74078.0
