@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T08:56:22+09:00",
+  "updatedAt": "2026-11-28T14:33:37+09:00",
   "sources": [
     {
       "id": "tiger",
@@ -7,19 +7,19 @@
       "home": "https://reports.tiger-research.com/s/korean/archive",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-27",
-      "note": "피드/아카이브 직접 가져오기 대신 WebSearch 결과와 글 하단 'More from Tiger Research' 링크로 수집. 11/24 이후 신규 글 없음, 과거 TVM 밸류에이션 리포트 등 5건 보충(영문 제목인 25Q3·25Q4 Valuation Report 2건은 제외).",
-      "count": 55
+      "lastOk": "2026-11-28",
+      "note": "feed·archive 직접 가져오기는 승인 미응답으로 차단, WebSearch 결과와 글 내 Recent Episodes 링크로 수집. 11/24 이후 신규 글 없음, 미수집 과거 글 6건 보충(2023~2026).",
+      "count": 61
     },
     {
       "id": "xangle",
       "name": "쟁글 리서치",
       "home": "https://xangle.io/research",
       "method": "page",
-      "status": "stale",
-      "lastOk": "2026-11-26",
-      "note": "상세 페이지(2602) 가져오기가 제공처 승인 미응답(PROVENANCE_REQUIRED)으로 차단됐고 WebSearch 색인은 2602 이후 글이 없어 신규 수집 없음. 기존 항목 유지.",
-      "count": 70
+      "status": "ok",
+      "lastOk": "2026-11-28",
+      "note": "목록·sitemap·2602 상세는 승인 미응답으로 차단, 검색 결과 상세 5건(Weekly Xangle 2~8월) 보충. 연관 리서치에서 최신 2603(11/27 Weekly Xangle)을 발견했으나 페이지가 열리지 않아 미수록.",
+      "count": 75
     },
     {
       "id": "despread",
@@ -28,7 +28,7 @@
       "method": "page",
       "status": "stale",
       "lastOk": "2026-11-20",
-      "note": "/ko/ 글 가져오기가 robots.txt 읽기 실패(ROBOTS_UNREACHABLE)로 차단. WebSearch로 신규 후보(intelligent-defi, di-03, market-commentary 11/01~11/22, berachain-monitoring)는 확인했으나 발행일·제목 검증 불가로 보류.",
+      "note": "/ko/rss/·/rss/·/ko/ 모두 승인 미응답으로 차단, 개별 글은 robots 확인 실패. 열린 후보(market-commentary-11-22·di-03·berachain-monitoring)는 제목·게시일이 렌더링되지 않아 검증 불가로 보류.",
       "count": 21
     },
     {
@@ -37,9 +37,9 @@
       "home": "https://research.4pillars.io/ko/research",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-27",
-      "note": "목록 대신 WebSearch 결과와 글 하단 추천 리서치 링크로 수집. 11/26 이후 신규 글 없음, 2026 Outlook 시리즈·국채 토큰화 등 과거 8건 보충.",
-      "count": 79
+      "lastOk": "2026-11-28",
+      "note": "목록·sitemap 차단, WebSearch 결과와 글 하단 추천 리서치 링크로 수집. 11/27 신규 1건(디지털자산 기본법) 포함 13건 추가, 각 페이지 열어 제목·날짜 확인.",
+      "count": 92
     },
     {
       "id": "digitalx",
@@ -57,8 +57,8 @@
       "home": "https://hashedopenresearch.com/research",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-27",
-      "note": "/research 목록 67건 정상 읽음, 한국어 신규 글 없음(최신 2026-09). 목록에만 있고 미수집인 한국어 과거 글 9건은 상세 페이지 승인 미응답으로 이번엔 추가 못함.",
+      "lastOk": "2026-11-28",
+      "note": "/research 목록 정상 읽음(한국어 31건), 11월 신규 보고서 없음. 미수집 한국어 과거 글 9건은 상세 페이지 승인 미응답으로 날짜 확인 불가해 이번에도 추가 못함.",
       "count": 22
     },
     {
@@ -68,7 +68,7 @@
       "method": "page",
       "status": "stale",
       "lastOk": "2026-11-24",
-      "note": "기존 최신 글(1090) 가져오기가 제공처 승인 미응답으로 차단돼 이전/다음 링크 체인을 따라가지 못함. WebSearch에 신규 조사·연구 글 없음.",
+      "note": "모바일 목록은 클라이언트 렌더링으로 비어 있고 PC 목록·1090 상세는 차단. WebSearch에서 1090 이후 신규 조사·연구 글 없음.",
       "count": 18
     },
     {
@@ -77,9 +77,9 @@
       "home": "https://www.kcmi.re.kr/report/report_list",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-27",
-      "note": "최신보고서 목록(report_list) 읽음: 10/26~11/25 신규 4건 모두 디지털자산 비관련. 자본시장포커스 목록(pub_list)은 승인 미응답으로 차단, 신규 추가 없음.",
-      "count": 31
+      "lastOk": "2026-11-28",
+      "note": "report_list·pub_list는 승인 미응답으로 차단, 홈 최신보고서·ZOOM-IN 목록으로 확인. 10~11월 신규 디지털자산 보고서 없음, 6월 자본시장포커스 ZOOM-IN PDF 1건 보충.",
+      "count": 32
     },
     {
       "id": "kif",
@@ -97,8 +97,8 @@
       "home": "https://www.bok.or.kr/portal/bbs/B0000232/list.do?menuNo=200706",
       "method": "page",
       "status": "ok",
-      "lastOk": "2026-11-27",
-      "note": "WebSearch로 지급결제 조사연구 게시글 1건(2019 중앙은행 디지털화폐) 보충. 목록 페이지는 이전과 같이 미사용. 신규 발간물은 검색에서 확인되지 않음.",
+      "lastOk": "2026-11-28",
+      "note": "게시판 목록·view.do 상세는 차단되거나 다른 글이 반환돼 검증 불가, 홈 최신 보고서 목록으로 확인. 이슈노트 2026-22호(달러 스테이블코인과 외환시장, 9/3)는 상세 페이지 미확인으로 보류, 신규 추가 없음.",
       "count": 12
     },
     {
@@ -107,12 +107,23 @@
       "home": "https://consensus.hankyung.com/analysis/list?search_text=%EA%B0%80%EC%83%81%EC%9E%90%EC%82%B0",
       "method": "pdf",
       "status": "ok",
-      "lastOk": "2026-11-27",
-      "note": "검색엔진 인덱스로 미래에셋 Bi-weekly(2025-12-04)·삼성증권 디지털 자산 시리즈/Weekly 4건 보충. 11월 신규 디지털자산 리포트는 미발견. 미래에셋 글로벌 주식전략 전망(2140099)은 비관련으로 제외.",
-      "count": 46
+      "lastOk": "2026-11-28",
+      "note": "한경컨센서스 3개 URL 모두 차단, WebSearch로 키움·삼성·하나·미래에셋·iM·신한 PDF/페이지 15건 확인해 보충. 11월 신규 리포트(iM 11/26·신한 11/27 디지털자산기본법)는 뉴스로만 확인되고 원문 URL 미확보.",
+      "count": 61
     }
   ],
   "items": [
+    {
+      "id": "fourpillars:koreas-new-crypto-bill-what-would-change",
+      "source": "fourpillars",
+      "title": "디지털자산 기본법, 한국 시장은 어떻게 달라질까",
+      "url": "https://research.4pillars.io/ko/research/koreas-new-crypto-bill-what-would-change",
+      "publishedAt": "2026-11-27",
+      "summary": "한국의 디지털자산 법안이 공개됐습니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
     {
       "id": "fourpillars:how-do-you-trade-5million-on-hyperliquid",
       "source": "fourpillars",
@@ -1318,6 +1329,17 @@
       "lang": "ko"
     },
     {
+      "id": "xangle:2527",
+      "source": "xangle",
+      "title": "[Weekly Xangle] 고용 둔화와 유가 변동성 사이에서 이어진 위험자산 반등",
+      "url": "https://xangle.io/research/detail/2527",
+      "publishedAt": "2026-08-07",
+      "summary": "2026년 8월 첫째 주 가상자산 시장은 상승 흐름을 보였다. 비트코인은 8월 7일 기준 64,262달러로 전주 대비 2.31% 상승했고, 이더리움은 1,902달러로 2.24% 상승하며 동반 강세를 보였다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "xangle:2525",
       "source": "xangle",
       "title": "[Xangle RWA Series] 블록체인",
@@ -1467,6 +1489,17 @@
       "lang": "ko"
     },
     {
+      "id": "fourpillars:onchain-vaults-head-to-the-regulators-desk-fp-weekly-31",
+      "source": "fourpillars",
+      "title": "온체인 볼트도 제도권의 심사장으로 [FP Weekly 31]",
+      "url": "https://research.4pillars.io/ko/research/onchain-vaults-head-to-the-regulators-desk-fp-weekly-31",
+      "publishedAt": "2026-07-27",
+      "summary": "지난주 주요 소식을 살펴봅니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "tiger:ai-agent-wallet-infrastructure-the-kor",
       "source": "tiger",
       "title": "AI 에이전트 지갑: 매출 700% 스케일업의 핵심 레이어",
@@ -1474,6 +1507,28 @@
       "publishedAt": "2026-07-24",
       "summary": "AI 에이전트가 직접 트레이딩을 하고 결제까지 처리한다는 소식이 들려옵니다. 그런데 암호화폐 지갑업계는 이미 그 판을 조용히 짜고 있었습니다.",
       "collectedAt": "2026-11-24T10:24:45+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:tradfi-is-swallowing-the-korea-cex",
+      "source": "fourpillars",
+      "title": "전통 금융 회사들과 한국 거래소",
+      "url": "https://research.4pillars.io/ko/research/tradfi-is-swallowing-the-korea-cex",
+      "publishedAt": "2026-07-24",
+      "summary": "아시아에서 중앙화 거래소(CEX)는 서구 시장과는 다른 역할을 한다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:kaitos-comeback-can-infofi-lead-the-market-again",
+      "source": "fourpillars",
+      "title": "카이토의 부활? 인포파이는 과연 살아남을 수 있을까?",
+      "url": "https://research.4pillars.io/ko/research/kaitos-comeback-can-infofi-lead-the-market-again",
+      "publishedAt": "2026-07-24",
+      "summary": "2025년 크립토 시장을 대표하는 내러티브를 하나 꼽으라면, 단연 인포파이(InfoFi)를 빼놓고 이야기할 수 없을 것이다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
       "pdf": false,
       "lang": "ko"
     },
@@ -1496,6 +1551,17 @@
       "publishedAt": "2026-07-23",
       "summary": "일본의 2026년 1분기는 ‘디지털 원년’이라는 정책 선언이 실제 행정 조치와 사업 발표로 이어진 분기였다.",
       "collectedAt": "2026-11-27T08:56:22+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:an-era-without-a-shared-market",
+      "source": "fourpillars",
+      "title": "같은 시장을 바라보지 않는 시대",
+      "url": "https://research.4pillars.io/ko/research/an-era-without-a-shared-market",
+      "publishedAt": "2026-07-23",
+      "summary": "크립토가 규제권에 편입되며 이해관계가 분화된 만큼, 단일 내러티브나 한 명의 리더가 산업 전체의 방향을 제시하는 방식은 점차 유효성을 잃고 있다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
       "pdf": false,
       "lang": "ko"
     },
@@ -1573,6 +1639,17 @@
       "lang": "ko"
     },
     {
+      "id": "fourpillars:the-tale-of-the-tail-in-the-korea-cex",
+      "source": "fourpillars",
+      "title": "한국 CEX의 롱테일 이야기",
+      "url": "https://research.4pillars.io/ko/research/the-tale-of-the-tail-in-the-korea-cex",
+      "publishedAt": "2026-07-20",
+      "summary": "한국은 글로벌 시장의 일반적인 구조와 정반대다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "brokers:shinhan-33154",
       "source": "brokers",
       "title": "디지털 자산 제도화, SEC 선제 대응과 로빈후드 온체인 금융 확장이 의미하는 변화",
@@ -1626,6 +1703,17 @@
       "lang": "ko"
     },
     {
+      "id": "fourpillars:hong-kong-prepares-tokenized-bond-rules-moving-the-fixed-income-market-onto-dlt",
+      "source": "fourpillars",
+      "title": "홍콩, 토큰화 채권 규제 준비하며 고정수익 시장을 DLT 위로 옮긴다",
+      "url": "https://research.4pillars.io/ko/research/hong-kong-prepares-tokenized-bond-rules-moving-the-fixed-income-market-onto-dlt",
+      "publishedAt": "2026-07-10",
+      "summary": "홍콩의 토큰화 채권 규칙 준비는 단순한 증권 발행 실험이 아니라, 고정수익 시장의 운영 방식을 DLT 기반으로 옮기려는 신호로 읽힌다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "xangle:2506",
       "source": "xangle",
       "title": "ETHGas, 기관용 블록스페이스",
@@ -1635,6 +1723,17 @@
       "collectedAt": "2026-11-20T09:20:38+09:00",
       "lang": "ko",
       "pdf": false
+    },
+    {
+      "id": "fourpillars:the-core-of-licensing-is-control-over-issuance-rights-not-market-opening",
+      "source": "fourpillars",
+      "title": "대만, 첫 가상자산 특별법 통과...스테이블코인은 중앙은행 동의와 허가제로 들어간다",
+      "url": "https://research.4pillars.io/ko/research/the-core-of-licensing-is-control-over-issuance-rights-not-market-opening",
+      "publishedAt": "2026-07-08",
+      "summary": "대만의 가상자산서비스법은 단순한 거래소 규제가 아니라, 스테이블코인 발행권을 통화 당국의 동의 아래 두는 구조로 읽힌다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
     },
     {
       "id": "tiger:below-the-surface-how-canton-network-kor",
@@ -1774,6 +1873,17 @@
       "summary": "글로벌 금융시장 인프라는 디지털 자산, 토큰화, 분산원장기술의 확산에 대응하여 기존의 기록ㆍ보관 중심 기능을 넘어 다자산ㆍ다중 네트워크를 연결하는 플랫폼형 인프라로 진화하고 있다.",
       "collectedAt": "2026-11-21T10:07:55+09:00",
       "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "kcmi:pub-6795",
+      "source": "kcmi",
+      "title": "국내 전통 금융과 디지털자산 산업의 융합",
+      "url": "https://www.kcmi.re.kr/kcmifile/webzine_content/CapitalMarketFocus/6795/webzinepdf_6795.pdf",
+      "publishedAt": "2026-06-29",
+      "summary": "최근 금융회사와 디지털자산거래소 간 전략적 제휴가 확대되고 지분 투자도 이루어지면서 전통 금융과 디지털자산 산업 간 연계가 본격화되고 있다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
       "lang": "ko"
     },
     {
@@ -1942,12 +2052,34 @@
       "lang": "ko"
     },
     {
+      "id": "brokers:shinhan-32910",
+      "source": "brokers",
+      "title": "비트코인은 왜 떨어진걸까? 스트래티지의 비트코인 매도 의미",
+      "url": "https://www.shinhangroup.com/kr/archive/insight/extend/detail/32910",
+      "publishedAt": "2026-06-05",
+      "summary": "신한투자증권 · 최근 비트코인이 급락하면서 투자자들의 관심은 한 기업에 집중됐습니다. 바로 세계 최대 비트코인 보유 상장사인 스트래티지(구 마이크로스트래티지)입니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "xangle:2479",
       "source": "xangle",
       "title": "RWA 토큰화 생태계 분류와 주요 사례",
       "url": "https://xangle.io/research/detail/2479",
       "publishedAt": "2026-06-04",
       "collectedAt": "2026-11-11T09:09:30+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "brokers:hana-AgentEcon_260604_",
+      "source": "brokers",
+      "title": "Agent Economy (블록체인, 에이전트의 OS)",
+      "url": "https://file.hanaw.com/download/research/FileServer/WEB/strategy/digital_asset/2026/06/02/AgentEcon_260604_.pdf",
+      "publishedAt": "2026-06-04",
+      "summary": "하나증권 · 에이전트 경제의 시작 / 블록체인, 에이전트 OS로 진화 / 하반기 에이전트 기반 실수요 증가와 함께 가치 상승 기대",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
       "lang": "ko"
     },
     {
@@ -2087,6 +2219,17 @@
       "lang": "ko"
     },
     {
+      "id": "fourpillars:crypto-etfs-what-the-120b-experiment-proved-and-what-korea-builds-next",
+      "source": "fourpillars",
+      "title": "크립토 ETF: 미국의 1,200억 달러 실험이 한국에게 남긴 교훈",
+      "url": "https://research.4pillars.io/ko/research/crypto-etfs-what-the-120b-experiment-proved-and-what-korea-builds-next",
+      "publishedAt": "2026-05-20",
+      "summary": "한국에서 크립토 ETF의 의미가 리테일 접근성 확대보다 기관 자본의 진입에 있는 이유와, 시장의 승자가 규제 타이밍이 아니라 유통망, 커스터디, AP 역량, 지수 인프라에 의해 결정될 가능성을 분석합니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "brokers:samsung-2026051810291443K_02_02",
       "source": "brokers",
       "title": "디지털 자산 Weekly: 미국 상원 은행위원회, Clarity Act 통과",
@@ -2095,6 +2238,17 @@
       "summary": "삼성증권 · 정책 진전에도 시장 반응은 미미: 올해 초부터 큰 관심을 받았던 Clarity Act가 미국 상원 은행위원회를 통과하며 디지털 자산이 제도권 금융 체계로 편입되는 흐름이 강화되었습니다.",
       "collectedAt": "2026-11-12T09:14:27+09:00",
       "pdf": true,
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:crypto-security-why-multi-layered-defense-matters-and-where-koreas-framework-falls-short",
+      "source": "fourpillars",
+      "title": "크립토 보안: 다층적 방어 설계의 필요성과 한국형 보안 프레임워크의 괴리",
+      "url": "https://research.4pillars.io/ko/research/crypto-security-why-multi-layered-defense-matters-and-where-koreas-framework-falls-short",
+      "publishedAt": "2026-05-18",
+      "summary": "기관급 디지털 자산 보안을 네 개의 계층으로 나누어 살펴보고, 한국 기업들이 ISMS와 콜드월렛 규정을 넘어 글로벌 커스터디 기준에 맞는 보안 체계를 어떻게 구축해야 하는지 분석합니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
       "lang": "ko"
     },
     {
@@ -2120,6 +2274,17 @@
       "lang": "ko"
     },
     {
+      "id": "xangle:2469",
+      "source": "xangle",
+      "title": "[Weekly Xangle] 미중 갈등 완화 기대와 물가 부담이 엇갈린 가상자산 시장",
+      "url": "https://xangle.io/research/detail/2469",
+      "publishedAt": "2026-05-15",
+      "summary": "2026년 5월 둘째 주 가상자산 시장은 자산별로 엇갈린 흐름을 보였다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "bok:10097981",
       "source": "bok",
       "title": "[제2026-11호] 국내외 자산 토큰화 현황 및 향후 정책 과제",
@@ -2127,6 +2292,17 @@
       "publishedAt": "2026-05-14",
       "summary": "최근 미국 등 주요국에서 대출, 국채, MMF, 대체투자자산 등 다양한 금융 및 실물 자산에 대한 권리를 분산원장에 기록하여 투자 상품화하는 자산 토큰화 시장이 확대되고 있다. 글로벌 시장 규모는 503.7억달러(26.3월말)로, 최근 기관투자자의 참여 확대로 빠른 성장세(23년 65% → 24년 93% → 25년 169%)를 보이고 있다.",
       "collectedAt": "2026-11-10T03:55:00+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "brokers:kiwoom-rfCC1503",
+      "source": "brokers",
+      "title": "은행 vs 코인(Feat, 클래리티 법안)",
+      "url": "https://bbn.kiwoom.com/rfCC1503",
+      "publishedAt": "2026-05-13",
+      "summary": "키움증권 · 미국 가상자산 시장은 지난 10년간 명확한 연방법 없이 SEC의 사후 소송과 해석 중심으로 규율돼왔다. 클래리티 법안은 이러한 회색지대를 법률 체계 안으로 편입하려는 첫 연방법으로, 2025년 7월 하원을 통과한 이후",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
       "lang": "ko"
     },
     {
@@ -2161,6 +2337,17 @@
       "collectedAt": "2026-11-11T09:09:30+09:00",
       "lang": "ko",
       "pdf": true
+    },
+    {
+      "id": "fourpillars:stablecoin-fx-reshaping-fx-infrastructure-and-koreas-point-of-entry",
+      "source": "fourpillars",
+      "title": "스테이블코인 FX: 3계층 구조의 재편과 한국의 진입점",
+      "url": "https://research.4pillars.io/ko/research/stablecoin-fx-reshaping-fx-infrastructure-and-koreas-point-of-entry",
+      "publishedAt": "2026-05-11",
+      "summary": "스테이블코인이 FX 결제 계층을 어떻게 개선할 수 있는지, 달러 조달 구조를 왜 대체하지는 못하는지, 그리고 한국의 실질적 기회가 왜 리테일 송금이 아닌 기업 외환 영역에 있는지 분석합니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
     },
     {
       "id": "kif:362275",
@@ -2247,6 +2434,28 @@
       "summary": "최근 미국 자본시장에서 블록체인 기술은 단순한 가상자산 투자 영역을 넘어 금융 시스템 전반의 인프라로 자리잡고 있다.",
       "collectedAt": "2026-11-21T10:07:55+09:00",
       "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "brokers:samsung-20260504",
+      "source": "brokers",
+      "title": "디지털 자산 Weekly: 펀더멘털 점검이 필요",
+      "url": "https://samsungpop.com/common.do?cmd=down&contentType=application%2Fpdf&fileName=2020%2F2026050416353805K_02_02.pdf&inlineYn=Y&saveKey=research.pdf",
+      "publishedAt": "2026-05-04",
+      "summary": "삼성증권 · 가격 상승에도 수급은 제한적: 비트코인 가격이 일시적으로 8만 달러를 기록하며 투자심리가 일부 회복되는 추세입니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
+      "lang": "ko"
+    },
+    {
+      "id": "brokers:hana-Onchain_20260504_",
+      "source": "brokers",
+      "title": "클래리티 액트가 온다",
+      "url": "https://file.hanaw.com/download/research/FileServer/WEB/strategy/digital_asset/2026/05/03/Onchain_20260504_.pdf",
+      "publishedAt": "2026-05-04",
+      "summary": "하나증권 · 디지털자산 시장은 4/26~5/2 동안 주중 소폭 하락했지만 BTC를 중심으로 회복했다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
       "lang": "ko"
     },
     {
@@ -2410,6 +2619,17 @@
       "lang": "ko"
     },
     {
+      "id": "brokers:mirae-2144004",
+      "source": "brokers",
+      "title": "탈중앙화 가치의 소멸과 인프라로서의 이더리움 부상",
+      "url": "https://securities.miraeasset.com/bbs/download/2144004.pdf?attachmentId=2144004",
+      "publishedAt": "2026-04-22",
+      "summary": "미래에셋증권 · 이제는 탈중앙화의 기치보다는 인프라의 가치가 부각된다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
+      "lang": "ko"
+    },
+    {
       "id": "tiger:bitcoin-target-price-143000-2x-upside-kor",
       "source": "tiger",
       "title": "26년 2분기 비트코인 밸류에이션 리포트, $143,000 2배 간다",
@@ -2418,6 +2638,17 @@
       "summary": "비트코인은 1분기 보고서 이후 약 27% 하락해 4월 초 평균 $70,500 수준에서 거래되고 있다. 전쟁이라는 변수가 있었으나 전체 매크로 환경은 여전히 비트코인에 우호적이다. 변한 것은 방향이 아니라 속도다.",
       "collectedAt": "2026-11-21T10:07:55+09:00",
       "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "brokers:hana-Onchain_20260420",
+      "source": "brokers",
+      "title": "하반기 상승을 앞두고 잠재력 확인",
+      "url": "https://file.hanaw.com/download/research/FileServer/WEB/strategy/market/2026/04/19/Onchain_20260420.pdf",
+      "publishedAt": "2026-04-20",
+      "summary": "하나증권 · 이번 주 디지털자산 시장은 중동발 지정학적 리스크와 제도화 기대가 동시에 가격 변동성을 키운 한 주였다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
       "lang": "ko"
     },
     {
@@ -2482,6 +2713,17 @@
       "publishedAt": "2026-04-03",
       "summary": "2026년 3월 31일, 두나무 주주총회에서 “네이버파이낸셜과의 주식 교환 완료 직후 IPO를 추진한다”는 방침이 재확인됐다.",
       "collectedAt": "2026-11-24T10:24:45+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "xangle:2447",
+      "source": "xangle",
+      "title": "[Weekly Xangle] 전쟁 변수 혼재·유가 급등 속 가상자산 약세",
+      "url": "https://xangle.io/research/detail/2447",
+      "publishedAt": "2026-04-03",
+      "summary": "2026년 4월 첫째 주 가상자산 시장은 거시 변수 불확실성과 유동성 둔화 영향 속에서 전반적으로 약세를 보였다. 비트코인은 4월 3일 기준 66,889달러로 전주 대비 2.77% 하락했고, 이더리움은 2,057달러로 0.13% 하락하며 상대적으로 견조한 흐름을 보였다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
       "pdf": false,
       "lang": "ko"
     },
@@ -2685,6 +2927,17 @@
       "lang": "ko"
     },
     {
+      "id": "fourpillars:how-circle-nanopayments-work",
+      "source": "fourpillars",
+      "title": "서클(Circle)의 Nanopayments는 어떻게 작동할까?",
+      "url": "https://research.4pillars.io/ko/research/how-circle-nanopayments-work",
+      "publishedAt": "2026-03-04",
+      "summary": "서클의 Nanopayments는 AI 에이전트가 스트리밍 결제를할 수 있는 기반을 제공합니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "tiger:bitcoin-crashed-on-the-iran-strike-kor",
       "source": "tiger",
       "title": "이란 공습에 급락한 비트코인, 아직도 ‘디지털 금’이라 부를 수 있는가?",
@@ -2791,6 +3044,28 @@
       "pdf": false
     },
     {
+      "id": "xangle:2418",
+      "source": "xangle",
+      "title": "[Weekly Xangle] 이란 긴장 고조에 막힌 가상자산 반등",
+      "url": "https://xangle.io/research/detail/2418",
+      "publishedAt": "2026-02-20",
+      "summary": "2026년 2월 셋째 주 가상자산 시장은 전주 급락 이후 제한적인 기술적 반등을 시도했으나, 이란 관련 지정학적 긴장 고조가 추가적인 리스크 오프 분위기를 조성하며 상승 폭을 크게 제한하고 변동성을 키웠다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "xangle:2417",
+      "source": "xangle",
+      "title": "[Weekly Xangle] 변동성 확대된 가상자산 시장",
+      "url": "https://xangle.io/research/detail/2417",
+      "publishedAt": "2026-02-13",
+      "summary": "2026년 2월 둘째 주 가상자산 시장은 지난주 급락 이후 기술적 반등에 성공했으나, 매크로 불확실성 속에서 변동성이 여전히 높은 모습을 보였다. 비트코인은 전주 대비 5.61% 상승한 66,222달러로 마감했고, 이더리움은 6.88% 오른 1,947달러를 기록했다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "brokers:samsung-2026020915191681K_02_02",
       "source": "brokers",
       "title": "디지털 자산 Weekly: 어디가 저점일까",
@@ -2888,6 +3163,17 @@
       "lang": "ko"
     },
     {
+      "id": "tiger:2026-korea-cryptocurrency-market-kor",
+      "source": "tiger",
+      "title": "2026년 한국 암호화폐 시장 규제 현황 점검",
+      "url": "https://reports.tiger-research.com/p/2026-korea-cryptocurrency-market-kor",
+      "publishedAt": "2026-01-28",
+      "summary": "안전 벨트는 있지만 차는 없는",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "brokers:samsung-2026012615012610K_02_01",
       "source": "brokers",
       "title": "디지털 자산 Weekly: 비트코인 85k 지지",
@@ -2943,6 +3229,17 @@
       "lang": "ko"
     },
     {
+      "id": "brokers:kiwoom-rfBC1361",
+      "source": "brokers",
+      "title": "KIWOOM Digital Asset Issue: 전통 금융기관의 MMF 토큰화 사례 확대",
+      "url": "https://bbn.kiwoom.com/rfBC1361",
+      "publishedAt": "2026-01-19",
+      "summary": "키움증권 · JP모건, 토큰화된 머니마켓펀드 ‘MONY’ 출시. MONY는 자사 토큰화 인프라 플랫폼 ‘Kinexys Digital Asset에서 발행되며, 투자자는 Morgan Money 플랫폼을 통해 투자 및 환매 요청.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
+      "lang": "ko"
+    },
+    {
       "id": "xangle:2405",
       "source": "xangle",
       "title": "Lumera: 실사용 단계로의 전환과 2026 확장 로드맵",
@@ -2961,6 +3258,17 @@
       "publishedAt": "2026-01-15",
       "summary": "본 보고서는 Tiger Research가 작성한 2026년 1분기 비트코인 전망 리포트로 목표가 18만 5,500달러를 제시합니다.",
       "collectedAt": "2026-11-11T09:09:30+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "brokers:im-252362",
+      "source": "brokers",
+      "title": "실물자산 토큰화(RWA): 글로벌 RWA 시장 성장과 국내 STO 산업 법제화",
+      "url": "https://imfnsec.com/upload/R_E03/2026/01/[15095916]_252362.pdf",
+      "publishedAt": "2026-01-15",
+      "summary": "iM증권 · RWA(Real World Asset, 실물자산 토큰)는 블록체인 기술을 활용해 부동산, 채권, 원자재 등 전통적인 실물자산의 소유권을 디지털 토큰 형태로 전환한 자산을 의미",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
       "lang": "ko"
     },
     {
@@ -3242,6 +3550,17 @@
       "lang": "ko"
     },
     {
+      "id": "tiger:sign-from-community-to-government-kor",
+      "source": "tiger",
+      "title": "사인(Sign): 커뮤니티를 넘어 정부 블록체인 인프라로",
+      "url": "https://reports.tiger-research.com/p/sign-from-community-to-government-kor",
+      "publishedAt": "2025-11-27",
+      "summary": "사인(Sign) 프로젝트를 생각하면 가장 먼저 떠오르는 것은 “Sing Sign”입니다. 하지만 그 뒤에는 토큰테이블에서 출발해 정부 사업으로 나아가는 근간이 있습니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "kcmi:pub-6665",
       "source": "kcmi",
       "title": "스테이블코인 가격 안정을 위한 정책과제",
@@ -3295,6 +3614,17 @@
       "lang": "ko"
     },
     {
+      "id": "brokers:im-251985",
+      "source": "brokers",
+      "title": "Digital Asset Weekly 2025.11.18 올해 가상자산 시장을 견인했던 5가지 축의 제약",
+      "url": "https://imfnsec.com/upload/R_E03/2025/11/[18074643]_251985.pdf",
+      "publishedAt": "2025-11-18",
+      "summary": "iM증권 · 미 연방정부의 셧다운 종료에도 불구하고 가상자산 시장은 뚜렷한 반등 모멘텀을 확보하지 못한 채 약세 흐름 지속. 가상자산 시장을 견인했던 5가지 축의 제약: 1)비트코인 반감기, 2)트럼프 대통령의 친가상자산 정책, 3)DAT 기업들의 적극적인 매수세, 4)미국 금리인하 기대감, 5)달러 약세",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
+      "lang": "ko"
+    },
+    {
       "id": "brokers:samsung-2025111713492967K_02_02",
       "source": "brokers",
       "title": "디지털 자산 Weekly: 비트코인 100k 붕괴",
@@ -3324,6 +3654,17 @@
       "publishedAt": "2025-11-12",
       "summary": "금융시스템 전반에 걸쳐 혁신을 가져올 수 있는 디지털 기술로 토큰화(tokenization)가 주목받고 있다. 토큰화는 현실 세계에 존재하는 다양한 자산을 디지털 방식으로 생성ㆍ기록하여 디지털자산 시장과 전통 금융시장 간 상호연계성을 강화할 수 있다.",
       "collectedAt": "2026-11-10T03:55:00+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "brokers:im-251984",
+      "source": "brokers",
+      "title": "Digital Asset Weekly 2025.11.11 셧다운 해제 시 가상자산 시장에 미칠 영향 점검",
+      "url": "https://www.imfnsec.com/upload/R_E03/2025/11/[11074709]_251984.pdf",
+      "publishedAt": "2025-11-11",
+      "summary": "iM증권 · 1. 최근 가상자산 시장 약세 배경: 1)단기자금시장 유동성 경색, 2)달러화 강세, 3)10.10일 이후 대규모 선물 청산, 4)가상자산 사이클 조정 국면 진입",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
       "lang": "ko"
     },
     {
@@ -3359,6 +3700,17 @@
       "lang": "ko"
     },
     {
+      "id": "tiger:korea-stable-coin-kor",
+      "source": "tiger",
+      "title": "2025 원화 스테이블코인 현황",
+      "url": "https://reports.tiger-research.com/p/korea-stable-coin-kor",
+      "publishedAt": "2025-11-10",
+      "summary": "원화 스테이블코인 발행 주체를 둘러싼 국회와 정부 부처간의 경쟁이 치열합니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "tiger:tvm-nov-2025-bitcoin-kor",
       "source": "tiger",
       "title": "목표가 20만불 유지 - 단기 불확실성 증대, 중장기 펀더멘털 불변",
@@ -3388,6 +3740,17 @@
       "summary": "리퀴파이와 에코, 그리고 베이스로 이어지는 일련의 인수는 프로젝트 설립부터 토큰 발행, 자금 조달, 상장까지 모든 과정을 하나로 잇는 웹3 인프라 전략이었다.",
       "collectedAt": "2026-11-27T08:56:22+09:00",
       "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "brokers:im-251884",
+      "source": "brokers",
+      "title": "Digital Asset Weekly 2025.11.03 비트코인 채굴에서 AI 인프라 기업으로 전환",
+      "url": "https://imfnsec.com/upload/R_E03/2025/11/[04074612]_251884.pdf",
+      "publishedAt": "2025-11-03",
+      "summary": "iM증권 · 1. 가상자산 및 가상자산 관련주 약세인 가운데 채굴주 강세 2. 중견 채굴업체들의 성장, 채굴업체 경쟁 심화 시사 3. AI 쏠림현상의 낙수효과, AI데이터센터로 사업을 다각화한 채굴업체 수혜 발생",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
       "lang": "ko"
     },
     {
@@ -3428,6 +3791,17 @@
       "publishedAt": "2025-10-29",
       "summary": "바운드리스의 구조와 특징을 중심으로",
       "collectedAt": "2026-11-10T02:30:00+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "brokers:im-251883",
+      "source": "brokers",
+      "title": "Digital Asset Weekly 2025.10.28 원화 스테이블 코인에 대한 방향성 점검",
+      "url": "https://www.imfnsec.com/upload/R_E03/2025/10/[28074412]_251883.pdf",
+      "publishedAt": "2025-10-28",
+      "summary": "iM증권 · 1. 가상자산 관련 법안 국회 계류 지속: 1) 기관간의 이견 존재, 2) 법안별 이견 존재, 3) 외국환거래법 등 관련 기초 법안 개정 필요 2. 한국은행, 원화 스테이블 코인에 대한 리스크 제기 3. 한국은행, 비은행 은행권 중심 컨소시엄에 참가하는 방안을 바람직하게 보고 있는 상황",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
       "lang": "ko"
     },
     {
@@ -3565,6 +3939,17 @@
       "publishedAt": "2025-09-26",
       "summary": "2025년 1분기 국내 스테이블코인 거래 규모는 57조 원에 이르며 빠르게 성장함에 따라, 제도화를 위한 논의가 본격화되고 있습니다. 통화가치에 준거하는 스테이블코인은 결제와 송금 수단으로 사용되며, 기존 가상자산과 달리 가치 안정성과 환급 가능성을 보장하고 금융기관과 밀접하게 연계되어 가상자산과 통화의 중간적 성격을 가집니다. 이러한 특성으로 인해 통화, 외환, 지급결제 등에 관한 다양한 이슈가 발생하고 있어 엄격한 규제가 요구됩니다.국내 스테이블코인 제도화 논의의 핵심은 발행 적격과 발행 구조를 제도화하는 것으로 발행인의 자격,",
       "collectedAt": "2026-11-11T10:00:00+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "tiger:blockfesta-2025-kor",
+      "source": "tiger",
+      "title": "블록페스타, 한국 디지털 자산 시장의 미래를 논하다",
+      "url": "https://reports.tiger-research.com/p/blockfesta-2025-kor",
+      "publishedAt": "2025-09-24",
+      "summary": "한국 디지털 자산 시장의 기회와 한계, 그리고 전환의 조건",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
       "pdf": false,
       "lang": "ko"
     },
@@ -3715,6 +4100,17 @@
       "lang": "ko"
     },
     {
+      "id": "brokers:kiwoom-rfBC1341",
+      "source": "brokers",
+      "title": "크립토 3법 이후의 시장: 비트코인 도미넌스 하락과 국내 규제 동향",
+      "url": "https://bbn.kiwoom.com/rfBC1341",
+      "publishedAt": "2025-09",
+      "summary": "키움증권 · 미국 크립토 3법의 하원 통과, SEC의 '프로젝트 크립토'는 미국의 친 가상자산 정책 기조를 보여줌. 특히 가상자산의 투자 자산 편입을 넘어, 기존 금융 시스템에 블록체인 기술을 도입하려는 점에 주목할 필요가 있음.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
+      "lang": "ko"
+    },
+    {
       "id": "digitalx:133",
       "source": "digitalx",
       "title": "CeFi의 가상자산 시장 진출",
@@ -3733,6 +4129,17 @@
       "publishedAt": "2025-08-11",
       "summary": "스테이블코인의 준비자산은 무결성의 초석이며 의도된 페그를 유지하고 환매 요청을 안정적으로 이행할 수 있는 근거가 된다.",
       "collectedAt": "2026-11-11T09:09:30+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "fourpillars:theo-beyond-rwa-issuance-into-the-game-of-capital-efficiency",
+      "source": "fourpillars",
+      "title": "테오: RWA 발행을 넘어, 자본 효율성 게임으로",
+      "url": "https://research.4pillars.io/ko/research/theo-beyond-rwa-issuance-into-the-game-of-capital-efficiency",
+      "publishedAt": "2025-08-11",
+      "summary": "RWA의 볼륨 게임 진입을 견인하는 테오의 비전과 첫번째 이정표인 thBILL을 살펴봅니다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
       "lang": "ko"
     },
     {
@@ -3828,6 +4235,17 @@
       "publishedAt": "2025-07-14",
       "summary": "프리미엄을 넘어 멀티플로의 여정",
       "collectedAt": "2026-11-10T02:30:00+09:00",
+      "lang": "ko"
+    },
+    {
+      "id": "brokers:kiwoom-rfTP657",
+      "source": "brokers",
+      "title": "“크립토 위크(Crypto Week)”가 온다",
+      "url": "https://bbn.kiwoom.com/rfTP657",
+      "publishedAt": "2025-07-14",
+      "summary": "키움증권 · 미국 하원이 7월 14일(현지시간) 시작되는 주간을 Crypto Week로 지정했다. ▲디지털자산 시장 구조법(CLARITY Act) ▲CBDC 금지법(Anti-CBDC Act) ▲스테이블코인 규제안(GENIUS Act) 3건의 법안을 본회의 표결에 부칠 예정이다.",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": true,
       "lang": "ko"
     },
     {
@@ -4342,6 +4760,17 @@
       "lang": "ko"
     },
     {
+      "id": "tiger:setting-the-standard-how-hong-kong-kor",
+      "source": "tiger",
+      "title": "홍콩의 비트코인 지수, 아시아 암호화폐 시장의 새로운 기준을 제시하다",
+      "url": "https://reports.tiger-research.com/p/setting-the-standard-how-hong-kong-kor",
+      "publishedAt": "2024-12-10",
+      "summary": "홍콩의 비트코인 지수가 어떻게 시장에 새로운 바람을 불러올까?",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
       "id": "fourpillars:pump-fun-what-do-we-really-want",
       "source": "fourpillars",
       "title": "[Issue] 펌프닷펀 사태: 인간과 도구 그리고 자유",
@@ -4738,6 +5167,17 @@
       "publishedAt": "2023-12-08",
       "summary": "전 세계 주요 국가들은 지난 수년간 가상자산이라는 글로벌 사회 현상에 대한 대응책을 고심해 왔다. 디지털세계에 존재하는 국경 없는 자산이라는 특성을 고려하여 정부의 대응도 국가 간의 협업이 필요하다는 판단하에 국제기구 레벨에서의 연구가 추진되어 왔다. 그중 하나가 국제증권감독기구 (IOSCO)가 최근 발표한 Policy Recommendations for Crypto and Digital Asset Markets(‘CDA 권고안’)이다. 대한민국 정부는 IOSCO의 회원국으로서 CDA 권고안을 최대한 반영할 것으로 예상된다. 현재 ",
       "collectedAt": "2026-11-11T09:55:00+09:00",
+      "pdf": false,
+      "lang": "ko"
+    },
+    {
+      "id": "tiger:exchanges-kor",
+      "source": "tiger",
+      "title": "한국 중소형 가상자산 거래소의 위기",
+      "url": "https://reports.tiger-research.com/p/exchanges-kor",
+      "publishedAt": "2023-12-04",
+      "summary": "예견된 결말 속에서 이들은 생존할 수 있을까?",
+      "collectedAt": "2026-11-28T14:33:37+09:00",
       "pdf": false,
       "lang": "ko"
     },
